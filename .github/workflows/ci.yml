@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  simulate-deployment:
+  deploy-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,15 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Validate docker-compose configuration
+        run: docker-compose config
+
       - name: Build project
         run: npm run build
 
-      - name: Simulate Deployment
+      - name: Simulate deployment
         run: |
-          echo "Simulating deployment process..."
-          git fetch origin main
-          if git diff --quiet HEAD origin/main; then
-            echo "No changes detected between the current commit and origin/main."
-          else
-            npm run deploy -- --dry-run || { echo "Deployment simulation failed."; exit 1; }
-          fi
+          npm run deploy
+          docker-compose down
