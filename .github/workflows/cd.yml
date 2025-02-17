@@ -17,6 +17,6 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          cd ~/home/Papermap
+          cd ~/Papermap
           git pull origin main
           npm run deploy
