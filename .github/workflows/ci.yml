@@ -21,12 +21,13 @@ jobs:
         run: npm install
 
       - name: Validate docker-compose configuration
-        run: docker-compose config
+        run: docker compose config
 
       - name: Build project
         run: npm run build
 
       - name: Simulate deployment
         run: |
-          npm run deploy
-          docker-compose down
+          docker-compose build
+          docker-compose up -d
+          docker compose down
