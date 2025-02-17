@@ -6,7 +6,7 @@
 	<meta name="description" content="Home" />
 </svelte:head>
 
-<h1>Home</h1>
+<h1>Home TEST</h1>
 
 <style>
 </style>
