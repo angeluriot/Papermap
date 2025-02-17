@@ -28,6 +28,6 @@ jobs:
 
       - name: Simulate deployment
         run: |
-          docker-compose build
-          docker-compose up -d
+          docker compose build
+          docker compose up -d
           docker compose down
