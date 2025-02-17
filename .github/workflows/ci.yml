@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  simulate-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Simulate Deployment
+        run: |
+          echo "Simulating deployment process..."
+          git fetch origin main
+          if git diff --quiet HEAD origin/main; then
+            echo "No changes detected between the current commit and origin/main."
+          else
+            npm run deploy -- --dry-run || { echo "Deployment simulation failed."; exit 1; }
+          fi
