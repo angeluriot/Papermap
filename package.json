@@ -4,9 +4,9 @@
 	"description": "The Papermap website.",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "node clean.js && vite dev",
 		"build": "svelte-kit sync && vite build",
-		"deploy": "docker compose build && docker compose up -d"
+		"deploy": "node clean.js && docker compose build && docker compose up -d"
 	},
 	"repository": {
 		"type": "git",
@@ -31,6 +31,7 @@
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@tailwindcss/vite": "^4.0.0",
+		"@types/node": "^22.13.4",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"tailwindcss": "^4.0.0",
