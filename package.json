@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && vite build",
-		"deploy": "docker-compose build && docker-compose up -d"
+		"deploy": "docker compose build && docker compose up -d"
 	},
 	"repository": {
 		"type": "git",
