@@ -17,15 +17,6 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Validate Docker configuration
-        run: docker compose config
-
-      - name: Build the project
-        run: npm run build
-
       - name: Deploy the project
         run: npm run deploy
 
