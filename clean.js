@@ -4,3 +4,9 @@ import { dirname, join } from 'path';
 
 const tmp_dir_path = join(dirname(fileURLToPath(import.meta.url)), 'tmp');
 await fs.rm(tmp_dir_path, { recursive: true, force: true });
+
+try {
+	await fs.access('.env');
+} catch {
+	await fs.copyFile('.env.template', '.env');
+}
