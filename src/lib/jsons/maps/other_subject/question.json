@@ -1,6 +1,6 @@
 {
-	"question": "Are sexual education programs effective to prevent child sexual abuse?",
-	"detailed_question": "Do sexual education programs given to children have a positive risk-benefit ratio in preventing child sexual abuse?",
-	"no_blind": true,
-	"no_random": false
+  "question": "test",
+  "detailed_question": "Do sexual education programs given to children have a positive risk-benefit ratio in preventing child sexual abuse?",
+  "no_blind": true,
+  "no_random": false
 }
