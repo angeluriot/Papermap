@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { BASE_URL } from '$lib/utils';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	const base_url = import.meta.env.DEV ? 'http://localhost:5173' : 'https://my-app.com';
-	const image_url = `${base_url}/maps/${data.map}/image.jpg`;
+	const image_url = `${BASE_URL}/maps/${data.map}/image.jpg`;
 
 	onMount(() => {
 		console.log(data.data);

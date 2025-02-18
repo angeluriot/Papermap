@@ -1,4 +1,4 @@
-export const BASE_URL = import.meta.env.DEV ? 'http://localhost:5173' : 'https://my-app.com';
+export const BASE_URL = import.meta.env.DEV ? 'http://localhost:5173' : import.meta.env.VITE_DOMAIN as string;
 
 export function get_random_string()
 {
