@@ -6,7 +6,7 @@
 	let { data }: PageProps = $props();
 
 	const page_url = `${ENV.BASE_URL}/map/${data.map}`;
-	const image_url = `${ENV.BASE_URL}/images/maps/${data.map}/image.jpg`;
+	const image_url = `${ENV.BASE_URL}/images/maps/${data.map}/image.jpg?v=${data.image_hash}`;
 
 	onMount(() => {
 		console.log(data.data);
