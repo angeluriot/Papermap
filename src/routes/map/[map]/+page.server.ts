@@ -1,7 +1,9 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad, EntryGenerator } from './$types';
+import { ENV } from '$lib/utils';
 import fs from 'fs';
 import crypto from 'crypto';
+import sharp from 'sharp';
 
 export const prerender = true;
 export const ssr = true;
@@ -17,19 +19,18 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	const json_data = await data_modules[file_path]() as { default: any };
 
-	const image_path = `./static/images/maps/${params.map}/image.jpg`;
-	let image_hash = '';
+	const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
+		<rect width="1000" height="1000" fill="lightblue"/>
+		<text x="500" y="500" font-size="50" text-anchor="middle" fill="darkblue">Example</text>
+	</svg>`;
 
-	try
-	{
-		const image_buffer = fs.readFileSync(image_path);
-		image_hash = crypto.createHash('sha256').update(image_buffer).digest('hex').slice(0, 16);
-	}
+	const image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
+	const jpeg_buffer = await sharp(Buffer.from(svg)).jpeg({ quality: 95, progressive: true, chromaSubsampling: '4:4:4' }).toBuffer();
 
-	catch (err)
-	{
-		console.error('Error reading image file:', err);
-	}
+	fs.mkdirSync(ENV.IMAGES_DIR, { recursive: true });
+
+	const image_path = `${ENV.IMAGES_DIR}/${params.map}.jpg`;
+	fs.writeFileSync(image_path, jpeg_buffer);
 
 	return {
 		map: params.map,

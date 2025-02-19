@@ -14,9 +14,9 @@ export async function POST({ params, request }) {
 	return json({ test: 'ok' });
 
 	const task_id = get_random_string();
-	const lock_file = `${ENV.TMP_DIR}/${task_id}.lock`
+	const lock_file = `${ENV.LOCKS_DIR}/${task_id}.lock`;
 
-	await fs.mkdir(ENV.TMP_DIR, { recursive: true });
+	await fs.mkdir(ENV.LOCKS_DIR, { recursive: true });
 	await fs.writeFile(lock_file, '');
 
 	const branch = `edit/${params.map.replace('_', '-')}/id-${task_id}`;

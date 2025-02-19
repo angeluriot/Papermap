@@ -1,7 +1,8 @@
 export const ENV = {
 	DEV: import.meta.env.DEV,
 	BASE_URL: import.meta.env.DEV ? 'http://localhost:5173' : (import.meta.env.VITE_DOMAIN as string ?? 'https://example.com'),
-	TMP_DIR: import.meta.env.DEV ? './tmp' : '/papermap-tmp',
+	LOCKS_DIR: import.meta.env.DEV ? './tmp/locks' : '/papermap-tmp/locks',
+	IMAGES_DIR: './tmp/images',
 	GITHUB_APP_ID: import.meta.env.VITE_GITHUB_APP_ID ? parseInt(import.meta.env.VITE_GITHUB_APP_ID) as number : undefined,
 	GITHUB_PRIVATE_KEY: import.meta.env.VITE_GITHUB_PRIVATE_KEY as string | undefined,
 	GITHUB_CLIENT_ID: import.meta.env.VITE_GITHUB_CLIENT_ID as string | undefined,
