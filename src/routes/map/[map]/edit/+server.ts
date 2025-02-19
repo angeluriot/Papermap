@@ -1,8 +1,8 @@
 import { json } from '@sveltejs/kit';
-import { ENV, get_random_string } from '$lib/utils';
+import { ENV, get_random_string } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import type { Octokit } from '@octokit/rest';
-import { init_client, create_branch, delete_branch, update_file, create_pull_request } from '$lib/github';
+import { init_client, create_branch, delete_branch, update_file, create_pull_request } from '$lib/server/github';
 
 
 export async function POST({ params, request }) {

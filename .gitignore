@@ -6,10 +6,10 @@
 /docs
 
 # Data
-/src/lib/jsons/journals/*
-!/src/lib/jsons/journals/raw_data.json
-!/src/lib/jsons/journals/data.json
-!/src/lib/jsons/journals/process.py
+/src/lib/server/jsons/journals/*
+!/src/lib/server/jsons/journals/raw_data.json
+!/src/lib/server/jsons/journals/data.json
+!/src/lib/server/jsons/journals/process.py
 
 # Node
 /package-lock.json

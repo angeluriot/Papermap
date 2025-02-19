@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad, EntryGenerator } from './$types';
-import { ENV } from '$lib/utils';
+import { ENV } from '$lib/server/utils';
 import fs from 'fs';
 import crypto from 'crypto';
 import sharp from 'sharp';

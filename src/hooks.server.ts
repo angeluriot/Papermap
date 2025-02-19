@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { ENV } from '$lib/utils';
+import { ENV } from '$lib/server/utils';
 
 export async function handle({ event, resolve })
 {
