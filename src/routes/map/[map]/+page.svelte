@@ -5,6 +5,7 @@
 
 	let { data }: PageProps = $props();
 
+	const page_url = `${ENV.BASE_URL}/map/${data.map}`;
 	const image_url = `${ENV.BASE_URL}/images/maps/${data.map}/image.jpg`;
 
 	onMount(() => {
@@ -31,8 +32,24 @@
 
 <svelte:head>
 	<title>Map {data.map}</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Svelte demo app"/>
+	<meta property="og:url" content={page_url}/>
 	<meta property="og:image" content={image_url} />
+	<meta property="og:image:url" content={image_url} />
+	<meta property="og:image:secure_url" content={image_url} />
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content=968/>
+	<meta property="og:image:height" content=936/>
+	<meta property="og:title" content="Map {data.map}"/>
+	<meta property="og:site_name" content="Papermap {data.map}"/>
+	<meta property="og:description" content="Papermap {data.map}."/>
+	<meta name="twitter:title" content="Papermap {data.map}"/>
+	<meta name="twitter:description" content="Papermap {data.map}."/>
+	<meta name="twitter:image" content={image_url}/>
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:site" content="@DIMENSION_YT"/>
+	<meta property="twitter:domain" content="papermap.org"/>
+	<meta property="twitter:url" content={page_url}/>
 </svelte:head>
 
 <h1>Map {data.map}</h1>
