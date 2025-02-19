@@ -1,8 +1,9 @@
 import { json } from '@sveltejs/kit';
-import { get_random_string } from '$lib/utils';
+import { ENV, get_random_string } from '$lib/utils';
 import { promises as fs } from 'fs';
+import type { Octokit } from '@octokit/rest';
+import { init_client, create_branch, delete_branch, update_file, create_pull_request } from '$lib/github';
 
-const tmp_dir = import.meta.env.DEV ? './tmp' : '/papermap-tmp';
 
 export async function POST({ params, request }) {
 	const data = await request.json();
@@ -10,8 +11,44 @@ export async function POST({ params, request }) {
 	console.log('Data:', data);
 	console.log('Used path:', params.map);
 
-	await fs.mkdir(tmp_dir, { recursive: true });
-	await fs.writeFile(`${tmp_dir}/${get_random_string()}.lock`, '');
+	return json({ test: 'ok' });
 
-	return json({ status: 200 });
+	const task_id = get_random_string();
+	const lock_file = `${ENV.TMP_DIR}/${task_id}.lock`
+
+	await fs.mkdir(ENV.TMP_DIR, { recursive: true });
+	await fs.writeFile(lock_file, '');
+
+	const branch = `edit/${params.map.replace('_', '-')}/id-${task_id}`;
+	let client: Octokit;
+	let pr_url: string;
+
+	try
+	{
+		client = init_client();
+		await create_branch(client, branch);
+	}
+
+	catch (error: any)
+	{
+		await fs.unlink(lock_file);
+		throw error;
+	}
+
+	try
+	{
+		await update_file(client, branch, `src/lib/jsons/maps/${params.map}/question.json`, JSON.stringify(data, null, '\t') + '\n', 'Update question.json');
+		pr_url = await create_pull_request(client, branch, 'Update question.json', 'Test description');
+	}
+
+	catch (error: any)
+	{
+		await delete_branch(client, branch);
+		await fs.unlink(lock_file);
+		throw error;
+	}
+
+	await fs.unlink(lock_file);
+
+	return json({ pr_url });
 }
