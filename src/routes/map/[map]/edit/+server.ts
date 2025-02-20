@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit';
 import { ENV, get_random_string } from '$lib/server/utils';
 import { promises as fs } from 'fs';
+import path from 'path'
 import type { Octokit } from '@octokit/rest';
 import { init_client, create_branch, delete_branch, update_file, create_pull_request } from '$lib/server/github';
 
@@ -14,9 +15,8 @@ export async function POST({ params, request }) {
 	return json({ test: 'ok' });
 
 	const task_id = get_random_string();
-	const lock_file = `${ENV.LOCKS_DIR}/${task_id}.lock`;
+	const lock_file = path.join(ENV.LOCKS_DIR, `${task_id}.lock`);
 
-	await fs.mkdir(ENV.LOCKS_DIR, { recursive: true });
 	await fs.writeFile(lock_file, '');
 
 	const branch = `edit/${params.map.replace('_', '-')}/id-${task_id}`;

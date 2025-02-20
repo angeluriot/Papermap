@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { join } from 'path';
 import { ENV } from '$lib/server/utils';
 
 export async function handle({ event, resolve })
@@ -13,7 +14,7 @@ export async function handle({ event, resolve })
 		if (image_name.includes('?'))
 			image_name = image_name.slice(0, image_name.indexOf('?'));
 
-		const file_path = `${ENV.IMAGES_DIR}/${image_name}`;
+		const file_path = join(ENV.IMAGES_DIR, image_name);
 
 		if (fs.existsSync(file_path))
 		{

@@ -21,3 +21,6 @@
 
 # Env
 /.env
+
+# Temp
+/tmp

@@ -19,7 +19,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		throw error(404, 'Not found');
 
 	const json_data = await data_modules[file_path]() as { default: any };
-	const font_data = fs.readFileSync(join(process.cwd(), 'static/fonts/Roboto/Roboto-Bold.ttf')).toString('base64');
+	const font_data = fs.readFileSync(join(ENV.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf')).toString('base64');
 
 	const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
 		<defs>
@@ -39,7 +39,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	fs.mkdirSync(ENV.IMAGES_DIR, { recursive: true });
 
-	const image_path = `${ENV.IMAGES_DIR}/${params.map}.jpg`;
+	const image_path = join(ENV.IMAGES_DIR, `${params.map}.jpg`);
 	fs.writeFileSync(image_path, jpeg_buffer);
 
 	return {

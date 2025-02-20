@@ -1,9 +1,14 @@
+import { join } from 'path';
+
 export const ENV = {
 	DEV: import.meta.env.DEV,
 	PROD: import.meta.env.PROD,
 	BASE_URL: import.meta.env.DEV ? 'http://localhost:5173' : (import.meta.env.VITE_DOMAIN as string ?? 'https://example.com'),
-	LOCKS_DIR: import.meta.env.DEV ? './tmp/locks' : '/papermap-tmp/locks',
-	IMAGES_DIR: './tmp/images',
+	BASE_PATH: process.cwd(),
+	STATIC_DIR: join(process.cwd(), 'static'),
+	LIB_DIR: join(process.cwd(), 'src/lib'),
+	LOCKS_DIR: join(process.cwd(), 'tmp/locks'),
+	IMAGES_DIR: join(process.cwd(), 'tmp/images'),
 	GITHUB_APP_ID: import.meta.env.VITE_GITHUB_APP_ID ? parseInt(import.meta.env.VITE_GITHUB_APP_ID) as number : undefined,
 	GITHUB_PRIVATE_KEY: import.meta.env.VITE_GITHUB_PRIVATE_KEY as string | undefined,
 	GITHUB_CLIENT_ID: import.meta.env.VITE_GITHUB_CLIENT_ID as string | undefined,
