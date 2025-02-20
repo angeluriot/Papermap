@@ -1,5 +1,7 @@
 FROM node:lts-slim as run
 
+RUN apt-get update && apt-get install -y fontconfig
+
 WORKDIR /app
 
 COPY . .

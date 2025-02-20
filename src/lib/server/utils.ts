@@ -1,5 +1,6 @@
 export const ENV = {
 	DEV: import.meta.env.DEV,
+	PROD: import.meta.env.PROD,
 	BASE_URL: import.meta.env.DEV ? 'http://localhost:5173' : (import.meta.env.VITE_DOMAIN as string ?? 'https://example.com'),
 	LOCKS_DIR: import.meta.env.DEV ? './tmp/locks' : '/papermap-tmp/locks',
 	IMAGES_DIR: './tmp/images',
@@ -14,11 +15,11 @@ export const ENV = {
 };
 
 
-export function get_random_string()
+export function get_random_string(length: number = 16): string
 {
 	let result = '';
 
-	for (let i = 0; i < 16; i++)
+	for (let i = 0; i < length; i++)
 	{
 		const base = Math.random() < 0.5 ? 65 : 97;
 		result += String.fromCharCode(base + Math.floor(Math.random() * 26));
