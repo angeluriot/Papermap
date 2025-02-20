@@ -7,7 +7,7 @@
 		"dev": "node clean.js && vite dev",
 		"build": "node clean.js && svelte-kit sync && vite build",
 		"deploy": "node clean.js && docker compose build && docker compose up -d",
-		"clean": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)"
+		"clean": "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) && node clean.js"
 	},
 	"repository": {
 		"type": "git",
