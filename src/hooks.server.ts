@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import { join } from 'path';
 import { ENV } from '$lib/server/utils';
 
@@ -16,9 +16,9 @@ export async function handle({ event, resolve })
 
 		const file_path = join(ENV.IMAGES_DIR, image_name);
 
-		if (fs.existsSync(file_path))
+		if (await fs.access(file_path).then(() => true).catch(() => false))
 		{
-			const file_buffer = fs.readFileSync(file_path);
+			const file_buffer = await fs.readFile(file_path);
 			return new Response(file_buffer, { headers: { 'Content-Type': 'image/jpeg' } });
 		}
 
