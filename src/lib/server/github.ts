@@ -1,12 +1,12 @@
 import { Octokit } from '@octokit/rest';
 import { createAppAuth } from '@octokit/auth-app';
-import { ENV } from './utils';
+import { constants as C } from './utils';
 import { MissingEnvError, GitHubAPIError } from './errors';
 
 
 export function init_client(): Octokit
 {
-	if (!ENV.GITHUB_APP_ID || !ENV.GITHUB_PRIVATE_KEY || !ENV.GITHUB_CLIENT_ID || !ENV.GITHUB_CLIENT_SECRET || !ENV.GITHUB_INSTALLATION_ID)
+	if (!C.GITHUB_APP_ID || !C.GITHUB_PRIVATE_KEY || !C.GITHUB_CLIENT_ID || !C.GITHUB_CLIENT_SECRET || !C.GITHUB_INSTALLATION_ID)
 		throw new MissingEnvError('Missing GitHub environment variables');
 
 	try
@@ -14,11 +14,11 @@ export function init_client(): Octokit
 		return new Octokit({
 			authStrategy: createAppAuth,
 			auth: {
-				appId: ENV.GITHUB_APP_ID,
-				privateKey: ENV.GITHUB_PRIVATE_KEY,
-				clientId: ENV.GITHUB_CLIENT_ID,
-				clientSecret: ENV.GITHUB_CLIENT_SECRET,
-				installationId: ENV.GITHUB_INSTALLATION_ID
+				appId: C.GITHUB_APP_ID,
+				privateKey: C.GITHUB_PRIVATE_KEY,
+				clientId: C.GITHUB_CLIENT_ID,
+				clientSecret: C.GITHUB_CLIENT_SECRET,
+				installationId: C.GITHUB_INSTALLATION_ID
 			},
 		});
 	}
@@ -32,20 +32,20 @@ export function init_client(): Octokit
 
 export async function create_branch(client: Octokit, branch_name: string)
 {
-	if (!ENV.GITHUB_OWNER || !ENV.GITHUB_REPO || !ENV.GITHUB_DEFAULT_BRANCH)
+	if (!C.GITHUB_OWNER || !C.GITHUB_REPO || !C.GITHUB_DEFAULT_BRANCH)
 		throw new MissingEnvError('Missing GitHub environment variables');
 
 	const { data: branch_data } = await client.rest.repos.getBranch({
-		owner: ENV.GITHUB_OWNER,
-		repo: ENV.GITHUB_REPO,
-		branch: ENV.GITHUB_DEFAULT_BRANCH,
+		owner: C.GITHUB_OWNER,
+		repo: C.GITHUB_REPO,
+		branch: C.GITHUB_DEFAULT_BRANCH,
 	});
 
 	try
 	{
 		await client.rest.git.createRef({
-			owner: ENV.GITHUB_OWNER,
-			repo: ENV.GITHUB_REPO,
+			owner: C.GITHUB_OWNER,
+			repo: C.GITHUB_REPO,
 			ref: `refs/heads/${branch_name}`,
 			sha: branch_data.commit.sha,
 		});
@@ -60,14 +60,14 @@ export async function create_branch(client: Octokit, branch_name: string)
 
 export async function delete_branch(client: Octokit, branch_name: string)
 {
-	if (!ENV.GITHUB_OWNER || !ENV.GITHUB_REPO)
+	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
 		throw new MissingEnvError('Missing GitHub environment variables');
 
 	try
 	{
 		await client.rest.git.deleteRef({
-			owner: ENV.GITHUB_OWNER,
-			repo: ENV.GITHUB_REPO,
+			owner: C.GITHUB_OWNER,
+			repo: C.GITHUB_REPO,
 			ref: `heads/${branch_name}`,
 		});
 	}
@@ -81,7 +81,7 @@ export async function delete_branch(client: Octokit, branch_name: string)
 
 export async function update_file(client: Octokit, branch: string, file_path: string, new_content: string, commit_message: string)
 {
-	if (!ENV.GITHUB_OWNER || !ENV.GITHUB_REPO)
+	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
 		throw new MissingEnvError('Missing GitHub environment variables');
 
 	let file_content: string;
@@ -90,8 +90,8 @@ export async function update_file(client: Octokit, branch: string, file_path: st
 	try
 	{
 		const { data: file_data } = await client.rest.repos.getContent({
-			owner: ENV.GITHUB_OWNER,
-			repo: ENV.GITHUB_REPO,
+			owner: C.GITHUB_OWNER,
+			repo: C.GITHUB_REPO,
 			path: file_path,
 			ref: branch,
 		});
@@ -114,8 +114,8 @@ export async function update_file(client: Octokit, branch: string, file_path: st
 	try
 	{
 		await client.rest.repos.createOrUpdateFileContents({
-			owner: ENV.GITHUB_OWNER,
-			repo: ENV.GITHUB_REPO,
+			owner: C.GITHUB_OWNER,
+			repo: C.GITHUB_REPO,
 			path: file_path,
 			message: commit_message,
 			content: Buffer.from(new_content).toString("base64"),
@@ -133,17 +133,17 @@ export async function update_file(client: Octokit, branch: string, file_path: st
 
 export async function create_pull_request(client: Octokit, branch: string, title: string, description: string): Promise<string>
 {
-	if (!ENV.GITHUB_OWNER || !ENV.GITHUB_REPO || !ENV.GITHUB_DEFAULT_BRANCH)
+	if (!C.GITHUB_OWNER || !C.GITHUB_REPO || !C.GITHUB_DEFAULT_BRANCH)
 		throw new MissingEnvError('Missing GitHub environment variables');
 
 	try
 	{
 		const { data: pull_request } = await client.rest.pulls.create({
-			owner: ENV.GITHUB_OWNER,
-			repo: ENV.GITHUB_REPO,
+			owner: C.GITHUB_OWNER,
+			repo: C.GITHUB_REPO,
 			title: title,
 			head: branch,
-			base: ENV.GITHUB_DEFAULT_BRANCH,
+			base: C.GITHUB_DEFAULT_BRANCH,
 			body: description,
 		});
 

@@ -1,6 +1,8 @@
+import { promises as fs } from 'fs';
 import { join } from 'path';
 
-export const ENV = {
+
+export const constants = {
 	DEV: import.meta.env.DEV,
 	PROD: import.meta.env.PROD,
 	BASE_URL: import.meta.env.DEV ? 'http://localhost:5173' : (import.meta.env.VITE_DOMAIN as string ?? 'https://example.com'),
@@ -31,4 +33,45 @@ export function get_random_string(length: number = 16): string
 	}
 
 	return result;
+}
+
+
+export function sleep(ms: number): Promise<void>
+{
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+export async function exist(dir_path: string): Promise<boolean>
+{
+	return await fs.access(dir_path).then(() => true).catch(() => false);
+}
+
+
+export async function check_deploy_lock(tries: number = 5, time_between_tries: number = 5): Promise<boolean>
+{
+	for (let i = 0; i < tries; i++)
+	{
+		if (!await exist(join(constants.LOCKS_DIR, 'deploy.lock')))
+			return false;
+
+		if (i < tries - 1)
+			await sleep(time_between_tries * 1000);
+	}
+
+	return true;
+}
+
+
+export async function lock(): Promise<string>
+{
+	const task_id = get_random_string();
+	await fs.writeFile(join(constants.LOCKS_DIR, `${task_id}.lock`), '');
+
+	return task_id;
+}
+
+export async function unlock(task_id: string): Promise<void>
+{
+	await fs.unlink(join(constants.LOCKS_DIR, `${task_id}.lock`));
 }

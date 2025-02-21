@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { ENV } from '$lib/client/utils';
+	import { constants as C } from '$lib/client/utils';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	const page_url = `${ENV.BASE_URL}/map/${data.map}`;
-	const image_url = `${ENV.BASE_URL}/images/${data.map}.jpg?v=${data.image_hash}`;
+	const page_url = `${C.BASE_URL}/map/${data.map}`;
+	const image_url = `${C.BASE_URL}/images/${data.map}.jpg?v=${data.image_hash}`;
 
 	onMount(() => {
 		console.log(data.data);

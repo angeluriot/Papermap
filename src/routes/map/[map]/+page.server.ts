@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad, EntryGenerator } from './$types';
-import { ENV } from '$lib/server/utils';
+import { constants as C } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import crypto from 'crypto';
 import sharp from 'sharp';
@@ -19,7 +19,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		throw error(404, 'Not found');
 
 	const json_data = await data_modules[file_path]() as { default: any };
-	const font_data = (await fs.readFile(join(ENV.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
+	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
 
 	const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
 		<defs>
@@ -37,7 +37,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	const image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
 	const jpeg_buffer = await sharp(Buffer.from(svg)).jpeg({ quality: 95, progressive: true, chromaSubsampling: '4:4:4' }).toBuffer();
 
-	const image_path = join(ENV.IMAGES_DIR, `${params.map}.jpg`);
+	const image_path = join(C.IMAGES_DIR, `${params.map}.jpg`);
 	await fs.writeFile(image_path, jpeg_buffer);
 
 	return {
