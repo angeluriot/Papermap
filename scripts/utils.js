@@ -21,10 +21,7 @@ export async function exist(dir_path)
 export async function create_dir_if_not_exist(dir_path)
 {
 	if (!await exist(dir_path))
-	{
 		await fs.mkdir(dir_path, { recursive: true });
-		console.log(`Directory ${dir_path} created.`);
-	}
 }
 
 
@@ -39,6 +36,4 @@ export async function empty_dir(dir_path)
 		const entry_path = join(dir_path, entry);
 		return await fs.rm(entry_path, { recursive: true, force: true });
 	}));
-
-	console.log(`Directory ${dir_path} emptied.`);
 }

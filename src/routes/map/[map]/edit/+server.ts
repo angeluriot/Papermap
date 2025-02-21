@@ -20,34 +20,43 @@ export async function POST({ params, request })
 	const lock_file = join(C.LOCKS_DIR, `${task_id}.lock`);
 
 	await fs.writeFile(lock_file, '');
-
-	const branch = `edit/${params.map.replace('_', '-')}/id-${task_id}`;
-	let client: Octokit;
 	let pr_url: string;
 
-	try
+	if (C.DEV)
 	{
-		client = init_client();
-		await create_branch(client, branch);
+		await fs.writeFile(join(C.LIB_DIR, `server/jsons/maps/${params.map}/question.json`), JSON.stringify(data, null, '\t') + '\n');
+		pr_url = '';
 	}
 
-	catch (error: any)
+	else
 	{
-		await unlock(task_id);
-		throw error;
-	}
+		const branch = `edit/${params.map.replace('_', '-')}/id-${task_id}`;
+		let client: Octokit;
 
-	try
-	{
-		await update_file(client, branch, `src/lib/server/jsons/maps/${params.map}/question.json`, JSON.stringify(data, null, '\t') + '\n', 'Update question.json');
-		pr_url = await create_pull_request(client, branch, 'Update question.json', 'Test description');
-	}
+		try
+		{
+			client = init_client();
+			await create_branch(client, branch);
+		}
 
-	catch (error: any)
-	{
-		await delete_branch(client, branch);
-		await unlock(task_id);
-		throw error;
+		catch (error: any)
+		{
+			await unlock(task_id);
+			throw error;
+		}
+
+		try
+		{
+			await update_file(client, branch, `src/lib/server/jsons/maps/${params.map}/question.json`, JSON.stringify(data, null, '\t') + '\n', 'Update question.json');
+			pr_url = await create_pull_request(client, branch, 'Update question.json', 'Test description');
+		}
+
+		catch (error: any)
+		{
+			await delete_branch(client, branch);
+			await unlock(task_id);
+			throw error;
+		}
 	}
 
 	await unlock(task_id);
