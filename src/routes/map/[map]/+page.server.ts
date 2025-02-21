@@ -5,6 +5,7 @@ import { promises as fs } from 'fs';
 import crypto from 'crypto';
 import sharp from 'sharp';
 import { join } from 'path';
+import ejs from 'ejs';
 
 export const prerender = true;
 export const ssr = true;
@@ -20,19 +21,11 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	const json_data = await data_modules[file_path]() as { default: any };
 	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
+	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
-	const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
-		<defs>
-			<style type="text/css">
-				@font-face {
-					font-family: 'MyFont';
-					src: url("data:font/truetype;charset=utf-8;base64,${font_data}") format("truetype");
-				}
-			</style>
-		</defs>
-		<rect width="1000" height="1000" fill="lightblue"/>
-		<text x="500" y="500" font-size="50" text-anchor="middle" fill="darkblue" style="font-family: 'MyFont'">Example</text>
-	</svg>`;
+	const svg = ejs.render(template, {
+		font_data,
+	});
 
 	const image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
 	const jpeg_buffer = await sharp(Buffer.from(svg)).jpeg({ quality: 95, progressive: true, chromaSubsampling: '4:4:4' }).toBuffer();
