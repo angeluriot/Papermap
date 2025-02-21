@@ -4,10 +4,11 @@
 	"description": "The Papermap website.",
 	"type": "module",
 	"scripts": {
-		"dev": "node clean.js && vite dev",
-		"build": "node clean.js && svelte-kit sync && vite build",
-		"deploy": "node clean.js && docker compose build && docker compose up -d",
-		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); node clean.js"
+		"dev": "node ./scripts/clean.js --force && vite dev",
+		"dev-build": "node ./scripts/clean.js --force && svelte-kit sync && vite build",
+		"prod-build": "node ./scripts/clean.js --keep-lock && svelte-kit sync && vite build",
+		"deploy": "node ./scripts/clean.js && node ./scripts/lock.js && docker compose build && docker compose up -d && node ./scripts/unlock.js",
+		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker system prune -a; node ./scripts/clean.js --force"
 	},
 	"repository": {
 		"type": "git",

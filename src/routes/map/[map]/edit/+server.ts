@@ -31,7 +31,7 @@ export async function POST({ params, request }) {
 
 	catch (error: any)
 	{
-		await fs.unlink(lock_file);
+		await fs.rm(lock_file);
 		throw error;
 	}
 
@@ -44,11 +44,11 @@ export async function POST({ params, request }) {
 	catch (error: any)
 	{
 		await delete_branch(client, branch);
-		await fs.unlink(lock_file);
+		await fs.rm(lock_file);
 		throw error;
 	}
 
-	await fs.unlink(lock_file);
+	await fs.rm(lock_file);
 
 	return json({ pr_url });
 }
