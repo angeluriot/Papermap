@@ -7,11 +7,13 @@ import sharp from 'sharp';
 import { join } from 'path';
 import ejs from 'ejs';
 
+
 export const prerender = true;
 export const ssr = true;
 export const csr = true;
 
 const data_modules = import.meta.glob('/src/lib/server/jsons/maps/*/question.json');
+
 
 export const load: PageServerLoad = async ({ params }) => {
 	const file_path = `/src/lib/server/jsons/maps/${params.map}/question.json`;
@@ -36,9 +38,10 @@ export const load: PageServerLoad = async ({ params }) => {
 	return {
 		map: params.map,
 		data: json_data.default,
-		image_hash
+		image_hash,
 	};
 };
+
 
 export const entries: EntryGenerator = () => {
 	let a = Object.keys(data_modules).map((path) => {

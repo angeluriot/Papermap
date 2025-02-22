@@ -18,7 +18,7 @@ export function init_client(): Octokit
 				privateKey: C.GITHUB_PRIVATE_KEY,
 				clientId: C.GITHUB_CLIENT_ID,
 				clientSecret: C.GITHUB_CLIENT_SECRET,
-				installationId: C.GITHUB_INSTALLATION_ID
+				installationId: C.GITHUB_INSTALLATION_ID,
 			},
 		});
 	}

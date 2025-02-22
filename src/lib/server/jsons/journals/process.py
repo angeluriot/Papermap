@@ -21,7 +21,7 @@ METRIC_COEFS = {
 	'self': 1.0, # Self-citation rate
 	'rti': 0.5, # Rigor & Transparency Index
 	'top': 0.5, # Transparency and Openness Promotion Factor
-	'alt': 0.5 # Altmetric (Average News Mentions)
+	'alt': 0.5, # Altmetric (Average News Mentions)
 }
 
 SELF_CITATION_THRESHOLD = 10 # The self-citation threshold (in %) before applying a penalty

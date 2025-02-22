@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import { join } from 'path';
 import { constants as C } from '$lib/server/utils';
 
+
 export async function handle({ event, resolve })
 {
 	if (event.url.pathname.startsWith('/images/'))

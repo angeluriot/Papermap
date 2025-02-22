@@ -17,7 +17,7 @@
 		const response = await fetch(`/map/${data.map}/edit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ edits: edits })
+			body: JSON.stringify({ edits: edits }),
 		});
 
 		if (!response.ok) {
