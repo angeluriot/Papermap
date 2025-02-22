@@ -1,0 +1,17 @@
+name: Delete closed PR branch
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+jobs:
+  show:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Delete closed PR branch
+      uses: dawidd6/action-delete-branch@v3
+      with:
+        github_token: ${{ github.token }}
+        numbers: ${{ github.event.pull_request.number }}
