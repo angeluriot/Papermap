@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { constants as C, check_deploy_lock, lock, unlock } from '$lib/server/utils';
+import { constants as C, check_deploy_lock, lock, sleep, unlock } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import { join } from 'path'
 import type { Octokit } from '@octokit/rest';
@@ -8,8 +8,8 @@ import { init_client, create_branch, delete_branch, update_file, create_pull_req
 
 export async function POST({ params, request })
 {
-	if (await check_deploy_lock())
-		return json({ error: 'Deploy in progress' }, { status: 503 });
+	//if (await check_deploy_lock())
+		//return json({ error: 'Deploy in progress' }, { status: 503 });
 
 	const task_id = await lock();
 	const data = await request.json();
@@ -21,6 +21,8 @@ export async function POST({ params, request })
 
 	await fs.writeFile(lock_file, '');
 	let pr_url: string;
+
+	await sleep(20000);
 
 	if (C.DEV)
 	{
