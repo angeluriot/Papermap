@@ -9,7 +9,6 @@ export const constants = {
 	BASE_PATH: process.cwd(),
 	STATIC_DIR: join(process.cwd(), 'static'),
 	LIB_DIR: join(process.cwd(), 'src/lib'),
-	LOCKS_DIR: join(process.cwd(), 'tmp/locks'),
 	IMAGES_DIR: join(process.cwd(), 'tmp/images'),
 	GITHUB_APP_ID: import.meta.env['VITE_GITHUB_APP_ID'] ? parseInt(import.meta.env['VITE_GITHUB_APP_ID']) as number : undefined,
 	GITHUB_PRIVATE_KEY: import.meta.env['VITE_GITHUB_PRIVATE_KEY'] as string | undefined,
@@ -45,33 +44,4 @@ export function sleep(ms: number): Promise<void>
 export async function exist(dir_path: string): Promise<boolean>
 {
 	return await fs.access(dir_path).then(() => true).catch(() => false);
-}
-
-
-export async function check_deploy_lock(tries: number = 5, time_between_tries: number = 5): Promise<boolean>
-{
-	for (let i = 0; i < tries; i++)
-	{
-		if (!await exist(join(constants.LOCKS_DIR, 'deploy.lock')))
-			return false;
-
-		if (i < tries - 1)
-			await sleep(time_between_tries * 1000);
-	}
-
-	return true;
-}
-
-
-export async function lock(): Promise<string>
-{
-	const task_id = get_random_string();
-	await fs.writeFile(join(constants.LOCKS_DIR, `${task_id}.lock`), '');
-
-	return task_id;
-}
-
-export async function unlock(task_id: string): Promise<void>
-{
-	await fs.unlink(join(constants.LOCKS_DIR, `${task_id}.lock`));
 }

@@ -1,45 +1,43 @@
 import { promises as fs } from 'fs';
-import { create_dir_if_not_exist, empty_dir, exist, sleep, TMP_DIR, LOCKS_DIR, IMAGES_DIR, DEPLOY_LOCK } from './utils.js';
+import { join } from 'path';
 
 
-const FORCE = process.argv.slice(2).includes('--force');
-const KEEP_LOCK = process.argv.slice(2).includes('--keep-lock');
-export const NB_TRIES = 5;
-export const TIME_BETWEEN_TRIES = 3;
+const TMP_DIR_PATH = join(process.cwd(), 'tmp');
+const SUB_DIRS = ['images'];
+const SUB_DIRS_PATH = SUB_DIRS.map(sub_dir => join(TMP_DIR_PATH, sub_dir));
 
 
-async function no_lock()
+async function exist(dir_path)
 {
-	const entries = await fs.readdir(LOCKS_DIR);
-	return entries.length === 0 || (entries.length === 1 && entries[0] === 'deploy.lock')
+	return await fs.access(dir_path).then(() => true).catch(() => false);
 }
 
 
-await create_dir_if_not_exist(TMP_DIR);
-await create_dir_if_not_exist(IMAGES_DIR);
-await create_dir_if_not_exist(LOCKS_DIR);
-
-await empty_dir(IMAGES_DIR);
-
-if (!KEEP_LOCK && await exist(DEPLOY_LOCK))
-	await fs.rm(DEPLOY_LOCK, { force: true });
-
-if (FORCE)
-	await empty_dir(LOCKS_DIR);
-else
+async function create_dir_if_not_exist(dir_path)
 {
-	for (let i = 0; i < NB_TRIES; i++)
-	{
-		if (await no_lock())
-			process.exit(0);
-
-		if (i < NB_TRIES - 1)
-		{
-			console.warn(`Waiting for ${LOCKS_DIR} to be empty...`);
-			await sleep(TIME_BETWEEN_TRIES * 1000);
-		}
-	}
-
-	console.error(`Directory ${LOCKS_DIR} is not empty.`);
-	process.exit(1);
+	if (!await exist(dir_path))
+		await fs.mkdir(dir_path, { recursive: true });
 }
+
+
+async function empty_dir(dir_path)
+{
+	const entries = await fs.readdir(dir_path);
+
+	if (entries.length === 0)
+		return;
+
+	await Promise.all(entries.map(async entry => {
+		const entry_path = join(dir_path, entry);
+		return await fs.rm(entry_path, { recursive: true, force: true });
+	}));
+}
+
+
+await create_dir_if_not_exist(TMP_DIR_PATH);
+
+for (const sub_dir_path of SUB_DIRS_PATH)
+	await create_dir_if_not_exist(sub_dir_path);
+
+for (const sub_dir_path of SUB_DIRS_PATH)
+	await empty_dir(sub_dir_path);

@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { constants as C, check_deploy_lock, lock, sleep, unlock } from '$lib/server/utils';
+import { constants as C, get_random_string } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import { join } from 'path'
 import type { Octokit } from '@octokit/rest';
@@ -8,18 +8,12 @@ import { init_client, create_branch, delete_branch, update_file, create_pull_req
 
 export async function POST({ params, request }: { params: { map: string }, request: Request }): Promise<Response>
 {
-	if (await check_deploy_lock())
-		return json({ error: 'Deploy in progress' }, { status: 503 });
-
-	const task_id = await lock();
+	const task_id = get_random_string();
 	const data = await request.json();
 
 	console.log('Data:', data);
 	console.log('Used path:', params.map);
 
-	const lock_file = join(C.LOCKS_DIR, `${task_id}.lock`);
-
-	await fs.writeFile(lock_file, '');
 	let pr_url: string;
 
 	if (C.DEV)
@@ -41,7 +35,6 @@ export async function POST({ params, request }: { params: { map: string }, reque
 
 		catch (error: any)
 		{
-			await unlock(task_id);
 			throw error;
 		}
 
@@ -54,12 +47,9 @@ export async function POST({ params, request }: { params: { map: string }, reque
 		catch (error: any)
 		{
 			await delete_branch(client, branch);
-			await unlock(task_id);
 			throw error;
 		}
 	}
-
-	await unlock(task_id);
 
 	return json({ pr_url });
 }
