@@ -5,7 +5,7 @@
 
 	let { data }: PageProps = $props();
 
-	const page_url = `${C.BASE_URL}/map/${data.map}`;
+	const page_url = `${C.BASE_URL}/maps/${data.map}`;
 	const image_url = `${C.BASE_URL}/images/${data.map}.jpg?v=${data.image_hash}`;
 
 	onMount(() => {
@@ -14,7 +14,7 @@
 	});
 
 	async function edit(edits: string[]) {
-		const response = await fetch(`/map/${data.map}/edit`, {
+		const response = await fetch(`/maps/${data.map}/edit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ edits: edits }),

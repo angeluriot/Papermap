@@ -105,3 +105,15 @@ export interface Paper
 	};
 	conflict_of_interest: boolean;
 }
+
+export interface Map
+{
+	id: string;
+	question: string;
+	detailed_question: string;
+	possible_types: PaperType[];
+	about: StudyOn;
+	has_sample_size: boolean;
+	has_p_value: boolean;
+	papers: Paper[];
+}

@@ -3,13 +3,13 @@ import { constants as C, check_deploy_lock, lock, sleep, unlock } from '$lib/ser
 import { promises as fs } from 'fs';
 import { join } from 'path'
 import type { Octokit } from '@octokit/rest';
-import { init_client, create_branch, delete_branch, update_file, create_pull_request } from '$lib/server/github';
+import { init_client, create_branch, delete_branch, update_file, create_pull_request } from '$lib/server/github/api';
 
 
-export async function POST({ params, request })
+export async function POST({ params, request }: { params: { map: string }, request: Request }): Promise<Response>
 {
-	//if (await check_deploy_lock())
-		//return json({ error: 'Deploy in progress' }, { status: 503 });
+	if (await check_deploy_lock())
+		return json({ error: 'Deploy in progress' }, { status: 503 });
 
 	const task_id = await lock();
 	const data = await request.json();
@@ -21,8 +21,6 @@ export async function POST({ params, request })
 
 	await fs.writeFile(lock_file, '');
 	let pr_url: string;
-
-	await sleep(20000);
 
 	if (C.DEV)
 	{
@@ -50,7 +48,7 @@ export async function POST({ params, request })
 		try
 		{
 			await update_file(client, branch, `src/lib/server/jsons/maps/${params.map}/question.json`, JSON.stringify(data, null, '\t') + '\n', 'Update question.json');
-			pr_url = await create_pull_request(client, branch, 'Update question.json', 'Test description');
+			pr_url = await create_pull_request(client, branch, 'Update question.json', 'Test description', 'map change');
 		}
 
 		catch (error: any)

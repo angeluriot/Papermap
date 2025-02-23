@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest';
 import { createAppAuth } from '@octokit/auth-app';
-import { constants as C } from './utils';
-import { MissingEnvError, GitHubAPIError } from './errors';
+import { constants as C } from '../utils';
+import { MissingEnvError, GitHubAPIError } from '../errors';
 
 
 export function init_client(): Octokit
@@ -131,10 +131,35 @@ export async function update_file(client: Octokit, branch: string, file_path: st
 }
 
 
-export async function create_pull_request(client: Octokit, branch: string, title: string, description: string): Promise<string>
+export async function set_label(client: Octokit, number: number, label: string)
+{
+	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
+		throw new MissingEnvError('Missing GitHub environment variables');
+
+	try
+	{
+		await client.rest.issues.addLabels({
+			owner: C.GITHUB_OWNER,
+			repo: C.GITHUB_REPO,
+			issue_number: number,
+			labels: [label],
+		});
+	}
+
+	catch (error: any)
+	{
+		throw new GitHubAPIError(`Error setting label: "${error?.message}"`);
+	}
+}
+
+
+export async function create_pull_request(client: Octokit, branch: string, title: string, description: string, label: string): Promise<string>
 {
 	if (!C.GITHUB_OWNER || !C.GITHUB_REPO || !C.GITHUB_DEFAULT_BRANCH)
 		throw new MissingEnvError('Missing GitHub environment variables');
+
+	let pr_url: string;
+	let pr_number: number;
 
 	try
 	{
@@ -147,11 +172,46 @@ export async function create_pull_request(client: Octokit, branch: string, title
 			body: description,
 		});
 
-		return pull_request.html_url;
+		pr_url = pull_request.html_url;
+		pr_number = pull_request.number;
 	}
 
 	catch (error: any)
 	{
 		throw new GitHubAPIError(`Error creating pull request: "${error?.message}"`);
 	}
+
+	await set_label(client, pr_number, label);
+	return pr_url;
+}
+
+
+export async function create_issue(client: Octokit, title: string, description: string, label: string): Promise<string>
+{
+	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
+		throw new MissingEnvError('Missing GitHub environment variables');
+
+	let issue_url: string;
+	let issue_number: number;
+
+	try
+	{
+		const { data: issue } = await client.rest.issues.create({
+			owner: C.GITHUB_OWNER,
+			repo: C.GITHUB_REPO,
+			title: title,
+			body: description,
+		});
+
+		issue_url = issue.html_url;
+		issue_number = issue.number;
+	}
+
+	catch (error: any)
+	{
+		throw new GitHubAPIError(`Error creating issue: "${error?.message}"`);
+	}
+
+	await set_label(client, issue_number, label);
+	return issue_url;
 }

@@ -15,7 +15,7 @@ export const csr = true;
 const data_modules = import.meta.glob('/src/lib/server/jsons/maps/*/question.json');
 
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params }: { params: { map: string } }) => {
 	const file_path = `/src/lib/server/jsons/maps/${params.map}/question.json`;
 
 	if (!data_modules[file_path])
