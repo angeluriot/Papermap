@@ -89,7 +89,7 @@
 			"type": "RandomizedControlledTrial",
 			"on": "Humans",
 			"citations": {
-				"count": 66,
+				"count": 79,
 				"critics": false
 			},
 			"sample_size": 290,
