@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit';
 import type { PageServerLoad, EntryGenerator } from './$types';
 import { constants as C } from '$lib/server/utils';
 import { promises as fs } from 'fs';
@@ -6,14 +5,12 @@ import crypto from 'crypto';
 import sharp from 'sharp';
 import { join } from 'path';
 import ejs from 'ejs';
-import { import_map } from '$lib/server/data/map';
+import { import_map, map_files } from '$lib/server/data/map';
 
 
 export const prerender = true;
 export const ssr = true;
 export const csr = true;
-
-const data_modules = import.meta.glob('/src/lib/server/jsons/maps/*/question.json');
 
 
 export const load: PageServerLoad = async ({ params }: { params: { map: string } }) => {
@@ -40,8 +37,8 @@ export const load: PageServerLoad = async ({ params }: { params: { map: string }
 
 
 export const entries: EntryGenerator = () => {
-	let a = Object.keys(data_modules).map((path) => {
-		const match = path.match('/src/lib/server/jsons/maps/(.+)/question.json');
+	return Object.keys(map_files).map((path) => {
+		const match = path.match('/src/lib/server/jsons/maps/(.+).json');
 
 		if (!match)
 			throw new Error(`Invalid path: ${path}`);
@@ -50,6 +47,4 @@ export const entries: EntryGenerator = () => {
 			map: match[1]
 		};
 	});
-	console.log(a);
-	return a;
 };

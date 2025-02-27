@@ -6,7 +6,7 @@ import type { DataPaper } from '$lib/types/paper';
 import Journals from '$lib/server/jsons/journals/data.json';
 
 
-const data_modules = import.meta.glob('/src/lib/server/jsons/maps/*.json');
+export const map_files = import.meta.glob('/src/lib/server/jsons/maps/*.json');
 
 
 export function import_journals(map: DataMap | undefined = undefined): { [id: string]: Journal }
@@ -28,10 +28,10 @@ export async function import_datamap(id: string): Promise<DataMap>
 {
 	const file_path = `/src/lib/server/jsons/maps/${id}.json`;
 
-	if (!data_modules[file_path])
+	if (!map_files[file_path])
 		throw new NotFoundError(`Map not found: ${id}`);
 
-	return (await data_modules[file_path]() as any).default;
+	return (await map_files[file_path]() as any).default;
 }
 
 
