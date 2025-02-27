@@ -271,7 +271,8 @@ export function score_paper(map: DataMap, journals: Journal | undefined, paper: 
 		citations: score_citations(paper),
 		year: score_year(paper),
 		conflict_of_interest: score_conflict_of_interest(paper),
-		overall: 0.0
+		retracted: score_retracted(paper),
+		overall: 0.0,
 	};
 
 	let type = score_type(map, paper);

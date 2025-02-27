@@ -8,6 +8,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_OPTIONS: --max_old_space_size=4096
+
     steps:
     - name: Deploy
       uses: appleboy/ssh-action@master
