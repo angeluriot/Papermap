@@ -22,7 +22,12 @@
 		const response = await fetch(`/maps/${data.map}/edit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ comment: 'test comment', edits: { 0: edit_test } }),
+			body: JSON.stringify({
+				username: 'angeluriot',
+				contact: 'test contact',
+				comment: 'test comment',
+				edits: { deleted: [], edited: { 0: edit_test }, added: [] }
+			}),
 		});
 
 		if (!response.ok)

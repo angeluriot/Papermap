@@ -4,12 +4,13 @@ import { promises as fs } from 'fs';
 import { join } from 'path';
 import { create_pull_request } from '$lib/server/github';
 import { PRLabel } from '$lib/types';
-import { edit_map } from '$lib/server/data/edit';
+import { edit_map } from './edit';
+import type { PostParams, PostRequest } from './types';
 
 
-export async function POST({ params, request }: { params: { map: string }, request: Request }): Promise<Response>
+export async function POST({ params, request }: { params: PostParams, request: Request }): Promise<Response>
 {
-	const data = await request.json();
+	const data = await request.json() as PostRequest;
 
 	console.log('Data:', data.comment, data.edits);
 	console.log('Used path:', params.map);
@@ -28,7 +29,7 @@ export async function POST({ params, request }: { params: { map: string }, reque
 		new_content: JSON.stringify(edited_map, null, '\t') + '\n',
 		commit_message: 'Update question.json',
 		title: 'Update question.json',
-		description: 'Test description - ' + data.comment,
+		description: 'Test description' + (data.username ? ` - @${data.username}` : '') + (data.comment ? ` - ${data.comment}` : '') + (data.contact ? ` - ${data.contact}` : ''),
 		label: PRLabel.MapChange,
 	});
 
