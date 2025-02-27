@@ -97,7 +97,8 @@
 				"value": 0.001,
 				"less_than": true
 			},
-			"conflict_of_interest": false
+			"conflict_of_interest": false,
+			"retracted": false
 		}
 	]
 }

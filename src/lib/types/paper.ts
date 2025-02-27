@@ -66,6 +66,7 @@ export interface DataPaper
 		less_than: boolean,
 	};
 	conflict_of_interest: boolean;
+	retracted: boolean;
 }
 
 
@@ -81,6 +82,7 @@ export interface PaperScore
 	sample_size?: number;
 	p_value?: number;
 	conflict_of_interest: number;
+	retracted: number;
 	overall: number;
 }
 

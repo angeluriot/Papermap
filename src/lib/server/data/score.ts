@@ -71,6 +71,7 @@ const COEFS = {
 	sample_size: 1,
 	p_value: 1,
 	conflict_of_interest: 10,
+	retracted: 10,
 }
 
 
@@ -195,6 +196,12 @@ function score_conflict_of_interest(paper: DataPaper): number
 }
 
 
+function score_retracted(paper: DataPaper): number
+{
+	return paper.retracted ? 0.0 : 1.0;
+}
+
+
 function calculate_overall(map: DataMap, score: PaperScore): number
 {
 	let numerator = 0.0;
@@ -243,6 +250,12 @@ function calculate_overall(map: DataMap, score: PaperScore): number
 	{
 		numerator += score.conflict_of_interest * COEFS.conflict_of_interest;
 		denominator += COEFS.conflict_of_interest;
+	}
+
+	if (score.retracted < 0.5)
+	{
+		numerator += score.retracted * COEFS.retracted;
+		denominator += COEFS.retracted;
 	}
 
 	return numerator / denominator;
