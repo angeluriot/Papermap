@@ -2,25 +2,31 @@
 	import { onMount } from 'svelte';
 	import { constants as C } from '$lib/client/utils';
 	import type { PageProps } from './$types';
+	import { paper_to_datapaper, type DataPaper } from '$lib/types/paper';
 
 	let { data }: PageProps = $props();
 
 	const page_url = `${C.BASE_URL}/maps/${data.map}`;
 	const image_url = `${C.BASE_URL}/images/${data.map}.jpg?v=${data.image_hash}`;
+	let edit_test = paper_to_datapaper(data.data.papers[0]);
+	edit_test.citations.count = 79;
 
 	onMount(() => {
 		console.log(data.data);
+		console.log(data.data.papers[0].score);
 		console.log(`Current map: ${data.map}`);
 	});
 
-	async function edit(edits: string[]) {
+	async function edit(edits: string[])
+	{
 		const response = await fetch(`/maps/${data.map}/edit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ edits: edits }),
+			body: JSON.stringify({ comment: 'test comment', edits: { 0: edit_test } }),
 		});
 
-		if (!response.ok) {
+		if (!response.ok)
+		{
 			console.error('Failed to edit:', response.statusText);
 			return;
 		}

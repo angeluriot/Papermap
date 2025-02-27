@@ -24,10 +24,22 @@ METRIC_COEFS = {
 	'alt': 0.5, # Altmetric (Average News Mentions)
 }
 
+DATA_DIR = 'src/lib/server/jsons/journals'
 SELF_CITATION_THRESHOLD = 10 # The self-citation threshold (in %) before applying a penalty
 EXP_CURVE_STRENGTH = 3 # The strength of the exponential curve
 MIN_VALUES = 10 # The minimum number of values required to compute a score
 NONE_PENALTY = 0.1 # The penalty for missing metrics
+
+
+# Recursively clean None values
+def remove_none(value):
+	if isinstance(value, dict):
+		return {k: remove_none(v) for k, v in value.items() if v is not None}
+
+	if isinstance(value, list):
+		return [remove_none(x) for x in value if x is not None]
+
+	return value
 
 
 # Compute the ratio of a value between a min and a max
@@ -101,15 +113,15 @@ def compute_scores(metric_values: dict[str, int | float], metric: str) -> dict[s
 # Compute the scores of the journals
 def main() -> None:
 
-	if os.path.exists('./data/journals/data.json'):
-		os.remove('./data/journals/data.json')
+	if os.path.exists(os.path.join(DATA_DIR, 'data.json')):
+		os.remove(os.path.join(DATA_DIR, 'data.json'))
 
 	# === Load the raw data === #
 
-	with open('./data/journals/raw_data.json', 'r', encoding='utf-8') as file:
+	with open(os.path.join(DATA_DIR, 'raw_data.json'), 'r', encoding='utf-8') as file:
 		data = json.load(file)
 
-	journals: list[Journal] = {journal['id']: journal for journal in data['journals']}
+	journals: dict[str, Journal] = {journal['id']: journal for journal in data['journals']}
 	SCOPES: dict[str, list[str]] = data['scopes']
 	SCOPES_LIST: list[str] = list(SCOPES.keys()) + [scope for scopes in SCOPES.values() for scope in scopes]
 
@@ -213,15 +225,22 @@ def main() -> None:
 	# Add missing scores
 	for journal in journals.values():
 		if 'scores' not in journal:
-			journal['scores'] = {metric: None for metric in ['oa'] + list(METRIC_COEFS.keys())}
+			journal['scores'] = {}
 
 	# Sort by overall rank
-	journals_list = sorted(list(journals.values()), key=lambda journal: journal['scores']['oa'] if journal['scores']['oa'] is not None else -1, reverse=True)
+	journals_list = sorted(
+		list(journals.values()),
+		key=lambda journal: journal['scores']['oa'] if 'oa' in journal['scores'] and journal['scores']['oa'] is not None else -1,
+		reverse=True,
+	)
+
+	# To dict
+	journals_list = {journal['id']: journal for journal in journals_list}
 
 	# === Save === #
 
-	with open('./data/journals/data.json', 'w', encoding='utf-8') as file:
-		json.dump(journals_list, file, ensure_ascii=False)
+	with open(os.path.join(DATA_DIR, 'data.json'), 'w', encoding='utf-8') as file:
+		file.write(json.dumps(remove_none(journals_list), ensure_ascii=False, indent='\t') + '\n')
 
 
 if __name__ == '__main__':

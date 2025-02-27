@@ -6,6 +6,7 @@ import crypto from 'crypto';
 import sharp from 'sharp';
 import { join } from 'path';
 import ejs from 'ejs';
+import { import_map } from '$lib/server/data/map';
 
 
 export const prerender = true;
@@ -16,12 +17,7 @@ const data_modules = import.meta.glob('/src/lib/server/jsons/maps/*/question.jso
 
 
 export const load: PageServerLoad = async ({ params }: { params: { map: string } }) => {
-	const file_path = `/src/lib/server/jsons/maps/${params.map}/question.json`;
-
-	if (!data_modules[file_path])
-		throw error(404, 'Not found');
-
-	const json_data = await data_modules[file_path]() as { default: any };
+	const map = await import_map(params.map);
 	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
@@ -37,7 +33,7 @@ export const load: PageServerLoad = async ({ params }: { params: { map: string }
 
 	return {
 		map: params.map,
-		data: json_data.default,
+		data: map,
 		image_hash,
 	};
 };
