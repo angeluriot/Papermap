@@ -28,6 +28,17 @@ export async function import_journals(map: DataMap | undefined = undefined): Pro
 }
 
 
+export async function import_group_title(group: string): Promise<string>
+{
+	const file_path = `/src/lib/server/jsons/maps/${group}/_init_.json`;
+
+	if (!map_files[file_path])
+		throw new NotFoundError(`Group not found: ${group}`);
+
+	return (await map_files[file_path]() as any).default.title;
+}
+
+
 export async function import_datamap(group: string, id: string): Promise<DataMap>
 {
 	const file_path = `/src/lib/server/jsons/maps/${group}/${id}.json`;
@@ -53,4 +64,31 @@ export async function import_map(group: string, id: string): Promise<{ map: Map,
 		},
 		journals
 	};
+}
+
+
+export async function import_maps(): Promise<{ [group: string]: { name: string, maps: { name: string, url: string }[] } }>
+{
+	let maps: { [group: string]: { name: string, maps: { name: string, url: string }[] } } = {};
+
+	for (const path of Object.keys(map_files))
+	{
+		const match = path.match('/src/lib/server/jsons/maps/(.+)/(.+).json');
+
+		if (!match || match[2].startsWith('_'))
+			continue;
+
+		const group = match[1];
+		const map = match[2];
+		const group_name = await import_group_title(group);
+		const map_name = (await import_datamap(group, map)).question;
+		const url = `${C.BASE_URL}/maps/${group}/${map}`;
+
+		if (!maps[group])
+			maps[group] = { name: group_name, maps: [] };
+
+		maps[group].maps.push({ name: map_name, url });
+	}
+
+	return maps;
 }

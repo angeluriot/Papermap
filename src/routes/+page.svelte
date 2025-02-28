@@ -1,5 +1,13 @@
 <script lang="ts">
 	import { Label } from "$lib/types";
+	import { onMount } from "svelte";
+	import type { PageProps } from "./$types";
+
+	let { data }: PageProps = $props();
+
+	onMount(() => {
+		console.log(data.maps);
+	});
 
 	async function edit()
 	{
