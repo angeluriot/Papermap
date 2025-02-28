@@ -6,20 +6,18 @@
 
 	let { data }: PageProps = $props();
 
-	const page_url = `${C.BASE_URL}/maps/${data.map}`;
-	const image_url = `${C.BASE_URL}/images/${data.map}.jpg?v=${data.image_hash}`;
-	let edit_test = paper_to_datapaper(data.data.papers[0]);
+	const page_url = `${C.BASE_URL}/maps/${data.map.id}`;
+	const image_url = `${C.BASE_URL}/images/${data.map.id}.jpg?v=${data.image_hash}`;
+	let edit_test = paper_to_datapaper(data.map.papers[0]);
 	edit_test.citations.count = 79;
 
 	onMount(() => {
-		console.log(data.data);
-		console.log(data.data.papers[0].score);
-		console.log(`Current map: ${data.map}`);
+		console.log(data);
 	});
 
-	async function edit(edits: string[])
+	async function edit()
 	{
-		const response = await fetch(`/maps/${data.map}/edit`, {
+		const response = await fetch(`/maps/${data.map.id}/edit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
@@ -36,8 +34,8 @@
 			return;
 		}
 
-		const result = await response.json();
-		console.log('Edit successful:', result);
+		const result = await response.json() as { pr_url: string };
+		console.log('Edit successful:', result.pr_url);
 	}
 </script>
 
@@ -65,7 +63,7 @@
 
 <h1>Map {data.map}</h1>
 
-<button onclick={() => edit(['edit_1', 'edit_2', 'edit_3'])}>button</button>
+<button onclick={() => edit()}>button</button>
 
 <style>
 </style>

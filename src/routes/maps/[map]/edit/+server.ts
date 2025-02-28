@@ -3,7 +3,7 @@ import { constants as C } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import { create_pull_request } from '$lib/server/github';
-import { PRLabel } from '$lib/types';
+import { Label } from '$lib/types';
 import { edit_map } from './edit';
 import type { PostParams, PostRequest } from './types';
 
@@ -11,10 +11,6 @@ import type { PostParams, PostRequest } from './types';
 export async function POST({ params, request }: { params: PostParams, request: Request }): Promise<Response>
 {
 	const data = await request.json() as PostRequest;
-
-	console.log('Data:', data.comment, data.edits);
-	console.log('Used path:', params.map);
-
 	const edited_map = await edit_map(params.map, data.edits);
 
 	if (C.DEV)
@@ -27,10 +23,10 @@ export async function POST({ params, request }: { params: PostParams, request: R
 		branch_name: `edit/${params.map.replace('_', '-')}`,
 		file_path: `src/lib/server/jsons/maps/${params.map}.json`,
 		new_content: JSON.stringify(edited_map, null, '\t') + '\n',
-		commit_message: 'Update question.json',
-		title: 'Update question.json',
+		commit_message: 'Test commit message',
+		title: 'Test request',
 		description: 'Test description' + (data.username ? ` - @${data.username}` : '') + (data.comment ? ` - ${data.comment}` : '') + (data.contact ? ` - ${data.contact}` : ''),
-		label: PRLabel.MapChange,
+		label: Label.MapChange,
 	});
 
 	return json({ pr_url });

@@ -39,14 +39,17 @@ export async function import_datamap(id: string): Promise<DataMap>
 }
 
 
-export async function import_map(id: string): Promise<Map>
+export async function import_map(id: string): Promise<{ map: Map, journals: { [id: string]: Journal } }>
 {
 	const data = await import_datamap(id);
 	const journals = await import_journals(data);
 
 	return {
-		...data,
-		id,
-		papers: data.papers.map((paper: DataPaper) => score_paper(data, paper.journal.id ? journals[paper.journal.id] : undefined, paper))
+		map: {
+			...data,
+			id,
+			papers: data.papers.map((paper: DataPaper) => score_paper(data, paper.journal.id ? journals[paper.journal.id] : undefined, paper))
+		},
+		journals
 	};
 }

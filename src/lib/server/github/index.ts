@@ -1,6 +1,6 @@
 import { get_random_string } from '$lib/server/utils';
 import * as api from './api';
-import type { PRLabel } from '$lib/types';
+import type { Label } from '$lib/types';
 
 
 export async function create_pull_request(params: {
@@ -10,7 +10,7 @@ export async function create_pull_request(params: {
 	commit_message: string,
 	title: string,
 	description: string,
-	label: PRLabel,
+	label: Label,
 }): Promise<string>
 {
 	const id = get_random_string();
@@ -21,7 +21,7 @@ export async function create_pull_request(params: {
 	try
 	{
 		await api.update_file(client, branch, params.file_path, params.new_content, params.commit_message);
-		return await api.create_pull_request(client, branch, params.title, params.description, params.label.toString());
+		return await api.create_pull_request(client, branch, params.title, params.description, params.label);
 	}
 
 	catch (error: any)
@@ -32,8 +32,8 @@ export async function create_pull_request(params: {
 }
 
 
-export async function create_issue(title: string, description: string, label: PRLabel): Promise<string>
+export async function create_issue(title: string, description: string, label: Label): Promise<string>
 {
 	const client = api.init_client();
-	return await api.create_issue(client, title, description, label.toString());
+	return await api.create_issue(client, title, description, label);
 }

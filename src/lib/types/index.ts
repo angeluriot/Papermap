@@ -1,4 +1,4 @@
-export enum PRLabel
+export enum Label
 {
 	JournalChange = 'journal change',
 	JournalDeletion = 'journal deletion',
@@ -6,4 +6,5 @@ export enum PRLabel
 	MapChange = 'map change',
 	MapDeletion = 'map deletion',
 	NewMap = 'new map',
+	OtherRequest = 'other request',
 }

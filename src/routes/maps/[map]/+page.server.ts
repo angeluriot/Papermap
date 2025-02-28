@@ -14,23 +14,26 @@ export const csr = true;
 
 
 export const load: PageServerLoad = async ({ params }: { params: { map: string } }) => {
-	const map = await import_map(params.map);
+	const { map, journals } = await import_map(params.map);
 	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
 	const svg = ejs.render(template, {
 		font_data,
+		map,
+		journals,
 	});
 
 	const image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
 	const jpeg_buffer = await sharp(Buffer.from(svg)).jpeg({ quality: 95, progressive: true, chromaSubsampling: '4:4:4' }).toBuffer();
+	const png_buffer = await sharp(Buffer.from(svg)).png().toBuffer();
 
-	const image_path = join(C.IMAGES_DIR, `${params.map}.jpg`);
-	await fs.writeFile(image_path, jpeg_buffer);
+	await fs.writeFile(join(C.IMAGES_DIR, `${params.map}.jpg`), jpeg_buffer);
+	await fs.writeFile(join(C.IMAGES_DIR, `${params.map}.png`), png_buffer);
 
 	return {
-		map: params.map,
-		data: map,
+		map,
+		journals,
 		image_hash,
 	};
 };
