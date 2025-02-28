@@ -13,8 +13,8 @@ export const ssr = true;
 export const csr = true;
 
 
-export const load: PageServerLoad = async ({ params }: { params: { map: string } }) => {
-	const { map, journals } = await import_map(params.map);
+export const load: PageServerLoad = async ({ params }: { params: { group: string, map: string } }) => {
+	const { map, journals } = await import_map(params.group, params.map);
 	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
@@ -27,9 +27,12 @@ export const load: PageServerLoad = async ({ params }: { params: { map: string }
 	const image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
 	const jpeg_buffer = await sharp(Buffer.from(svg)).jpeg({ quality: 95, progressive: true, chromaSubsampling: '4:4:4' }).toBuffer();
 	const png_buffer = await sharp(Buffer.from(svg)).png().toBuffer();
+	const dir = join(C.IMAGES_DIR, params.group);
 
-	await fs.writeFile(join(C.IMAGES_DIR, `${params.map}.jpg`), jpeg_buffer);
-	await fs.writeFile(join(C.IMAGES_DIR, `${params.map}.png`), png_buffer);
+	await fs.mkdir(dir, { recursive: true });
+
+	await fs.writeFile(join(dir, `${params.map}.jpg`), jpeg_buffer);
+	await fs.writeFile(join(dir, `${params.map}.png`), png_buffer);
 
 	return {
 		map,
@@ -40,14 +43,20 @@ export const load: PageServerLoad = async ({ params }: { params: { map: string }
 
 
 export const entries: EntryGenerator = () => {
-	return Object.keys(map_files).map((path) => {
-		const match = path.match('/src/lib/server/jsons/maps/(.+).json');
+	let paths: { group: string, map: string }[] = [];
 
-		if (!match)
-			throw new Error(`Invalid path: ${path}`);
+	for (const path of Object.keys(map_files))
+	{
+		const match = path.match('/src/lib/server/jsons/maps/(.+)/(.+).json');
 
-		return {
-			map: match[1]
-		};
-	});
+		if (!match || match[2].startsWith('_'))
+			continue;
+
+		paths.push({
+			group: match[1],
+			map: match[2]
+		});
+	}
+
+	return paths;
 };

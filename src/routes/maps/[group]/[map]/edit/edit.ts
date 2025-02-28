@@ -4,9 +4,9 @@ import type { Edits } from './types';
 import type { DataMap } from '$lib/types/map';
 
 
-export async function edit_map(id: string, edits: Edits): Promise<DataMap>
+export async function edit_map(group: string, id: string, edits: Edits): Promise<DataMap>
 {
-	const map = await import_datamap(id);
+	const map = await import_datamap(group, id);
 	let papers: DataPaper[] = [];
 
 	for (let i = 0; i < map.papers.length; i++)

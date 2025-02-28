@@ -1,0 +1,118 @@
+{
+	"question": "🤯 What is the effect of sexual education programs on preventing child sexual abuse?",
+	"detailed_question": "What is the risk-benefit balance of sexual education programs given to children for preventing child sexual abuse?",
+	"answers": {
+		"positive": {
+			"text": "Positive",
+			"group": "positive",
+			"color": "Green",
+			"neutral": false,
+			"legend": true
+		},
+		"slightly_positive": {
+			"text": "Slightly positive",
+			"group": "positive",
+			"color": "Green1H",
+			"neutral": false,
+			"legend": false
+		},
+		"positive_unlike_literature": {
+			"text": "Positive unlike literature",
+			"group": "positive",
+			"color": "Green1H",
+			"neutral": false,
+			"legend": false
+		},
+		"positive_but_mixed_results": {
+			"text": "Positive but mixed results",
+			"group": "positive",
+			"color": "Green1H",
+			"neutral": false,
+			"legend": false
+		},
+		"no_effect": {
+			"text": "No effect",
+			"group": "neutral",
+			"color": "Grey",
+			"neutral": true,
+			"legend": true
+		},
+		"negative_but_mixed_results": {
+			"text": "Negative but mixed results",
+			"group": "negative",
+			"color": "Red1H",
+			"neutral": false,
+			"legend": false
+		},
+		"negative_unlike_literature": {
+			"text": "Negative unlike literature",
+			"group": "negative",
+			"color": "Red1H",
+			"neutral": false,
+			"legend": false
+		},
+		"slightly_negative": {
+			"text": "Slightly negative",
+			"group": "negative",
+			"color": "Red1H",
+			"neutral": false,
+			"legend": false
+		},
+		"negative": {
+			"text": "Negative",
+			"group": "negative",
+			"color": "Red",
+			"neutral": false,
+			"legend": true
+		}
+	},
+	"type": {
+		"no_causality": false,
+		"no_random": false,
+		"no_blind": true,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"no_p_value": false,
+	"papers": [
+		{
+			"id": "deaf2c4e05c4e2d896d10fe2753e49ea643705b7",
+			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
+			"authors": [
+				"David A. Wolfe",
+				"Tracy Macpherson",
+				"Ronald Blount",
+				"Vicky V. Wolfe"
+			],
+			"journal": {
+				"status": "Found",
+				"id": "24451"
+			},
+			"year": 1986,
+			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
+			"results": {
+				"consensus": "slightly_positive",
+				"conclusion": "positive",
+				"indirect": true
+			},
+			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse.",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"citations": {
+				"count": 66,
+				"critics": false
+			},
+			"sample_size": 290,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": false,
+			"retracted": false
+		}
+	]
+}

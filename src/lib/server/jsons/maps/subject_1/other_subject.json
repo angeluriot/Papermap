@@ -1,5 +1,5 @@
 {
-	"question": "What is the effect of sexual education programs on preventing child sexual abuse?",
+	"question": "🤯 What is the effect of sexual education programs on preventing child sexual abuse?",
 	"detailed_question": "What is the risk-benefit balance of sexual education programs given to children for preventing child sexual abuse?",
 	"answers": {
 		"positive": {
@@ -8,6 +8,13 @@
 			"color": "Green",
 			"neutral": false,
 			"legend": true
+		},
+		"slightly_positive": {
+			"text": "Slightly positive",
+			"group": "positive",
+			"color": "Green1H",
+			"neutral": false,
+			"legend": false
 		},
 		"positive_unlike_literature": {
 			"text": "Positive unlike literature",
@@ -39,6 +46,13 @@
 		},
 		"negative_unlike_literature": {
 			"text": "Negative unlike literature",
+			"group": "negative",
+			"color": "Red1H",
+			"neutral": false,
+			"legend": false
+		},
+		"slightly_negative": {
+			"text": "Slightly negative",
 			"group": "negative",
 			"color": "Red1H",
 			"neutral": false,
@@ -81,7 +95,7 @@
 			"year": 1986,
 			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
 			"results": {
-				"consensus": "positive",
+				"consensus": "slightly_positive",
 				"conclusion": "positive",
 				"indirect": true
 			},

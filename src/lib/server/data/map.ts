@@ -8,7 +8,7 @@ import { promises as fs } from 'fs';
 import { constants as C } from '$lib/server/utils';
 
 
-export const map_files = import.meta.glob('/src/lib/server/jsons/maps/*.json');
+export const map_files = import.meta.glob('/src/lib/server/jsons/maps/**/*.json');
 
 
 export async function import_journals(map: DataMap | undefined = undefined): Promise<{ [id: string]: Journal }>
@@ -28,25 +28,26 @@ export async function import_journals(map: DataMap | undefined = undefined): Pro
 }
 
 
-export async function import_datamap(id: string): Promise<DataMap>
+export async function import_datamap(group: string, id: string): Promise<DataMap>
 {
-	const file_path = `/src/lib/server/jsons/maps/${id}.json`;
+	const file_path = `/src/lib/server/jsons/maps/${group}/${id}.json`;
 
-	if (!map_files[file_path])
-		throw new NotFoundError(`Map not found: ${id}`);
+	if (id.startsWith('_') || !map_files[file_path])
+		throw new NotFoundError(`Map not found: ${group}/${id}`);
 
 	return (await map_files[file_path]() as any).default;
 }
 
 
-export async function import_map(id: string): Promise<{ map: Map, journals: { [id: string]: Journal } }>
+export async function import_map(group: string, id: string): Promise<{ map: Map, journals: { [id: string]: Journal } }>
 {
-	const data = await import_datamap(id);
+	const data = await import_datamap(group, id);
 	const journals = await import_journals(data);
 
 	return {
 		map: {
 			...data,
+			group,
 			id,
 			papers: data.papers.map((paper: DataPaper) => score_paper(data, paper.journal.id ? journals[paper.journal.id] : undefined, paper))
 		},

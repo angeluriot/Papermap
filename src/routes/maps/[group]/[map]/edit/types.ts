@@ -3,6 +3,7 @@ import type { DataPaper } from "$lib/types/paper";
 
 export interface PostParams
 {
+	group: string;
 	map: string;
 }
 

@@ -17,7 +17,7 @@
 
 	async function edit()
 	{
-		const response = await fetch(`/maps/${data.map.id}/edit`, {
+		const response = await fetch(`/maps/${data.map.group}/${data.map.id}/edit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({

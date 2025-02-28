@@ -7,4 +7,7 @@ export interface PostRequest
 	contact?: string;
 	comment?: string;
 	type: Label;
+	group?: string;
+	map?: string;
+	journal?: string;
 }

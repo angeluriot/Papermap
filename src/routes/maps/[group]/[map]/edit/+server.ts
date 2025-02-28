@@ -11,17 +11,17 @@ import type { PostParams, PostRequest } from './types';
 export async function POST({ params, request }: { params: PostParams, request: Request }): Promise<Response>
 {
 	const data = await request.json() as PostRequest;
-	const edited_map = await edit_map(params.map, data.edits);
+	const edited_map = await edit_map(params.group, params.map, data.edits);
 
 	if (C.DEV)
 	{
-		await fs.writeFile(join(C.LIB_DIR, `server/jsons/maps/${params.map}.json`), JSON.stringify(edited_map, null, '\t') + '\n');
+		await fs.writeFile(join(C.LIB_DIR, `server/jsons/maps/${params.group}/${params.map}.json`), JSON.stringify(edited_map, null, '\t') + '\n');
 		return json({ pr_url: '' });
 	}
 
 	const pr_url = await create_pull_request({
 		branch_name: `edit/${params.map.replace('_', '-')}`,
-		file_path: `src/lib/server/jsons/maps/${params.map}.json`,
+		file_path: `src/lib/server/jsons/maps/${params.group}/${params.map}.json`,
 		new_content: JSON.stringify(edited_map, null, '\t') + '\n',
 		commit_message: 'Test commit message',
 		title: 'Test request',

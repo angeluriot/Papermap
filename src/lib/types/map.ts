@@ -1,4 +1,4 @@
-import type { DataPaper, Paper, PaperType, StudyOn } from './paper';
+import type { DataPaper, Paper } from './paper';
 import type { Color } from '$lib/colors';
 
 
@@ -37,6 +37,7 @@ export interface DataMap extends BaseMap
 
 export interface Map extends BaseMap
 {
+	group: string;
 	id: string;
 	papers: Paper[];
 }
