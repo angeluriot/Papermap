@@ -8,6 +8,7 @@ export class MissingEnvError extends Error
 	}
 }
 
+
 export class GitHubAPIError extends Error
 {
 	constructor(message: string)
@@ -17,6 +18,7 @@ export class GitHubAPIError extends Error
 		Object.setPrototypeOf(this, GitHubAPIError.prototype);
 	}
 }
+
 
 export class NotFoundError extends Error
 {

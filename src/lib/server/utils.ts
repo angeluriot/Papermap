@@ -35,9 +35,9 @@ export function get_random_string(length: number = 16): string
 }
 
 
-export function sleep(ms: number): Promise<void>
+export function sleep(seconds: number): Promise<void>
 {
-	return new Promise(resolve => setTimeout(resolve, ms));
+	return new Promise(resolve => setTimeout(resolve, Math.round(seconds * 1000)));
 }
 
 

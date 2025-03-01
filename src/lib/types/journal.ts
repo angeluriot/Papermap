@@ -8,7 +8,8 @@ export enum JournalType
 export interface Journal
 {
 	id: string;
-	title: string;
+	titles: string[];
+	issns: string[];
 	link?: string;
 	publisher?: string;
 	scopes: string[];
