@@ -6,8 +6,9 @@
 
 	let { data }: PageProps = $props();
 
-	const page_url = `${C.BASE_URL}/maps/${data.map.id}`;
-	const image_url = `${C.BASE_URL}/images/${data.map.id}.jpg?v=${data.image_hash}`;
+	const route = `maps/${data.map.group}/${data.map.id}`;
+	const page_url = `${C.BASE_URL}/${route}`;
+	const image_url = `${page_url}/image.jpg?v=${data.image_hash}`;
 	let edit_test = paper_to_datapaper(data.map.papers[0]);
 	edit_test.citations.count = 79;
 
@@ -17,7 +18,7 @@
 
 	async function edit()
 	{
-		const response = await fetch(`/maps/${data.map.group}/${data.map.id}/edit`, {
+		const response = await fetch(`/${route}/edit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
