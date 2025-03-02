@@ -1,4 +1,5 @@
 import { InvalidRequestError, TooManyRequestsError } from '$lib/server/errors';
+import { building } from '$app/environment'
 import { error as http_error } from '@sveltejs/kit';
 import { RateLimiterMemory } from 'rate-limiter-flexible';
 import { constants as C } from '$lib/server/utils';
@@ -28,7 +29,7 @@ export async function handle({ event, resolve })
 {
 	try
 	{
-		if (C.DEV)
+		if (C.DEV || building)
 			return resolve(event);
 
 		if (!event.route.id)
