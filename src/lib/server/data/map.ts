@@ -1,10 +1,11 @@
 import { score_paper } from '$lib/server/data/score';
-import { NotFoundError } from '$lib/server/errors';
+import { InvalidInternalDataError, NotFoundError } from '$lib/server/errors';
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
 import type { DataPaper } from '$lib/types/paper';
 import { constants as C } from '$lib/server/utils';
 import { import_journals } from './journal';
+import { validate_map } from './validate';
 
 
 export const map_files = import.meta.glob('/src/lib/server/jsons/maps/**/*.json');
@@ -28,7 +29,19 @@ export async function import_datamap(group: string, id: string): Promise<DataMap
 	if (id.startsWith('_') || !map_files[file_path])
 		throw new NotFoundError(`Map not found: ${group}/${id}`);
 
-	return (await map_files[file_path]() as any).default;
+	const map = (await map_files[file_path]() as any).default;
+
+	try
+	{
+		validate_map(map);
+	}
+
+	catch (error: any)
+	{
+		throw new InvalidInternalDataError(`Invalid map ${group}/${id}: ${error?.message}`);
+	}
+
+	return map;
 }
 
 

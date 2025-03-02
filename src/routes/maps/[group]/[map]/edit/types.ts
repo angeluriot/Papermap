@@ -11,7 +11,7 @@ export interface PostParams
 export interface Edits
 {
 	deleted: number[];
-	edited: { [i: number]: DataPaper };
+	edited: { [i: string]: DataPaper };
 	added: DataPaper[];
 }
 

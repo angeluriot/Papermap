@@ -33,7 +33,7 @@
 		"no_effect": {
 			"text": "No effect",
 			"group": "neutral",
-			"color": "Grey",
+			"color": "Gray",
 			"neutral": true,
 			"legend": true
 		},

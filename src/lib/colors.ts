@@ -1,22 +1,32 @@
 export enum Color
 {
-	Red = 'Red',
-	Blue = 'Blue',
 	Green = 'Green',
+	Green1H = 'Green1H',
+	Gray = 'Gray',
+	Red1H = 'Red1H',
+	Red = 'Red',
 }
 
 
 export const Colors = {
-	'Red': {
-		fill: '#f44336',
-		stroke: '#d32f2f',
+	[Color.Green]: {
+		fill: '#00FF00',
+		stroke: '#000000',
 	},
-	'Blue': {
-		fill: '#2196F3',
-		stroke: '#1976D2',
+	[Color.Green1H]: {
+		fill: '#00FF00',
+		stroke: '#000000',
 	},
-	'Green': {
-		fill: '#4CAF50',
-		stroke: '#388E3C',
+	[Color.Gray]: {
+		fill: '#808080',
+		stroke: '#000000',
+	},
+	[Color.Red1H]: {
+		fill: '#FF0000',
+		stroke: '#000000',
+	},
+	[Color.Red]: {
+		fill: '#FF0000',
+		stroke: '#000000',
 	},
 }

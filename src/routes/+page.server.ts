@@ -7,7 +7,8 @@ export const ssr = true;
 export const csr = true;
 
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async () =>
+{
 	return {
 		maps: await import_maps()
 	};

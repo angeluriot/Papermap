@@ -6,6 +6,7 @@ import sharp from 'sharp';
 import { join } from 'path';
 import ejs from 'ejs';
 import { import_map, map_files } from '$lib/server/data/map';
+import { validate_params } from './validate';
 
 
 export const prerender = true;
@@ -13,7 +14,9 @@ export const ssr = true;
 export const csr = true;
 
 
-export const load: PageServerLoad = async ({ params }: { params: { group: string, map: string } }) => {
+export const load: PageServerLoad = async ({ params }: { params: { group: string, map: string } }) =>
+{
+	validate_params(params);
 	const { map, journals } = await import_map(params.group, params.map);
 	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
@@ -42,7 +45,8 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 };
 
 
-export const entries: EntryGenerator = () => {
+export const entries: EntryGenerator = () =>
+{
 	let paths: { group: string, map: string }[] = [];
 
 	for (const path of Object.keys(map_files))

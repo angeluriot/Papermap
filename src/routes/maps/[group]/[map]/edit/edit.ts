@@ -14,8 +14,8 @@ export async function edit_map(group: string, id: string, edits: Edits): Promise
 		if (edits.deleted.includes(i))
 			continue;
 
-		if (edits.edited[i])
-			papers.push(edits.edited[i]);
+		if (edits.edited[`${i}`])
+			papers.push(edits.edited[`${i}`]);
 		else
 			papers.push(map.papers[i]);
 	}

@@ -29,3 +29,25 @@ export class NotFoundError extends Error
 		Object.setPrototypeOf(this, NotFoundError.prototype);
 	}
 }
+
+
+export class InvalidDataError extends Error
+{
+	constructor(message: string)
+	{
+		super(message);
+		this.name = 'InvalidDataError';
+		Object.setPrototypeOf(this, InvalidDataError.prototype);
+	}
+}
+
+
+export class InvalidInternalDataError extends Error
+{
+	constructor(message: string)
+	{
+		super(message);
+		this.name = 'InvalidInternalDataError';
+		Object.setPrototypeOf(this, InvalidInternalDataError.prototype);
+	}
+}

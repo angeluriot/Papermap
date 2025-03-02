@@ -8,6 +8,7 @@ interface BaseMap
 	detailed_question: string;
 	answers: {
 		[id: string]: {
+			text: string,
 			group: string,
 			color: Color,
 			neutral: boolean,
