@@ -41,12 +41,9 @@ export const paper_schema = z.object({
 }).strict();
 
 
-export function validate_paper(paper: DataPaper, safe: boolean): boolean | void
+export function validate_paper(paper: DataPaper): boolean | void
 {
 	const result = paper_schema.safeParse(paper);
-
-	if (safe)
-		return result.success;
 
 	if (!result.success)
 		throw new InvalidDataError(result.error.errors[0].message);

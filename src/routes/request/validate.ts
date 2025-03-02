@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { InvalidDataError } from '$lib/server/errors';
 import { Label } from '$lib/types';
+import type { PostRequest } from './types';
 
 
 const request_schema = z.object({
@@ -14,7 +15,7 @@ const request_schema = z.object({
 }).strict();
 
 
-export function validate_request(request: any): void
+export function validate_request(request: PostRequest): void
 {
 	const result = request_schema.safeParse(request);
 

@@ -1,9 +1,10 @@
 import { z } from 'zod';
 import { InvalidDataError } from '$lib/server/errors';
 import { paper_schema } from '$lib/server/data/validate';
+import type { PostRequest } from './types';
 
 
-export function validate_request(request: any, nb_papers: number): void
+export function validate_request(request: PostRequest, nb_papers: number): void
 {
 	const request_schema = z.object({
 		username: z.string().optional(),
@@ -24,15 +25,7 @@ export function validate_request(request: any, nb_papers: number): void
 	if (!result.success)
 		throw new InvalidDataError(result.error.errors[0].message);
 
-	let invalid_i = false;
-
 	for (const i in request.edits.edited)
 		if (parseInt(i) < 0 || parseInt(i) >= nb_papers)
-		{
-			invalid_i = true;
-			break;
-		}
-
-	if (invalid_i)
-		throw new InvalidDataError('Invalid paper index');
+			throw new InvalidDataError('Invalid paper index');
 }

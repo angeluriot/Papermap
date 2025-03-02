@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { InvalidDataError } from '$lib/server/errors';
+import type { Params } from './types';
 
 
 const params_schema = z.object({
@@ -8,7 +9,7 @@ const params_schema = z.object({
 }).strict();
 
 
-export function validate_params(params: any): void
+export function validate_params(params: Params): void
 {
 	const result = params_schema.safeParse(params);
 

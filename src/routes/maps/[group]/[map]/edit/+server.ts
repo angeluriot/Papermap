@@ -5,14 +5,15 @@ import { join } from 'path';
 import { create_pull_request } from '$lib/server/github';
 import { Label } from '$lib/types';
 import { edit_map } from './edit';
-import type { PostParams, PostRequest } from './types';
+import type { Params } from '../types';
+import type { PostRequest } from './types';
 import { GitHubAPIError, InvalidDataError, NotFoundError } from '$lib/server/errors';
 import { import_datamap } from '$lib/server/data/map';
 import { validate_params } from '../validate';
 import { validate_request } from './validate';
 
 
-export async function POST({ params, request }: { params: PostParams, request: Request }): Promise<Response>
+export async function POST({ params, request }: { params: Params, request: Request }): Promise<Response>
 {
 	try
 	{
