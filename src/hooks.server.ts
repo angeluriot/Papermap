@@ -6,12 +6,6 @@ import { constants as C } from '$lib/server/utils';
 import requestIp from 'request-ip';
 
 
-const global_limiter = new RateLimiterMemory({
-	points: 30,
-	duration: 15,
-	blockDuration: 60
-});
-
 const journals_limiter = new RateLimiterMemory({
 	points: 5,
 	duration: 20,
@@ -35,13 +29,14 @@ export async function handle({ event, resolve })
 		if (!event.route.id)
 			throw new InvalidRequestError('No route');
 
-		let limiter = global_limiter;
+		let limiter: RateLimiterMemory | null = null;
 
 		if (event.route.id.trim().startsWith('/journals'))
 			limiter = journals_limiter;
-
-		if (event.route.id.trim().startsWith('/maps/[group]/[map]/edit') || event.route.id.trim().startsWith('/request'))
+		else if (event.route.id.trim().startsWith('/maps/[group]/[map]/edit') || event.route.id.trim().startsWith('/request'))
 			limiter = github_limiter;
+		else
+			return resolve(event);
 
 		if (!event.request)
 			throw new InvalidRequestError('No request');
