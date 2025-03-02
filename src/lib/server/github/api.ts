@@ -32,9 +32,6 @@ export function init_client(): Octokit
 
 export async function create_branch(client: Octokit, branch_name: string)
 {
-	if (!C.GITHUB_OWNER || !C.GITHUB_REPO || !C.GITHUB_DEFAULT_BRANCH)
-		throw new MissingEnvError('Missing GitHub environment variables');
-
 	const { data: branch_data } = await client.rest.repos.getBranch({
 		owner: C.GITHUB_OWNER,
 		repo: C.GITHUB_REPO,
@@ -60,9 +57,6 @@ export async function create_branch(client: Octokit, branch_name: string)
 
 export async function delete_branch(client: Octokit, branch_name: string)
 {
-	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
-		throw new MissingEnvError('Missing GitHub environment variables');
-
 	try
 	{
 		await client.rest.git.deleteRef({
@@ -81,9 +75,6 @@ export async function delete_branch(client: Octokit, branch_name: string)
 
 export async function update_file(client: Octokit, branch: string, file_path: string, new_content: string, commit_message: string)
 {
-	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
-		throw new MissingEnvError('Missing GitHub environment variables');
-
 	let file_content: string;
 	let file_sha: string;
 
@@ -133,9 +124,6 @@ export async function update_file(client: Octokit, branch: string, file_path: st
 
 export async function set_label(client: Octokit, number: number, label: string)
 {
-	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
-		throw new MissingEnvError('Missing GitHub environment variables');
-
 	try
 	{
 		await client.rest.issues.addLabels({
@@ -155,9 +143,6 @@ export async function set_label(client: Octokit, number: number, label: string)
 
 export async function create_pull_request(client: Octokit, branch: string, title: string, description: string, label: string): Promise<string>
 {
-	if (!C.GITHUB_OWNER || !C.GITHUB_REPO || !C.GITHUB_DEFAULT_BRANCH)
-		throw new MissingEnvError('Missing GitHub environment variables');
-
 	let pr_url: string;
 	let pr_number: number;
 
@@ -188,9 +173,6 @@ export async function create_pull_request(client: Octokit, branch: string, title
 
 export async function create_issue(client: Octokit, title: string, description: string, label: string): Promise<string>
 {
-	if (!C.GITHUB_OWNER || !C.GITHUB_REPO)
-		throw new MissingEnvError('Missing GitHub environment variables');
-
 	let issue_url: string;
 	let issue_number: number;
 

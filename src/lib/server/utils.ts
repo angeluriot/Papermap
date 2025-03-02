@@ -5,7 +5,7 @@ import { join } from 'path';
 export const constants = {
 	DEV: import.meta.env.DEV,
 	PROD: import.meta.env.PROD,
-	BASE_URL: import.meta.env.DEV ? 'http://localhost:5173' : (import.meta.env['VITE_DOMAIN'] as string ?? 'https://example.com'),
+	BASE_URL: import.meta.env.DEV ? 'http://localhost:5173' : 'https://papermap.org',
 	BASE_PATH: process.cwd(),
 	STATIC_DIR: join(process.cwd(), 'static'),
 	LIB_DIR: join(process.cwd(), 'src/lib'),
@@ -15,9 +15,9 @@ export const constants = {
 	GITHUB_CLIENT_ID: import.meta.env['VITE_GITHUB_CLIENT_ID'] as string | undefined,
 	GITHUB_CLIENT_SECRET: import.meta.env['VITE_GITHUB_CLIENT_SECRET'] as string | undefined,
 	GITHUB_INSTALLATION_ID: import.meta.env['VITE_GITHUB_INSTALLATION_ID'] ? parseInt(import.meta.env['VITE_GITHUB_INSTALLATION_ID']) as number : undefined,
-	GITHUB_OWNER: import.meta.env['VITE_GITHUB_OWNER'] as string | undefined,
-	GITHUB_REPO: import.meta.env['VITE_GITHUB_REPO'] as string | undefined,
-	GITHUB_DEFAULT_BRANCH: import.meta.env['VITE_GITHUB_DEFAULT_BRANCH'] as string | undefined,
+	GITHUB_OWNER: 'angeluriot',
+	GITHUB_REPO: 'Papermap',
+	GITHUB_DEFAULT_BRANCH: 'main',
 };
 
 

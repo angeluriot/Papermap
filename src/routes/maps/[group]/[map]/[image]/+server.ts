@@ -13,8 +13,9 @@ export async function GET({ params }: { params: Params }): Promise<Response>
 	{
 		validate_params(params);
 
-		const image_type = params.image.split('.')[1];
-		const file_path = join(C.IMAGES_DIR, params.group, `${params.map}.${image_type}`);
+		const image_ext = params.image.split('.')[1];
+		const image_type = image_ext.replace('jpg', 'jpeg');
+		const file_path = join(C.IMAGES_DIR, params.group, `${params.map}.${image_ext}`);
 
 		if (await fs.access(file_path).then(() => false).catch(() => true))
 			throw new NotFoundError('Image not found');
