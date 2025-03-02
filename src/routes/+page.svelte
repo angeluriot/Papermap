@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Label } from "$lib/types";
-	import { onMount } from "svelte";
-	import type { PageProps } from "./$types";
+	import { Label } from '$lib/types';
+	import { onMount } from 'svelte';
+	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
@@ -9,7 +9,7 @@
 		console.log(data.maps);
 	});
 
-	async function edit()
+	async function request(): Promise<void>
 	{
 		const response = await fetch(`/request`, {
 			method: 'POST',
@@ -40,7 +40,7 @@
 
 <h1>Home TEST 10</h1>
 
-<button onclick={() => edit()}>button</button>
+<button onclick={() => request()}>button</button>
 
 <style>
 </style>

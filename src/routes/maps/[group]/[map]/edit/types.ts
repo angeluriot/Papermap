@@ -1,4 +1,4 @@
-import type { DataPaper } from "$lib/types/paper";
+import type { DataPaper } from '$lib/types/paper';
 
 
 export interface Edits

@@ -118,7 +118,7 @@ export async function update_file(client: Octokit, branch: string, file_path: st
 			repo: C.GITHUB_REPO,
 			path: file_path,
 			message: commit_message,
-			content: Buffer.from(new_content).toString("base64"),
+			content: Buffer.from(new_content).toString('base64'),
 			sha: file_sha,
 			branch: branch,
 		});

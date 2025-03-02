@@ -9,13 +9,13 @@ import requestIp from 'request-ip';
 const journals_limiter = new RateLimiterMemory({
 	points: 5,
 	duration: 20,
-	blockDuration: 180
+	blockDuration: 180,
 });
 
 const github_limiter = new RateLimiterMemory({
 	points: 5,
 	duration: 60,
-	blockDuration: 600
+	blockDuration: 600,
 });
 
 

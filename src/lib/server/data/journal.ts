@@ -1,5 +1,5 @@
-import type { Journal } from "$lib/types/journal";
-import type { DataMap } from "$lib/types/map";
+import type { Journal } from '$lib/types/journal';
+import type { DataMap } from '$lib/types/map';
 import { join } from 'path';
 import { promises as fs } from 'fs';
 import { constants as C } from '$lib/server/utils';

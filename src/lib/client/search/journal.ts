@@ -1,5 +1,5 @@
-import type { Journal } from "$lib/types/journal";
-import { import_journals } from "../../server/data/journal";
+import type { Journal } from '$lib/types/journal';
+import { import_journals } from '../../server/data/journal';
 
 
 function clean_title(title: string): string

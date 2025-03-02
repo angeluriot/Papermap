@@ -1,4 +1,4 @@
-import type { Label } from "$lib/types";
+import type { Label } from '$lib/types';
 
 
 export interface PostRequest

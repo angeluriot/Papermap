@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { constants as C } from '$lib/client/utils';
 	import type { PageProps } from './$types';
-	import { paper_to_datapaper, type DataPaper } from '$lib/types/paper';
+	import { paper_to_datapaper } from '$lib/types/paper';
 
 	let { data }: PageProps = $props();
 
@@ -16,7 +16,7 @@
 		console.log(data);
 	});
 
-	async function edit()
+	async function edit(): Promise<void>
 	{
 		const response = await fetch(`/${route}/edit`, {
 			method: 'POST',

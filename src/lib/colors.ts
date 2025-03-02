@@ -7,7 +7,6 @@ export enum Color
 	Red = 'Red',
 }
 
-
 export const Colors = {
 	[Color.Green]: {
 		fill: '#00FF00',
