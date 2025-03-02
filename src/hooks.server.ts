@@ -11,9 +11,15 @@ const global_limiter = new RateLimiterMemory({
 	blockDuration: 60
 });
 
+const journals_limiter = new RateLimiterMemory({
+	points: 5,
+	duration: 20,
+	blockDuration: 180
+});
+
 const github_limiter = new RateLimiterMemory({
 	points: 5,
-	duration: 30,
+	duration: 60,
 	blockDuration: 600
 });
 
@@ -22,9 +28,18 @@ export async function handle({ event, resolve })
 {
 	try
 	{
+		if (C.DEV)
+			return resolve(event);
+
+		if (!event.route.id)
+			throw new InvalidRequestError('No route');
+
 		let limiter = global_limiter;
 
-		if (C.PROD && event.route.id && (event.route.id.trim().startsWith('/maps/[group]/[map]/edit') || event.route.id.trim().startsWith('/request')))
+		if (event.route.id.trim().startsWith('/journals'))
+			limiter = journals_limiter;
+
+		if (event.route.id.trim().startsWith('/maps/[group]/[map]/edit') || event.route.id.trim().startsWith('/request'))
 			limiter = github_limiter;
 
 		if (!event.request)
