@@ -51,3 +51,25 @@ export class InvalidInternalDataError extends Error
 		Object.setPrototypeOf(this, InvalidInternalDataError.prototype);
 	}
 }
+
+
+export class InvalidRequestError extends Error
+{
+	constructor(message: string)
+	{
+		super(message);
+		this.name = 'InvalidRequestError';
+		Object.setPrototypeOf(this, InvalidRequestError.prototype);
+	}
+}
+
+
+export class TooManyRequestsError extends Error
+{
+	constructor(message: string)
+	{
+		super(message);
+		this.name = 'TooManyRequestsError';
+		Object.setPrototypeOf(this, TooManyRequestsError.prototype);
+	}
+}
