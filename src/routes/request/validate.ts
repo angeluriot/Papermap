@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { InvalidDataError } from '$lib/server/errors';
+import { InvalidDataError } from '$lib/errors';
 import { Label } from '$lib/types';
 import type { PostRequest } from './types';
 

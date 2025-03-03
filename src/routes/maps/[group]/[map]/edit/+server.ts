@@ -7,7 +7,7 @@ import { Label } from '$lib/types';
 import { edit_map } from './edit';
 import type { Params } from '../types';
 import type { PostRequest } from './types';
-import { GitHubAPIError, InvalidDataError, NotFoundError } from '$lib/server/errors';
+import { GitHubAPIError, InvalidDataError, NotFoundError } from '$lib/errors';
 import { import_datamap } from '$lib/server/data/map';
 import { validate_params } from '../validate';
 import { validate_request } from './validate';

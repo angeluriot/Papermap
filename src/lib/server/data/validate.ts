@@ -1,7 +1,7 @@
 import type { DataMap } from '$lib/types/map';
 import { JournalStatus, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
 import { z } from 'zod';
-import { InvalidDataError } from '$lib/server/errors';
+import { InvalidDataError } from '$lib/errors';
 import { Color } from '$lib/colors';
 
 
@@ -53,6 +53,7 @@ export function validate_paper(paper: DataPaper): void
 const map_schema = z.object({
 	question: z.string(),
 	detailed_question: z.string(),
+	tags: z.array(z.string()),
 	answers: z.record(
 		z.string(),
 		z.object({

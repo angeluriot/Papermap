@@ -3,7 +3,7 @@ import { constants as C } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import type { Params } from './types';
-import { InvalidDataError, NotFoundError } from '$lib/server/errors';
+import { InvalidDataError, NotFoundError } from '$lib/errors';
 import { validate_params } from './validate';
 
 

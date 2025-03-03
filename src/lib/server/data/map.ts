@@ -1,5 +1,5 @@
 import { score_paper } from '$lib/server/data/score';
-import { InvalidInternalDataError, NotFoundError } from '$lib/server/errors';
+import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
 import type { DataPaper } from '$lib/types/paper';
@@ -47,13 +47,14 @@ export async function import_datamap(group: string, id: string): Promise<DataMap
 
 export async function import_map(group: string, id: string): Promise<{ map: Map, journals: { [id: string]: Journal } }>
 {
+	const group_name = await import_group_title(group);
 	const data = await import_datamap(group, id);
 	const journals = await import_journals(data);
 
 	return {
 		map: {
 			...data,
-			group,
+			group: { id: group, name: group_name },
 			id,
 			papers: data.papers.map((paper: DataPaper) => score_paper(data, paper.journal.id ? journals[paper.journal.id] : undefined, paper))
 		},

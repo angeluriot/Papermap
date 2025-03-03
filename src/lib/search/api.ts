@@ -1,4 +1,4 @@
-import { SemanticScholarAPIError } from '$lib/client/errors';
+import { SemanticScholarAPIError } from '$lib/errors';
 
 
 export interface SemanticScholarPaper

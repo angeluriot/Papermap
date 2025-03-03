@@ -1,4 +1,4 @@
-import { InvalidRequestError, TooManyRequestsError } from '$lib/server/errors';
+import { InvalidRequestError, TooManyRequestsError } from '$lib/errors';
 import { building } from '$app/environment'
 import { error as http_error } from '@sveltejs/kit';
 import { RateLimiterMemory } from 'rate-limiter-flexible';

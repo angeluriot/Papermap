@@ -2,7 +2,7 @@ import { json, error as http_error } from '@sveltejs/kit';
 import { create_issue } from '$lib/server/github';
 import type { PostRequest } from './types';
 import { validate_request } from './validate';
-import { GitHubAPIError, InvalidDataError } from '$lib/server/errors';
+import { GitHubAPIError, InvalidDataError } from '$lib/errors';
 
 
 export async function POST({ request }: { request: Request }): Promise<Response>

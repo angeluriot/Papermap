@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest';
 import { createAppAuth } from '@octokit/auth-app';
 import { constants as C } from '../utils';
-import { MissingEnvError, GitHubAPIError } from '../errors';
+import { MissingEnvError, GitHubAPIError } from '$lib/errors';
 
 
 export function init_client(): Octokit

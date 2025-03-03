@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { InvalidDataError } from '$lib/server/errors';
+import { InvalidDataError } from '$lib/errors';
 import { paper_schema } from '$lib/server/data/validate';
 import type { PostRequest } from './types';
 

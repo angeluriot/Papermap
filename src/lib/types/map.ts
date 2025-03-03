@@ -6,6 +6,7 @@ interface BaseMap
 {
 	question: string;
 	detailed_question: string;
+	tags: string[];
 	answers: {
 		[id: string]: {
 			text: string,
@@ -16,14 +17,14 @@ interface BaseMap
 		}
 	};
 	type: {
-		no_causality: boolean;
-		no_random: boolean;
-		no_blind: boolean;
-		any: boolean;
+		no_causality: boolean,
+		no_random: boolean,
+		no_blind: boolean,
+		any: boolean,
 	}
 	on: {
-		any_animal: boolean;
-		any: boolean;
+		any_animal: boolean,
+		any: boolean,
 	};
 	no_sample_size: boolean;
 	no_p_value: boolean;
@@ -38,7 +39,10 @@ export interface DataMap extends BaseMap
 
 export interface Map extends BaseMap
 {
-	group: string;
+	group: {
+		id: string,
+		name: string,
+	};
 	id: string;
 	papers: Paper[];
 }
