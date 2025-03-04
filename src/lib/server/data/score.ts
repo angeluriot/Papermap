@@ -1,7 +1,7 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap } from '$lib/types/map';
 import type { DataPaper, PaperScore, Paper } from '$lib/types/paper';
-import { ratio } from '../utils';
+import { ratio } from '$lib/utils';
 
 
 const TYPE_SCORES = {

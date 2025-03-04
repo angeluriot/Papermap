@@ -45,12 +45,3 @@ export async function exist(dir_path: string): Promise<boolean>
 {
 	return await fs.access(dir_path).then(() => true).catch(() => false);
 }
-
-
-export function ratio(value: number, min: number, max: number): number
-{
-	if (min >= max)
-		throw new Error('min must be less than max');
-
-	return Math.max(0, Math.min(1, (value - min) / (max - min)));
-}

@@ -8,3 +8,17 @@ export enum Label
 	NewMap = 'new map',
 	OtherRequest = 'other request',
 }
+
+
+export interface Point
+{
+	x: number;
+	y: number;
+}
+
+
+export interface Line
+{
+	start: Point;
+	end: Point;
+}

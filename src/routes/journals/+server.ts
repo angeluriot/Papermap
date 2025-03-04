@@ -9,7 +9,7 @@ export async function GET()
 		const journals = await import_journals();
 
 		return json({
-			journals: Object.values(journals).map(j => { return { id: j.id, issns: j.issns, titles: j.titles, score: j.scores.oa }; })
+			journals: Object.values(journals).map(j => ({ id: j.id, issns: j.issns, titles: j.titles, score: j.scores.oa }))
 		});
 	}
 

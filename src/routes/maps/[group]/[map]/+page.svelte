@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 	import { constants as C } from '$lib/utils';
 	import type { PageProps } from './$types';
-	import { paper_to_datapaper } from '$lib/types/paper';
+	import { paper_to_datapaper, ReviewType } from '$lib/types/paper';
+	import Graph from '$lib/display/graph.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -18,8 +19,18 @@
 	let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
 
+	let width = $state(100);
+	let height = $state(100);
+
+	function update_size(): void
+	{
+		width = window.innerWidth;
+		height = window.innerHeight;
+	}
+
 	onMount(() => {
 		console.log(data);
+		update_size();
 	});
 
 	async function edit(): Promise<void>
@@ -45,6 +56,8 @@
 		console.log('Edit successful:', result.pr_url);
 	}
 </script>
+
+<svelte:window on:resize={update_size}/>
 
 <svelte:head>
 	<title>{title}</title>
@@ -75,9 +88,9 @@
 	<meta name="twitter:url" content={page_url}/>
 </svelte:head>
 
-<h1>Map {data.map}</h1>
-
-<button onclick={() => edit()}>button</button>
+<div class="w-full h-full">
+	<Graph {map} width={width} height={height}/>
+</div>
 
 <style>
 </style>
