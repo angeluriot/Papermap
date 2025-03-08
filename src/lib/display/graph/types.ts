@@ -27,6 +27,8 @@ export interface GraphPoint
 	label: {
 		x: number,
 		y: number,
+		width: number,
+		height: number,
 		text: string,
 		shown: boolean,
 	};

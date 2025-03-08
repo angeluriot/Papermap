@@ -2,7 +2,7 @@
 	import type { Map } from '$lib/types/map';
 	import { clamp } from '$lib/utils';
 	import { get_x_axis, get_y_axis, get_background_points, POINTS_SIZE, TICK_WIDTH as BG_TICK_WIDTH } from './background';
-	import { get_graph_points } from './points';
+	import { get_graph_points, FONT_SIZE } from './points';
 	import type { GraphPoint } from './types';
 	import { get_stats } from './utils';
 
@@ -42,7 +42,8 @@
 	const x_in_center = $derived(x_axis.find(tick => tick.type === 'major' && tick.start.x > LABEL_MIN_HARD_X && tick.start.x < LABEL_CENTER_X) !== undefined);
 
 	const POINT_STROKE_WIDTH = $derived(1.2 * stats.sub_scales.point_stroke);
-	const POINT_FONT_SIZE = $derived(5 * stats.sub_scales.point_stroke);
+	const POINT_FONT_SIZE = $derived(FONT_SIZE * stats.sub_scales.point_stroke);
+	const LINE_HEIGHT = $derived(POINT_FONT_SIZE * 1.2);
 
 	const points = $derived(get_graph_points(map, stats));
 
@@ -142,7 +143,7 @@
 					text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
 				>
 						{#each point.label.text.split('\n') as line, i}
-							<tspan x={point.label.x} dy={i === 0 ? 0 : POINT_FONT_SIZE * 1.2}>
+							<tspan x={point.label.x} dy={i === 0 ? -LINE_HEIGHT * 0.5 : LINE_HEIGHT}>
 								{line}
 							</tspan>
 						{/each}

@@ -6,8 +6,9 @@ import type { GraphPoint, GraphStats } from './types';
 
 
 const POINT_SIZE = 5;
-const LABEL_PADDING = 4;
+const LABEL_PADDING = 7;
 const LABEL_DISTANCE_LIMIT = 10;
+export const FONT_SIZE = 5;
 
 
 function get_last_name(author: string): string
@@ -17,7 +18,7 @@ function get_last_name(author: string): string
 }
 
 
-function get_title(paper: Paper): string
+function get_label(paper: Paper): string
 {
 	if (paper.authors.length === 1)
 		return get_last_name(paper.authors[0]) + '\n' + paper.year;
@@ -26,6 +27,51 @@ function get_title(paper: Paper): string
 		return get_last_name(paper.authors[0]) + ' & ' + get_last_name(paper.authors[1]) + '\n' + paper.year;
 
 	return get_last_name(paper.authors[0]) + ' et al.\n' + paper.year;
+}
+
+
+function get_label_sizes(text: string, stats: GraphStats): { width: number, height: number }
+{
+	const text_max_width = text.split('\n').reduce((max, line) => Math.max(max, line.length), 0);
+
+	return {
+		width: 0.5 * text_max_width * FONT_SIZE * stats.sub_scales.point_stroke,
+		height: 2.5 * FONT_SIZE * stats.sub_scales.point_stroke,
+	}
+}
+
+
+function rectangle_circle_intersection(rectangle: { x: number, y: number, width: number, height: number }, circle: { x: number, y: number, radius: number }): boolean
+{
+	const dx = Math.abs(circle.x - rectangle.x);
+	const dy = Math.abs(circle.y - rectangle.y);
+
+	if (dx > rectangle.width / 2 + circle.radius)
+		return false;
+
+	if (dy > rectangle.height / 2 + circle.radius)
+		return false;
+
+	if (dx <= rectangle.width / 2)
+		return true;
+
+	if (dy <= rectangle.height / 2)
+		return true;
+
+	const corner_distance = (dx - rectangle.width / 2) ** 2 + (dy - rectangle.height / 2) ** 2;
+	return corner_distance <= circle.radius ** 2;
+}
+
+
+function rectangle_rectangle_intersection(rectangle_1: { x: number, y: number, width: number, height: number }, rectangle_2: { x: number, y: number, width: number, height: number }): boolean
+{
+	const dx = Math.abs(rectangle_1.x - rectangle_2.x);
+	const dy = Math.abs(rectangle_1.y - rectangle_2.y);
+
+	const width = (rectangle_1.width + rectangle_2.width) / 2;
+	const height = (rectangle_1.height + rectangle_2.height) / 2;
+
+	return dx <= width && dy <= height;
 }
 
 
@@ -41,7 +87,9 @@ export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
 		label: {
 			x: 0,
 			y: 0,
-			text: get_title(paper),
+			width: 0,
+			height: 0,
+			text: get_label(paper),
 			shown: true,
 		},
 	})).sort((a, b) => b.size - a.size);
@@ -50,6 +98,21 @@ export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
 	{
 		point.label.x = point.x;
 		point.label.y = point.y + point.size + LABEL_PADDING * stats.sub_scales.point_stroke;
+		point.label.width = get_label_sizes(point.label.text, stats).width;
+		point.label.height = get_label_sizes(point.label.text, stats).height;
+
+		for (let other of points)
+		{
+			if (other.index === point.index)
+				continue;
+
+			if (rectangle_circle_intersection(point.label, { x: other.x, y: other.y, radius: other.size }) ||
+				(other.label.shown && rectangle_rectangle_intersection(point.label, other.label)))
+			{
+				point.label.shown = false;
+				break;
+			}
+		}
 	}
 
 	return points;
