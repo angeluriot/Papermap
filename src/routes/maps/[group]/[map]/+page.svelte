@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { constants as C } from '$lib/utils';
 	import type { PageProps } from './$types';
-	import { paper_to_datapaper, ReviewType } from '$lib/types/paper';
-	import Graph from '$lib/display/graph.svelte';
+	import { paper_to_datapaper } from '$lib/types/paper';
+	import Graph from '$lib/display/graph/graph.svelte';
+	import type { GraphPoint } from '$lib/display/graph/types';
 
 	const { data }: PageProps = $props();
 
@@ -15,23 +15,12 @@
 	const title = map.question;
 	const description = `Papermap: ${map.detailed_question}`;
 	const tags = C.DEFAULT_TAGS.concat(map.tags);
+	let width = $state(0);
+	let height = $state(0);
+	let selected: { point: GraphPoint, keep: boolean } | null = $state(null);
 
 	let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
-
-	let width = $state(100);
-	let height = $state(100);
-
-	function update_size(): void
-	{
-		width = window.innerWidth;
-		height = window.innerHeight;
-	}
-
-	onMount(() => {
-		console.log(data);
-		update_size();
-	});
 
 	async function edit(): Promise<void>
 	{
@@ -55,9 +44,11 @@
 		const result = await response.json() as { pr_url: string };
 		console.log('Edit successful:', result.pr_url);
 	}
+
+	$inspect(selected);
 </script>
 
-<svelte:window on:resize={update_size}/>
+<svelte:window bind:innerWidth={width} bind:innerHeight={height}/>
 
 <svelte:head>
 	<title>{title}</title>
@@ -88,8 +79,15 @@
 	<meta name="twitter:url" content={page_url}/>
 </svelte:head>
 
-<div class="w-full h-full">
-	<Graph {map} width={width} height={height}/>
+<div class="absolute w-full h-full overflow-hidden">
+	<div class="absolute w-full h-full overflow-hidden">
+		{#if width > 0 && height > 0}
+			<Graph {map} width={width} height={height} bind:selected={selected}/>
+		{/if}
+	</div>
+	{#if selected !== null}
+		<div class="absolute w-[100px] h-[200px] bg-amber-950" style="left: {selected.point.x + selected.point.size * 1.1 + 10}px; top: {selected.point.y}px;"></div>
+	{/if}
 </div>
 
 <style>

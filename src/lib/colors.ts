@@ -7,25 +7,25 @@ export enum Color
 	Red = 'Red',
 }
 
-export const Colors = {
+export const COLORS = {
 	[Color.Green]: {
-		fill: '#00FF00',
-		stroke: '#000000',
+		fill: '#38ceb1',
+		stroke: '#17a096',
 	},
 	[Color.Green1H]: {
-		fill: '#00FF00',
-		stroke: '#000000',
+		fill: '#abcc33',
+		stroke: '#87b22b',
 	},
 	[Color.Gray]: {
-		fill: '#808080',
-		stroke: '#000000',
+		fill: '#abb4d6',
+		stroke: '#9097bf',
 	},
 	[Color.Red1H]: {
-		fill: '#FF0000',
-		stroke: '#000000',
+		fill: '#e0924b',
+		stroke: '#db6c35',
 	},
 	[Color.Red]: {
-		fill: '#FF0000',
-		stroke: '#000000',
+		fill: '#db456c',
+		stroke: '#bf1f49',
 	},
 }

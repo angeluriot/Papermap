@@ -22,16 +22,18 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
-	for (let i = 0; i < 30; i++)
+	for (let i = 0; i < 50; i++)
 		map.papers.push(structuredClone(map.papers[0]));
 
 	for (let paper of map.papers)
 	{
 		paper.score.overall = Math.random() * 0.5 + 0.25;
-		paper.year = Math.floor(Math.random() * 50) + 1975;
+		paper.year = 2025 - Math.round(Math.random() * 50);
 
-		if (Math.random() < 0.5)
-			paper.review = { type: ReviewType.MetaAnalysis, count: Math.floor(Math.random() * 50) };
+		if (Math.random() < 0.33)
+			paper.review = { type: ReviewType.MetaAnalysis, count: 1 + Math.round((Math.random() ** 3) * 100) };
+
+		paper.results.conclusion = Object.keys(map.answers)[Math.floor(Math.random() * Object.keys(map.answers).length)];
 	}
 
 	const svg = ejs.render(template, {

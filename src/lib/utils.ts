@@ -6,16 +6,18 @@ export const constants = {
 };
 
 
-export function ratio(value: number, min: number, max: number): number
+export function clamp(value: number, min: number, max: number): number
+{
+	return Math.max(min, Math.min(max, value));
+}
+
+
+export function ratio(value: number, min: number, max: number, cut: boolean = true): number
 {
 	if (min >= max)
 		throw new Error('min must be less than max');
 
-	return Math.max(0, Math.min(1, (value - min) / (max - min)));
-}
+	const result = (value - min) / (max - min);
 
-
-export function clamp(value: number, min: number, max: number): number
-{
-	return Math.max(min, Math.min(max, value));
+	return cut ? clamp(result, 0, 1) : result;
 }
