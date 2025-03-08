@@ -1,5 +1,6 @@
 import type { Map } from '$lib/types/map';
 import { clamp } from '$lib/utils';
+import seedrandom from 'seedrandom';
 import type { GraphStats } from './types';
 
 
@@ -11,9 +12,9 @@ export function get_stats(map: Map, width: number, height: number): GraphStats
 {
 	const scale = (width + height) * 0.001;
 
-	const years = map.papers.map(paper => paper.year);
+	const years = map.papers.map(paper => paper.year + seedrandom(paper.title).quick());
 	const min_year = Math.min(...years);
-	const max_year = Math.max(...years) + 1;
+	const max_year = Math.max(...years);
 	const pad_year = ((max_year - min_year) / (width ** 0.5)) * PADDING;
 
 	const scores = map.papers.map(paper => paper.score.overall);
