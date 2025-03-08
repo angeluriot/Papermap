@@ -82,6 +82,7 @@ export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
 		x: ratio(paper.year, stats.min_year, stats.max_year) * stats.width,
 		y: ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height,
 		size: (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE,
+		zoom: 0,
 		fill: COLORS[map.answers[paper.results.conclusion].color].fill,
 		stroke: COLORS[map.answers[paper.results.conclusion].color].stroke,
 		label: {
@@ -96,6 +97,7 @@ export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
 
 	for (let point of points)
 	{
+		point.zoom = (point.size + 0.5 * POINT_SIZE) / point.size;
 		point.label.x = point.x;
 		point.label.y = point.y + point.size + LABEL_PADDING * stats.sub_scales.point_stroke;
 		point.label.width = get_label_sizes(point.label.text, stats).width;

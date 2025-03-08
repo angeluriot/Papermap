@@ -120,6 +120,7 @@
 				onmouseleave={() => deselect_point(false)}
 				onkeydown={null}
 				class="dot {selected?.point.index == point.index ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
+				style="--dot-zoom: {point.zoom};"
 			>
 				<circle
 					cx={point.x}
@@ -138,7 +139,7 @@
 			</g>
 			{#if point.label.shown}
 				<text
-					x={point.label.x} y={point.label.y} fill={point.stroke}
+					x={point.label.x} y={point.label.y} fill={point.stroke} class="unselectable"
 					font-family="Satoshi-Variable" font-weight=750 font-size={POINT_FONT_SIZE}
 					text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
 				>
@@ -163,17 +164,17 @@
 
 	.dot:hover
 	{
-		transform: scale(1.1);
+		transform: scale(var(--dot-zoom));
 	}
 
 	.dot:focus
 	{
-		transform: scale(1.1);
+		transform: scale(var(--dot-zoom));
 		outline: none;
 	}
 
 	.selected_dot
 	{
-		transform: scale(1.1);
+		transform: scale(var(--dot-zoom));
 	}
 </style>

@@ -22,6 +22,7 @@ export interface GraphPoint
 	x: number;
 	y: number;
 	size: number;
+	zoom: number;
 	fill: string;
 	stroke: string;
 	label: {
