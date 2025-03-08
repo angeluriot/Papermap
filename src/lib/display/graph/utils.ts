@@ -13,7 +13,7 @@ export function get_stats(map: Map, width: number, height: number): GraphStats
 
 	const years = map.papers.map(paper => paper.year);
 	const min_year = Math.min(...years);
-	const max_year = Math.max(...years);
+	const max_year = Math.max(...years) + 1;
 	const pad_year = ((max_year - min_year) / (width ** 0.5)) * PADDING;
 
 	const scores = map.papers.map(paper => paper.score.overall);

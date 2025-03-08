@@ -3,11 +3,11 @@ import type { Map } from '$lib/types/map';
 import type { Paper } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import type { GraphPoint, GraphStats } from './types';
+import seedrandom from 'seedrandom';
 
 
 const POINT_SIZE = 5;
 const LABEL_PADDING = 7;
-const LABEL_DISTANCE_LIMIT = 10;
 export const FONT_SIZE = 5;
 
 
@@ -79,7 +79,7 @@ export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
 {
 	let points = map.papers.map((paper, index) => ({
 		index,
-		x: ratio(paper.year, stats.min_year, stats.max_year) * stats.width,
+		x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
 		y: ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height,
 		size: (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE,
 		zoom: 0,
