@@ -1,51 +1,19 @@
 <script lang="ts">
 	import type { Map } from '$lib/types/map';
-	import { clamp } from '$lib/utils';
-	import { get_x_axis, get_y_axis, get_background_points, POINTS_SIZE, TICK_WIDTH as BG_TICK_WIDTH } from './background';
-	import { get_graph_points, FONT_SIZE } from './points';
+	import * as bg from './background';
+	import * as pt from './points';
 	import type { GraphPoint } from './types';
 	import { get_stats } from './utils';
 
 	let { map, width, height, selected = $bindable() }: { map: Map, width: number, height: number, selected: { point: GraphPoint, keep: boolean } | null } = $props();
 
+	const POINT_HITBOX_EXTENSION = 3;
+
 	const stats = $derived(get_stats(map, width, height));
-
-	const BACKGROUND_COLOR = '#f3f4ff';
-
-	const AXIS_COLOR = '#2d2f3d';
-	const TICK_OPACITY = $derived({ major: 1, minor: 0.5 });
-	const TICK_WIDTH = $derived(BG_TICK_WIDTH * stats.sub_scales.axis);
-	const AXIS_FONT_SIZE = $derived(7 * stats.sub_scales.axis);
-
-	const X_LABEL_DISTANCE = $derived(6 * stats.sub_scales.axis);
-	const Y_LABEL_DISTANCE = $derived(11.8 * stats.sub_scales.axis);
-
-	const LABEL_MIN_SOFT_X = $derived(14 * stats.sub_scales.axis);
-	const LABEL_MIN_HARD_X = $derived(6 * stats.sub_scales.axis);
-	const LABEL_MAX_SOFT_X = $derived(width - 10.5 * stats.sub_scales.axis);
-	const LABEL_MAX_HARD_X = $derived(width - 1 * stats.sub_scales.axis);
-
-	const LABEL_MIN_SOFT_Y = $derived(5 * stats.sub_scales.axis);
-	const LABEL_MIN_HARD_Y = $derived(1.25 * stats.sub_scales.axis);
-	const LABEL_MAX_SOFT_Y = $derived(height - 9 * stats.sub_scales.axis);
-	const LABEL_MAX_HARD_Y = $derived(height - 5 * stats.sub_scales.axis);
-	const LABEL_CENTER_X = $derived(29 * stats.sub_scales.axis);
-	const LABEL_CENTER_Y = $derived(height - 17 * stats.sub_scales.axis);
-
-	const BACKGROUND_POINTS_SIZE = $derived(POINTS_SIZE * stats.sub_scales.axis);
-	const BACKGROUND_POINTS_COLOR = '#3131ff';
-	const BACKGROUND_POINTS_OPACITY = 0.12;
-
-	const x_axis = $derived(get_x_axis(stats));
-	const y_axis = $derived(get_y_axis(stats));
-	const background_points = $derived(get_background_points(x_axis, y_axis, stats));
-	const x_in_center = $derived(x_axis.find(tick => tick.type === 'major' && tick.start.x > LABEL_MIN_HARD_X && tick.start.x < LABEL_CENTER_X) !== undefined);
-
-	const POINT_STROKE_WIDTH = $derived(1.2 * stats.sub_scales.point_stroke);
-	const POINT_FONT_SIZE = $derived(FONT_SIZE * stats.sub_scales.point_stroke);
-	const LINE_HEIGHT = $derived(POINT_FONT_SIZE * 1.2);
-
-	const points = $derived(get_graph_points(map, stats));
+	const x_axis = $derived(bg.get_x_axis(stats));
+	const y_axis = $derived(bg.get_y_axis(stats, x_axis));
+	const background_points = $derived(bg.get_background_points(x_axis, y_axis, stats));
+	const points = $derived(pt.get_graph_points(map, stats));
 
 	function select_point(event: Event, point: GraphPoint, clicked: boolean)
 	{
@@ -67,27 +35,27 @@
 	onclick={() => deselect_point(true)} onkeydown={null} role="button" tabindex={-1}
 >
 	<g class="background unselectable">
-		<rect x=0 y=0 width={width} height={height} fill={BACKGROUND_COLOR}/>
+		<rect x=0 y=0 width={width} height={height} fill={bg.BACKGROUND_COLOR}/>
 		<g class="points">
 			{#each background_points as point}
-				<circle cx={point.x} cy={point.y} r={BACKGROUND_POINTS_SIZE} fill={BACKGROUND_POINTS_COLOR} opacity={BACKGROUND_POINTS_OPACITY}/>
+				<circle cx={point.x} cy={point.y} r={point.size} fill={bg.POINTS_COLOR} opacity={bg.POINTS_OPACITY}/>
 			{/each}
 		</g>
 		<g class="x-axis">
 			{#each x_axis as tick}
 				{#if tick.type !== null}
 					<line
-						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} stroke={AXIS_COLOR}
-						stroke-width={TICK_WIDTH} stroke-linecap="round" stroke-linejoin="round" opacity={TICK_OPACITY[tick.type]}
+						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} stroke={bg.AXIS_COLOR}
+						stroke-width={tick.width} stroke-linecap="round" stroke-linejoin="round" opacity={tick.opacity}
 					/>
 				{/if}
-				{#if tick.type === "major" && tick.start.x > LABEL_MIN_HARD_X && tick.start.x < LABEL_MAX_HARD_X}
+				{#if tick.label !== null}
 					<text
-						x={clamp(tick.start.x, LABEL_MIN_SOFT_X, LABEL_MAX_SOFT_X)} y={tick.start.y - X_LABEL_DISTANCE}
-						fill={AXIS_COLOR} font-family="Satoshi-Variable" font-weight=700 font-size={AXIS_FONT_SIZE}
+						x={tick.label.x} y={tick.label.y}
+						fill={bg.AXIS_COLOR} font-family="Satoshi-Variable" font-weight=700 font-size={tick.label.font_size}
 						text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
 					>
-						{tick.value_text}
+						{tick.label.text}
 					</text>
 				{/if}
 			{/each}
@@ -96,17 +64,17 @@
 			{#each y_axis as tick}
 				{#if tick.type !== null}
 					<line
-						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} stroke={AXIS_COLOR}
-						stroke-width={TICK_WIDTH} stroke-linecap="round" stroke-linejoin="round" opacity={TICK_OPACITY[tick.type]}
+						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} stroke={bg.AXIS_COLOR}
+						stroke-width={tick.width} stroke-linecap="round" stroke-linejoin="round" opacity={tick.opacity}
 					/>
 				{/if}
-				{#if tick.type === "major" && tick.start.y > LABEL_MIN_HARD_Y && tick.start.y < LABEL_MAX_HARD_Y && !(x_in_center && tick.start.y > LABEL_CENTER_Y)}
+				{#if tick.label !== null}
 					<text
-						x={tick.start.x + Y_LABEL_DISTANCE} y={clamp(tick.start.y - Y_LABEL_DISTANCE * 0.02, LABEL_MIN_SOFT_Y, LABEL_MAX_SOFT_Y)}
-						fill={AXIS_COLOR} font-family="Satoshi-Variable" font-weight=700 font-size={AXIS_FONT_SIZE}
+						x={tick.label.x} y={tick.label.y}
+						fill={bg.AXIS_COLOR} font-family="Satoshi-Variable" font-weight=700 font-size={tick.label.font_size}
 						text-anchor="start" alignment-baseline="central" dominant-baseline="central"
 					>
-						{tick.value_text}
+						{tick.label.text}
 					</text>
 				{/if}
 			{/each}
@@ -125,7 +93,7 @@
 				<circle
 					cx={point.x}
 					cy={point.y}
-					r={point.size + 3 * stats.sub_scales.point_stroke}
+					r={point.size + POINT_HITBOX_EXTENSION * stats.sub_scales.point_stroke}
 					fill="transparent"
 				/>
 				<circle
@@ -133,18 +101,18 @@
 					cy={point.y}
 					r={point.size}
 					fill={point.fill}
-					stroke={point.stroke}
-					stroke-width={POINT_STROKE_WIDTH}
+					stroke={point.stroke.color}
+					stroke-width={point.stroke.width}
 				/>
 			</g>
 			{#if point.label.shown}
 				<text
-					x={point.label.x} y={point.label.y} fill={point.stroke} class="unselectable"
-					font-family="Satoshi-Variable" font-weight=750 font-size={POINT_FONT_SIZE}
+					x={point.label.x} y={point.label.y} fill={point.stroke.color} class="unselectable"
+					font-family="Satoshi-Variable" font-weight=750 font-size={point.label.font_size}
 					text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
 				>
 						{#each point.label.text.split('\n') as line, i}
-							<tspan x={point.label.x} dy={i === 0 ? -LINE_HEIGHT * 0.5 : LINE_HEIGHT}>
+							<tspan x={point.label.x} dy={i === 0 ? -point.label.line_height * 0.5 : point.label.line_height}>
 								{line}
 							</tspan>
 						{/each}
@@ -170,7 +138,6 @@
 	.dot:focus
 	{
 		transform: scale(var(--dot-zoom));
-		outline: none;
 	}
 
 	.selected_dot

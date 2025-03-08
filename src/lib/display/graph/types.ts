@@ -1,4 +1,4 @@
-import type { Line } from '$lib/types';
+import type { Line, Point } from '$lib/types';
 
 
 export interface DisplayedLine extends Line
@@ -11,26 +11,42 @@ export interface DisplayedLine extends Line
 export interface Tick extends Line
 {
 	value: number;
-	value_text: string;
+	opacity: number;
+	width: number;
 	type: 'major' | 'minor' | null;
+	label: {
+		x: number,
+		y: number,
+		text: string,
+		font_size: number,
+	} | null;
 }
 
 
-export interface GraphPoint
+export interface BackgroundPoint extends Point
+{
+	size: number;
+}
+
+
+export interface GraphPoint extends Point
 {
 	index: number;
-	x: number;
-	y: number;
 	size: number;
 	zoom: number;
 	fill: string;
-	stroke: string;
+	stroke: {
+		color: string,
+		width: number,
+	}
 	label: {
 		x: number,
 		y: number,
 		width: number,
 		height: number,
 		text: string,
+		font_size: number,
+		line_height: number,
 		shown: boolean,
 	};
 }

@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+*:focus
+{
+	outline: none;
+}
+
 .unselectable
 {
 	pointer-events: none;
