@@ -8,6 +8,10 @@ import ejs from 'ejs';
 import { import_map, map_files } from '$lib/server/data/map';
 import { validate_params } from './validate';
 import { ReviewType } from '$lib/types/paper';
+import { get_stats } from '$lib/display/graph/utils';
+import * as bg from '$lib/display/graph/background';
+import * as pt from '$lib/display/graph/points';
+import { Resvg } from '@resvg/resvg-js';
 
 
 export const prerender = true;
@@ -19,7 +23,12 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 {
 	validate_params(params);
 	const { map, journals } = await import_map(params.group, params.map);
-	const font_data = (await fs.readFile(join(C.STATIC_DIR, 'fonts/Roboto/Roboto-Bold.ttf'))).toString('base64');
+
+	const font_paths = ['ttf', 'woff', 'woff2'].map(type => join(C.STATIC_DIR, `fonts/Satoshi/Satoshi-Bold.${type}`));
+	const font_data_ttf = (await fs.readFile(font_paths[0])).toString('base64');
+	const font_data_woff = (await fs.readFile(font_paths[1])).toString('base64');
+	const font_data_woff2 = (await fs.readFile(font_paths[2])).toString('base64');
+
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
 	for (let i = 0; i < 50; i++)
@@ -37,21 +46,75 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 		paper.results.conclusion = Object.keys(map.answers)[Math.floor(Math.random() * Object.keys(map.answers).length)];
 	}
 
-	const svg = ejs.render(template, {
-		font_data,
-		map,
-		journals,
-	});
-
-	const image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
-	const jpeg_buffer = await sharp(Buffer.from(svg)).jpeg({ quality: 95, progressive: true, chromaSubsampling: '4:4:4' }).toBuffer();
-	const png_buffer = await sharp(Buffer.from(svg)).png().toBuffer();
 	const dir = join(C.IMAGES_DIR, params.group);
-
 	await fs.mkdir(dir, { recursive: true });
 
-	await fs.writeFile(join(dir, `${params.map}.jpg`), jpeg_buffer);
-	await fs.writeFile(join(dir, `${params.map}.png`), png_buffer);
+	const svg_scales = {
+		'thumbnail': { width: 1280, height: 720 },
+		'download': { width: 1500, height: 1000 },
+	};
+
+	const image_scales = {
+		'thumbnail': { width: 1280, height: 720 },
+		'download': { width: 3000, height: 2000 },
+	};
+
+	const types: ('thumbnail' | 'download')[] = ['thumbnail', 'download'];
+	const font_scale = 1.25;
+	let image_hash = null;
+
+	for (let type of types)
+	{
+		const stats = get_stats(map, svg_scales[type].width, svg_scales[type].height)
+		const x_axis = bg.get_x_axis(stats, font_scale);
+		const y_axis = bg.get_y_axis(stats, x_axis, font_scale);
+		const background_points = bg.get_background_points(x_axis, y_axis, stats);
+		const points = pt.get_graph_points(map, stats, font_scale);
+
+		const svg = ejs.render(template, {
+			font_data_ttf,
+			font_data_woff,
+			font_data_woff2,
+			map,
+			width: svg_scales[type].width,
+			height: svg_scales[type].height,
+			stats,
+			x_axis,
+			y_axis,
+			background_points,
+			points,
+			background_color: bg.BACKGROUND_COLOR,
+			points_color: bg.POINTS_COLOR,
+			points_opacity: bg.POINTS_OPACITY,
+			axis_color: bg.AXIS_COLOR,
+		});
+
+		if (type === 'thumbnail')
+			image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
+
+		const resvg = new Resvg(svg, {
+			background: bg.BACKGROUND_COLOR,
+			fitTo: {
+				mode: 'width',
+				value: image_scales[type].width,
+			},
+			font: {
+				fontFiles: font_paths,
+				loadSystemFonts: false,
+			},
+		});
+
+		const png_buffer = resvg.render().asPng();
+		const jpeg_buffer = await sharp(png_buffer).jpeg({ quality: 90, progressive: true, chromaSubsampling: '4:4:4' }).toBuffer();
+
+		if (type === 'thumbnail')
+			await fs.writeFile(join(dir, `${params.map}.jpg`), jpeg_buffer);
+		else
+		{
+			await fs.writeFile(join(dir, `${params.map}.svg`), svg);
+			await fs.writeFile(join(dir, `${params.map}.png`), png_buffer);
+		}
+	}
 
 	return {
 		map,

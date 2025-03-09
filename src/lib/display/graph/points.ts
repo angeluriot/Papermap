@@ -7,9 +7,9 @@ import seedrandom from 'seedrandom';
 
 
 export const POINT_SIZE = 5;
-export const STROKE_WIDTH = 1.4;
+export const STROKE_WIDTH = 1.1;
 
-export const LABEL_PADDING = 7;
+export const LABEL_PADDING = 0.8;
 export const FONT_SIZE = 5;
 export const LINE_HEIGHT = FONT_SIZE * 1.2;
 
@@ -33,13 +33,13 @@ export function get_label(paper: Paper): string
 }
 
 
-export function get_label_sizes(text: string, stats: GraphStats): { width: number, height: number }
+export function get_label_sizes(point: GraphPoint): { width: number, height: number }
 {
-	const text_max_width = text.split('\n').reduce((max, line) => Math.max(max, line.length), 0);
+	const text_max_width = point.label.text.split('\n').reduce((max, line) => Math.max(max, line.length), 0);
 
 	return {
-		width: 0.5 * text_max_width * FONT_SIZE * stats.sub_scales.point_stroke,
-		height: 2.5 * FONT_SIZE * stats.sub_scales.point_stroke,
+		width: 0.5 * text_max_width * point.label.font_size,
+		height: 2.5 * point.label.font_size,
 	}
 }
 
@@ -78,7 +78,7 @@ export function rectangle_rectangle_intersection(rectangle_1: { x: number, y: nu
 }
 
 
-export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
+export function get_graph_points(map: Map, stats: GraphStats, font_scale: number = 1): GraphPoint[]
 {
 	let points: GraphPoint[] = map.papers.map((paper, index) => ({
 		index,
@@ -97,19 +97,19 @@ export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
 			width: 0,
 			height: 0,
 			text: get_label(paper),
-			font_size: stats.sub_scales.point_stroke * FONT_SIZE,
-			line_height: stats.sub_scales.point_stroke * LINE_HEIGHT,
-			shown: true,
+			font_size: stats.sub_scales.point_stroke * FONT_SIZE * font_scale,
+			line_height: stats.sub_scales.point_stroke * LINE_HEIGHT * font_scale,
+			shown: paper.authors.length > 0,
 		},
 	})).sort((a, b) => b.size - a.size);
 
 	for (let point of points)
 	{
 		point.zoom = (point.size + 0.5 * POINT_SIZE) / point.size;
+		point.label.width = get_label_sizes(point).width;
+		point.label.height = get_label_sizes(point).height;
 		point.label.x = point.x;
-		point.label.y = point.y + point.size + LABEL_PADDING * stats.sub_scales.point_stroke;
-		point.label.width = get_label_sizes(point.label.text, stats).width;
-		point.label.height = get_label_sizes(point.label.text, stats).height;
+		point.label.y = point.y + point.size + LABEL_PADDING * stats.sub_scales.point_stroke + point.label.height / 2;
 
 		for (let other of points)
 		{
@@ -118,7 +118,7 @@ export function get_graph_points(map: Map, stats: GraphStats): GraphPoint[]
 
 			if (rectangle_circle_intersection(point.label, { x: other.x, y: other.y, radius: other.size }) ||
 				(other.label.shown && rectangle_rectangle_intersection(point.label, other.label)) ||
-				point.label.y + point.label.height / 2 > stats.height - 12 * stats.sub_scales.axis)
+				point.label.y + point.label.height / 2 > stats.height - 12 * stats.sub_scales.axis * font_scale)
 			{
 				point.label.shown = false;
 				break;

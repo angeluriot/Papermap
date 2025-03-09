@@ -18,9 +18,8 @@ export const MAJOR_TICK_OPACITY = 1;
 export const TICK_WIDTH = 1.4;
 
 export const LABEL_FONT_SIZE = 7;
-export const X_LABEL_DISTANCE = 6;
-export const Y_LABEL_DISTANCE = 2.8;
-export const Y_LABEL_SHIFT = Y_LABEL_DISTANCE * 0.02;
+export const LABEL_DISTANCE = 2.8;
+export const Y_LABEL_SHIFT = LABEL_FONT_SIZE * 0.04;
 
 export const LABEL_MIN_SOFT_X = 14;
 export const LABEL_MIN_HARD_X = 6;
@@ -78,7 +77,7 @@ export function get_x_axis_spacing(stats: GraphStats): { spacing: number[], tick
 }
 
 
-export function get_x_axis(stats: GraphStats): Tick[]
+export function get_x_axis(stats: GraphStats, font_scale: number = 1): Tick[]
 {
 	const s = stats.sub_scales.axis;
 	const spacing = get_x_axis_spacing(stats).spacing;
@@ -105,9 +104,9 @@ export function get_x_axis(stats: GraphStats): Tick[]
 				type: 'major',
 				label: label_shown ? {
 					x: clamp(x, LABEL_MIN_SOFT_X * s, stats.width - LABEL_MAX_SOFT_X * s),
-					y: stats.height - s * (MAJOR_TICK_SIZE + X_LABEL_DISTANCE),
+					y: stats.height - s * (MAJOR_TICK_SIZE + LABEL_DISTANCE),
 					text: scaled_i.toString(),
-					font_size: s * LABEL_FONT_SIZE,
+					font_size: s * LABEL_FONT_SIZE * font_scale,
 				} : null,
 			});
 		else if (i % Math.round(spacing[1] * number_scale) === 0)
@@ -147,7 +146,7 @@ export function get_y_axis_spacing(stats: GraphStats): number[]
 }
 
 
-export function get_y_axis(stats: GraphStats, x_axis: Tick[]): Tick[]
+export function get_y_axis(stats: GraphStats, x_axis: Tick[], font_scale: number = 1): Tick[]
 {
 	const s = stats.sub_scales.axis;
 	const spacing = get_y_axis_spacing(stats);
@@ -179,10 +178,10 @@ export function get_y_axis(stats: GraphStats, x_axis: Tick[]): Tick[]
 				width: s * TICK_WIDTH,
 				type: 'major',
 				label: label_shown ? {
-					x: s * (MAJOR_TICK_SIZE + Y_LABEL_DISTANCE),
-					y: clamp(y - s * Y_LABEL_SHIFT, s * LABEL_MIN_SOFT_Y, stats.height - s * LABEL_MAX_SOFT_Y),
+					x: s * (MAJOR_TICK_SIZE + LABEL_DISTANCE),
+					y: clamp(y - s * Y_LABEL_SHIFT * font_scale, s * LABEL_MIN_SOFT_Y, stats.height - s * LABEL_MAX_SOFT_Y),
 					text: scaled_i.toFixed(spacing[3]),
-					font_size: s * LABEL_FONT_SIZE,
+					font_size: s * LABEL_FONT_SIZE * font_scale,
 				} : null,
 			});
 		else if (i % Math.round(spacing[1] * number_scale) === 0)

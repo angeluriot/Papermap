@@ -52,8 +52,8 @@
 				{#if tick.label !== null}
 					<text
 						x={tick.label.x} y={tick.label.y}
-						fill={bg.AXIS_COLOR} font-family="Satoshi-Variable" font-weight=700 font-size={tick.label.font_size}
-						text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
+						fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={tick.label.font_size}
+						text-anchor="middle" alignment-baseline="auto" dominant-baseline="auto"
 					>
 						{tick.label.text}
 					</text>
@@ -71,7 +71,7 @@
 				{#if tick.label !== null}
 					<text
 						x={tick.label.x} y={tick.label.y}
-						fill={bg.AXIS_COLOR} font-family="Satoshi-Variable" font-weight=700 font-size={tick.label.font_size}
+						fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={tick.label.font_size}
 						text-anchor="start" alignment-baseline="central" dominant-baseline="central"
 					>
 						{tick.label.text}
@@ -108,7 +108,7 @@
 			{#if point.label.shown}
 				<text
 					x={point.label.x} y={point.label.y} fill={point.stroke.color} class="unselectable"
-					font-family="Satoshi-Variable" font-weight=750 font-size={point.label.font_size}
+					font-family="Satoshi-Bold" font-size={point.label.font_size}
 					text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
 				>
 						{#each point.label.text.split('\n') as line, i}

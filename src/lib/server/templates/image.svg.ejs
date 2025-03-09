@@ -1,12 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
+<svg viewBox="0 0 <%= width %> <%= height %>" width="<%= width %>" height="<%= height %>" xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<style type="text/css">
-			@font-face {
-				font-family: 'MyFont';
-				src: url("data:font/truetype;charset=utf-8;base64,<%= font_data %>") format("truetype");
+			@font-face
+			{
+				font-family: 'Satoshi-Bold';
+				src: url("data:font/truetype;charset=utf-8;base64,<%= font_data_ttf %>") format("truetype"),
+					url("data:font/woff;charset=utf-8;base64,<%= font_data_woff %>") format("woff"),
+					url("data:font/woff2;charset=utf-8;base64,<%= font_data_woff2 %>") format("woff2");
+				font-weight: 700;
+				font-display: swap;
+				font-style: normal;
 			}
 		</style>
 	</defs>
-	<rect width="1000" height="1000" fill="lightblue"/>
-	<text x="500" y="500" font-size="50" text-anchor="middle" fill="darkblue" style="font-family: 'MyFont'">Example</text>
+	<g class="background">
+		<rect x="0" y="0" width="<%= width %>" height="<%= height %>" fill="<%= background_color %>"/>
+		<g class="points">
+			<% background_points.forEach(point => { %>
+				<circle cx="<%= point.x %>" cy="<%= point.y %>" r="<%= point.size %>" fill="<%= points_color %>" opacity="<%= points_opacity %>"/>
+			<% }); %>
+		</g>
+		<g class="x-axis">
+			<% x_axis.forEach(tick => { %>
+				<% if (tick.type !== null) { %>
+					<line
+						x1="<%= tick.start.x %>" y1="<%= tick.start.y %>"
+						x2="<%= tick.end.x %>" y2="<%= tick.end.y %>"
+						stroke="<%= axis_color %>"
+						stroke-width="<%= tick.width %>"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						opacity="<%= tick.opacity %>"
+					/>
+				<% } %>
+				<% if (tick.label !== null) { %>
+					<text
+						x="<%= tick.label.x %>"
+						y="<%= tick.label.y %>"
+						fill="<%= axis_color %>"
+						font-family="Satoshi-Bold"
+						font-size="<%= tick.label.font_size %>"
+						text-anchor="middle"
+						alignment-baseline="auto"
+						dominant-baseline="auto"
+					>
+						<%= tick.label.text %>
+					</text>
+				<% } %>
+			<% }); %>
+		</g>
+		<g class="y-axis">
+			<% y_axis.forEach(tick => { %>
+				<% if (tick.type !== null) { %>
+					<line
+						x1="<%= tick.start.x %>" y1="<%= tick.start.y %>"
+						x2="<%= tick.end.x %>" y2="<%= tick.end.y %>"
+						stroke="<%= axis_color %>"
+						stroke-width="<%= tick.width %>"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						opacity="<%= tick.opacity %>"
+					/>
+				<% } %>
+				<% if (tick.label !== null) { %>
+					<text
+						x="<%= tick.label.x %>"
+						y="<%= tick.label.y %>"
+						fill="<%= axis_color %>"
+						font-family="Satoshi-Bold"
+						font-size="<%= tick.label.font_size %>"
+						text-anchor="start"
+						alignment-baseline="central"
+						dominant-baseline="central"
+					>
+						<%= tick.label.text %>
+					</text>
+				<% } %>
+			<% }); %>
+		</g>
+	</g>
+	<g class="plot">
+		<% points.forEach(point => { %>
+			<g class="dot">
+				<circle
+					cx="<%= point.x %>"
+					cy="<%= point.y %>"
+					r="<%= point.size %>"
+					fill="<%= point.fill %>"
+					stroke="<%= point.stroke.color %>"
+					stroke-width="<%= point.stroke.width %>"
+				/>
+			</g>
+			<% if (point.label.shown) { %>
+				<text
+					x="<%= point.label.x %>"
+					y="<%= point.label.y %>"
+					fill="<%= point.stroke.color %>"
+					font-family="Satoshi-Bold"
+					font-size="<%= point.label.font_size %>"
+					text-anchor="middle"
+					alignment-baseline="central"
+					dominant-baseline="central"
+				>
+					<% point.label.text.split('\n').forEach((line, i) => { %>
+						<tspan x="<%= point.label.x %>" dy="<%= i === 0 ? -point.label.line_height * 0.5 : point.label.line_height %>">
+							<%= line %>
+						</tspan>
+					<% }); %>
+				</text>
+			<% } %>
+		<% }); %>
+	</g>
 </svg>
