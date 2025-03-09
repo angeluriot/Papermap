@@ -51,6 +51,7 @@ export function validate_paper(paper: DataPaper): void
 
 
 const map_schema = z.object({
+	emoji: z.string(),
 	question: z.string(),
 	detailed_question: z.string(),
 	tags: z.array(z.string()),

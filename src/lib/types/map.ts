@@ -4,6 +4,7 @@ import type { Color } from '$lib/colors';
 
 interface BaseMap
 {
+	emoji: string;
 	question: string;
 	detailed_question: string;
 	tags: string[];
@@ -37,12 +38,17 @@ export interface DataMap extends BaseMap
 }
 
 
+export interface Group
+{
+	id: string;
+	emoji: string;
+	name: string;
+}
+
+
 export interface Map extends BaseMap
 {
-	group: {
-		id: string,
-		name: string,
-	};
+	group: Group;
 	id: string;
 	papers: Paper[];
 }

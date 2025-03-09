@@ -1,7 +1,7 @@
 import { score_paper } from '$lib/server/data/score';
 import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
 import type { Journal } from '$lib/types/journal';
-import type { DataMap, Map } from '$lib/types/map';
+import type { DataMap, Group, Map } from '$lib/types/map';
 import type { DataPaper } from '$lib/types/paper';
 import { constants as C } from '$lib/server/utils';
 import { import_journals } from './journal';
@@ -11,14 +11,14 @@ import { validate_map } from './validate';
 export const map_files = import.meta.glob('/src/lib/server/jsons/maps/**/*.json');
 
 
-export async function import_group_title(group: string): Promise<string>
+export async function import_group(group: string): Promise<Group>
 {
 	const file_path = `/src/lib/server/jsons/maps/${group}/_init_.json`;
 
 	if (!map_files[file_path])
 		throw new NotFoundError(`Group not found: ${group}`);
 
-	return (await map_files[file_path]() as any).default.title;
+	return (await map_files[file_path]() as any).default;
 }
 
 
@@ -47,14 +47,14 @@ export async function import_datamap(group: string, id: string): Promise<DataMap
 
 export async function import_map(group: string, id: string): Promise<{ map: Map, journals: { [id: string]: Journal } }>
 {
-	const group_name = await import_group_title(group);
+	const group_data = await import_group(group);
 	const data = await import_datamap(group, id);
 	const journals = await import_journals(data);
 
 	return {
 		map: {
 			...data,
-			group: { id: group, name: group_name },
+			group: group_data,
 			id,
 			papers: data.papers.map((paper: DataPaper) => score_paper(data, paper.journal.id ? journals[paper.journal.id] : undefined, paper))
 		},
@@ -63,9 +63,9 @@ export async function import_map(group: string, id: string): Promise<{ map: Map,
 }
 
 
-export async function import_maps(): Promise<{ [group: string]: { name: string, maps: { name: string, url: string }[] } }>
+export async function import_maps(): Promise<{ [group: string]: { emoji: string, name: string, maps: { emoji: string, name: string, url: string }[] } }>
 {
-	let maps: { [group: string]: { name: string, maps: { name: string, url: string }[] } } = {};
+	let maps: { [group: string]: { emoji: string, name: string, maps: { emoji: string, name: string, url: string }[] } } = {};
 
 	for (const path of Object.keys(map_files))
 	{
@@ -76,14 +76,14 @@ export async function import_maps(): Promise<{ [group: string]: { name: string, 
 
 		const group = match[1];
 		const map = match[2];
-		const group_name = await import_group_title(group);
-		const map_name = (await import_datamap(group, map)).question;
+		const group_data = await import_group(group);
+		const map_data = (await import_datamap(group, map));
 		const url = `${C.BASE_URL}/maps/${group}/${map}`;
 
 		if (!maps[group])
-			maps[group] = { name: group_name, maps: [] };
+			maps[group] = { emoji: group_data.emoji, name: group_data.name, maps: [] };
 
-		maps[group].maps.push({ name: map_name, url });
+		maps[group].maps.push({ emoji: map_data.emoji, name: map_data.question, url });
 	}
 
 	return maps;
