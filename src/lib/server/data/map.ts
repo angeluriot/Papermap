@@ -1,7 +1,7 @@
 import { score_paper } from '$lib/server/data/score';
 import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
 import type { Journal } from '$lib/types/journal';
-import type { DataMap, Group, Map } from '$lib/types/map';
+import type { DataMap, Group, Map, Maps } from '$lib/types/map';
 import type { DataPaper } from '$lib/types/paper';
 import { constants as C } from '$lib/server/utils';
 import { import_journals } from './journal';
@@ -63,9 +63,9 @@ export async function import_map(group: string, id: string): Promise<{ map: Map,
 }
 
 
-export async function import_maps(): Promise<{ [group: string]: { emoji: string, name: string, maps: { emoji: string, name: string, url: string }[] } }>
+export async function import_maps(): Promise<Maps>
 {
-	let maps: { [group: string]: { emoji: string, name: string, maps: { emoji: string, name: string, url: string }[] } } = {};
+	let maps: Maps = {};
 
 	for (const path of Object.keys(map_files))
 	{

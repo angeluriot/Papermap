@@ -26,3 +26,18 @@
 	-ms-user-select: auto;
 	-o-user-select: auto;
 }
+
+.flex-center
+{
+	@apply flex justify-center items-center;
+}
+
+.flex-center-row
+{
+	@apply flex flex-row justify-center items-center;
+}
+
+.flex-center-col
+{
+	@apply flex flex-col justify-center items-center;
+}

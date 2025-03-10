@@ -4,6 +4,7 @@
 	import { paper_to_datapaper } from '$lib/types/paper';
 	import Graph from '$lib/display/graph/graph.svelte';
 	import type { GraphPoint } from '$lib/display/graph/types';
+	import Title from '$lib/display/title.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -84,6 +85,9 @@
 		{#if width > 0 && height > 0}
 			<Graph {map} width={width} height={height} bind:selected={selected}/>
 		{/if}
+	</div>
+	<div class="absolute">
+		<Title {map} maps={data.maps}/>
 	</div>
 	{#if selected !== null}
 		<div class="absolute w-[100px] h-[200px] bg-amber-950" style="left: {selected.point.x + selected.point.size * 1.1 + 10}px; top: {selected.point.y}px;"></div>

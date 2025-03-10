@@ -5,7 +5,7 @@ import crypto from 'crypto';
 import sharp from 'sharp';
 import { join } from 'path';
 import ejs from 'ejs';
-import { import_map, map_files } from '$lib/server/data/map';
+import { import_map, import_maps, map_files } from '$lib/server/data/map';
 import { validate_params } from './validate';
 import { ReviewType } from '$lib/types/paper';
 import { get_stats } from '$lib/display/graph/utils';
@@ -119,6 +119,7 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 	return {
 		map,
 		journals,
+		maps: await import_maps(),
 		image_hash,
 	};
 };

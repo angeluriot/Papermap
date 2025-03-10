@@ -52,3 +52,17 @@ export interface Map extends BaseMap
 	id: string;
 	papers: Paper[];
 }
+
+
+export interface Maps
+{
+	[group: string]: {
+		emoji: string,
+		name: string,
+		maps: {
+			emoji: string,
+			name: string,
+			url: string,
+		}[],
+	};
+}
