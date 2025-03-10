@@ -13,8 +13,9 @@ export async function GET({ params }: { params: Params }): Promise<Response>
 	{
 		validate_params(params);
 
+		const ext_to_type: { [key: string]: string } = { 'jpg': 'jpeg', 'png': 'png', 'svg': 'svg+xml' };
 		const image_ext = params.image.split('.')[1];
-		const image_type = image_ext.replace('jpg', 'jpeg');
+		const image_type = ext_to_type[image_ext];
 		const file_path = join(C.IMAGES_DIR, params.group, `${params.map}.${image_ext}`);
 
 		if (await fs.access(file_path).then(() => false).catch(() => true))

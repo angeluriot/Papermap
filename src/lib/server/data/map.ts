@@ -18,7 +18,7 @@ export async function import_group(group: string): Promise<Group>
 	if (!map_files[file_path])
 		throw new NotFoundError(`Group not found: ${group}`);
 
-	return (await map_files[file_path]() as any).default;
+	return { id: group, ...(await map_files[file_path]() as any).default };
 }
 
 
