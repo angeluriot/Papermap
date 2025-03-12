@@ -34,6 +34,10 @@ export const LABEL_MAX_HARD_Y = 5;
 export const LABEL_CENTER_X = 29;
 export const LABEL_CENTER_Y = 17;
 
+export const TITLE_X_DISTANCE = 0.45;
+export const TITLE_Y_DISTANCE = 0.45;
+export const TITLE_FONT_SIZE = 8.5;
+
 export const POSSIBLE_X_SPACINGS = [
 	[1, 1/12, 1/24],
 	[1, 1/12, 1/12],
@@ -134,6 +138,21 @@ export function get_x_axis(stats: GraphStats, font_scale: number = 1): Tick[]
 	return ticks;
 }
 
+
+export function get_x_title(stats: GraphStats, font_scale: number = 1): { x: number, y: number, text: string, font_size: number }
+{
+	const distance_start = stats.sub_scales.axis * (MAJOR_TICK_SIZE + LABEL_DISTANCE) + stats.sub_scales.axis * LABEL_FONT_SIZE * font_scale;
+	const font_size = stats.sub_scales.axis * (font_scale == 1 ? TITLE_FONT_SIZE : (TITLE_FONT_SIZE + LABEL_FONT_SIZE) * 0.5 * font_scale);
+
+	return {
+		x: stats.width / 2,
+		y: stats.height - (distance_start + stats.sub_scales.axis * TITLE_X_DISTANCE * font_size),
+		text: 'Year',
+		font_size,
+	}
+}
+
+
 export function get_y_axis_spacing(stats: GraphStats): number[]
 {
 	const best_tick_distance = get_x_axis_spacing(stats).tick_distance;
@@ -207,6 +226,21 @@ export function get_y_axis(stats: GraphStats, x_axis: Tick[], font_scale: number
 	}
 
 	return ticks;
+}
+
+
+export function get_y_title(stats: GraphStats, y_ticks: Tick[], font_scale: number = 1): { x: number, y: number, text: string, font_size: number }
+{
+	const max_text_length = y_ticks.reduce((max, tick) => tick.label !== null ? Math.max(max, tick.label.text.length) : max, 0);
+	const distance_start = stats.sub_scales.axis * (MAJOR_TICK_SIZE + LABEL_DISTANCE) + stats.sub_scales.axis * LABEL_FONT_SIZE * font_scale * max_text_length * 0.5;
+	const font_size = stats.sub_scales.axis * (font_scale == 1 ? TITLE_FONT_SIZE : (TITLE_FONT_SIZE + LABEL_FONT_SIZE) * 0.5 * font_scale);
+
+	return {
+		x: distance_start + stats.sub_scales.axis * TITLE_Y_DISTANCE * font_size,
+		y: stats.height / 2,
+		text: 'Paper Strength Index',
+		font_size,
+	}
 }
 
 

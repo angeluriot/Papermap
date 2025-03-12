@@ -49,6 +49,20 @@
 					</text>
 				<% } %>
 			<% }); %>
+			<text
+				x="<%= x_title.x %>"
+				y="<%= x_title.y %>"
+				fill="<%= axis_color %>"
+				stroke="<%= axis_color %>"
+				font-family="<%= font.name %>"
+				font-size="<%= x_title.font_size %>"
+				stroke-width="<%= text_stroke %>"
+				text-anchor="middle"
+				alignment-baseline="auto"
+				dominant-baseline="auto"
+			>
+				<%= x_title.text %>
+			</text>
 		</g>
 		<g class="y-axis">
 			<% y_axis.forEach(tick => { %>
@@ -80,6 +94,21 @@
 					</text>
 				<% } %>
 			<% }); %>
+			<text
+				x="<%= y_title.x %>"
+				y="<%= y_title.y %>"
+				transform="rotate(90, <%= y_title.x %>, <%= y_title.y %>)"
+				fill="<%= axis_color %>"
+				stroke="<%= axis_color %>"
+				font-family="<%= font.name %>"
+				font-size="<%= y_title.font_size %>"
+				stroke-width="<%= text_stroke %>"
+				text-anchor="middle"
+				alignment-baseline="auto"
+				dominant-baseline="auto"
+			>
+				<%= y_title.text %>
+			</text>
 		</g>
 	</g>
 	<g class="plot">

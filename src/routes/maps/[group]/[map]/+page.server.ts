@@ -65,6 +65,8 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 		const stats = get_stats(map, svg_scales[type].width, svg_scales[type].height, 1.2);
 		const x_axis = bg.get_x_axis(stats, font_scale);
 		const y_axis = bg.get_y_axis(stats, x_axis, font_scale);
+		const x_title = bg.get_x_title(stats, font_scale);
+		const y_title = bg.get_y_title(stats, y_axis, font_scale);
 		const background_points = bg.get_background_points(x_axis, y_axis, stats);
 		const points = pt.get_graph_points(map, stats, font_scale);
 		const title = await get_title(map, stats);
@@ -78,6 +80,8 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 			stats,
 			x_axis,
 			y_axis,
+			x_title,
+			y_title,
 			background_points,
 			points,
 			background_color: bg.BACKGROUND_COLOR,

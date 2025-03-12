@@ -12,6 +12,8 @@
 	const stats = $derived(get_stats(map, width, height));
 	const x_axis = $derived(bg.get_x_axis(stats));
 	const y_axis = $derived(bg.get_y_axis(stats, x_axis));
+	const x_title = $derived(bg.get_x_title(stats));
+	const y_title = $derived(bg.get_y_title(stats, y_axis));
 	const background_points = $derived(bg.get_background_points(x_axis, y_axis, stats));
 	const points = $derived(pt.get_graph_points(map, stats));
 
@@ -59,6 +61,13 @@
 					</text>
 				{/if}
 			{/each}
+			<text
+				x={x_title.x} y={x_title.y}
+				fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={x_title.font_size}
+				text-anchor="middle" alignment-baseline="auto" dominant-baseline="auto"
+			>
+				{x_title.text}
+			</text>
 		</g>
 		<g class="y-axis">
 			{#each y_axis as tick}
@@ -78,6 +87,14 @@
 					</text>
 				{/if}
 			{/each}
+			<text
+				x={y_title.x} y={y_title.y}
+				transform="rotate(90, {y_title.x}, {y_title.y})"
+				fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={y_title.font_size}
+				text-anchor="middle" alignment-baseline="auto" dominant-baseline="auto"
+			>
+				{y_title.text}
+			</text>
 		</g>
 	</g>
 	<g class="plot">
