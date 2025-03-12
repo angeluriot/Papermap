@@ -13,8 +13,7 @@
 	const route = `maps/${map.group.id}/${map.id}`;
 	const page_url = `${C.BASE_URL}/${route}`;
 	const image_url = `${page_url}/image.jpg?v=${data.image_hash}`;
-	const title = map.question;
-	const description = `Papermap: ${map.detailed_question}`;
+	const description = `Papermap: ${map.question.long}`;
 	const tags = C.DEFAULT_TAGS.concat(map.tags);
 	let width = $state(0);
 	let height = $state(0);
@@ -52,7 +51,7 @@
 <svelte:window bind:innerWidth={width} bind:innerHeight={height}/>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{map.question.short}</title>
 
 	<meta name="description" content={description}/>
 	<meta name="keywords" content={tags.join(', ')}/>
@@ -60,9 +59,9 @@
 	<meta name="topic" content={map.group.name}/>
 	<meta name="summary" content={description}/>
 	<meta name="url" content={page_url}/>
-	<meta name="pagename" content={title}/>
+	<meta name="pagename" content={map.question.short}/>
 
-	<meta property="og:title" content={title}/>
+	<meta property="og:title" content={map.question.short}/>
 	<meta property="og:url" content={page_url}/>
 	<meta property="og:image" content={image_url}/>
 	<meta property="og:image:url" content={image_url}/>
@@ -72,11 +71,11 @@
 	<meta property="og:description" content={description}/>
 	<meta property="article:tag" content={tags.join(', ')}/>
 
-	<meta name="twitter:title" content={title}/>
+	<meta name="twitter:title" content={map.question.short}/>
 	<meta name="twitter:description" content={description}/>
 	<meta name="twitter:image" content={image_url}/>
 	<meta name="twitter:image:src" content={image_url}/>
-	<meta name="twitter:image:alt" content={title}/>
+	<meta name="twitter:image:alt" content={map.question.short}/>
 	<meta name="twitter:url" content={page_url}/>
 </svelte:head>
 

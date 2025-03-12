@@ -12,6 +12,8 @@ import { get_stats } from '$lib/display/graph/utils';
 import * as bg from '$lib/display/graph/background';
 import * as pt from '$lib/display/graph/points';
 import { Resvg } from '@resvg/resvg-js';
+import { SatoshiMedium } from '$lib/fonts';
+import { get_title } from '$lib/server/display/title';
 
 
 export const prerender = true;
@@ -23,11 +25,6 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 {
 	validate_params(params);
 	const { map, journals } = await import_map(params.group, params.map);
-
-	const font_paths = ['ttf', 'woff', 'woff2'].map(type => join(C.STATIC_DIR, `fonts/Satoshi/Satoshi-Bold.${type}`));
-	const font_data_ttf = (await fs.readFile(font_paths[0])).toString('base64');
-	const font_data_woff = (await fs.readFile(font_paths[1])).toString('base64');
-	const font_data_woff2 = (await fs.readFile(font_paths[2])).toString('base64');
 
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
@@ -60,21 +57,21 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 	};
 
 	const types: ('thumbnail' | 'download')[] = ['thumbnail', 'download'];
-	const font_scale = 1.25;
+	const font_scale = 1.5;
 	let image_hash = null;
 
 	for (let type of types)
 	{
-		const stats = get_stats(map, svg_scales[type].width, svg_scales[type].height)
+		const stats = get_stats(map, svg_scales[type].width, svg_scales[type].height, 1.2);
 		const x_axis = bg.get_x_axis(stats, font_scale);
 		const y_axis = bg.get_y_axis(stats, x_axis, font_scale);
 		const background_points = bg.get_background_points(x_axis, y_axis, stats);
 		const points = pt.get_graph_points(map, stats, font_scale);
+		const title = await get_title(map, stats);
 
 		const svg = ejs.render(template, {
-			font_data_ttf,
-			font_data_woff,
-			font_data_woff2,
+			font: SatoshiMedium,
+			text_stroke: 0.5,
 			map,
 			width: svg_scales[type].width,
 			height: svg_scales[type].height,
@@ -87,6 +84,7 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 			points_color: bg.POINTS_COLOR,
 			points_opacity: bg.POINTS_OPACITY,
 			axis_color: bg.AXIS_COLOR,
+			title,
 		});
 
 		if (type === 'thumbnail')
@@ -99,7 +97,7 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 				value: image_scales[type].width,
 			},
 			font: {
-				fontFiles: font_paths,
+				fontFiles: SatoshiMedium.files.map(f => f.url),
 				loadSystemFonts: false,
 			},
 		});

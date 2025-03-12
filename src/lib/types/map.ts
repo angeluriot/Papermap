@@ -5,8 +5,11 @@ import type { Color } from '$lib/colors';
 interface BaseMap
 {
 	emoji: string;
-	question: string;
-	detailed_question: string;
+	question: {
+		short: string,
+		default: string,
+		long: string,
+	};
 	tags: string[];
 	answers: {
 		[id: string]: {

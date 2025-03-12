@@ -3,15 +3,16 @@
 		<style type="text/css">
 			@font-face
 			{
-				font-family: 'Satoshi-Bold';
-				src: url("data:font/truetype;charset=utf-8;base64,<%= font_data_ttf %>") format("truetype"),
-					url("data:font/woff;charset=utf-8;base64,<%= font_data_woff %>") format("woff"),
-					url("data:font/woff2;charset=utf-8;base64,<%= font_data_woff2 %>") format("woff2");
-				font-weight: 700;
-				font-display: swap;
-				font-style: normal;
+				font-family: '<%= font.name %>';
+				src: <%= font.sources %>;
+				font-weight: <%= font.weight %>;
+				font-display: <%= font.display %>;
+				font-style: <%= font.style %>;
 			}
 		</style>
+		<filter id="title-shadow" x="-50%" y="-50%" width="200%" height="200%">
+			<feDropShadow dx="0" dy="<%= title.height * 0.05 %>" stdDeviation="<%= width * 0.01 %>" flood-color="#0c138e36" />
+		</filter>
 	</defs>
 	<g class="background">
 		<rect x="0" y="0" width="<%= width %>" height="<%= height %>" fill="<%= background_color %>"/>
@@ -28,8 +29,6 @@
 						x2="<%= tick.end.x %>" y2="<%= tick.end.y %>"
 						stroke="<%= axis_color %>"
 						stroke-width="<%= tick.width %>"
-						stroke-linecap="round"
-						stroke-linejoin="round"
 						opacity="<%= tick.opacity %>"
 					/>
 				<% } %>
@@ -38,7 +37,9 @@
 						x="<%= tick.label.x %>"
 						y="<%= tick.label.y %>"
 						fill="<%= axis_color %>"
-						font-family="Satoshi-Bold"
+						stroke="<%= axis_color %>"
+						stroke-width="<%= text_stroke %>"
+						font-family="<%= font.name %>"
 						font-size="<%= tick.label.font_size %>"
 						text-anchor="middle"
 						alignment-baseline="auto"
@@ -67,7 +68,9 @@
 						x="<%= tick.label.x %>"
 						y="<%= tick.label.y %>"
 						fill="<%= axis_color %>"
-						font-family="Satoshi-Bold"
+						stroke="<%= axis_color %>"
+						stroke-width="<%= text_stroke %>"
+						font-family="<%= font.name %>"
 						font-size="<%= tick.label.font_size %>"
 						text-anchor="start"
 						alignment-baseline="central"
@@ -96,7 +99,9 @@
 					x="<%= point.label.x %>"
 					y="<%= point.label.y %>"
 					fill="<%= point.stroke.color %>"
-					font-family="Satoshi-Bold"
+					stroke="<%= point.stroke.color %>"
+					stroke-width="<%= text_stroke %>"
+					font-family="<%= font.name %>"
 					font-size="<%= point.label.font_size %>"
 					text-anchor="middle"
 					alignment-baseline="central"
@@ -110,5 +115,29 @@
 				</text>
 			<% } %>
 		<% }); %>
+	</g>
+	<g class="title">
+		<rect
+			x="<%= title.margin %>"
+			y="<%= title.margin %>"
+			width="<%= title.width + title.padding_x * 2 %>"
+			height="<%= title.height + title.padding_y * 2 %>"
+			fill="white"
+			rx="<%= title.height / 2 + title.padding_y %>"
+			ry="<%= title.height / 2 + title.padding_y %>"
+			filter="url(#title-shadow)"
+		/>
+		<text
+			x="<%= title.margin + title.padding_x %>"
+			y="<%= title.margin + title.padding_y * 1.04 %>"
+			fill="black"
+			font-family="<%= font.name %>"
+			font-size="<%= title.font_size %>"
+			text-anchor="start"
+			alignment-baseline="hanging"
+			dominant-baseline="hanging"
+		>
+			<%= title.text %>
+		</text>
 	</g>
 </svg>

@@ -4,16 +4,16 @@
 	const { map, maps }: { map: Map, maps: Maps } = $props();
 
 	let div: HTMLDivElement | null = $state(null);
-	let search = $state(map.question);
+	let search = $state(map.question.default);
 </script>
 
 <div class="input-container unselectable bg-white rounded-full text-nowrap inline-block align-middle overflow-hidden relative" bind:this={div}>
 	<span class="emoji inline-block align-middle">{map.emoji}</span>
 	<div class="relative inline-block align-middle">
-		<span class="bone opacity-0 h-full">{map.question}</span>
+		<span class="bone opacity-0 h-full">{map.question.default}</span>
 		<input
 			type="text" spellcheck="false" class="selectable absolute left-0 w-full"
-			placeholder={map.question} bind:value={search}
+			placeholder={map.question.default} bind:value={search}
 		/>
 	</div>
 	<div class="mask bg-white absolute h-full right-0 top-0 unselectable"></div>
@@ -25,7 +25,7 @@
 		--x-pad: 1.6em;
 		--y-pad: 1em;
 		--margin: 1.5em;
-		font-size: clamp(12px, calc(calc(0.16vw + 5.5px) * 2), 17.5px);
+		font-size: clamp(12px, calc(calc(0.17vw + 5.5px) * 2), 18px);
 		box-shadow: 0em 0.1em 1.25em #0c138e36;
 		margin: var(--margin);
 		max-width: calc(100vw - calc(2 * var(--margin)));

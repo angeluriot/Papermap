@@ -22,3 +22,18 @@ export interface Line
 	start: Point;
 	end: Point;
 }
+
+
+export interface Font
+{
+	name: string;
+	files: {
+		type: string,
+		url: string,
+		data: string,
+	}[];
+	weight: string;
+	display: string;
+	style: string;
+	sources: string;
+}

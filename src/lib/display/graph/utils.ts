@@ -10,7 +10,7 @@ const Y_MIN_PADDING = 20;
 const Y_MAX_PADDING = 20;
 
 
-export function get_stats(map: Map, width: number, height: number): GraphStats
+export function get_stats(map: Map, width: number, height: number, up_margin_scale: number = 1): GraphStats
 {
 	const scale = (width + height) * 0.001;
 
@@ -27,7 +27,7 @@ export function get_stats(map: Map, width: number, height: number): GraphStats
 	return {
 		min_year: min_year - pad_year * X_MIN_PADDING,
 		max_year: max_year + pad_year * X_MAX_PADDING,
-		min_score: min_score - pad_score * Y_MIN_PADDING,
+		min_score: min_score - pad_score * Y_MIN_PADDING * up_margin_scale,
 		max_score: max_score + pad_score * Y_MAX_PADDING,
 		width,
 		height,

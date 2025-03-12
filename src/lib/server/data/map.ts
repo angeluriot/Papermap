@@ -83,7 +83,7 @@ export async function import_maps(): Promise<Maps>
 		if (!maps[group])
 			maps[group] = { emoji: group_data.emoji, name: group_data.name, maps: [] };
 
-		maps[group].maps.push({ emoji: map_data.emoji, name: map_data.question, url });
+		maps[group].maps.push({ emoji: map_data.emoji, name: map_data.question.default, url });
 	}
 
 	return maps;

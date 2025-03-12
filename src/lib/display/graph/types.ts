@@ -1,13 +1,6 @@
 import type { Line, Point } from '$lib/types';
 
 
-export interface DisplayedLine extends Line
-{
-	color: string;
-	width: number;
-}
-
-
 export interface Tick extends Line
 {
 	value: number;
