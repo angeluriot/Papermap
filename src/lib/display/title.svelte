@@ -7,7 +7,10 @@
 	let search = $state(map.question.default);
 </script>
 
-<div class="input-container unselectable bg-white rounded-full text-nowrap inline-block align-middle overflow-hidden relative" bind:this={div}>
+<div
+	class="input-container unselectable bg-white rounded-full text-nowrap inline-block align-middle overflow-hidden relative"
+	bind:this={div} onscroll={(e: Event) => { (e.currentTarget as HTMLDivElement).scrollLeft = 0; }}
+>
 	<span class="emoji inline-block align-middle">{map.emoji}</span>
 	<div class="relative inline-block align-middle">
 		<span class="bone opacity-0 h-full">{map.question.default}</span>
@@ -22,15 +25,10 @@
 <style>
 	.input-container
 	{
-		--x-pad: 1.6em;
-		--y-pad: 1em;
-		--margin: 1.5em;
-		font-size: clamp(12px, calc(calc(0.17vw + 5.5px) * 2), 18px);
 		box-shadow: 0em 0.1em 1.25em #0c138e36;
-		margin: var(--margin);
-		max-width: calc(100vw - calc(2 * var(--margin)));
 		font-family: Satoshi-Variable;
 		font-weight: 575;
+		line-height: 1.5em;
 	}
 
 	@media screen and (max-width: 800px)
@@ -61,6 +59,7 @@
 
 	.mask
 	{
-		width: var(--x-pad);
+		margin-right: calc(-1 * var(--x-pad));
+		width: calc(var(--x-pad) * 2);
 	}
 </style>

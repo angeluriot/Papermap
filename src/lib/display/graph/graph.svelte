@@ -5,7 +5,13 @@
 	import type { GraphPoint } from './types';
 	import { get_stats } from './utils';
 
-	let { map, width, height, selected = $bindable() }: { map: Map, width: number, height: number, selected: { point: GraphPoint, keep: boolean } | null } = $props();
+	let { map, width, height, point_selected = $bindable(), group_selected = $bindable() }: {
+		map: Map,
+		width: number,
+		height: number,
+		point_selected: { point: GraphPoint, keep: boolean } | null,
+		group_selected: { i: number, ids: string[], keep: boolean } | null
+	} = $props();
 
 	const POINT_HITBOX_EXTENSION = 3;
 
@@ -19,23 +25,25 @@
 
 	function select_point(event: Event, point: GraphPoint, clicked: boolean)
 	{
-		if (!(selected !== null && selected.keep && !clicked))
-			selected = { point, keep: clicked };
+		if (!(point_selected !== null && point_selected.keep && !clicked))
+			point_selected = { point, keep: clicked };
+
+		if (group_selected !== null && (clicked || !group_selected.keep))
+			group_selected = null;
 
 		event.stopPropagation();
 	}
 
 	function deselect_point(clicked: boolean)
 	{
-		if (selected !== null && (clicked || !selected.keep))
-			selected = null;
+		if (point_selected !== null && (clicked || !point_selected.keep))
+			point_selected = null;
 	}
 </script>
 
-<svg
-	viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg"
-	onclick={() => deselect_point(true)} onkeydown={null} role="button" tabindex={-1}
->
+<svelte:window onclick={() => deselect_point(true)}/>
+
+<svg viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">
 	<g class="background unselectable">
 		<rect x=0 y=0 width={width} height={height} fill={bg.BACKGROUND_COLOR}/>
 		<g class="points">
@@ -99,42 +107,44 @@
 	</g>
 	<g class="plot">
 		{#each points as point, i}
-			<g
-				onclick={(event) => select_point(event, point, true)}
-				onmouseenter={(event) => select_point(event, point, false)}
-				onmouseleave={() => deselect_point(false)}
-				onkeydown={null}
-				class="dot {selected?.point.index == point.index ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
-				style="--dot-zoom: {point.zoom};"
-			>
-				<circle
-					cx={point.x}
-					cy={point.y}
-					r={point.size + POINT_HITBOX_EXTENSION * stats.sub_scales.point_stroke}
-					fill="transparent"
-				/>
-				<circle
-					cx={point.x}
-					cy={point.y}
-					r={point.size}
-					fill={point.fill}
-					stroke={point.stroke.color}
-					stroke-width={point.stroke.width}
-				/>
-			</g>
-			{#if point.label.shown}
-				<text
-					x={point.label.x} y={point.label.y} fill={point.stroke.color} class="unselectable"
-					font-family="Satoshi-Bold" font-size={point.label.font_size}
-					text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
+			<g class="point" opacity={group_selected === null || group_selected.ids.includes(point.answer) ? 1 : 0.25}>
+				<g
+					onclick={(event) => select_point(event, point, true)}
+					onmouseenter={(event) => select_point(event, point, false)}
+					onmouseleave={() => deselect_point(false)}
+					onkeydown={null}
+					class="dot {point_selected?.point.index == point.index ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
+					style="--dot-zoom: {point.zoom};"
 				>
-						{#each point.label.text.split('\n') as line, i}
-							<tspan x={point.label.x} dy={i === 0 ? -point.label.line_height * 0.5 : point.label.line_height}>
-								{line}
-							</tspan>
-						{/each}
-				</text>
-			{/if}
+					<circle
+						cx={point.x}
+						cy={point.y}
+						r={point.size + POINT_HITBOX_EXTENSION * stats.sub_scales.point_stroke}
+						fill="transparent"
+					/>
+					<circle
+						cx={point.x}
+						cy={point.y}
+						r={point.size}
+						fill={point.fill}
+						stroke={point.stroke.color}
+						stroke-width={point.stroke.width}
+					/>
+				</g>
+				{#if point.label.shown}
+					<text
+						x={point.label.x} y={point.label.y} fill={point.stroke.color} class="unselectable"
+						font-family="Satoshi-Bold" font-size={point.label.font_size}
+						text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
+					>
+							{#each point.label.text.split('\n') as line, i}
+								<tspan x={point.label.x} dy={i === 0 ? -point.label.line_height * 0.5 : point.label.line_height}>
+									{line}
+								</tspan>
+							{/each}
+					</text>
+				{/if}
+			</g>
 		{/each}
 	</g>
 </svg>

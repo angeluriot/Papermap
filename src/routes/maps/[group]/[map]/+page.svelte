@@ -5,6 +5,7 @@
 	import Graph from '$lib/display/graph/graph.svelte';
 	import type { GraphPoint } from '$lib/display/graph/types';
 	import Title from '$lib/display/title.svelte';
+	import Overview from '$lib/display/overview.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -15,9 +16,11 @@
 	const image_url = `${page_url}/image.jpg?v=${data.image_hash}`;
 	const description = `Papermap: ${map.question.long}`;
 	const tags = C.DEFAULT_TAGS.concat(map.tags);
+
 	let width = $state(0);
 	let height = $state(0);
-	let selected: { point: GraphPoint, keep: boolean } | null = $state(null);
+	let point_selected: { point: GraphPoint, keep: boolean } | null = $state(null);
+	let group_selected: { i: number, ids: string[], keep: boolean } | null = $state(null);
 
 	let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
@@ -44,8 +47,6 @@
 		const result = await response.json() as { pr_url: string };
 		console.log('Edit successful:', result.pr_url);
 	}
-
-	$inspect(selected);
 </script>
 
 <svelte:window bind:innerWidth={width} bind:innerHeight={height}/>
@@ -82,16 +83,46 @@
 <div class="absolute w-full h-full overflow-hidden">
 	<div class="absolute w-full h-full overflow-hidden">
 		{#if width > 0 && height > 0}
-			<Graph {map} width={width} height={height} bind:selected={selected}/>
+			<Graph {map} width={width} height={height} bind:point_selected={point_selected} bind:group_selected={group_selected}/>
 		{/if}
 	</div>
-	<div class="absolute">
+	<div class="top flex flex-row justify-start items-center flex-nowrap">
 		<Title {map} maps={data.maps}/>
+		<Overview {map} bind:group_selected={group_selected} bind:point_selected={point_selected}/>
 	</div>
-	{#if selected !== null}
-		<div class="absolute w-[100px] h-[200px] bg-amber-950" style="left: {selected.point.x + selected.point.size * 1.1 + 10}px; top: {selected.point.y}px;"></div>
+	{#if point_selected !== null}
+		<div
+			class="absolute w-[100px] h-[200px] bg-amber-950"
+			style="left: {point_selected.point.x + point_selected.point.size * 1.1 + 10}px; top: {point_selected.point.y}px;"
+		>
+		</div>
 	{/if}
 </div>
 
 <style>
+	.top
+	{
+		font-size: clamp(12px, calc(calc(0.17vw + 5.5px) * 2), 18px);
+		--margin: 1.5em;
+		--x-pad: 1.6em;
+		--y-pad: 1em;
+		margin: var(--margin);
+		gap: var(--margin);
+	}
+
+	@media screen and (max-width: 800px)
+	{
+		.top
+		{
+			gap: 1.2em;
+		}
+	}
+
+	@media screen and (max-width: 600px)
+	{
+		.top
+		{
+			flex-wrap: wrap;
+		}
+	}
 </style>

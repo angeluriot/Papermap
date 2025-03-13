@@ -7,7 +7,8 @@ import type { GraphStats } from './types';
 const X_MIN_PADDING = 17;
 const X_MAX_PADDING = 10;
 const Y_MIN_PADDING = 20;
-const Y_MAX_PADDING = 20;
+const Y_MAX_PADDING_LARGE = 20;
+const Y_MAX_PADDING_TIGHT = 25;
 
 
 export function get_stats(map: Map, width: number, height: number, up_margin_scale: number = 1): GraphStats
@@ -28,7 +29,7 @@ export function get_stats(map: Map, width: number, height: number, up_margin_sca
 		min_year: min_year - pad_year * X_MIN_PADDING,
 		max_year: max_year + pad_year * X_MAX_PADDING,
 		min_score: min_score - pad_score * Y_MIN_PADDING * up_margin_scale,
-		max_score: max_score + pad_score * Y_MAX_PADDING,
+		max_score: max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE),
 		width,
 		height,
 		scale,

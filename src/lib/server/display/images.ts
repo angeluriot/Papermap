@@ -18,21 +18,6 @@ export async function create_images(group: string, map: Map): Promise<string>
 {
 	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
 
-	for (let i = 0; i < 50; i++)
-		map.papers.push(structuredClone(map.papers[0]));
-
-	for (let paper of map.papers)
-	{
-		paper.title += ' ' + Math.random().toString(36).substring(2, 15);
-		paper.score.overall = Math.random() * 0.5 + 0.25;
-		paper.year = 2025 - Math.round(Math.random() * 50);
-
-		if (Math.random() < 0.33)
-			paper.review = { type: ReviewType.MetaAnalysis, count: 1 + Math.round((Math.random() ** 3) * 100) };
-
-		paper.results.conclusion = Object.keys(map.answers)[Math.floor(Math.random() * Object.keys(map.answers).length)];
-	}
-
 	const dir = join(C.IMAGES_DIR, group);
 	await fs.mkdir(dir, { recursive: true });
 

@@ -1,7 +1,8 @@
 import type { Journal } from '$lib/types/journal';
-import type { DataMap } from '$lib/types/map';
+import type { DataMap, Map } from '$lib/types/map';
 import type { DataPaper, PaperScore, Paper } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
+import { compute_normalized_ranking } from './utils';
 
 
 const TYPE_SCORES = {
@@ -73,6 +74,8 @@ const COEFS = {
 	conflict_of_interest: 10,
 	retracted: 10,
 }
+const OVERVIEW_RANK_SCORE_COEF = 0.1;
+const OVERVIEW_GAP_INCREASE = 3;
 
 
 export function score_journal(journal: Journal | undefined): number
@@ -290,4 +293,37 @@ export function score_paper(map: DataMap, journals: Journal | undefined, paper: 
 	score.overall = calculate_overall(map, score);
 
 	return { ...paper, score };
+}
+
+
+export function score_answers(map: Map): Record<string, number>
+{
+	let answer_scores: Record<string, number> = {};
+	let paper_scores: Record<string, number> = {};
+
+	map.papers.forEach((paper, index) => {
+		paper_scores[`${index}`] = paper.score.overall;
+	});
+
+	let paper_rank_scores = compute_normalized_ranking(paper_scores);
+
+	for (let i = 0; i < map.papers.length; i++)
+	{
+		const paper = map.papers[i];
+		const rank_score = paper_rank_scores[`${i}`];
+		const score = ((1 - OVERVIEW_RANK_SCORE_COEF) * paper.score.overall + OVERVIEW_RANK_SCORE_COEF * rank_score) ** OVERVIEW_GAP_INCREASE;
+		const answer_id = paper.results.conclusion;
+
+		if (!answer_scores[answer_id])
+			answer_scores[answer_id] = 0;
+
+		answer_scores[answer_id] += score;
+	}
+
+	const total = Object.values(answer_scores).reduce((acc, score) => acc + score, 0);
+
+	for (const answer_id in answer_scores)
+		answer_scores[answer_id] /= total;
+
+	return answer_scores;
 }

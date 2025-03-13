@@ -82,8 +82,9 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 {
 	let points: GraphPoint[] = map.papers.map((paper, index) => ({
 		index,
+		answer: paper.results.conclusion,
 		x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
-		y: ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height,
+		y: stats.height - (ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height),
 		size: (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE,
 		zoom: 0,
 		fill: COLORS[map.answers[paper.results.conclusion].color].fill,

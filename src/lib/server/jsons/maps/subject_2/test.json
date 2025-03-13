@@ -17,64 +17,55 @@
 			"text": "Positive",
 			"group": "positive",
 			"color": "Green",
-			"neutral": false,
-			"legend": true
+			"neutral": false
 		},
 		"slightly_positive": {
 			"text": "Slightly positive",
 			"group": "positive",
 			"color": "Green1H",
-			"neutral": false,
-			"legend": false
+			"neutral": false
 		},
 		"positive_unlike_literature": {
 			"text": "Positive unlike literature",
 			"group": "positive",
 			"color": "Green1H",
-			"neutral": false,
-			"legend": false
+			"neutral": false
 		},
 		"positive_but_mixed_results": {
 			"text": "Positive but mixed results",
 			"group": "positive",
 			"color": "Green1H",
-			"neutral": false,
-			"legend": false
+			"neutral": false
 		},
 		"no_effect": {
 			"text": "No effect",
 			"group": "neutral",
 			"color": "Gray",
-			"neutral": true,
-			"legend": true
+			"neutral": true
 		},
 		"negative_but_mixed_results": {
 			"text": "Negative but mixed results",
 			"group": "negative",
 			"color": "Red1H",
-			"neutral": false,
-			"legend": false
+			"neutral": false
 		},
 		"negative_unlike_literature": {
 			"text": "Negative unlike literature",
 			"group": "negative",
 			"color": "Red1H",
-			"neutral": false,
-			"legend": false
+			"neutral": false
 		},
 		"slightly_negative": {
 			"text": "Slightly negative",
 			"group": "negative",
 			"color": "Red1H",
-			"neutral": false,
-			"legend": false
+			"neutral": false
 		},
 		"negative": {
 			"text": "Negative",
 			"group": "negative",
 			"color": "Red",
-			"neutral": false,
-			"legend": true
+			"neutral": false
 		}
 	},
 	"type": {

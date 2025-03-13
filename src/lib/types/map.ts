@@ -17,7 +17,6 @@ interface BaseMap
 			group: string,
 			color: Color,
 			neutral: boolean,
-			legend: boolean,
 		}
 	};
 	type: {
@@ -54,6 +53,7 @@ export interface Map extends BaseMap
 	group: Group;
 	id: string;
 	papers: Paper[];
+	overview: Record<string, number>;
 }
 
 

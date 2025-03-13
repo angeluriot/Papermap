@@ -5,10 +5,6 @@
 
 	let { data }: PageProps = $props();
 
-	onMount(() => {
-		console.log(data.maps);
-	});
-
 	async function request(): Promise<void>
 	{
 		const response = await fetch(`/request`, {

@@ -1,0 +1,79 @@
+<script lang="ts">
+	import type { Map } from "$lib/types/map";
+	import type { GraphPoint } from "./graph/types";
+	import { get_overview_by_color } from "./overview";
+
+	let { map, group_selected = $bindable(), point_selected = $bindable() }: {
+		map: Map,
+		group_selected: { i: number, ids: string[], keep: boolean } | null,
+		point_selected: { point: GraphPoint, keep: boolean } | null
+	} = $props();
+
+	const overview = get_overview_by_color(map);
+
+	function select_group(event: Event, i: number, ids: string[], clicked: boolean)
+	{
+		if (!(group_selected !== null && group_selected.keep && !clicked))
+			group_selected = { i, ids, keep: clicked };
+
+		if (point_selected !== null && (clicked || !point_selected.keep))
+			point_selected = null;
+
+		event.stopPropagation();
+	}
+
+	function deselect_group(clicked: boolean)
+	{
+		if (group_selected !== null && (clicked || !group_selected.keep))
+			group_selected = null;
+	}
+</script>
+
+<svelte:window onclick={() => deselect_group(true)}/>
+
+<div class="overview-container text-nowrap relative flex-center-col flex-nowrap">
+	<div class="bar w-full h-[40%] rounded-full overflow-hidden flex flex-row flex-nowrap justify-start items-center">
+		{#each overview as data, i}
+			<div
+				class="h-full cursor-pointer"
+				style="background-color: {data.color}; width: {data.width}%; min-width: {data.width}%; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};"
+				onclick={(event) => select_group(event, i, data.ids, true)}
+				onmouseenter={(event) => select_group(event, i, data.ids, false)}
+				onmouseleave={() => deselect_group(false)}
+				onkeydown={null} role="button" tabindex={i}
+			>
+			</div>
+		{/each}
+	</div>
+	<div class="w-full flex flex-row flex-nowrap justify-between items-center">
+		{#each overview as data, i}
+			{#if data.label !== null}
+				<span class="unselectable" style="color: {data.color}; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};">
+					{data.label}
+				</span>
+			{/if}
+		{/each}
+	</div>
+</div>
+
+<style>
+	.overview-container
+	{
+		width: 15em;
+		margin-top: 0.3em;
+		gap: 0.2em;
+	}
+
+	.bar
+	{
+		height: 0.8em;
+		box-shadow: 0em 0.1em 1em #0c138e36;
+	}
+
+	span
+	{
+		font-family: Satoshi-Variable;
+		font-weight: 700;
+		text-shadow: 0em 0.1em 0.75em #0c138e36;
+	}
+</style>
