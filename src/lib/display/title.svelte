@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Map, Maps } from "$lib/types/map";
+	import type { Map, Maps } from '$lib/types/map';
 
 	const { map, maps }: { map: Map, maps: Maps } = $props();
 

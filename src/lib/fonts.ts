@@ -1,4 +1,4 @@
-import type { Font } from "./types";
+import type { Font } from './types';
 import { constants as C } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import { join } from 'path';

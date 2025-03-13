@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Map } from "$lib/types/map";
-	import type { GraphPoint } from "./graph/types";
-	import { get_overview_by_color } from "./overview";
+	import type { Map } from '$lib/types/map';
+	import type { GraphPoint } from './graph/types';
+	import { get_overview_by_color } from './overview';
 
 	let { map, group_selected = $bindable(), point_selected = $bindable() }: {
 		map: Map,

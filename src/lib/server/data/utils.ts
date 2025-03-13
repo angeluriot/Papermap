@@ -1,4 +1,4 @@
-import { ratio } from "$lib/utils";
+import { ratio } from '$lib/utils';
 
 
 export function compute_normalized_ranking(values: Record<string, number>): Record<string, number>
