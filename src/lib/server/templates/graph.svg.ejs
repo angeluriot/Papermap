@@ -1,0 +1,131 @@
+<g class="background">
+	<rect x="0" y="0" width="<%= width %>" height="<%= height %>" fill="<%= background_color %>"/>
+	<g class="points">
+		<% background_points.forEach(point => { %>
+			<circle cx="<%= point.x %>" cy="<%= point.y %>" r="<%= point.size %>" fill="<%= points_color %>" opacity="<%= points_opacity %>"/>
+		<% }); %>
+	</g>
+	<g class="x-axis">
+		<% x_axis.forEach(tick => { %>
+			<% if (tick.type !== null) { %>
+				<line
+					x1="<%= tick.start.x %>" y1="<%= tick.start.y %>"
+					x2="<%= tick.end.x %>" y2="<%= tick.end.y %>"
+					stroke="<%= axis_color %>"
+					stroke-width="<%= tick.width %>"
+					opacity="<%= tick.opacity %>"
+				/>
+			<% } %>
+			<% if (tick.label !== null) { %>
+				<text
+					x="<%= tick.label.x %>"
+					y="<%= tick.label.y %>"
+					fill="<%= axis_color %>"
+					stroke="<%= axis_color %>"
+					stroke-width="<%= text_stroke %>"
+					font-family="<%= font.name %>"
+					font-size="<%= tick.label.font_size %>"
+					text-anchor="middle"
+					alignment-baseline="auto"
+					dominant-baseline="auto"
+				>
+					<%= tick.label.text %>
+				</text>
+			<% } %>
+		<% }); %>
+		<text
+			x="<%= x_title.x %>"
+			y="<%= x_title.y %>"
+			fill="<%= axis_color %>"
+			stroke="<%= axis_color %>"
+			font-family="<%= font.name %>"
+			font-size="<%= x_title.font_size %>"
+			stroke-width="<%= text_stroke %>"
+			text-anchor="middle"
+			alignment-baseline="auto"
+			dominant-baseline="auto"
+		>
+			<%= x_title.text %>
+		</text>
+	</g>
+	<g class="y-axis">
+		<% y_axis.forEach(tick => { %>
+			<% if (tick.type !== null) { %>
+				<line
+					x1="<%= tick.start.x %>" y1="<%= tick.start.y %>"
+					x2="<%= tick.end.x %>" y2="<%= tick.end.y %>"
+					stroke="<%= axis_color %>"
+					stroke-width="<%= tick.width %>"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					opacity="<%= tick.opacity %>"
+				/>
+			<% } %>
+			<% if (tick.label !== null) { %>
+				<text
+					x="<%= tick.label.x %>"
+					y="<%= tick.label.y %>"
+					fill="<%= axis_color %>"
+					stroke="<%= axis_color %>"
+					stroke-width="<%= text_stroke %>"
+					font-family="<%= font.name %>"
+					font-size="<%= tick.label.font_size %>"
+					text-anchor="start"
+					alignment-baseline="central"
+					dominant-baseline="central"
+				>
+					<%= tick.label.text %>
+				</text>
+			<% } %>
+		<% }); %>
+		<text
+			x="<%= y_title.x %>"
+			y="<%= y_title.y %>"
+			transform="rotate(90, <%= y_title.x %>, <%= y_title.y %>)"
+			fill="<%= axis_color %>"
+			stroke="<%= axis_color %>"
+			font-family="<%= font.name %>"
+			font-size="<%= y_title.font_size %>"
+			stroke-width="<%= text_stroke %>"
+			text-anchor="middle"
+			alignment-baseline="auto"
+			dominant-baseline="auto"
+		>
+			<%= y_title.text %>
+		</text>
+	</g>
+</g>
+<g class="plot">
+	<% points.forEach(point => { %>
+		<g class="dot">
+			<circle
+				cx="<%= point.x %>"
+				cy="<%= point.y %>"
+				r="<%= point.size %>"
+				fill="<%= point.fill %>"
+				stroke="<%= point.stroke.color %>"
+				stroke-width="<%= point.stroke.width %>"
+			/>
+		</g>
+		<% if (point.label.shown) { %>
+			<text
+				x="<%= point.label.x %>"
+				y="<%= point.label.y %>"
+				fill="<%= point.stroke.color %>"
+				stroke="<%= point.stroke.color %>"
+				stroke-width="<%= text_stroke %>"
+				font-family="<%= font.name %>"
+				font-size="<%= point.label.font_size %>"
+				text-anchor="middle"
+				alignment-baseline="central"
+				dominant-baseline="central"
+			>
+				<% point.label.text.split('\n').forEach((line, i) => { %>
+					<tspan x="<%= point.label.x %>" dy="<%= i === 0 ? -point.label.line_height * 0.5 : point.label.line_height %>">
+						<%= line %>
+					</tspan>
+				<% }); %>
+			</text>
+		<% } %>
+	<% }); %>
+</g>

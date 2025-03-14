@@ -10,48 +10,62 @@ import * as bg from '$lib/display/graph/background';
 import * as pt from '$lib/display/graph/points';
 import { Resvg } from '@resvg/resvg-js';
 import { SatoshiMedium } from '$lib/fonts';
-import { get_title } from '$lib/server/display/title';
+import { get_thumbnail_title, get_image_title, get_image_subtitle } from '$lib/server/display/title';
 import type { Map } from '$lib/types/map';
 
 
 export async function create_images(group: string, map: Map): Promise<string>
 {
-	const template = await fs.readFile(join(C.LIB_DIR, 'server/templates/image.svg.ejs'), 'utf-8');
-
 	const dir = join(C.IMAGES_DIR, group);
 	await fs.mkdir(dir, { recursive: true });
 
 	const svg_scales = {
-		'thumbnail': { width: 1280, height: 720 },
-		'download': { width: 1500, height: 1000 },
+		'thumbnail': { width: 1200, height: 630 },
+		'image': { width: 1500, height: 1000 },
 	};
 
 	const image_scales = {
-		'thumbnail': { width: 1280, height: 720 },
-		'download': { width: 3000, height: 2000 },
+		'thumbnail': 1,
+		'image': 2,
 	};
 
-	const types: ('thumbnail' | 'download')[] = ['thumbnail', 'download'];
+	const types: ('thumbnail' | 'image')[] = ['thumbnail', 'image'];
 	const font_scale = 1.5;
 	let image_hash = '';
 
 	for (let type of types)
 	{
-		const stats = get_stats(map, svg_scales[type].width, svg_scales[type].height, 1.2);
+		const template = await fs.readFile(join(C.LIB_DIR, `server/templates/${type}.svg.ejs`), 'utf-8');
+
+		const stats = get_stats(map, svg_scales[type].width, svg_scales[type].height, type === 'thumbnail' ? 1.3 : 0.5, 1.2);
 		const x_axis = bg.get_x_axis(stats, font_scale);
 		const y_axis = bg.get_y_axis(stats, x_axis, font_scale);
 		const x_title = bg.get_x_title(stats, font_scale);
 		const y_title = bg.get_y_title(stats, y_axis, font_scale);
 		const background_points = bg.get_background_points(x_axis, y_axis, stats);
 		const points = pt.get_graph_points(map, stats, font_scale);
-		const title = await get_title(map, stats);
+		const margin = stats.scale * 16;
+		const title = type === 'image' ? await get_image_title(map, stats) : await get_thumbnail_title(map, stats);
+		const subtitle = type === 'image' ? await get_image_subtitle(map, stats, title.width) : null;
+
+		const x_graph_margin = margin * 2;
+		const y_graph_margin = title.height + (subtitle?.height ?? 0) + (subtitle?.bottom_margin ?? 0) + margin * 2;
+		const bottom_margin = 10;
+		const global_width = type === 'image' ? svg_scales[type].width + x_graph_margin : svg_scales[type].width;
+		const global_height = type === 'image' ? svg_scales[type].height + y_graph_margin + bottom_margin : svg_scales[type].height;
 
 		const svg = ejs.render(template, {
+			template_dir: join(C.LIB_DIR, 'server', 'templates'),
 			font: SatoshiMedium,
 			text_stroke: 0.5,
 			map,
 			width: svg_scales[type].width,
 			height: svg_scales[type].height,
+			global_width,
+			global_height,
+			margin,
+			x_graph_margin,
+			y_graph_margin,
 			stats,
 			x_axis,
 			y_axis,
@@ -64,16 +78,18 @@ export async function create_images(group: string, map: Map): Promise<string>
 			points_opacity: bg.POINTS_OPACITY,
 			axis_color: bg.AXIS_COLOR,
 			title,
+			subtitle,
+			bottom_margin,
 		});
 
 		if (type === 'thumbnail')
 			image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
 
 		const resvg = new Resvg(svg, {
-			background: bg.BACKGROUND_COLOR,
+			background: 'white',
 			fitTo: {
 				mode: 'width',
-				value: image_scales[type].width,
+				value: global_width * image_scales[type],
 			},
 			font: {
 				fontFiles: SatoshiMedium.files.map(f => f.url),

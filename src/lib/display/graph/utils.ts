@@ -11,7 +11,7 @@ const Y_MAX_PADDING_LARGE = 20;
 const Y_MAX_PADDING_TIGHT = 25;
 
 
-export function get_stats(map: Map, width: number, height: number, up_margin_scale: number = 1): GraphStats
+export function get_stats(map: Map, width: number, height: number, top_margin_scale: number = 1, bottom_margin_scale: number = 1): GraphStats
 {
 	const scale = (width + height) * 0.001;
 
@@ -28,8 +28,8 @@ export function get_stats(map: Map, width: number, height: number, up_margin_sca
 	return {
 		min_year: min_year - pad_year * X_MIN_PADDING,
 		max_year: max_year + pad_year * X_MAX_PADDING,
-		min_score: min_score - pad_score * Y_MIN_PADDING * up_margin_scale,
-		max_score: max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE),
+		min_score: min_score - pad_score * Y_MIN_PADDING * bottom_margin_scale,
+		max_score: max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE) * top_margin_scale,
 		width,
 		height,
 		scale,

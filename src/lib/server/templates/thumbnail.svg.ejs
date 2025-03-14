@@ -13,11 +13,8 @@
 		<filter id="title-shadow" x="-50%" y="-50%" width="200%" height="200%">
 			<feDropShadow dx="0" dy="<%= title.height * 0.05 %>" stdDeviation="<%= width * 0.01 %>" flood-color="#0c138e36" />
 		</filter>
-		<clipPath id="graph-clip" clipPathUnits="userSpaceOnUse">
-			<rect x="<%= 0 %>" y="<%= 0 %>" width="<%= width %>" height="<%= height %>" />
-		</clipPath>
 	</defs>
-	<g class="graph" transform="translate(<%= x_graph_margin - margin %>, <%= y_graph_margin - margin %>)" clip-path="url(#graph-clip)">
+	<g class="graph">
 		<%- include(`${template_dir}/graph.svg.ejs`, {
 			font,
 			text_stroke,
@@ -39,9 +36,19 @@
 		}) %>
 	</g>
 	<g class="title">
+		<rect
+			x="<%= title.margin %>"
+			y="<%= title.margin %>"
+			width="<%= title.width + title.padding_x * 2 %>"
+			height="<%= title.height + title.padding_y * 2 %>"
+			fill="white"
+			rx="<%= title.height / 2 + title.padding_y %>"
+			ry="<%= title.height / 2 + title.padding_y %>"
+			filter="url(#title-shadow)"
+		/>
 		<text
-			x="<%= margin %>"
-			y="<%= margin %>"
+			x="<%= title.margin + title.padding_x %>"
+			y="<%= title.margin + title.padding_y * 1.04 %>"
 			fill="black"
 			font-family="<%= font.name %>"
 			font-size="<%= title.font_size %>"
@@ -50,36 +57,6 @@
 			dominant-baseline="hanging"
 		>
 			<%= title.text %>
-		</text>
-	</g>
-	<g class="subtitle">
-		<% subtitle.lines.forEach((line, index) => { %>
-			<text
-				x="<%= margin %>"
-				y="<%= margin + title.height + title.gap + index * subtitle.line_height %>"
-				fill="#777991"
-				font-family="<%= font.name %>"
-				font-size="<%= subtitle.font_size %>"
-				text-anchor="start"
-				alignment-baseline="hanging"
-				dominant-baseline="hanging"
-			>
-				<%= line %>
-			</text>
-		<% }); %>
-	</g>
-	<g class="footer">
-		<text
-			x="<%= global_width - margin %>"
-			y="<%= global_height - 19 %>"
-			fill="#777991"
-			font-family="<%= font.name %>"
-			font-size="23"
-			text-anchor="end"
-			alignment-baseline="baseline"
-			dominant-baseline="baseline"
-		>
-			papermap.org
 		</text>
 	</g>
 </svg>
