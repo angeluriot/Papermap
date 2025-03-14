@@ -32,18 +32,29 @@
 <svelte:window onclick={() => deselect_group(true)}/>
 
 <div class="overview-container text-nowrap relative flex-center-col flex-nowrap">
-	<div class="bar w-full h-[40%] rounded-full overflow-hidden flex flex-row flex-nowrap justify-start items-center">
-		{#each overview as data, i}
-			<div
-				class="h-full cursor-pointer"
-				style="background-color: {data.color}; width: {data.width}%; min-width: {data.width}%; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};"
-				onclick={(event) => select_group(event, i, data.ids, true)}
-				onmouseenter={(event) => select_group(event, i, data.ids, false)}
-				onmouseleave={() => deselect_group(false)}
-				onkeydown={null} role="button" tabindex={i}
-			>
-			</div>
-		{/each}
+	<div class="bar-container relative w-full">
+		<div class="bar absolute w-full rounded-full overflow-hidden flex flex-row flex-nowrap justify-start items-center">
+			{#each overview as data, i}
+				<div
+					class="h-full cursor-pointer"
+					style="background-color: {data.color}; width: {data.width}%; min-width: {data.width}%; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};"
+				>
+				</div>
+			{/each}
+		</div>
+		<div class="bar-hitbox absolute w-full overflow-hidden flex flex-row flex-nowrap justify-start items-center" style="opacity: 0;">
+			{#each overview as data, i}
+				<div
+					class="h-full cursor-pointer"
+					style="background-color: {data.color}; width: {data.width}%; min-width: {data.width}%; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};"
+					onclick={(event) => select_group(event, i, data.ids, true)}
+					onmouseenter={(event) => select_group(event, i, data.ids, false)}
+					onmouseleave={() => deselect_group(false)}
+					onkeydown={null} role="button" tabindex={i}
+				>
+				</div>
+			{/each}
+		</div>
 	</div>
 	<div class="w-full flex flex-row flex-nowrap justify-between items-center">
 		{#each overview as data, i}
@@ -64,10 +75,22 @@
 		gap: 0.2em;
 	}
 
+	.bar-container
+	{
+		height: 0.8em;
+	}
+
 	.bar
 	{
 		height: 0.8em;
 		box-shadow: 0em 0.1em 1em #0c138e36;
+	}
+
+	.bar-hitbox
+	{
+		--hitbox: 0.5em;
+		margin-top: calc(-1 * var(--hitbox));
+		height: calc(0.8em + 2 * var(--hitbox));
 	}
 
 	span
