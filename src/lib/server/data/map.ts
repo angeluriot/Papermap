@@ -71,6 +71,12 @@ export async function import_map(group: string, id: string): Promise<{ map: Map,
 		if (Math.random() < 0.33)
 			paper.review = { type: ReviewType.MetaAnalysis, count: 1 + Math.round((Math.random() ** 3) * 100) };
 
+		if (Math.random() < 0.1)
+			paper.retracted = true;
+
+		if (Math.random() < 0.1)
+			paper.journal.id = undefined;
+
 		const possibilities = [
 			['positive'],
 			['slightly_positive', 'positive_unlike_literature', 'positive_but_mixed_results'],

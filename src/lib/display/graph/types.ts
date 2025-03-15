@@ -32,7 +32,8 @@ export interface GraphPoint extends Point
 	stroke: {
 		color: string,
 		width: number,
-	}
+		dasharray?: string,
+	};
 	label: {
 		x: number,
 		y: number,

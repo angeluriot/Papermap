@@ -129,6 +129,9 @@
 						fill={point.fill}
 						stroke={point.stroke.color}
 						stroke-width={point.stroke.width}
+						stroke-dasharray={point.stroke.dasharray}
+						stroke-linecap="round"
+						stroke-linejoin="round"
 					/>
 				</g>
 				{#if point.label.shown}

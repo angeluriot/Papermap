@@ -78,31 +78,57 @@ export function rectangle_rectangle_intersection(rectangle_1: { x: number, y: nu
 }
 
 
+export function get_dasharray(size: number, width: number): string
+{
+	const length = size * 2 * Math.PI;
+	const dash_hole_target = 5 * width;
+	let dash_hole = size;
+
+	for (let i = 1; i < 100; i++)
+	{
+		dash_hole = length / i;
+
+		if (dash_hole <= dash_hole_target)
+			break;
+	}
+
+	const dash_part = 0.4;
+	return `${dash_hole * dash_part} ${dash_hole * (1 - dash_part)}`;
+}
+
+
 export function get_graph_points(map: Map, stats: GraphStats, font_scale: number = 1): GraphPoint[]
 {
-	let points: GraphPoint[] = map.papers.map((paper, index) => ({
-		index,
-		answer: paper.results.conclusion,
-		x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
-		y: stats.height - (ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height),
-		size: (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE,
-		zoom: 0,
-		fill: COLORS[map.answers[paper.results.conclusion].color].fill,
-		stroke: {
-			color: COLORS[map.answers[paper.results.conclusion].color].stroke,
-			width: stats.sub_scales.point_stroke * STROKE_WIDTH,
-		},
-		label: {
-			x: 0,
-			y: 0,
-			width: 0,
-			height: 0,
-			text: get_label(paper),
-			font_size: stats.sub_scales.point_stroke * FONT_SIZE * font_scale,
-			line_height: stats.sub_scales.point_stroke * LINE_HEIGHT * font_scale,
-			shown: paper.authors.length > 0,
-		},
-	})).sort((a, b) => b.size - a.size);
+	let points: GraphPoint[] = map.papers.map((paper, index) => {
+		const not_published = paper.journal.id === undefined || paper.retracted;
+		const size = (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE;
+		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
+
+		return {
+			index,
+			answer: paper.results.conclusion,
+			x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
+			y: stats.height - (ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height),
+			size,
+			zoom: 0,
+			fill: not_published ? 'transparent' : COLORS[map.answers[paper.results.conclusion].color].fill,
+			stroke: {
+				color: COLORS[map.answers[paper.results.conclusion].color].stroke,
+				width: stroke_width,
+				dasharray: not_published ? get_dasharray(size, stroke_width) : undefined,
+			},
+			label: {
+				x: 0,
+				y: 0,
+				width: 0,
+				height: 0,
+				text: get_label(paper),
+				font_size: stats.sub_scales.point_stroke * FONT_SIZE * font_scale,
+				line_height: stats.sub_scales.point_stroke * LINE_HEIGHT * font_scale,
+				shown: paper.authors.length > 0,
+			},
+		};
+	}).sort((a, b) => b.size - a.size);
 
 	for (let point of points)
 	{
