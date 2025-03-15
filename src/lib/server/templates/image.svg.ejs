@@ -10,14 +10,11 @@
 				font-style: <%= font.style %>;
 			}
 		</style>
-		<filter id="title-shadow" x="-50%" y="-50%" width="200%" height="200%">
-			<feDropShadow dx="0" dy="<%= title.height * 0.05 %>" stdDeviation="<%= width * 0.01 %>" flood-color="#0c138e36" />
-		</filter>
 		<clipPath id="graph-clip" clipPathUnits="userSpaceOnUse">
-			<rect x="<%= 0 %>" y="<%= 0 %>" width="<%= width %>" height="<%= height %>" />
+			<rect x="0" y="0" width="<%= width %>" height="<%= height %>" />
 		</clipPath>
 	</defs>
-	<g class="graph" transform="translate(<%= x_graph_margin - margin %>, <%= y_graph_margin - margin %>)" clip-path="url(#graph-clip)">
+	<g class="graph" transform="translate(<%= margin %>, <%= title_global_height + margin %>)" clip-path="url(#graph-clip)">
 		<%- include(`${template_dir}/graph.svg.ejs`, {
 			font,
 			text_stroke,
@@ -67,6 +64,9 @@
 				<%= line %>
 			</text>
 		<% }); %>
+	</g>
+	<g class="overview" transform="translate(<%= global_width - margin - overview.width %>, <%= overview.y %>)">
+		<%- include(`${template_dir}/overview.svg.ejs`, { overview, font, overview_text_stroke }) %>
 	</g>
 	<g class="footer">
 		<text

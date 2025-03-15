@@ -59,4 +59,7 @@
 			<%= title.text %>
 		</text>
 	</g>
+	<g class="overview" transform="translate(<%= global_width - title.margin - overview.width %>, <%= overview.y %>)">
+		<%- include(`${template_dir}/overview.svg.ejs`, { overview, font, overview_text_stroke }) %>
+	</g>
 </svg>

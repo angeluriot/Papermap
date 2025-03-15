@@ -1,5 +1,6 @@
 import { COLORS } from '$lib/colors';
 import type { Map } from '$lib/types/map';
+import type { GraphStats } from './graph/types';
 
 
 export function get_overview_by_color(map: Map): { color: string, width: number, ids: string[], label: string | null }[]
@@ -33,4 +34,29 @@ export function get_overview_by_color(map: Map): { color: string, width: number,
 	result[result.length - 1].width = 100;
 
 	return result;
+}
+
+
+export function get_svg_overview_by_color(map: Map, stats: GraphStats, y: number)
+{
+	let overview: any[] = get_overview_by_color(map);
+	const width = stats.scale * 150;
+	const height = stats.scale * 8;
+	let cursor = 0;
+
+	for (let item of overview)
+	{
+		item.x = cursor;
+		item.width = (item.width / 100) * width;
+		cursor += item.width;
+	}
+
+	return {
+		groups: overview,
+		font_size: stats.scale * 12,
+		text_gap: stats.scale * 5,
+		width,
+		height,
+		y,
+	};
 }
