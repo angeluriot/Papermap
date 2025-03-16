@@ -1,10 +1,10 @@
 {
 	"emoji": "🧑‍🏫",
 	"question": {
-		"short": "What is the effect of sexual education programs?",
-		"default": "What is the effect of sexual education programs on preventing child sexual abuse?",
-		"long": "What is the risk-benefit balance of sexual education programs given to children for preventing child sexual abuse?"
+		"short": "What are the effects of sexual education programs?",
+		"long": "What are the effects of sexual education programs on the prevention of child sexual abuse?"
 	},
+	"description": "Results from studies evaluating the benefit-risk balance of sexual education programs for children aimed at preventing child sexual abuse.",
 	"tags": [
 		"education",
 		"prevention",

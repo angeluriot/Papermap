@@ -54,9 +54,9 @@ const map_schema = z.object({
 	emoji: z.string(),
 	question: z.object({
 		short: z.string(),
-		default: z.string(),
 		long: z.string(),
 	}).strict(),
+	description: z.string(),
 	tags: z.array(z.string()),
 	answers: z.record(
 		z.string(),

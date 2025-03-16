@@ -47,7 +47,7 @@ export async function get_image_subtitle(map: Map, stats: GraphStats, title_widt
 	const bottom_margin = stats.width * 0.012;
 	let lines: string[] = [''];
 
-	for (let word of map.question.long.split(' '))
+	for (let word of map.description.split(' '))
 	{
 		if (rendered_text_size(lines[lines.length - 1] + ' ' + word, SatoshiMedium, font_size).width > title_width * 1.05)
 			lines.push(word);

@@ -7,9 +7,9 @@ interface BaseMap
 	emoji: string;
 	question: {
 		short: string,
-		default: string,
 		long: string,
 	};
+	description: string;
 	tags: string[];
 	answers: {
 		[id: string]: {

@@ -4,7 +4,7 @@
 	const { map, maps }: { map: Map, maps: Maps } = $props();
 
 	let div: HTMLDivElement | null = $state(null);
-	let search = $state(map.question.default);
+	let search = $state(map.question.long);
 </script>
 
 <div
@@ -13,10 +13,10 @@
 >
 	<span class="emoji inline-block align-middle">{map.emoji}</span>
 	<div class="relative inline-block align-middle">
-		<span class="bone opacity-0 h-full">{map.question.default}</span>
+		<span class="bone opacity-0 h-full">{map.question.long}</span>
 		<input
 			type="text" spellcheck="false" class="selectable absolute left-0 w-full"
-			placeholder={map.question.default} bind:value={search}
+			placeholder={map.question.long} bind:value={search}
 		/>
 	</div>
 	<div class="mask bg-white absolute h-full right-0 top-0 unselectable"></div>
