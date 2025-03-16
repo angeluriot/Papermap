@@ -45,12 +45,12 @@ export async function create_images(group: string, map: Map): Promise<string>
 		const y_title = bg.get_y_title(stats, y_axis, font_scale);
 		const background_points = bg.get_background_points(x_axis, y_axis, stats);
 		const points = pt.get_graph_points(map, stats, font_scale);
-		const margin = stats.scale * 16;
+		const margin = stats.scale * 14;
 		const title = type === 'image' ? await get_image_title(map, stats) : await get_thumbnail_title(map, stats);
 		const subtitle = type === 'image' ? await get_image_subtitle(map, stats, title.width) : null;
 
 		const title_global_height = title.height + ((title as any)?.gap ?? 0) + (subtitle?.height ?? 0) + (subtitle?.bottom_margin ?? 0)
-		const bottom_margin = 10;
+		const bottom_margin = 8;
 		const global_width = type === 'image' ? svg_scales[type].width + margin * 2 : svg_scales[type].width;
 		const global_height = type === 'image' ? svg_scales[type].height + title_global_height + margin * 2 + bottom_margin : svg_scales[type].height;
 

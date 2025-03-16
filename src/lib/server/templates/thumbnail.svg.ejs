@@ -13,6 +13,9 @@
 		<filter id="title-shadow" x="-50%" y="-50%" width="200%" height="200%">
 			<feDropShadow dx="0" dy="<%= title.height * 0.05 %>" stdDeviation="<%= width * 0.01 %>" flood-color="#0c138e36" />
 		</filter>
+		<filter id="overview-shadow" x="-50%" y="-50%" width="200%" height="200%">
+			<feDropShadow dx="0" dy="<%= stats.scale * 0.5 %>" stdDeviation="<%= stats.scale * 3 %>" flood-color="#0c138e36" />
+		</filter>
 	</defs>
 	<g class="graph">
 		<%- include(`${template_dir}/graph.svg.ejs`, {
@@ -59,7 +62,7 @@
 			<%= title.text %>
 		</text>
 	</g>
-	<g class="overview" transform="translate(<%= global_width - title.margin - overview.width %>, <%= overview.y %>)">
+	<g class="overview" transform="translate(<%= global_width - title.margin - overview.width %>, <%= overview.y %>)" filter="url(#overview-shadow)">
 		<%- include(`${template_dir}/overview.svg.ejs`, { overview, font, overview_text_stroke }) %>
 	</g>
 </svg>
