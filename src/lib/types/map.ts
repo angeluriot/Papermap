@@ -17,7 +17,6 @@ interface BaseMap
 			text: string,
 			group: string,
 			color: Color,
-			neutral: boolean,
 		}
 	};
 	type: {

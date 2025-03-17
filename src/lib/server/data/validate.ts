@@ -65,7 +65,6 @@ const map_schema = z.object({
 			text: z.string(),
 			group: z.string(),
 			color: z.nativeEnum(Color),
-			neutral: z.boolean(),
 		}).strict(),
 	),
 	type: z.object({

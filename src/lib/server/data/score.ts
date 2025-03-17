@@ -94,15 +94,8 @@ export function score_result(map: DataMap, paper: DataPaper): number
 	let direct_score = paper.results.indirect ? 0.0 : 1.0;
 	let coherence_score = 0.0;
 
-	if (previous_consensus?.neutral)
-		previous_consensus = undefined;
-
-	if (previous_consensus && result)
+	if (previous_consensus)
 		coherence_score = previous_consensus.group === result.group ? 1.0 : 0.0;
-
-	else if (!previous_consensus && !result)
-		coherence_score = 1.0;
-
 	else
 		coherence_score = 0.5;
 

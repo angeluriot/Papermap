@@ -17,64 +17,55 @@
 			"emoji": "👍",
 			"text": "Positive",
 			"group": "positive",
-			"color": "Green",
-			"neutral": false
+			"color": "Green"
 		},
 		"slightly_positive": {
 			"emoji": "🤏",
 			"text": "Slightly positive",
 			"group": "positive",
-			"color": "Green1H",
-			"neutral": false
+			"color": "Green1H"
 		},
 		"positive_unlike_literature": {
 			"emoji": "↪️",
 			"text": "Positive unlike literature",
 			"group": "positive",
-			"color": "Green1H",
-			"neutral": false
+			"color": "Green1H"
 		},
 		"positive_but_mixed_results": {
 			"emoji": "🔀",
 			"text": "Positive but mixed results",
 			"group": "positive",
-			"color": "Green1H",
-			"neutral": false
+			"color": "Green1H"
 		},
 		"no_effect": {
 			"emoji": "🫥",
 			"text": "No effect",
 			"group": "neutral",
-			"color": "Gray",
-			"neutral": true
+			"color": "Gray"
 		},
 		"negative_but_mixed_results": {
 			"emoji": "🔀",
 			"text": "Negative but mixed results",
 			"group": "negative",
-			"color": "Red1H",
-			"neutral": false
+			"color": "Red1H"
 		},
 		"negative_unlike_literature": {
 			"emoji": "↩️",
 			"text": "Negative unlike literature",
 			"group": "negative",
-			"color": "Red1H",
-			"neutral": false
+			"color": "Red1H"
 		},
 		"slightly_negative": {
 			"emoji": "🤏",
 			"text": "Slightly negative",
 			"group": "negative",
-			"color": "Red1H",
-			"neutral": false
+			"color": "Red1H"
 		},
 		"negative": {
 			"emoji": "👎",
 			"text": "Negative",
 			"group": "negative",
-			"color": "Red",
-			"neutral": false
+			"color": "Red"
 		}
 	},
 	"type": {
