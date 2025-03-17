@@ -38,6 +38,12 @@ export const paper_schema = z.object({
 	}).strict().optional(),
 	conflict_of_interest: z.boolean(),
 	retracted: z.boolean(),
+	notes: z.array(
+		z.object({
+			text: z.string(),
+			positive: z.boolean(),
+		}).strict(),
+	),
 }).strict();
 
 

@@ -67,6 +67,10 @@ export interface DataPaper
 	};
 	conflict_of_interest: boolean;
 	retracted: boolean;
+	notes: {
+		text: string,
+		positive: boolean,
+	}[];
 }
 
 
