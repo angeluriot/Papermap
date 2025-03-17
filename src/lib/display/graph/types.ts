@@ -24,6 +24,7 @@ export interface BackgroundPoint extends Point
 
 export interface GraphPoint extends Point
 {
+	i: number;
 	index: number;
 	answer: string;
 	size: number;

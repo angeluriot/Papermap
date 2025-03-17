@@ -9,7 +9,7 @@
 		map: Map,
 		width: number,
 		height: number,
-		point_selected: { point: GraphPoint, keep: boolean } | null,
+		point_selected: { get_point: () => GraphPoint, keep: boolean } | null,
 		group_selected: { i: number, ids: string[], keep: boolean } | null
 	} = $props();
 
@@ -23,10 +23,10 @@
 	const background_points = $derived(bg.get_background_points(x_axis, y_axis, stats));
 	const points = $derived(pt.get_graph_points(map, stats));
 
-	function select_point(event: Event, point: GraphPoint, clicked: boolean)
+	function select_point(event: Event, i: number, clicked: boolean)
 	{
 		if (!(point_selected !== null && point_selected.keep && !clicked))
-			point_selected = { point, keep: clicked };
+			point_selected = { get_point: () => points[i], keep: clicked };
 
 		if (group_selected !== null && (clicked || !group_selected.keep))
 			group_selected = null;
@@ -109,11 +109,11 @@
 		{#each points as point, i}
 			<g class="point" opacity={group_selected === null || group_selected.ids.includes(point.answer) ? 1 : 0.25}>
 				<g
-					onclick={(event) => select_point(event, point, true)}
-					onmouseenter={(event) => select_point(event, point, false)}
+					onclick={(event) => select_point(event, i, true)}
+					onmouseenter={(event) => select_point(event, i, false)}
 					onmouseleave={() => deselect_point(false)}
 					onkeydown={null}
-					class="dot {point_selected?.point.index == point.index ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
+					class="dot {i == point_selected?.get_point().i ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
 					style="--dot-zoom: {point.zoom};"
 				>
 					<circle

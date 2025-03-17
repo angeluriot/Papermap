@@ -105,6 +105,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
 
 		return {
+			i: 0,
 			index,
 			answer: paper.results.conclusion,
 			x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
@@ -130,6 +131,8 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 		};
 	}).sort((a, b) => b.size - a.size);
 
+	points.forEach((point, i) => point.i = i);
+
 	for (let point of points)
 	{
 		point.zoom = (point.size + 0.5 * POINT_SIZE) / point.size;
@@ -140,7 +143,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 
 		for (let other of points)
 		{
-			if (other.index === point.index)
+			if (other.i === point.i)
 				continue;
 
 			if (rectangle_circle_intersection(point.label, { x: other.x, y: other.y, radius: other.size }) ||

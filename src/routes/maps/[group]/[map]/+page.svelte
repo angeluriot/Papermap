@@ -18,7 +18,7 @@
 
 	let width = $state(0);
 	let height = $state(0);
-	let point_selected: { point: GraphPoint, keep: boolean } | null = $state(null);
+	let point_selected: { get_point: () => GraphPoint, keep: boolean } | null = $state(null);
 	let group_selected: { i: number, ids: string[], keep: boolean } | null = $state(null);
 
 	let edit_test = paper_to_datapaper(map.papers[0]);
@@ -92,7 +92,7 @@
 	{#if point_selected !== null}
 		<div
 			class="absolute w-[100px] h-[200px] bg-amber-950"
-			style="left: {point_selected.point.x + point_selected.point.size * 1.1 + 10}px; top: {point_selected.point.y}px;"
+			style="left: {point_selected.get_point().x + point_selected.get_point().size * 1.1 + 10}px; top: {point_selected.get_point().y}px;"
 		>
 		</div>
 	{/if}
