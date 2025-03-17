@@ -13,6 +13,7 @@ interface BaseMap
 	tags: string[];
 	answers: {
 		[id: string]: {
+			emoji: string,
 			text: string,
 			group: string,
 			color: Color,

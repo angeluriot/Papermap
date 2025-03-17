@@ -61,6 +61,7 @@ const map_schema = z.object({
 	answers: z.record(
 		z.string(),
 		z.object({
+			emoji: z.string(),
 			text: z.string(),
 			group: z.string(),
 			color: z.nativeEnum(Color),

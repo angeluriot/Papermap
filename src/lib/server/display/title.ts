@@ -10,7 +10,8 @@ export async function get_thumbnail_title(map: Map, stats: GraphStats)
 	const padding_x = stats.width * 0.025;
 	const padding_y = stats.width * 0.015;
 	const font_size = stats.width * 0.024;
-	const text_size = rendered_text_size(map.question.short, SatoshiMedium, font_size);
+	const text_width = rendered_text_size(map.question.short, SatoshiMedium, font_size).width;
+	const text_height = rendered_text_size(map.question.short + 'g', SatoshiMedium, font_size).height;
 
 	return {
 		margin,
@@ -18,8 +19,8 @@ export async function get_thumbnail_title(map: Map, stats: GraphStats)
 		padding_y,
 		text: map.question.short,
 		font_size,
-		width: text_size.width,
-		height: text_size.height,
+		width: text_width,
+		height: text_height,
 	}
 }
 
@@ -28,14 +29,15 @@ export async function get_image_title(map: Map, stats: GraphStats)
 {
 	const gap = stats.width * 0.006;
 	const font_size = stats.width * 0.027;
-	const text_size = rendered_text_size(map.question.short, SatoshiMedium, font_size);
+	const text_width = rendered_text_size(map.question.short, SatoshiMedium, font_size).width;
+	const text_height = rendered_text_size(map.question.short + 'g', SatoshiMedium, font_size).height;
 
 	return {
 		gap,
 		text: map.question.short,
 		font_size,
-		width: text_size.width,
-		height: text_size.height,
+		width: text_width,
+		height: text_height,
 	}
 }
 
