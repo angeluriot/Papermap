@@ -114,7 +114,7 @@
 					onmouseleave={() => deselect_point(false)}
 					onkeydown={null}
 					class="dot {i == point_selected?.get_point().i ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
-					style="--dot-zoom: {point.zoom};"
+					style="--dot-zoom: {point.focus_size / point.size};"
 				>
 					<circle
 						cx={point.x}

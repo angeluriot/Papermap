@@ -28,7 +28,7 @@ export interface GraphPoint extends Point
 	index: number;
 	answer: string;
 	size: number;
-	zoom: number;
+	focus_size: number;
 	fill: string;
 	stroke: {
 		color: string,

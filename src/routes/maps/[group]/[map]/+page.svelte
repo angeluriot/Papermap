@@ -6,6 +6,7 @@
 	import type { GraphPoint } from '$lib/display/graph/types';
 	import Title from '$lib/display/title.svelte';
 	import Overview from '$lib/display/overview.svelte';
+	import PaperDetails from '$lib/display/details/paper.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -89,13 +90,11 @@
 		<Title {map} maps={data.maps}/>
 		<Overview {map} bind:group_selected={group_selected} bind:point_selected={point_selected}/>
 	</div>
-	{#if point_selected !== null}
-		<div
-			class="absolute w-[100px] h-[200px] bg-amber-950"
-			style="left: {point_selected.get_point().x + point_selected.get_point().size * 1.1 + 10}px; top: {point_selected.get_point().y}px;"
-		>
-		</div>
-	{/if}
+	<div class="details">
+		{#if point_selected !== null}
+			<PaperDetails point={point_selected.get_point()} paper={map.papers[point_selected.get_point().index]}/>
+		{/if}
+	</div>
 </div>
 
 <style>
@@ -107,6 +106,11 @@
 		--y-pad: 1em;
 		margin: var(--margin);
 		gap: var(--margin);
+	}
+
+	.details
+	{
+		font-size: clamp(10px, calc(calc(calc(0.09vw + 0.09vh) + 4.5px) * 2), 15px);
 	}
 
 	@media screen and (max-width: 800px)

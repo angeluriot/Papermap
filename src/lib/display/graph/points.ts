@@ -102,6 +102,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 	let points: GraphPoint[] = map.papers.map((paper, index) => {
 		const not_published = paper.journal.id === undefined || paper.retracted;
 		const size = (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE;
+		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE
 		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
 
 		return {
@@ -111,7 +112,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
 			y: stats.height - (ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height),
 			size,
-			zoom: 0,
+			focus_size,
 			fill: not_published ? 'transparent' : COLORS[map.answers[paper.results.conclusion].color].fill,
 			stroke: {
 				color: COLORS[map.answers[paper.results.conclusion].color].stroke,
@@ -135,7 +136,6 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 
 	for (let point of points)
 	{
-		point.zoom = (point.size + 0.5 * POINT_SIZE) / point.size;
 		point.label.width = get_label_sizes(point).width;
 		point.label.height = get_label_sizes(point).height;
 		point.label.x = point.x;
