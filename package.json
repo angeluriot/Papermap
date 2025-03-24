@@ -25,6 +25,7 @@
 	},
 	"homepage": "https://papermap.org",
 	"dependencies": {
+		"@faker-js/faker": "^9.6.0",
 		"@octokit/auth-app": "^7.1.5",
 		"@octokit/rest": "^21.1.1",
 		"@resvg/resvg-js": "^2.6.2",
@@ -43,7 +44,6 @@
 		"zod": "^3.24.2"
 	},
 	"devDependencies": {
-		"@faker-js/faker": "^9.6.0",
 		"@types/ejs": "^3.1.5",
 		"@types/node": "^22.13.4",
 		"@types/request-ip": "^0.0.41",
