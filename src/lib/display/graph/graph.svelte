@@ -5,12 +5,13 @@
 	import type { GraphPoint } from './types';
 	import { get_stats } from './utils';
 
-	let { map, width, height, point_selected = $bindable(), group_selected = $bindable() }: {
+	let { map, width, height, point_selected = $bindable(), group_selected = $bindable(), details_element }: {
 		map: Map,
 		width: number,
 		height: number,
 		point_selected: { get_point: () => GraphPoint, keep: boolean } | null,
-		group_selected: { i: number, ids: string[], keep: boolean } | null
+		group_selected: { i: number, ids: string[], keep: boolean } | null,
+		details_element: HTMLDivElement | null,
 	} = $props();
 
 	const POINT_HITBOX_EXTENSION = 3;
@@ -36,6 +37,9 @@
 
 	function deselect_point(clicked: boolean)
 	{
+		if (details_element?.matches(':hover'))
+			return;
+
 		if (point_selected !== null && (clicked || !point_selected.keep))
 			point_selected = null;
 	}

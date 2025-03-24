@@ -6,7 +6,7 @@
 	let { map, group_selected = $bindable(), point_selected = $bindable() }: {
 		map: Map,
 		group_selected: { i: number, ids: string[], keep: boolean } | null,
-		point_selected: { get_point: () => GraphPoint, keep: boolean } | null
+		point_selected: { get_point: () => GraphPoint, keep: boolean } | null,
 	} = $props();
 
 	const overview = get_overview_by_color(map);

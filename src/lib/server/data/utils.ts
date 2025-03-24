@@ -25,7 +25,8 @@ export function compute_normalized_ranking(values: Record<string, number>): Reco
 	// Initially sort items by value
 	const sorted_items = Object.entries(values).sort((a, b) => a[1] - b[1]);
 
-	sorted_items.forEach(([id], index) => {
+	sorted_items.forEach(([id], index) =>
+	{
 		ranks[id] = index;
 	});
 

@@ -27,7 +27,8 @@ async function empty_dir(dir_path)
 	if (entries.length === 0)
 		return;
 
-	await Promise.all(entries.map(async entry => {
+	await Promise.all(entries.map(async entry =>
+	{
 		const entry_path = join(dir_path, entry);
 		return await fs.rm(entry_path, { recursive: true, force: true });
 	}));

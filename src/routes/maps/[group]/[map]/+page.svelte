@@ -6,7 +6,7 @@
 	import type { GraphPoint } from '$lib/display/graph/types';
 	import Title from '$lib/display/title.svelte';
 	import Overview from '$lib/display/overview.svelte';
-	import PaperDetails from '$lib/display/details/paper.svelte';
+	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -21,6 +21,7 @@
 	let height = $state(0);
 	let point_selected: { get_point: () => GraphPoint, keep: boolean } | null = $state(null);
 	let group_selected: { i: number, ids: string[], keep: boolean } | null = $state(null);
+	let details_element: HTMLDivElement | null = $state(null);
 
 	let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
@@ -83,16 +84,16 @@
 <div class="absolute w-full h-full overflow-hidden">
 	<div class="absolute w-full h-full overflow-hidden">
 		{#if width > 0 && height > 0}
-			<Graph {map} width={width} height={height} bind:point_selected={point_selected} bind:group_selected={group_selected}/>
+			<Graph {map} width={width} height={height} bind:point_selected={point_selected} bind:group_selected={group_selected} details_element={details_element}/>
 		{/if}
 	</div>
 	<div class="top flex flex-row justify-start items-center flex-nowrap">
 		<Title {map} maps={data.maps}/>
 		<Overview {map} bind:group_selected={group_selected} bind:point_selected={point_selected}/>
 	</div>
-	<div class="details">
+	<div class="details" bind:this={details_element} onmouseleave={() => { if (!point_selected?.keep) point_selected = null }} role="button" tabindex={0}>
 		{#if point_selected !== null}
-			<PaperDetails point={point_selected.get_point()} paper={map.papers[point_selected.get_point().index]}/>
+			<PaperDetails point={point_selected.get_point()} {map} {journals} paper={map.papers[point_selected.get_point().index]} {width} {height}/>
 		{/if}
 	</div>
 </div>

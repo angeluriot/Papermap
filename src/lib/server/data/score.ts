@@ -1,42 +1,42 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
-import type { DataPaper, PaperScore, Paper } from '$lib/types/paper';
+import { type DataPaper, type PaperScore, type Paper, PaperType } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import { compute_normalized_ranking } from './utils';
 
 
 const TYPE_SCORES = {
 	no_causality: {
-		'CaseReport':						0.0,
-		'CrossSectionalStudy':				0.8,
-		'CohortStudy':						0.9,
-		'ClinicalTrial':					0.9,
-		'RandomizedControlledTrial':		1.0,
-		'BlindedRandomizedControlledTrial':	1.0,
+		[PaperType.CaseReport]:							0.0,
+		[PaperType.CrossSectionalStudy]:				0.8,
+		[PaperType.CohortStudy]:						0.9,
+		[PaperType.ClinicalTrial]:						0.9,
+		[PaperType.RandomizedControlledTrial]:			1.0,
+		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 	no_random: {
-		'CaseReport':						0.0,
-		'CrossSectionalStudy':				0.3,
-		'CohortStudy':						0.5,
-		'ClinicalTrial':					0.5,
-		'RandomizedControlledTrial':		1.0,
-		'BlindedRandomizedControlledTrial':	1.0,
+		[PaperType.CaseReport]:							0.0,
+		[PaperType.CrossSectionalStudy]:				0.3,
+		[PaperType.CohortStudy]:						0.5,
+		[PaperType.ClinicalTrial]:						0.5,
+		[PaperType.RandomizedControlledTrial]:			1.0,
+		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 	no_blind: {
-		'CaseReport':						0.0,
-		'CrossSectionalStudy':				0.2,
-		'CohortStudy':						0.4,
-		'ClinicalTrial':					0.4,
-		'RandomizedControlledTrial':		0.9,
-		'BlindedRandomizedControlledTrial':	1.0,
+		[PaperType.CaseReport]:							0.0,
+		[PaperType.CrossSectionalStudy]:				0.2,
+		[PaperType.CohortStudy]:						0.4,
+		[PaperType.ClinicalTrial]:						0.4,
+		[PaperType.RandomizedControlledTrial]:			0.9,
+		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 	default: {
-		'CaseReport':						0.0,
-		'CrossSectionalStudy':				0.1,
-		'CohortStudy':						0.2,
-		'ClinicalTrial':					0.2,
-		'RandomizedControlledTrial':		0.6,
-		'BlindedRandomizedControlledTrial':	1.0,
+		[PaperType.CaseReport]:							0.0,
+		[PaperType.CrossSectionalStudy]:				0.1,
+		[PaperType.CohortStudy]:						0.2,
+		[PaperType.ClinicalTrial]:						0.2,
+		[PaperType.RandomizedControlledTrial]:			0.6,
+		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 }
 const REVIEW_TYPE_SCORES = {
@@ -121,7 +121,7 @@ function score_type(map: DataMap, paper: DataPaper): number | undefined
 }
 
 
-function score_review(paper: DataPaper): number
+function score_review(paper: DataPaper): { review: number, count: number }
 {
 	let type_score = paper.review ? REVIEW_TYPE_SCORES[paper.review.type] : 0.0;
 	let count_score = paper.review ? paper.review.count : 0;
@@ -129,7 +129,7 @@ function score_review(paper: DataPaper): number
 	count_score /= REVIEW_COUNT_HALF_SCORE;
 	count_score /= count_score + 1.0;
 
-	return (type_score + count_score) / 2.0;
+	return { review: (type_score + count_score) / 2.0, count: count_score };
 }
 
 
@@ -145,14 +145,14 @@ export function score_on(map: DataMap, paper: DataPaper): number | undefined
 }
 
 
-export function score_citations(paper: DataPaper): number
+export function score_citations(paper: DataPaper): { citations: number, count: number }
 {
-	let count_score = paper.citations.critics ? 0.0 : paper.citations.count;
+	let count_score = paper.citations.count;
 
 	count_score /= CITATIONS_HALF_SCORE;
 	count_score /= count_score + 1.0;
 
-	return count_score;
+	return { citations: paper.citations.critics ? 0.0 : count_score, count: count_score };
 }
 
 
@@ -194,7 +194,7 @@ function score_conflict_of_interest(paper: DataPaper): number
 
 function score_retracted(paper: DataPaper): number
 {
-	return paper.retracted ? 0.0 : 1.0;
+	return paper.journal.retracted ? 0.0 : 1.0;
 }
 
 
@@ -260,11 +260,16 @@ function calculate_overall(map: DataMap, score: PaperScore): number
 
 export function score_paper(map: DataMap, journals: Journal | undefined, paper: DataPaper): Paper
 {
+	const { review, count: review_count } = score_review(paper)
+	const { citations, count: citations_count } = score_citations(paper)
+
 	let score: PaperScore = {
 		journal: score_journal(journals),
 		result: score_result(map, paper),
-		review: score_review(paper),
-		citations: score_citations(paper),
+		review: review,
+		review_count: review_count,
+		citations: citations,
+		citations_count: citations_count,
 		year: score_year(paper),
 		conflict_of_interest: score_conflict_of_interest(paper),
 		retracted: score_retracted(paper),
@@ -294,7 +299,8 @@ export function score_answers(map: Map): Record<string, number>
 	let answer_scores: Record<string, number> = {};
 	let paper_scores: Record<string, number> = {};
 
-	map.papers.forEach((paper, index) => {
+	map.papers.forEach((paper, index) =>
+	{
 		paper_scores[`${index}`] = paper.score.overall;
 	});
 

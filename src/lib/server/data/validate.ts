@@ -12,9 +12,10 @@ export const paper_schema = z.object({
 	journal: z.object({
 		status: z.nativeEnum(JournalStatus),
 		id: z.string().optional(),
+		retracted: z.boolean(),
 	}).strict(),
 	year: z.number().int(),
-	link: z.string().optional(),
+	link: z.string(),
 	results: z.object({
 		consensus: z.string().optional(),
 		conclusion: z.string(),
@@ -37,10 +38,10 @@ export const paper_schema = z.object({
 		less_than: z.boolean(),
 	}).strict().optional(),
 	conflict_of_interest: z.boolean(),
-	retracted: z.boolean(),
 	notes: z.array(
 		z.object({
-			text: z.string(),
+			title: z.string(),
+			description: z.string(),
 			positive: z.boolean(),
 		}).strict(),
 	),

@@ -99,8 +99,9 @@ export function get_dasharray(size: number, width: number): string
 
 export function get_graph_points(map: Map, stats: GraphStats, font_scale: number = 1): GraphPoint[]
 {
-	let points: GraphPoint[] = map.papers.map((paper, index) => {
-		const not_published = paper.journal.id === undefined || paper.retracted;
+	let points: GraphPoint[] = map.papers.map((paper, index) =>
+	{
+		const not_published = paper.journal.id === undefined || paper.journal.retracted;
 		const size = (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE;
 		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE
 		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;

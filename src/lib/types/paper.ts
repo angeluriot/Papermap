@@ -41,9 +41,10 @@ export interface DataPaper
 	journal: {
 		status: JournalStatus,
 		id?: string,
+		retracted: boolean,
 	};
 	year: number;
-	link?: string;
+	link: string;
 	results: {
 		consensus?: string,
 		conclusion: string,
@@ -66,9 +67,9 @@ export interface DataPaper
 		less_than: boolean,
 	};
 	conflict_of_interest: boolean;
-	retracted: boolean;
 	notes: {
-		text: string,
+		title: string,
+		description: string,
 		positive: boolean,
 	}[];
 }
@@ -80,8 +81,10 @@ export interface PaperScore
 	result: number;
 	type?: number;
 	review: number;
+	review_count: number;
 	on?: number;
 	citations: number;
+	citations_count: number;
 	year: number;
 	sample_size?: number;
 	p_value?: number;

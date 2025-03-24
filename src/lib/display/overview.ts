@@ -15,7 +15,7 @@ export function get_overview_by_color(map: Map): { color: string, width: number,
 		if (!data[color])
 		{
 			data[color] = {
-				color: COLORS[color].fill,
+				color: COLORS[color].default,
 				width: 0,
 				ids: [],
 				label: answer.text,
