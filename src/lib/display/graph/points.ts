@@ -1,6 +1,6 @@
 import { COLORS } from '$lib/colors';
 import type { Map } from '$lib/types/map';
-import type { Paper } from '$lib/types/paper';
+import { JournalStatus, type Paper } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import type { GraphPoint, GraphStats } from './types';
 import seedrandom from 'seedrandom';
@@ -101,7 +101,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 {
 	let points: GraphPoint[] = map.papers.map((paper, index) =>
 	{
-		const not_published = paper.journal.id === undefined || paper.journal.retracted;
+		const not_published = paper.journal.status == JournalStatus.NotPublished || paper.journal.retracted;
 		const size = (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE;
 		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE
 		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
