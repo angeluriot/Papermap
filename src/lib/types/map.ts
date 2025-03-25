@@ -15,6 +15,7 @@ interface BaseMap
 		[id: string]: {
 			emoji: string,
 			text: string,
+			description: string,
 			group: string,
 			color: Color,
 		}

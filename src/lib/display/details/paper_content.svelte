@@ -5,8 +5,15 @@
 	import { JournalStatus, type Paper } from '$lib/types/paper';
 	import * as cards from '../cards';
 	import { float_to_text, int_to_text } from '../utils';
+	import InfoBubble from './info_bubble.svelte';
 
-	const { map, journals, paper }: { map: Map, journals: { [id: string]: Journal; }, paper: Paper } = $props();
+	const { map, journals, paper, width, height }: {
+		map: Map,
+		journals: { [id: string]: Journal; },
+		paper: Paper,
+		width: number,
+		height: number
+	} = $props();
 
 	const title = $derived(paper.title);
 	const link = $derived(paper.link);
@@ -43,14 +50,16 @@
 		if (paper.results.consensus === undefined)
 			return {
 				text: '🤷 No consensus yet',
-				color: COLORS[Color.Gray].default
+				color: COLORS[Color.Gray].default,
+				description: 'Loremipsum efzfzp gzeg qg gzqe ber h ea grzrgq',
 			};
 
 		const answer = map.answers[paper.results.consensus];
 
 		return {
 			text: answer.emoji + ' ' + answer.text,
-			color: COLORS[answer.color].default
+			color: COLORS[answer.color].default,
+			description: answer.description,
 		};
 	});
 
@@ -60,7 +69,8 @@
 
 		return {
 			text: answer.emoji + ' ' + answer.text,
-			color: COLORS[answer.color].default
+			color: COLORS[answer.color].default,
+			description: answer.description,
 		};
 	});
 
@@ -237,27 +247,33 @@
 		<p class="title">{title}</p>
 		<div class="authors-date flex">
 			<span>{authors}</span>
-			<span class="opacity-50">•</span>
+			<span class="opacity-50 unselectable">•</span>
 			<span>{year}</span>
 		</div>
 	</a>
 	<div class="part-1" style="gap: 0.75em {part_1_gap}em; flex-wrap: {part_1_flex_wrap};" bind:this={part_1}>
 		<div class="subtitle-cards" bind:clientWidth={consensus_width}>
-			<span class="subtitle">Previous consensus:</span>
+			<span class="subtitle unselectable">Previous consensus:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {consensus.color};">
+				<div class="card text-unselectable" style="background-color: {consensus.color};">
 					<span>{consensus.text}</span>
+					<div class="info-ext">
+						<InfoBubble text={consensus.description} {width} {height}/>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="subtitle-cards">
-			<span class="subtitle">Result:</span>
+			<span class="subtitle unselectable">Result:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {result.color};" bind:clientWidth={result_width}>
+				<div class="card text-unselectable" style="background-color: {result.color};" bind:clientWidth={result_width}>
 					<span>{result.text}</span>
+					<div class="info-ext">
+						<InfoBubble text={result.description} {width} {height}/>
+					</div>
 				</div>
 				{#if indirect}
-					<div class="card" style="background-color: {COLORS[Color.Red].default};" bind:clientWidth={indirect_width}>
+					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};" bind:clientWidth={indirect_width}>
 						<span>🔗 Indirect</span>
 					</div>
 				{/if}
@@ -285,11 +301,11 @@
 				<div class="cards">
 					{#each paper_type_parts as part}
 						{#if part.color === null}
-							<div class="text">
+							<div class="text unselectable">
 								<span>{part.text}</span>
 							</div>
 						{:else}
-							<div class="card" style="background-color: {part.color};">
+							<div class="card text-unselectable" style="background-color: {part.color};">
 								<span>{part.text}</span>
 							</div>
 						{/if}
@@ -300,22 +316,22 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Journal:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {journal.color};">
+				<div class="card text-unselectable" style="background-color: {journal.color};">
 					<span>{journal.text}</span>
 				</div>
 				{#if retracted}
-					<span class="card" style="background-color: {COLORS[Color.Red].default};">😵 Retracted</span>
+					<span class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};">😵 Retracted</span>
 				{/if}
 			</div>
 		</div>
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Citations:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {citations.color};">
+				<div class="card text-unselectable" style="background-color: {citations.color};">
 					<span>{citations.text}</span>
 				</div>
 				{#if critics !== null}
-					<div class="card" style="background-color: {critics.color};">
+					<div class="card text-unselectable" style="background-color: {critics.color};">
 						<span>{critics.text}</span>
 					</div>
 				{/if}
@@ -325,7 +341,7 @@
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">Sample size:</span>
 				<div class="cards">
-					<div class="card" style="background-color: {sample_size.color};">
+					<div class="card text-unselectable" style="background-color: {sample_size.color};">
 						<span>{sample_size.text}</span>
 					</div>
 				</div>
@@ -335,7 +351,7 @@
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">P-value:</span>
 				<div class="cards">
-					<div class="card" style="background-color: {p_value.color};">
+					<div class="card text-unselectable" style="background-color: {p_value.color};">
 						<span>{p_value.text}</span>
 					</div>
 				</div>
@@ -344,7 +360,7 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Conflict of Interest:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {conflict_of_interest.color};">
+				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color};">
 					<span>{conflict_of_interest.text}</span>
 				</div>
 			</div>
@@ -354,7 +370,7 @@
 				<span class="subtitle unselectable">Notes:</span>
 				<div class="cards">
 					{#each notes as note}
-						<div class="card" style="background-color: {note.color};">
+						<div class="card text-unselectable" style="background-color: {note.color};">
 							<span>{note.text}</span>
 						</div>
 					{/each}
@@ -426,12 +442,28 @@
 	.card
 	{
 		position: relative;
+		padding: 0.25em 0.75em 0.35em 0.65em;
+		border-radius: calc(infinity * 1px);
+		cursor: pointer;
+	}
+
+	.card span
+	{
+		position: relative;
 		font-weight: 450;
 		color: white;
 		letter-spacing: 0.01em;
-		padding: 0.25em 0.75em 0.35em 0.65em;
-		border-radius: calc(infinity * 1px);
 		text-shadow: 0 0.025em 0.3em rgba(0, 0, 0, 0.25);
+	}
+
+	.card .info-ext
+	{
+		display: none;
+	}
+
+	.card:hover .info-ext
+	{
+		display: block;
 	}
 
 	.text

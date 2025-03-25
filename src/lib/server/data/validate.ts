@@ -70,6 +70,7 @@ const map_schema = z.object({
 		z.object({
 			emoji: z.string(),
 			text: z.string(),
+			description: z.string(),
 			group: z.string(),
 			color: z.nativeEnum(Color),
 		}).strict(),

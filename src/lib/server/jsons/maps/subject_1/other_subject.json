@@ -16,54 +16,63 @@
 		"positive": {
 			"emoji": "👍",
 			"text": "Positive",
+			"description": "The results of the paper suggest that the sexual education programs evaluated mostly have positive effects on children",
 			"group": "positive",
 			"color": "Green"
 		},
 		"slightly_positive": {
 			"emoji": "🤏",
 			"text": "Slightly positive",
+			"description": "The results of the paper suggest that the sexual education programs evaluated have slightly positive effects on children",
 			"group": "positive",
 			"color": "Green1H"
 		},
 		"positive_unlike_literature": {
 			"emoji": "↪️",
 			"text": "Positive unlike literature",
+			"description": "The results of the paper suggest that the sexual education programs evaluated have positive effects on children, unlike what is reported in the literature",
 			"group": "positive",
 			"color": "Green1H"
 		},
 		"positive_but_mixed_results": {
 			"emoji": "🔀",
 			"text": "Positive but mixed results",
+			"description": "The results of the paper suggest that the sexual education programs evaluated have positive effects on children, but the results are mixed",
 			"group": "positive",
 			"color": "Green1H"
 		},
 		"no_effect": {
 			"emoji": "🫥",
 			"text": "No effect",
+			"description": "The results of the paper show no significant effect on children of the sexual education programs evaluated",
 			"group": "neutral",
 			"color": "Gray"
 		},
 		"negative_but_mixed_results": {
 			"emoji": "🔀",
 			"text": "Negative but mixed results",
+			"description": "The results of the paper suggest that the sexual education programs evaluated have negative effects on children, but the results are mixed",
 			"group": "negative",
 			"color": "Red1H"
 		},
 		"negative_unlike_literature": {
 			"emoji": "↩️",
 			"text": "Negative unlike literature",
+			"description": "The results of the paper suggest that the sexual education programs evaluated have negative effects on children, unlike what is reported in the literature",
 			"group": "negative",
 			"color": "Red1H"
 		},
 		"slightly_negative": {
 			"emoji": "🤏",
 			"text": "Slightly negative",
+			"description": "The results of the paper suggest that the sexual education programs evaluated have slightly negative effects on children",
 			"group": "negative",
 			"color": "Red1H"
 		},
 		"negative": {
 			"emoji": "👎",
 			"text": "Negative",
+			"description": "The results of the paper suggest that the sexual education programs evaluated mostly have negative effects on children",
 			"group": "negative",
 			"color": "Red"
 		}
