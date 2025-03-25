@@ -52,10 +52,12 @@ export async function import_map(group: string, id: string): Promise<{ map: Map,
 {
 	const group_data = await import_group(group);
 	const data = await import_datamap(group, id);
-	const journals = await import_journals(data);
+	const all_journals = await import_journals();
 
 	for (let i = 0; i < 50; i++)
-		data.papers.push(generate_paper(data, journals));
+		data.papers.push(generate_paper(data, all_journals));
+
+	const journals = await import_journals(data);
 
 	let map: Map = {
 		...data,
