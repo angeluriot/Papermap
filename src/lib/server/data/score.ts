@@ -72,32 +72,26 @@ const COEFS = {
 	sample_size: 1,
 	p_value: 1,
 	conflict_of_interest: 10,
-	retracted: 10,
+	notes: 1,
 }
 const OVERVIEW_RANK_SCORE_COEF = 0.1;
 const OVERVIEW_GAP_INCREASE = 3;
 
 
-export function score_journal(journal: Journal | undefined): number
+export function score_journal(paper: DataPaper, journal: Journal | undefined): number
 {
-	if (!journal || !journal.scores.oa)
+	if (!journal || !journal.scores.oa || paper.journal.retracted)
 		return 0.0;
 
-	return journal.scores.oa
+	return journal.scores.oa;
 }
 
 
 export function score_result(map: DataMap, paper: DataPaper): number
 {
-	let previous_consensus = paper.results.consensus ? map.answers[paper.results.consensus] : undefined;
-	let result = map.answers[paper.results.conclusion];
-	let direct_score = paper.results.indirect ? 0.0 : 1.0;
-	let coherence_score = 0.0;
-
-	if (previous_consensus)
-		coherence_score = previous_consensus.group === result.group ? 1.0 : 0.0;
-	else
-		coherence_score = 0.5;
+	const direct_score = paper.results.indirect ? 0.0 : 1.0;
+	const result = map.answers[paper.results.conclusion];
+	const coherence_score = paper.results.consensus ? result.coherence[paper.results.consensus] : 0.5;
 
 	return (direct_score + coherence_score) / 2.0;
 }
@@ -192,9 +186,17 @@ function score_conflict_of_interest(paper: DataPaper): number
 }
 
 
-function score_retracted(paper: DataPaper): number
+function score_notes(paper: DataPaper): number | undefined
 {
-	return paper.journal.retracted ? 0.0 : 1.0;
+	if (paper.notes.length === 0)
+		return undefined;
+
+	let notes_score = 0.0;
+
+	for (const note of paper.notes)
+		notes_score += note.positive ? 1.0 : 0.0;
+
+	return notes_score / paper.notes.length;
 }
 
 
@@ -243,28 +245,25 @@ function calculate_overall(map: DataMap, score: PaperScore): number
 	}
 
 	if (score.conflict_of_interest < 0.5)
-	{
-		numerator += score.conflict_of_interest * COEFS.conflict_of_interest;
 		denominator += COEFS.conflict_of_interest;
-	}
 
-	if (score.retracted < 0.5)
+	if (score.notes !== undefined)
 	{
-		numerator += score.retracted * COEFS.retracted;
-		denominator += COEFS.retracted;
+		numerator += score.notes * COEFS.notes;
+		denominator += COEFS.notes;
 	}
 
 	return numerator / denominator;
 }
 
 
-export function score_paper(map: DataMap, journals: Journal | undefined, paper: DataPaper): Paper
+export function score_paper(map: DataMap, journal: Journal | undefined, paper: DataPaper): Paper
 {
 	const { review, count: review_count } = score_review(paper)
 	const { citations, count: citations_count } = score_citations(paper)
 
 	let score: PaperScore = {
-		journal: score_journal(journals),
+		journal: score_journal(paper, journal),
 		result: score_result(map, paper),
 		review: review,
 		review_count: review_count,
@@ -272,7 +271,6 @@ export function score_paper(map: DataMap, journals: Journal | undefined, paper: 
 		citations_count: citations_count,
 		year: score_year(paper),
 		conflict_of_interest: score_conflict_of_interest(paper),
-		retracted: score_retracted(paper),
 		overall: 0.0,
 	};
 
@@ -287,6 +285,9 @@ export function score_paper(map: DataMap, journals: Journal | undefined, paper: 
 
 	let p_value = score_p_value(map, paper);
 	if (p_value !== undefined) score.p_value = p_value;
+
+	let notes = score_notes(paper);
+	if (notes !== undefined) score.notes = notes;
 
 	score.overall = calculate_overall(map, score);
 

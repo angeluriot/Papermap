@@ -15,9 +15,15 @@ interface BaseMap
 		[id: string]: {
 			emoji: string,
 			text: string,
-			group: string,
+			description: {
+				consensus?: string,
+				conclusion?: string,
+			},
 			color: Color,
-		}
+			coherence: {
+				[id: string]: number,
+			},
+		},
 	};
 	type: {
 		no_causality: boolean,

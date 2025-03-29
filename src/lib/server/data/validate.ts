@@ -70,8 +70,15 @@ const map_schema = z.object({
 		z.object({
 			emoji: z.string(),
 			text: z.string(),
-			group: z.string(),
+			description: z.object({
+				consensus: z.string().optional(),
+				conclusion: z.string().optional(),
+			}).strict(),
 			color: z.nativeEnum(Color),
+			coherence: z.record(
+				z.string(),
+				z.number().gte(0).lte(1),
+			)
 		}).strict(),
 	),
 	type: z.object({

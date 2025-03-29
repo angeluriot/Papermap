@@ -74,9 +74,9 @@
 	</div>
 	<div
 		class="details-container absolute bg-white" bind:clientHeight={details_height} bind:this={details}
-		style="left: {details_left}; top: {details_top}; width: {details_width}em"
+		style="left: {details_left}; top: {details_top}; --details-width: {details_width}em;"
 	>
-		<Content {map} {journals} {paper}/>
+		<Content {map} {journals} {paper} {width} {height}/>
 	</div>
 </div>
 
@@ -84,12 +84,15 @@
 	.details
 	{
 		filter: drop-shadow(0 0.1em 1.25em #0c138e36);
+		z-index: 100;
 	}
 
 	.details-container
 	{
 		border-radius: 1.5em;
-		padding: 1.4em 1.6em 1.6em 1.6em;
+		--details-x-pad: 1.6em;
+		width: var(--details-width);
+		padding: 1.4em var(--details-x-pad) 1.6em var(--details-x-pad);
 	}
 
 	.arrow

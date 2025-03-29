@@ -16,56 +16,70 @@
 		"positive": {
 			"emoji": "👍",
 			"text": "Positive",
-			"group": "positive",
-			"color": "Green"
-		},
-		"slightly_positive": {
-			"emoji": "🤏",
-			"text": "Slightly positive",
-			"group": "positive",
-			"color": "Green1H"
+			"description": {
+				"consensus": "The literature suggests that the sexual education programs evaluated mostly have positive effects on children",
+				"conclusion": "The results of the paper suggest that the sexual education programs evaluated mostly have positive effects on children"
+			},
+			"color": "Green",
+			"coherence": {
+				"positive": 1,
+				"no_effect": 0.5,
+				"negative": 0
+			}
 		},
 		"positive_unlike_literature": {
 			"emoji": "↪️",
 			"text": "Positive unlike literature",
-			"group": "positive",
-			"color": "Green1H"
-		},
-		"positive_but_mixed_results": {
-			"emoji": "🔀",
-			"text": "Positive but mixed results",
-			"group": "positive",
-			"color": "Green1H"
+			"description": {
+				"conclusion": "The results of the paper suggest that the sexual education programs evaluated mostly have positive effects on children, unlike what is reported in the literature"
+			},
+			"color": "Green1H",
+			"coherence": {
+				"positive": 1,
+				"no_effect": 0.5,
+				"negative": 0
+			}
 		},
 		"no_effect": {
 			"emoji": "🫥",
 			"text": "No effect",
-			"group": "neutral",
-			"color": "Gray"
-		},
-		"negative_but_mixed_results": {
-			"emoji": "🔀",
-			"text": "Negative but mixed results",
-			"group": "negative",
-			"color": "Red1H"
+			"description": {
+				"consensus": "The literature suggests that the sexual education programs evaluated have no significant effect on children",
+				"conclusion": "The results of the paper show no significant effect on children of the sexual education programs evaluated"
+			},
+			"color": "Gray",
+			"coherence": {
+				"positive": 0.5,
+				"no_effect": 1,
+				"negative": 0.5
+			}
 		},
 		"negative_unlike_literature": {
 			"emoji": "↩️",
 			"text": "Negative unlike literature",
-			"group": "negative",
-			"color": "Red1H"
-		},
-		"slightly_negative": {
-			"emoji": "🤏",
-			"text": "Slightly negative",
-			"group": "negative",
-			"color": "Red1H"
+			"description": {
+				"conclusion": "The results of the paper suggest that the sexual education programs evaluated mostly have negative effects on children, unlike what is reported in the literature"
+			},
+			"color": "Red1H",
+			"coherence": {
+				"positive": 0,
+				"no_effect": 0.5,
+				"negative": 1
+			}
 		},
 		"negative": {
 			"emoji": "👎",
 			"text": "Negative",
-			"group": "negative",
-			"color": "Red"
+			"description": {
+				"consensus": "The literature suggests that the sexual education programs evaluated mostly have negative effects on children",
+				"conclusion": "The results of the paper suggest that the sexual education programs evaluated mostly have negative effects on children"
+			},
+			"color": "Red",
+			"coherence": {
+				"positive": 0,
+				"no_effect": 0.5,
+				"negative": 1
+			}
 		}
 	},
 	"type": {
@@ -98,7 +112,7 @@
 			"year": 1986,
 			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
 			"results": {
-				"consensus": "slightly_positive",
+				"consensus": "positive",
 				"conclusion": "positive",
 				"indirect": true
 			},

@@ -4,8 +4,8 @@ import { StudyOn, PaperType, ReviewType } from '$lib/types/paper';
 
 export const TO_TEXT = {
 	[StudyOn.InVitro]: '🧫 In Vitro',
-	[StudyOn.Animals]: '🐭 On Animals',
-	[StudyOn.Humans]: '🙋 On Humans',
+	[StudyOn.Animals]: '🐭 Animals',
+	[StudyOn.Humans]: '🙋 Humans',
 	[PaperType.CaseReport]: '🔍 Case Report',
 	[PaperType.CrossSectionalStudy]: '📸 Cross-Sectional Study',
 	[PaperType.CohortStudy]: '⏳ Cohort Study',
