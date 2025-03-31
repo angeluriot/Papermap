@@ -57,26 +57,6 @@ export function validate_paper(paper: DataPaper): void
 }
 
 
-const consensus_schema = z.object({
-	emoji: z.string(),
-	text: z.string(),
-	description: z.string(),
-	color: z.nativeEnum(Color),
-	coherence: z.record(
-		z.string(),
-		z.number().gte(0).lte(1),
-	)
-}).strict();
-
-
-const conclusion_schema = z.object({
-	emoji: z.string(),
-	text: z.string(),
-	description: z.string(),
-	color: z.nativeEnum(Color),
-}).strict();
-
-
 const map_schema = z.object({
 	emoji: z.string(),
 	question: z.object({
@@ -87,11 +67,26 @@ const map_schema = z.object({
 	tags: z.array(z.string()),
 	consensus: z.record(
 		z.string(),
-		consensus_schema,
+		z.object({
+			emoji: z.string(),
+			text: z.string(),
+			description: z.string(),
+			color: z.nativeEnum(Color),
+			coherence: z.record(
+				z.string(),
+				z.number().gte(0).lte(1),
+			),
+		}).strict(),
 	),
 	conclusions: z.record(
 		z.string(),
-		conclusion_schema,
+		z.object({
+			emoji: z.string(),
+			text: z.string(),
+			description: z.string(),
+			color: z.nativeEnum(Color),
+			p_value: z.boolean(),
+		}).strict(),
 	),
 	type: z.object({
 		no_causality: z.boolean(),
@@ -104,7 +99,6 @@ const map_schema = z.object({
 		any: z.boolean(),
 	}).strict(),
 	no_sample_size: z.boolean(),
-	no_p_value: z.boolean(),
 	papers: z.array(paper_schema),
 }).strict();
 

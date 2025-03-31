@@ -203,7 +203,7 @@
 		return {
 			text: cards.p_value_score_to_emoji(paper.score.p_value) + (paper.p_value.less_than ? ' < ' : ' ') + float_to_text(paper.p_value.value),
 			color: cards.score_to_color(paper.score.p_value),
-			description: `There is a ${float_to_text(paper.p_value.value * 100)}% probability that these results occurred by chance`,
+			description: `There is ${paper.p_value.less_than ? 'less than' : ''} a ${float_to_text(paper.p_value.value * 100)}% probability that these results occurred by chance`,
 		};
 	});
 

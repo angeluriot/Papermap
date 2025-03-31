@@ -2,23 +2,6 @@ import type { DataPaper, Paper } from './paper';
 import type { Color } from '$lib/colors';
 
 
-interface ConclusionAnswer
-{
-	emoji: string;
-	text: string;
-	description: string;
-	color: Color;
-}
-
-
-interface ConsensusAnswer extends ConclusionAnswer
-{
-	coherence: {
-		[id: string]: number,
-	};
-}
-
-
 interface BaseMap
 {
 	emoji: string;
@@ -29,10 +12,24 @@ interface BaseMap
 	description: string;
 	tags: string[];
 	consensus: {
-		[id: string]: ConsensusAnswer,
+		[id: string]: {
+			emoji: string,
+			text: string,
+			description: string,
+			color: Color,
+			coherence: {
+				[id: string]: number,
+			},
+		},
 	};
 	conclusions: {
-		[id: string]: ConclusionAnswer,
+		[id: string]: {
+			emoji: string,
+			text: string,
+			description: string,
+			color: Color,
+			p_value: boolean,
+		},
 	};
 	type: {
 		no_causality: boolean,
@@ -45,7 +42,6 @@ interface BaseMap
 		any: boolean,
 	};
 	no_sample_size: boolean;
-	no_p_value: boolean;
 }
 
 

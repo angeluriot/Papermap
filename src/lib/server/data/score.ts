@@ -169,7 +169,7 @@ function score_sample_size(map: DataMap, paper: DataPaper): number | undefined
 
 function score_p_value(map: DataMap, paper: DataPaper): number | undefined
 {
-	if (!paper.p_value || map.no_p_value)
+	if (!paper.p_value || !map.conclusions[paper.results.conclusion].p_value)
 		return undefined;
 
 	let p_value_score = paper.p_value.less_than ? paper.p_value.value / 2.0 : paper.p_value.value;
@@ -199,7 +199,7 @@ function score_notes(paper: DataPaper): number | undefined
 }
 
 
-function calculate_overall(map: DataMap, score: PaperScore): number
+function calculate_overall(map: DataMap, paper: DataPaper, score: PaperScore): number
 {
 	let numerator = 0.0;
 	let denominator = 0.0;
@@ -237,7 +237,7 @@ function calculate_overall(map: DataMap, score: PaperScore): number
 		denominator += COEFS.sample_size;
 	}
 
-	if (!map.no_p_value)
+	if (map.conclusions[paper.results.conclusion].p_value)
 	{
 		numerator += score.p_value ? score.p_value * COEFS.p_value : 0.0;
 		denominator += COEFS.p_value;
@@ -288,7 +288,7 @@ export function score_paper(map: DataMap, journal: Journal | undefined, paper: D
 	let notes = score_notes(paper);
 	if (notes !== undefined) score.notes = notes;
 
-	score.overall = calculate_overall(map, score);
+	score.overall = calculate_overall(map, paper, score);
 
 	return { ...paper, score };
 }

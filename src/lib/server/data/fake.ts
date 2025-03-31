@@ -55,6 +55,7 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 
 	const type = random_choice([...Object.keys(PaperType), undefined] as (PaperType | undefined)[])
 	const consensus = random_choice(Object.keys(map.consensus))
+	const conclusion = random_choice(Object.keys(map.conclusions).filter(answer => map.consensus[consensus].coherence[answer] !== undefined))
 
 	return {
 		id: random_choice([faker.string.uuid(), undefined]),
@@ -69,7 +70,7 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 		link: faker.internet.url(),
 		results: {
 			consensus,
-			conclusion: random_choice(Object.keys(map.conclusions).filter(answer => map.consensus[consensus].coherence[answer] !== undefined)),
+			conclusion,
 			indirect: Math.random() < 0.5,
 		},
 		quote,
@@ -84,7 +85,7 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 			critics: random_choice([false, true], [10, 1]),
 		},
 		sample_size: 5 + Math.round((Math.random() ** 5) * 10000),
-		p_value: Math.random() < 0.9 ? {
+		p_value: Math.random() < 0.9 && map.conclusions[conclusion].p_value ? {
 			value: Math.random() * 0.05,
 			less_than: Math.random() < 0.5,
 		} : undefined,
