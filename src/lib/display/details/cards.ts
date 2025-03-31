@@ -4,8 +4,8 @@ import { StudyOn, PaperType, ReviewType } from '$lib/types/paper';
 
 export const TO_TEXT = {
 	[StudyOn.InVitro]: '🧫 In Vitro',
-	[StudyOn.Animals]: '🐭 On Animals',
-	[StudyOn.Humans]: '🙋 On Humans',
+	[StudyOn.Animals]: '🐭 Animals',
+	[StudyOn.Humans]: '🙋 Humans',
 	[PaperType.CaseReport]: '🔍 Case Report',
 	[PaperType.CrossSectionalStudy]: '📸 Cross-Sectional Study',
 	[PaperType.CohortStudy]: '⏳ Cohort Study',
@@ -32,6 +32,22 @@ export const REVIEW_COLORS = {
 	[ReviewType.NarrativeReview]: '#48c7e5',
 	[ReviewType.SystematicReview]: '#5d97ed',
 	[ReviewType.MetaAnalysis]: '#5d75ed',
+}
+
+
+export const TO_DESCRIPTION = {
+	[StudyOn.InVitro]: 'An experiment conducted in a controlled environment outside of a living organism',
+	[StudyOn.Animals]: 'An experiment conducted on non-human living organisms (often mice or rats)',
+	[StudyOn.Humans]: 'An experiment conducted on human subjects',
+	[PaperType.CaseReport]: 'A report describing observations from a unique clinical case',
+	[PaperType.CrossSectionalStudy]: 'An analysis of population data at a given point in time',
+	[PaperType.CohortStudy]: 'A study that follows a group of individuals over time to observe outcomes',
+	[PaperType.ClinicalTrial]: 'An experiment assessing the effects of an intervention under controlled conditions',
+	[PaperType.RandomizedControlledTrial]: 'A clinical trial where participants are randomly assigned to a control or an experimental group for a fair comparison',
+	[PaperType.BlindedRandomizedControlledTrial]: 'A randomized controlled trial where participants and/or researchers are unaware of group assignments to reduce bias',
+	[ReviewType.NarrativeReview]: 'A qualitative summary of the existing literature on a particular topic',
+	[ReviewType.SystematicReview]: 'A comprehensive review of existing literature using a structured methodology to minimize bias',
+	[ReviewType.MetaAnalysis]: 'A statistical analysis that combines the results of multiple scientific studies',
 }
 
 

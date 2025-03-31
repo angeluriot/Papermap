@@ -58,9 +58,12 @@
 	</div>
 	<div class="w-full flex flex-row flex-nowrap justify-between items-center">
 		{#each overview as data, i}
-			{#if data.label !== null}
-				<span class="unselectable" style="color: {data.color}; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};">
-					{data.label}
+			{#if data.label.opacity !== 0}
+				<span
+					class="unselectable"
+					style="color: {data.color}; opacity: {group_selected === null || group_selected.i == i ? data.label.opacity : data.label.opacity * 0.5};"
+				>
+					{data.label.text}
 				</span>
 			{/if}
 		{/each}

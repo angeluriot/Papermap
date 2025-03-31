@@ -53,6 +53,9 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 		if (quote[i] === ' ' && Math.random() < 0.05)
 			quote = quote.slice(0, i) + ' [...]' + quote.slice(i);
 
+	const type = random_choice([...Object.keys(PaperType), undefined] as (PaperType | undefined)[])
+	const consensus = random_choice(Object.keys(map.consensus))
+
 	return {
 		id: random_choice([faker.string.uuid(), undefined]),
 		title: faker.lorem.sentence({ min: 8, max: 22 }),
@@ -65,17 +68,17 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 		year: 2025 - Math.round(Math.random() * 50),
 		link: faker.internet.url(),
 		results: {
-			consensus: random_choice([undefined, ...Object.keys(map.answers)]),
-			conclusion: random_choice(Object.keys(map.answers)),
+			consensus,
+			conclusion: random_choice(Object.keys(map.conclusions).filter(answer => map.consensus[consensus].coherence[answer] !== undefined)),
 			indirect: Math.random() < 0.5,
 		},
 		quote,
-		type: random_choice([...Object.keys(PaperType), undefined] as (PaperType | undefined)[]),
+		type,
 		review: Math.random() < 0.2 ? {
 			type: random_choice(Object.keys(ReviewType) as ReviewType[]),
 			count: 5 + Math.round((Math.random() ** 3) * 200),
 		} : undefined,
-		on: random_choice([...Object.keys(StudyOn), undefined] as (StudyOn | undefined)[]),
+		on: type ? random_choice([...Object.keys(StudyOn), undefined] as (StudyOn | undefined)[]) : undefined,
 		citations: {
 			count: 5 + Math.round((Math.random() ** 4) * 500),
 			critics: random_choice([false, true], [10, 1]),

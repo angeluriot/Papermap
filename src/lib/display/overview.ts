@@ -3,13 +3,13 @@ import type { Map } from '$lib/types/map';
 import type { GraphStats } from './graph/types';
 
 
-export function get_overview_by_color(map: Map): { color: string, width: number, ids: string[], label: string | null }[]
+export function get_overview_by_color(map: Map): { color: string, width: number, ids: string[], label: { text: string, opacity: number } }[]
 {
-	let data: { [color: string]: { color: string, width: number, ids: string[], label: string | null } } = {};
+	let data: { [color: string]: { color: string, width: number, ids: string[], label: { text: string, opacity: number } } } = {};
 
 	for (const [answer_id, score] of Object.entries(map.overview))
 	{
-		const answer = map.answers[answer_id];
+		const answer = map.conclusions[answer_id];
 		const color = answer.color;
 
 		if (!data[color])
@@ -18,7 +18,10 @@ export function get_overview_by_color(map: Map): { color: string, width: number,
 				color: COLORS[color].default,
 				width: 0,
 				ids: [],
-				label: answer.text,
+				label: {
+					text: answer.text,
+					opacity: 0,
+				},
 			};
 		}
 
@@ -26,11 +29,10 @@ export function get_overview_by_color(map: Map): { color: string, width: number,
 		data[color].ids.push(answer_id);
 	}
 
-	let result = Object.values(data).sort((a, b) => Object.keys(map.answers).indexOf(a.ids[0]) - Object.keys(map.answers).indexOf(b.ids[0]));
+	let result = Object.values(data).sort((a, b) => Object.keys(map.conclusions).indexOf(a.ids[0]) - Object.keys(map.conclusions).indexOf(b.ids[0]));
 
-	for (let i = 1; i < result.length - 1; i++)
-		result[i].label = null;
-
+	result[0].label.opacity = result[0].width == 0 ? 0.5 : 1;
+	result[result.length - 1].label.opacity = result[result.length - 1].width == 0 ? 0.5 : 1;
 	result[result.length - 1].width = 100;
 
 	return result;

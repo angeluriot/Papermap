@@ -17,7 +17,7 @@ export const paper_schema = z.object({
 	year: z.number().int(),
 	link: z.string(),
 	results: z.object({
-		consensus: z.string().optional(),
+		consensus: z.string(),
 		conclusion: z.string(),
 		indirect: z.boolean(),
 	}).strict(),
@@ -57,6 +57,26 @@ export function validate_paper(paper: DataPaper): void
 }
 
 
+const consensus_schema = z.object({
+	emoji: z.string(),
+	text: z.string(),
+	description: z.string(),
+	color: z.nativeEnum(Color),
+	coherence: z.record(
+		z.string(),
+		z.number().gte(0).lte(1),
+	)
+}).strict();
+
+
+const conclusion_schema = z.object({
+	emoji: z.string(),
+	text: z.string(),
+	description: z.string(),
+	color: z.nativeEnum(Color),
+}).strict();
+
+
 const map_schema = z.object({
 	emoji: z.string(),
 	question: z.object({
@@ -65,14 +85,13 @@ const map_schema = z.object({
 	}).strict(),
 	description: z.string(),
 	tags: z.array(z.string()),
-	answers: z.record(
+	consensus: z.record(
 		z.string(),
-		z.object({
-			emoji: z.string(),
-			text: z.string(),
-			group: z.string(),
-			color: z.nativeEnum(Color),
-		}).strict(),
+		consensus_schema,
+	),
+	conclusions: z.record(
+		z.string(),
+		conclusion_schema,
 	),
 	type: z.object({
 		no_causality: z.boolean(),

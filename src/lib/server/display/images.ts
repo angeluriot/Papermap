@@ -4,7 +4,6 @@ import crypto from 'crypto';
 import sharp from 'sharp';
 import { join } from 'path';
 import ejs from 'ejs';
-import { ReviewType } from '$lib/types/paper';
 import { get_stats } from '$lib/display/graph/utils';
 import * as bg from '$lib/display/graph/background';
 import * as pt from '$lib/display/graph/points';
@@ -95,7 +94,7 @@ export async function create_images(group: string, map: Map): Promise<string>
 			image_hash = crypto.createHash('sha256').update(svg).digest('hex').slice(0, 16);
 
 		const resvg = new Resvg(svg, {
-			background: 'white',
+			background: type === 'thumbnail' ? bg.BACKGROUND_COLOR : 'white',
 			fitTo: {
 				mode: 'width',
 				value: global_width * image_scales[type],

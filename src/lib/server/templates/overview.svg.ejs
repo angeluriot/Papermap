@@ -28,11 +28,12 @@
 	font-family="<%= font.name %>"
 	font-size="<%= overview.font_size %>"
 	stroke-width="<%= overview_text_stroke %>"
+	opacity="<%= overview.groups[0].opacity %>"
 	text-anchor="start"
 	alignment-baseline="hanging"
 	dominant-baseline="hanging"
 >
-	<%= overview.groups[0].label %>
+	<%= overview.groups[0].label.text %>
 </text>
 <text
 	x="<%= overview.width %>"
@@ -42,9 +43,10 @@
 	font-family="<%= font.name %>"
 	font-size="<%= overview.font_size %>"
 	stroke-width="<%= overview_text_stroke %>"
+	opacity="<%= overview.groups[overview.groups.length - 1].opacity %>"
 	text-anchor="end"
 	alignment-baseline="hanging"
 	dominant-baseline="hanging"
 >
-	<%= overview.groups[overview.groups.length - 1].label %>
+	<%= overview.groups[overview.groups.length - 1].label.text %>
 </text>

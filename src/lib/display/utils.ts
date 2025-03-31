@@ -11,6 +11,9 @@ export function int_to_text(number: number): string
 
 export function float_to_text(number: number): string
 {
+	if (number >= 1)
+		return int_to_text(Math.round(number));
+
 	const text = number.toString().split('.')[1];
 	let nb_zeros = 0;
 

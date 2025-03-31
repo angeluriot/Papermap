@@ -2,6 +2,23 @@ import type { DataPaper, Paper } from './paper';
 import type { Color } from '$lib/colors';
 
 
+interface ConclusionAnswer
+{
+	emoji: string;
+	text: string;
+	description: string;
+	color: Color;
+}
+
+
+interface ConsensusAnswer extends ConclusionAnswer
+{
+	coherence: {
+		[id: string]: number,
+	};
+}
+
+
 interface BaseMap
 {
 	emoji: string;
@@ -11,13 +28,11 @@ interface BaseMap
 	};
 	description: string;
 	tags: string[];
-	answers: {
-		[id: string]: {
-			emoji: string,
-			text: string,
-			group: string,
-			color: Color,
-		}
+	consensus: {
+		[id: string]: ConsensusAnswer,
+	};
+	conclusions: {
+		[id: string]: ConclusionAnswer,
 	};
 	type: {
 		no_causality: boolean,

@@ -46,7 +46,7 @@ export interface DataPaper
 	year: number;
 	link: string;
 	results: {
-		consensus?: string,
+		consensus: string,
 		conclusion: string,
 		indirect: boolean,
 	};
@@ -89,8 +89,8 @@ export interface PaperScore
 	sample_size?: number;
 	p_value?: number;
 	conflict_of_interest: number;
-	retracted: number;
 	overall: number;
+	notes?: number;
 }
 
 

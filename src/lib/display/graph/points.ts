@@ -114,9 +114,9 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			y: stats.height - (ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height),
 			size,
 			focus_size,
-			fill: not_published ? 'transparent' : COLORS[map.answers[paper.results.conclusion].color].fill,
+			fill: not_published ? 'transparent' : COLORS[map.conclusions[paper.results.conclusion].color].fill,
 			stroke: {
-				color: COLORS[map.answers[paper.results.conclusion].color].stroke,
+				color: COLORS[map.conclusions[paper.results.conclusion].color].stroke,
 				width: stroke_width,
 				dasharray: not_published ? get_dasharray(size, stroke_width) : undefined,
 			},

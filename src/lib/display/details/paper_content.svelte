@@ -2,11 +2,18 @@
 	import { COLORS, Color } from '$lib/colors';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { JournalStatus, type Paper } from '$lib/types/paper';
-	import * as cards from '../cards';
+	import { JournalStatus, type Paper, StudyOn } from '$lib/types/paper';
+	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
+	import InfoBubble from './info_bubble.svelte';
 
-	const { map, journals, paper }: { map: Map, journals: { [id: string]: Journal; }, paper: Paper } = $props();
+	const { map, journals, paper, width, height }: {
+		map: Map,
+		journals: { [id: string]: Journal; },
+		paper: Paper,
+		width: number,
+		height: number
+	} = $props();
 
 	const title = $derived(paper.title);
 	const link = $derived(paper.link);
@@ -40,27 +47,23 @@
 
 	const consensus = $derived.by(() =>
 	{
-		if (paper.results.consensus === undefined)
-			return {
-				text: '🤷 No consensus yet',
-				color: COLORS[Color.Gray].default
-			};
-
-		const answer = map.answers[paper.results.consensus];
+		const answer = map.consensus[paper.results.consensus];
 
 		return {
 			text: answer.emoji + ' ' + answer.text,
-			color: COLORS[answer.color].default
+			color: COLORS[answer.color].default,
+			description: answer.description,
 		};
 	});
 
 	const result = $derived.by(() =>
 	{
-		const answer = map.answers[paper.results.conclusion];
+		const answer = map.conclusions[paper.results.conclusion];
 
 		return {
 			text: answer.emoji + ' ' + answer.text,
-			color: COLORS[answer.color].default
+			color: COLORS[answer.color].default,
+			description: answer.description,
 		};
 	});
 
@@ -100,48 +103,56 @@
 
 	const paper_type_parts = $derived.by(() =>
 	{
-		let result: { text: string, color: string | null }[] = [];
+		let result: { text: string, color?: string, description?: string }[] = [];
 
-		if (paper.review !== undefined)
+		if (paper.review)
 		{
 			result.push({
 				text: cards.TO_TEXT[paper.review.type],
-				color: cards.REVIEW_COLORS[paper.review.type]
+				color: cards.REVIEW_COLORS[paper.review.type],
+				description: cards.TO_DESCRIPTION[paper.review.type],
 			});
 
-			result.push({ text: 'of', color: null });
+			result.push({ text: 'of' });
 
 			const nb_emoji = cards.review_count_score_to_emoji(paper.score.review_count);
 
 			result.push({
 				text: nb_emoji + ' ' + int_to_text(paper.review.count) + ' Papers',
-				color: cards.score_to_color(paper.score.review_count)
+				color: cards.score_to_color(paper.score.review_count),
+				description: int_to_text(paper.review.count) + ' papers were included in this ' + cards.TO_TEXT[paper.review.type].slice(2).toLowerCase(),
 			});
 
-			if (paper.type !== undefined)
+			if (paper.type)
 			{
-				result.push({ text: 'that are mostly', color: null });
+				result.push({ text: 'that are mostly' });
 
 				result.push({
 					text: cards.TO_TEXT_PLURAL[paper.type],
-					color: cards.score_to_color(paper.score.type)
+					color: cards.score_to_color(paper.score.type),
+					description: cards.TO_DESCRIPTION[paper.type],
 				});
 			}
 		}
 
-		else if (paper.type !== undefined)
+		else if (paper.type)
 		{
 			result.push({
 				text: cards.TO_TEXT[paper.type],
-				color: cards.score_to_color(paper.score.type)
+				color: cards.score_to_color(paper.score.type),
+				description: cards.TO_DESCRIPTION[paper.type],
 			});
 		}
 
-		if (paper.on !== undefined)
+		if (paper.type && paper.on)
 		{
+			if (paper.on !== StudyOn.InVitro)
+				result.push({ text: 'on' });
+
 			result.push({
 				text: cards.TO_TEXT[paper.on],
-				color: cards.score_to_color(paper.score.on)
+				color: cards.score_to_color(paper.score.on),
+				description: cards.TO_DESCRIPTION[paper.on],
 			});
 		}
 
@@ -166,19 +177,11 @@
 
 	const citations = $derived({
 		text: cards.citation_score_to_emoji(paper.score.citations_count) + ' ' + int_to_text(paper.citations.count),
-		color: cards.score_to_color(paper.score.citations_count)
+		color: cards.score_to_color(paper.score.citations_count),
+		description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
 	});
 
-	const critics = $derived.by(() =>
-	{
-		if (paper.citations.critics)
-			return {
-				text: '😠 Mostly critics',
-				color: COLORS[Color.Red].default
-			};
-
-		return null;
-	});
+	const critics = $derived(paper.citations.critics);
 
 	const sample_size = $derived.by(() =>
 	{
@@ -187,7 +190,8 @@
 
 		return {
 			text: cards.sample_size_score_to_emoji(paper.score.sample_size) + ' ' + int_to_text(paper.sample_size),
-			color: cards.score_to_color(paper.score.sample_size)
+			color: cards.score_to_color(paper.score.sample_size),
+			description: int_to_text(paper.sample_size) + ' individuals were included in this study',
 		};
 	});
 
@@ -198,7 +202,8 @@
 
 		return {
 			text: cards.p_value_score_to_emoji(paper.score.p_value) + (paper.p_value.less_than ? ' < ' : ' ') + float_to_text(paper.p_value.value),
-			color: cards.score_to_color(paper.score.p_value)
+			color: cards.score_to_color(paper.score.p_value),
+			description: `There is a ${float_to_text(paper.p_value.value * 100)}% probability that these results occurred by chance`,
 		};
 	});
 
@@ -207,12 +212,14 @@
 		if (paper.conflict_of_interest)
 			return {
 				text: '🤑 Yes',
-				color: COLORS[Color.Red].default
+				color: COLORS[Color.Red].default,
+				description: "The authors or funders have conflicting interests that may have influenced the conclusion",
 			};
 
 		return {
 			text: '😇 No',
-			color: COLORS[Color.Green].default
+			color: COLORS[Color.Green].default,
+			description: "The authors declared no conflict of interest",
 		};
 	});
 
@@ -223,9 +230,17 @@
 		for (const note of paper.notes)
 		{
 			if (note.positive)
-				results.push({ text: '👍 ' + note.title, color: COLORS[Color.Green].default });
+				results.push({
+					text: '👍 ' + note.title,
+					color: COLORS[Color.Green].default,
+					description: note.description,
+				});
 			else
-				results.push({ text: '👎 ' + note.title, color: COLORS[Color.Red].default });
+				results.push({
+					text: '👎 ' + note.title,
+					color: COLORS[Color.Red].default,
+					description: note.description,
+				});
 		}
 
 		return results;
@@ -237,28 +252,37 @@
 		<p class="title">{title}</p>
 		<div class="authors-date flex">
 			<span>{authors}</span>
-			<span class="opacity-50">•</span>
+			<span class="opacity-50 unselectable">•</span>
 			<span>{year}</span>
 		</div>
 	</a>
 	<div class="part-1" style="gap: 0.75em {part_1_gap}em; flex-wrap: {part_1_flex_wrap};" bind:this={part_1}>
 		<div class="subtitle-cards" bind:clientWidth={consensus_width}>
-			<span class="subtitle">Previous consensus:</span>
+			<span class="subtitle unselectable">Previous consensus:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {consensus.color};">
+				<div class="card text-unselectable" style="background-color: {consensus.color};">
 					<span>{consensus.text}</span>
+					<div class="info-ext absolute">
+						<InfoBubble text={consensus.description} {width} {height}/>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="subtitle-cards">
-			<span class="subtitle">Result:</span>
+			<span class="subtitle unselectable">Result:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {result.color};" bind:clientWidth={result_width}>
+				<div class="card text-unselectable" style="background-color: {result.color};" bind:clientWidth={result_width}>
 					<span>{result.text}</span>
+					<div class="info-ext">
+						<InfoBubble text={result.description} {width} {height}/>
+					</div>
 				</div>
 				{#if indirect}
-					<div class="card" style="background-color: {COLORS[Color.Red].default};" bind:clientWidth={indirect_width}>
+					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};" bind:clientWidth={indirect_width}>
 						<span>🔗 Indirect</span>
+						<div class="info-ext">
+							<InfoBubble text="The conclusion of this paper is based on indirect evidence" {width} {height}/>
+						</div>
 					</div>
 				{/if}
 			</div>
@@ -284,12 +308,17 @@
 				</span>
 				<div class="cards">
 					{#each paper_type_parts as part}
-						{#if part.color === null}
-							<div class="text">
+						{#if part.color}
+							<div class="card text-unselectable" style="background-color: {part.color};">
 								<span>{part.text}</span>
+								{#if part.description}
+									<div class="info-ext">
+										<InfoBubble text={part.description} {width} {height}/>
+									</div>
+								{/if}
 							</div>
 						{:else}
-							<div class="card" style="background-color: {part.color};">
+							<div class="text unselectable">
 								<span>{part.text}</span>
 							</div>
 						{/if}
@@ -300,23 +329,37 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Journal:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {journal.color};">
+				<div class="card text-unselectable" style="background-color: {journal.color};">
 					<span>{journal.text}</span>
+					<div class="info-ext">
+						<InfoBubble text="WIP" {width} {height}/>
+					</div>
 				</div>
 				{#if retracted}
-					<span class="card" style="background-color: {COLORS[Color.Red].default};">😵 Retracted</span>
+					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};">
+						<span>😵 Retracted</span>
+						<div class="info-ext">
+							<InfoBubble text="This paper has been retracted by the journal" {width} {height}/>
+						</div>
+					</div>
 				{/if}
 			</div>
 		</div>
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Citations:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {citations.color};">
+				<div class="card text-unselectable" style="background-color: {citations.color};">
 					<span>{citations.text}</span>
+					<div class="info-ext">
+						<InfoBubble text={citations.description} {width} {height}/>
+					</div>
 				</div>
-				{#if critics !== null}
-					<div class="card" style="background-color: {critics.color};">
-						<span>{critics.text}</span>
+				{#if critics}
+					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};">
+						<span>😠 Mostly critics</span>
+						<div class="info-ext">
+							<InfoBubble text="Most of the citations are critical of this paper" {width} {height}/>
+						</div>
 					</div>
 				{/if}
 			</div>
@@ -325,8 +368,11 @@
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">Sample size:</span>
 				<div class="cards">
-					<div class="card" style="background-color: {sample_size.color};">
+					<div class="card text-unselectable" style="background-color: {sample_size.color};">
 						<span>{sample_size.text}</span>
+						<div class="info-ext">
+							<InfoBubble text={sample_size.description} {width} {height}/>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -335,8 +381,11 @@
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">P-value:</span>
 				<div class="cards">
-					<div class="card" style="background-color: {p_value.color};">
+					<div class="card text-unselectable" style="background-color: {p_value.color};">
 						<span>{p_value.text}</span>
+						<div class="info-ext">
+							<InfoBubble text={p_value.description} {width} {height}/>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -344,8 +393,11 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Conflict of Interest:</span>
 			<div class="cards">
-				<div class="card" style="background-color: {conflict_of_interest.color};">
+				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color};">
 					<span>{conflict_of_interest.text}</span>
+					<div class="info-ext">
+						<InfoBubble text={conflict_of_interest.description} {width} {height}/>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -354,8 +406,11 @@
 				<span class="subtitle unselectable">Notes:</span>
 				<div class="cards">
 					{#each notes as note}
-						<div class="card" style="background-color: {note.color};">
+						<div class="card text-unselectable" style="background-color: {note.color};">
 							<span>{note.text}</span>
+							<div class="info-ext">
+								<InfoBubble text={note.description} {width} {height}/>
+							</div>
 						</div>
 					{/each}
 				</div>
@@ -400,14 +455,21 @@
 
 	.part-1
 	{
-		@apply flex flex-row justify-start items-start;
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: start;
 		margin-top: 0.6em;
 		margin-bottom: 1em;
 	}
 
 	.subtitle-cards
 	{
-		@apply flex flex-col justify-start items-start flex-nowrap;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+		flex-wrap: nowrap;
 		gap: 0.3em;
 	}
 
@@ -419,19 +481,45 @@
 
 	.cards
 	{
-		@apply flex flex-row justify-start items-center flex-wrap;
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: center;
+		flex-wrap: wrap;
 		gap: 0.5em;
 	}
 
 	.card
 	{
+		max-width: calc(var(--details-width) - calc(var(--details-x-pad) * 2));
 		position: relative;
+		padding: 0.3em 0.75em 0.3em 0.65em;
+		border-radius: calc(infinity * 1px);
+		cursor: pointer;
+	}
+
+	.card span
+	{
+		display: block;
+		text-overflow: ellipsis;
+		box-sizing: border-box;
+		overflow: hidden;
 		font-weight: 450;
 		color: white;
 		letter-spacing: 0.01em;
-		padding: 0.25em 0.75em 0.35em 0.65em;
-		border-radius: calc(infinity * 1px);
 		text-shadow: 0 0.025em 0.3em rgba(0, 0, 0, 0.25);
+	}
+
+	.card .info-ext
+	{
+		display: none;
+		left: 0;
+		width: 100%;
+	}
+
+	.card:hover .info-ext
+	{
+		display: block;
 	}
 
 	.text
@@ -457,7 +545,11 @@
 
 	.part-2
 	{
-		@apply flex flex-row justify-start items-start flex-wrap;
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: start;
+		flex-wrap: wrap;
 		gap: 1em 2em;
 	}
 
