@@ -45,7 +45,7 @@
 		<div class="bar-hitbox absolute w-full overflow-hidden flex flex-row flex-nowrap justify-start items-center" style="opacity: 0;">
 			{#each overview as data, i}
 				<div
-					class="h-full cursor-pointer"
+					class="h-full cursor-pointer" title={data.label.text}
 					style="background-color: {data.color}; width: {data.width}%; min-width: {data.width}%; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};"
 					onclick={(event) => select_group(event, i, data.ids, true)}
 					onmouseenter={(event) => select_group(event, i, data.ids, false)}
