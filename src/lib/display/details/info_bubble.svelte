@@ -15,7 +15,7 @@
 	const info_left_limit = 9.5;
 	const window_padding = 2;
 
-	let info_width = $derived(text ? Math.round(Math.min(5 + text.length * 0.15, 20)) : 20);
+	let info_width = $derived(text ? Math.round(Math.min(5 + text.length * 0.18, 20)) : 20);
 	let info_height = $state(0);
 	let info: HTMLDivElement | undefined = $state(undefined);
 

@@ -37,7 +37,7 @@ export const REVIEW_COLORS = {
 
 export const TO_DESCRIPTION = {
 	[StudyOn.InVitro]: 'An experiment conducted in a controlled environment outside of a living organism',
-	[StudyOn.Animals]: 'An experiment conducted on non-human living organisms (often mice or rats)',
+	[StudyOn.Animals]: 'An experiment conducted on non‑human living organisms (often mice or rats)',
 	[StudyOn.Humans]: 'An experiment conducted on human subjects',
 	[PaperType.CaseReport]: 'A report describing observations from a unique clinical case',
 	[PaperType.CrossSectionalStudy]: 'An analysis of population data at a given point in time',
