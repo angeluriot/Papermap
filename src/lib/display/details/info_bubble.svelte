@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Journal } from '$lib/types/journal';
+	import JournalInfo from './journal.svelte';
 
 	let { text, journal, width, height }: {
 		text?: string,
@@ -15,7 +16,7 @@
 	const info_left_limit = 9.5;
 	const window_padding = 2;
 
-	let info_width = $derived(text ? Math.round(Math.min(5 + text.length * 0.18, 20)) : 20);
+	let info_width = $derived(text !== undefined ? Math.round(Math.min(5 + text.length * 0.18, 20)) : 22);
 	let info_height = $state(0);
 	let info: HTMLDivElement | undefined = $state(undefined);
 
@@ -64,7 +65,7 @@
 	});
 </script>
 
-<div class="info absolute unselectable" bind:this={info}>
+<div class="info absolute {text !== undefined ? 'unselectable' : 'cursor-auto'}" bind:this={info}>
 	<div
 		class="arrow absolute bg-white"
 		style="top: {arrow_top}; transform: rotate({arrow_rotation}deg);"
@@ -74,9 +75,15 @@
 		class="info-container absolute bg-white" bind:clientHeight={info_height}
 		style="left: {info_left}; top: {info_top};"
 	>
-		<span class="text" style="width: {info_width}em;">
-			{text}
-		</span>
+		{#if text !== undefined}
+			<span class="text" style="width: {info_width}em;">
+				{text}
+			</span>
+		{:else if journal !== undefined}
+			<div class="journal" style="width: {info_width}em;">
+				<JournalInfo {journal} {width} {height} />
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -84,7 +91,6 @@
 	.info
 	{
 		filter: drop-shadow(0 0.1em 1em #0c138e36);
-		pointer-events: none;
 		z-index: 1000;
 		left: 50%;
 	}
@@ -111,5 +117,10 @@
 		line-height: 1.25em;
 		font-weight: 500;
 		text-align: center;
+	}
+
+	.journal
+	{
+		display: block;
 	}
 </style>

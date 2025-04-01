@@ -5,13 +5,14 @@
 	import Content from '$lib/display/details/paper_content.svelte';
 	import type { Journal } from '$lib/types/journal';
 
-	const { point, map, journals, paper, width, height }: {
+	let { point, map, journals, paper, width, height, journal_info_open = $bindable() }: {
 		point: GraphPoint,
 		map: Map,
 		journals: { [id: string]: Journal; },
 		paper: Paper,
 		width: number,
 		height: number,
+		journal_info_open: boolean,
 	} = $props();
 
 	const details_width = 32;
@@ -76,7 +77,7 @@
 		class="details-container absolute bg-white" bind:clientHeight={details_height} bind:this={details}
 		style="left: {details_left}; top: {details_top}; --details-width: {details_width}em;"
 	>
-		<Content {map} {journals} {paper} {width} {height}/>
+		<Content {map} {journals} {paper} {width} {height} bind:journal_info_open={journal_info_open}/>
 	</div>
 </div>
 

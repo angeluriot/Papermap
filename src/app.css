@@ -38,6 +38,17 @@
 	-o-user-select: none;
 }
 
+.text-selectable
+{
+	cursor: auto;
+	user-select: auto;
+	-moz-user-select: auto;
+	-webkit-user-drag: auto;
+	-webkit-user-select: auto;
+	-ms-user-select: auto;
+	-o-user-select: auto;
+}
+
 .flex-center
 {
 	@apply flex justify-center items-center;

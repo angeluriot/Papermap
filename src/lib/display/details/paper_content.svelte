@@ -7,12 +7,13 @@
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
 
-	const { map, journals, paper, width, height }: {
+	let { map, journals, paper, width, height, journal_info_open = $bindable() }: {
 		map: Map,
 		journals: { [id: string]: Journal; },
 		paper: Paper,
 		width: number,
-		height: number
+		height: number,
+		journal_info_open: boolean,
 	} = $props();
 
 	const title = $derived(paper.title);
@@ -162,14 +163,23 @@
 	const journal = $derived.by(() =>
 	{
 		if (paper.journal.status === JournalStatus.NotFound)
-			return { text: '🤷 Journal not found', color: COLORS[Color.Gray].default };
+			return {
+				text: '🤷 Journal not found',
+				color: COLORS[Color.Gray].default,
+				description: 'This paper was published in a journal that is not in the Papermap database',
+			};
 
 		if (paper.journal.status === JournalStatus.NotPublished)
-			return { text: '📭 Not published yet', color: COLORS[Color.Gray].default };
+			return {
+				text: '📭 Not published yet',
+				color: COLORS[Color.Gray].default,
+				description: 'This paper has not been published in a journal yet',
+			};
 
 		return {
 			text: cards.score_to_emoji(paper.score.journal) + ' ' + journals[paper.journal.id as string].titles[0],
-			color: cards.score_to_color(paper.score.journal)
+			color: cards.score_to_color(paper.score.journal),
+			journal: journals[paper.journal.id as string],
 		};
 	});
 
@@ -247,11 +257,13 @@
 	});
 </script>
 
+<svelte:window onclick={() => journal_info_open = false} />
+
 <div class="w-full flex flex-col justify-start items-start flex-nowrap" bind:clientWidth={global_width}>
-	<a href={link} target="_blank">
+	<a href={link} target="_blank" class="w-full" title={paper.title}>
 		<p class="title">{title}</p>
 		<div class="authors-date flex">
-			<span>{authors}</span>
+			<p class="authors">{authors}</p>
 			<span class="opacity-50 unselectable">•</span>
 			<span>{year}</span>
 		</div>
@@ -329,10 +341,25 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Journal:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {journal.color};">
+				<div
+					class="card text-unselectable"
+					style="background-color: {journal.color};"
+					onclick={event => { if (journal.journal !== undefined) journal_info_open = true; event.stopPropagation(); }}
+					onkeydown={null}
+					role="button" tabindex={0}
+				>
 					<span>{journal.text}</span>
-					<div class="info-ext">
-						<InfoBubble text="WIP" {width} {height}/>
+					<div
+						class="info-ext" style="{journal_info_open ? 'display: block;' : ''}"
+						onclick={event => event.stopPropagation()} onkeydown={null}
+						role="button" tabindex={2}
+					>
+						{#if journal.journal !== undefined}
+							<InfoBubble journal={journal.journal} {width} {height}/>
+							<div class="hitbox"></div>
+						{:else}
+							<InfoBubble text={journal.description} {width} {height}/>
+						{/if}
 					</div>
 				</div>
 				{#if retracted}
@@ -453,6 +480,16 @@
 		gap: 0.5em;
 	}
 
+	.authors
+	{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		line-clamp: 1;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+
 	.part-1
 	{
 		display: flex;
@@ -520,6 +557,18 @@
 	.card:hover .info-ext
 	{
 		display: block;
+	}
+
+	.hitbox
+	{
+		cursor: auto;
+		position: absolute;
+		transform: translateX(16.667%);
+		left: 0em;
+		top: 0em;
+		width: 75%;
+		top: -2em;
+		height: 2.01em;
 	}
 
 	.text

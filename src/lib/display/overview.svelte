@@ -3,10 +3,11 @@
 	import type { GraphPoint } from './graph/types';
 	import { get_overview_by_color } from './overview';
 
-	let { map, group_selected = $bindable(), point_selected = $bindable() }: {
+	let { map, group_selected = $bindable(), point_selected = $bindable(), journal_info_open = $bindable() }: {
 		map: Map,
 		group_selected: { i: number, ids: string[], keep: boolean } | null,
 		point_selected: { get_point: () => GraphPoint, keep: boolean } | null,
+		journal_info_open: boolean,
 	} = $props();
 
 	const overview = get_overview_by_color(map);
@@ -17,7 +18,10 @@
 			group_selected = { i, ids, keep: clicked };
 
 		if (point_selected !== null && (clicked || !point_selected.keep))
+		{
+			journal_info_open = false;
 			point_selected = null;
+		}
 
 		event.stopPropagation();
 	}

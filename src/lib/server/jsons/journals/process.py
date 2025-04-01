@@ -11,7 +11,7 @@ Journal = dict[str, str | list[str] | dict[str, int | float | None], dict[str, i
 
 # The metrics with their coefficient
 METRIC_COEFS = {
-	'h': 1.0, # H index
+	'h': 1.0, # H-index
 	'if': 1.0, # Impact Factor
 	'cs': 1.0, # CiteScore
 	'sjr': 1.0, # SCImago Journal Rank
