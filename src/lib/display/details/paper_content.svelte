@@ -20,6 +20,11 @@
 	const title = $derived(paper.title);
 	const link = $derived(paper.link);
 
+	function color_to_shadow(color: string | undefined): string
+	{
+		return cards.color_to_shadow(color) + '50';
+	}
+
 	function get_name(author: string): string
 	{
 		const names = author.split(' ');
@@ -55,6 +60,7 @@
 			emoji: answer.emoji,
 			text: answer.text,
 			color: COLORS[answer.color].default,
+			shadow: color_to_shadow(COLORS[answer.color].default),
 			description: answer.description,
 		};
 	});
@@ -67,6 +73,7 @@
 			emoji: answer.emoji,
 			text: answer.text,
 			color: COLORS[answer.color].default,
+			shadow: color_to_shadow(COLORS[answer.color].default),
 			description: answer.description,
 		};
 	});
@@ -107,7 +114,7 @@
 
 	const paper_type_parts = $derived.by(() =>
 	{
-		let result: { emoji?: string, text: string, color?: string, description?: string }[] = [];
+		let result: ({ text: string, is_card: false } | { emoji: string, text: string, color: string, shadow: string, description: string, is_card: true })[] = [];
 
 		if (paper.review)
 		{
@@ -115,10 +122,12 @@
 				emoji: cards.TO_EMOJI[paper.review.type],
 				text: cards.TO_TEXT[paper.review.type],
 				color: cards.REVIEW_COLORS[paper.review.type],
+				shadow: color_to_shadow(cards.REVIEW_COLORS[paper.review.type]),
 				description: cards.TO_DESCRIPTION[paper.review.type],
+				is_card: true,
 			});
 
-			result.push({ text: 'of' });
+			result.push({ text: 'of', is_card: false });
 
 			const nb_emoji = cards.review_count_score_to_emoji(paper.score.review_count);
 
@@ -126,18 +135,22 @@
 				emoji: nb_emoji,
 				text: int_to_text(paper.review.count) + ' Papers',
 				color: cards.score_to_color(paper.score.review_count),
+				shadow: color_to_shadow(cards.score_to_color(paper.score.review_count)),
 				description: int_to_text(paper.review.count) + ' papers were included in this ' + cards.TO_TEXT[paper.review.type].slice(2).toLowerCase(),
+				is_card: true,
 			});
 
 			if (paper.type)
 			{
-				result.push({ text: 'that are mostly' });
+				result.push({ text: 'that are mostly', is_card: false });
 
 				result.push({
 					emoji: cards.TO_EMOJI[paper.type],
 					text: cards.TO_TEXT_PLURAL[paper.type],
 					color: cards.score_to_color(paper.score.type),
+					shadow: color_to_shadow(cards.score_to_color(paper.score.type)),
 					description: cards.TO_DESCRIPTION[paper.type],
+					is_card: true,
 				});
 			}
 		}
@@ -148,20 +161,24 @@
 				emoji: cards.TO_EMOJI[paper.type],
 				text: cards.TO_TEXT[paper.type],
 				color: cards.score_to_color(paper.score.type),
+				shadow: color_to_shadow(cards.score_to_color(paper.score.type)),
 				description: cards.TO_DESCRIPTION[paper.type],
+				is_card: true,
 			});
 		}
 
 		if (paper.type && paper.on)
 		{
 			if (paper.on !== StudyOn.InVitro)
-				result.push({ text: 'on' });
+				result.push({ text: 'on', is_card: false });
 
 			result.push({
 				emoji: cards.TO_EMOJI[paper.on],
 				text: cards.TO_TEXT[paper.on],
 				color: cards.score_to_color(paper.score.on),
+				shadow: color_to_shadow(cards.score_to_color(paper.score.on)),
 				description: cards.TO_DESCRIPTION[paper.on],
+				is_card: true,
 			});
 		}
 
@@ -175,6 +192,7 @@
 				emoji: '🤷',
 				text: 'Journal not found',
 				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
 				description: 'This paper was published in a journal that is not in the Papermap database',
 			};
 
@@ -183,6 +201,7 @@
 				emoji: '📭',
 				text: 'Not published yet',
 				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
 				description: 'This paper has not been published in a journal yet',
 			};
 
@@ -190,6 +209,7 @@
 			emoji: cards.score_to_emoji(paper.score.journal),
 			text: journals[paper.journal.id as string].titles[0],
 			color: cards.score_to_color(paper.score.journal),
+			shadow: color_to_shadow(cards.score_to_color(paper.score.journal)),
 			journal: journals[paper.journal.id as string],
 		};
 	});
@@ -200,6 +220,7 @@
 		emoji: cards.citation_score_to_emoji(paper.score.citations_count),
 		text: int_to_text(paper.citations.count),
 		color: cards.score_to_color(paper.score.citations_count),
+		shadow: color_to_shadow(cards.score_to_color(paper.score.citations_count)),
 		description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
 	});
 
@@ -214,6 +235,7 @@
 			emoji: cards.sample_size_score_to_emoji(paper.score.sample_size),
 			text: int_to_text(paper.sample_size),
 			color: cards.score_to_color(paper.score.sample_size),
+			shadow: color_to_shadow(cards.score_to_color(paper.score.sample_size)),
 			description: int_to_text(paper.sample_size) + ' individuals were included in this study',
 		};
 	});
@@ -227,6 +249,7 @@
 			emoji: cards.p_value_score_to_emoji(paper.score.p_value),
 			text: (paper.p_value.less_than ? ' < ' : ' ') + float_to_text(paper.p_value.value),
 			color: cards.score_to_color(paper.score.p_value),
+			shadow: color_to_shadow(cards.score_to_color(paper.score.p_value)),
 			description: `There is ${paper.p_value.less_than ? 'less than' : ''} a ${float_to_text(paper.p_value.value * 100)}% probability that these results occurred by chance`,
 		};
 	});
@@ -238,6 +261,7 @@
 				emoji: '🤑',
 				text: 'Yes',
 				color: COLORS[Color.Red].default,
+				shadow: color_to_shadow(COLORS[Color.Red].default),
 				description: "The authors or funders have conflicting interests that may have influenced the conclusion",
 			};
 
@@ -245,6 +269,7 @@
 			emoji: '😇',
 			text: 'No',
 			color: COLORS[Color.Green].default,
+			shadow: color_to_shadow(COLORS[Color.Green].default),
 			description: "The authors declared no conflict of interest",
 		};
 	});
@@ -260,6 +285,7 @@
 					emoji: '👍',
 					text: note.title,
 					color: COLORS[Color.Green].default,
+					shadow: color_to_shadow(COLORS[Color.Green].default),
 					description: note.description,
 				});
 			else
@@ -267,6 +293,7 @@
 					emoji: '👎',
 					text: note.title,
 					color: COLORS[Color.Red].default,
+					shadow: color_to_shadow(COLORS[Color.Red].default),
 					description: note.description,
 				});
 		}
@@ -290,7 +317,7 @@
 		<div class="subtitle-cards" bind:clientWidth={consensus_width}>
 			<span class="subtitle unselectable">Previous consensus:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {consensus.color};">
+				<div class="card text-unselectable" style="background-color: {consensus.color}; --shadow-color: {consensus.shadow};">
 					<img src={emoji_to_svg(consensus.emoji)} alt={consensus.emoji}/>
 					<span>{consensus.text}</span>
 					<div class="info-ext absolute">
@@ -302,7 +329,7 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Result:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {result.color};" bind:clientWidth={result_width}>
+				<div class="card text-unselectable" style="background-color: {result.color}; --shadow-color: {result.shadow};" bind:clientWidth={result_width}>
 					<img src={emoji_to_svg(result.emoji)} alt={result.emoji}/>
 					<span>{result.text}</span>
 					<div class="info-ext">
@@ -310,7 +337,10 @@
 					</div>
 				</div>
 				{#if indirect}
-					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};" bind:clientWidth={indirect_width}>
+					<div
+						class="card text-unselectable" bind:clientWidth={indirect_width}
+						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
+					>
 						<img src={emoji_to_svg('🔗')} alt="🔗"/>
 						<span>Indirect</span>
 						<div class="info-ext">
@@ -341,8 +371,8 @@
 				</span>
 				<div class="cards">
 					{#each paper_type_parts as part}
-						{#if part.color}
-							<div class="card text-unselectable" style="background-color: {part.color};">
+						{#if part.is_card}
+							<div class="card text-unselectable" style="background-color: {part.color}; --shadow-color: {part.shadow};">
 								{#if part.emoji}
 									<img src={emoji_to_svg(part.emoji)} alt={part.emoji}/>
 								{/if}
@@ -367,7 +397,7 @@
 			<div class="cards">
 				<div
 					class="card text-unselectable"
-					style="background-color: {journal.color};"
+					style="background-color: {journal.color}; --shadow-color: {journal.shadow};"
 					onclick={event => { if (journal.journal !== undefined) journal_info_open = true; event.stopPropagation(); }}
 					onkeydown={null}
 					role="button" tabindex={0}
@@ -387,7 +417,10 @@
 					</div>
 				</div>
 				{#if retracted}
-					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};">
+					<div
+						class="card text-unselectable"
+						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
+					>
 						<img src={emoji_to_svg('😵')} alt="😵"/>
 						<span>Retracted</span>
 						<div class="info-ext">
@@ -400,7 +433,7 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Citations:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {citations.color};">
+				<div class="card text-unselectable" style="background-color: {citations.color}; --shadow-color: {citations.shadow};">
 					<img src={emoji_to_svg(citations.emoji)} alt={citations.emoji}/>
 					<span>{citations.text}</span>
 					<div class="info-ext">
@@ -408,7 +441,10 @@
 					</div>
 				</div>
 				{#if critics}
-					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};">
+					<div
+						class="card text-unselectable"
+						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
+					>
 						<img src={emoji_to_svg('😠')} alt="😠"/>
 						<span>Mostly critics</span>
 						<div class="info-ext">
@@ -422,7 +458,7 @@
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">Sample size:</span>
 				<div class="cards">
-					<div class="card text-unselectable" style="background-color: {sample_size.color};">
+					<div class="card text-unselectable" style="background-color: {sample_size.color}; --shadow-color: {sample_size.shadow};">
 						<img src={emoji_to_svg(sample_size.emoji)} alt={sample_size.emoji}/>
 						<span>{sample_size.text}</span>
 						<div class="info-ext">
@@ -436,7 +472,7 @@
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">P-value:</span>
 				<div class="cards">
-					<div class="card text-unselectable" style="background-color: {p_value.color};">
+					<div class="card text-unselectable" style="background-color: {p_value.color}; --shadow-color: {p_value.shadow};">
 						<img src={emoji_to_svg(p_value.emoji)} alt={p_value.emoji}/>
 						<span>{p_value.text}</span>
 						<div class="info-ext">
@@ -449,7 +485,7 @@
 		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Conflict of Interest:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color};">
+				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color}; --shadow-color: {conflict_of_interest.shadow};">
 					<img src={emoji_to_svg(conflict_of_interest.emoji)} alt={conflict_of_interest.emoji}/>
 					<span>{conflict_of_interest.text}</span>
 					<div class="info-ext">
@@ -463,7 +499,7 @@
 				<span class="subtitle unselectable">Notes:</span>
 				<div class="cards">
 					{#each notes as note}
-						<div class="card text-unselectable" style="background-color: {note.color};">
+						<div class="card text-unselectable" style="background-color: {note.color}; --shadow-color: {note.shadow};">
 							<img src={emoji_to_svg(note.emoji)} alt={note.emoji}/>
 							<span>{note.text}</span>
 							<div class="info-ext">
@@ -575,7 +611,7 @@
 	.card img
 	{
 		height: 1.1em;
-		filter: drop-shadow(0 0.025em 0.3em rgba(0, 0, 0, 0.25));
+		filter: drop-shadow(0 0.025em 0.3em var(--shadow-color));
 	}
 
 	.card span
@@ -587,7 +623,7 @@
 		font-weight: 450;
 		color: white;
 		letter-spacing: 0.01em;
-		text-shadow: 0 0.025em 0.3em rgba(0, 0, 0, 0.25);
+		text-shadow: 0 0.025em 0.3em var(--shadow-color);
 	}
 
 	.card .info-ext

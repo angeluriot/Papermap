@@ -1,5 +1,6 @@
 import { Color, COLORS } from '$lib/colors';
 import { StudyOn, PaperType, ReviewType } from '$lib/types/paper';
+import * as ColorLib from 'color';
 
 
 export const TO_EMOJI = {
@@ -64,6 +65,20 @@ export const TO_DESCRIPTION = {
 	[ReviewType.NarrativeReview]: 'A qualitative summary of the existing literature on a particular topic',
 	[ReviewType.SystematicReview]: 'A comprehensive review of existing literature using a structured methodology to minimize bias',
 	[ReviewType.MetaAnalysis]: 'A statistical analysis that combines the results of multiple scientific studies',
+}
+
+
+export function color_to_shadow(color: string | undefined): string
+{
+	if (!color)
+		return '#000000';
+
+	const hue = ColorLib.default(color).hue();
+
+	if (hue < 63 || hue > 335)
+		return '#800000';
+
+	return '#000080';
 }
 
 

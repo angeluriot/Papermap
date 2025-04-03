@@ -11,6 +11,11 @@
 		height: number
 	} = $props();
 
+	function color_to_shadow(color: string | undefined): string
+	{
+		return cards.color_to_shadow(color) + '50';
+	}
+
 	const metrics_data = {
 		h: { name: 'H-index', description: 'The maximum value of H such that the journal has published H papers that have each been cited at least H times' },
 		if: { name: 'Impact Factor', description: 'The average number of citations received this year by papers published in the journal during the last 2 years' },
@@ -63,6 +68,7 @@
 					float_to_text(value)
 				),
 				color: cards.score_to_color(metric === 'self' ? score * 0.8 : score),
+				shadow: color_to_shadow(cards.score_to_color(score)),
 				description: metrics_data[metric].description,
 			});
 		}
@@ -86,7 +92,7 @@
 						{metric.title}:
 					</span>
 					<div class="cards">
-						<div class="card text-unselectable" style="background-color: {metric.color};">
+						<div class="card text-unselectable" style="background-color: {metric.color}; --shadow-color: {metric.shadow};">
 							<img src={emoji_to_svg(metric.emoji)} alt={metric.emoji}/>
 							<span>{metric.text}</span>
 							<div class="info-ext">
@@ -203,7 +209,7 @@
 	.card img
 	{
 		height: 1.1em;
-		filter: drop-shadow(0 0.025em 0.3em rgba(0, 0, 0, 0.25));
+		filter: drop-shadow(0 0.025em 0.3em var(--shadow-color));
 	}
 
 	.card span
@@ -215,7 +221,7 @@
 		font-weight: 450;
 		color: white;
 		letter-spacing: 0.01em;
-		text-shadow: 0 0.025em 0.3em rgba(0, 0, 0, 0.25);
+		text-shadow: 0 0.025em 0.3em var(--shadow-color);
 	}
 
 	.card .info-ext

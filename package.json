@@ -33,6 +33,7 @@
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@tailwindcss/vite": "^4.0.0",
+		"color": "^5.0.0",
 		"ejs": "^3.1.10",
 		"rate-limiter-flexible": "^5.0.5",
 		"request-ip": "^3.3.0",
