@@ -22,7 +22,8 @@
 		info_left,
 		info_top,
 		arrow_top,
-		arrow_rotation
+		arrow_rotation,
+		hitbox_top,
 	} = $derived.by(() =>
 	{
 		width;
@@ -33,6 +34,7 @@
 			info_top: `-${info_margin}em`,
 			arrow_top: `-${arrow_margin}em`,
 			arrow_rotation: -135,
+			hitbox_top: '-2.88em',
 		};
 
 		if (info === undefined)
@@ -48,6 +50,7 @@
 			result.info_top = `${info_margin}em`;
 			result.arrow_top = `${arrow_margin}em`;
 			result.arrow_rotation = 45;
+			result.hitbox_top = '0.88em';
 		}
 
 		const left_overflow = Math.max(0, window_padding - (rect.x / em - (info_width / 2)));
@@ -84,6 +87,9 @@
 		{/if}
 	</div>
 </div>
+{#if journal !== undefined}
+	<div class="hitbox" style="top: {hitbox_top};"></div>
+{/if}
 
 <style>
 	.info
@@ -120,5 +126,15 @@
 	.journal
 	{
 		display: block;
+	}
+
+	.hitbox
+	{
+		cursor: auto;
+		position: absolute;
+		transform: translateX(16.667%);
+		left: 0em;
+		width: 75%;
+		height: 2em;
 	}
 </style>

@@ -381,7 +381,6 @@
 					>
 						{#if journal.journal !== undefined}
 							<InfoBubble journal={journal.journal} {width} {height}/>
-							<div class="hitbox"></div>
 						{:else}
 							<InfoBubble text={journal.description} {width} {height}/>
 						{/if}
@@ -602,18 +601,6 @@
 	.card:hover .info-ext
 	{
 		display: block;
-	}
-
-	.hitbox
-	{
-		cursor: auto;
-		position: absolute;
-		transform: translateX(16.667%);
-		left: 0em;
-		top: 0em;
-		width: 75%;
-		top: -2.88em;
-		height: 2em;
 	}
 
 	.text
