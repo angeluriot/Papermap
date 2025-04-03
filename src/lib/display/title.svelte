@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Map, Maps } from '$lib/types/map';
+	import { emoji_to_svg } from './emojis';
 
 	const { map, maps }: { map: Map, maps: Maps } = $props();
 
@@ -11,7 +12,7 @@
 	class="input-container unselectable bg-white rounded-full text-nowrap inline-block align-middle overflow-hidden relative"
 	bind:this={div} onscroll={(e: Event) => { (e.currentTarget as HTMLDivElement).scrollLeft = 0; }}
 >
-	<span class="emoji inline-block align-middle">{map.emoji}</span>
+	<img src={emoji_to_svg(map.emoji)} alt={map.emoji} class="emoji inline-block align-middle"/>
 	<div class="relative inline-block align-middle">
 		<span class="bone opacity-0 h-full">{map.question.long}</span>
 		<input
@@ -44,6 +45,7 @@
 	{
 		margin-right: calc(-1.7 * var(--x-pad));
 		padding: var(--y-pad) calc(0.9 * var(--x-pad));
+		height: calc(1em + calc(var(--y-pad) * 2));
 	}
 
 	.bone

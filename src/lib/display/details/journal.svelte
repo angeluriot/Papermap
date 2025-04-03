@@ -3,6 +3,7 @@
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
+	import { emoji_to_svg } from '../emojis';
 
 	const { journal, width, height }: {
 		journal: Journal,
@@ -47,20 +48,21 @@
 
 		for (const metric of Object.keys(metrics_data) as (keyof typeof metrics_data)[])
 		{
-			if (journal.metrics[metric] === undefined)
+			const value = journal.metrics[metric];
+			const score = journal.scores[metric];
+
+			if (value === undefined || score === undefined)
 				continue;
 
 			results.push({
 				title: metrics_data[metric].name,
+				emoji: cards.score_to_emoji(metric === 'self' ? score * 0.7 : score),
 				text: (
-					cards.score_to_emoji(journal.scores[metric]) + ' '
-					+ (
-						metric === 'self' ?
-						int_to_text(Math.round(journal.metrics[metric])) + '%' :
-						float_to_text(journal.metrics[metric])
-					)
+					metric === 'self' ?
+					int_to_text(Math.round(value)) + '%' :
+					float_to_text(value)
 				),
-				color: cards.score_to_color(journal.scores[metric]),
+				color: cards.score_to_color(metric === 'self' ? score * 0.8 : score),
 				description: metrics_data[metric].description,
 			});
 		}
@@ -85,6 +87,7 @@
 					</span>
 					<div class="cards">
 						<div class="card text-unselectable" style="background-color: {metric.color};">
+							<img src={emoji_to_svg(metric.emoji)} alt={metric.emoji}/>
 							<span>{metric.text}</span>
 							<div class="info-ext">
 								<InfoBubble text={metric.description} {width} {height}/>
@@ -184,11 +187,23 @@
 
 	.card
 	{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 0.4em;
 		max-width: calc(var(--details-width) - calc(var(--details-x-pad) * 2));
 		position: relative;
 		padding: 0.3em 0.75em 0.3em 0.65em;
 		border-radius: calc(infinity * 1px);
 		cursor: pointer;
+	}
+
+	.card img
+	{
+		height: 1.1em;
+		filter: drop-shadow(0 0.025em 0.3em rgba(0, 0, 0, 0.25));
 	}
 
 	.card span
@@ -205,6 +220,7 @@
 
 	.card .info-ext
 	{
+		position: absolute;
 		display: none;
 		left: 0;
 		width: 100%;

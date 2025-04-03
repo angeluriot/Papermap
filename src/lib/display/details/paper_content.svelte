@@ -6,6 +6,7 @@
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
+	import { emoji_to_svg } from '../emojis';
 
 	let { map, journals, paper, width, height, journal_info_open = $bindable() }: {
 		map: Map,
@@ -51,7 +52,8 @@
 		const answer = map.consensus[paper.results.consensus];
 
 		return {
-			text: answer.emoji + ' ' + answer.text,
+			emoji: answer.emoji,
+			text: answer.text,
 			color: COLORS[answer.color].default,
 			description: answer.description,
 		};
@@ -62,7 +64,8 @@
 		const answer = map.conclusions[paper.results.conclusion];
 
 		return {
-			text: answer.emoji + ' ' + answer.text,
+			emoji: answer.emoji,
+			text: answer.text,
 			color: COLORS[answer.color].default,
 			description: answer.description,
 		};
@@ -104,11 +107,12 @@
 
 	const paper_type_parts = $derived.by(() =>
 	{
-		let result: { text: string, color?: string, description?: string }[] = [];
+		let result: { emoji?: string, text: string, color?: string, description?: string }[] = [];
 
 		if (paper.review)
 		{
 			result.push({
+				emoji: cards.TO_EMOJI[paper.review.type],
 				text: cards.TO_TEXT[paper.review.type],
 				color: cards.REVIEW_COLORS[paper.review.type],
 				description: cards.TO_DESCRIPTION[paper.review.type],
@@ -119,7 +123,8 @@
 			const nb_emoji = cards.review_count_score_to_emoji(paper.score.review_count);
 
 			result.push({
-				text: nb_emoji + ' ' + int_to_text(paper.review.count) + ' Papers',
+				emoji: nb_emoji,
+				text: int_to_text(paper.review.count) + ' Papers',
 				color: cards.score_to_color(paper.score.review_count),
 				description: int_to_text(paper.review.count) + ' papers were included in this ' + cards.TO_TEXT[paper.review.type].slice(2).toLowerCase(),
 			});
@@ -129,6 +134,7 @@
 				result.push({ text: 'that are mostly' });
 
 				result.push({
+					emoji: cards.TO_EMOJI[paper.type],
 					text: cards.TO_TEXT_PLURAL[paper.type],
 					color: cards.score_to_color(paper.score.type),
 					description: cards.TO_DESCRIPTION[paper.type],
@@ -139,6 +145,7 @@
 		else if (paper.type)
 		{
 			result.push({
+				emoji: cards.TO_EMOJI[paper.type],
 				text: cards.TO_TEXT[paper.type],
 				color: cards.score_to_color(paper.score.type),
 				description: cards.TO_DESCRIPTION[paper.type],
@@ -151,6 +158,7 @@
 				result.push({ text: 'on' });
 
 			result.push({
+				emoji: cards.TO_EMOJI[paper.on],
 				text: cards.TO_TEXT[paper.on],
 				color: cards.score_to_color(paper.score.on),
 				description: cards.TO_DESCRIPTION[paper.on],
@@ -164,20 +172,23 @@
 	{
 		if (paper.journal.status === JournalStatus.NotFound)
 			return {
-				text: '🤷 Journal not found',
+				emoji: '🤷',
+				text: 'Journal not found',
 				color: COLORS[Color.Gray].default,
 				description: 'This paper was published in a journal that is not in the Papermap database',
 			};
 
 		if (paper.journal.status === JournalStatus.NotPublished)
 			return {
-				text: '📭 Not published yet',
+				emoji: '📭',
+				text: 'Not published yet',
 				color: COLORS[Color.Gray].default,
 				description: 'This paper has not been published in a journal yet',
 			};
 
 		return {
-			text: cards.score_to_emoji(paper.score.journal) + ' ' + journals[paper.journal.id as string].titles[0],
+			emoji: cards.score_to_emoji(paper.score.journal),
+			text: journals[paper.journal.id as string].titles[0],
 			color: cards.score_to_color(paper.score.journal),
 			journal: journals[paper.journal.id as string],
 		};
@@ -186,7 +197,8 @@
 	const retracted = $derived(paper.journal.retracted);
 
 	const citations = $derived({
-		text: cards.citation_score_to_emoji(paper.score.citations_count) + ' ' + int_to_text(paper.citations.count),
+		emoji: cards.citation_score_to_emoji(paper.score.citations_count),
+		text: int_to_text(paper.citations.count),
 		color: cards.score_to_color(paper.score.citations_count),
 		description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
 	});
@@ -199,7 +211,8 @@
 			return null;
 
 		return {
-			text: cards.sample_size_score_to_emoji(paper.score.sample_size) + ' ' + int_to_text(paper.sample_size),
+			emoji: cards.sample_size_score_to_emoji(paper.score.sample_size),
+			text: int_to_text(paper.sample_size),
 			color: cards.score_to_color(paper.score.sample_size),
 			description: int_to_text(paper.sample_size) + ' individuals were included in this study',
 		};
@@ -211,7 +224,8 @@
 			return null;
 
 		return {
-			text: cards.p_value_score_to_emoji(paper.score.p_value) + (paper.p_value.less_than ? ' < ' : ' ') + float_to_text(paper.p_value.value),
+			emoji: cards.p_value_score_to_emoji(paper.score.p_value),
+			text: (paper.p_value.less_than ? ' < ' : ' ') + float_to_text(paper.p_value.value),
 			color: cards.score_to_color(paper.score.p_value),
 			description: `There is ${paper.p_value.less_than ? 'less than' : ''} a ${float_to_text(paper.p_value.value * 100)}% probability that these results occurred by chance`,
 		};
@@ -221,13 +235,15 @@
 	{
 		if (paper.conflict_of_interest)
 			return {
-				text: '🤑 Yes',
+				emoji: '🤑',
+				text: 'Yes',
 				color: COLORS[Color.Red].default,
 				description: "The authors or funders have conflicting interests that may have influenced the conclusion",
 			};
 
 		return {
-			text: '😇 No',
+			emoji: '😇',
+			text: 'No',
 			color: COLORS[Color.Green].default,
 			description: "The authors declared no conflict of interest",
 		};
@@ -241,13 +257,15 @@
 		{
 			if (note.positive)
 				results.push({
-					text: '👍 ' + note.title,
+					emoji: '👍',
+					text: note.title,
 					color: COLORS[Color.Green].default,
 					description: note.description,
 				});
 			else
 				results.push({
-					text: '👎 ' + note.title,
+					emoji: '👎',
+					text: note.title,
 					color: COLORS[Color.Red].default,
 					description: note.description,
 				});
@@ -273,6 +291,7 @@
 			<span class="subtitle unselectable">Previous consensus:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {consensus.color};">
+					<img src={emoji_to_svg(consensus.emoji)} alt={consensus.emoji}/>
 					<span>{consensus.text}</span>
 					<div class="info-ext absolute">
 						<InfoBubble text={consensus.description} {width} {height}/>
@@ -284,6 +303,7 @@
 			<span class="subtitle unselectable">Result:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {result.color};" bind:clientWidth={result_width}>
+					<img src={emoji_to_svg(result.emoji)} alt={result.emoji}/>
 					<span>{result.text}</span>
 					<div class="info-ext">
 						<InfoBubble text={result.description} {width} {height}/>
@@ -291,7 +311,8 @@
 				</div>
 				{#if indirect}
 					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};" bind:clientWidth={indirect_width}>
-						<span>🔗 Indirect</span>
+						<img src={emoji_to_svg('🔗')} alt="🔗"/>
+						<span>Indirect</span>
 						<div class="info-ext">
 							<InfoBubble text="The conclusion of this paper is based on indirect evidence" {width} {height}/>
 						</div>
@@ -322,6 +343,9 @@
 					{#each paper_type_parts as part}
 						{#if part.color}
 							<div class="card text-unselectable" style="background-color: {part.color};">
+								{#if part.emoji}
+									<img src={emoji_to_svg(part.emoji)} alt={part.emoji}/>
+								{/if}
 								<span>{part.text}</span>
 								{#if part.description}
 									<div class="info-ext">
@@ -348,6 +372,7 @@
 					onkeydown={null}
 					role="button" tabindex={0}
 				>
+					<img src={emoji_to_svg(journal.emoji)} alt={journal.emoji}/>
 					<span>{journal.text}</span>
 					<div
 						class="info-ext" style="{journal_info_open ? 'display: block;' : ''}"
@@ -364,7 +389,8 @@
 				</div>
 				{#if retracted}
 					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};">
-						<span>😵 Retracted</span>
+						<img src={emoji_to_svg('😵')} alt="😵"/>
+						<span>Retracted</span>
 						<div class="info-ext">
 							<InfoBubble text="This paper has been retracted by the journal" {width} {height}/>
 						</div>
@@ -376,6 +402,7 @@
 			<span class="subtitle unselectable">Citations:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {citations.color};">
+					<img src={emoji_to_svg(citations.emoji)} alt={citations.emoji}/>
 					<span>{citations.text}</span>
 					<div class="info-ext">
 						<InfoBubble text={citations.description} {width} {height}/>
@@ -383,7 +410,8 @@
 				</div>
 				{#if critics}
 					<div class="card text-unselectable" style="background-color: {COLORS[Color.Red].default};">
-						<span>😠 Mostly critics</span>
+						<img src={emoji_to_svg('😠')} alt="😠"/>
+						<span>Mostly critics</span>
 						<div class="info-ext">
 							<InfoBubble text="Most of the citations are critical of this paper" {width} {height}/>
 						</div>
@@ -396,6 +424,7 @@
 				<span class="subtitle unselectable">Sample size:</span>
 				<div class="cards">
 					<div class="card text-unselectable" style="background-color: {sample_size.color};">
+						<img src={emoji_to_svg(sample_size.emoji)} alt={sample_size.emoji}/>
 						<span>{sample_size.text}</span>
 						<div class="info-ext">
 							<InfoBubble text={sample_size.description} {width} {height}/>
@@ -409,6 +438,7 @@
 				<span class="subtitle unselectable">P-value:</span>
 				<div class="cards">
 					<div class="card text-unselectable" style="background-color: {p_value.color};">
+						<img src={emoji_to_svg(p_value.emoji)} alt={p_value.emoji}/>
 						<span>{p_value.text}</span>
 						<div class="info-ext">
 							<InfoBubble text={p_value.description} {width} {height}/>
@@ -421,6 +451,7 @@
 			<span class="subtitle unselectable">Conflict of Interest:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color};">
+					<img src={emoji_to_svg(conflict_of_interest.emoji)} alt={conflict_of_interest.emoji}/>
 					<span>{conflict_of_interest.text}</span>
 					<div class="info-ext">
 						<InfoBubble text={conflict_of_interest.description} {width} {height}/>
@@ -434,6 +465,7 @@
 				<div class="cards">
 					{#each notes as note}
 						<div class="card text-unselectable" style="background-color: {note.color};">
+							<img src={emoji_to_svg(note.emoji)} alt={note.emoji}/>
 							<span>{note.text}</span>
 							<div class="info-ext">
 								<InfoBubble text={note.description} {width} {height}/>
@@ -528,11 +560,23 @@
 
 	.card
 	{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 0.4em;
 		max-width: calc(var(--details-width) - calc(var(--details-x-pad) * 2));
 		position: relative;
 		padding: 0.3em 0.75em 0.3em 0.65em;
 		border-radius: calc(infinity * 1px);
 		cursor: pointer;
+	}
+
+	.card img
+	{
+		height: 1.1em;
+		filter: drop-shadow(0 0.025em 0.3em rgba(0, 0, 0, 0.25));
 	}
 
 	.card span
@@ -549,6 +593,7 @@
 
 	.card .info-ext
 	{
+		position: absolute;
 		display: none;
 		left: 0;
 		width: 100%;
@@ -567,8 +612,8 @@
 		left: 0em;
 		top: 0em;
 		width: 75%;
-		top: -2em;
-		height: 2.01em;
+		top: -2.88em;
+		height: 2em;
 	}
 
 	.text

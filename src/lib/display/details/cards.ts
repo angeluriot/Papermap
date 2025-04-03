@@ -2,29 +2,45 @@ import { Color, COLORS } from '$lib/colors';
 import { StudyOn, PaperType, ReviewType } from '$lib/types/paper';
 
 
+export const TO_EMOJI = {
+	[StudyOn.InVitro]: '🧫',
+	[StudyOn.Animals]: '🐭',
+	[StudyOn.Humans]: '🙋',
+	[PaperType.CaseReport]: '🔍',
+	[PaperType.CrossSectionalStudy]: '📸',
+	[PaperType.CohortStudy]: '⏳',
+	[PaperType.ClinicalTrial]: '🎛️',
+	[PaperType.RandomizedControlledTrial]: '🎲',
+	[PaperType.BlindedRandomizedControlledTrial]: '🫣',
+	[ReviewType.NarrativeReview]: '📖',
+	[ReviewType.SystematicReview]: '🗂️',
+	[ReviewType.MetaAnalysis]: '📊',
+}
+
+
 export const TO_TEXT = {
-	[StudyOn.InVitro]: '🧫 In Vitro',
-	[StudyOn.Animals]: '🐭 Animals',
-	[StudyOn.Humans]: '🙋 Humans',
-	[PaperType.CaseReport]: '🔍 Case Report',
-	[PaperType.CrossSectionalStudy]: '📸 Cross-Sectional Study',
-	[PaperType.CohortStudy]: '⏳ Cohort Study',
-	[PaperType.ClinicalTrial]: '🎛️ Clinical Trial',
-	[PaperType.RandomizedControlledTrial]: '🎲 Randomized Controlled Trial',
-	[PaperType.BlindedRandomizedControlledTrial]: '🫣 Blinded Randomized Controlled Trial',
-	[ReviewType.NarrativeReview]: '📖 Narrative Review',
-	[ReviewType.SystematicReview]: '🗂️ Systematic Review',
-	[ReviewType.MetaAnalysis]: '📊 Meta-Analysis',
+	[StudyOn.InVitro]: 'In Vitro',
+	[StudyOn.Animals]: 'Animals',
+	[StudyOn.Humans]: 'Humans',
+	[PaperType.CaseReport]: 'Case Report',
+	[PaperType.CrossSectionalStudy]: 'Cross-Sectional Study',
+	[PaperType.CohortStudy]: 'Cohort Study',
+	[PaperType.ClinicalTrial]: 'Clinical Trial',
+	[PaperType.RandomizedControlledTrial]: 'Randomized Controlled Trial',
+	[PaperType.BlindedRandomizedControlledTrial]: 'Blinded Randomized Controlled Trial',
+	[ReviewType.NarrativeReview]: 'Narrative Review',
+	[ReviewType.SystematicReview]: 'Systematic Review',
+	[ReviewType.MetaAnalysis]: 'Meta-Analysis',
 }
 
 
 export const TO_TEXT_PLURAL = {
-	[PaperType.CaseReport]: '🔍 Case Reports',
-	[PaperType.CrossSectionalStudy]: '📸 Cross-Sectional Studies',
-	[PaperType.CohortStudy]: '⏳ Cohort Studies',
-	[PaperType.ClinicalTrial]: '🎛️ Clinical Trials',
-	[PaperType.RandomizedControlledTrial]: '🎲 Randomized Controlled Trials',
-	[PaperType.BlindedRandomizedControlledTrial]: '🫣 Blinded Randomized Controlled Trials',
+	[PaperType.CaseReport]: 'Case Reports',
+	[PaperType.CrossSectionalStudy]: 'Cross-Sectional Studies',
+	[PaperType.CohortStudy]: 'Cohort Studies',
+	[PaperType.ClinicalTrial]: 'Clinical Trials',
+	[PaperType.RandomizedControlledTrial]: 'Randomized Controlled Trials',
+	[PaperType.BlindedRandomizedControlledTrial]: 'Blinded Randomized Controlled Trials',
 }
 
 

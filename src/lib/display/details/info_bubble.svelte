@@ -9,12 +9,10 @@
 		height: number
 	} = $props();
 
-	const info_top_margin = 3;
-	const arrow_top_margin = 1.8;
-	const info_bottom_margin = 1.7;
-	const arrow_bottom_margin = 0.5;
+	const info_margin = 2.6;
+	const arrow_margin = 1.4;
 	const info_left_limit = 9.5;
-	const window_padding = 2;
+	const window_padding = 3;
 
 	let info_width = $derived(text !== undefined ? Math.round(Math.min(5 + text.length * 0.18, 20)) : 22);
 	let info_height = $state(0);
@@ -32,23 +30,23 @@
 
 		let result = {
 			info_left: `${0}em`,
-			info_top: `-${info_top_margin}em`,
-			arrow_top: `-${arrow_top_margin}em`,
+			info_top: `-${info_margin}em`,
+			arrow_top: `-${arrow_margin}em`,
 			arrow_rotation: -135,
 		};
 
 		if (info === undefined)
 			return result;
 
-		result.info_top = `calc(-${info_top_margin}em - ${info_height}px)`;
+		result.info_top = `calc(-${info_margin}em - ${info_height}px)`;
 
 		const em = parseFloat(getComputedStyle(info).fontSize);
 		const rect = info.getBoundingClientRect();
 
-		if (rect.y - info_top_margin * em - info_height < window_padding * em)
+		if (rect.y - info_margin * em - info_height < window_padding * em)
 		{
-			result.info_top = `${info_bottom_margin}em`;
-			result.arrow_top = `${arrow_bottom_margin}em`;
+			result.info_top = `${info_margin}em`;
+			result.arrow_top = `${arrow_margin}em`;
 			result.arrow_rotation = 45;
 		}
 
