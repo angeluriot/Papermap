@@ -18,5 +18,6 @@ jobs:
         port: 22
         script: |
           cd ~/Papermap
-          git pull origin main
+          git fetch origin main
+          git reset --hard origin/main
           npm run deploy
