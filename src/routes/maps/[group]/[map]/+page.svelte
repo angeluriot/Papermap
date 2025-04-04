@@ -21,8 +21,20 @@
 	let height = $state(0);
 	let point_selected: { get_point: () => GraphPoint, keep: boolean } | null = $state(null);
 	let group_selected: { i: number, ids: string[], keep: boolean } | null = $state(null);
-	let details_element: HTMLDivElement | null = $state(null);
 	let journal_info_open = $state(false);
+	let details_element: HTMLDivElement | null = $state(null);
+
+	function deselect_point()
+	{
+		if (C.TOUCH_SCREEN)
+			return;
+
+		if (point_selected !== null && !point_selected.keep)
+		{
+			journal_info_open = false;
+			point_selected = null;
+		}
+	}
 
 	let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
@@ -103,7 +115,7 @@
 	<div
 		class="details"
 		bind:this={details_element}
-		onmouseleave={() => { if (!point_selected?.keep) { journal_info_open = false; point_selected = null; } }}
+		onmouseleave={deselect_point}
 		role="button" tabindex={0}
 	>
 		{#if point_selected !== null}

@@ -2,6 +2,7 @@
 	import type { Map } from '$lib/types/map';
 	import type { GraphPoint } from './graph/types';
 	import { get_overview_by_color } from './overview';
+	import { constants as C } from '$lib/utils';
 
 	let { map, group_selected = $bindable(), point_selected = $bindable(), journal_info_open = $bindable() }: {
 		map: Map,
@@ -14,6 +15,9 @@
 
 	function select_group(event: Event, i: number, ids: string[], clicked: boolean)
 	{
+		if (C.TOUCH_SCREEN && !clicked)
+			return;
+
 		if (!(group_selected !== null && group_selected.keep && !clicked))
 			group_selected = { i, ids, keep: clicked };
 

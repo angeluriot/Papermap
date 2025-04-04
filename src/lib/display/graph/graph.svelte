@@ -4,6 +4,7 @@
 	import * as pt from './points';
 	import type { GraphPoint } from './types';
 	import { get_stats } from './utils';
+	import { constants as C } from '$lib/utils';
 
 	let { map, width, height, point_selected = $bindable(), group_selected = $bindable(), journal_info_open = $bindable(), details_element }: {
 		map: Map,
@@ -27,6 +28,9 @@
 
 	function select_point(event: Event, i: number, clicked: boolean)
 	{
+		if (C.TOUCH_SCREEN && !clicked)
+			return;
+
 		if (!(point_selected !== null && point_selected.keep && !clicked))
 			point_selected = { get_point: () => points[i], keep: clicked };
 
@@ -41,6 +45,9 @@
 
 	function deselect_point(clicked: boolean)
 	{
+		if (C.TOUCH_SCREEN && !clicked)
+			return;
+
 		if (details_element?.matches(':hover'))
 			return;
 
