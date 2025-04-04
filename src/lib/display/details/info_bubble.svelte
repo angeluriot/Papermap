@@ -24,6 +24,7 @@
 		arrow_top,
 		arrow_rotation,
 		hitbox_top,
+		info_final_width
 	} = $derived.by(() =>
 	{
 		width;
@@ -35,6 +36,7 @@
 			arrow_top: `-${arrow_margin}em`,
 			arrow_rotation: -135,
 			hitbox_top: '-2.88em',
+			info_final_width: info_width,
 		};
 
 		if (info === undefined)
@@ -45,6 +47,8 @@
 		const em = parseFloat(getComputedStyle(info).fontSize);
 		const rect = info.getBoundingClientRect();
 
+		result.info_final_width = Math.min(info_width, width / em - window_padding * 2);
+
 		if (rect.y - info_margin * em - info_height < window_padding * em)
 		{
 			result.info_top = `${info_margin}em`;
@@ -53,8 +57,8 @@
 			result.hitbox_top = '0.88em';
 		}
 
-		const left_overflow = Math.max(0, window_padding - (rect.x / em - (info_width / 2)));
-		const right_overflow = Math.max(0, (rect.x / em + info_width / 2) - (width / em - window_padding));
+		const left_overflow = Math.max(0, window_padding - (rect.x / em - (result.info_final_width / 2)));
+		const right_overflow = Math.max(0, (rect.x / em + result.info_final_width / 2) - (width / em - window_padding));
 
 		if (left_overflow > 0)
 			result.info_left = `${Math.min(left_overflow, info_left_limit)}em`;
@@ -77,11 +81,11 @@
 		style="left: {info_left}; top: {info_top};"
 	>
 		{#if text !== undefined}
-			<span class="text" style="width: {info_width}em;">
+			<span class="text" style="width: {info_final_width}em;">
 				{text}
 			</span>
 		{:else if journal !== undefined}
-			<div class="journal" style="width: {info_width}em;">
+			<div class="journal" style="width: {info_final_width}em;">
 				<JournalInfo {journal} {width} {height} />
 			</div>
 		{/if}
@@ -94,7 +98,7 @@
 <style>
 	.info
 	{
-		filter: drop-shadow(0 0.1em 1em #0c138e36);
+		filter: drop-shadow(0 0.1em 1em #00008036);
 		z-index: 1000;
 		left: 50%;
 	}

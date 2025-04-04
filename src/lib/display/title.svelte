@@ -26,7 +26,7 @@
 <style>
 	.input-container
 	{
-		box-shadow: 0em 0.1em 1.25em #0c138e36;
+		box-shadow: 0em 0.1em 1.25em #00008036;
 		font-family: Satoshi-Variable;
 		font-weight: 575;
 		line-height: 1.5em;

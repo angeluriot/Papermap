@@ -199,7 +199,6 @@
 		align-items: center;
 		flex-wrap: nowrap;
 		gap: 0.4em;
-		max-width: calc(var(--details-width) - calc(var(--details-x-pad) * 2));
 		position: relative;
 		padding: 0.3em 0.75em 0.3em 0.65em;
 		border-radius: calc(infinity * 1px);

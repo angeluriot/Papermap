@@ -90,7 +90,7 @@
 	.bar
 	{
 		height: 0.8em;
-		box-shadow: 0em 0.1em 1em #0c138e36;
+		box-shadow: 0em 0.1em 1em #00008036;
 	}
 
 	.bar-hitbox
@@ -104,6 +104,6 @@
 	{
 		font-family: Satoshi-Variable;
 		font-weight: 700;
-		text-shadow: 0em 0.1em 0.75em #0c138e36;
+		text-shadow: 0em 0.1em 0.75em #00008036;
 	}
 </style>

@@ -32,14 +32,16 @@
 		details_left,
 		details_top,
 		arrow_left,
-		arrow_rotation
+		arrow_rotation,
+		mobile_mode,
 	} = $derived.by(() =>
 	{
 		let result = {
-			details_left: `calc(${point.x + point.focus_size}px + ${details_x_margin}em)`,
+			details_left: `calc(${details_x}px + ${details_x_margin}em)`,
 			details_top: `calc(${point.y}px - ${details_y_margin}em)`,
-			arrow_left: `calc(${point.x + point.focus_size}px + ${arrow_x_margin}em)`,
+			arrow_left: `calc(${details_x}px + ${arrow_x_margin}em)`,
 			arrow_rotation: 'rotate(-45deg)',
+			mobile_mode: false,
 		};
 
 		if (details === null)
@@ -49,6 +51,12 @@
 
 		if (details_x + (details_x_margin + details_width + window_padding) * em > width)
 		{
+			if (point.x - point.focus_size - (details_x_margin + details_width + window_padding) * em < 0)
+			{
+				result.mobile_mode = true;
+				return result;
+			}
+
 			result.details_left = `calc(calc(${point.x - point.focus_size}px - ${details_width}em) - ${details_x_margin}em)`;
 			result.arrow_left = `calc(${point.x - point.focus_size}px - ${arrow_x_margin}em)`;
 			result.arrow_rotation = 'rotate(135deg)';
@@ -66,16 +74,19 @@
 	});
 </script>
 
-<div class="details left-0 top-0 absolute">
+<div
+	class="details left-0 absolute {mobile_mode ? 'mobile-shadow' : ''}"
+	style="{mobile_mode ?  `bottom: ${details_height}px; width: 100%;` : 'top: 0em;'}"
+>
 	<div
 		class="arrow absolute bg-white"
-		style="left: {arrow_left}; top: {point.y}px; transform: {arrow_rotation};"
+		style="{mobile_mode ? 'display: none;' : ''} left: {arrow_left}; top: {point.y}px; transform: {arrow_rotation};"
 	>
 		<div class="hitbox"></div>
 	</div>
 	<div
-		class="details-container absolute bg-white" bind:clientHeight={details_height} bind:this={details}
-		style="left: {details_left}; top: {details_top}; --details-width: {details_width}em;"
+		class="details-container absolute bg-white {mobile_mode ? 'mobile-radius' : ''}" bind:clientHeight={details_height} bind:this={details}
+		style="{mobile_mode ? `--details-width: ${width}px;` : `left: ${details_left}; top: ${details_top}; --details-width: ${details_width}em;`}"
 	>
 		<Content {map} {journals} {paper} {width} {height} bind:journal_info_open={journal_info_open}/>
 	</div>
@@ -84,8 +95,13 @@
 <style>
 	.details
 	{
-		filter: drop-shadow(0 0.1em 1.25em #0c138e36);
+		filter: drop-shadow(0 0.1em 1.25em #00008036);
 		z-index: 100;
+	}
+
+	.details.mobile-shadow
+	{
+		filter: drop-shadow(0 0em 15em #00022d);
 	}
 
 	.details-container
@@ -94,6 +110,11 @@
 		--details-x-pad: 1.6em;
 		width: var(--details-width);
 		padding: 1.4em var(--details-x-pad) 1.6em var(--details-x-pad);
+	}
+
+	.details-container.mobile-radius
+	{
+		border-radius: 1.5em 1.5em 0 0;
 	}
 
 	.arrow
