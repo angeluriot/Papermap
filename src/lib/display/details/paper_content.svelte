@@ -644,7 +644,6 @@
 		font-size: 1.03em;
 		font-weight: 525;
 		color: #585863;
-		margin-bottom: 0.1em;
 	}
 
 	.quote
