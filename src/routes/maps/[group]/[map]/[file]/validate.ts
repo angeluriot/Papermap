@@ -6,7 +6,7 @@ import type { Params } from './types';
 const params_schema = z.object({
 	group: z.string(),
 	map: z.string(),
-	image: z.enum(['image.jpg', 'image.png', 'image.svg']),
+	file: z.enum(['file.jpg', 'file.png', 'file.svg', 'file.csv']),
 }).strict();
 
 

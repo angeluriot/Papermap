@@ -7,6 +7,7 @@
 	import Title from '$lib/display/title.svelte';
 	import Overview from '$lib/display/overview.svelte';
 	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
+	import Buttons from '$lib/display/buttons/buttons.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -14,7 +15,7 @@
 	const journals = data.journals;
 	const route = `maps/${map.group.id}/${map.id}`;
 	const page_url = `${C.BASE_URL}/${route}`;
-	const image_url = `${page_url}/image.jpg?v=${data.image_hash}`;
+	const image_url = `${page_url}/file.jpg?v=${data.image_hash}`;
 	const tags = C.DEFAULT_TAGS.concat(map.tags);
 
 	let width = $state(0);
@@ -126,6 +127,9 @@
 			/>
 		{/if}
 	</div>
+	<div class="buttons absolute bottom-0 right-0">
+		<Buttons {map}/>
+	</div>
 </div>
 
 <style>
@@ -140,6 +144,11 @@
 	}
 
 	.details
+	{
+		font-size: clamp(10px, calc(calc(calc(0.09vw + 0.09vh) + 4.5px) * 2), 15px);
+	}
+
+	.buttons
 	{
 		font-size: clamp(10px, calc(calc(calc(0.09vw + 0.09vh) + 4.5px) * 2), 15px);
 	}

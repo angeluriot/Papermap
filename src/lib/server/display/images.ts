@@ -16,7 +16,7 @@ import { get_svg_overview_by_color } from '$lib/display/overview';
 
 export async function create_images(group: string, map: Map): Promise<string>
 {
-	const dir = join(C.IMAGES_DIR, group);
+	const dir = join(C.TMP_DIR, group);
 	await fs.mkdir(dir, { recursive: true });
 
 	const svg_scales = {

@@ -9,7 +9,7 @@ export const constants = {
 	BASE_PATH: process.cwd(),
 	STATIC_DIR: join(process.cwd(), 'static'),
 	LIB_DIR: join(process.cwd(), 'src/lib'),
-	IMAGES_DIR: join(process.cwd(), 'tmp/images'),
+	TMP_DIR: join(process.cwd(), 'tmp'),
 	GITHUB_APP_ID: import.meta.env['VITE_GITHUB_APP_ID'] ? parseInt(import.meta.env['VITE_GITHUB_APP_ID']) as number : undefined,
 	GITHUB_PRIVATE_KEY: import.meta.env['VITE_GITHUB_PRIVATE_KEY'] as string | undefined,
 	GITHUB_CLIENT_ID: import.meta.env['VITE_GITHUB_CLIENT_ID'] as string | undefined,

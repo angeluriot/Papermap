@@ -2,6 +2,7 @@ import type { PageServerLoad, EntryGenerator } from './$types';
 import { import_map, import_maps, map_files } from '$lib/server/data/map';
 import { validate_params } from './validate';
 import { create_images } from '$lib/server/display/images';
+import { create_csv } from '$lib/server/data/csv';
 
 
 export const prerender = true;
@@ -15,6 +16,7 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 	const { map, journals } = await import_map(params.group, params.map);
 
 	const image_hash = await create_images(params.group, map);
+	await create_csv(params.group, map, journals);
 
 	return {
 		map,

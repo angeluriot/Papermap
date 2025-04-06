@@ -13,16 +13,16 @@ export async function GET({ params }: { params: Params }): Promise<Response>
 	{
 		validate_params(params);
 
-		const ext_to_type: { [key: string]: string } = { 'jpg': 'jpeg', 'png': 'png', 'svg': 'svg+xml' };
-		const image_ext = params.image.split('.')[1];
-		const image_type = ext_to_type[image_ext];
-		const file_path = join(C.IMAGES_DIR, params.group, `${params.map}.${image_ext}`);
+		const ext_to_type: { [key: string]: string } = { 'jpg': 'image/jpeg', 'png': 'image/png', 'svg': 'image/svg+xml', 'csv': 'text/csv' };
+		const file_ext = params.file.split('.')[1];
+		const file_type = ext_to_type[file_ext];
+		const file_path = join(C.TMP_DIR, params.group, `${params.map}.${file_ext}`);
 
 		if (await fs.access(file_path).then(() => false).catch(() => true))
-			throw new NotFoundError('Image not found');
+			throw new NotFoundError('File not found');
 
 		const file_buffer = await fs.readFile(file_path);
-		return new Response(file_buffer, { headers: { 'Content-Type': `image/${image_type}` } });
+		return new Response(file_buffer, { headers: { 'Content-Type': `${file_type}` } });
 	}
 
 	catch (error: any)
