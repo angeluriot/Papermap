@@ -4,7 +4,7 @@ import type { BackgroundPoint, GraphStats, Tick } from './types';
 
 export const BACKGROUND_COLOR = '#f3f4ff';
 export const POINTS_COLOR = '#3131ff';
-export const POINTS_SIZE = 1;
+export const POINTS_SIZE = 1.1;
 export const POINTS_OPACITY = 0.12;
 
 export const AXIS_COLOR = '#2d2f3d';
