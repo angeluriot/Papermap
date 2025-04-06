@@ -32,15 +32,6 @@
 		line-height: 1.5em;
 	}
 
-	@media screen and (max-width: 800px)
-	{
-		.input-container
-		{
-			--x-pad: 1.2em;
-			--y-pad: 0.7em;
-		}
-	}
-
 	.emoji
 	{
 		margin-right: calc(-1.7 * var(--x-pad));
