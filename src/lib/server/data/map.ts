@@ -96,5 +96,46 @@ export async function import_maps(): Promise<Maps>
 		maps[group].maps.push({ emoji: map_data.emoji, name: map_data.question.long, url });
 	}
 
+	return {
+		group_1: {
+			emoji: '☺️',
+			name: 'Group 1',
+			maps: [
+				{ emoji: '🙂', name: 'Group 1 Question 1', url: `test` },
+				{ emoji: '🙂', name: 'Group 1 Question 2', url: `test` },
+				{ emoji: '🙂', name: 'Group 1 Question 3', url: `test` },
+				{ emoji: '🙂', name: 'Group 1 Question 4', url: `test` },
+			],
+		},
+		group_2: {
+			emoji: '☺️',
+			name: 'Group 2',
+			maps: [
+				{ emoji: '🙂', name: 'Group 2 Question 1', url: `test` },
+				{ emoji: '🙂', name: 'Group 2 Question 2', url: `test` },
+				{ emoji: '🙂', name: 'Group 2 Question 3', url: `test` },
+			],
+		},
+		group_3: {
+			emoji: '☺️',
+			name: 'Group 3',
+			maps: [
+				{ emoji: '🙂', name: 'Group 3 Question 1', url: `test` },
+				{ emoji: '🙂', name: 'Group 3 Question 2', url: `test` },
+				{ emoji: '🙂', name: 'Group 3 Question 3', url: `test` },
+				{ emoji: '🙂', name: 'Group 3 Question 4', url: `test` },
+				{ emoji: '🙂', name: 'Group 3 Question 5', url: `test` },
+			],
+		},
+		group_4: {
+			emoji: '☺️',
+			name: 'Group 4',
+			maps: [
+				{ emoji: '🙂', name: 'Group 4 Question 1', url: `test` },
+				{ emoji: '🙂', name: 'Group 4 Question 2', url: `test` },
+			],
+		},
+	}
+
 	return maps;
 }
