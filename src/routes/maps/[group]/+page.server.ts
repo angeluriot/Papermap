@@ -1,8 +1,8 @@
-import type { PageServerLoad, EntryGenerator } from './$types';
+import type { PageServerLoad } from './$types';
 import { import_maps } from '$lib/server/data/map';
 import { redirect } from '@sveltejs/kit';
 
-export const prerender = true;
+export const prerender = false;
 export const ssr = true;
 export const csr = true;
 
@@ -16,7 +16,3 @@ export const load: PageServerLoad = async ({ params }: { params: { group: string
 	throw redirect(302, url);
 };
 
-export const entries: EntryGenerator = () =>
-{
-	return [{ group: 'random' }];
-};
