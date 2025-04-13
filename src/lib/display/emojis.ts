@@ -1,4 +1,4 @@
-const emoji_names = {
+export const EMOJI_NAMES = {
 	// Smileys
 	'🙂': 'slightly-smiling-face',
 	'😊': 'smiling-face-with-smiling-eyes',
@@ -61,7 +61,7 @@ const emoji_names = {
 
 export function emoji_to_svg(emoji: string): string
 {
-	const name = emoji_names[emoji as keyof typeof emoji_names];
+	const name = EMOJI_NAMES[emoji as keyof typeof EMOJI_NAMES];
 
 	if (name === undefined)
 		throw new Error(`Emoji "${emoji}" not found`);

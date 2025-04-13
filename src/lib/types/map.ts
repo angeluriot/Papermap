@@ -68,15 +68,20 @@ export interface Map extends BaseMap
 }
 
 
-export interface Maps
+export interface MapTitle
 {
-	[group: string]: {
+	group: {
+		id: string,
 		emoji: string,
 		name: string,
-		maps: {
-			emoji: string,
-			name: string,
-			url: string,
-		}[],
 	};
+	id: string;
+	emoji: string;
+	question: {
+		short: string,
+		long: string,
+	};
+	description: string;
+	tags: string[];
+	url: string;
 }

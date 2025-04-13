@@ -82,8 +82,8 @@
 	<meta property="og:image" content={image_url}/>
 	<meta property="og:image:url" content={image_url}/>
 	<meta property="og:image:secure_url" content={image_url}/>
-	<meta property="og:image:width" content=968/>
-	<meta property="og:image:height" content=936/>
+	<meta property="og:image:width" content=1200/>
+	<meta property="og:image:height" content=630/>
 	<meta property="og:description" content={map.description}/>
 	<meta property="article:tag" content={tags.join(', ')}/>
 
