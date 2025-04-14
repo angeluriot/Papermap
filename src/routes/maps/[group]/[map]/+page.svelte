@@ -15,7 +15,7 @@
 	const journals = data.journals;
 	const route = `maps/${map.group.id}/${map.id}`;
 	const page_url = `${C.BASE_URL}/${route}`;
-	const image_url = `${page_url}/file.jpg?v=${data.image_hash}`;
+	const image_url = `${page_url}/preview.jpg?v=${data.hash}`;
 	const tags = C.DEFAULT_TAGS.concat(map.tags);
 
 	let width = $state(0);
@@ -128,7 +128,7 @@
 		{/if}
 	</div>
 	<div class="buttons absolute bottom-0 right-0">
-		<Buttons {map}/>
+		<Buttons {map} hash={data.hash}/>
 	</div>
 </div>
 

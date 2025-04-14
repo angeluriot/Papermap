@@ -10,10 +10,10 @@
 	import { constants as C } from '$lib/utils';
 	import type { Map } from '$lib/types/map';
 
-	const { map }: { map: Map } = $props();
+	const { map, hash }: { map: Map, hash: string } = $props();
 
 	const file_name = map.question.short.toLowerCase().replace(/\s+/g, '-').replace('?', '').replace('.', '');
-	const file_url = `${C.BASE_URL}/maps/${map.group.id}/${map.id}/file`;
+	const file_url = `${C.BASE_URL}/maps/${map.group.id}/${map.id}/`;
 	let copied = $state(false);
 	let timeouts: NodeJS.Timeout[] = $state([]);
 
@@ -48,19 +48,19 @@
 			<div class="arrow absolute"></div>
 			<div class="bubble absolute flex-center-col">
 				<div class="sub-button relative">
-					<a href={file_url + '.png'} download={file_name + '.png'}>
+					<a href={file_url + 'image.png?v=' + hash} download={file_name + '.png'}>
 						<img src={Png} alt="PNG" class="img-unselectable">
 					</a>
 					<Info text="Download a PNG image of this page" width={11} distance={3.6} />
 				</div>
 				<div class="sub-button relative">
-					<a href={file_url + '.svg'} download={file_name + '.svg'}>
+					<a href={file_url + 'image.svg?v=' + hash} download={file_name + '.svg'}>
 						<img src={Svg} alt="SVG" class="img-unselectable">
 					</a>
 					<Info text="Download an SVG vector graphic of this page" width={14} distance={3.6} />
 				</div>
 				<div class="sub-button relative">
-					<a href={file_url + '.csv'} download={file_name + '.csv'}>
+					<a href={file_url + 'data.csv?v=' + hash} download={file_name + '.csv'}>
 						<img src={Csv} alt="CSV" class="img-unselectable">
 					</a>
 					<Info text="Download the data of this page in a CSV file" width={13} distance={3.6} />

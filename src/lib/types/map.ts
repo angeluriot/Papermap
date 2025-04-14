@@ -84,4 +84,5 @@ export interface MapTitle
 	description: string;
 	tags: string[];
 	url: string;
+	hash: string;
 }

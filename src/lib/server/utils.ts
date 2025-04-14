@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import { join } from 'path';
+import crypto from 'crypto';
 
 
 export const constants = {
@@ -44,4 +45,10 @@ export function sleep(seconds: number): Promise<void>
 export async function exist(dir_path: string): Promise<boolean>
 {
 	return await fs.access(dir_path).then(() => true).catch(() => false);
+}
+
+
+export function get_hash(object: any): string
+{
+	return crypto.createHash('sha256').update(JSON.stringify(object)).digest('hex').slice(0, 16)
 }

@@ -37,6 +37,9 @@ export const EMOJI_NAMES = {
 	// Activity
 	'🎲': 'game-die',
 
+	// Travel & Places
+	'🏠': 'house',
+
 	// Objects
 	'⏳': 'hourglass-not-done',
 	'🎛️': 'control-knobs',

@@ -4,7 +4,7 @@ import type { Map } from '$lib/types/map';
 import { rendered_text_size } from './utils';
 
 
-export async function get_thumbnail_title(map: Map, stats: GraphStats)
+export async function get_preview_title(map: Map, stats: GraphStats, shown: boolean)
 {
 	const margin = stats.width * 0.017;
 	const padding_x = stats.width * 0.025;
@@ -14,6 +14,7 @@ export async function get_thumbnail_title(map: Map, stats: GraphStats)
 	const text_height = rendered_text_size(map.question.short + 'g', SatoshiMedium, font_size).height;
 
 	return {
+		shown,
 		margin,
 		padding_x,
 		padding_y,

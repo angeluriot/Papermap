@@ -5,7 +5,8 @@ import type { DataMap, Group, Map, MapTitle } from '$lib/types/map';
 import { type DataPaper } from '$lib/types/paper';
 import { import_journals } from './journal';
 import { validate_map } from './validate';
-import { generate_map_title, generate_paper } from './fake';
+import { generate_group, generate_map_title, generate_paper } from './fake';
+import { get_hash } from '../utils';
 
 
 export const map_files = import.meta.glob('/src/lib/server/jsons/maps/**/*.json');
@@ -95,12 +96,18 @@ export async function import_maps(): Promise<MapTitle[]>
 			question: map_data.question,
 			description: map_data.description,
 			tags: map_data.tags,
-			url: `/maps/${group}/${map}`
+			url: `/maps/${group}/${map}`,
+			hash: get_hash(map_data),
 		});
 	}
 
+	let groups = [];
+
+	for (let i = 0; i < 10; i++)
+		groups.push(generate_group());
+
 	for (let i = 0; i < 50; i++)
-		maps.push(generate_map_title());
+		maps.push(generate_map_title(groups[Math.floor(Math.random() * groups.length)]));
 
 	return maps;
 }

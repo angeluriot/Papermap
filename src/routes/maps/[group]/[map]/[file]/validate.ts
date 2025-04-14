@@ -1,12 +1,12 @@
 import { z } from 'zod';
 import { InvalidDataError } from '$lib/errors';
-import type { Params } from './types';
+import { FileType, type Params } from './types';
 
 
 const params_schema = z.object({
 	group: z.string(),
 	map: z.string(),
-	file: z.enum(['file.jpg', 'file.png', 'file.svg', 'file.csv']),
+	file: z.nativeEnum(FileType),
 }).strict();
 
 

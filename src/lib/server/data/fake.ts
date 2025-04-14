@@ -100,19 +100,25 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 }
 
 
-export function generate_map_title()
+export function generate_group()
 {
 	const group_name = faker.lorem.words({ min: 1, max: 3 });
-	const group_id = group_name.toLowerCase().replace(/ /g, '_');
+
+	return {
+		id: group_name.toLowerCase().replace(/ /g, '_'),
+		emoji: random_choice(Object.keys(EMOJI_NAMES)),
+		name: group_name[0].toUpperCase() + group_name.slice(1),
+	}
+}
+
+
+export function generate_map_title(group: { id: string, emoji: string, name: string })
+{
 	const short = faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1);
 	const id = short.toLowerCase().replace(/ /g, '_')
 
 	return {
-		group: {
-			id: group_id,
-			emoji: random_choice(Object.keys(EMOJI_NAMES)),
-			name: group_name[0].toUpperCase() + group_name.slice(1),
-		},
+		group,
 		id,
 		emoji: random_choice(Object.keys(EMOJI_NAMES)),
 		question: {
@@ -121,6 +127,7 @@ export function generate_map_title()
 		},
 		description: faker.lorem.sentence({ min: 20, max: 30 }).slice(0, -1),
 		tags: faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1).split(' ').map(tag => tag.toLowerCase().replace(/[^a-z]/g, '')),
-		url: `/maps/${group_id}/${id}`,
+		url: random_choice(['/maps/subject_1/other_subject', '/maps/subject_1/sexual_education_effectiveness', '/maps/subject_2/test']), //`/maps/${group.id}/${id}`,
+		hash: faker.string.uuid(),
 	}
 }

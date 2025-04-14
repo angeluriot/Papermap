@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Label } from '$lib/types';
 	import Title from '$lib/svgs/title.svg';
 	import Background from '$lib/home/background.svelte';
 	import type { PageProps } from './$types';
@@ -11,7 +10,7 @@
 	const { data }: PageProps = $props();
 
 	const description = 'Get an overview of scientific literature findings on a wide range of question';
-	const thumbnail = '';
+	const preview = '';
 	const tags = ['papermap', 'paper', 'map', 'science', 'literature', 'questions'];
 	let width = $state(0);
 	let height = $state(0);
@@ -48,9 +47,9 @@
 
 	<meta property="og:title" content="Papermap"/>
 	<meta property="og:url" content={C.BASE_URL}/>
-	<meta property="og:image" content={thumbnail}/>
-	<meta property="og:image:url" content={thumbnail}/>
-	<meta property="og:image:secure_url" content={thumbnail}/>
+	<meta property="og:image" content={preview}/>
+	<meta property="og:image:url" content={preview}/>
+	<meta property="og:image:secure_url" content={preview}/>
 	<meta property="og:image:width" content=1200/>
 	<meta property="og:image:height" content=630/>
 	<meta property="og:description" content={description}/>
@@ -58,8 +57,8 @@
 
 	<meta name="twitter:title" content="Papermap"/>
 	<meta name="twitter:description" content={description}/>
-	<meta name="twitter:image" content={thumbnail}/>
-	<meta name="twitter:image:src" content={thumbnail}/>
+	<meta name="twitter:image" content={preview}/>
+	<meta name="twitter:image:src" content={preview}/>
 	<meta name="twitter:image:alt" content="Papermap"/>
 	<meta name="twitter:url" content={C.BASE_URL}/>
 </svelte:head>

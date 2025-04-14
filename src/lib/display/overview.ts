@@ -39,11 +39,11 @@ export function get_overview_by_color(map: Map): { color: string, width: number,
 }
 
 
-export function get_svg_overview_by_color(map: Map, stats: GraphStats, y: number)
+export function get_svg_overview_by_color(map: Map, stats: GraphStats, y: number, scale: number)
 {
 	let overview: any[] = get_overview_by_color(map);
-	const width = stats.scale * 150;
-	const height = stats.scale * 8;
+	const width = stats.scale * 150 * scale;
+	const height = stats.scale * 8 * scale;
 	let cursor = 0;
 
 	for (let item of overview)
@@ -54,9 +54,10 @@ export function get_svg_overview_by_color(map: Map, stats: GraphStats, y: number
 	}
 
 	return {
+		scale,
 		groups: overview,
-		font_size: stats.scale * 12,
-		text_gap: stats.scale * 5,
+		font_size: stats.scale * 12 * scale,
+		text_gap: stats.scale * 5 * scale,
 		width,
 		height,
 		y,

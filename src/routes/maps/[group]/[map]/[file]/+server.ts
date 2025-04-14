@@ -7,16 +7,24 @@ import { InvalidDataError, NotFoundError } from '$lib/errors';
 import { validate_params } from './validate';
 
 
+const EXT_TO_TYPE: { [key: string]: string } = {
+	'jpg': 'image/jpeg',
+	'webp': 'image/webp',
+	'png': 'image/png',
+	'svg': 'image/svg+xml',
+	'csv': 'text/csv'
+};
+
+
 export async function GET({ params }: { params: Params }): Promise<Response>
 {
 	try
 	{
 		validate_params(params);
 
-		const ext_to_type: { [key: string]: string } = { 'jpg': 'image/jpeg', 'png': 'image/png', 'svg': 'image/svg+xml', 'csv': 'text/csv' };
 		const file_ext = params.file.split('.')[1];
-		const file_type = ext_to_type[file_ext];
-		const file_path = join(C.TMP_DIR, params.group, `${params.map}.${file_ext}`);
+		const file_type = EXT_TO_TYPE[file_ext];
+		const file_path = join(C.TMP_DIR, params.group, params.map, params.file);
 
 		if (await fs.access(file_path).then(() => false).catch(() => true))
 			throw new NotFoundError('File not found');

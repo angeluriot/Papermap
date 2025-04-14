@@ -3,8 +3,6 @@ import { join } from 'path';
 
 
 const TMP_DIR_PATH = join(process.cwd(), 'tmp');
-const SUB_DIRS = ['images'];
-const SUB_DIRS_PATH = SUB_DIRS.map(sub_dir => join(TMP_DIR_PATH, sub_dir));
 
 
 async function exist(dir_path)
@@ -36,9 +34,4 @@ async function empty_dir(dir_path)
 
 
 await create_dir_if_not_exist(TMP_DIR_PATH);
-
-for (const sub_dir_path of SUB_DIRS_PATH)
-	await create_dir_if_not_exist(sub_dir_path);
-
-for (const sub_dir_path of SUB_DIRS_PATH)
-	await empty_dir(sub_dir_path);
+await empty_dir(TMP_DIR_PATH);

@@ -14,7 +14,7 @@
 			<feDropShadow dx="0" dy="<%= title.height * 0.05 %>" stdDeviation="<%= width * 0.01 %>" flood-color="#00008036" />
 		</filter>
 		<filter id="overview-shadow" x="-50%" y="-50%" width="200%" height="200%">
-			<feDropShadow dx="0" dy="<%= stats.scale * 0.5 %>" stdDeviation="<%= stats.scale * 3 %>" flood-color="#00008036" />
+			<feDropShadow dx="0" dy="<%= stats.scale * 0.5 * overview.scale %>" stdDeviation="<%= stats.scale * 3 * overview.scale %>" flood-color="#00008040" />
 		</filter>
 	</defs>
 	<g class="graph">
@@ -38,30 +38,32 @@
 			title,
 		}) %>
 	</g>
-	<g class="title">
-		<rect
-			x="<%= title.margin %>"
-			y="<%= title.margin %>"
-			width="<%= title.width + title.padding_x * 2 %>"
-			height="<%= title.height + title.padding_y * 2 %>"
-			fill="white"
-			rx="<%= title.height / 2 + title.padding_y %>"
-			ry="<%= title.height / 2 + title.padding_y %>"
-			filter="url(#title-shadow)"
-		/>
-		<text
-			x="<%= title.margin + title.padding_x %>"
-			y="<%= title.margin + title.padding_y * 1.04 %>"
-			fill="black"
-			font-family="<%= font.name %>"
-			font-size="<%= title.font_size %>"
-			text-anchor="start"
-			alignment-baseline="hanging"
-			dominant-baseline="hanging"
-		>
-			<%= title.text %>
-		</text>
-	</g>
+	<% if (title.shown) { %>
+		<g class="title">
+			<rect
+				x="<%= title.margin %>"
+				y="<%= title.margin %>"
+				width="<%= title.width + title.padding_x * 2 %>"
+				height="<%= title.height + title.padding_y * 2 %>"
+				fill="white"
+				rx="<%= title.height / 2 + title.padding_y %>"
+				ry="<%= title.height / 2 + title.padding_y %>"
+				filter="url(#title-shadow)"
+			/>
+			<text
+				x="<%= title.margin + title.padding_x %>"
+				y="<%= title.margin + title.padding_y * 1.04 %>"
+				fill="black"
+				font-family="<%= font.name %>"
+				font-size="<%= title.font_size %>"
+				text-anchor="start"
+				alignment-baseline="hanging"
+				dominant-baseline="hanging"
+			>
+				<%= title.text %>
+			</text>
+		</g>
+	<% } %>
 	<g class="overview" transform="translate(<%= global_width - title.margin - overview.width %>, <%= overview.y %>)" filter="url(#overview-shadow)">
 		<%- include(`${template_dir}/overview.svg.ejs`, { overview, font, overview_text_stroke }) %>
 	</g>
