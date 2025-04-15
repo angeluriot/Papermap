@@ -50,5 +50,5 @@ export async function exist(dir_path: string): Promise<boolean>
 
 export function get_hash(object: any): string
 {
-	return crypto.createHash('sha256').update(JSON.stringify(object)).digest('hex').slice(0, 16)
+	return crypto.createHash('sha256').update(JSON.stringify(object) + 'v0').digest('hex').slice(0, 16)
 }

@@ -1,5 +1,6 @@
 import { InvalidRequestError, TooManyRequestsError } from '$lib/errors';
 import { building } from '$app/environment'
+import type { Handle } from '@sveltejs/kit';
 import { error as http_error } from '@sveltejs/kit';
 import { RateLimiterMemory } from 'rate-limiter-flexible';
 import { constants as C } from '$lib/server/utils';
@@ -19,7 +20,7 @@ const github_limiter = new RateLimiterMemory({
 });
 
 
-export async function handle({ event, resolve })
+export const handle: Handle = async ({ event, resolve }) =>
 {
 	try
 	{
