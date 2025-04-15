@@ -80,7 +80,7 @@ export async function create_images(group: string, map: Map): Promise<void>
 			y_title,
 			background_points,
 			points,
-			background_color: bg.BACKGROUND_COLOR,
+			background_color: type === 'thumbnail' ? '#fdfdff' : bg.BACKGROUND_COLOR,
 			points_color: bg.POINTS_COLOR,
 			points_opacity: bg.POINTS_OPACITY,
 			axis_color: bg.AXIS_COLOR,

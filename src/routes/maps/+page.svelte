@@ -79,7 +79,7 @@
 	<meta name="twitter:url" content={C.BASE_URL}/>
 </svelte:head>
 
-<div class="page-container flex-center-col w-full">
+<div class="page-container flex-center-col w-full bg-[#f3f4ff]">
 	<div class="list flex flex-col justify-start items-start">
 		<div class="header w-full flex flex-row justify-between items-center">
 			<div class="title flex-center-row unselectable">
@@ -244,6 +244,7 @@
 	.map
 	{
 		gap: 0.5em;
+		filter: drop-shadow(0 0em 0.6em #00008010);
 	}
 
 	.map .emoji
@@ -260,11 +261,6 @@
 		line-height: 1.25em;
 		text-wrap: wrap;
 		color: #303037;
-	}
-
-	.map:hover .thumbnail
-	{
-		opacity: 0.8;
 	}
 
 	.map:hover span

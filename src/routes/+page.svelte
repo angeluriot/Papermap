@@ -10,7 +10,7 @@
 	const { data }: PageProps = $props();
 
 	const description = 'Get an overview of scientific literature findings on a wide range of question';
-	const preview = '';
+	const preview = `${C.BASE_URL}/images/preview.png`;
 	const tags = ['papermap', 'paper', 'map', 'science', 'literature', 'questions'];
 	let width = $state(0);
 	let height = $state(0);
@@ -155,13 +155,15 @@
 	{
 		font-size: 1.02em;
 		gap: 1.7em;
-		margin-bottom: 7em;
+		margin-bottom: 13em;
 	}
 
-	@media screen and (max-height: 1000px) { .buttons { margin-bottom: 5em; } }
-	@media screen and (max-height: 900px) { .buttons { margin-bottom: 3em; } }
-	@media screen and (max-height: 800px) { .buttons { margin-bottom: 2em; } }
-	@media screen and (max-height: 700px) { .buttons { margin-bottom: 1em; } }
+	@media screen and (max-height: 1000px) { .buttons { margin-bottom: 11em; } }
+	@media screen and (max-height: 900px) { .buttons { margin-bottom: 9em; } }
+	@media screen and (max-height: 800px) { .buttons { margin-bottom: 7em; } }
+	@media screen and (max-height: 700px) { .buttons { margin-bottom: 5em; } }
+	@media screen and (max-height: 500px) { .buttons { margin-bottom: 3em; } }
+	@media screen and (max-height: 300px) { .buttons { margin-bottom: 1em; } }
 
 	.buttons button
 	{
