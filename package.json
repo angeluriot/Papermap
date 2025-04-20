@@ -6,8 +6,8 @@
 	"scripts": {
 		"dev": "node ./scripts/clean.js && svelte-kit sync && vite dev",
 		"build": "node ./scripts/clean.js && svelte-kit sync && vite build",
-		"deploy": "node ./scripts/clean.js && docker compose build && docker compose up -d",
-		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker system prune -a; node ./scripts/clean.js"
+		"deploy": "node ./scripts/clean.js && docker compose build && docker compose up -d && docker system prune -af --volumes",
+		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker system prune -af --volumes; node ./scripts/clean.js"
 	},
 	"repository": {
 		"type": "git",
