@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Map, Maps } from '$lib/types/map';
+	import type { Map, MapTitle } from '$lib/types/map';
 	import { emoji_to_svg } from './emojis';
 
-	const { map, maps }: { map: Map, maps: Maps } = $props();
+	const { map, maps }: { map: Map, maps: MapTitle[] } = $props();
 
 	let div: HTMLDivElement | null = $state(null);
 	let search = $state(map.question.long);

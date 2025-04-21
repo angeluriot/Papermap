@@ -50,14 +50,14 @@ export async function POST({ params, request }: { params: Params, request: Reque
 		console.error(error);
 
 		if (error instanceof InvalidDataError)
-			return http_error(400, { message: error.message });
+			return http_error(400, error.message);
 
 		if (error instanceof NotFoundError)
-			return http_error(404, { message: error.message });
+			return http_error(404, error.message);
 
 		if (error instanceof GitHubAPIError)
-			return http_error(502, { message: 'GitHub API error' });
+			return http_error(502, 'GitHub API error');
 
-		return http_error(500, { message: 'Internal server error' });
+		return http_error(500, 'Internal server error');
 	}
 }

@@ -1,7 +1,8 @@
 import { json, error as http_error } from '@sveltejs/kit';
 import { create_issue } from '$lib/server/github';
-import type { PostRequest } from './types';
+import { get_new_map_issue, type NewMapRequest } from '$lib/github/issue';
 import { validate_request } from './validate';
+import { Label } from '$lib/types';
 import { GitHubAPIError, InvalidDataError } from '$lib/errors';
 
 
@@ -9,13 +10,15 @@ export async function POST({ request }: { request: Request }): Promise<Response>
 {
 	try
 	{
-		const data = await request.json() as PostRequest;
+		const data = await request.json() as NewMapRequest;
 		validate_request(data);
 
+		const { title, description } = get_new_map_issue(data);
+
 		const issue_url = await create_issue(
-			'Update question.json',
-			'Test description' + (data.username ? ` - @${data.username}` : '') + (data.comment ? ` - ${data.comment}` : '') + (data.contact ? ` - ${data.contact}` : ''),
-			data.type,
+			title,
+			description,
+			Label.NewMap,
 		);
 
 		return json({ issue_url });
@@ -26,11 +29,11 @@ export async function POST({ request }: { request: Request }): Promise<Response>
 		console.error(error);
 
 		if (error instanceof InvalidDataError)
-			return http_error(400, { message: error.message });
+			return http_error(400, error.message);
 
 		if (error instanceof GitHubAPIError)
-			return http_error(502, { message: 'GitHub API error' });
+			return http_error(502, 'GitHub API error');
 
-		return http_error(500, { message: 'Internal server error' });
+		return http_error(500, 'Internal server error');
 	}
 }

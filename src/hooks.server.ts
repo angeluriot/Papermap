@@ -10,13 +10,19 @@ import requestIp from 'request-ip';
 const journals_limiter = new RateLimiterMemory({
 	points: 5,
 	duration: 20,
-	blockDuration: 180,
+	blockDuration: 3 * 60,
 });
 
 const github_limiter = new RateLimiterMemory({
 	points: 5,
-	duration: 60,
-	blockDuration: 600,
+	duration: 1 * 60,
+	blockDuration: 10 * 60,
+});
+
+const github_long_limiter = new RateLimiterMemory({
+	points: 30,
+	duration: 10 * 60 * 60,
+	blockDuration: 10 * 60 * 60,
 });
 
 
@@ -30,12 +36,12 @@ export const handle: Handle = async ({ event, resolve }) =>
 		if (!event.route.id)
 			throw new InvalidRequestError('No route');
 
-		let limiter: RateLimiterMemory | null = null;
+		let limiters: RateLimiterMemory[] = [];
 
 		if (event.route.id.trim().startsWith('/journals'))
-			limiter = journals_limiter;
+			limiters.push(journals_limiter);
 		else if (event.route.id.trim().startsWith('/maps/[group]/[map]/edit') || event.route.id.trim().startsWith('/request'))
-			limiter = github_limiter;
+			limiters.push(github_limiter, github_long_limiter);
 		else
 			return resolve(event);
 
@@ -57,7 +63,8 @@ export const handle: Handle = async ({ event, resolve }) =>
 
 		try
 		{
-			await limiter.consume(ip);
+			for (const limiter of limiters)
+				await limiter.consume(ip);
 		}
 
 		catch (error: any)

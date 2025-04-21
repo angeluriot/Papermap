@@ -6,6 +6,8 @@
 	import { constants as C } from '$lib/utils';
 	import { emoji_to_svg } from '$lib/display/emojis';
 	import Search from '$lib/home/search.svelte';
+	import Popup from '$lib/home/popup.svelte';
+	import { onMount } from 'svelte';
 
 	const { data }: PageProps = $props();
 
@@ -17,6 +19,16 @@
 	let placeholder: string | undefined = $state(undefined);
 	let search = $state('');
 	let search_element: Search | undefined = $state(undefined);
+	let popup: Popup | undefined = $state(undefined);
+
+	onMount(() =>
+	{
+		if ((new URLSearchParams(window.location.search)).get('request') !== null)
+		{
+			popup?.show();
+			window.history.replaceState({}, '', window.location.pathname);
+		}
+	});
 
 	function get_placeholder()
 	{
@@ -98,9 +110,27 @@
 			</a>
 		</div>
 	</div>
+	<div class="links absolute z-20 right-0 bottom-0 flex-center-row flex-wrap img-unselectable">
+		<span onclick={popup?.show} onkeydown={null} role="button" tabindex={0}>
+			New map
+		</span>
+		<a href="https://github.com/angeluriot/Papermap/wiki/How-to-contribute" target="_blank">
+			<span>Contribute</span>
+		</a>
+		<a href="https://discord.gg/eFdjRJe7WZ" target="_blank">
+			<span>Discord</span>
+		</a>
+		<a href="https://github.com/angeluriot/Papermap" target="_blank">
+			<span>GitHub</span>
+		</a>
+		<a href="https://linktr.ee/angeluriot" target="_blank">
+			<span>Contact</span>
+		</a>
+	</div>
 	<div class="absolute left-0 top-0 w-full h-full overflow-hidden unselectable">
 		<Background {width} {height}/>
 	</div>
+	<Popup bind:this={popup}/>
 </div>
 
 <style>
@@ -192,5 +222,28 @@
 		line-height: 1.25em;
 		text-wrap: nowrap;
 		color: #303037;
+	}
+
+	.links
+	{
+		max-width: 100vw;
+		margin: 1.4em 1.9em;
+		gap: 1em;
+	}
+
+	.links span
+	{
+		padding: 0.5em 0.5em;
+		cursor: pointer;
+		color: #303037;
+		font-family: Satoshi-Variable;
+		font-weight: 475;
+		line-height: 1.5em;
+		text-wrap: nowrap;
+	}
+
+	.links span:hover
+	{
+		text-decoration: underline;
 	}
 </style>
