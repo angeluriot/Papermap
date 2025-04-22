@@ -11,9 +11,9 @@
 
 	const { data }: PageProps = $props();
 
-	const description = 'Get an overview of scientific literature findings on a wide range of question';
+	const title = 'Papermap';
+	const description = 'Get an overview of scientific literature findings on a wide range of question.';
 	const preview = `${C.BASE_URL}/images/preview.png`;
-	const tags = ['papermap', 'paper', 'map', 'science', 'literature', 'questions'];
 	let width = $state(0);
 	let height = $state(0);
 	let placeholder: string | undefined = $state(undefined);
@@ -48,16 +48,16 @@
 <svelte:window bind:innerWidth={width} bind:innerHeight={height} onclick={() => search_element?.deselect()}/>
 
 <svelte:head>
-	<title>Papermap</title>
+	<title>{title}</title>
 	<meta name="description" content={description}/>
-	<meta name="keywords" content={tags.join(', ')}/>
-	<meta name="subject" content="Papermap"/>
-	<meta name="topic" content="Papermap"/>
+	<meta name="keywords" content={C.DEFAULT_TAGS.join(', ')}/>
+	<meta name="subject" content={title}/>
+	<meta name="topic" content={title}/>
 	<meta name="summary" content={description}/>
 	<meta name="url" content={C.BASE_URL}/>
-	<meta name="pagename" content="Papermap"/>
+	<meta name="pagename" content={title}/>
 
-	<meta property="og:title" content="Papermap"/>
+	<meta property="og:title" content={title}/>
 	<meta property="og:url" content={C.BASE_URL}/>
 	<meta property="og:image" content={preview}/>
 	<meta property="og:image:url" content={preview}/>
@@ -65,13 +65,13 @@
 	<meta property="og:image:width" content=1200/>
 	<meta property="og:image:height" content=630/>
 	<meta property="og:description" content={description}/>
-	<meta property="article:tag" content={tags.join(', ')}/>
+	<meta property="article:tag" content={C.DEFAULT_TAGS.join(', ')}/>
 
-	<meta name="twitter:title" content="Papermap"/>
+	<meta name="twitter:title" content={title}/>
 	<meta name="twitter:description" content={description}/>
 	<meta name="twitter:image" content={preview}/>
 	<meta name="twitter:image:src" content={preview}/>
-	<meta name="twitter:image:alt" content="Papermap"/>
+	<meta name="twitter:image:alt" content={title}/>
 	<meta name="twitter:url" content={C.BASE_URL}/>
 </svelte:head>
 

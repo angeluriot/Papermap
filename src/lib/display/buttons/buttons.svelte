@@ -7,13 +7,12 @@
 	import Txt from '$lib/svgs/txt.svg';
 	import TxtCopied from '$lib/svgs/txt-copied.svg';
 	import Info from '$lib/display/buttons/info.svelte';
-	import { constants as C } from '$lib/utils';
 	import type { Map } from '$lib/types/map';
 
 	const { map, hash }: { map: Map, hash: string } = $props();
 
 	const file_name = map.question.short.toLowerCase().replace(/\s+/g, '-').replace('?', '').replace('.', '');
-	const file_url = `${C.BASE_URL}/maps/${map.group.id}/${map.id}/`;
+	const file_url = `/maps/${map.group.id}/${map.id}/`;
 	let copied = $state(false);
 	let timeouts: NodeJS.Timeout[] = $state([]);
 

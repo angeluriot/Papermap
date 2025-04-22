@@ -27,6 +27,14 @@
 		}
 	}
 
+	$effect(() =>
+	{
+		search;
+
+		if (search_selected)
+			selected_i = null;
+	});
+
 	const index = new Document({
 		tokenize: 'forward',
 		encoder: Charset.LatinBalance,

@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+html, body
+{
+	background-color: #f3f4ff;
+}
+
 *:focus
 {
 	outline: none;

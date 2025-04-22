@@ -6,9 +6,11 @@
 
 	const { data }: PageProps = $props();
 
-	const description = 'Get an overview of scientific literature findings on a wide range of question';
-	const preview = '';
-	const tags = ['papermap', 'paper', 'map', 'science', 'literature', 'questions'];
+	const title = 'All maps';
+	const description = 'A list of all maps currently available on Papermap.';
+	const preview = `${C.BASE_URL}/images/preview.png`;
+	const tags = C.DEFAULT_TAGS.concat(['maps', 'list']);
+	const page_url = `${C.BASE_URL}/maps`;
 	let width = $state(0);
 	let height = $state(0);
 
@@ -52,17 +54,17 @@
 <svelte:window bind:innerWidth={width} bind:innerHeight={height}/>
 
 <svelte:head>
-	<title>Papermap</title>
+	<title>{title}</title>
 	<meta name="description" content={description}/>
 	<meta name="keywords" content={tags.join(', ')}/>
-	<meta name="subject" content="Papermap"/>
-	<meta name="topic" content="Papermap"/>
+	<meta name="subject" content={title}/>
+	<meta name="topic" content={title}/>
 	<meta name="summary" content={description}/>
-	<meta name="url" content={C.BASE_URL}/>
-	<meta name="pagename" content="Papermap"/>
+	<meta name="url" content={page_url}/>
+	<meta name="pagename" content={title}/>
 
-	<meta property="og:title" content="Papermap"/>
-	<meta property="og:url" content={C.BASE_URL}/>
+	<meta property="og:title" content={title}/>
+	<meta property="og:url" content={page_url}/>
 	<meta property="og:image" content={preview}/>
 	<meta property="og:image:url" content={preview}/>
 	<meta property="og:image:secure_url" content={preview}/>
@@ -71,12 +73,12 @@
 	<meta property="og:description" content={description}/>
 	<meta property="article:tag" content={tags.join(', ')}/>
 
-	<meta name="twitter:title" content="Papermap"/>
+	<meta name="twitter:title" content={title}/>
 	<meta name="twitter:description" content={description}/>
 	<meta name="twitter:image" content={preview}/>
 	<meta name="twitter:image:src" content={preview}/>
-	<meta name="twitter:image:alt" content="Papermap"/>
-	<meta name="twitter:url" content={C.BASE_URL}/>
+	<meta name="twitter:image:alt" content={title}/>
+	<meta name="twitter:url" content={page_url}/>
 </svelte:head>
 
 <div class="page-container flex-center-col w-full bg-[#f3f4ff]">
@@ -88,10 +90,10 @@
 			</div>
 			<div class="links flex-center-row">
 				<a href="/maps/random">
-					<img src={emoji_to_svg('🎲')} alt="🎲" class="emoji img-unselectable"/>
+					<img src={emoji_to_svg('🎲')} alt="🎲" title="Random map" class="emoji img-unselectable"/>
 				</a>
 				<a href="/">
-					<img src={emoji_to_svg('🏠')} alt="🏠" class="emoji img-unselectable"/>
+					<img src={emoji_to_svg('🏠')} alt="🏠" title="Home" class="emoji img-unselectable"/>
 				</a>
 			</div>
 		</div>
@@ -244,7 +246,7 @@
 	.map
 	{
 		gap: 0.5em;
-		filter: drop-shadow(0 0em 0.6em #00008010);
+		filter: drop-shadow(0 0em 0.6em #00008025);
 	}
 
 	.map .emoji
