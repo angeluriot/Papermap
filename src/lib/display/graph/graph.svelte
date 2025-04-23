@@ -6,13 +6,14 @@
 	import { get_stats } from './utils';
 	import { constants as C } from '$lib/utils';
 
-	let { map, width, height, point_selected = $bindable(), group_selected = $bindable(), journal_info_open = $bindable(), details_element }: {
+	let { map, width, height, point_selected = $bindable(), group_selected = $bindable(), journal_info_open = $bindable(), input_selected = $bindable(), details_element }: {
 		map: Map,
 		width: number,
 		height: number,
 		point_selected: { get_point: () => GraphPoint, keep: boolean } | null,
 		group_selected: { i: number, ids: string[], keep: boolean } | null,
 		journal_info_open: boolean,
+		input_selected: boolean,
 		details_element: HTMLDivElement | null,
 	} = $props();
 
@@ -38,7 +39,10 @@
 			group_selected = null;
 
 		if (clicked)
+		{
 			journal_info_open = false;
+			input_selected = false;
+		}
 
 		event.stopPropagation();
 	}

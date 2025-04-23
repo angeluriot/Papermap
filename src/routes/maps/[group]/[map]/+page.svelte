@@ -8,6 +8,7 @@
 	import Overview from '$lib/display/overview.svelte';
 	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
 	import Buttons from '$lib/display/buttons/buttons.svelte';
+	import Home from '$lib/svgs/home.svg';
 
 	const { data }: PageProps = $props();
 
@@ -23,6 +24,7 @@
 	let point_selected: { get_point: () => GraphPoint, keep: boolean } | null = $state(null);
 	let group_selected: { i: number, ids: string[], keep: boolean } | null = $state(null);
 	let journal_info_open = $state(false);
+	let input_selected = $state(false);
 	let details_element: HTMLDivElement | null = $state(null);
 
 	function deselect_point()
@@ -101,16 +103,23 @@
 			<Graph
 				{map} width={width} height={height}
 				bind:point_selected={point_selected} bind:group_selected={group_selected}
-				bind:journal_info_open={journal_info_open} details_element={details_element}
+				bind:journal_info_open={journal_info_open} bind:input_selected={input_selected}
+				details_element={details_element}
 			/>
 		{/if}
 	</div>
-	<div class="top flex flex-row justify-start items-start flex-nowrap">
-		<Title {map} maps={data.maps}/>
+	<div class="top flex flex-row justify-start items-start flex-nowrap relative">
+		<div class="title-container flex-center-row flex-nowrap relative" style="{input_selected ? 'z-index: 100000;' : ''}">
+			<a href={'/'}>
+				<img src={Home} alt="Home" class="home relative img-unselectable">
+			</a>
+			<Title {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
+		</div>
 		<Overview
 			{map} bind:group_selected={group_selected}
 			bind:point_selected={point_selected}
 			bind:journal_info_open={journal_info_open}
+			bind:input_selected={input_selected}
 		/>
 	</div>
 	<div
@@ -136,11 +145,34 @@
 	.top
 	{
 		font-size: clamp(12px, calc(calc(0.17vw + 5.5px) * 2), 18px);
-		--margin: 1.5em;
-		--x-pad: 1.6em;
-		--y-pad: 1em;
-		margin: var(--margin);
-		gap: var(--margin);
+		margin: 1.5em;
+		gap: 1.5em;
+	}
+
+	.title-container
+	{
+		gap: 0.65em;
+		filter: drop-shadow(0em 0.1em 0.75em #00008036);
+	}
+
+	.home
+	{
+		min-width: 3.15em;
+		min-height: 3.15em;
+		width: 3.15em;
+		height: 3.15em;
+		transition: transform 0.2s ease-in-out;
+	}
+
+	.home:hover
+	{
+		transform: scale(1.06);
+	}
+
+	.home:active
+	{
+		transition: none;
+		transform: scale(1);
 	}
 
 	.details
@@ -165,7 +197,8 @@
 	{
 		.top
 		{
-			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: end;
 		}
 	}
 </style>

@@ -168,7 +168,7 @@
 	span
 	{
 		font-family: Satoshi-Variable;
-		font-weight: 550;
+		font-weight: 500;
 		line-height: 1.5em;
 		letter-spacing: 0.005em;
 		text-overflow: ellipsis;

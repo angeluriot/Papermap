@@ -4,11 +4,12 @@
 	import { get_overview_by_color } from './overview';
 	import { constants as C } from '$lib/utils';
 
-	let { map, group_selected = $bindable(), point_selected = $bindable(), journal_info_open = $bindable() }: {
+	let { map, group_selected = $bindable(), point_selected = $bindable(), journal_info_open = $bindable(), input_selected = $bindable() }: {
 		map: Map,
 		group_selected: { i: number, ids: string[], keep: boolean } | null,
 		point_selected: { get_point: () => GraphPoint, keep: boolean } | null,
 		journal_info_open: boolean,
+		input_selected: boolean,
 	} = $props();
 
 	const overview = get_overview_by_color(map);
@@ -27,6 +28,9 @@
 			point_selected = null;
 		}
 
+		if (clicked)
+			input_selected = false;
+
 		event.stopPropagation();
 	}
 
@@ -39,7 +43,7 @@
 
 <svelte:window onclick={() => deselect_group(true)}/>
 
-<div class="overview-container text-nowrap relative flex-center-col flex-nowrap">
+<div class="overview-container text-nowrap relative flex-center-col flex-nowrap z-90">
 	<div class="bar-container relative w-full">
 		<div class="bar absolute w-full rounded-full overflow-hidden flex flex-row flex-nowrap justify-start items-center">
 			{#each overview as data, i}
@@ -97,8 +101,18 @@
 	{
 		min-width: 12em;
 		width: 15em;
-		margin-top: 0.4em;
+		max-width: calc(100vw - 3em);
+		margin-top: 0.45em;
 		gap: 0.35em;
+	}
+
+	@media screen and (max-width: 600px)
+	{
+		.overview-container
+		{
+			min-width: 0em;
+			margin-top: 0.1em;
+		}
 	}
 
 	.bar-container

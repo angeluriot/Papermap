@@ -81,7 +81,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="relative edit-button-container">
+	<div class="relative edit-button-container z-100">
 		<img src={Edit} alt="Edit" class="button relative edit-button rounded-full img-unselectable">
 		<Info title="Edit Mode" text="Add, remove or edit papers" width={15} distance={3.2} y_shift={-0.5} />
 	</div>
