@@ -59,7 +59,7 @@ export async function create_images(group: string, map: Map): Promise<void>
 			((title as any)?.margin ?? 0) + ((title as any)?.padding_y ?? 0) + (title.height / 2) - stats.scale * 12
 		);
 
-		const overview = get_svg_overview_by_color(map, stats, overview_y, type === 'thumbnail' ? 1.5 : 1);
+		const overview = get_svg_overview_by_color(map, stats, overview_y, type, type === 'thumbnail' ? 1.5 : 1);
 
 		const svg = ejs.render(template, {
 			template_dir: join(C.LIB_DIR, 'server', 'templates'),

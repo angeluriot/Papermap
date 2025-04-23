@@ -1,11 +1,23 @@
 import { COLORS } from '$lib/colors';
 import type { Map } from '$lib/types/map';
 import type { GraphStats } from './graph/types';
+import { cut_in_half } from './utils';
 
 
-export function get_overview_by_color(map: Map): { color: string, width: number, ids: string[], label: { text: string, opacity: number } }[]
+export function get_overview_by_color(map: Map)
 {
-	let data: { [color: string]: { color: string, width: number, ids: string[], label: { text: string, opacity: number } } } = {};
+	let data: {
+		[color: string]: {
+			x: number,
+			color: string,
+			width: number,
+			ids: string[],
+			label: {
+				text: string[],
+				type: 'left' | 'right' | null,
+			},
+		},
+	} = {};
 
 	for (const [answer_id, score] of Object.entries(map.overview))
 	{
@@ -15,12 +27,13 @@ export function get_overview_by_color(map: Map): { color: string, width: number,
 		if (!data[color])
 		{
 			data[color] = {
+				x: 0,
 				color: COLORS[color].default,
 				width: 0,
 				ids: [],
 				label: {
-					text: answer.text,
-					opacity: 0,
+					text: answer.text.length > 18 ? cut_in_half(answer.text) : [answer.text],
+					type: null,
 				},
 			};
 		}
@@ -30,36 +43,71 @@ export function get_overview_by_color(map: Map): { color: string, width: number,
 	}
 
 	let result = Object.values(data).sort((a, b) => Object.keys(map.conclusions).indexOf(a.ids[0]) - Object.keys(map.conclusions).indexOf(b.ids[0]));
+	let cursor = 0;
 
-	result[0].label.opacity = result[0].width == 0 ? 0.5 : 1;
-	result[result.length - 1].label.opacity = result[result.length - 1].width == 0 ? 0.5 : 1;
+	for (let item of result)
+	{
+		item.x = cursor;
+		cursor += item.width;
+	}
+
+	let first = 0;
+
+	while (result[first].width < 0.0001)
+		first++;
+
+	let last = result.length - 1;
+
+	while (result[last].width < 0.0001)
+		last--;
+
+	result[first].label.type = 'left';
+	result[last].label.type = 'right';
 	result[result.length - 1].width = 100;
 
 	return result;
 }
 
 
-export function get_svg_overview_by_color(map: Map, stats: GraphStats, y: number, scale: number)
+export function get_svg_overview_by_color(map: Map, stats: GraphStats, y: number, type: string, scale: number)
 {
-	let overview: any[] = get_overview_by_color(map);
+	let overview = get_overview_by_color(map);
 	const width = stats.scale * 150 * scale;
 	const height = stats.scale * 8 * scale;
+	const font_size = stats.scale * 11.5 * scale;
+	const line_height = font_size * 1.15;
 	let cursor = 0;
+	let two_lines = false;
+	let final_y = y;
 
 	for (let item of overview)
 	{
 		item.x = cursor;
 		item.width = (item.width / 100) * width;
+
+		if (item.label.type !== null && item.label.text.length > 1)
+			two_lines = true;
+
 		cursor += item.width;
+	}
+
+	if (two_lines)
+	{
+		if (type === 'image')
+			final_y -= stats.scale * 8;
+
+		else if (type === 'preview')
+			final_y -= stats.scale * 3;
 	}
 
 	return {
 		scale,
 		groups: overview,
-		font_size: stats.scale * 12 * scale,
+		font_size,
+		line_height,
 		text_gap: stats.scale * 5 * scale,
 		width,
 		height,
-		y,
+		y: final_y,
 	};
 }

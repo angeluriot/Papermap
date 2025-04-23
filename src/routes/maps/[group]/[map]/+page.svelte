@@ -105,7 +105,7 @@
 			/>
 		{/if}
 	</div>
-	<div class="top flex flex-row justify-start items-center flex-nowrap">
+	<div class="top flex flex-row justify-start items-start flex-nowrap">
 		<Title {map} maps={data.maps}/>
 		<Overview
 			{map} bind:group_selected={group_selected}

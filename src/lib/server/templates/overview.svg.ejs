@@ -20,33 +20,43 @@
 		clip-path="url(#overview-clip)"
 	/>
 <% }); %>
-<text
-	x="0"
-	y="<%= overview.height + overview.text_gap %>"
-	fill="<%= overview.groups[0].color %>"
-	stroke="<%= overview.groups[0].color %>"
-	font-family="<%= font.name %>"
-	font-size="<%= overview.font_size %>"
-	stroke-width="<%= overview_text_stroke %>"
-	opacity="<%= overview.groups[0].opacity %>"
-	text-anchor="start"
-	alignment-baseline="hanging"
-	dominant-baseline="hanging"
->
-	<%= overview.groups[0].label.text %>
-</text>
-<text
-	x="<%= overview.width %>"
-	y="<%= overview.height + overview.text_gap %>"
-	fill="<%= overview.groups[overview.groups.length - 1].color %>"
-	stroke="<%= overview.groups[overview.groups.length - 1].color %>"
-	font-family="<%= font.name %>"
-	font-size="<%= overview.font_size %>"
-	stroke-width="<%= overview_text_stroke %>"
-	opacity="<%= overview.groups[overview.groups.length - 1].opacity %>"
-	text-anchor="end"
-	alignment-baseline="hanging"
-	dominant-baseline="hanging"
->
-	<%= overview.groups[overview.groups.length - 1].label.text %>
-</text>
+<% overview.groups.forEach(group => { %>
+	<% if (group.label.type == 'left') { %>
+		<% group.label.text.forEach((line, i) => { %>
+			<text
+				x="0"
+				y="<%= overview.height + overview.text_gap + i * overview.line_height %>"
+				fill="<%= group.color %>"
+				stroke="<%= group.color %>"
+				font-family="<%= font.name %>"
+				font-size="<%= overview.font_size %>"
+				stroke-width="<%= overview_text_stroke %>"
+				text-anchor="start"
+				alignment-baseline="hanging"
+				dominant-baseline="hanging"
+			>
+				<%= line %>
+			</text>
+		<% }); %>
+	<% } %>
+<% }); %>
+<% overview.groups.forEach(group => { %>
+	<% if (group.label.type == 'right') { %>
+		<% group.label.text.forEach((line, i) => { %>
+			<text
+				x="<%= overview.width %>"
+				y="<%= overview.height + overview.text_gap + i * overview.line_height %>"
+				fill="<%= group.color %>"
+				stroke="<%= group.color %>"
+				font-family="<%= font.name %>"
+				font-size="<%= overview.font_size %>"
+				stroke-width="<%= overview_text_stroke %>"
+				text-anchor="end"
+				alignment-baseline="hanging"
+				dominant-baseline="hanging"
+			>
+				<%= line %>
+			</text>
+		<% }); %>
+	<% } %>
+<% }); %>

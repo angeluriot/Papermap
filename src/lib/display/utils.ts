@@ -40,3 +40,17 @@ export function float_to_text(number: number): string
 
 	return result;
 }
+
+
+export function cut_in_half(text: string): string[]
+{
+	let cuts: { result: string[], diff: number }[] = [];
+
+	for (let i = 0; i < text.length; i++)
+		if (text[i] === ' ')
+			cuts.push({ result: [text.slice(0, i), text.slice(i + 1)], diff: Math.abs(i - (text.length - i)) });
+
+	cuts.sort((a, b) => a.diff - b.diff);
+
+	return cuts[0].result;
+}

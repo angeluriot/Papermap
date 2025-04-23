@@ -53,7 +53,7 @@
 		<div class="bar-hitbox absolute w-full overflow-hidden flex flex-row flex-nowrap justify-start items-center" style="opacity: 0;">
 			{#each overview as data, i}
 				<div
-					class="h-full cursor-pointer" title={data.label.text}
+					class="h-full cursor-pointer" title={data.label.text.join(' ')}
 					style="background-color: {data.color}; width: {data.width}%; min-width: {data.width}%; opacity: {group_selected === null || group_selected.i == i ? 1 : 0.5};"
 					onclick={(event) => select_group(event, i, data.ids, true)}
 					onmouseenter={(event) => select_group(event, i, data.ids, false)}
@@ -64,14 +64,28 @@
 			{/each}
 		</div>
 	</div>
-	<div class="w-full flex flex-row flex-nowrap justify-between items-center">
+	<div class="labels w-full flex flex-row flex-nowrap justify-between items-start">
 		{#each overview as data, i}
-			{#if data.label.opacity !== 0}
+			{#if data.label.type !== null}
 				<span
-					class="unselectable"
-					style="color: {data.color}; opacity: {group_selected === null || group_selected.i == i ? data.label.opacity : data.label.opacity * 0.5};"
+					class="unselectable text-{data.label.type}"
+					style="color: {data.color}; opacity: {group_selected === null || group_selected.i == i ? 1 : 0};"
 				>
-					{data.label.text}
+					{data.label.text.join('\n')}
+				</span>
+			{/if}
+		{/each}
+	</div>
+	<div class="other-labels w-full absolute">
+		{#each overview as data, i}
+			{#if data.label.type === null}
+				<span
+					class="absolute unselectable"
+					style="left: {data.x + data.width / 2}%; color: {data.color}; opacity: {group_selected !== null && group_selected.i == i ? 1 : 0};"
+				>
+					{#each data.label.text as list}
+						{list}<br/>
+					{/each}
 				</span>
 			{/if}
 		{/each}
@@ -81,9 +95,10 @@
 <style>
 	.overview-container
 	{
+		min-width: 12em;
 		width: 15em;
-		margin-top: 0.3em;
-		gap: 0.2em;
+		margin-top: 0.4em;
+		gap: 0.35em;
 	}
 
 	.bar-container
@@ -104,10 +119,35 @@
 		height: calc(0.8em + 2 * var(--hitbox));
 	}
 
+	.labels
+	{
+		gap: 1em;
+		white-space: pre-line;
+	}
+
 	span
 	{
+		font-size: 0.95em;
+		text-wrap: nowrap;
 		font-family: Satoshi-Variable;
 		font-weight: 700;
 		text-shadow: 0em 0.1em 0.75em #00008036;
+		line-height: 1.2em;
+	}
+
+	.text-left
+	{
+		text-align: left;
+	}
+
+	.text-right
+	{
+		text-align: right;
+	}
+
+	.other-labels span
+	{
+		transform: translateX(-50%);
+		text-align: center;
 	}
 </style>
