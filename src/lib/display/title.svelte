@@ -141,7 +141,14 @@
 	{
 		input
 		{
+			min-width: calc(100vw - calc(2 * 1.5em + 3.15em + 0.65em));
 			max-width: calc(100vw - calc(2 * 1.5em + 3.15em + 0.65em));
+		}
+
+		.input-container:hover input
+		{
+			min-width: calc(100vw - calc(2 * 1.5em));
+			max-width: calc(100vw - calc(2 * 1.5em));
 		}
 	}
 </style>

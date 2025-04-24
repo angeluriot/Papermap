@@ -109,11 +109,13 @@
 		{/if}
 	</div>
 	<div class="top flex flex-row justify-start items-start flex-nowrap relative">
-		<div class="title-container flex-center-row flex-nowrap relative" style="{input_selected ? 'z-index: 100000;' : ''}">
+		<div class="title-container flex flex-row-reverse justify-center items-center flex-nowrap relative" style="{input_selected ? 'z-index: 100000;' : ''}">
+			<div class="title-component relative">
+				<Title {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
+			</div>
 			<a href={'/'}>
-				<img src={Home} alt="Home" class="home relative img-unselectable">
+				<img src={Home} alt="Home" title="Home" class="home relative img-unselectable">
 			</a>
-			<Title {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
 		</div>
 		<Overview
 			{map} bind:group_selected={group_selected}
@@ -199,6 +201,14 @@
 		{
 			flex-direction: column;
 			align-items: end;
+		}
+
+		.title-component:hover + a .home
+		{
+			min-width: 0em;
+			min-height: 0em;
+			width: 0em;
+			height: 0em;
 		}
 	}
 </style>
