@@ -12,9 +12,20 @@
 	});
 	let cooldown = $state(false);
 
-	export function show()
+	export function show(title?: string)
 	{
 		shown = true;
+
+		if (title !== undefined && title.trim().length > 0)
+		{
+			data = {
+				title: title.trim(),
+				description: '',
+				papers: '',
+				comment: '',
+				discord_username: ''
+			};
+		}
 	}
 
 	export function hide()

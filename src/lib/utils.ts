@@ -32,3 +32,29 @@ export function ratio(value: number, min: number, max: number, cut: boolean = tr
 
 	return cut ? clamp(result, 0, 1) : result;
 }
+
+
+export function get_random_elements<T>(array: T[], nb: number): T[]
+{
+	let indices = new Set<number>();
+	let result: T[] = [];
+
+	while (result.length < nb && result.length < array.length)
+	{
+		const i = Math.floor(Math.random() * array.length);
+
+		if (!indices.has(i))
+		{
+			indices.add(i);
+			result.push(array[i]);
+		}
+	}
+
+	return result;
+}
+
+
+export function in_browser(): boolean
+{
+	return typeof window !== undefined;
+}

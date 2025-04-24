@@ -16,16 +16,19 @@
 	const preview = `${C.BASE_URL}/images/preview.png`;
 	let width = $state(0);
 	let height = $state(0);
-	let placeholder: string | undefined = $state(undefined);
+	let placeholder: string = $state('');
 	let search = $state('');
 	let search_element: Search | undefined = $state(undefined);
 	let popup: Popup | undefined = $state(undefined);
 
 	onMount(() =>
 	{
-		if ((new URLSearchParams(window.location.search)).get('request') !== null)
+		const params = new URLSearchParams(window.location.search);
+
+		if (params.get('request') !== null)
 		{
-			popup?.show();
+			const title = params.get('title') ?? '';
+			popup?.show(title);
 			window.history.replaceState({}, '', window.location.pathname);
 		}
 	});
@@ -92,10 +95,10 @@
 				style="{search_element?.shown() ? 'border-radius: 1.6em 1.6em 0em 0em;' : 'border-radius: 1.6em;'}"
 			>
 			<div class="search absolute w-full bg-white z-30" style="display: {search_element?.shown() ? 'block' : 'none'};">
-				<Search maps={data.maps} {search} bind:this={search_element}/>
+				<Search maps={data.maps} {search} new_map={(title) => popup?.show(title)} bind:this={search_element}/>
 			</div>
 		</div>
-		<div class="buttons flex-center-row" style="{search_element?.shown() ? '' : 'position: relative; z-index: 40;'}">
+		<div class="buttons flex-center-row flex-wrap" style="{search_element?.shown() ? '' : 'position: relative; z-index: 40;'}">
 			<a href="/maps" class="rounded-full">
 				<button class="flex-center-row rounded-full unselectable">
 					<img src={emoji_to_svg('📖')} alt="📖"/>
@@ -111,7 +114,7 @@
 		</div>
 	</div>
 	<div class="links absolute z-20 right-0 bottom-0 flex-center-row flex-wrap img-unselectable">
-		<span onclick={popup?.show} onkeydown={null} role="button" tabindex={0}>
+		<span onclick={() => popup?.show()} onkeydown={null} role="button" tabindex={0}>
 			New map
 		</span>
 		<a href="https://github.com/angeluriot/Papermap/wiki/How-to-contribute" target="_blank">
@@ -167,14 +170,19 @@
 		max-width: calc(100vw - 4em);
 		padding: 0.85em 1.45em;
 		font-family: Satoshi-Variable;
-		font-weight: 550;
+		font-weight: 525;
 		line-height: 1.5em;
 		letter-spacing: 0.005em;
 	}
 
+	input::placeholder
+	{
+		color: #9b9aa7;
+	}
+
 	.search
 	{
-		padding: 0em 0em 0.7em 0em;
+		padding: 0em 0em 0.4em 0em;
 		left: 0em;
 		top: 3em;
 		border-radius: 0em 0em 1.6em 1.6em;
@@ -184,8 +192,10 @@
 	.buttons
 	{
 		font-size: 1.02em;
-		gap: 1.7em;
+		gap: 1em 1.7em;
 		margin-bottom: 13em;
+		margin-left: 1em;
+		margin-right: 1em;
 	}
 
 	@media screen and (max-height: 1000px) { .buttons { margin-bottom: 11em; } }

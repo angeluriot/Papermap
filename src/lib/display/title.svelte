@@ -58,6 +58,19 @@
 		else
 			search_element?.deselect();
 	});
+
+	function to_new_map(title: string)
+	{
+		const clean_title = encodeURIComponent(title.trim());
+
+		if (clean_title.length > 0)
+		{
+			window.location.href = `/?request&title=${clean_title}`;
+			return;
+		}
+
+		window.location.href = '/?request';
+	}
 </script>
 
 <svelte:window onclick={deselect_input}/>
@@ -75,7 +88,7 @@
 		style="width: {input_width}; {search_element?.shown() ? 'border-radius: 1.575em 1.575em 0em 0em;' : 'border-radius: 1.575em;'}"
 	/>
 	<div class="search absolute w-full bg-white" style="display: {search_element?.shown() ? 'block' : 'none'};">
-		<Search maps={maps} {search} bind:this={search_element}/>
+		<Search maps={maps} {search} new_map={to_new_map} bind:this={search_element}/>
 	</div>
 </div>
 
@@ -97,7 +110,8 @@
 
 	.search
 	{
-		padding: 0em 0em 0.7em 0em;
+		font-size: 0.95em;
+		padding: 0em 0em 0.4em 0em;
 		left: 0em;
 		top: 3em;
 		border-radius: 0em 0em 1.6em 1.6em;
@@ -120,7 +134,7 @@
 
 	input:focus::placeholder
 	{
-		color: #adacb9;
+		color: #b4b3bf;
 	}
 
 	@media screen and (max-width: 600px)
