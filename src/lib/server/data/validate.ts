@@ -100,6 +100,7 @@ const map_schema = z.object({
 	}).strict(),
 	no_sample_size: z.boolean(),
 	papers: z.array(paper_schema),
+	fake: z.boolean(),
 }).strict();
 
 

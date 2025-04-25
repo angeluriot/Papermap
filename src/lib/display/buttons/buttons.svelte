@@ -12,7 +12,7 @@
 	const { map, hash }: { map: Map, hash: string } = $props();
 
 	const file_name = map.question.short.toLowerCase().replace(/\s+/g, '-').replace('?', '').replace('.', '');
-	const file_url = `/maps/${map.group.id}/${map.id}/`;
+	const file_url = `/maps/${map.id}/`;
 	let copied = $state(false);
 	let timeouts: NodeJS.Timeout[] = $state([]);
 

@@ -1,4 +1,4 @@
-import { import_maps } from '$lib/server/data/map';
+import { map_titles } from '$lib/server/data/map';
 import type { PageServerLoad } from './$types';
 
 
@@ -10,6 +10,6 @@ export const csr = true;
 export const load: PageServerLoad = async () =>
 {
 	return {
-		maps: await import_maps()
+		maps: Object.values(map_titles),
 	};
 };

@@ -9,10 +9,10 @@ import { generate_group, generate_map_title, generate_paper } from './fake';
 import { get_hash } from '../utils';
 
 
-export const map_files = import.meta.glob('/src/lib/server/jsons/maps/**/*.json');
+const map_files = import.meta.glob('/src/lib/server/jsons/maps/**/*.json');
 
 
-export async function import_group(group: string): Promise<Group>
+async function import_group(group: string): Promise<Group>
 {
 	const file_path = `/src/lib/server/jsons/maps/${group}/_init_.json`;
 
@@ -25,14 +25,14 @@ export async function import_group(group: string): Promise<Group>
 }
 
 
-export async function import_datamap(group: string, id: string): Promise<DataMap>
+async function _import_datamap(group: string, id: string): Promise<DataMap>
 {
 	const file_path = `/src/lib/server/jsons/maps/${group}/${id}.json`;
 
 	if (id.startsWith('_') || !map_files[file_path])
-		throw new NotFoundError(`Map not found: ${group}/${id}`);
+		throw new NotFoundError(`Map not found: ${id}`);
 
-	const map = structuredClone((await map_files[file_path]() as any).default);
+	const map = { ...structuredClone((await map_files[file_path]() as any).default), fake: false };
 
 	try
 	{
@@ -41,17 +41,67 @@ export async function import_datamap(group: string, id: string): Promise<DataMap
 
 	catch (error: any)
 	{
-		throw new InvalidInternalDataError(`Invalid map ${group}/${id}: ${error?.message}`);
+		throw new InvalidInternalDataError(`Invalid map ${id}: ${error?.message}`);
 	}
 
 	return map;
 }
 
 
-export async function import_map(group: string, id: string): Promise<{ map: Map, journals: { [id: string]: Journal } }>
+async function import_map_titles(): Promise<MapTitle[]>
 {
-	const group_data = await import_group(group);
-	const data = await import_datamap(group, id);
+	let maps: MapTitle[] = [];
+
+	for (const path of Object.keys(map_files))
+	{
+		const match = path.match('/src/lib/server/jsons/maps/(.+)/(.+).json');
+
+		if (!match || match[2].startsWith('_'))
+			continue;
+
+		const group = match[1];
+		const map = match[2];
+		const group_data = await import_group(group);
+		const map_data = await _import_datamap(group, map);
+
+		maps.push({
+			group: group_data,
+			id: map,
+			emoji: map_data.emoji,
+			question: map_data.question,
+			description: map_data.description,
+			tags: map_data.tags,
+			url: `/maps/${map}`,
+			hash: get_hash(map_data),
+			fake: false,
+		});
+	}
+
+	let groups = [];
+
+	for (let i = 0; i < 10; i++)
+		groups.push(generate_group());
+
+	for (let i = 0; i < 50; i++)
+		maps.push(generate_map_title(groups[Math.floor(Math.random() * groups.length)]));
+
+	return maps;
+}
+
+
+export const map_titles = Object.fromEntries((await import_map_titles()).map(map => [map.id, map]));
+
+
+export async function import_datamap(id: string): Promise<DataMap>
+{
+	return await _import_datamap(map_titles[id].group.id, id);
+}
+
+
+export async function import_map(id: string): Promise<{ map: Map, journals: { [id: string]: Journal } }>
+{
+	const group_data = map_titles[id].group;
+	const data = await import_datamap(id);
 	const all_journals = await import_journals();
 
 	for (let i = 0; i < 50; i++)
@@ -70,44 +120,4 @@ export async function import_map(group: string, id: string): Promise<{ map: Map,
 	map.overview = score_answers(map);
 
 	return { map, journals };
-}
-
-
-export async function import_maps(): Promise<MapTitle[]>
-{
-	let maps: MapTitle[] = [];
-
-	for (const path of Object.keys(map_files))
-	{
-		const match = path.match('/src/lib/server/jsons/maps/(.+)/(.+).json');
-
-		if (!match || match[2].startsWith('_'))
-			continue;
-
-		const group = match[1];
-		const map = match[2];
-		const group_data = await import_group(group);
-		const map_data = (await import_datamap(group, map));
-
-		maps.push({
-			group: group_data,
-			id: map,
-			emoji: map_data.emoji,
-			question: map_data.question,
-			description: map_data.description,
-			tags: map_data.tags,
-			url: `/maps/${group}/${map}`,
-			hash: get_hash(map_data),
-		});
-	}
-
-	let groups = [];
-
-	for (let i = 0; i < 10; i++)
-		groups.push(generate_group());
-
-	for (let i = 0; i < 50; i++)
-		maps.push(generate_map_title(groups[Math.floor(Math.random() * groups.length)]));
-
-	return maps;
 }

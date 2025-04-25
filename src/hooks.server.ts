@@ -40,7 +40,7 @@ export const handle: Handle = async ({ event, resolve }) =>
 
 		if (event.route.id.trim().startsWith('/journals'))
 			limiters.push(journals_limiter);
-		else if (event.route.id.trim().startsWith('/maps/[group]/[map]/edit') || event.route.id.trim().startsWith('/request'))
+		else if (event.route.id.trim().startsWith('/maps/[map]/edit') || event.route.id.trim().startsWith('/request'))
 			limiters.push(github_limiter, github_long_limiter);
 		else
 			return resolve(event);

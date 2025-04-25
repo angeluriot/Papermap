@@ -25,7 +25,7 @@ function remove_uppercase(text: string): string
 }
 
 
-export async function create_csv(group: string, map: Map, journals: { [id: string]: Journal }): Promise<void>
+export async function create_csv(map: Map, journals: { [id: string]: Journal }): Promise<void>
 {
 	const papers = (
 		map.papers
@@ -58,5 +58,5 @@ export async function create_csv(group: string, map: Map, journals: { [id: strin
 	for (const paper of papers)
 		csv += Object.values(paper).map((value) => `"${value.toString().replace(/"/g, '""')}"`).join(',') + '\n';
 
-	await fs.writeFile(join(C.TMP_DIR, group, map.id, 'data.csv'), csv);
+	await fs.writeFile(join(C.TMP_DIR, map.id, 'data.csv'), csv);
 }

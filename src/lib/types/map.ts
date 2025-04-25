@@ -42,6 +42,7 @@ interface BaseMap
 		any: boolean,
 	};
 	no_sample_size: boolean;
+	fake: boolean;
 }
 
 
@@ -70,11 +71,7 @@ export interface Map extends BaseMap
 
 export interface MapTitle
 {
-	group: {
-		id: string,
-		emoji: string,
-		name: string,
-	};
+	group: Group;
 	id: string;
 	emoji: string;
 	question: {
@@ -85,4 +82,5 @@ export interface MapTitle
 	tags: string[];
 	url: string;
 	hash: string;
+	fake: boolean;
 }

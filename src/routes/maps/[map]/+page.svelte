@@ -14,7 +14,7 @@
 
 	const map = data.map;
 	const journals = data.journals;
-	const route = `maps/${map.group.id}/${map.id}`;
+	const route = `maps/${map.id}`;
 	const page_url = `${C.BASE_URL}/${route}`;
 	const image_url = `${page_url}/preview.jpg?v=${data.hash}`;
 	const tags = C.DEFAULT_TAGS.concat(map.tags);

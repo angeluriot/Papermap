@@ -13,9 +13,9 @@ import type { Map } from '$lib/types/map';
 import { get_svg_overview_by_color } from '$lib/display/overview';
 
 
-export async function create_images(group: string, map: Map): Promise<void>
+export async function create_images(map: Map): Promise<void>
 {
-	const dir = join(C.TMP_DIR, group, map.id);
+	const dir = join(C.TMP_DIR, map.id);
 	await fs.mkdir(dir, { recursive: true });
 
 	const svg_scales = {
@@ -80,7 +80,7 @@ export async function create_images(group: string, map: Map): Promise<void>
 			y_title,
 			background_points,
 			points,
-			background_color: type === 'thumbnail' ? '#fdfdff' : bg.BACKGROUND_COLOR,
+			background_color: type === 'thumbnail' ? 'white' : bg.BACKGROUND_COLOR,
 			points_color: bg.POINTS_COLOR,
 			points_opacity: bg.POINTS_OPACITY,
 			axis_color: bg.AXIS_COLOR,

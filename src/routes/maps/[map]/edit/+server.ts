@@ -8,7 +8,7 @@ import { edit_map } from './edit';
 import type { Params } from '../types';
 import type { PostRequest } from './types';
 import { GitHubAPIError, InvalidDataError, NotFoundError } from '$lib/errors';
-import { import_datamap } from '$lib/server/data/map';
+import { import_datamap, map_titles } from '$lib/server/data/map';
 import { validate_params } from '../validate';
 import { validate_request } from './validate';
 
@@ -20,21 +20,22 @@ export async function POST({ params, request }: { params: Params, request: Reque
 		validate_params(params);
 
 		const data = await request.json() as PostRequest;
-		const map = await import_datamap(params.group, params.map);
+		const group = map_titles[params.map].group.id;
+		const map = await import_datamap(params.map);
 
 		validate_request(data, map.papers.length);
 
-		const edited_map = await edit_map(params.group, params.map, data.edits);
+		const edited_map = await edit_map(map, data.edits);
 
 		if (C.DEV)
 		{
-			await fs.writeFile(join(C.LIB_DIR, `server/jsons/maps/${params.group}/${params.map}.json`), JSON.stringify(edited_map, null, '\t') + '\n');
+			await fs.writeFile(join(C.LIB_DIR, `server/jsons/maps/${group}/${params.map}.json`), JSON.stringify(edited_map, null, '\t') + '\n');
 			return json({ pr_url: '' });
 		}
 
 		const pr_url = await create_pull_request({
-			branch_name: `edit/${params.group.replace('_', '-')}/${params.map.replace('_', '-')}`,
-			file_path: `src/lib/server/jsons/maps/${params.group}/${params.map}.json`,
+			branch_name: `edit/${params.map.replace('_', '-')}`,
+			file_path: `src/lib/server/jsons/maps/${group}/${params.map}.json`,
 			new_content: JSON.stringify(edited_map, null, '\t') + '\n',
 			commit_message: 'Test commit message',
 			title: 'Test request',

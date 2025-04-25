@@ -24,7 +24,7 @@ export async function GET({ params }: { params: Params }): Promise<Response>
 
 		const file_ext = params.file.split('.')[1];
 		const file_type = EXT_TO_TYPE[file_ext];
-		const file_path = join(C.TMP_DIR, params.group, params.map, params.file);
+		const file_path = join(C.TMP_DIR, params.map, params.file);
 
 		if (await fs.access(file_path).then(() => false).catch(() => true))
 			throw new NotFoundError('File not found');

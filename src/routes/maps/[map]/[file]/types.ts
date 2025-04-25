@@ -10,7 +10,6 @@ export enum FileType
 
 export interface Params
 {
-	group: string;
 	map: string;
 	file: FileType;
 }

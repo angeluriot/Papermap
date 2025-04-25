@@ -1,6 +1,6 @@
 import type { Journal } from '$lib/types/journal';
 import { JournalStatus, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
-import { type DataMap } from '$lib/types/map';
+import { type DataMap, type Group, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/display/emojis';
 
@@ -100,7 +100,7 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 }
 
 
-export function generate_group()
+export function generate_group(): Group
 {
 	const group_name = faker.lorem.words({ min: 1, max: 3 });
 
@@ -112,7 +112,7 @@ export function generate_group()
 }
 
 
-export function generate_map_title(group: { id: string, emoji: string, name: string })
+export function generate_map_title(group: { id: string, emoji: string, name: string }): MapTitle
 {
 	const short = faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1);
 	const id = short.toLowerCase().replace(/ /g, '_')
@@ -127,7 +127,8 @@ export function generate_map_title(group: { id: string, emoji: string, name: str
 		},
 		description: faker.lorem.sentence({ min: 20, max: 30 }).slice(0, -1),
 		tags: faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1).split(' ').map(tag => tag.toLowerCase().replace(/[^a-z]/g, '')),
-		url: random_choice(['/maps/subject_1/other_subject', '/maps/subject_1/sexual_education_effectiveness', '/maps/subject_2/test']), //`/maps/${group.id}/${id}`,
+		url: random_choice(['/maps/other_subject', '/maps/sexual_education_effectiveness', '/maps/test']), //`/maps/${id}`,
 		hash: faker.string.uuid(),
+		fake: true,
 	}
 }

@@ -94,14 +94,11 @@
 		let res: Record<string, { map: MapTitle, score: number }> = {};
 
 		for (let i = 0; i < flex_res.length; i++)
-		{
-			const id = flex_res[i].group.id + flex_res[i].id;
-			res[id] = { map: flex_res[i], score: flex_res.length - i };
-		}
+			res[flex_res[i].id] = { map: flex_res[i], score: flex_res.length - i };
 
 		for (let i = 0; i < fuse_res.length; i++)
 		{
-			const id = fuse_res[i].group.id + fuse_res[i].id;
+			const id = fuse_res[i].id;
 
 			if (res[id] === undefined)
 				res[id] = { map: fuse_res[i], score: flex_res.length - i };
