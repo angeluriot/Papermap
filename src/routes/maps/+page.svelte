@@ -3,6 +3,9 @@
 	import { constants as C } from '$lib/utils';
 	import type { MapTitle } from '$lib/types/map';
 	import { emoji_to_svg } from '$lib/display/emojis';
+	import Background from '$lib/home/background.svelte';
+	import Home from '$lib/svgs/home.svg';
+	import Random from '$lib/svgs/random.svg';
 
 	const { data }: PageProps = $props();
 
@@ -51,7 +54,8 @@
 	});
 </script>
 
-<svelte:window bind:innerWidth={width} bind:innerHeight={height}/>
+<svelte:window bind:innerWidth={width}/>
+<svelte:body bind:clientHeight={height}/>
 
 <svelte:head>
 	<title>{title}</title>
@@ -81,19 +85,22 @@
 	<meta name="twitter:url" content={page_url}/>
 </svelte:head>
 
-<div class="page-container flex-center-col w-full bg-[#f3f4ff]">
-	<div class="list flex flex-col justify-start items-start">
-		<div class="header w-full flex flex-row justify-between items-center">
+<div class="page-container flex-center-col w-full overflow-hidden relative bg-[#f3f4ff]">
+	<div class="page-background absolute z-0">
+		<Background {width} {height}/>
+	</div>
+	<div class="list flex flex-col justify-start items-start relative">
+		<div class="header w-full flex flex-row justify-between items-start">
 			<div class="title flex-center-row unselectable">
 				<img src={emoji_to_svg('📖')} alt="📖" class="emoji"/>
 				<h1>All maps</h1>
 			</div>
 			<div class="links flex-center-row">
 				<a href="/maps/random">
-					<img src={emoji_to_svg('🎲')} alt="🎲" title="Random map" class="emoji img-unselectable"/>
+					<img src={Random} alt="Random map" title="Random map" class="img-unselectable"/>
 				</a>
 				<a href="/">
-					<img src={emoji_to_svg('🏠')} alt="🏠" title="Home" class="emoji img-unselectable"/>
+					<img src={Home} alt="Home" title="Home" class="img-unselectable"/>
 				</a>
 			</div>
 		</div>
@@ -105,7 +112,7 @@
 				</div>
 				<div class="maps flex flex-row justify-start items-start flex-wrap">
 					{#each group.maps as map}
-						<div class="map flex-center-col">
+						<div class="map flex-center-col" title={map.question.long}>
 							<a href={map.url}>
 								<img src="{map.url}/thumbnail.webp?v={map.hash}" alt={map.question.short} class="thumbnail img-unselectable"/>
 							</a>
@@ -132,14 +139,15 @@
 
 	.header
 	{
-		font-size: 1.75em;
+		font-size: 1.85em;
 		font-family: Satoshi-Variable;
 		font-weight: 550;
 		line-height: 1.25em;
 		text-wrap: nowrap;
 		color: #303037;
 		gap: 0.3em;
-		margin-bottom: -0.5em;
+		margin-top: 0.5em;
+		margin-bottom: -0.2em;
 	}
 
 	.title
@@ -149,24 +157,35 @@
 
 	.links
 	{
-		gap: 0.5em;
+		gap: 0.6em;
+		margin-top: -0.2em;
+		filter: drop-shadow(0em 0.1em 0.5em #00008036);
 	}
 
 	.links img
 	{
-		transition: opacity 0.2s ease-in-out;
+		width: 1.9em;
+		height: 1.9em;
+		transition: transform 0.2s ease-in-out;
 	}
 
 	.links img:hover
 	{
-		opacity: 0.75;
+		transform: scale(1.06);
+	}
+
+	.links img:active
+	{
+		transition: none;
+		transform: scale(1);
 	}
 
 	.list
 	{
-		gap: 4em;
+		gap: 5em;
 		max-width: 84.5em;
 		--thumbnail-width: 20em;
+		margin-bottom: 4em;
 	}
 
 	@media screen and (max-width: 1400px) { .list { max-width: 63em; } }
