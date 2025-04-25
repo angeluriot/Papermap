@@ -129,7 +129,11 @@
 	</g>
 	<g class="plot">
 		{#each points as point, i}
-			<g class="point" opacity={group_selected === null || group_selected.ids.includes(point.answer) ? 1 : 0.25}>
+			<g
+				class="point"
+				opacity={group_selected === null || group_selected.ids.includes(point.answer) ? 1 : 0.25}
+				style="{group_selected === null || group_selected.ids.includes(point.answer) ? '' : 'pointer-events: none;'}"
+			>
 				<g
 					onclick={(event) => select_point(event, i, true)}
 					onmouseenter={(event) => select_point(event, i, false)}
