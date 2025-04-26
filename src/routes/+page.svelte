@@ -12,7 +12,7 @@
 	const { data }: PageProps = $props();
 
 	const title = 'Papermap';
-	const description = 'Get an overview of scientific literature findings on a wide range of question.';
+	const description = 'Get an overview of scientific literature findings on a wide range of questions.';
 	const preview = `${C.BASE_URL}/images/preview.png`;
 	let width = $state(0);
 	let height = $state(0);

@@ -41,3 +41,11 @@ export interface Journal
 		alt?: number,
 	};
 }
+
+
+export interface JournalTitle
+{
+	id: string;
+	issns: string[];
+	titles: string[];
+}

@@ -9,6 +9,7 @@
 	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
 	import Buttons from '$lib/display/buttons/buttons.svelte';
 	import Home from '$lib/svgs/home.svg';
+	import type { JournalTitle } from '$lib/types/journal';
 
 	const { data }: PageProps = $props();
 
@@ -26,6 +27,8 @@
 	let journal_info_open = $state(false);
 	let input_selected = $state(false);
 	let details_element: HTMLDivElement | null = $state(null);
+	let edit_mode = $state(false);
+	let all_journals: JournalTitle[] = $state([]);
 
 	function deselect_point()
 	{
@@ -37,6 +40,36 @@
 			journal_info_open = false;
 			point_selected = null;
 		}
+	}
+
+	async function start_edit_mode()
+	{
+		if (edit_mode)
+			return;
+
+		edit_mode = true;
+
+		const response = await fetch(`/journals`, {
+			method: 'GET',
+			headers: { 'Content-Type': 'application/json' },
+		});
+
+		if (!response.ok)
+		{
+			let error_message = 'An unknown error occurred.';
+
+			if (response.status === 429)
+				error_message = 'You are sending too many requests, please wait a moment before trying again.';
+
+			if (response.status === 500)
+				error_message = 'There is an issue with the server, please try again later.';
+
+			alert(error_message);
+			return;
+		}
+
+		const result = await response.json() as { journals: JournalTitle[] };
+		all_journals = result.journals;
 	}
 
 	let edit_test = paper_to_datapaper(map.papers[0]);
@@ -139,7 +172,7 @@
 		{/if}
 	</div>
 	<div class="buttons absolute bottom-0 right-0">
-		<Buttons {map} hash={data.hash}/>
+		<Buttons {map} hash={data.hash} {start_edit_mode}/>
 	</div>
 </div>
 

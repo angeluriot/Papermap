@@ -9,7 +9,7 @@
 	import Info from '$lib/display/buttons/info.svelte';
 	import type { Map } from '$lib/types/map';
 
-	const { map, hash }: { map: Map, hash: string } = $props();
+	const { map, hash, start_edit_mode }: { map: Map, hash: string, start_edit_mode: () => void } = $props();
 
 	const file_name = map.question.short.toLowerCase().replace(/\s+/g, '-').replace('?', '').replace('.', '');
 	const file_url = `/maps/${map.id}/`;
@@ -82,7 +82,8 @@
 		</div>
 	</div>
 	<div class="relative edit-button-container z-100">
-		<img src={Edit} alt="Edit" class="button relative edit-button rounded-full img-unselectable">
+		<!-- svelte-ignore a11y_click_events_have_key_events --> <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<img src={Edit} alt="Edit" class="button relative edit-button rounded-full img-unselectable" onclick={start_edit_mode}/>
 		<Info title="Edit Mode" text="Add, remove or edit papers" width={15} distance={3.2} y_shift={-0.5} />
 	</div>
 </div>
