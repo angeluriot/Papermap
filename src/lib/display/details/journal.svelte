@@ -3,9 +3,9 @@
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
-	import { emoji_to_svg } from '../emojis';
 
-	const { journal, width, height }: {
+	const { emojis, journal, width, height }: {
+		emojis: Record<string, string>,
 		journal: Journal,
 		width: number,
 		height: number
@@ -93,10 +93,10 @@
 					</span>
 					<div class="cards">
 						<div class="card text-unselectable" style="background-color: {metric.color}; --shadow-color: {metric.shadow};">
-							<img src={emoji_to_svg(metric.emoji)} alt={metric.emoji}/>
+							<div class="emoji">{@html emojis[metric.emoji]}</div>
 							<span>{metric.text}</span>
 							<div class="info-ext">
-								<InfoBubble text={metric.description} {width} {height}/>
+								<InfoBubble {emojis} text={metric.description} {width} {height}/>
 							</div>
 						</div>
 					</div>
@@ -205,7 +205,7 @@
 		cursor: pointer;
 	}
 
-	.card img
+	.card .emoji
 	{
 		height: 1.1em;
 		filter: drop-shadow(0 0.025em 0.3em var(--shadow-color));

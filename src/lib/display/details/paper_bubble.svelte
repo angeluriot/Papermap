@@ -5,7 +5,8 @@
 	import Content from '$lib/display/details/paper_content.svelte';
 	import type { Journal } from '$lib/types/journal';
 
-	let { point, map, journals, paper, width, height, journal_info_open = $bindable() }: {
+	let { emojis, point, map, journals, paper, width, height, journal_info_open = $bindable() }: {
+		emojis: Record<string, string>,
 		point: GraphPoint,
 		map: Map,
 		journals: { [id: string]: Journal; },
@@ -88,7 +89,7 @@
 		class="details-container absolute bg-white {mobile_mode ? 'mobile-radius' : ''}" bind:clientHeight={details_height} bind:this={details}
 		style="{mobile_mode ? `--details-width: ${width}px;` : `left: ${details_left}; top: ${details_top}; --details-width: ${details_width}em;`}"
 	>
-		<Content {map} {journals} {paper} {width} {height} bind:journal_info_open={journal_info_open}/>
+		<Content {emojis} {map} {journals} {paper} {width} {height} bind:journal_info_open={journal_info_open}/>
 	</div>
 </div>
 

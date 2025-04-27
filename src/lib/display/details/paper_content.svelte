@@ -6,9 +6,9 @@
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
-	import { emoji_to_svg } from '../emojis';
 
-	let { map, journals, paper, width, height, journal_info_open = $bindable() }: {
+	let { emojis, map, journals, paper, width, height, journal_info_open = $bindable() }: {
+		emojis: Record<string, string>,
 		map: Map,
 		journals: { [id: string]: Journal; },
 		paper: Paper,
@@ -304,6 +304,10 @@
 
 <svelte:window onclick={() => journal_info_open = false} />
 
+{#snippet emoji(emoji: string)}
+	<div class="emoji">{@html emojis[emoji]}</div>
+{/snippet}
+
 <div class="w-full flex flex-col justify-start items-start flex-nowrap" bind:clientWidth={global_width}>
 	<a href={link} target="_blank" class="w-full" title={paper.title}>
 		<p class="title">{title}</p>
@@ -318,10 +322,10 @@
 			<span class="subtitle unselectable">Previous consensus:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {consensus.color}; --shadow-color: {consensus.shadow};">
-					<img src={emoji_to_svg(consensus.emoji)} alt={consensus.emoji}/>
+					{@render emoji(consensus.emoji)}
 					<span>{consensus.text}</span>
 					<div class="info-ext absolute">
-						<InfoBubble text={consensus.description} {width} {height}/>
+						<InfoBubble {emojis} text={consensus.description} {width} {height}/>
 					</div>
 				</div>
 			</div>
@@ -330,10 +334,10 @@
 			<span class="subtitle unselectable">Result:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {result.color}; --shadow-color: {result.shadow};" bind:clientWidth={result_width}>
-					<img src={emoji_to_svg(result.emoji)} alt={result.emoji}/>
+					{@render emoji(result.emoji)}
 					<span>{result.text}</span>
 					<div class="info-ext">
-						<InfoBubble text={result.description} {width} {height}/>
+						<InfoBubble {emojis} text={result.description} {width} {height}/>
 					</div>
 				</div>
 				{#if indirect}
@@ -341,10 +345,10 @@
 						class="card text-unselectable" bind:clientWidth={indirect_width}
 						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
 					>
-						<img src={emoji_to_svg('🔗')} alt="🔗"/>
+						{@render emoji('🔗')}
 						<span>Indirect</span>
 						<div class="info-ext">
-							<InfoBubble text="The conclusion of this paper is based on indirect evidence" {width} {height}/>
+							<InfoBubble {emojis} text="The conclusion of this paper is based on indirect evidence" {width} {height}/>
 						</div>
 					</div>
 				{/if}
@@ -374,12 +378,12 @@
 						{#if part.is_card}
 							<div class="card text-unselectable" style="background-color: {part.color}; --shadow-color: {part.shadow};">
 								{#if part.emoji}
-									<img src={emoji_to_svg(part.emoji)} alt={part.emoji}/>
+									{@render emoji(part.emoji)}
 								{/if}
 								<span>{part.text}</span>
 								{#if part.description}
 									<div class="info-ext">
-										<InfoBubble text={part.description} {width} {height}/>
+										<InfoBubble {emojis} text={part.description} {width} {height}/>
 									</div>
 								{/if}
 							</div>
@@ -402,7 +406,7 @@
 					onkeydown={null}
 					role="button" tabindex={0}
 				>
-					<img src={emoji_to_svg(journal.emoji)} alt={journal.emoji}/>
+					{@render emoji(journal.emoji)}
 					<span>{journal.text}</span>
 					<div
 						class="info-ext" style="{journal_info_open ? 'display: block;' : ''}"
@@ -410,9 +414,9 @@
 						role="button" tabindex={2}
 					>
 						{#if journal.journal !== undefined}
-							<InfoBubble journal={journal.journal} {width} {height}/>
+							<InfoBubble {emojis} journal={journal.journal} {width} {height}/>
 						{:else}
-							<InfoBubble text={journal.description} {width} {height}/>
+							<InfoBubble {emojis} text={journal.description} {width} {height}/>
 						{/if}
 					</div>
 				</div>
@@ -421,10 +425,10 @@
 						class="card text-unselectable"
 						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
 					>
-						<img src={emoji_to_svg('😵')} alt="😵"/>
+						{@render emoji('😵')}
 						<span>Retracted</span>
 						<div class="info-ext">
-							<InfoBubble text="This paper has been retracted by the journal" {width} {height}/>
+							<InfoBubble {emojis} text="This paper has been retracted by the journal" {width} {height}/>
 						</div>
 					</div>
 				{/if}
@@ -434,10 +438,10 @@
 			<span class="subtitle unselectable">Citations:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {citations.color}; --shadow-color: {citations.shadow};">
-					<img src={emoji_to_svg(citations.emoji)} alt={citations.emoji}/>
+					{@render emoji(citations.emoji)}
 					<span>{citations.text}</span>
 					<div class="info-ext">
-						<InfoBubble text={citations.description} {width} {height}/>
+						<InfoBubble {emojis} text={citations.description} {width} {height}/>
 					</div>
 				</div>
 				{#if critics}
@@ -445,10 +449,10 @@
 						class="card text-unselectable"
 						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
 					>
-						<img src={emoji_to_svg('😠')} alt="😠"/>
+						{@render emoji('😠')}
 						<span>Mostly critics</span>
 						<div class="info-ext">
-							<InfoBubble text="Most of the citations are critical of this paper" {width} {height}/>
+							<InfoBubble {emojis} text="Most of the citations are critical of this paper" {width} {height}/>
 						</div>
 					</div>
 				{/if}
@@ -459,10 +463,10 @@
 				<span class="subtitle unselectable">Sample size:</span>
 				<div class="cards">
 					<div class="card text-unselectable" style="background-color: {sample_size.color}; --shadow-color: {sample_size.shadow};">
-						<img src={emoji_to_svg(sample_size.emoji)} alt={sample_size.emoji}/>
+						{@render emoji(sample_size.emoji)}
 						<span>{sample_size.text}</span>
 						<div class="info-ext">
-							<InfoBubble text={sample_size.description} {width} {height}/>
+							<InfoBubble {emojis} text={sample_size.description} {width} {height}/>
 						</div>
 					</div>
 				</div>
@@ -473,10 +477,10 @@
 				<span class="subtitle unselectable">P-value:</span>
 				<div class="cards">
 					<div class="card text-unselectable" style="background-color: {p_value.color}; --shadow-color: {p_value.shadow};">
-						<img src={emoji_to_svg(p_value.emoji)} alt={p_value.emoji}/>
+						{@render emoji(p_value.emoji)}
 						<span>{p_value.text}</span>
 						<div class="info-ext">
-							<InfoBubble text={p_value.description} {width} {height}/>
+							<InfoBubble {emojis} text={p_value.description} {width} {height}/>
 						</div>
 					</div>
 				</div>
@@ -486,10 +490,10 @@
 			<span class="subtitle unselectable">Conflict of Interest:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color}; --shadow-color: {conflict_of_interest.shadow};">
-					<img src={emoji_to_svg(conflict_of_interest.emoji)} alt={conflict_of_interest.emoji}/>
+					{@render emoji(conflict_of_interest.emoji)}
 					<span>{conflict_of_interest.text}</span>
 					<div class="info-ext">
-						<InfoBubble text={conflict_of_interest.description} {width} {height}/>
+						<InfoBubble {emojis} text={conflict_of_interest.description} {width} {height}/>
 					</div>
 				</div>
 			</div>
@@ -500,10 +504,10 @@
 				<div class="cards">
 					{#each notes as note}
 						<div class="card text-unselectable" style="background-color: {note.color}; --shadow-color: {note.shadow};">
-							<img src={emoji_to_svg(note.emoji)} alt={note.emoji}/>
+							{@render emoji(note.emoji)}
 							<span>{note.text}</span>
 							<div class="info-ext">
-								<InfoBubble text={note.description} {width} {height}/>
+								<InfoBubble {emojis} text={note.description} {width} {height}/>
 							</div>
 						</div>
 					{/each}
@@ -608,7 +612,7 @@
 		cursor: pointer;
 	}
 
-	.card img
+	.card .emoji
 	{
 		height: 1.1em;
 		filter: drop-shadow(0 0.025em 0.3em var(--shadow-color));

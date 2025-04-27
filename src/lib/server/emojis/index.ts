@@ -1,3 +1,8 @@
+import { join } from 'path';
+import { promises as fs } from 'fs';
+import { constants as C } from '$lib/server/utils';
+
+
 export const EMOJI_NAMES = {
 	// Smileys
 	'🙂': 'slightly-smiling-face',
@@ -62,12 +67,24 @@ export const EMOJI_NAMES = {
 }
 
 
-export function emoji_to_svg(emoji: string): string
+export async function load_svgs()
 {
-	const name = EMOJI_NAMES[emoji as keyof typeof EMOJI_NAMES];
+	let svgs: Record<string, string> = {};
 
-	if (name === undefined)
-		throw new Error(`Emoji "${emoji}" not found`);
+	for (const [emoji, name] of Object.entries(EMOJI_NAMES))
+	{
+		try
+		{
+			let svg = await fs.readFile(join(C.LIB_DIR, 'server', 'emojis', 'svgs', `${name}.svg`), 'utf-8');
+			svg = svg.replace(/<\?xml[\s\S]*?\?>\s*/g, '');
+			svgs[emoji] = svg.slice(0, 5) + 'width="100%" height="100%" ' + svg.slice(5);
+		}
 
-	return `/emojis/${name}.svg`;
+		catch (error)
+		{
+			console.error(`Failed to load SVG for emoji "${emoji}":`, error);
+		}
+	}
+
+	return svgs;
 }

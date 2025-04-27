@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Search from '$lib/home/search.svelte';
 	import type { Map, MapTitle } from '$lib/types/map';
-	import { emoji_to_svg } from './emojis';
+	import { onMount } from 'svelte';
 
-	let { map, maps, width, height, input_selected = $bindable() }: {
+	let { emojis, map, maps, width, height, input_selected = $bindable() }: {
+		emojis: Record<string, string>,
 		map: Map,
 		maps: MapTitle[],
 		width: number,
@@ -15,9 +16,12 @@
 	let search_element: Search | undefined = $state(undefined);
 	let input_element: HTMLInputElement | undefined = $state(undefined);
 	let canvas: HTMLCanvasElement | undefined = $state(undefined);
+	let reload = $state({});
 
 	let input_width = $derived.by(() =>
 	{
+		reload;
+
 		if (!canvas || !input_element)
 			return;
 
@@ -71,6 +75,14 @@
 
 		window.location.href = '/?request';
 	}
+
+	onMount(() =>
+	{
+		setTimeout(() => reload = {}, 100);
+		setTimeout(() => reload = {}, 1000);
+		setTimeout(() => reload = {}, 2000);
+		setTimeout(() => reload = {}, 5000);
+	});
 </script>
 
 <svelte:window onclick={deselect_input}/>
@@ -81,14 +93,14 @@
 	onclick={select_input}
 	onkeydown={null} role="button" tabindex={0}
 >
-	<img src={emoji_to_svg(map.emoji)} alt={map.emoji} class="emoji absolute unselectable z-10"/>
+	<div class="emoji absolute unselectable z-10">{@html emojis[map.emoji]}</div>
 	<input
 		type="text" spellcheck="false" class="rounded-full relative"
 		placeholder={map.question.long} bind:value={search} bind:this={input_element}
 		style="width: {input_width}; {search_element?.shown() ? 'border-radius: 1.575em 1.575em 0em 0em;' : 'border-radius: 1.575em;'}"
 	/>
 	<div class="search absolute w-full bg-white" style="display: {search_element?.shown() ? 'block' : 'none'};">
-		<Search maps={maps} {search} new_map={to_new_map} bind:this={search_element}/>
+		<Search {emojis} {maps} {search} new_map={to_new_map} bind:this={search_element}/>
 	</div>
 </div>
 

@@ -2,10 +2,10 @@
 	import type { MapTitle } from '$lib/types/map';
 	import Fuse from 'fuse.js';
 	import { Document, Charset } from 'flexsearch';
-	import { emoji_to_svg } from '$lib/display/emojis';
 	import { get_random_elements, in_browser } from '$lib/utils';
 
-	let { maps, search, new_map }: {
+	let { emojis, maps, search, new_map }: {
+		emojis: Record<string, string>,
 		maps: MapTitle[],
 		search: string,
 		new_map: (title: string) => void
@@ -185,7 +185,7 @@
 					style="{i === selected_i ? 'background-color: #eeeff7;' : ''}"
 					onmouseenter="{() => selected_i = i}" role="button" tabindex={i}
 				>
-					<img src={emoji_to_svg(result.emoji)} alt={result.emoji}/>
+					<div class="emoji">{@html emojis[result.emoji]}</div>
 					<span class="unselectable">{result.question.short}</span>
 				</div>
 			</a>
@@ -206,7 +206,7 @@
 		color: #838597;
 	}
 
-	img
+	.emoji
 	{
 		width: 1.1em;
 		height: 1.1em;

@@ -1,4 +1,5 @@
 import { map_titles } from '$lib/server/data/map';
+import { load_svgs } from '$lib/server/emojis';
 import type { PageServerLoad } from './$types';
 
 
@@ -10,6 +11,7 @@ export const csr = true;
 export const load: PageServerLoad = async () =>
 {
 	return {
+		emojis: await load_svgs(),
 		maps: Object.values(map_titles),
 	};
 };

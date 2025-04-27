@@ -2,7 +2,8 @@
 	import type { Journal } from '$lib/types/journal';
 	import JournalInfo from './journal.svelte';
 
-	let { text, journal, width, height }: {
+	let { emojis, text, journal, width, height }: {
+		emojis: Record<string, string>,
 		text?: string,
 		journal?: Journal,
 		width: number,
@@ -86,7 +87,7 @@
 			</span>
 		{:else if journal !== undefined}
 			<div class="journal" style="width: {info_final_width}em;">
-				<JournalInfo {journal} {width} {height} />
+				<JournalInfo {emojis} {journal} {width} {height} />
 			</div>
 		{/if}
 	</div>

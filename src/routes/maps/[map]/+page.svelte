@@ -13,6 +13,7 @@
 
 	const { data }: PageProps = $props();
 
+	const emojis = data.emojis;
 	const map = data.map;
 	const journals = data.journals;
 	const route = `maps/${map.id}`;
@@ -144,7 +145,7 @@
 	<div class="top flex flex-row justify-start items-start flex-nowrap relative">
 		<div class="title-container flex flex-row-reverse justify-center items-center flex-nowrap relative" style="{input_selected ? 'z-index: 100000;' : ''}">
 			<div class="title-component relative">
-				<Title {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
+				<Title {emojis} {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
 			</div>
 			<a href={'/'}>
 				<img src={Home} alt="Home" title="Home" class="home relative img-unselectable">
@@ -165,7 +166,7 @@
 	>
 		{#if point_selected !== null}
 			<PaperDetails
-				point={point_selected.get_point()} {map} {journals}
+				{emojis} point={point_selected.get_point()} {map} {journals}
 				paper={map.papers[point_selected.get_point().index]}
 				{width} {height} bind:journal_info_open={journal_info_open}
 			/>

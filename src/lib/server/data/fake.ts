@@ -2,7 +2,7 @@ import type { Journal } from '$lib/types/journal';
 import { JournalStatus, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
 import { type DataMap, type Group, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
-import { EMOJI_NAMES } from '$lib/display/emojis';
+import { EMOJI_NAMES } from '$lib/server/emojis';
 
 
 function random_choice<T>(elements: T[], weights?: number[]): T

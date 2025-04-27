@@ -2,13 +2,13 @@
 	import type { PageProps } from './$types';
 	import { constants as C } from '$lib/utils';
 	import type { MapTitle } from '$lib/types/map';
-	import { emoji_to_svg } from '$lib/display/emojis';
 	import Background from '$lib/home/background.svelte';
 	import Home from '$lib/svgs/home.svg';
 	import Random from '$lib/svgs/random.svg';
 
 	const { data }: PageProps = $props();
 
+	const emojis = data.emojis;
 	const title = 'All maps';
 	const description = 'A list of all maps currently available on Papermap.';
 	const preview = `${C.BASE_URL}/images/preview.png`;
@@ -57,6 +57,10 @@
 <svelte:window bind:innerWidth={width}/>
 <svelte:body bind:clientHeight={height}/>
 
+{#snippet emoji(emoji: string)}
+	<div class="emoji">{@html emojis[emoji]}</div>
+{/snippet}
+
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description}/>
@@ -92,7 +96,7 @@
 	<div class="list flex flex-col justify-start items-start relative">
 		<div class="header w-full flex flex-row justify-between items-start">
 			<div class="title flex-center-row unselectable">
-				<img src={emoji_to_svg('📖')} alt="📖" class="emoji"/>
+				{@render emoji('📖')}
 				<h1>All maps</h1>
 			</div>
 			<div class="links flex-center-row">
@@ -107,7 +111,7 @@
 		{#each map_dict as group}
 			<div class="group flex flex-col justify-start items-start">
 				<div class="group-header flex-center-row unselectable">
-					<img src={emoji_to_svg(group.group.emoji)} alt={group.group.emoji} class="emoji"/>
+					{@render emoji(group.group.emoji)}
 					<h2>{group.group.name}</h2>
 				</div>
 				<div class="maps flex flex-row justify-start items-start flex-wrap">
@@ -118,7 +122,7 @@
 							</a>
 							<a href={map.url}>
 								<div class="img-unselectable">
-									<img src={emoji_to_svg(map.emoji)} alt={map.emoji} class="emoji"/>
+									{@render emoji(map.emoji)}
 									<span>&nbsp;&nbsp;&nbsp;&thinsp;&thinsp;&thinsp;{map.question.short}</span>
 								</div>
 							</a>

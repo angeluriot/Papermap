@@ -4,13 +4,13 @@
 	import type { PageProps } from './$types';
 	import Logo from '$lib/svgs/logo.svg';
 	import { constants as C } from '$lib/utils';
-	import { emoji_to_svg } from '$lib/display/emojis';
 	import Search from '$lib/home/search.svelte';
 	import Popup from '$lib/home/popup.svelte';
 	import { onMount } from 'svelte';
 
 	const { data }: PageProps = $props();
 
+	const emojis = data.emojis;
 	const title = 'Papermap';
 	const description = 'Get an overview of scientific literature findings on a wide range of questions.';
 	const preview = `${C.BASE_URL}/images/preview.png`;
@@ -95,19 +95,19 @@
 				style="{search_element?.shown() ? 'border-radius: 1.6em 1.6em 0em 0em;' : 'border-radius: 1.6em;'}"
 			>
 			<div class="search absolute w-full bg-white z-30" style="display: {search_element?.shown() ? 'block' : 'none'};">
-				<Search maps={data.maps} {search} new_map={(title) => popup?.show(title)} bind:this={search_element}/>
+				<Search {emojis} maps={data.maps} {search} new_map={(title) => popup?.show(title)} bind:this={search_element}/>
 			</div>
 		</div>
 		<div class="buttons flex-center-row flex-wrap" style="{search_element?.shown() ? '' : 'position: relative; z-index: 40;'}">
 			<a href="/maps" class="rounded-full">
 				<button class="flex-center-row rounded-full unselectable">
-					<img src={emoji_to_svg('📖')} alt="📖"/>
+					<div class="emoji">{@html emojis['📖']}</div>
 					<span>All maps</span>
 				</button>
 			</a>
 			<a href="/maps/random" class="rounded-full">
 				<button class="flex-center-row rounded-full unselectable">
-					<img src={emoji_to_svg('🎲')} alt="🎲"/>
+					<div class="emoji">{@html emojis['🎲']}</div>
 					<span>Random map</span>
 				</button>
 			</a>
@@ -219,7 +219,7 @@
 		background-color: #f4f5fa;
 	}
 
-	.buttons button img
+	.buttons button .emoji
 	{
 		width: 1.15em;
 		height: 1.15em;
