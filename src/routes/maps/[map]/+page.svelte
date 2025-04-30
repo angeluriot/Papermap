@@ -7,9 +7,11 @@
 	import Title from '$lib/display/title.svelte';
 	import Overview from '$lib/display/overview.svelte';
 	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
-	import Buttons from '$lib/display/buttons/buttons.svelte';
+	import DefaultButtons from '$lib/display/buttons/default.svelte';
+	import EditButtons from '$lib/display/buttons/edit.svelte';
 	import Home from '$lib/svgs/home.svg';
 	import type { JournalTitle } from '$lib/types/journal';
+	import Popup from '$lib/display/edit/popup.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -29,7 +31,8 @@
 	let input_selected = $state(false);
 	let details_element: HTMLDivElement | null = $state(null);
 	let edit_mode = $state(false);
-	let all_journals: JournalTitle[] = $state([]);
+	let all_journals: JournalTitle[] | undefined = $state(undefined);
+	let popup: Popup | undefined = $state(undefined);
 
 	function deselect_point()
 	{
@@ -73,6 +76,15 @@
 		all_journals = result.journals;
 	}
 
+	function on_leaving_edit_mode(event: Event)
+	{
+		if (!edit_mode)
+			return;
+
+		event.preventDefault();
+		return 'You have unsaved changes, are you sure you want to leave?';
+	}
+
 	let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
 
@@ -100,7 +112,7 @@
 	}
 </script>
 
-<svelte:window bind:innerWidth={width} bind:innerHeight={height}/>
+<svelte:window bind:innerWidth={width} bind:innerHeight={height} onbeforeunload={on_leaving_edit_mode}/>
 
 <svelte:head>
 	<title>{map.question.short}</title>
@@ -173,7 +185,14 @@
 		{/if}
 	</div>
 	<div class="buttons absolute bottom-0 right-0">
-		<Buttons {map} hash={data.hash} {start_edit_mode}/>
+		{#if edit_mode}
+			<EditButtons add={() => popup?.show()} submit={async () => {}}/>
+		{:else}
+			<DefaultButtons {map} hash={data.hash} {start_edit_mode}/>
+		{/if}
+	</div>
+	<div class="popup">
+		<Popup bind:this={popup}/>
 	</div>
 </div>
 
@@ -219,6 +238,11 @@
 	.buttons
 	{
 		font-size: clamp(10px, calc(calc(calc(0.09vw + 0.09vh) + 4.5px) * 2), 15px);
+	}
+
+	.popup
+	{
+		font-size: clamp(11px, calc(calc(0.15vw + 5px) * 2), 16px);
 	}
 
 	@media screen and (max-width: 800px)

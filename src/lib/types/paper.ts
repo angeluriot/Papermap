@@ -1,3 +1,5 @@
+import type { Journal } from "./journal";
+
 export enum JournalStatus
 {
 	Found = 'Found',
@@ -104,4 +106,17 @@ export function paper_to_datapaper(paper: Paper): DataPaper
 {
 	const { score, ...data } = paper;
 	return data;
+}
+
+
+export interface SearchPaperResult
+{
+	id?: string;
+	link?: string;
+	title?: string;
+	year?: number;
+	journal?: Journal;
+	authors?: string[];
+	citations?: number;
+	retracted?: boolean;
 }

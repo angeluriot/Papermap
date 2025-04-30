@@ -16,6 +16,7 @@ export const constants = {
 	GITHUB_CLIENT_ID: import.meta.env['VITE_GITHUB_CLIENT_ID'] as string | undefined,
 	GITHUB_CLIENT_SECRET: import.meta.env['VITE_GITHUB_CLIENT_SECRET'] as string | undefined,
 	GITHUB_INSTALLATION_ID: import.meta.env['VITE_GITHUB_INSTALLATION_ID'] ? parseInt(import.meta.env['VITE_GITHUB_INSTALLATION_ID']) as number : undefined,
+	OPENALEX_EMAIL: import.meta.env['VITE_OPENALEX_EMAIL'] as string | undefined,
 	GITHUB_OWNER: 'angeluriot',
 	GITHUB_REPO: 'Papermap',
 	GITHUB_DEFAULT_BRANCH: 'main',
@@ -51,4 +52,10 @@ export async function exist(dir_path: string): Promise<boolean>
 export function get_hash(object: any): string
 {
 	return crypto.createHash('sha256').update(JSON.stringify(object) + 'v2').digest('hex').slice(0, 16)
+}
+
+
+export function clean_text(text: string): string
+{
+	return text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase().trim();
 }

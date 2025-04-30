@@ -81,9 +81,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="relative edit-button-container z-100">
-		<!-- svelte-ignore a11y_click_events_have_key_events --> <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-		<img src={Edit} alt="Edit" class="button relative edit-button rounded-full img-unselectable" onclick={start_edit_mode}/>
+	<div class="relative edit-button-container z-100" onclick={start_edit_mode} onkeydown={null} role="button" tabindex={1}>
+		<img src={Edit} alt="Edit" class="button relative edit-button rounded-full img-unselectable"/>
 		<Info title="Edit Mode" text="Add, remove or edit papers" width={15} distance={3.2} y_shift={-0.5} />
 	</div>
 </div>

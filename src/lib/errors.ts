@@ -75,12 +75,12 @@ export class TooManyRequestsError extends Error
 }
 
 
-export class SemanticScholarAPIError extends Error
+export class OpenAlexAPIError extends Error
 {
 	constructor(message: string)
 	{
 		super(message);
-		this.name = 'SemanticScholarAPIError';
-		Object.setPrototypeOf(this, SemanticScholarAPIError.prototype);
+		this.name = 'OpenAlexAPIError';
+		Object.setPrototypeOf(this, OpenAlexAPIError.prototype);
 	}
 }

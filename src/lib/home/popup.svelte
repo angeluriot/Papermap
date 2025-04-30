@@ -116,7 +116,10 @@
 		</div>
 		<h1 class="unselectable">Request a new map</h1>
 		<div class="input">
-			<div class="label unselectable"><span>Title</span></div>
+			<div class="label unselectable flex-center-row">
+				<span>Title</span>
+				<span class="required">*</span>
+			</div>
 			<input bind:value={data.title} type="text" placeholder="A simple question that can be answered by science"/>
 		</div>
 		<div class="input">
@@ -236,6 +239,15 @@
 		line-height: 1.5em;
 		border-radius: 0.5em;
 		margin-left: 0.2em;
+	}
+
+	.required
+	{
+		font-weight: 800;
+		font-size: 1.3em;
+		line-height: 0.5em;
+		color: #ff2b2b;
+		margin-bottom: 0.2em;
 	}
 
 	.label .optional

@@ -13,6 +13,12 @@ const journals_limiter = new RateLimiterMemory({
 	blockDuration: 3 * 60,
 });
 
+const search_limiter = new RateLimiterMemory({
+	points: 10,
+	duration: 30,
+	blockDuration: 3 * 60,
+});
+
 const github_limiter = new RateLimiterMemory({
 	points: 5,
 	duration: 1 * 60,
@@ -40,6 +46,8 @@ export const handle: Handle = async ({ event, resolve }) =>
 
 		if (event.route.id.trim().startsWith('/journals'))
 			limiters.push(journals_limiter);
+		else if (event.route.id.trim().startsWith('/search'))
+			limiters.push(search_limiter);
 		else if (event.route.id.trim().startsWith('/maps/[map]/edit') || event.route.id.trim().startsWith('/request'))
 			limiters.push(github_limiter, github_long_limiter);
 		else
