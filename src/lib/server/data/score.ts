@@ -80,10 +80,10 @@ const OVERVIEW_GAP_INCREASE = 3;
 
 export function score_journal(paper: DataPaper, journal: Journal | undefined): number
 {
-	if (!journal || !journal.scores.oa || paper.journal.retracted)
+	if (!journal || !journal.score || paper.journal.retracted)
 		return 0.0;
 
-	return journal.scores.oa;
+	return journal.score;
 }
 
 

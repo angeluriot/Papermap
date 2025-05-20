@@ -33,7 +33,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 		.map((paper) => ({
 			title: paper.title,
 			authors: array_to_string(paper.authors),
-			journal: paper.journal.id ? journals[paper.journal.id].titles[0] : '',
+			journal: paper.journal.id ? journals[paper.journal.id].title : '',
 			retracted: paper.journal.retracted ? 'Retracted' : '',
 			year: paper.year,
 			link: paper.link,

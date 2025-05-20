@@ -1,22 +1,50 @@
-import type { Journal } from '$lib/types/journal';
-import type { DataMap } from '$lib/types/map';
-import { join } from 'path';
-import { promises as fs } from 'fs';
+import { row_to_journal, row_to_light_journal, type Journal, type JournalRow, type LightJournal } from '$lib/types/journal';
 import { constants as C } from '$lib/server/utils';
+import { Pool } from 'pg';
 
 
-export async function import_journals(map?: DataMap): Promise<{ [id: string]: Journal }>
+const pool = new Pool({ connectionString: C.DB_URL });
+
+
+export async function get_journal_ids(): Promise<{ id: string, proba: number }[]>
 {
-	const journals = JSON.parse(await fs.readFile(join(C.LIB_DIR, 'server/jsons/journals/data.json'), 'utf-8')) as { [id: string]: Journal };
+	const query = 'SELECT id, metric_h FROM journals;';
+	const { rows } = await pool.query<{ id: string, metric_h: number | null }>(query);
 
-	if (!map)
-		return journals;
+	return rows.map((row) => ({
+		id: row.id,
+		proba: row.metric_h ?? 0.0,
+	}));
+}
 
-	let used_journals: { [id: string]: Journal } = {};
 
-	for (let paper of map.papers)
-		if (paper.journal.id)
-			used_journals[paper.journal.id] = journals[paper.journal.id];
+export async function get_journal(id: string): Promise<LightJournal | null>
+{
+	const query = 'SELECT * FROM journals WHERE id = $1;';
+	const { rows } = await pool.query<JournalRow>(query, [id]);
 
-	return used_journals;
+	if (rows.length === 0)
+		return null;
+
+	return row_to_light_journal(rows[0]);
+}
+
+
+export async function get_journals(ids: string[]): Promise<{ [id: string]: Journal }>
+{
+	let journals: { [id: string]: Journal } = {};
+
+	if (ids.length === 0)
+		return {};
+
+	const query = 'SELECT * FROM journals WHERE id = ANY($1);';
+	const { rows } = await pool.query<JournalRow>(query, [ids]);
+
+	for (const row of rows)
+	{
+		const journal = row_to_journal(row);
+		journals[journal.id] = journal;
+	}
+
+	return journals;
 }

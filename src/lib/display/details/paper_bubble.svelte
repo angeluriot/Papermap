@@ -97,7 +97,7 @@
 	.details
 	{
 		filter: drop-shadow(0 0.1em 1.25em #00008036);
-		z-index: 100;
+		z-index: 1000;
 	}
 
 	.details.mobile-shadow
@@ -110,7 +110,7 @@
 		border-radius: 1.5em;
 		--details-x-pad: 1.6em;
 		width: var(--details-width);
-		padding: 1.4em var(--details-x-pad) 1.6em var(--details-x-pad);
+		padding: 1.4em var(--details-x-pad) 1.1em var(--details-x-pad);
 	}
 
 	.details-container.mobile-radius

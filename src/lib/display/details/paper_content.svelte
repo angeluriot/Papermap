@@ -6,6 +6,7 @@
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
+	import Link from '$lib/svgs/link.svg';
 
 	let { emojis, map, journals, paper, width, height, journal_info_open = $bindable() }: {
 		emojis: Record<string, string>,
@@ -207,7 +208,7 @@
 
 		return {
 			emoji: cards.score_to_emoji(paper.score.journal),
-			text: journals[paper.journal.id as string].titles[0],
+			text: journals[paper.journal.id as string].title,
 			color: cards.score_to_color(paper.score.journal),
 			shadow: color_to_shadow(cards.score_to_color(paper.score.journal)),
 			journal: journals[paper.journal.id as string],
@@ -215,16 +216,6 @@
 	});
 
 	const retracted = $derived(paper.journal.retracted);
-
-	const citations = $derived({
-		emoji: cards.citation_score_to_emoji(paper.score.citations_count),
-		text: int_to_text(paper.citations.count),
-		color: cards.score_to_color(paper.score.citations_count),
-		shadow: color_to_shadow(cards.score_to_color(paper.score.citations_count)),
-		description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
-	});
-
-	const critics = $derived(paper.citations.critics);
 
 	const sample_size = $derived.by(() =>
 	{
@@ -254,6 +245,16 @@
 		};
 	});
 
+	const citations = $derived({
+		emoji: cards.citation_score_to_emoji(paper.score.citations_count),
+		text: int_to_text(paper.citations.count),
+		color: cards.score_to_color(paper.score.citations_count),
+		shadow: color_to_shadow(cards.score_to_color(paper.score.citations_count)),
+		description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
+	});
+
+	const critics = $derived(paper.citations.critics);
+
 	const conflict_of_interest = $derived.by(() =>
 	{
 		if (paper.conflict_of_interest)
@@ -280,22 +281,13 @@
 
 		for (const note of paper.notes)
 		{
-			if (note.positive)
-				results.push({
-					emoji: '👍',
-					text: note.title,
-					color: COLORS[Color.Green].default,
-					shadow: color_to_shadow(COLORS[Color.Green].default),
-					description: note.description,
-				});
-			else
-				results.push({
-					emoji: '👎',
-					text: note.title,
-					color: COLORS[Color.Red].default,
-					shadow: color_to_shadow(COLORS[Color.Red].default),
-					description: note.description,
-				});
+			results.push({
+				emoji: cards.impact_to_emoji(note.impact),
+				text: note.title,
+				color: cards.impact_to_color(note.impact),
+				shadow: color_to_shadow(cards.impact_to_color(note.impact)),
+				description: note.description,
+			});
 		}
 
 		return results;
@@ -309,7 +301,7 @@
 {/snippet}
 
 <div class="w-full flex flex-col justify-start items-start flex-nowrap" bind:clientWidth={global_width}>
-	<a href={link} target="_blank" class="w-full" title={paper.title}>
+	<a href={link} target="_blank" class="title-container w-full" title={paper.title}>
 		<p class="title">{title}</p>
 		<div class="authors-date flex">
 			<p class="authors">{authors}</p>
@@ -348,7 +340,7 @@
 						{@render emoji('🔗')}
 						<span>Indirect</span>
 						<div class="info-ext">
-							<InfoBubble {emojis} text="The conclusion of this paper is based on indirect evidence" {width} {height}/>
+							<InfoBubble {emojis} text="This conclusion is based on indirect evidence from the paper" {width} {height}/>
 						</div>
 					</div>
 				{/if}
@@ -434,30 +426,6 @@
 				{/if}
 			</div>
 		</div>
-		<div class="subtitle-cards">
-			<span class="subtitle unselectable">Citations:</span>
-			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {citations.color}; --shadow-color: {citations.shadow};">
-					{@render emoji(citations.emoji)}
-					<span>{citations.text}</span>
-					<div class="info-ext">
-						<InfoBubble {emojis} text={citations.description} {width} {height}/>
-					</div>
-				</div>
-				{#if critics}
-					<div
-						class="card text-unselectable"
-						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
-					>
-						{@render emoji('😠')}
-						<span>Mostly critics</span>
-						<div class="info-ext">
-							<InfoBubble {emojis} text="Most of the citations are critical of this paper" {width} {height}/>
-						</div>
-					</div>
-				{/if}
-			</div>
-		</div>
 		{#if sample_size !== null}
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">Sample size:</span>
@@ -487,6 +455,30 @@
 			</div>
 		{/if}
 		<div class="subtitle-cards">
+			<span class="subtitle unselectable">Citations:</span>
+			<div class="cards">
+				<div class="card text-unselectable" style="background-color: {citations.color}; --shadow-color: {citations.shadow};">
+					{@render emoji(citations.emoji)}
+					<span>{citations.text}</span>
+					<div class="info-ext">
+						<InfoBubble {emojis} text={citations.description} {width} {height}/>
+					</div>
+				</div>
+				{#if critics}
+					<div
+						class="card text-unselectable"
+						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
+					>
+						{@render emoji('😠')}
+						<span>Mostly critics</span>
+						<div class="info-ext">
+							<InfoBubble {emojis} text="Most of the citations are critical of this paper" {width} {height}/>
+						</div>
+					</div>
+				{/if}
+			</div>
+		</div>
+		<div class="subtitle-cards">
 			<span class="subtitle unselectable">Conflict of Interest:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color}; --shadow-color: {conflict_of_interest.shadow};">
@@ -515,6 +507,12 @@
 			</div>
 		{/if}
 	</div>
+	<div class="footer w-full flex flex-row justify-end items-center flex-nowrap">
+		<a href="https://a.com" target="_blank" class="flex-center-row flex-nowrap">
+			<img src={Link} alt="link" class="img-unselectable"/>
+			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How papers are scored?</span>
+		</a>
+	</div>
 </div>
 
 <style>
@@ -527,6 +525,11 @@
 	span
 	{
 		text-wrap: nowrap;
+	}
+
+	.title-container:hover .title
+	{
+		text-decoration: underline;
 	}
 
 	.title
@@ -680,5 +683,27 @@
 		border-radius: calc(infinity * 1px);
 		margin-top: 1.1em;
 		margin-bottom: 0.8em;
+	}
+
+	.footer
+	{
+		font-size: 0.95em;
+		margin-top: 0.9em;
+		font-weight: 500;
+		text-align: right;
+		color: #9193a2;
+	}
+
+	.footer a img
+	{
+		width: 0.9em;
+		height: 0.9em;
+		margin-top: -0.1em;
+		margin-right: -1em;
+	}
+
+	.footer a:hover
+	{
+		text-decoration: underline;
 	}
 </style>

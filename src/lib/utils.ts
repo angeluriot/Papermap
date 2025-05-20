@@ -58,3 +58,47 @@ export function in_browser(): boolean
 {
 	return typeof window !== undefined;
 }
+
+
+export function sleep(seconds: number): Promise<void>
+{
+	return new Promise(resolve => setTimeout(resolve, Math.round(seconds * 1000)));
+}
+
+
+export function sleep_until(date: Date): Promise<void>
+{
+	return new Promise(resolve => setTimeout(resolve, Math.round(date.getTime() - Date.now())));
+}
+
+
+export function clean_id(id: string): string
+{
+	let cleaned_id = id;
+
+	if (cleaned_id.startsWith('openalex.org/'))
+		return cleaned_id.replace('openalex.org/', '').trim();
+
+	if (cleaned_id.startsWith('http://openalex.org/'))
+		return cleaned_id.replace('http://openalex.org/', '').trim();
+
+	if (cleaned_id.startsWith('https://openalex.org/'))
+		return cleaned_id.replace('https://openalex.org/', '').trim();
+
+	if (cleaned_id.startsWith('www.openalex.org/'))
+		return cleaned_id.replace('www.openalex.org/', '').trim();
+
+	if (cleaned_id.startsWith('http://www.openalex.org/'))
+		return cleaned_id.replace('http://www.openalex.org/', '').trim();
+
+	if (cleaned_id.startsWith('https://www.openalex.org/'))
+		return cleaned_id.replace('https://www.openalex.org/', '').trim();
+
+	while (cleaned_id.startsWith('/'))
+		cleaned_id = cleaned_id.substring(1).trim();
+
+	while (cleaned_id.endsWith('/'))
+		cleaned_id = cleaned_id.substring(0, cleaned_id.length - 1).trim();
+
+	return cleaned_id.toUpperCase().trim();
+}

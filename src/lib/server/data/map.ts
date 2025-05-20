@@ -3,7 +3,7 @@ import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Group, Map, MapTitle } from '$lib/types/map';
 import { type DataPaper } from '$lib/types/paper';
-import { import_journals } from './journal';
+import { get_journal_ids, get_journals } from './journal';
 import { validate_map } from './validate';
 import { generate_group, generate_map_title, generate_paper } from './fake';
 import { get_hash } from '../utils';
@@ -102,12 +102,16 @@ export async function import_map(id: string): Promise<{ map: Map, journals: { [i
 {
 	const group_data = map_titles[id].group;
 	const data = await import_datamap(id);
-	const all_journals = await import_journals();
+	const journal_ids = await get_journal_ids();
 
 	for (let i = 0; i < 50; i++)
-		data.papers.push(generate_paper(data, all_journals));
+		data.papers.push(generate_paper(data, journal_ids));
 
-	const journals = await import_journals(data);
+	const journals = await get_journals(
+		data.papers
+		.map((paper: DataPaper) => paper.journal.id)
+		.filter((id: string | undefined) => id !== undefined) as string[]
+	);
 
 	let map: Map = {
 		...data,

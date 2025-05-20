@@ -1,5 +1,5 @@
 import type { DataMap } from '$lib/types/map';
-import { JournalStatus, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
+import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
 import { z } from 'zod';
 import { InvalidDataError } from '$lib/errors';
 import { Color } from '$lib/colors';
@@ -42,7 +42,7 @@ export const paper_schema = z.object({
 		z.object({
 			title: z.string(),
 			description: z.string(),
-			positive: z.boolean(),
+			impact: z.nativeEnum(NoteImpact),
 		}).strict(),
 	),
 }).strict();

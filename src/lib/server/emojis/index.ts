@@ -40,6 +40,7 @@ export const EMOJI_NAMES = {
 	'🐭': 'mouse-face',
 
 	// Activity
+	'🏆': 'trophy',
 	'🎲': 'game-die',
 
 	// Travel & Places

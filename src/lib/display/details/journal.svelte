@@ -3,6 +3,8 @@
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
+	import { COLORS, Color } from '$lib/colors';
+	import Link from '$lib/svgs/link.svg';
 
 	const { emojis, journal, width, height }: {
 		emojis: Record<string, string>,
@@ -30,14 +32,14 @@
 		alt: { name: 'News Mentions', description: "The average number of news mentions of the journal's papers" },
 	};
 
-	const title = $derived(journal.titles[0]);
+	const title = $derived(journal.title);
 	const link = $derived.by(() =>
 	{
 		if (journal.link !== undefined)
 			return journal.link;
 
 		let query = (
-			(journal.titles[0].trim() + ' Scientific Journal')
+			(journal.title.trim() + ' Scientific Journal')
 			.replace(/[^a-zA-Z\s]+/g, '')
 			.trim()
 			.replace(/[\s]+/g, '+')
@@ -57,20 +59,32 @@
 			const score = journal.scores[metric];
 
 			if (value === undefined || score === undefined)
-				continue;
+			{
+				results.push({
+					title: metrics_data[metric].name,
+					emoji: cards.score_to_emoji(undefined),
+					text: 'N/A',
+					color: COLORS[Color.Gray].default,
+					shadow: color_to_shadow(COLORS[Color.Gray].default),
+					description: metrics_data[metric].description,
+				});
+			}
 
-			results.push({
-				title: metrics_data[metric].name,
-				emoji: cards.score_to_emoji(metric === 'self' ? score * 0.7 : score),
-				text: (
-					metric === 'self' ?
-					int_to_text(Math.round(value)) + '%' :
-					float_to_text(value)
-				),
-				color: cards.score_to_color(metric === 'self' ? score * 0.8 : score),
-				shadow: color_to_shadow(cards.score_to_color(score)),
-				description: metrics_data[metric].description,
-			});
+			else
+			{
+				results.push({
+					title: metrics_data[metric].name,
+					emoji: cards.score_to_emoji(metric === 'self' ? Math.min(score, 0.85) : score),
+					text: (
+						metric === 'self' ?
+						int_to_text(Math.round(value * 100)) + '%' :
+						float_to_text(value)
+					),
+					color: cards.score_to_color(metric === 'self' ? Math.min(score, 0.85) : score),
+					shadow: color_to_shadow(cards.score_to_color(score)),
+					description: metrics_data[metric].description,
+				});
+			}
 		}
 
 		return results;
@@ -78,38 +92,42 @@
 </script>
 
 <div class="journal-container w-full flex flex-col justify-start items-start flex-nowrap">
-	<a href={link} target="_blank" class="w-full" title={title}>
+	<a href={link} target="_blank" class="title-container w-full" title={title}>
 		<p class="title">{title}</p>
 		<div class="publisher flex">
 			<p class="publisher-text">{publisher}</p>
 		</div>
 	</a>
-	{#if metrics.length > 0}
-		<div class="part-1">
-			{#each metrics as metric}
-				<div class="subtitle-cards">
-					<span class="subtitle unselectable">
-						{metric.title}:
-					</span>
-					<div class="cards">
-						<div class="card text-unselectable" style="background-color: {metric.color}; --shadow-color: {metric.shadow};">
-							<div class="emoji">{@html emojis[metric.emoji]}</div>
-							<span>{metric.text}</span>
-							<div class="info-ext">
-								<InfoBubble {emojis} text={metric.description} {width} {height}/>
-							</div>
+	<div class="part-1">
+		{#each metrics as metric}
+			<div class="subtitle-cards">
+				<span class="subtitle unselectable">
+					{metric.title}:
+				</span>
+				<div class="cards">
+					<div class="card text-unselectable" style="background-color: {metric.color}; --shadow-color: {metric.shadow};">
+						<div class="emoji">{@html emojis[metric.emoji]}</div>
+						<span>{metric.text}</span>
+						<div class="info-ext">
+							<InfoBubble {emojis} text={metric.description} {width} {height}/>
 						</div>
 					</div>
 				</div>
-			{/each}
-		</div>
-	{/if}
+			</div>
+		{/each}
+	</div>
+	<div class="footer w-full flex flex-row justify-end items-center flex-nowrap">
+		<a href="https://github.com/angeluriot/Papermap-data" target="_blank" class="flex-center-row flex-nowrap">
+			<img src={Link} alt="link" class="img-unselectable"/>
+			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How journals are scored?</span>
+		</a>
+	</div>
 </div>
 
 <style>
 	.journal-container
 	{
-		gap: 0.9em;
+		gap: 1em;
 	}
 
 	p, span
@@ -121,6 +139,11 @@
 	span
 	{
 		text-wrap: nowrap;
+	}
+
+	.title-container:hover .title
+	{
+		text-decoration: underline;
 	}
 
 	.title
@@ -234,5 +257,26 @@
 	.card:hover .info-ext
 	{
 		display: block;
+	}
+
+	.footer
+	{
+		font-size: 0.95em;
+		font-weight: 500;
+		text-align: right;
+		color: #9193a2;
+	}
+
+	.footer a img
+	{
+		width: 0.9em;
+		height: 0.9em;
+		margin-top: -0.1em;
+		margin-right: -1em;
+	}
+
+	.footer a:hover
+	{
+		text-decoration: underline;
 	}
 </style>

@@ -1,5 +1,4 @@
-import type { Journal } from '$lib/types/journal';
-import { JournalStatus, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
+import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
 import { type DataMap, type Group, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/server/emojis';
@@ -41,7 +40,7 @@ function random_times<T>(generator: () => T, min: number, max: number): T[]
 }
 
 
-export function generate_paper(map: DataMap, journals: { [id: string]: Journal }): DataPaper
+export function generate_paper(map: DataMap, journal_ids: { id: string, proba: number }[]): DataPaper
 {
 	const journal_status = random_choice(
 		[JournalStatus.NotPublished, JournalStatus.NotFound, JournalStatus.Found],
@@ -64,7 +63,7 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 		authors: random_times(() => faker.person.fullName(), 1, 5),
 		journal: {
 			status: journal_status,
-			id: journal_status === JournalStatus.Found ? random_choice(Object.keys(journals)) : undefined,
+			id: journal_status === JournalStatus.Found ? random_choice(journal_ids.map(j => j.id), journal_ids.map(j => j.proba)) : undefined,
 			retracted: journal_status === JournalStatus.NotPublished ? false : random_choice([false, true], [10, 1]),
 		},
 		year: 2025 - Math.round(Math.random() * 50),
@@ -94,7 +93,7 @@ export function generate_paper(map: DataMap, journals: { [id: string]: Journal }
 		notes: random_times(() => ({
 			title: faker.lorem.sentence({ min: 2, max: 5 }).slice(0, -1),
 			description: faker.lorem.sentence({ min: 5, max: 15 }).slice(0, -1),
-			positive: Math.random() < 0.5,
+			impact: random_choice(Object.keys(NoteImpact) as NoteImpact[]),
 		}), 0, 3),
 	}
 }

@@ -1,3 +1,6 @@
+import type { LightJournal } from './journal';
+
+
 export enum JournalStatus
 {
 	Found = 'Found',
@@ -33,44 +36,53 @@ export enum ReviewType
 }
 
 
+export enum NoteImpact
+{
+	ExtremelyNegative = 'ExtremelyNegative',
+	Negative = 'Negative',
+	Positive = 'Positive',
+	ExtremelyPositive = 'ExtremelyPositive',
+}
+
+
 export interface DataPaper
 {
 	id?: string;
 	title: string;
 	authors: string[];
+	year: number;
+	link: string;
 	journal: {
 		status: JournalStatus,
 		id?: string,
 		retracted: boolean,
 	};
-	year: number;
-	link: string;
 	results: {
 		consensus: string,
 		conclusion: string,
 		indirect: boolean,
 	};
 	quote: string;
-	type?: PaperType;
 	review?: {
 		type: ReviewType,
 		count: number,
 	};
+	type?: PaperType;
 	on?: StudyOn;
-	citations: {
-		count: number,
-		critics: boolean,
-	};
 	sample_size?: number;
 	p_value?: {
 		value: number,
 		less_than: boolean,
 	};
+	citations: {
+		count: number,
+		critics: boolean,
+	};
 	conflict_of_interest: boolean;
 	notes: {
 		title: string,
 		description: string,
-		positive: boolean,
+		impact: NoteImpact,
 	}[];
 }
 
@@ -104,4 +116,17 @@ export function paper_to_datapaper(paper: Paper): DataPaper
 {
 	const { score, ...data } = paper;
 	return data;
+}
+
+
+export interface SearchPaperResult
+{
+	id?: string;
+	link?: string;
+	title?: string;
+	year?: number;
+	journal?: LightJournal;
+	authors?: string[];
+	citations?: number;
+	retracted?: boolean;
 }

@@ -1,5 +1,5 @@
 import { Color, COLORS } from '$lib/colors';
-import { StudyOn, PaperType, ReviewType } from '$lib/types/paper';
+import { StudyOn, PaperType, ReviewType, NoteImpact } from '$lib/types/paper';
 import * as ColorLib from 'color';
 
 
@@ -153,4 +153,24 @@ export function p_value_score_to_emoji(score: number | undefined): string
 	if (score < 0.5) return			'👀';
 	if (score < 0.75) return		'🔍';
 	return							'🔬';
+}
+
+
+export function impact_to_emoji(impact: NoteImpact | undefined): string
+{
+	if (impact === NoteImpact.ExtremelyNegative) return	'💩';
+	if (impact === NoteImpact.Negative) return			'👎';
+	if (impact === NoteImpact.Positive) return			'👍';
+	if (impact === NoteImpact.ExtremelyPositive) return	'🏆';
+	return												'🤷';
+}
+
+
+export function impact_to_color(impact: NoteImpact | undefined): string
+{
+	if (impact === NoteImpact.ExtremelyNegative) return	COLORS[Color.Red].default;
+	if (impact === NoteImpact.Negative) return			COLORS[Color.Red1H].default;
+	if (impact === NoteImpact.Positive) return			COLORS[Color.Green1H].default;
+	if (impact === NoteImpact.ExtremelyPositive) return	COLORS[Color.Green].default;
+	return												COLORS[Color.Gray].default;
 }

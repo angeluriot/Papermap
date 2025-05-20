@@ -79,7 +79,7 @@
 	</div>
 	<div
 		class="info-container absolute bg-white" bind:clientHeight={info_height}
-		style="left: {info_left}; top: {info_top};"
+		style="left: {info_left}; top: {info_top}; padding: {journal ? '1.3em 1.5em 1.1em 1.5em' : '1em 1.2em 1.1em 1.2em'};"
 	>
 		{#if text !== undefined}
 			<span class="text" style="width: {info_final_width}em;">

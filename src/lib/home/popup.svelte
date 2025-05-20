@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Loading from '$lib/display/loading.svelte';
 	import { get_new_map_issue_url } from '$lib/github/issue';
 	import Cross from '$lib/svgs/cross.svg';
 
@@ -10,7 +11,7 @@
 		comment: '',
 		discord_username: ''
 	});
-	let cooldown = $state(false);
+	let loading = $state(false);
 
 	export function show(title?: string)
 	{
@@ -35,22 +36,21 @@
 
 	function submit_github()
 	{
-		if (cooldown)
+		if (loading)
 			return;
 
-		cooldown = true;
+		loading = true;
 		const url = get_new_map_issue_url(data);
 
-		setTimeout(() => { cooldown = false; }, 1000);
 		window.open(url, '_self')?.focus();
 	}
 
 	async function submit()
 	{
-		if (cooldown)
+		if (loading)
 			return;
 
-		cooldown = true;
+		loading = true;
 
 		let body: Record<string, string> = { 'title': data.title.trim() };
 
@@ -91,14 +91,13 @@
 			if (response.status === 500)
 				error_message = 'There is an issue with the server, please try again later.';
 
-			setTimeout(() => { cooldown = false; }, 1000);
 			alert(error_message);
+			loading = false;
 			return;
 		}
 
 		const result = await response.json() as { issue_url: string };
 
-		setTimeout(() => { cooldown = false; }, 1000);
 		window.open(result.issue_url, '_self')?.focus();
 	}
 </script>
@@ -116,7 +115,10 @@
 		</div>
 		<h1 class="unselectable">Request a new map</h1>
 		<div class="input">
-			<div class="label unselectable"><span>Title</span></div>
+			<div class="label unselectable flex-center-row">
+				<span>Title</span>
+				<span class="required">*</span>
+			</div>
 			<input bind:value={data.title} type="text" placeholder="A simple question that can be answered by science"/>
 		</div>
 		<div class="input">
@@ -148,11 +150,31 @@
 			<input bind:value={data.discord_username} type="text" placeholder="For the &quot;Contributor&quot; role on the Papermap discord"/>
 		</div>
 		<div class="buttons flex-center-row img-unselectable">
-			<button class="github-button flex-center-col {data.title.trim().length > 0 ? '' : 'disabled'}" onclick={submit_github}>
-				Submit using your own GitHub account
+			<button
+				class="github-button relative flex-center-col {loading || data.title.trim().length > 0 ? '' : 'disabled'}"
+				style="{loading ? 'pointer-events: none;' : ''}" onclick={submit_github}
+			>
+				<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
+					Submit using your own GitHub account
+				</span>
+				{#if loading}
+					<div class="loading">
+						<Loading color="#31375b"/>
+					</div>
+				{/if}
 			</button>
-			<button class="default-button {data.title.trim().length > 0 ? '' : 'disabled'}" onclick={submit}>
-				Submit
+			<button
+				class="default-button relative {loading || data.title.trim().length > 0 ? '' : 'disabled'}"
+				style="{loading ? 'pointer-events: none;' : ''}" onclick={submit}
+			>
+				<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
+					Submit
+				</span>
+				{#if loading}
+					<div class="loading">
+						<Loading color="#1b524e"/>
+					</div>
+				{/if}
 			</button>
 		</div>
 	</div>
@@ -238,6 +260,15 @@
 		margin-left: 0.2em;
 	}
 
+	.required
+	{
+		font-weight: 800;
+		font-size: 1.3em;
+		line-height: 0.5em;
+		color: #ff2b2b;
+		margin-bottom: 0.2em;
+	}
+
 	.label .optional
 	{
 		font-weight: 450;
@@ -247,9 +278,9 @@
 	.input input, .input textarea
 	{
 		width: 100%;
-		border-color: rgb(219, 219, 232);
+		border-color: #dbdbe8;
 		border-width: 0.145em;
-		background-color: rgb(251, 251, 253);
+		background-color: #fbfbfd;
 		padding: 0.4em 0.6em;
 		font-family: Satoshi-Variable;
 		font-weight: 465;
@@ -300,9 +331,9 @@
 
 	.github-button
 	{
-		background-color: rgb(133, 174, 255);
-		border-color: rgb(91, 117, 219);
-		color: rgb(49, 55, 91);
+		background-color: #85aeff;
+		border-color: #5b75db;
+		color: #31375b;
 	}
 
 	.github-button:hover
@@ -312,22 +343,31 @@
 
 	.default-button
 	{
-		background-color: rgb(122, 243, 191);
-		border-color: rgb(86, 200, 162);
-		color: rgb(27, 82, 78);
+		background-color: #7af3bf;
+		border-color: #56c8a2;
+		color: #1b524e;
 	}
 
 	.default-button:hover
 	{
-		background-color: rgb(110, 231, 186);
+		background-color: #6ee7ba;
 	}
 
 	.disabled
 	{
 		pointer-events: none;
-		background-color: rgb(240, 240, 247);
+		background-color: #f0f0f7;
 		border-style: dashed;
-		border-color: rgb(211, 212, 232);
-		color: rgb(155, 155, 183);
+		border-color: #d3d4e8;
+		color: #9b9bb7;
+	}
+
+	.loading
+	{
+		font-size: 0.5em;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 </style>
