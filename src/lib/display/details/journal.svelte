@@ -53,36 +53,35 @@
 	{
 		let results = []
 
-		for (const metric of Object.keys(metrics_data) as (keyof typeof metrics_data)[])
+		for (const m of Object.keys(metrics_data) as (keyof typeof metrics_data)[])
 		{
-			const value = journal.metrics[metric];
-			const score = journal.scores[metric];
+			const metric = journal.metrics[m];
 
-			if (value === undefined || score === undefined)
+			if (metric === undefined)
 			{
 				results.push({
-					title: metrics_data[metric].name,
+					title: metrics_data[m].name,
 					emoji: cards.score_to_emoji(undefined),
 					text: 'N/A',
 					color: COLORS[Color.Gray].default,
 					shadow: color_to_shadow(COLORS[Color.Gray].default),
-					description: metrics_data[metric].description,
+					description: metrics_data[m].description,
 				});
 			}
 
 			else
 			{
 				results.push({
-					title: metrics_data[metric].name,
-					emoji: cards.score_to_emoji(metric === 'self' ? Math.min(score, 0.85) : score),
+					title: metrics_data[m].name,
+					emoji: cards.score_to_emoji(m === 'self' ? Math.min(metric.score, 0.85) : metric.score),
 					text: (
-						metric === 'self' ?
-						int_to_text(Math.round(value * 100)) + '%' :
-						float_to_text(value)
+						m === 'self' ?
+						int_to_text(Math.round(metric.value * 100)) + '%' :
+						float_to_text(metric.value)
 					),
-					color: cards.score_to_color(metric === 'self' ? Math.min(score, 0.85) : score),
-					shadow: color_to_shadow(cards.score_to_color(score)),
-					description: metrics_data[metric].description,
+					color: cards.score_to_color(m === 'self' ? Math.min(metric.score, 0.85) : metric.score),
+					shadow: color_to_shadow(cards.score_to_color(m === 'self' ? Math.min(metric.score, 0.85) : metric.score)),
+					description: metrics_data[m].description,
 				});
 			}
 		}

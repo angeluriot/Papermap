@@ -1,50 +1,85 @@
-import { row_to_journal, row_to_light_journal, type Journal, type JournalRow, type LightJournal } from '$lib/types/journal';
+import { journal_to_light_journal, type Journal, type LightJournal } from '$lib/types/journal';
 import { constants as C } from '$lib/server/utils';
-import { Pool } from 'pg';
+import { join } from 'path';
+import fs from 'fs';
+import readline from 'readline';
 
 
-const pool = new Pool({ connectionString: C.DB_URL });
+let index: Record<string, [number, number]> | undefined = undefined;
+
+
+async function init()
+{
+	index = JSON.parse(await fs.promises.readFile(join(C.DATA_DIR, 'index.json'), 'utf-8'));
+}
 
 
 export async function get_journal_ids(): Promise<{ id: string, proba: number }[]>
 {
-	const query = 'SELECT id, metric_h FROM journals;';
-	const { rows } = await pool.query<{ id: string, metric_h: number | null }>(query);
+	const file_stream = fs.createReadStream(join(C.DATA_DIR, 'journals.jsonl'), { encoding: 'utf-8' });
+	const rl = readline.createInterface({ input: file_stream, crlfDelay: Infinity });
 
-	return rows.map((row) => ({
-		id: row.id,
-		proba: row.metric_h ?? 0.0,
-	}));
+	let journals: { id: string, proba: number }[] = [];
+
+	for await (const line of rl)
+	{
+		const journal = JSON.parse(line) as Journal;
+		journals.push({ id: journal.id, proba: journal.metrics?.h?.value ?? 0 });
+	}
+
+	return journals;
 }
 
 
 export async function get_journal(id: string): Promise<LightJournal | null>
 {
-	const query = 'SELECT * FROM journals WHERE id = $1;';
-	const { rows } = await pool.query<JournalRow>(query, [id]);
+	if (!index)
+		await init();
 
-	if (rows.length === 0)
+	const result = (index as Record<string, [number, number]>)[id];
+
+	if (result === undefined)
 		return null;
 
-	return row_to_light_journal(rows[0]);
+	const [start, length] = result;
+	const file = await fs.promises.open(join(C.DATA_DIR, 'journals.jsonl'), 'r');
+	const buffer = Buffer.alloc(length);
+	await file.read(buffer, 0, length, start);
+	await file.close();
+
+	const journal = JSON.parse(buffer.toString('utf-8')) as Journal;
+	return journal_to_light_journal(journal);
 }
 
 
 export async function get_journals(ids: string[]): Promise<{ [id: string]: Journal }>
 {
+	if (!index)
+		await init();
+
+	let id_list = [...new Set(ids)];
 	let journals: { [id: string]: Journal } = {};
 
-	if (ids.length === 0)
+	if (id_list.length === 0)
 		return {};
 
-	const query = 'SELECT * FROM journals WHERE id = ANY($1);';
-	const { rows } = await pool.query<JournalRow>(query, [ids]);
+	const file = await fs.promises.open(join(C.DATA_DIR, 'journals.jsonl'), 'r');
 
-	for (const row of rows)
+	for (const id of id_list)
 	{
-		const journal = row_to_journal(row);
+		const result = (index as Record<string, [number, number]>)[id];
+
+		if (result === undefined)
+			continue;
+
+		const [start, length] = result;
+		const buffer = Buffer.alloc(length);
+		await file.read(buffer, 0, length, start);
+		const journal = JSON.parse(buffer.toString('utf-8')) as Journal;
 		journals[journal.id] = journal;
 	}
+
+	await file.close();
 
 	return journals;
 }

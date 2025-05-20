@@ -1,6 +1,6 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
-import { type DataPaper, type PaperScore, type Paper, PaperType } from '$lib/types/paper';
+import { type DataPaper, type PaperScore, type Paper, PaperType, NoteImpact } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import { compute_normalized_ranking } from './utils';
 
@@ -193,7 +193,7 @@ function score_notes(paper: DataPaper): number | undefined
 	let notes_score = 0.0;
 
 	for (const note of paper.notes)
-		notes_score += note.positive ? 1.0 : 0.0;
+		notes_score += note.impact === NoteImpact.Positive ? 1.0 : 0.0;
 
 	return notes_score / paper.notes.length;
 }
