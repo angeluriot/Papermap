@@ -178,6 +178,13 @@
 	input::placeholder
 	{
 		color: #9b9aa7;
+		pointer-events: none;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-drag: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
 	}
 
 	.search

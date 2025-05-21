@@ -305,6 +305,13 @@
 	.input input::placeholder, .input textarea::placeholder
 	{
 		color: rgb(173, 173, 194);
+		pointer-events: none;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-drag: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
 	}
 
 	.buttons
