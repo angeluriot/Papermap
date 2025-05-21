@@ -1,4 +1,4 @@
-import { score_answers, score_paper } from '$lib/server/data/score';
+import { score_map } from '$lib/scoring/map';
 import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Group, Map, MapTitle } from '$lib/types/map';
@@ -67,6 +67,7 @@ async function import_map_titles(): Promise<MapTitle[]>
 		maps.push({
 			group: group_data,
 			id: map,
+			draft: map_data.draft,
 			emoji: map_data.emoji,
 			question: map_data.question,
 			description: map_data.description,
@@ -113,15 +114,7 @@ export async function import_map(id: string): Promise<{ map: Map, journals: { [i
 		.filter((id: string | undefined) => id !== undefined) as string[]
 	);
 
-	let map: Map = {
-		...data,
-		group: group_data,
-		id,
-		papers: data.papers.map((paper: DataPaper) => score_paper(data, paper.journal.id ? journals[paper.journal.id] : undefined, paper)),
-		overview: {}
-	};
-
-	map.overview = score_answers(map);
+	let map = score_map(id, group_data, data, journals);
 
 	return { map, journals };
 }

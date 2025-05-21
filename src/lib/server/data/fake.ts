@@ -119,6 +119,7 @@ export function generate_map_title(group: { id: string, emoji: string, name: str
 	return {
 		group,
 		id,
+		draft: false,
 		emoji: random_choice(Object.keys(EMOJI_NAMES)),
 		question: {
 			short: short + '?',

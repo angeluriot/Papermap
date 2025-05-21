@@ -4,6 +4,7 @@ import type { Color } from '$lib/colors';
 
 interface BaseMap
 {
+	draft: boolean;
 	emoji: string;
 	question: {
 		short: string,
@@ -73,6 +74,7 @@ export interface MapTitle
 {
 	group: Group;
 	id: string;
+	draft: boolean;
 	emoji: string;
 	question: {
 		short: string,

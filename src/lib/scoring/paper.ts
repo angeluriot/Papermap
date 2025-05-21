@@ -2,7 +2,6 @@ import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
 import { type DataPaper, type PaperScore, type Paper, PaperType, NoteImpact } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
-import { compute_normalized_ranking } from './utils';
 
 
 const TYPE_SCORES = {
@@ -74,8 +73,6 @@ const COEFS = {
 	conflict_of_interest: 10,
 	notes: 1,
 }
-const OVERVIEW_RANK_SCORE_COEF = 0.1;
-const OVERVIEW_GAP_INCREASE = 3;
 
 
 export function score_journal(paper: DataPaper, journal: Journal | undefined): number
@@ -87,7 +84,7 @@ export function score_journal(paper: DataPaper, journal: Journal | undefined): n
 }
 
 
-export function score_result(map: DataMap, paper: DataPaper): number
+export function score_result(map: DataMap | Map, paper: DataPaper): number
 {
 	const direct_score = paper.results.indirect ? 0.0 : 1.0;
 	const coherence_score = map.consensus[paper.results.consensus].coherence[paper.results.conclusion];
@@ -96,7 +93,7 @@ export function score_result(map: DataMap, paper: DataPaper): number
 }
 
 
-function score_type(map: DataMap, paper: DataPaper): number | undefined
+function score_type(map: DataMap | Map, paper: DataPaper): number | undefined
 {
 	if (!paper.type || map.type.any)
 		return undefined;
@@ -126,7 +123,7 @@ function score_review(paper: DataPaper): { review: number, count: number }
 }
 
 
-export function score_on(map: DataMap, paper: DataPaper): number | undefined
+export function score_on(map: DataMap | Map, paper: DataPaper): number | undefined
 {
 	if (!paper.on || map.on.any)
 		return undefined;
@@ -155,7 +152,7 @@ function score_year(paper: DataPaper): number
 }
 
 
-function score_sample_size(map: DataMap, paper: DataPaper): number | undefined
+function score_sample_size(map: DataMap | Map, paper: DataPaper): number | undefined
 {
 	if (!paper.sample_size || map.no_sample_size)
 		return undefined;
@@ -167,7 +164,7 @@ function score_sample_size(map: DataMap, paper: DataPaper): number | undefined
 }
 
 
-function score_p_value(map: DataMap, paper: DataPaper): number | undefined
+function score_p_value(map: DataMap | Map, paper: DataPaper): number | undefined
 {
 	if (!paper.p_value || !map.conclusions[paper.results.conclusion].p_value)
 		return undefined;
@@ -199,7 +196,7 @@ function score_notes(paper: DataPaper): number | undefined
 }
 
 
-function calculate_overall(map: DataMap, paper: DataPaper, score: PaperScore): number
+function calculate_overall(map: DataMap | Map, paper: DataPaper, score: PaperScore): number
 {
 	let numerator = 0.0;
 	let denominator = 0.0;
@@ -256,7 +253,7 @@ function calculate_overall(map: DataMap, paper: DataPaper, score: PaperScore): n
 }
 
 
-export function score_paper(map: DataMap, journal: Journal | undefined, paper: DataPaper): Paper
+export function score_paper(map: DataMap | Map, journal: Journal | undefined, paper: DataPaper): Paper
 {
 	const { review, count: review_count } = score_review(paper)
 	const { citations, count: citations_count } = score_citations(paper)
@@ -291,42 +288,4 @@ export function score_paper(map: DataMap, journal: Journal | undefined, paper: D
 	score.overall = calculate_overall(map, paper, score);
 
 	return { ...paper, score };
-}
-
-
-export function score_answers(map: Map): Record<string, number>
-{
-	let answer_scores: Record<string, number> = {};
-	let paper_scores: Record<string, number> = {};
-
-	map.papers.forEach((paper, index) =>
-	{
-		paper_scores[`${index}`] = paper.score.overall;
-	});
-
-	let paper_rank_scores = compute_normalized_ranking(paper_scores);
-
-	for (let i = 0; i < map.papers.length; i++)
-	{
-		const paper = map.papers[i];
-		const rank_score = paper_rank_scores[`${i}`];
-		const score = ((1 - OVERVIEW_RANK_SCORE_COEF) * paper.score.overall + OVERVIEW_RANK_SCORE_COEF * rank_score) ** OVERVIEW_GAP_INCREASE;
-		const answer_id = paper.results.conclusion;
-
-		if (!answer_scores[answer_id])
-			answer_scores[answer_id] = 0;
-
-		answer_scores[answer_id] += score;
-	}
-
-	for (const answer_id in map.conclusions)
-		if (!answer_scores[answer_id])
-			answer_scores[answer_id] = 0;
-
-	const total = Object.values(answer_scores).reduce((acc, score) => acc + score, 0);
-
-	for (const answer_id in answer_scores)
-		answer_scores[answer_id] /= total;
-
-	return answer_scores;
 }
