@@ -10,13 +10,13 @@ let index: Record<string, [number, number]> | undefined = undefined;
 
 async function init()
 {
-	index = JSON.parse(await fs.promises.readFile(join(C.DATA_DIR, 'index.json'), 'utf-8'));
+	index = JSON.parse(await fs.promises.readFile(join(C.DATA_DIR, 'journals', 'index.json'), 'utf-8'));
 }
 
 
 export async function get_journal_ids(): Promise<{ id: string, proba: number }[]>
 {
-	const file_stream = fs.createReadStream(join(C.DATA_DIR, 'journals.jsonl'), { encoding: 'utf-8' });
+	const file_stream = fs.createReadStream(join(C.DATA_DIR, 'journals', 'data.jsonl'), { encoding: 'utf-8' });
 	const rl = readline.createInterface({ input: file_stream, crlfDelay: Infinity });
 
 	let journals: { id: string, proba: number }[] = [];
@@ -42,7 +42,7 @@ export async function get_journal(id: string): Promise<LightJournal | null>
 		return null;
 
 	const [start, length] = result;
-	const file = await fs.promises.open(join(C.DATA_DIR, 'journals.jsonl'), 'r');
+	const file = await fs.promises.open(join(C.DATA_DIR, 'journals', 'data.jsonl'), 'r');
 	const buffer = Buffer.alloc(length);
 	await file.read(buffer, 0, length, start);
 	await file.close();
@@ -63,7 +63,7 @@ export async function get_journals(ids: string[]): Promise<{ [id: string]: Journ
 	if (id_list.length === 0)
 		return {};
 
-	const file = await fs.promises.open(join(C.DATA_DIR, 'journals.jsonl'), 'r');
+	const file = await fs.promises.open(join(C.DATA_DIR, 'journals', 'data.jsonl'), 'r');
 
 	for (const id of id_list)
 	{
