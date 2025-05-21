@@ -234,7 +234,7 @@
 	{
 		color: #303037;
 		font-size: 1.25em;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
 		line-height: 1.5em;
 		margin-bottom: 0.5em;
@@ -253,7 +253,7 @@
 
 	.input .label
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
 		line-height: 1.5em;
 		border-radius: 0.5em;
@@ -282,7 +282,7 @@
 		border-width: 0.145em;
 		background-color: #fbfbfd;
 		padding: 0.4em 0.6em;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 465;
 		line-height: 1.5em;
 		border-radius: 0.5em;
@@ -319,7 +319,7 @@
 		cursor: pointer;
 		max-width: 15em;
 		border-width: 0.145em;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 475;
 		line-height: 1.5em;
 		border-radius: 1.5em;

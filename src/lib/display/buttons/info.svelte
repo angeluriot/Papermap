@@ -42,7 +42,7 @@
 
 	.title
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		line-height: 1.25em;
 		font-weight: 700;
 		text-align: center;
@@ -50,7 +50,7 @@
 
 	.text
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		line-height: 1.25em;
 		font-weight: 500;
 		text-align: center;

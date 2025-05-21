@@ -144,7 +144,7 @@
 	.header
 	{
 		font-size: 1.85em;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 550;
 		line-height: 1.25em;
 		text-wrap: nowrap;
@@ -247,7 +247,7 @@
 	h2
 	{
 		display: block;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 625;
 		line-height: 1.25em;
 		text-wrap: wrap;
@@ -281,7 +281,7 @@
 	{
 		display: block;
 		width: var(--thumbnail-width);
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 550;
 		line-height: 1.25em;
 		text-wrap: wrap;

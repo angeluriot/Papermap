@@ -127,7 +127,7 @@
 
 	span
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 465;
 		line-height: 1.5em;
 		color: #4d4d5c;

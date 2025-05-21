@@ -143,7 +143,7 @@
 	{
 		font-size: 0.95em;
 		text-wrap: nowrap;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 700;
 		text-shadow: 0em 0.1em 0.75em #00008036;
 		line-height: 1.2em;

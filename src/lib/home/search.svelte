@@ -214,7 +214,7 @@
 
 	span
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
 		line-height: 1.5em;
 		letter-spacing: 0.005em;

@@ -107,7 +107,7 @@
 <style>
 	.input-container
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		line-height: 1.5em;
 	}
 

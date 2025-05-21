@@ -185,14 +185,14 @@
 	{
 		color: #303037;
 		font-size: 1.25em;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
 		line-height: 1.5em;
 	}
 
 	.help
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		line-height: 1.5em;
 		font-weight: 500;
 		color: #9193a2;
@@ -233,7 +233,7 @@
 		font-size: 1.1em;
 		line-height: 1.5em;
 		font-weight: 500;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 	}
 
 	.input
@@ -249,7 +249,7 @@
 
 	.input .label
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
 		line-height: 1.5em;
 		border-radius: 0.5em;
@@ -263,7 +263,7 @@
 		border-width: 2px;
 		background-color: #fbfbfd;
 		padding: 0.4em 0.6em;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 465;
 		line-height: 1.5em;
 		border-radius: 0.5em;
@@ -290,7 +290,7 @@
 	{
 		cursor: pointer;
 		border-width: 2px;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 475;
 		line-height: 1.5em;
 		border-radius: 1.5em;

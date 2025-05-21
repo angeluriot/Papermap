@@ -122,7 +122,7 @@
 	.text
 	{
 		display: block;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		line-height: 1.25em;
 		font-weight: 500;
 		text-align: center;

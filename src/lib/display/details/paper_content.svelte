@@ -518,7 +518,7 @@
 <style>
 	p, span
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		line-height: 1.25em;
 	}
 
@@ -534,7 +534,7 @@
 
 	.title
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-size: 1.2em;
 		line-height: 1.25em;
 		font-weight: 725;

@@ -169,7 +169,7 @@
 		width: 50em;
 		max-width: calc(100vw - 4em);
 		padding: 0.85em 1.45em;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 525;
 		line-height: 1.5em;
 		letter-spacing: 0.005em;
@@ -227,7 +227,7 @@
 
 	.buttons button span
 	{
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 550;
 		line-height: 1.25em;
 		text-wrap: nowrap;
@@ -246,7 +246,7 @@
 		padding: 0.5em 0.5em;
 		cursor: pointer;
 		color: #303037;
-		font-family: Satoshi-Variable;
+		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 475;
 		line-height: 1.5em;
 		text-wrap: nowrap;
