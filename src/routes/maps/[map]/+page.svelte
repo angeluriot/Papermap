@@ -155,7 +155,7 @@
 	</div>
 	<div class="buttons absolute bottom-0 right-0">
 		{#if edit_mode}
-			<EditButtons add={() => popup?.show()} submit={async () => {}}/>
+			<EditButtons {map} add={() => popup?.show()} submit={async () => {}}/>
 		{:else}
 			<DefaultButtons {map} hash={data.hash} bind:edit_mode={edit_mode}/>
 		{/if}
