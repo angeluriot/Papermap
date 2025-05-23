@@ -42,8 +42,8 @@ export async function search_paper(doi?: string, title?: string, year?: number):
 		if (authors.length > 0)
 			result.authors = authors;
 
-		if (paper.cited_by_count) result.citations = paper.cited_by_count;
-		if (paper.is_retracted) result.retracted = paper.is_retracted;
+		if (paper.cited_by_count !== undefined) result.citations = paper.cited_by_count;
+		if (paper.is_retracted !== undefined) result.retracted = paper.is_retracted;
 
 		results.push(result);
 	}

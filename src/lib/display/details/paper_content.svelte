@@ -347,7 +347,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="quote flex flex-row justify-start items-start flex-nowrap">
+	<div class="quote flex flex-row justify-start items-start flex-nowrap w-full">
 		<p>
 			{#each quote_parts as part, i}
 				{#if part.italic}

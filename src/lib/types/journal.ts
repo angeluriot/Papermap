@@ -1,9 +1,14 @@
-export interface Journal
+export interface JournalTitle
 {
 	id: string;
 	title: string;
-	link?: string;
 	publisher?: string;
+}
+
+
+export interface Journal extends JournalTitle
+{
+	link?: string;
 	score?: number;
 	metrics: {
 		h?: { value: number, score: number },
@@ -18,29 +23,4 @@ export interface Journal
 		top?: { value: number, score: number },
 		alt?: { value: number, score: number },
 	};
-}
-
-
-export interface LightJournal
-{
-	id: string;
-	title: string;
-	link?: string;
-	publisher?: string;
-	score?: number;
-}
-
-
-export function journal_to_light_journal(journal: Journal): LightJournal
-{
-	let light_journal: LightJournal = {
-		id: journal.id,
-		title: journal.title,
-	};
-
-	if (journal.link != undefined) light_journal.link = journal.link;
-	if (journal.publisher != undefined) light_journal.publisher = journal.publisher;
-	if (journal.score != undefined) light_journal.score = journal.score;
-
-	return light_journal;
 }

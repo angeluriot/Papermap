@@ -1,4 +1,4 @@
-import { journal_to_light_journal, type Journal, type LightJournal } from '$lib/types/journal';
+import type { Journal } from '$lib/types/journal';
 import { constants as C } from '$lib/server/utils';
 import { join } from 'path';
 import fs from 'fs';
@@ -31,7 +31,7 @@ export async function get_journal_ids(): Promise<{ id: string, proba: number }[]
 }
 
 
-export async function get_journal(id: string): Promise<LightJournal | null>
+export async function get_journal(id: string): Promise<Journal | null>
 {
 	if (!index)
 		await init();
@@ -47,8 +47,7 @@ export async function get_journal(id: string): Promise<LightJournal | null>
 	await file.read(buffer, 0, length, start);
 	await file.close();
 
-	const journal = JSON.parse(buffer.toString('utf-8')) as Journal;
-	return journal_to_light_journal(journal);
+	return JSON.parse(buffer.toString('utf-8')) as Journal;
 }
 
 

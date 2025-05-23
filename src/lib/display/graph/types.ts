@@ -35,6 +35,7 @@ export interface GraphPoint extends Point
 		width: number,
 		dasharray?: string,
 	};
+	opacity: number;
 	label: {
 		x: number,
 		y: number,

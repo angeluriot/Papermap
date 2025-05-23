@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { sleep_until } from '$lib/utils';
-	import type { LightJournal } from '$lib/types/journal';
+	import type { JournalTitle } from '$lib/types/journal';
 	import { clean_id } from '$lib/utils';
 
 	let { search, journal = $bindable(), focused }: {
 		search: string,
-		journal: LightJournal | null,
+		journal: JournalTitle | null,
 		focused: boolean
 	} = $props();
 
 	let freeze: Date = new Date();
-	let journal_results: LightJournal[] = $state([]);
+	let journal_results: JournalTitle[] = $state([]);
 	let selected_i: number | null = $state(null);
 
-	async function get_journals(search_: string): Promise<LightJournal[] | null>
+	async function get_journals(search_: string): Promise<JournalTitle[] | null>
 	{
 		if (freeze > new Date())
 			await sleep_until(freeze);

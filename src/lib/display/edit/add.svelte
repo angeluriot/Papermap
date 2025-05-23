@@ -1,15 +1,20 @@
 <script lang="ts">
 	import type { Map } from '$lib/types/map';
-	import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper, type SearchPaperResult } from '$lib/types/paper';
+	import { Edit, JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper, type SearchPaperResult } from '$lib/types/paper';
 	import SmallAdd from '$lib/svgs/small-add.svg';
 	import SmallRemove from '$lib/svgs/small-remove.svg';
 	import { TO_TEXT, TO_TEXT_PLURAL } from '../details/cards';
-	import type { LightJournal } from '$lib/types/journal';
+	import type { Journal, JournalTitle } from '$lib/types/journal';
 	import Autocomplete from './autocomplete.svelte';
 	import Cross from '$lib/svgs/cross.svg';
 	import Link from '$lib/svgs/link.svg';
+    import { score_paper } from '$lib/scoring/paper';
 
-	const { map, result }: { map: Map, result: SearchPaperResult | null } = $props();
+	let { map = $bindable(), journals = $bindable(), result }: {
+		map: Map,
+		journals: { [id: string]: Journal },
+		result: SearchPaperResult | null
+	} = $props();
 
 	let id: string | null = $state(null);
 	let title = $state('');
@@ -18,7 +23,7 @@
 	let link = $state('');
 	let journal_status: string = $state('');
 	let journal_search = $state('');
-	let journal: LightJournal | null = $state(null);
+	let journal: JournalTitle | null = $state(null);
 	let retracted: boolean = $state(false);
 	let consensus: string = $state('');
 	let conclusion: string = $state('');
@@ -99,7 +104,22 @@
 		);
 	}
 
-	function add_paper()
+	async function get_journal_data(id: string): Promise<Journal | undefined>
+	{
+		const response = await fetch(`/journal/${id}`, {
+			method: 'GET',
+			headers: { 'Content-Type': 'application/json' },
+		});
+
+		if (!response.ok)
+			return undefined;
+
+		const result = await response.json() as { journal: Journal };
+
+		return result.journal;
+	}
+
+	async function add_paper()
 	{
 		if (!is_valid())
 			return;
@@ -109,18 +129,30 @@
 			status: JournalStatus.NotPublished
 		};
 
+		let journal_data: Journal | undefined = undefined;
+
 		if (journal)
 		{
 			if (journal.id === 'not_found')
 				journal_attribute.status = JournalStatus.NotFound;
 			else
 			{
-				journal_attribute.journal = journal.id;
-				journal_attribute.status = JournalStatus.Found;
+				journal_data = await get_journal_data(journal.id);
+
+				if (journal_data === undefined)
+					journal_attribute.status = JournalStatus.NotFound;
+				else
+				{
+					journal_attribute.id = journal.id;
+					journal_attribute.status = JournalStatus.Found;
+
+					if (journals[journal.id] === undefined)
+						journals[journal.id] = journal_data;
+				}
 			}
 		}
 
-		let paper: DataPaper = {
+		let data_paper: DataPaper = {
 			title: title.trim(),
 			authors: authors.filter(author => author.trim().length > 0).map(author => author.trim()),
 			year: year as number,
@@ -149,34 +181,36 @@
 		};
 
 		if (id !== null && id !== '')
-			paper.id = id;
+			data_paper.id = id;
 
 		if (Object.values(ReviewType).includes(review_type.trim() as ReviewType))
 		{
-			paper.review = {
+			data_paper.review = {
 				type: review_type.trim() as ReviewType,
 				count: review_count as number,
 			};
 		}
 
 		if (Object.values(PaperType).includes(type.trim() as PaperType))
-			paper.type = type.trim() as PaperType;
+			data_paper.type = type.trim() as PaperType;
 
 		if (Object.values(StudyOn).includes(on.trim() as StudyOn))
-			paper.on = on.trim() as StudyOn;
+			data_paper.on = on.trim() as StudyOn;
 
 		if (sample_size !== null)
-			paper.sample_size = sample_size as number;
+			data_paper.sample_size = sample_size;
 
 		if (p_value !== null && p_value_prefix !== '')
 		{
-			paper.p_value = {
-				value: p_value as number,
+			data_paper.p_value = {
+				value: p_value,
 				less_than: p_value_prefix.trim() === 'less',
 			};
 		}
 
-		console.log(paper);
+		let paper = score_paper(map, journal_data, data_paper);
+		paper.edit = Edit.Added;
+		map.papers.push(paper);
 	}
 </script>
 

@@ -120,6 +120,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 				width: stroke_width,
 				dasharray: not_published ? get_dasharray(size, stroke_width) : undefined,
 			},
+			opacity: paper.edit !== undefined ? 0.33 : 1,
 			label: {
 				x: 0,
 				y: 0,

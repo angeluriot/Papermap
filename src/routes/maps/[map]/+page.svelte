@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { constants as C } from '$lib/utils';
 	import type { PageProps } from './$types';
-	import { paper_to_datapaper } from '$lib/types/paper';
+	import { Edit } from '$lib/types/paper';
 	import Graph from '$lib/display/graph/graph.svelte';
 	import type { GraphPoint } from '$lib/display/graph/types';
 	import Title from '$lib/display/title.svelte';
@@ -15,13 +15,14 @@
 	const { data }: PageProps = $props();
 
 	const emojis = data.emojis;
-	const map = data.map;
-	const journals = data.journals;
-	const route = `maps/${map.id}`;
+	const route = `maps/${data.map.id}`;
 	const page_url = `${C.BASE_URL}/${route}`;
 	const image_url = `${page_url}/preview.jpg?v=${data.hash}`;
-	const tags = C.DEFAULT_TAGS.concat(map.tags);
+	const tags = C.DEFAULT_TAGS.concat(data.map.tags);
 
+	data.map.papers[data.map.papers.length - 1].edit = Edit.Added;
+	let map = $state(data.map);
+	let journals = $state(data.journals);
 	let width = $state(0);
 	let height = $state(0);
 	let point_selected: { get_point: () => GraphPoint, keep: boolean } | null = $state(null);
@@ -53,7 +54,7 @@
 		return 'You have unsaved changes, are you sure you want to leave?';
 	}
 
-	let edit_test = paper_to_datapaper(map.papers[0]);
+	/*let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
 
 	async function edit(): Promise<void>
@@ -77,7 +78,7 @@
 
 		const result = await response.json() as { pr_url: string };
 		console.log('Edit successful:', result.pr_url);
-	}
+	}*/
 </script>
 
 <svelte:window bind:innerWidth={width} bind:innerHeight={height} onbeforeunload={on_leaving_edit_mode}/>
@@ -160,7 +161,7 @@
 		{/if}
 	</div>
 	<div class="popup">
-		<Popup {map} bind:this={popup}/>
+		<Popup bind:map={map} bind:journals={journals} bind:this={popup}/>
 	</div>
 </div>
 

@@ -1,4 +1,4 @@
-import type { LightJournal } from './journal';
+import type { Journal } from './journal';
 
 
 export enum JournalStatus
@@ -42,6 +42,14 @@ export enum NoteImpact
 	Negative = 'Negative',
 	Positive = 'Positive',
 	ExtremelyPositive = 'ExtremelyPositive',
+}
+
+
+export enum Edit
+{
+	Added = 'Added',
+	Edited = 'Edited',
+	Deleted = 'Deleted',
 }
 
 
@@ -109,6 +117,7 @@ export interface PaperScore
 export interface Paper extends DataPaper
 {
 	score: PaperScore;
+	edit?: Edit;
 }
 
 
@@ -125,7 +134,7 @@ export interface SearchPaperResult
 	link?: string;
 	title?: string;
 	year?: number;
-	journal?: LightJournal;
+	journal?: Journal;
 	authors?: string[];
 	citations?: number;
 	retracted?: boolean;

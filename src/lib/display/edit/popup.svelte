@@ -5,8 +5,12 @@
 	import type { SearchPaperResult } from '$lib/types/paper';
 	import Add from './add.svelte';
 	import Search from './search.svelte';
+	import type { Journal } from '$lib/types/journal';
 
-	const { map }: { map: Map } = $props();
+	let { map = $bindable(), journals = $bindable() }: {
+		map: Map,
+		journals: { [id: string]: Journal },
+	} = $props();
 
 	let shown = $state(false);
 	let next = $state(false);
@@ -40,7 +44,7 @@
 			<div class="back absolute cursor-pointer left-0 top-0" onclick={() => next = false} onkeydown={null} role="button" tabindex={0}>
 				<img src={Back} alt="Back"/>
 			</div>
-			<Add {map} {result}/>
+			<Add bind:map={map} bind:journals={journals} {result}/>
 		{/if}
 	</div>
 </div>
