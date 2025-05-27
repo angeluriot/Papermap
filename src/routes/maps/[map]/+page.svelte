@@ -49,7 +49,7 @@
 
 	function on_leaving_edit_mode(event: Event)
 	{
-		if (!edit_mode)
+		if (!edit_mode || Object.values(map.papers).every(paper => paper.edit === undefined))
 			return;
 
 		event.preventDefault();
