@@ -12,6 +12,7 @@
 	import { get_label } from '../graph/points';
 	import deepEqual from 'deep-equal';
 	import cloneDeep from 'clone-deep';
+	import Loading from '../loading.svelte';
 
 	let { map = $bindable(), journals = $bindable(), result, paper, hide }: {
 		map: Map,
@@ -45,6 +46,7 @@
 	let critics: boolean = $state(false);
 	let conflict_of_interest: string = $state('');
 	let notes: { title: string, description: string, impact: string }[] = $state([]);
+	let loading = $state(false);
 
 	const impact_to_text = {
 		[NoteImpact.ExtremelyNegative]: 'Extremely negative',
@@ -72,7 +74,7 @@
 			authors = cloneDeep(result.authors ?? ['']);
 			year = cloneDeep(result.year ?? null);
 			link = cloneDeep(result.link ?? '');
-			journal_status = cloneDeep(result.journal?.id ? 'yes' : 'no');
+			journal_status = cloneDeep(result.journal ? 'yes' : 'no');
 			journal = cloneDeep(result.journal ?? null);
 			retracted = cloneDeep(result.retracted ?? false);
 			citations = cloneDeep(result.citations ?? null);
@@ -294,6 +296,11 @@
 
 	async function add_paper()
 	{
+		if (loading)
+			return;
+
+		loading = true;
+
 		let final_paper = await create_paper();
 
 		if (final_paper === null)
@@ -301,11 +308,17 @@
 
 		final_paper.edit = Edit.Added;
 		map.papers[final_paper.uuid] = final_paper;
+		loading = false;
 		hide();
 	}
 
 	async function edit_paper()
 	{
+		if (loading)
+			return;
+
+		loading = true;
+
 		let final_paper = await create_paper();
 
 		if (paper === null || final_paper === null)
@@ -319,6 +332,7 @@
 			final_paper.edit = Edit.Edited;
 
 		map.papers[final_paper.uuid] = final_paper;
+		loading = false;
 		hide();
 	}
 </script>
@@ -636,12 +650,30 @@
 		{/if}
 	</div>
 	{#if paper === null}
-		<button class="button flex-center-col {is_valid() ? '' : 'disabled'}" onclick={add_paper}>
-			<span class="unselectable">Add the paper</span>
+		<button
+			class="button flex-center-col relative {is_valid() ? '' : 'disabled'}"
+			style="{loading ? 'pointer-events: none;' : ''}" onclick={add_paper}>
+			<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
+				Add the paper
+			</span>
+			{#if loading}
+				<div class="loading">
+					<Loading color="#31375b"/>
+				</div>
+			{/if}
 		</button>
 	{:else}
-		<button class="button flex-center-col {is_valid() && has_changed() ? '' : 'disabled'}" onclick={edit_paper}>
-			<span class="unselectable">Edit the paper</span>
+		<button
+			class="button flex-center-col relative {is_valid() && has_changed() ? '' : 'disabled'}"
+			style="{loading ? 'pointer-events: none;' : ''}" onclick={edit_paper}>
+			<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
+				Edit the paper
+			</span>
+			{#if loading}
+				<div class="loading">
+					<Loading color="#31375b"/>
+				</div>
+			{/if}
 		</button>
 	{/if}
 </div>
@@ -906,5 +938,14 @@
 		border-style: dashed;
 		border-color: rgb(211, 212, 232);
 		color: rgb(155, 155, 183);
+	}
+
+	.loading
+	{
+		font-size: 0.5em;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 </style>
