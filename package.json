@@ -33,7 +33,9 @@
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@tailwindcss/vite": "^4.0.0",
+		"clone-deep": "^4.0.1",
 		"color": "^5.0.0",
+		"deep-equal": "^2.2.3",
 		"ejs": "^3.1.10",
 		"flexsearch": "^0.8.151",
 		"fuse.js": "^7.1.0",
@@ -49,6 +51,8 @@
 		"zod": "^3.24.2"
 	},
 	"devDependencies": {
+		"@types/clone-deep": "^4.0.4",
+		"@types/deep-equal": "^1.0.4",
 		"@types/ejs": "^3.1.5",
 		"@types/node": "^22.13.4",
 		"@types/pg": "^8.15.1",

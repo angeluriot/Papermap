@@ -1,7 +1,7 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
 import { type DataPaper, type PaperScore, type Paper, PaperType, NoteImpact } from '$lib/types/paper';
-import { ratio } from '$lib/utils';
+import { get_uuid, ratio } from '$lib/utils';
 
 
 const TYPE_SCORES = {
@@ -287,5 +287,5 @@ export function score_paper(map: DataMap | Map, journal: Journal | undefined, pa
 
 	score.overall = calculate_overall(map, paper, score);
 
-	return { ...paper, score };
+	return { uuid: get_uuid(), ...paper, score };
 }

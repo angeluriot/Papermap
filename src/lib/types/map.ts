@@ -65,7 +65,7 @@ export interface Map extends BaseMap
 {
 	group: Group;
 	id: string;
-	papers: Paper[];
+	papers: { [uuid: string]: Paper };
 	overview: Record<string, number>;
 }
 

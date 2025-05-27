@@ -28,7 +28,7 @@ function remove_uppercase(text: string): string
 export async function create_csv(map: Map, journals: { [id: string]: Journal }): Promise<void>
 {
 	const papers = (
-		map.papers
+		Object.values(map.papers)
 		.toSorted((a, b) => b.score.overall - a.score.overall)
 		.map((paper) => ({
 			title: paper.title,

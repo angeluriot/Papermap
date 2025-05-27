@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Map } from '$lib/types/map';
-	import { Edit, JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper, type SearchPaperResult } from '$lib/types/paper';
+	import { Edit, JournalStatus, NoteImpact, paper_to_datapaper, PaperType, ReviewType, StudyOn, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
 	import SmallAdd from '$lib/svgs/small-add.svg';
 	import SmallRemove from '$lib/svgs/small-remove.svg';
 	import { TO_TEXT, TO_TEXT_PLURAL } from '../details/cards';
@@ -8,12 +8,17 @@
 	import Autocomplete from './autocomplete.svelte';
 	import Cross from '$lib/svgs/cross.svg';
 	import Link from '$lib/svgs/link.svg';
-    import { score_paper } from '$lib/scoring/paper';
+	import { score_paper } from '$lib/scoring/paper';
+	import { get_label } from '../graph/points';
+	import deepEqual from 'deep-equal';
+	import cloneDeep from 'clone-deep';
 
-	let { map = $bindable(), journals = $bindable(), result }: {
+	let { map = $bindable(), journals = $bindable(), result, paper, hide }: {
 		map: Map,
 		journals: { [id: string]: Journal },
-		result: SearchPaperResult | null
+		result: SearchPaperResult | null,
+		paper: Paper | null,
+		hide: () => void,
 	} = $props();
 
 	let id: string | null = $state(null);
@@ -60,15 +65,58 @@
 
 	$effect(() =>
 	{
-		id = result?.id ?? null;
-		title = result?.title ?? '';
-		authors = result?.authors ?? [''];
-		year = result?.year ?? null;
-		link = result?.link ?? '';
-		journal_status = result?.journal?.id ? 'yes' : '';
-		journal = result?.journal ?? null;
-		retracted = result?.retracted ?? false;
-		citations = result?.citations ?? null;
+		if (result !== null)
+		{
+			id = cloneDeep(result.id ?? null);
+			title = cloneDeep(result.title ?? '');
+			authors = cloneDeep(result.authors ?? ['']);
+			year = cloneDeep(result.year ?? null);
+			link = cloneDeep(result.link ?? '');
+			journal_status = cloneDeep(result.journal?.id ? 'yes' : 'no');
+			journal = cloneDeep(result.journal ?? null);
+			retracted = cloneDeep(result.retracted ?? false);
+			citations = cloneDeep(result.citations ?? null);
+		}
+	});
+
+	$effect(() =>
+	{
+		if (paper !== null)
+		{
+			const journal_data = paper.journal.id ? journals[paper.journal.id] : undefined;
+			let temp: JournalTitle | null = journal_data ? { id: journal_data.id, title: journal_data.title } : null;
+
+			if (temp && journal_data?.publisher)
+				temp.publisher = journal_data.publisher;
+
+			if (paper.journal.status === JournalStatus.NotFound)
+				temp = { id: 'not_found', title: '(Not found)' };
+
+			id = cloneDeep(paper.id ?? null);
+			title = cloneDeep(paper.title ?? '');
+			authors = cloneDeep(paper.authors ?? ['']);
+			year = cloneDeep(paper.year ?? null);
+			link = cloneDeep(paper.link ?? '');
+			journal_status = cloneDeep(paper.journal.status === JournalStatus.NotPublished ? 'no' : 'yes');
+			journal_search = '';
+			journal = cloneDeep(temp);
+			retracted = cloneDeep(paper.journal.retracted ?? false);
+			consensus = cloneDeep(paper.results.consensus ?? '');
+			conclusion = cloneDeep(paper.results.conclusion ?? '');
+			indirect = cloneDeep(paper.results.indirect ?? false);
+			quote = cloneDeep(paper.quote ?? '');
+			review_type = cloneDeep(paper.review?.type ?? 'null');
+			review_count = cloneDeep(paper.review?.count ?? null);
+			type = cloneDeep(paper.type ?? 'null');
+			on = cloneDeep(paper.on ?? 'null');
+			sample_size = cloneDeep(paper.sample_size ?? null);
+			p_value_prefix = cloneDeep(paper.p_value ? (paper.p_value.less_than ? 'less' : 'equal') : '');
+			p_value = cloneDeep(paper.p_value?.value ?? null);
+			citations = cloneDeep(paper.citations?.count ?? null);
+			critics = cloneDeep(paper.citations?.critics ?? false);
+			conflict_of_interest = cloneDeep(paper.conflict_of_interest ? 'yes' : 'no');
+			notes = cloneDeep(paper.notes ?? []);
+		}
 	});
 
 	$effect(() =>
@@ -119,17 +167,15 @@
 		return result.journal;
 	}
 
-	async function add_paper()
+	function create_data_paper(): DataPaper | null
 	{
 		if (!is_valid())
-			return;
+			return null;
 
 		let journal_attribute: any = {
 			retracted: retracted,
 			status: JournalStatus.NotPublished
 		};
-
-		let journal_data: Journal | undefined = undefined;
 
 		if (journal)
 		{
@@ -137,18 +183,8 @@
 				journal_attribute.status = JournalStatus.NotFound;
 			else
 			{
-				journal_data = await get_journal_data(journal.id);
-
-				if (journal_data === undefined)
-					journal_attribute.status = JournalStatus.NotFound;
-				else
-				{
-					journal_attribute.id = journal.id;
-					journal_attribute.status = JournalStatus.Found;
-
-					if (journals[journal.id] === undefined)
-						journals[journal.id] = journal_data;
-				}
+				journal_attribute.id = journal.id;
+				journal_attribute.status = JournalStatus.Found;
 			}
 		}
 
@@ -208,18 +244,99 @@
 			};
 		}
 
-		let paper = score_paper(map, journal_data, data_paper);
-		paper.edit = Edit.Added;
-		map.papers.push(paper);
+		return data_paper;
+	}
+
+	function has_changed(): boolean
+	{
+		const data_paper = create_data_paper();
+
+		if (paper === null || data_paper === null)
+			return true;
+
+		const initial = paper_to_datapaper(JSON.parse(JSON.stringify(paper)));
+		const current = JSON.parse(JSON.stringify(data_paper));
+		const equals = deepEqual(initial, current);
+
+		return !equals;
+	}
+
+	async function create_paper(): Promise<Paper | null>
+	{
+		let data_paper = create_data_paper();
+
+		if (data_paper === null)
+			return null;
+
+		let journal_data: Journal | undefined = undefined;
+
+		if (data_paper.journal.id !== undefined)
+		{
+			if (journals[data_paper.journal.id] !== undefined)
+				journal_data = journals[data_paper.journal.id];
+			else
+			{
+				journal_data = await get_journal_data(data_paper.journal.id);
+
+				if (journal_data !== undefined)
+					journals[journal_data.id] = journal_data;
+			}
+
+			if (journal_data === undefined)
+			{
+				delete data_paper.journal.id;
+				data_paper.journal.status = JournalStatus.NotFound;
+			}
+		}
+
+		return score_paper(map, journal_data, data_paper);
+	}
+
+	async function add_paper()
+	{
+		let final_paper = await create_paper();
+
+		if (final_paper === null)
+			return;
+
+		final_paper.edit = Edit.Added;
+		map.papers[final_paper.uuid] = final_paper;
+		hide();
+	}
+
+	async function edit_paper()
+	{
+		let final_paper = await create_paper();
+
+		if (paper === null || final_paper === null)
+			return;
+
+		final_paper.uuid = paper.uuid;
+
+		if (paper.edit === Edit.Added)
+			final_paper.edit = Edit.Added;
+		else
+			final_paper.edit = Edit.Edited;
+
+		map.papers[final_paper.uuid] = final_paper;
+		hide();
 	}
 </script>
 
 <div class="search-container flex flex-col justify-start items-center">
 	<div class="title flex-center-col">
-		<h1 class="unselectable">Add a new paper</h1>
+		<h1 class="unselectable">
+			{#if paper == null}
+				Add a new paper
+			{:else}
+				Edit "{get_label(paper).replace('\n', ' ').trim()}"
+			{/if}
+		</h1>
 		<a href="https://a.com" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to add a paper?</span>
+			<span class="unselectable">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to {#if paper == null}add{:else}edit{/if} a paper?
+			</span>
 		</a>
 	</div>
 	<div class="input">
@@ -518,9 +635,15 @@
 			</div>
 		{/if}
 	</div>
-	<button class="button flex-center-col {is_valid() ? '' : 'disabled'}" onclick={add_paper}>
-		<span class="unselectable">Add the paper</span>
-	</button>
+	{#if paper === null}
+		<button class="button flex-center-col {is_valid() ? '' : 'disabled'}" onclick={add_paper}>
+			<span class="unselectable">Add the paper</span>
+		</button>
+	{:else}
+		<button class="button flex-center-col {is_valid() && has_changed() ? '' : 'disabled'}" onclick={edit_paper}>
+			<span class="unselectable">Edit the paper</span>
+		</button>
+	{/if}
 </div>
 
 <style>

@@ -2,13 +2,13 @@
 	import { COLORS, Color } from '$lib/colors';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { JournalStatus, type Paper, StudyOn } from '$lib/types/paper';
+	import { Edit, JournalStatus, type Paper, StudyOn } from '$lib/types/paper';
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
 	import Link from '$lib/svgs/link.svg';
 
-	let { emojis, map, journals, paper, width, height, journal_info_open = $bindable() }: {
+	let { emojis, map, journals, paper, width, height, journal_info_open = $bindable(), edit_mode }: {
 		emojis: Record<string, string>,
 		map: Map,
 		journals: { [id: string]: Journal; },
@@ -16,7 +16,34 @@
 		width: number,
 		height: number,
 		journal_info_open: boolean,
+		edit_mode: boolean,
 	} = $props();
+
+	function send_event(event_name: string)
+	{
+		const event = new CustomEvent(event_name, { detail: paper.uuid });
+		document.dispatchEvent(event);
+	}
+
+	function delete_paper()
+	{
+		send_event('delete_paper');
+	}
+
+	function recreate_paper()
+	{
+		send_event('recreate_paper');
+	}
+
+	function edit_paper()
+	{
+		send_event('edit_paper');
+	}
+
+	function cancel_changes()
+	{
+		send_event('cancel_changes');
+	}
 
 	const title = $derived(paper.title);
 	const link = $derived(paper.link);
@@ -301,6 +328,47 @@
 {/snippet}
 
 <div class="w-full flex flex-col justify-start items-start flex-nowrap" bind:clientWidth={global_width}>
+	{#if edit_mode}
+		<div class="edit w-full flex flex-row justify-end items-center">
+			{#if paper.edit === Edit.Deleted}
+				<button
+					class="recreate-button relative card text-unselectable cursor-pointer overflow-hidden"
+					style="--shadow-color: #00008050" onclick={recreate_paper}
+				>
+					{@render emoji('↩️')}
+					<span>Cancel deletion</span>
+					<div class="absolute edit-mask bg-[#00008010]"></div>
+				</button>
+			{:else}
+				{#if paper.edit === Edit.Edited}
+					<button
+						class="recreate-button relative card text-unselectable cursor-pointer overflow-hidden"
+						style="--shadow-color: #00008050" onclick={cancel_changes}
+					>
+						{@render emoji('↩️')}
+						<span>Cancel changes</span>
+						<div class="absolute edit-mask bg-[#00008010]"></div>
+					</button>
+				{/if}
+				<button
+					class="edit-button relative card text-unselectable cursor-pointer overflow-hidden"
+					style="--shadow-color: #80000050" onclick={edit_paper}
+				>
+					{@render emoji('🙂')}
+					<span>Edit</span>
+					<div class="absolute edit-mask bg-[#80000015]"></div>
+				</button>
+				<button
+					class="delete-button relative card text-unselectable cursor-pointer overflow-hidden"
+					style="--shadow-color: #80000050" onclick={delete_paper}
+				>
+					{@render emoji('😨')}
+					<span>Delete</span>
+					<div class="absolute edit-mask bg-[#80000025]"></div>
+				</button>
+			{/if}
+		</div>
+	{/if}
 	<a href={link} target="_blank" class="title-container w-full" title={paper.title}>
 		<p class="title">{title}</p>
 		<div class="authors-date flex">
@@ -525,6 +593,41 @@
 	span
 	{
 		text-wrap: nowrap;
+	}
+
+	.edit
+	{
+		gap: 0.7em;
+		margin-bottom: 0.5em;
+	}
+
+	.edit-button
+	{
+		background-color: #f29436;
+	}
+
+	.delete-button
+	{
+		background-color: #ea3f60;
+	}
+
+	.recreate-button
+	{
+		background-color: #24c68c;
+	}
+
+	.edit-mask
+	{
+		display: none;
+		left: 0em;
+		top: 0em;
+		width: 100%;
+		height: 100%;
+	}
+
+	.edit button:hover .edit-mask
+	{
+		display: block;
 	}
 
 	.title-container:hover .title

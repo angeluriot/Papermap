@@ -6,7 +6,7 @@
 
 	const { map, add, submit }: { map: Map, add: () => void, submit: () => Promise<void> } = $props();
 
-	let nb = $derived(map.papers.filter(paper => paper.edit).length);
+	let nb = $derived(Object.values(map.papers).filter(paper => paper.edit).length);
 </script>
 
 <div class="buttons-container right-0 bottom-0 flex-center-col">

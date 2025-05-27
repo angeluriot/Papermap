@@ -2,10 +2,11 @@
 	import type { Map } from '$lib/types/map';
 	import Cross from '$lib/svgs/cross.svg';
 	import Back from '$lib/svgs/back.svg';
-	import type { SearchPaperResult } from '$lib/types/paper';
+	import type { Paper, SearchPaperResult } from '$lib/types/paper';
 	import Add from './add.svelte';
 	import Search from './search.svelte';
 	import type { Journal } from '$lib/types/journal';
+	import { onMount } from 'svelte';
 
 	let { map = $bindable(), journals = $bindable() }: {
 		map: Map,
@@ -15,16 +16,37 @@
 	let shown = $state(false);
 	let next = $state(false);
 	let result: SearchPaperResult | null = $state(null);
+	let paper: Paper | null = $state(null);
 
-	export function show()
+	export function show(edit: boolean = false)
 	{
 		shown = true;
+
+		if (edit)
+			next = true;
 	}
 
 	export function hide()
 	{
 		shown = false;
+		result = null;
+		paper = null;
+		next = false;
 	}
+
+	onMount(() =>
+	{
+		document.addEventListener('edit_paper', (event: Event) =>
+		{
+			const uuid = (event as CustomEvent).detail as string | undefined;
+
+			if (uuid === undefined)
+				return;
+
+			paper = map.papers[uuid];
+			show(true);
+		});
+	});
 </script>
 
 <svelte:window onkeydown={(event) => { if (event.key === 'Escape') hide(); }}/>
@@ -38,13 +60,15 @@
 		<div class="cross absolute cursor-pointer right-0 top-0" onclick={hide} onkeydown={null} role="button" tabindex={0}>
 			<img src={Cross} alt="Close"/>
 		</div>
-		{#if !next}
-			<Search bind:result={result} bind:next={next}/>
+		{#if next}
+			{#if paper === null}
+				<div class="back absolute cursor-pointer left-0 top-0" onclick={() => next = false} onkeydown={null} role="button" tabindex={0}>
+					<img src={Back} alt="Back"/>
+				</div>
+			{/if}
+			<Add bind:map={map} bind:journals={journals} {result} {paper} {hide}/>
 		{:else}
-			<div class="back absolute cursor-pointer left-0 top-0" onclick={() => next = false} onkeydown={null} role="button" tabindex={0}>
-				<img src={Back} alt="Back"/>
-			</div>
-			<Add bind:map={map} bind:journals={journals} {result}/>
+			<Search bind:result={result} bind:next={next}/>
 		{/if}
 	</div>
 </div>

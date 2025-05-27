@@ -116,6 +116,7 @@ export interface PaperScore
 
 export interface Paper extends DataPaper
 {
+	uuid: string;
 	score: PaperScore;
 	edit?: Edit;
 }
@@ -123,7 +124,7 @@ export interface Paper extends DataPaper
 
 export function paper_to_datapaper(paper: Paper): DataPaper
 {
-	const { score, ...data } = paper;
+	const { score, uuid, edit, ...data } = paper;
 	return data;
 }
 

@@ -15,12 +15,12 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 {
 	const scale = (width + height) * 0.001;
 
-	const years = map.papers.map(paper => paper.year + seedrandom(paper.title).quick());
+	const years = Object.values(map.papers).map(paper => paper.year + seedrandom(paper.title).quick());
 	const min_year = Math.min(...years);
 	const max_year = Math.max(...years);
 	const pad_year = (max_year - min_year) / (width ** 0.7);
 
-	const scores = map.papers.map(paper => paper.score.overall);
+	const scores = Object.values(map.papers).map(paper => paper.score.overall);
 	const min_score = Math.min(...scores);
 	const max_score = Math.max(...scores);
 	const pad_score = (max_score - min_score) / (height ** 0.7);

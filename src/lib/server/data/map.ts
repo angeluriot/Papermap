@@ -7,6 +7,7 @@ import { get_journal_ids, get_journals } from './journal';
 import { validate_map } from './validate';
 import { generate_group, generate_map_title, generate_paper } from './fake';
 import { get_hash } from '../utils';
+import cloneDeep from 'clone-deep';
 
 
 const map_files = import.meta.glob('/src/lib/server/jsons/maps/**/*.json');
@@ -19,7 +20,7 @@ async function import_group(group: string): Promise<Group>
 	if (!map_files[file_path])
 		throw new NotFoundError(`Group not found: ${group}`);
 
-	const data = structuredClone((await map_files[file_path]() as any).default);
+	const data = cloneDeep((await map_files[file_path]() as any).default);
 
 	return { id: group, ...data };
 }
@@ -32,7 +33,7 @@ async function _import_datamap(group: string, id: string): Promise<DataMap>
 	if (id.startsWith('_') || !map_files[file_path])
 		throw new NotFoundError(`Map not found: ${id}`);
 
-	const map = { ...structuredClone((await map_files[file_path]() as any).default), fake: false };
+	const map = { ...cloneDeep((await map_files[file_path]() as any).default), fake: false };
 
 	try
 	{

@@ -25,7 +25,7 @@
 		copied = true;
 
 		const papers = (
-			map.papers
+			Object.values(map.papers)
 			.toSorted((a, b) => b.score.overall - a.score.overall)
 			.map((paper) => `"${paper.quote}"\n${paper.link}`)
 			.join('\n\n')

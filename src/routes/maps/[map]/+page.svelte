@@ -11,6 +11,8 @@
 	import EditButtons from '$lib/display/buttons/edit.svelte';
 	import Home from '$lib/svgs/home.svg';
 	import Popup from '$lib/display/edit/popup.svelte';
+	import { onMount } from 'svelte';
+	import cloneDeep from 'clone-deep';
 
 	const { data }: PageProps = $props();
 
@@ -19,8 +21,8 @@
 	const page_url = `${C.BASE_URL}/${route}`;
 	const image_url = `${page_url}/preview.jpg?v=${data.hash}`;
 	const tags = C.DEFAULT_TAGS.concat(data.map.tags);
+	const initial_papers = cloneDeep(data.map.papers);
 
-	data.map.papers[data.map.papers.length - 1].edit = Edit.Added;
 	let map = $state(data.map);
 	let journals = $state(data.journals);
 	let width = $state(0);
@@ -53,6 +55,56 @@
 		event.preventDefault();
 		return 'You have unsaved changes, are you sure you want to leave?';
 	}
+
+	onMount(() =>
+	{
+		document.addEventListener('delete_paper', (event: Event) =>
+		{
+			const uuid = (event as CustomEvent).detail as string | undefined;
+
+			if (uuid === undefined)
+				return;
+
+			if (map.papers[uuid].edit === Edit.Added)
+			{
+				point_selected = null;
+				delete map.papers[uuid];
+			}
+
+			else
+			{
+				if (map.papers[uuid].edit === Edit.Edited)
+					map.papers[uuid] = cloneDeep(initial_papers[uuid]);
+
+				map.papers[uuid].edit = Edit.Deleted;
+			}
+		});
+
+		document.addEventListener('recreate_paper', (event: Event) =>
+		{
+			const uuid = (event as CustomEvent).detail as string | undefined;
+
+			if (uuid === undefined)
+				return;
+
+			delete map.papers[uuid].edit;
+		});
+
+		document.addEventListener('edit_paper', (event: Event) =>
+		{
+			point_selected = null;
+		});
+
+		document.addEventListener('cancel_changes', (event: Event) =>
+		{
+			const uuid = (event as CustomEvent).detail as string | undefined;
+
+			if (uuid === undefined)
+				return;
+
+			map.papers[uuid] = cloneDeep(initial_papers[uuid]);
+		});
+	});
 
 	/*let edit_test = paper_to_datapaper(map.papers[0]);
 	edit_test.citations.count = 79;
@@ -148,14 +200,14 @@
 		{#if point_selected !== null}
 			<PaperDetails
 				{emojis} point={point_selected.get_point()} {map} {journals}
-				paper={map.papers[point_selected.get_point().index]}
-				{width} {height} bind:journal_info_open={journal_info_open}
+				paper={map.papers[point_selected.get_point().uuid]}
+				{width} {height} bind:journal_info_open={journal_info_open} {edit_mode}
 			/>
 		{/if}
 	</div>
 	<div class="buttons absolute bottom-0 right-0">
 		{#if edit_mode}
-			<EditButtons {map} add={() => popup?.show()} submit={async () => {}}/>
+			<EditButtons {map} add={() => { popup?.show(); point_selected = null; }} submit={async () => {}}/>
 		{:else}
 			<DefaultButtons {map} hash={data.hash} bind:edit_mode={edit_mode}/>
 		{/if}

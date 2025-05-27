@@ -1,6 +1,6 @@
 import { ratio } from '$lib/utils';
 import type { DataMap, Group, Map } from '$lib/types/map';
-import type { DataPaper } from '$lib/types/paper';
+import type { Paper } from '$lib/types/paper';
 import { score_paper } from './paper';
 import type { Journal } from '$lib/types/journal';
 
@@ -82,17 +82,14 @@ export function score_answers(map: Map): Record<string, number>
 	let answer_scores: Record<string, number> = {};
 	let paper_scores: Record<string, number> = {};
 
-	map.papers.forEach((paper, index) =>
-	{
-		paper_scores[`${index}`] = paper.score.overall;
-	});
+	for (const paper of Object.values(map.papers))
+		paper_scores[paper.uuid] = paper.score.overall;
 
 	let paper_rank_scores = compute_normalized_ranking(paper_scores);
 
-	for (let i = 0; i < map.papers.length; i++)
+	for (const paper of Object.values(map.papers))
 	{
-		const paper = map.papers[i];
-		const rank_score = paper_rank_scores[`${i}`];
+		const rank_score = paper_rank_scores[paper.uuid];
 		const score = ((1 - OVERVIEW_RANK_SCORE_COEF) * paper.score.overall + OVERVIEW_RANK_SCORE_COEF * rank_score) ** OVERVIEW_GAP_INCREASE;
 		const answer_id = paper.results.conclusion;
 
@@ -117,11 +114,19 @@ export function score_answers(map: Map): Record<string, number>
 
 export function score_map(id: string, group: Group, data_map: DataMap, journals: { [id: string]: Journal }): Map
 {
+	let papers: { [uuid: string]: Paper } = {};
+
+	for (const data_paper of data_map.papers)
+	{
+		const paper = score_paper(data_map, data_paper.journal.id ? journals[data_paper.journal.id] : undefined, data_paper);
+		papers[paper.uuid] = paper;
+	}
+
 	let map = {
 		...data_map,
 		group,
 		id,
-		papers: data_map.papers.map((paper: DataPaper) => score_paper(data_map, paper.journal.id ? journals[paper.journal.id] : undefined, paper)),
+		papers,
 		overview: {}
 	};
 

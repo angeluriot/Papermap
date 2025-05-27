@@ -99,7 +99,7 @@ export function get_dasharray(size: number, width: number): string
 
 export function get_graph_points(map: Map, stats: GraphStats, font_scale: number = 1): GraphPoint[]
 {
-	let points: GraphPoint[] = map.papers.map((paper, index) =>
+	let points: GraphPoint[] = Object.values(map.papers).map((paper: Paper) =>
 	{
 		const not_published = paper.journal.status == JournalStatus.NotPublished || paper.journal.retracted;
 		const size = (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE;
@@ -108,7 +108,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 
 		return {
 			i: 0,
-			index,
+			uuid: paper.uuid,
 			answer: paper.results.conclusion,
 			x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
 			y: stats.height - (ratio(paper.score.overall, stats.min_score, stats.max_score) * stats.height),
