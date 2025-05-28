@@ -1,50 +1,49 @@
 <script lang="ts">
-	import type { SearchPaperResult } from '$lib/types/paper';
+	import { Edit, paper_to_datapaper, type Paper } from '$lib/types/paper';
 	import Loading from '../loading.svelte';
 	import Link from '$lib/svgs/link.svg';
+	import { constants as C } from '$lib/utils';
 
-	let { result = $bindable(), page = $bindable() }: {
-		result: SearchPaperResult | null,
-		page: 'search' | 'add' | 'send',
+	let { route, papers, leaving_message = $bindable() }: {
+		route: string,
+		papers: { [uuid: string]: Paper },
+		leaving_message: boolean,
 	} = $props();
 
-	let doi = $state('');
-	let title = $state('');
-	let year: number | null = $state(null);
-	let had_error = $state(false);
+	const local = C.DEV;
+
 	let loading = $state(false);
+	let comment = $state('');
+	let discord_username = $state('');
 
-	function can_search()
-	{
-		return doi.trim().length > 0 || (title.trim().length > 0 && year !== null);
-	}
-
-	async function search()
+	async function submit(local: boolean)
 	{
 		if (loading)
 			return;
 
 		loading = true;
+		let body: any = { edits: { added: [], edited: {}, deleted: [] } };
 
-		if (!can_search())
-			return;
+		for (const paper of Object.values(papers))
+		{
+			if (paper.edit === Edit.Added)
+				body.edits.added.push(paper_to_datapaper(paper));
+			else if (paper.edit === Edit.Edited)
+				body.edits.edited[`${paper.index}`] = paper_to_datapaper(paper);
+			else if (paper.edit === Edit.Deleted)
+				body.edits.deleted.push(paper.index);
+		}
 
-		let query_params: Record<string, string> = {};
+		if (comment.trim().length > 0)
+			body.comment = comment.trim();
 
-		if (doi.trim().length > 0)
-			query_params['doi'] = doi.trim();
+		if (discord_username.trim().length > 0)
+			body.discord_username = discord_username.trim();
 
-		if (title.trim().length > 0)
-			query_params['title'] = title.trim();
-
-		if (year !== null && !isNaN(year))
-			query_params['year'] = year.toString();
-
-		let query = new URLSearchParams(query_params);
-
-		const response = await fetch('/search?' + query.toString(), {
-			method: 'GET',
+		const response = await fetch(`/${route}/edit${local ? "?local" : ""}`, {
+			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(body),
 		});
 
 		if (!response.ok)
@@ -61,91 +60,67 @@
 			}
 
 			if (response.status === 502)
-				error_message = 'There is an issue with OpenAlex, please try again later.';
+				error_message = 'There is an issue with GitHub, please try again later.';
 
 			if (response.status === 500)
 				error_message = 'There is an issue with the server, please try again later.';
 
 			alert(error_message);
-			had_error = true;
 			loading = false;
 			return;
 		}
 
-		const response_json = await response.json() as { results: SearchPaperResult[] };
+		const result = await response.json() as { pr_url?: string };
 
-		if (response_json.results.length !== 1)
+		if (!local)
 		{
-			alert('Paper not found, try adding more information.');
-			had_error = true;
-			loading = false;
+			if (result.pr_url === undefined)
+			{
+				alert('An unknown error occurred.')
+				loading = false;
+				return;
+			}
+
+			leaving_message = false;
+			window.open(result.pr_url, '_self')?.focus();
 			return;
 		}
 
-		result = response_json.results[0];
-		page = 'add';
-	}
-
-	function create()
-	{
-		if (loading)
-			return;
-
-		loading = true;
-		let res: Record<string, string> = {};
-
-		if (doi.trim().length > 0)
-			res['doi'] = doi.trim();
-
-		if (title.trim().length > 0)
-			res['title'] = title.trim();
-
-		if (year !== null && !isNaN(year))
-			res['year'] = year.toString();
-
-		result = Object.keys(res).length > 0 ? res : null;
-		loading = false;
-		page = 'add';
+		leaving_message = false;
+		window.location.reload();
 	}
 </script>
 
 <div class="search-container flex-center-col">
 	<div class="title flex-center-col">
-		<h1 class="unselectable">Add a new paper</h1>
+		<h1 class="unselectable">Submit your changes</h1>
 		<a href="https://a.com" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to add a paper?</span>
+			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to contribute?</span>
 		</a>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
-			<span>DOI link</span>
+		<div class="label unselectable">
+			<span>Comment</span>
+			<span class="optional"><i>(optional)</i></span>
 		</div>
-		<input bind:value={doi} type="text" placeholder="The DOI link of the paper"/>
-	</div>
-	<div class="line w-full relative unselectable">
-		<div class="w-full rounded-full"></div>
-		<span class="absolute">OR</span>
+		<textarea bind:value={comment} placeholder="Explain some choices or provide additional information"></textarea>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
-			<span>Title</span>
+		<div class="label unselectable">
+			<span>Discord username</span>
+			<span class="optional"><i>(optional)</i></span>
 		</div>
-		<input bind:value={title} type="text" placeholder="The title of the paper"/>
+		<input bind:value={discord_username} type="text" placeholder={'For the "Contributor" role on the Papermap discord'}/>
 	</div>
-	<div class="input mt-[-0.5em]">
-		<div class="label unselectable flex-center-row">
-			<span>Year</span>
-		</div>
-		<input bind:value={year} type="number" min=1500 max={new Date().getFullYear() + 1} placeholder="The year of publication"/>
-	</div>
-	<div class="buttons w-full flex-center-row text-nowrap" style="{had_error ? 'justify-content: space-evenly;' : ''}">
+	<div class="buttons w-full flex-center-row text-nowrap" style="{local ? 'justify-content: space-evenly;' : ''}">
 		<button
-			class="button search-button relative flex-center-col {loading || can_search() ? '' : 'disabled'}"
-			style="{had_error ? '' : 'padding: 1em 4em;'} {loading ? 'pointer-events: none;' : ''}" onclick={search}
+			class="button submit-button relative flex-center-col"
+			style="{local ? '' : 'padding: 1em 4em;'} {loading ? 'pointer-events: none;' : ''}"
+			onclick={async () => await submit(false)}
 		>
 			<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
-				Search
+				Submit
 			</span>
 			{#if loading}
 				<div class="loading">
@@ -153,13 +128,14 @@
 				</div>
 			{/if}
 		</button>
-		{#if had_error}
+		{#if local}
 			<button
-				class="button create-button relative flex-center-col"
-				style="{loading ? 'pointer-events: none;' : ''}" onclick={create}
+				class="button local-button relative flex-center-col"
+				style="{loading ? 'pointer-events: none;' : ''}"
+				onclick={async () => await submit(true)}
 			>
 				<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
-					Create manually
+					Apply locally
 				</span>
 				{#if loading}
 					<div class="loading">
@@ -214,31 +190,6 @@
 		margin-right: -0.95em;
 	}
 
-	.line
-	{
-		margin: 1.2em 0em 0.5em 0em;
-	}
-
-	.line div
-	{
-		height: 2px;
-		background-color: rgb(205, 205, 220);
-	}
-
-	.line span
-	{
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		color: rgb(205, 205, 220);
-		background-color: white;
-		padding: 0em 0.4em;
-		font-size: 1.1em;
-		line-height: 1.5em;
-		font-weight: 500;
-		font-family: Satoshi-Variable, sans-serif;
-	}
-
 	.input
 	{
 		width: 100%;
@@ -259,7 +210,7 @@
 		margin-left: 0.2em;
 	}
 
-	.input input
+	.input input, .input textarea
 	{
 		width: 100%;
 		border-color: #dbdbe8;
@@ -273,13 +224,13 @@
 		color: rgb(77, 77, 92);
 	}
 
-	.input input:focus
+	.input input:focus, .input textarea:focus
 	{
 		outline: none;
 		border-color: rgb(173, 173, 194);
 	}
 
-	.input input::placeholder
+	.input input::placeholder, .input textarea::placeholder
 	{
 		color: rgb(173, 173, 194);
 		pointer-events: none;
@@ -289,6 +240,19 @@
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		-o-user-select: none;
+	}
+
+	.input textarea
+	{
+		resize: none;
+		height: 8em;
+	}
+
+	.label .optional
+	{
+		font-weight: 450;
+		color: rgb(144, 144, 163);
+		font-style: italic;
 	}
 
 	.buttons
@@ -317,46 +281,32 @@
 		}
 	}
 
-	.search-button
+	.submit-button
 	{
 		background-color: rgb(122, 243, 191);
 		border-color: rgb(86, 200, 162);
 		color: rgb(27, 82, 78);
 	}
 
-	.search-button:hover
+	.submit-button:hover
 	{
 		background-color: rgb(110, 231, 186);
 	}
 
-	.create-button
+	.local-button
 	{
 		background-color: rgb(133, 174, 255);
 		border-color: rgb(91, 117, 219);
 		color: rgb(49, 55, 91);
 	}
 
-	.create-button:hover
+	.local-button:hover
 	{
 		background-color: #7ca1f5;
 	}
 
-	.disabled
-	{
-		pointer-events: none;
-		background-color: rgb(240, 240, 247);
-		border-style: dashed;
-		border-color: rgb(211, 212, 232);
-		color: rgb(155, 155, 183);
-	}
-
 	@media screen and (max-width: 1100px)
 	{
-		.line div
-		{
-			height: 1px;
-		}
-
 		.input input
 		{
 			border-width: 1px;

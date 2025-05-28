@@ -263,7 +263,7 @@
 		return !equals;
 	}
 
-	async function create_paper(): Promise<Paper | null>
+	async function create_paper(index: number): Promise<Paper | null>
 	{
 		let data_paper = create_data_paper();
 
@@ -291,7 +291,7 @@
 			}
 		}
 
-		return score_paper(map, journal_data, data_paper);
+		return score_paper(map, journal_data, data_paper, index);
 	}
 
 	async function add_paper()
@@ -301,10 +301,13 @@
 
 		loading = true;
 
-		let final_paper = await create_paper();
+		let final_paper = await create_paper(-1);
 
 		if (final_paper === null)
+		{
+			loading = false;
 			return;
+		}
 
 		final_paper.edit = Edit.Added;
 		map.papers[final_paper.uuid] = final_paper;
@@ -319,10 +322,19 @@
 
 		loading = true;
 
-		let final_paper = await create_paper();
-
-		if (paper === null || final_paper === null)
+		if (paper === null)
+		{
+			loading = false;
 			return;
+		}
+
+		let final_paper = await create_paper(paper.index);
+
+		if (final_paper === null)
+		{
+			loading = false;
+			return;
+		}
 
 		final_paper.uuid = paper.uuid;
 

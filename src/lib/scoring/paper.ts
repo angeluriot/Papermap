@@ -253,7 +253,7 @@ function calculate_overall(map: DataMap | Map, paper: DataPaper, score: PaperSco
 }
 
 
-export function score_paper(map: DataMap | Map, journal: Journal | undefined, paper: DataPaper): Paper
+export function score_paper(map: DataMap | Map, journal: Journal | undefined, paper: DataPaper, index: number): Paper
 {
 	const { review, count: review_count } = score_review(paper)
 	const { citations, count: citations_count } = score_citations(paper)
@@ -287,5 +287,5 @@ export function score_paper(map: DataMap | Map, journal: Journal | undefined, pa
 
 	score.overall = calculate_overall(map, paper, score);
 
-	return { uuid: get_uuid(), ...paper, score };
+	return { index, uuid: get_uuid(), ...paper, score };
 }

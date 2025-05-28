@@ -1,11 +1,10 @@
-import { json, error as http_error } from '@sveltejs/kit';
+import { json, error as http_error, type RequestHandler } from '@sveltejs/kit';
 import { constants as C } from '$lib/server/utils';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import { create_pull_request } from '$lib/server/github';
 import { Label } from '$lib/types';
-import { edit_map } from './edit';
-import type { Params } from '../types';
+import { edit_map, get_pr_texts } from './edit';
 import type { PostRequest } from './types';
 import { GitHubAPIError, InvalidDataError, NotFoundError } from '$lib/errors';
 import { import_datamap, map_titles } from '$lib/server/data/map';
@@ -13,33 +12,41 @@ import { validate_params } from '../validate';
 import { validate_request } from './validate';
 
 
-export async function POST({ params, request }: { params: Params, request: Request }): Promise<Response>
+export const POST: RequestHandler = async ({ url, params, request }) =>
 {
 	try
 	{
-		validate_params(params);
+		validate_params(params as any);
+		const map_id = (params as any).map
+
+		let local = url.searchParams.get('local') !== null;
+
+		if (local !== null && !C.DEV)
+			throw new InvalidDataError('Local edits are not allowed in production');
 
 		const data = await request.json() as PostRequest;
-		const group = map_titles[params.map].group.id;
-		const map = await import_datamap(params.map);
+		const group = map_titles[map_id].group.id;
+		const map = await import_datamap(map_id);
 
 		validate_request(data, map.papers.length);
 
 		const edited_map = await edit_map(map, data.edits);
 
-		if (C.DEV)
+		if (local)
 		{
-			await fs.writeFile(join(C.LIB_DIR, `server/jsons/maps/${group}/${params.map}.json`), JSON.stringify(edited_map, null, '\t') + '\n');
-			return json({ pr_url: '' });
+			await fs.writeFile(join(C.LIB_DIR, `server/jsons/maps/${group}/${map_id}.json`), JSON.stringify(edited_map, null, '\t') + '\n');
+			return json({});
 		}
 
+		const { title, description } = get_pr_texts(map, map_id, data.comment, data.discord_username, data.edits)
+
 		const pr_url = await create_pull_request({
-			branch_name: `edit/${params.map.replace('_', '-')}`,
-			file_path: `src/lib/server/jsons/maps/${group}/${params.map}.json`,
+			branch_name: `edit/${map_id.replace('_', '-')}`,
+			file_path: `src/lib/server/jsons/maps/${group}/${map_id}.json`,
 			new_content: JSON.stringify(edited_map, null, '\t') + '\n',
-			commit_message: 'Test commit message',
-			title: 'Test request',
-			description: 'Test description' + (data.username ? ` - @${data.username}` : '') + (data.comment ? ` - ${data.comment}` : '') + (data.contact ? ` - ${data.contact}` : ''),
+			commit_message: title,
+			title,
+			description,
 			label: Label.MapChange,
 		});
 

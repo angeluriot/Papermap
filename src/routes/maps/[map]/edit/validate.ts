@@ -7,9 +7,8 @@ import type { PostRequest } from './types';
 export function validate_request(request: PostRequest, nb_papers: number): void
 {
 	const request_schema = z.object({
-		username: z.string().optional(),
-		contact: z.string().optional(),
 		comment: z.string().optional(),
+		discord_username: z.string().optional(),
 		edits: z.object({
 			deleted: z.array(z.number().int().gte(0).lt(nb_papers)),
 			edited: z.record(

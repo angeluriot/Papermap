@@ -3,27 +3,28 @@
 	import Cross from '$lib/svgs/cross.svg';
 	import Back from '$lib/svgs/back.svg';
 	import type { Paper, SearchPaperResult } from '$lib/types/paper';
-	import Add from './add.svelte';
 	import Search from './search.svelte';
+	import Add from './add.svelte';
+	import Send from './send.svelte';
 	import type { Journal } from '$lib/types/journal';
 	import { onMount } from 'svelte';
 
-	let { map = $bindable(), journals = $bindable() }: {
+	let { route, map = $bindable(), journals = $bindable(), leaving_message = $bindable() }: {
+		route: string,
 		map: Map,
 		journals: { [id: string]: Journal },
+		leaving_message: boolean
 	} = $props();
 
 	let shown = $state(false);
-	let next = $state(false);
+	let page: 'search' | 'add' | 'send' | null = $state(null);
 	let result: SearchPaperResult | null = $state(null);
 	let paper: Paper | null = $state(null);
 
-	export function show(edit: boolean = false)
+	export function show(page_: 'search' | 'add' | 'send')
 	{
+		page = page_;
 		shown = true;
-
-		if (edit)
-			next = true;
 	}
 
 	export function hide()
@@ -31,7 +32,7 @@
 		shown = false;
 		result = null;
 		paper = null;
-		next = false;
+		page = null;
 	}
 
 	onMount(() =>
@@ -44,7 +45,7 @@
 				return;
 
 			paper = map.papers[uuid];
-			show(true);
+			show('add');
 		});
 	});
 </script>
@@ -60,15 +61,17 @@
 		<div class="cross absolute cursor-pointer right-0 top-0" onclick={hide} onkeydown={null} role="button" tabindex={0}>
 			<img src={Cross} alt="Close"/>
 		</div>
-		{#if next}
+		{#if page === 'search'}
+			<Search bind:result={result} bind:page={page}/>
+		{:else if page === 'add'}
 			{#if paper === null}
-				<div class="back absolute cursor-pointer left-0 top-0" onclick={() => next = false} onkeydown={null} role="button" tabindex={0}>
+				<div class="back absolute cursor-pointer left-0 top-0" onclick={() => page = 'search'} onkeydown={null} role="button" tabindex={0}>
 					<img src={Back} alt="Back"/>
 				</div>
 			{/if}
 			<Add bind:map={map} bind:journals={journals} {result} {paper} {hide}/>
-		{:else}
-			<Search bind:result={result} bind:next={next}/>
+		{:else if page === 'send'}
+			<Send {route} papers={map.papers} bind:leaving_message={leaving_message}/>
 		{/if}
 	</div>
 </div>

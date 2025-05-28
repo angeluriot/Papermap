@@ -34,6 +34,7 @@
 	let details_element: HTMLDivElement | null = $state(null);
 	let edit_mode = $state(false);
 	let popup: Popup | undefined = $state(undefined);
+	let leaving_message = $state(true);
 
 	function deselect_point()
 	{
@@ -49,7 +50,7 @@
 
 	function on_leaving_edit_mode(event: Event)
 	{
-		if (!edit_mode || Object.values(map.papers).every(paper => paper.edit === undefined))
+		if (!leaving_message || !edit_mode || Object.values(map.papers).every(paper => paper.edit === undefined))
 			return;
 
 		event.preventDefault();
@@ -105,32 +106,6 @@
 			map.papers[uuid] = cloneDeep(initial_papers[uuid]);
 		});
 	});
-
-	/*let edit_test = paper_to_datapaper(map.papers[0]);
-	edit_test.citations.count = 79;
-
-	async function edit(): Promise<void>
-	{
-		const response = await fetch(`/${route}/edit`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				username: 'angeluriot',
-				contact: 'test contact',
-				comment: 'test comment',
-				edits: { deleted: [], edited: { 0: edit_test }, added: [] }
-			}),
-		});
-
-		if (!response.ok)
-		{
-			console.error('Failed to edit:', response.statusText);
-			return;
-		}
-
-		const result = await response.json() as { pr_url: string };
-		console.log('Edit successful:', result.pr_url);
-	}*/
 </script>
 
 <svelte:window bind:innerWidth={width} bind:innerHeight={height} onbeforeunload={on_leaving_edit_mode}/>
@@ -207,13 +182,13 @@
 	</div>
 	<div class="buttons absolute bottom-0 right-0">
 		{#if edit_mode}
-			<EditButtons {map} add={() => { popup?.show(); point_selected = null; }} submit={async () => {}}/>
+			<EditButtons {map} add={() => { popup?.show('search'); point_selected = null; }} submit={() => popup?.show('send') }/>
 		{:else}
 			<DefaultButtons {map} hash={data.hash} bind:edit_mode={edit_mode}/>
 		{/if}
 	</div>
 	<div class="popup">
-		<Popup bind:map={map} bind:journals={journals} bind:this={popup}/>
+		<Popup {route} bind:map={map} bind:journals={journals} bind:this={popup} bind:leaving_message={leaving_message}/>
 	</div>
 </div>
 

@@ -11,8 +11,7 @@ export interface Edits
 
 export interface PostRequest
 {
-	username?: string;
-	contact?: string;
 	comment?: string;
+	discord_username?: string;
 	edits: Edits;
 }

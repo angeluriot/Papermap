@@ -4,9 +4,20 @@
 	import Submit from '$lib/svgs/submit.svg';
 	import Info from '$lib/display/buttons/info.svelte';
 
-	const { map, add, submit }: { map: Map, add: () => void, submit: () => Promise<void> } = $props();
+	const { map, add, submit }: { map: Map, add: () => void, submit: () => void } = $props();
 
 	let nb = $derived(Object.values(map.papers).filter(paper => paper.edit).length);
+
+	function send_changes()
+	{
+		if (nb === 0)
+		{
+			alert('You have not made any changes to the map yet.');
+			return;
+		}
+
+		submit();
+	}
 </script>
 
 <div class="buttons-container right-0 bottom-0 flex-center-col">
@@ -14,7 +25,7 @@
 		<img src={Add} alt="Add" class="button relative rounded-full img-unselectable"/>
 		<Info text="Add a new paper" width={7.5} distance={3.2} />
 	</div>
-	<div class="relative button-container" onclick={submit} onkeydown={null} role="button" tabindex={1}>
+	<div class="relative button-container" onclick={send_changes} onkeydown={null} role="button" tabindex={1}>
 		<img src={Submit} alt="Submit" class="button relative rounded-full img-unselectable z-100"/>
 		<Info text="Submit your changes" width={8.5} distance={3.2} y_shift={-0.5} />
 		{#if nb}
