@@ -109,8 +109,7 @@
 	"no_sample_size": false,
 	"papers": [
 		{
-			"id": "deaf2c4e05c4e2d896d10fe2753e49ea643705b7",
-			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
+			"title": "aaaa",
 			"authors": [
 				"David A. Wolfe",
 				"Tracy Macpherson",
@@ -120,9 +119,9 @@
 			"year": 1986,
 			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
 			"journal": {
+				"retracted": false,
 				"status": "Found",
-				"id": "S53055215",
-				"retracted": false
+				"id": "S53055215"
 			},
 			"results": {
 				"consensus": "positive",
@@ -130,19 +129,53 @@
 				"indirect": true
 			},
 			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse.",
+			"citations": {
+				"count": 66,
+				"critics": false
+			},
+			"conflict_of_interest": false,
+			"notes": [],
+			"id": "deaf2c4e05c4e2d896d10fe2753e49ea643705b7",
 			"type": "RandomizedControlledTrial",
 			"on": "Humans",
 			"sample_size": 290,
 			"p_value": {
 				"value": 0.001,
 				"less_than": true
+			}
+		},
+		{
+			"title": "Outcomes with Femoral IABP in Heart failure and Acute Myocardial Infarction Related Cardiogenic Shock.",
+			"authors": [
+				"A.R. Garan",
+				"Arvind Bhimaraj",
+				"Rachna Kataria",
+				"Aniket S. Rali"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.1016/j.cardfail.2025.04.007",
+			"journal": {
+				"retracted": false,
+				"status": "Found",
+				"id": "S67869649"
 			},
+			"results": {
+				"consensus": "no_effect",
+				"conclusion": "no_effect",
+				"indirect": false
+			},
+			"quote": "okijhugyftdres",
 			"citations": {
-				"count": 66,
+				"count": 0,
 				"critics": false
 			},
 			"conflict_of_interest": false,
-			"notes": []
+			"notes": [],
+			"id": "W4410236886",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 86
 		}
-	]
+	],
+	"fake": false
 }
