@@ -109,8 +109,7 @@
 	"no_sample_size": false,
 	"papers": [
 		{
-			"id": "deaf2c4e05c4e2d896d10fe2753e49ea643705b7",
-			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
+			"title": "aaaa",
 			"authors": [
 				"David A. Wolfe",
 				"Tracy Macpherson",
@@ -120,9 +119,9 @@
 			"year": 1986,
 			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
 			"journal": {
+				"retracted": false,
 				"status": "Found",
-				"id": "S53055215",
-				"retracted": false
+				"id": "S53055215"
 			},
 			"results": {
 				"consensus": "positive",
@@ -130,19 +129,21 @@
 				"indirect": true
 			},
 			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse.",
+			"citations": {
+				"count": 66,
+				"critics": false
+			},
+			"conflict_of_interest": false,
+			"notes": [],
+			"id": "deaf2c4e05c4e2d896d10fe2753e49ea643705b7",
 			"type": "RandomizedControlledTrial",
 			"on": "Humans",
 			"sample_size": 290,
 			"p_value": {
 				"value": 0.001,
 				"less_than": true
-			},
-			"citations": {
-				"count": 66,
-				"critics": false
-			},
-			"conflict_of_interest": false,
-			"notes": []
+			}
 		}
-	]
+	],
+	"fake": false
 }
