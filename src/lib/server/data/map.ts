@@ -33,7 +33,7 @@ async function _import_datamap(group: string, id: string): Promise<DataMap>
 	if (id.startsWith('_') || !map_files[file_path])
 		throw new NotFoundError(`Map not found: ${id}`);
 
-	const map = { ...cloneDeep((await map_files[file_path]() as any).default), fake: false };
+	const map = cloneDeep((await map_files[file_path]() as any).default);
 
 	try
 	{
@@ -75,7 +75,6 @@ async function import_map_titles(): Promise<MapTitle[]>
 			tags: map_data.tags,
 			url: `/maps/${map}`,
 			hash: get_hash(map_data),
-			fake: false,
 		});
 	}
 

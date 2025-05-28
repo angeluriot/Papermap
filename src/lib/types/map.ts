@@ -43,7 +43,7 @@ interface BaseMap
 		any: boolean,
 	};
 	no_sample_size: boolean;
-	fake: boolean;
+	fake?: true;
 }
 
 
@@ -84,5 +84,5 @@ export interface MapTitle
 	tags: string[];
 	url: string;
 	hash: string;
-	fake: boolean;
+	fake?: true;
 }

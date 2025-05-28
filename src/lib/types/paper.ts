@@ -123,13 +123,6 @@ export interface Paper extends DataPaper
 }
 
 
-export function paper_to_datapaper(paper: Paper): DataPaper
-{
-	const { index, uuid, score, edit, ...data } = paper;
-	return data;
-}
-
-
 export interface SearchPaperResult
 {
 	id?: string;
@@ -140,4 +133,11 @@ export interface SearchPaperResult
 	authors?: string[];
 	citations?: number;
 	retracted?: boolean;
+}
+
+
+export function paper_to_datapaper(paper: Paper): DataPaper
+{
+	const { index, uuid, score, edit, ...data } = paper;
+	return data;
 }

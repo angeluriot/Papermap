@@ -1,6 +1,7 @@
 import type { DataPaper } from '$lib/types/paper';
 import type { Edits } from './types';
 import type { DataMap } from '$lib/types/map';
+import { sort_paper_attributes } from '$lib/server/data/paper';
 
 
 export async function edit_map(map: DataMap, edits: Edits): Promise<DataMap>
@@ -19,6 +20,7 @@ export async function edit_map(map: DataMap, edits: Edits): Promise<DataMap>
 	}
 
 	papers = papers.concat(edits.added);
+	papers = papers.map(sort_paper_attributes);
 	papers.sort((a, b) => a.year !== b.year ? a.year - b.year : a.title.localeCompare(b.title));
 	map.papers = papers;
 

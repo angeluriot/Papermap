@@ -109,7 +109,7 @@
 	"no_sample_size": false,
 	"papers": [
 		{
-			"id": "deaf2c4e05c4e2d896d10fe2753e49ea643705b7",
+			"id": "W2010228015",
 			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
 			"authors": [
 				"David A. Wolfe",
@@ -138,7 +138,7 @@
 				"less_than": true
 			},
 			"citations": {
-				"count": 66,
+				"count": 68,
 				"critics": false
 			},
 			"conflict_of_interest": false,
