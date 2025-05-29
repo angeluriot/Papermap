@@ -349,7 +349,7 @@
 	}
 </script>
 
-<div class="search-container flex flex-col justify-start items-center">
+<div class="add-container flex flex-col justify-start items-center">
 	<div class="title flex-center-col">
 		<h1 class="unselectable">
 			{#if paper == null}
@@ -691,9 +691,9 @@
 </div>
 
 <style>
-	.search-container
+	.add-container
 	{
-		padding: 0.2em 0.4em;
+		padding: 0.2em var(--padding-size);
 		gap: 1.5em;
 		width: 100%;
 		max-height: 50em;
@@ -703,7 +703,7 @@
 		scrollbar-width: none;
 	}
 
-	.search-container::-webkit-scrollbar
+	.add-container::-webkit-scrollbar
 	{
 		display: none;
 	}

@@ -174,6 +174,7 @@
 <style>
 	.search-container
 	{
+		padding: 0 var(--padding-size);
 		gap: 1.5em;
 		width: 100%;
 	}

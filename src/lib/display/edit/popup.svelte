@@ -92,7 +92,7 @@
 		border-radius: 1.8em;
 		box-shadow: 0em 0.3em 5em #01012640;
 		--padding-size: 3.5em;
-		padding: calc(var(--padding-size) * 0.85) var(--padding-size) var(--padding-size) var(--padding-size);
+		padding: calc(var(--padding-size) * 0.85) 0 var(--padding-size) 0;
 		width: 40em;
 		max-width: calc(100vw - 3em);
 		max-height: calc(100vh - 3em);

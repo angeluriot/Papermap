@@ -91,7 +91,7 @@
 	}
 </script>
 
-<div class="search-container flex-center-col">
+<div class="send-container flex-center-col">
 	<div class="title flex-center-col">
 		<h1 class="unselectable">Submit your changes</h1>
 		<a href="https://a.com" target="_blank" class="help flex-center-row">
@@ -148,8 +148,9 @@
 </div>
 
 <style>
-	.search-container
+	.send-container
 	{
+		padding: 0 var(--padding-size);
 		gap: 1.5em;
 		width: 100%;
 	}
