@@ -4,17 +4,17 @@
 	import Link from '$lib/svgs/link.svg';
 	import { constants as C } from '$lib/utils';
 
-	let { route, papers, leaving_message = $bindable() }: {
+	let { route, papers, comment = $bindable(), discord_username = $bindable(), leaving_message = $bindable() }: {
 		route: string,
 		papers: { [uuid: string]: Paper },
+		comment: string,
+		discord_username: string,
 		leaving_message: boolean,
 	} = $props();
 
 	const local = C.DEV;
 
 	let loading = $state(false);
-	let comment = $state('');
-	let discord_username = $state('');
 
 	async function submit(local: boolean)
 	{

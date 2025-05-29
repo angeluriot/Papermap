@@ -353,6 +353,11 @@
 		loading = false;
 		hide();
 	}
+
+	export function close_message()
+	{
+		return paper !== null ? has_changed() : true;
+	}
 </script>
 
 <div class="add-container flex flex-col justify-start items-center">

@@ -187,9 +187,11 @@
 			<DefaultButtons {map} hash={data.hash} bind:edit_mode={edit_mode}/>
 		{/if}
 	</div>
-	<div class="popup">
-		<Popup {route} bind:map={map} bind:journals={journals} bind:this={popup} bind:leaving_message={leaving_message}/>
-	</div>
+	{#if edit_mode}
+		<div class="popup">
+			<Popup {route} bind:map={map} bind:journals={journals} bind:this={popup} bind:leaving_message={leaving_message}/>
+		</div>
+	{/if}
 </div>
 
 <style>

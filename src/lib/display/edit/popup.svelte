@@ -13,13 +13,18 @@
 		route: string,
 		map: Map,
 		journals: { [id: string]: Journal },
-		leaving_message: boolean
+		leaving_message: boolean,
 	} = $props();
+
+	const leave_message = 'Are you sure? Any unsaved changes will be lost.';
 
 	let shown = $state(false);
 	let page: 'search' | 'add' | 'send' | null = $state(null);
 	let result: SearchPaperResult | null = $state(null);
 	let paper: Paper | null = $state(null);
+	let add_element: Add | undefined = $state(undefined);
+	let comment = $state('');
+	let discord_username = $state('');
 
 	export function show(page_: 'search' | 'add' | 'send')
 	{
@@ -29,10 +34,22 @@
 
 	export function hide()
 	{
+		if (page === 'add' && add_element?.close_message())
+			if (!confirm(leave_message))
+				return;
+
 		shown = false;
 		result = null;
 		paper = null;
 		page = null;
+	}
+
+	export function go_back()
+	{
+		if (!confirm(leave_message))
+			return;
+
+		page = 'search';
 	}
 
 	onMount(() =>
@@ -65,13 +82,17 @@
 			<Search bind:result={result} bind:page={page}/>
 		{:else if page === 'add'}
 			{#if paper === null}
-				<div class="back absolute cursor-pointer left-0 top-0" onclick={() => page = 'search'} onkeydown={null} role="button" tabindex={0}>
+				<div class="back absolute cursor-pointer left-0 top-0" onclick={go_back} onkeydown={null} role="button" tabindex={0}>
 					<img src={Back} alt="Back"/>
 				</div>
 			{/if}
-			<Add bind:map={map} bind:journals={journals} {result} {paper} {hide}/>
+			<Add bind:map={map} bind:journals={journals} {result} {paper} {hide} bind:this={add_element}/>
 		{:else if page === 'send'}
-			<Send {route} papers={map.papers} bind:leaving_message={leaving_message}/>
+			<Send
+				{route} papers={map.papers}
+				bind:leaving_message={leaving_message} bind:comment={comment}
+				bind:discord_username={discord_username}
+			/>
 		{/if}
 	</div>
 </div>
