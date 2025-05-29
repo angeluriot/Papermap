@@ -75,7 +75,13 @@
 			year = cloneDeep(result.year ?? null);
 			link = cloneDeep(result.link ?? '');
 			journal_status = cloneDeep(result.journal ? 'yes' : 'no');
-			journal = cloneDeep(result.journal ?? null);
+
+			let temp: JournalTitle | null = result.journal ? { id: result.journal.id, title: result.journal.title } : null;
+
+			if (temp && result.journal?.publisher)
+				temp.publisher = result.journal.publisher;
+
+			journal = cloneDeep(temp);
 			retracted = cloneDeep(result.retracted ?? false);
 			citations = cloneDeep(result.citations ?? null);
 		}
@@ -276,13 +282,13 @@
 		{
 			if (journals[data_paper.journal.id] !== undefined)
 				journal_data = journals[data_paper.journal.id];
+			else if (result?.journal)
+				journal_data = result.journal;
 			else
-			{
 				journal_data = await get_journal_data(data_paper.journal.id);
 
-				if (journal_data !== undefined)
-					journals[journal_data.id] = journal_data;
-			}
+			if (journal_data !== undefined && journals[journal_data.id] === undefined)
+				journals[journal_data.id] = journal_data;
 
 			if (journal_data === undefined)
 			{
