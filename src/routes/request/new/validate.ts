@@ -4,7 +4,7 @@ import type { NewMapRequest } from '$lib/github/issue';
 
 
 const request_schema = z.object({
-	title: z.string(),
+	title: z.string().nonempty(),
 	description: z.string().optional(),
 	papers: z.string().optional(),
 	comment: z.string().optional(),

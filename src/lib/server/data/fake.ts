@@ -61,29 +61,29 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		id: random_choice([faker.string.uuid(), undefined]),
 		title: faker.lorem.sentence({ min: 8, max: 22 }),
 		authors: random_times(() => faker.person.fullName(), 1, 5),
+		year: 2025 - Math.round(Math.random() * 50),
+		link: faker.internet.url(),
 		journal: {
 			status: journal_status,
 			id: journal_status === JournalStatus.Found ? random_choice(journal_ids.map(j => j.id), journal_ids.map(j => j.proba)) : undefined,
 			retracted: journal_status === JournalStatus.NotPublished ? false : random_choice([false, true], [10, 1]),
 		},
-		year: 2025 - Math.round(Math.random() * 50),
-		link: faker.internet.url(),
+		citations: {
+			count: 5 + Math.round((Math.random() ** 4) * 500),
+			critics: random_choice([false, true], [10, 1]),
+		},
 		results: {
 			consensus,
 			conclusion,
 			indirect: Math.random() < 0.5,
 		},
 		quote,
-		type,
 		review: Math.random() < 0.2 ? {
 			type: random_choice(Object.keys(ReviewType) as ReviewType[]),
 			count: 5 + Math.round((Math.random() ** 3) * 200),
 		} : undefined,
+		type,
 		on: type ? random_choice([...Object.keys(StudyOn), undefined] as (StudyOn | undefined)[]) : undefined,
-		citations: {
-			count: 5 + Math.round((Math.random() ** 4) * 500),
-			critics: random_choice([false, true], [10, 1]),
-		},
 		sample_size: 5 + Math.round((Math.random() ** 5) * 10000),
 		p_value: Math.random() < 0.9 && map.conclusions[conclusion].p_value ? {
 			value: Math.random() * 0.05,

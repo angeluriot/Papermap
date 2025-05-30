@@ -10,9 +10,9 @@ export function validate_request(request: PostRequest, nb_papers: number): void
 		comment: z.string().optional(),
 		discord_username: z.string().optional(),
 		edits: z.object({
-			deleted: z.array(z.number().int().gte(0).lt(nb_papers)),
+			deleted: z.array(z.number().int().min(0).max(nb_papers - 1)),
 			edited: z.record(
-				z.string(),
+				z.string().nonempty(),
 				paper_schema,
 			),
 			added: z.array(paper_schema),

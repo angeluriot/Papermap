@@ -24,6 +24,11 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 
 	result.journal = journal;
 
+	result.citations = {
+		count: paper.citations.count,
+		critics: paper.citations.critics
+	};
+
 	result.results = {
 		consensus: paper.results.consensus,
 		conclusion: paper.results.conclusion,
@@ -56,11 +61,6 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 			less_than: paper.p_value.less_than
 		};
 	}
-
-	result.citations = {
-		count: paper.citations.count,
-		critics: paper.citations.critics
-	};
 
 	result.conflict_of_interest = paper.conflict_of_interest;
 

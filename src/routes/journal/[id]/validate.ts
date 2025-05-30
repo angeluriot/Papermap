@@ -4,7 +4,7 @@ import { InvalidDataError } from "$lib/errors";
 
 
 const params_schema = z.object({
-	id: z.string(),
+	id: z.string().nonempty(),
 }).strict();
 
 

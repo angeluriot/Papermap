@@ -30,8 +30,8 @@
 
 		let res = result.results.map((source: any) =>
 		({
-			id: source?.id && source.id.trim() !== '' ? clean_id(source.id) : undefined,
-			title: source?.display_name && source.display_name.trim() !== '' ? source.display_name : undefined,
+			id: source?.id && source.id.trim().length > 0 ? clean_id(source.id) : undefined,
+			title: source?.display_name && source.display_name.trim().length > 0 ? source.display_name : undefined,
 			publisher: source?.hint && !['host organization unknown', ''].includes(source.hint.toLowerCase().trim()) ? source.hint : undefined,
 		})).filter((journal: any) => journal.id && journal.title);
 

@@ -7,41 +7,41 @@ import { Color } from '$lib/colors';
 
 export const paper_schema = z.object({
 	id: z.string().optional(),
-	title: z.string(),
-	authors: z.array(z.string()),
+	title: z.string().nonempty(),
+	authors: z.array(z.string().nonempty()).min(1).max(4),
+	year: z.number().min(1500).max(new Date().getFullYear() + 1).int(),
+	link: z.string().nonempty(),
 	journal: z.object({
 		status: z.nativeEnum(JournalStatus),
 		id: z.string().optional(),
 		retracted: z.boolean(),
 	}).strict(),
-	year: z.number().int(),
-	link: z.string(),
+	citations: z.object({
+		count: z.number().int().min(0),
+		critics: z.boolean(),
+	}).strict(),
 	results: z.object({
 		consensus: z.string(),
 		conclusion: z.string(),
 		indirect: z.boolean(),
 	}).strict(),
-	quote: z.string(),
-	type: z.nativeEnum(PaperType).optional(),
+	quote: z.string().nonempty(),
 	review: z.object({
 		type: z.nativeEnum(ReviewType),
-		count: z.number().int().nonnegative(),
+		count: z.number().int().min(1),
 	}).strict().optional(),
+	type: z.nativeEnum(PaperType).optional(),
 	on: z.nativeEnum(StudyOn).optional(),
-	citations: z.object({
-		count: z.number().int().nonnegative(),
-		critics: z.boolean(),
-	}).strict(),
-	sample_size: z.number().int().nonnegative().optional(),
+	sample_size: z.number().int().min(1).optional(),
 	p_value: z.object({
-		value: z.number().nonnegative(),
+		value: z.number().min(0).max(1),
 		less_than: z.boolean(),
 	}).strict().optional(),
 	conflict_of_interest: z.boolean(),
 	notes: z.array(
 		z.object({
-			title: z.string(),
-			description: z.string(),
+			title: z.string().nonempty(),
+			description: z.string().nonempty(),
 			impact: z.nativeEnum(NoteImpact),
 		}).strict(),
 	),
@@ -59,32 +59,32 @@ export function validate_paper(paper: DataPaper): void
 
 const map_schema = z.object({
 	draft: z.boolean(),
-	emoji: z.string(),
+	emoji: z.string().nonempty(),
 	question: z.object({
-		short: z.string(),
-		long: z.string(),
+		short: z.string().nonempty(),
+		long: z.string().nonempty(),
 	}).strict(),
-	description: z.string(),
-	tags: z.array(z.string()),
+	description: z.string().nonempty(),
+	tags: z.array(z.string().nonempty()).min(1),
 	consensus: z.record(
 		z.string(),
 		z.object({
-			emoji: z.string(),
-			text: z.string(),
-			description: z.string(),
+			emoji: z.string().nonempty(),
+			text: z.string().nonempty(),
+			description: z.string().nonempty(),
 			color: z.nativeEnum(Color),
 			coherence: z.record(
-				z.string(),
-				z.number().gte(0).lte(1),
+				z.string().nonempty(),
+				z.number().min(0).max(1),
 			),
 		}).strict(),
 	),
 	conclusions: z.record(
 		z.string(),
 		z.object({
-			emoji: z.string(),
-			text: z.string(),
-			description: z.string(),
+			emoji: z.string().nonempty(),
+			text: z.string().nonempty(),
+			description: z.string().nonempty(),
 			color: z.nativeEnum(Color),
 			p_value: z.boolean(),
 		}).strict(),

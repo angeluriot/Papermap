@@ -31,6 +31,8 @@
 	let journal_search = $state('');
 	let journal: JournalTitle | null = $state(null);
 	let retracted: boolean = $state(false);
+	let citations: number | null = $state(null);
+	let critics: boolean = $state(false);
 	let consensus: string = $state('');
 	let conclusion: string = $state('');
 	let indirect: boolean = $state(false);
@@ -42,8 +44,6 @@
 	let sample_size: number | null = $state(null);
 	let p_value_prefix: string = $state('');
 	let p_value: number | null = $state(null);
-	let citations: number | null = $state(null);
-	let critics: boolean = $state(false);
 	let conflict_of_interest: string = $state('');
 	let notes: { title: string, description: string, impact: string }[] = $state([]);
 	let loading = $state(false);
@@ -109,6 +109,8 @@
 			journal_search = '';
 			journal = cloneDeep(temp);
 			retracted = cloneDeep(paper.journal.retracted ?? false);
+			citations = cloneDeep(paper.citations?.count ?? null);
+			critics = cloneDeep(paper.citations?.critics ?? false);
 			consensus = cloneDeep(paper.results.consensus ?? '');
 			conclusion = cloneDeep(paper.results.conclusion ?? '');
 			indirect = cloneDeep(paper.results.indirect ?? false);
@@ -120,8 +122,6 @@
 			sample_size = cloneDeep(paper.sample_size ?? null);
 			p_value_prefix = cloneDeep(paper.p_value ? (paper.p_value.less_than ? 'less' : 'equal') : '');
 			p_value = cloneDeep(paper.p_value?.value ?? null);
-			citations = cloneDeep(paper.citations?.count ?? null);
-			critics = cloneDeep(paper.citations?.critics ?? false);
 			conflict_of_interest = cloneDeep(paper.conflict_of_interest ? 'yes' : 'no');
 			notes = cloneDeep(paper.notes ?? []);
 		}
@@ -142,20 +142,22 @@
 	function is_valid()
 	{
 		return (
-			title.trim() !== '' &&
+			title.trim().length > 0 &&
 			authors.filter(a => a.trim().length > 0).length > 0 &&
-			year !== null &&
-			link.trim() !== '' &&
+			year !== null && year >= 1500 && year <= new Date().getFullYear() + 1 && Number.isInteger(year) &&
+			link.trim().length > 0 &&
 			journal_status !== '' &&
 			(journal_status === 'no' || journal !== null) &&
+			citations !== null && citations >= 0 && Number.isInteger(citations) &&
 			consensus !== '' &&
 			conclusion !== '' &&
-			quote.trim() !== '' &&
+			quote.trim().length > 0 &&
 			review_type !== '' &&
-			(review_type === 'null' || review_count !== null) &&
+			(review_type === 'null' || (review_count !== null && review_count > 0 && Number.isInteger(review_count))) &&
 			type !== '' &&
 			on !== '' &&
-			citations !== null &&
+			(sample_size === null || (sample_size > 0 && Number.isInteger(sample_size))) &&
+			(p_value === null || (p_value_prefix !== '' && p_value >= 0 && p_value <= 1)) &&
 			conflict_of_interest !== ''
 		);
 	}
@@ -202,20 +204,20 @@
 			year: year as number,
 			link: link.trim(),
 			journal: journal_attribute,
+			citations: {
+				count: citations as number,
+				critics: critics,
+			},
 			results: {
 				consensus: consensus.trim(),
 				conclusion: conclusion.trim(),
 				indirect: indirect,
 			},
 			quote: quote.trim(),
-			citations: {
-				count: citations as number,
-				critics: critics,
-			},
 			conflict_of_interest: conflict_of_interest.trim() === 'yes',
 			notes: notes.filter(
-				note => note.title.trim() !== '' &&
-				note.description.trim() !== '' &&
+				note => note.title.trim().length > 0 &&
+				note.description.trim().length > 0 &&
 				Object.values(NoteImpact).includes(note.impact.trim() as NoteImpact)
 			).map(note => ({
 				title: note.title.trim(),

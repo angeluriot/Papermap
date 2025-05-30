@@ -65,6 +65,10 @@ export interface DataPaper
 		id?: string,
 		retracted: boolean,
 	};
+	citations: {
+		count: number,
+		critics: boolean,
+	};
 	results: {
 		consensus: string,
 		conclusion: string,
@@ -81,10 +85,6 @@ export interface DataPaper
 	p_value?: {
 		value: number,
 		less_than: boolean,
-	};
-	citations: {
-		count: number,
-		critics: boolean,
 	};
 	conflict_of_interest: boolean;
 	notes: {

@@ -5,7 +5,7 @@ import { map_titles } from '$lib/server/data/map';
 
 
 const params_schema = z.object({
-	map: z.string(),
+	map: z.string().nonempty(),
 	file: z.nativeEnum(FileType),
 }).strict();
 

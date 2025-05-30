@@ -124,6 +124,10 @@
 				"id": "S53055215",
 				"retracted": false
 			},
+			"citations": {
+				"count": 68,
+				"critics": false
+			},
 			"results": {
 				"consensus": "positive",
 				"conclusion": "positive",
@@ -136,10 +140,6 @@
 			"p_value": {
 				"value": 0.001,
 				"less_than": true
-			},
-			"citations": {
-				"count": 68,
-				"critics": false
 			},
 			"conflict_of_interest": false,
 			"notes": []
