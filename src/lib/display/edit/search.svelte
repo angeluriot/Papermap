@@ -112,7 +112,7 @@
 <div class="search-container flex-center-col">
 	<div class="title flex-center-col">
 		<h1 class="unselectable">Add a new paper</h1>
-		<a href="https://a.com" target="_blank" class="help flex-center-row">
+		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/paper.md" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
 			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to add a paper?</span>
 		</a>

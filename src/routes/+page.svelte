@@ -117,7 +117,7 @@
 		<span onclick={() => popup?.show()} onkeydown={null} role="button" tabindex={0}>
 			New map
 		</span>
-		<a href="https://github.com/angeluriot/Papermap/wiki/How-to-contribute" target="_blank">
+		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/README.md" target="_blank">
 			<span>Contribute</span>
 		</a>
 		<a href="https://discord.gg/eFdjRJe7WZ" target="_blank">

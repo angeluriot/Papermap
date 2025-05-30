@@ -94,7 +94,7 @@
 <div class="send-container flex-center-col">
 	<div class="title flex-center-col">
 		<h1 class="unselectable">Submit your changes</h1>
-		<a href="https://a.com" target="_blank" class="help flex-center-row">
+		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/README.md" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
 			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to contribute?</span>
 		</a>
