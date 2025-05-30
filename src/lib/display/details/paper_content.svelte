@@ -368,6 +368,7 @@
 				</button>
 			{/if}
 		</div>
+		<div class="line w-full"></div>
 	{/if}
 	<a href={link} target="_blank" class="title-container w-full" title={paper.title}>
 		<p class="title">{title}</p>
@@ -598,7 +599,7 @@
 	.edit
 	{
 		gap: 0.7em;
-		margin-bottom: 0.5em;
+		margin-bottom: -0.2em;
 	}
 
 	.edit-button

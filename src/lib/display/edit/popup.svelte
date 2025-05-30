@@ -32,9 +32,9 @@
 		shown = true;
 	}
 
-	export function hide()
+	export function hide(no_message: boolean = false)
 	{
-		if (page === 'add' && add_element?.close_message())
+		if (!no_message && page === 'add' && add_element?.close_message())
 			if (!confirm(leave_message))
 				return;
 
@@ -72,10 +72,10 @@
 <div class="popup-container absolute left-0 top-0 w-full h-full" style="display: {shown ? 'block' : 'none'};">
 	<div
 		class="background absolute left-0 top-0 w-full h-full bg-[#01012629]"
-		onclick={hide} onkeydown={null} role="button" tabindex={0}
+		onclick={() => hide()} onkeydown={null} role="button" tabindex={0}
 	></div>
 	<div class="popup absolute flex-center-col overflow-hidden">
-		<div class="cross absolute cursor-pointer right-0 top-0" onclick={hide} onkeydown={null} role="button" tabindex={0}>
+		<div class="cross absolute cursor-pointer right-0 top-0" onclick={() => hide()} onkeydown={null} role="button" tabindex={0}>
 			<img src={Cross} alt="Close"/>
 		</div>
 		{#if page === 'search'}
@@ -86,7 +86,7 @@
 					<img src={Back} alt="Back"/>
 				</div>
 			{/if}
-			<Add bind:map={map} bind:journals={journals} {result} {paper} {hide} bind:this={add_element}/>
+			<Add bind:map={map} bind:journals={journals} {result} {paper} hide={() => hide(true)} bind:this={add_element}/>
 		{:else if page === 'send'}
 			<Send
 				{route} papers={map.papers}
