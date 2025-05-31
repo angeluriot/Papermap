@@ -5,11 +5,12 @@
 	import Background from '$lib/home/background.svelte';
 	import Home from '$lib/svgs/home.svg';
 	import Random from '$lib/svgs/random.svg';
+	import Maps from '$lib/list/maps.svelte';
 
 	const { data }: PageProps = $props();
 
 	const emojis = data.emojis;
-	const title = 'All maps';
+	const title = 'Papermap maps';
 	const description = 'A list of all maps currently available on Papermap.';
 	const preview = `${C.BASE_URL}/images/preview.png`;
 	const tags = C.DEFAULT_TAGS.concat(['maps', 'list']);
