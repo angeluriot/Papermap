@@ -3,6 +3,7 @@
 	import Fuse from 'fuse.js';
 	import { Document, Charset } from 'flexsearch';
 	import { get_random_elements, in_browser } from '$lib/utils';
+	import { onMount } from 'svelte';
 
 	let { emojis, maps, search, new_map }: {
 		emojis: Record<string, string>,
@@ -13,6 +14,7 @@
 
 	let search_selected = $state(false);
 	let selected_i: number | null = $state(null);
+	let mounted = $state(false);
 
 	export function select()
 	{
@@ -80,7 +82,7 @@
 
 	const results = $derived.by(() =>
 	{
-		if (!in_browser())
+		if (!in_browser() || !mounted)
 			return [];
 
 		if (search.trim() === '')
@@ -153,6 +155,11 @@
 			}
 		}
 	}
+
+	onMount(() =>
+	{
+		mounted = true;
+	});
 </script>
 
 <svelte:window onkeydown={handle_key_press}/>
