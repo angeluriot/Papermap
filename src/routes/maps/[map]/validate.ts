@@ -17,5 +17,5 @@ export function validate_params(params: Params): void
 		throw new InvalidDataError(result.error.errors[0].message);
 
 	if (map_titles[params.map] === undefined)
-		throw new InvalidDataError('Invalid map name');
+		throw new InvalidDataError(`Invalid map name: ${params.map}`);
 }
