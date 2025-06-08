@@ -1,0 +1,126 @@
+{
+	"draft": false,
+	"emoji": "🧑‍🏫",
+	"question": {
+		"short": "Do GMOs impact human health?",
+		"long": "Do GMOs have an impact on consumer health?"
+	},
+	"description": "Results from studies evaluating the effect of food products containing genetically modified organisms (GMOs) on human health.",
+	"tags": [
+		"food",
+		"GMO",
+		"health",
+		"agriculture"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of GMOs on human health",
+			"color": "Gray",
+			"coherence": {
+				"yes": 0.5,
+				"no": 0.5
+			}
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that GMOs have an impact on human health",
+			"color": "Green",
+			"coherence": {
+				"yes": 1,
+				"no_unlike_literature": 0
+			}
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that GMOs have no effects on human health",
+			"color": "Red",
+			"coherence": {
+				"yes_unlike_literature": 0,
+				"no": 1
+			}
+		}
+	},
+	"conclusions": {
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that the GMOs evaluated have an impact on human health",
+			"color": "Green",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that the GMOs evaluated have an impact on human health, unlike what is reported in the literature",
+			"color": "Green1H",
+			"p_value": true
+		},
+		"no_unlike_literature": {
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant impact on human health of the GMOs evaluated, unlike what is reported in the literature",
+			"color": "Red1H",
+			"p_value": true
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant impact on human health of the GMOs evaluated",
+			"color": "Red",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_causality": false,
+		"no_random": false,
+		"no_blind": false,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": [
+		{
+			"id": "W2010228015",
+			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
+			"authors": [
+				"David A. Wolfe",
+				"Tracy Macpherson",
+				"Ronald Blount",
+				"Vicky V. Wolfe"
+			],
+			"year": 1986,
+			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
+			"journal": {
+				"status": "Found",
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 68,
+				"critics": false
+			},
+			"results": {
+				"consensus": "yes",
+				"conclusion": "yes",
+				"indirect": true
+			},
+			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse.",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 290,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": false,
+			"notes": []
+		}
+	]
+}
