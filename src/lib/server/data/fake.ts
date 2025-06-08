@@ -127,7 +127,7 @@ export function generate_map_title(): MapTitle
 		},
 		description: faker.lorem.sentence({ min: 20, max: 30 }).slice(0, -1),
 		tags: faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1).split(' ').map(tag => tag.toLowerCase().replace(/[^a-z]/g, '')),
-		url: random_choice(['/maps/other_subject', '/maps/sexual_education_effectiveness', '/maps/test']), //`/maps/${id}`,
+		url: random_choice(['/maps/map_1', '/maps/map_2', '/maps/map_3', '/maps/map_4']), //`/maps/${id}`,
 		hash: faker.string.uuid(),
 		fake: true,
 	}

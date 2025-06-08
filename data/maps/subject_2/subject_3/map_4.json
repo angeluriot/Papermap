@@ -1,11 +1,11 @@
 {
 	"draft": false,
-	"emoji": "🧑‍🏫",
+	"emoji": "🧫",
 	"question": {
 		"short": "Do GMOs impact human health?",
 		"long": "Do GMOs have an impact on consumer health?"
 	},
-	"description": "Results from studies evaluating the effect of food products containing genetically modified organisms (GMOs) on human health.",
+	"description": "Results from studies evaluating the effect of food products containing GMOs on human health.",
 	"tags": [
 		"food",
 		"GMO",
