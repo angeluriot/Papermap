@@ -1,5 +1,5 @@
 import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
-import { type DataMap, type Group, type MapTitle } from '$lib/types/map';
+import { type DataMap, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/server/emojis';
 
@@ -111,13 +111,13 @@ export function generate_group(): Group
 }
 
 
-export function generate_map_title(group: { id: string, emoji: string, name: string }): MapTitle
+export function generate_map_title(): MapTitle
 {
 	const short = faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1);
 	const id = short.toLowerCase().replace(/ /g, '_')
 
 	return {
-		group,
+		groups: [],
 		id,
 		draft: false,
 		emoji: random_choice(Object.keys(EMOJI_NAMES)),
@@ -131,4 +131,27 @@ export function generate_map_title(group: { id: string, emoji: string, name: str
 		hash: faker.string.uuid(),
 		fake: true,
 	}
+}
+
+
+export function generate_group_node(): GroupNode
+{
+	const group = generate_group();
+	const maps: MapTitle[] = [];
+	const sub_groups: GroupNode[] = [];
+
+	while (Math.random() < 0.5)
+		sub_groups.push(generate_group_node());
+
+	if (sub_groups.length === 0)
+		maps.push(generate_map_title());
+
+	for (let i = 0; i < Math.floor(Math.random() * 5); i++)
+		maps.push(generate_map_title());
+
+	return {
+		...group,
+		maps: maps.sort((a, b) => a.id.localeCompare(b.id)),
+		sub_groups: sub_groups.sort((a, b) => a.id.localeCompare(b.id)),
+	};
 }

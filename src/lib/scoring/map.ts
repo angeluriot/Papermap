@@ -112,7 +112,7 @@ export function score_answers(map: Map): Record<string, number>
 }
 
 
-export function score_map(id: string, group: Group, data_map: DataMap, journals: { [id: string]: Journal }): Map
+export function score_map(data_map: DataMap, journals: { [id: string]: Journal }): Map
 {
 	let papers: { [uuid: string]: Paper } = {};
 	let index = 0;
@@ -126,8 +126,6 @@ export function score_map(id: string, group: Group, data_map: DataMap, journals:
 
 	let map = {
 		...data_map,
-		group,
-		id,
 		papers,
 		overview: {}
 	};

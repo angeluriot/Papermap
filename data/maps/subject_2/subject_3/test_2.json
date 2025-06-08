@@ -1,0 +1,148 @@
+{
+	"draft": false,
+	"emoji": "🧑‍🏫",
+	"question": {
+		"short": "What are the effects of sexual education programs?",
+		"long": "What is the risk-benefit ratio of sexual education programs for children?"
+	},
+	"description": "Results from studies evaluating the risk-benefit ratio of sexual education programs for children aimed at preventing child sexual abuse.",
+	"tags": [
+		"education",
+		"prevention",
+		"child",
+		"children",
+		"sexual abuse"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of sexual education programs",
+			"color": "Gray",
+			"coherence": {
+				"positive": 0.5,
+				"no_effect": 0.5,
+				"negative": 0.5
+			}
+		},
+		"positive": {
+			"emoji": "👍",
+			"text": "Positive",
+			"description": "The literature suggests that sexual education programs mostly have positive effects on children",
+			"color": "Green",
+			"coherence": {
+				"positive": 1,
+				"no_effect": 0.5,
+				"negative_unlike_literature": 0
+			}
+		},
+		"no_effect": {
+			"emoji": "🫥",
+			"text": "No effect",
+			"description": "The literature suggests that sexual education programs have no significant effect on children",
+			"color": "Gray",
+			"coherence": {
+				"positive": 0.5,
+				"no_effect": 1,
+				"negative": 0.5
+			}
+		},
+		"negative": {
+			"emoji": "👎",
+			"text": "Negative",
+			"description": "The literature suggests that sexual education programs mostly have negative effects on children",
+			"color": "Red",
+			"coherence": {
+				"positive_unlike_literature": 0,
+				"no_effect": 0.5,
+				"negative": 1
+			}
+		}
+	},
+	"conclusions": {
+		"positive": {
+			"emoji": "👍",
+			"text": "Positive",
+			"description": "The results of the paper suggest that the sexual education programs evaluated mostly have positive effects on children",
+			"color": "Green",
+			"p_value": true
+		},
+		"positive_unlike_literature": {
+			"emoji": "↪️",
+			"text": "Positive unlike literature",
+			"description": "The results of the paper suggest that the sexual education programs evaluated mostly have positive effects on children, unlike what is reported in the literature",
+			"color": "Green1H",
+			"p_value": true
+		},
+		"no_effect": {
+			"emoji": "🫥",
+			"text": "No effect",
+			"description": "The results of the paper show no significant effect on children of the sexual education programs evaluated",
+			"color": "Gray",
+			"p_value": false
+		},
+		"negative_unlike_literature": {
+			"emoji": "↩️",
+			"text": "Negative unlike literature",
+			"description": "The results of the paper suggest that the sexual education programs evaluated mostly have negative effects on children, unlike what is reported in the literature",
+			"color": "Red1H",
+			"p_value": true
+		},
+		"negative": {
+			"emoji": "👎",
+			"text": "Negative",
+			"description": "The results of the paper suggest that the sexual education programs evaluated mostly have negative effects on children",
+			"color": "Red",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_causality": false,
+		"no_random": false,
+		"no_blind": true,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": [
+		{
+			"id": "W2010228015",
+			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
+			"authors": [
+				"David A. Wolfe",
+				"Tracy Macpherson",
+				"Ronald Blount",
+				"Vicky V. Wolfe"
+			],
+			"year": 1986,
+			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
+			"journal": {
+				"status": "Found",
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 68,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": true
+			},
+			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse.",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 290,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": false,
+			"notes": []
+		}
+	]
+}

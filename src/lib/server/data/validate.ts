@@ -1,7 +1,7 @@
-import type { DataMap } from '$lib/types/map';
+import type { DataMap, Group } from '$lib/types/map';
 import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
 import { z } from 'zod';
-import { InvalidDataError } from '$lib/errors';
+import { InvalidInternalDataError } from '$lib/errors';
 import { Color } from '$lib/colors';
 
 
@@ -48,16 +48,25 @@ export const paper_schema = z.object({
 }).strict();
 
 
-export function validate_paper(paper: DataPaper): void
+const group_schema = z.object({
+	id: z.string().nonempty(),
+	emoji: z.string().nonempty(),
+	name: z.string().nonempty(),
+}).strict();
+
+
+export function validate_group(group: Group): void
 {
-	const result = paper_schema.safeParse(paper);
+	const result = group_schema.safeParse(group);
 
 	if (!result.success)
-		throw new InvalidDataError(result.error.errors[0].message);
+		throw new InvalidInternalDataError(`Invalid group ${group.id}: ${result.error.errors[0].message}`);
 }
 
 
 const map_schema = z.object({
+	groups: z.array(group_schema),
+	id: z.string().nonempty(),
 	draft: z.boolean(),
 	emoji: z.string().nonempty(),
 	question: z.object({
@@ -110,5 +119,5 @@ export function validate_map(map: DataMap): void
 	const result = map_schema.safeParse(map);
 
 	if (!result.success)
-		throw new InvalidDataError(result.error.errors[0].message);
+		throw new InvalidInternalDataError(`Invalid map ${map.id}: ${result.error.errors[0].message}`);
 }

@@ -4,6 +4,8 @@ import type { Color } from '$lib/colors';
 
 interface BaseMap
 {
+	groups: Group[];
+	id: string;
 	draft: boolean;
 	emoji: string;
 	question: {
@@ -53,6 +55,13 @@ export interface DataMap extends BaseMap
 }
 
 
+export interface Map extends BaseMap
+{
+	papers: { [uuid: string]: Paper };
+	overview: Record<string, number>;
+}
+
+
 export interface Group
 {
 	id: string;
@@ -61,18 +70,16 @@ export interface Group
 }
 
 
-export interface Map extends BaseMap
+export interface GroupNode extends Group
 {
-	group: Group;
-	id: string;
-	papers: { [uuid: string]: Paper };
-	overview: Record<string, number>;
+	maps: MapTitle[];
+	sub_groups: GroupNode[];
 }
 
 
 export interface MapTitle
 {
-	group: Group;
+	groups: Group[];
 	id: string;
 	draft: boolean;
 	emoji: string;

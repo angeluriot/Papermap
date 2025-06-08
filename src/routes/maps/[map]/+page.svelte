@@ -115,8 +115,8 @@
 
 	<meta name="description" content={map.description}/>
 	<meta name="keywords" content={tags.join(', ')}/>
-	<meta name="subject" content={map.group.name}/>
-	<meta name="topic" content={map.group.name}/>
+	<meta name="subject" content={map.groups[map.groups.length - 1].name}/>
+	<meta name="topic" content={map.groups[map.groups.length - 1].name}/>
 	<meta name="summary" content={map.description}/>
 	<meta name="url" content={page_url}/>
 	<meta name="pagename" content={map.question.short}/>
