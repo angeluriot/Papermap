@@ -98,12 +98,14 @@
 	.details
 	{
 		filter: drop-shadow(0 0.1em 1.25em #00008036);
+		transform: translateZ(0);
 		z-index: 1000;
 	}
 
 	.details.mobile-shadow
 	{
 		filter: drop-shadow(0 0em 15em #00022d);
+		transform: translateZ(0);
 	}
 
 	.details-container

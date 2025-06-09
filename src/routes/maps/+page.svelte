@@ -74,7 +74,7 @@
 		</div>
 		<div class="list flex flex-col justify-start items-start w-full">
 			{#each data.maps_structure as node}
-				<Maps {emojis} {node}/>
+				<Maps {emojis} node={node}/>
 			{/each}
 		</div>
 	</div>
@@ -117,6 +117,7 @@
 		gap: 0.6em;
 		margin-top: -0.2em;
 		filter: drop-shadow(0em 0.1em 0.5em #00008036);
+		transform: translateZ(0);
 	}
 
 	.links img

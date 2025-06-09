@@ -100,6 +100,7 @@
 	.info
 	{
 		filter: drop-shadow(0 0.1em 1em #00008036);
+		transform: translateZ(0);
 		z-index: 1000;
 		left: 50%;
 	}

@@ -206,6 +206,7 @@
 	{
 		gap: 0.65em;
 		filter: drop-shadow(0em 0.1em 0.75em #00008036);
+		transform: translateZ(0);
 	}
 
 	.home
@@ -261,10 +262,7 @@
 
 		.title-component:hover + a .home
 		{
-			min-width: 0em;
-			min-height: 0em;
-			width: 0em;
-			height: 0em;
+			opacity: 0;
 		}
 	}
 </style>

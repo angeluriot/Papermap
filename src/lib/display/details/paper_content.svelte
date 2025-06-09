@@ -721,8 +721,10 @@
 
 	.card .emoji
 	{
+		width: 1.1em;
 		height: 1.1em;
 		filter: drop-shadow(0 0.025em 0.3em var(--shadow-color));
+		transform: translateZ(0);
 	}
 
 	.card span

@@ -46,6 +46,7 @@
 	.button-container
 	{
 		filter: drop-shadow(0em 0.1em 1.4em #00008041);
+		transform: translateZ(0);
 	}
 
 	.button

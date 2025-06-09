@@ -174,6 +174,7 @@
 	.input-container
 	{
 		filter: drop-shadow(0em 0em 3em #00008036);
+		transform: translateZ(0);
 	}
 
 	input
