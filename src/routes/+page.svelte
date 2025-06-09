@@ -20,6 +20,7 @@
 	let search = $state('');
 	let search_element: Search | undefined = $state(undefined);
 	let popup: Popup | undefined = $state(undefined);
+	let interval: NodeJS.Timeout | undefined = $state(undefined);
 
 	onMount(() =>
 	{
@@ -35,17 +36,28 @@
 
 	function get_placeholder()
 	{
-		let new_placeholder = data.maps[Math.floor(Math.random() * data.maps.length)].question.short;
+		try
+		{
+			let new_placeholder = data.maps[Math.floor(Math.random() * data.maps.length)].question.short;
 
-		if (!data.maps.every((map) => map.question.short === new_placeholder))
-			while (new_placeholder === placeholder)
-				new_placeholder = data.maps[Math.floor(Math.random() * data.maps.length)].question.short;
+			if (!data.maps.every((map) => map.question.short === new_placeholder))
+				while (new_placeholder === placeholder)
+					new_placeholder = data.maps[Math.floor(Math.random() * data.maps.length)].question.short;
 
-		placeholder = new_placeholder;
+			placeholder = new_placeholder;
+		}
+
+		catch (error)
+		{
+			clearInterval(interval);
+		}
 	}
 
-	get_placeholder();
-	setInterval(get_placeholder, 2000);
+	onMount(() =>
+	{
+		get_placeholder();
+		interval = setInterval(get_placeholder, 2000);
+	})
 </script>
 
 <svelte:window bind:innerWidth={width} bind:innerHeight={height} onclick={() => search_element?.deselect()}/>
