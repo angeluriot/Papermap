@@ -114,3 +114,9 @@ export function get_uuid(): string
 
 	return result;
 }
+
+
+export function nb_common_elements<T>(array1: T[], array2: T[]): number
+{
+	return array1.filter(item => array2.includes(item)).length;
+}

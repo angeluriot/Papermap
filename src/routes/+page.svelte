@@ -95,7 +95,7 @@
 				style="{search_element?.shown() ? 'border-radius: 1.6em 1.6em 0em 0em;' : 'border-radius: 1.6em;'}"
 			>
 			<div class="search absolute w-full bg-white z-30" style="display: {search_element?.shown() ? 'block' : 'none'};">
-				<Search {emojis} maps={data.maps} {search} new_map={(title) => popup?.show(title)} bind:this={search_element}/>
+				<Search {emojis} map={null} maps={data.maps} {search} new_map={(title) => popup?.show(title)} bind:this={search_element}/>
 			</div>
 		</div>
 		<div class="buttons flex-center-row flex-wrap" style="{search_element?.shown() ? '' : 'position: relative; z-index: 40;'}">

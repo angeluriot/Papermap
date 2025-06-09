@@ -1,12 +1,13 @@
 <script lang="ts">
-	import type { MapTitle } from '$lib/types/map';
+	import type { Map, MapTitle } from '$lib/types/map';
 	import Fuse from 'fuse.js';
 	import { Document, Charset } from 'flexsearch';
-	import { get_random_elements, in_browser } from '$lib/utils';
+	import { get_random_elements, in_browser, nb_common_elements } from '$lib/utils';
 	import { onMount } from 'svelte';
 
-	let { emojis, maps, search, new_map }: {
+	let { emojis, map, maps, search, new_map }: {
 		emojis: Record<string, string>,
+		map: Map | null,
 		maps: MapTitle[],
 		search: string,
 		new_map: (title: string) => void
@@ -80,13 +81,34 @@
 	const fuse = new Fuse(maps, fuse_options);
 	const max_results = 10;
 
+	export function get_random_maps(): (MapTitle | 'all' | 'new')[]
+	{
+		if (map === null)
+			return (get_random_elements(maps, max_results) as (MapTitle | 'all' | 'new')[]).concat(['all']);
+
+		let maps_scores: { map: MapTitle, score: number }[] = maps.map((m) =>
+		{
+			const common = nb_common_elements(m.groups.map((g) => g.id), map.groups.map((g) => g.id));
+
+			return {
+				map: m,
+				score: (m.groups.length - common) + (map.groups.length - common) + Math.random() * 0.1,
+			};
+		});
+
+		maps_scores.sort((a, b) => a.score - b.score);
+		maps_scores = maps_scores.filter((m) => m.map.id !== map.id);
+
+		return (maps_scores.slice(0, max_results).map((i) => i.map) as (MapTitle | 'all' | 'new')[]).concat(['all']);
+	}
+
 	const results = $derived.by(() =>
 	{
 		if (!in_browser() || !mounted)
 			return [];
 
 		if (search.trim() === '')
-			return (get_random_elements(maps, max_results) as (MapTitle | 'all' | 'new')[]).concat(['all']);
+			return get_random_maps();
 
 		let temp = index.search(search, { limit: max_results * 2, resolve: true }) as any;
 		const nothing = temp === undefined || temp.length === 0 || temp[0].result === undefined
@@ -217,6 +239,8 @@
 	{
 		width: 1.1em;
 		height: 1.1em;
+		min-width: 1.1em;
+		min-height: 1.1em;
 	}
 
 	span
