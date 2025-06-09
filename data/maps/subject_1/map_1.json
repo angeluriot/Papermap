@@ -64,14 +64,14 @@
 			"text": "No unlike literature",
 			"description": "The results of the paper show no significant impact on human health of the GMOs evaluated, unlike what is reported in the literature",
 			"color": "Red1H",
-			"p_value": true
+			"p_value": false
 		},
 		"no": {
 			"emoji": "👎",
 			"text": "No",
 			"description": "The results of the paper show no significant impact on human health of the GMOs evaluated",
 			"color": "Red",
-			"p_value": true
+			"p_value": false
 		}
 	},
 	"type": {
