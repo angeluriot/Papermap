@@ -109,7 +109,7 @@
 			"results": {
 				"consensus": "yes",
 				"conclusion": "yes",
-				"indirect": true
+				"indirect": false
 			},
 			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse.",
 			"type": "RandomizedControlledTrial",

@@ -157,13 +157,13 @@
 
 			result.push({ text: 'of', is_card: false });
 
-			const nb_emoji = cards.review_count_score_to_emoji(paper.score.review_count);
+			const nb_emoji = cards.review_count_score_to_emoji(paper.scores.review_count);
 
 			result.push({
 				emoji: nb_emoji,
 				text: int_to_text(paper.review.count) + ' Papers',
-				color: cards.score_to_color(paper.score.review_count),
-				shadow: color_to_shadow(cards.score_to_color(paper.score.review_count)),
+				color: cards.score_to_color(paper.scores.review_count),
+				shadow: color_to_shadow(cards.score_to_color(paper.scores.review_count)),
 				description: int_to_text(paper.review.count) + ' papers were included in this ' + cards.TO_TEXT[paper.review.type].slice(2).toLowerCase(),
 				is_card: true,
 			});
@@ -175,8 +175,8 @@
 				result.push({
 					emoji: cards.TO_EMOJI[paper.type],
 					text: cards.TO_TEXT_PLURAL[paper.type],
-					color: cards.score_to_color(paper.score.type),
-					shadow: color_to_shadow(cards.score_to_color(paper.score.type)),
+					color: cards.score_to_color(paper.scores.type),
+					shadow: color_to_shadow(cards.score_to_color(paper.scores.type)),
 					description: cards.TO_DESCRIPTION[paper.type],
 					is_card: true,
 				});
@@ -188,8 +188,8 @@
 			result.push({
 				emoji: cards.TO_EMOJI[paper.type],
 				text: cards.TO_TEXT[paper.type],
-				color: cards.score_to_color(paper.score.type),
-				shadow: color_to_shadow(cards.score_to_color(paper.score.type)),
+				color: cards.score_to_color(paper.scores.type),
+				shadow: color_to_shadow(cards.score_to_color(paper.scores.type)),
 				description: cards.TO_DESCRIPTION[paper.type],
 				is_card: true,
 			});
@@ -203,8 +203,8 @@
 			result.push({
 				emoji: cards.TO_EMOJI[paper.on],
 				text: cards.TO_TEXT[paper.on],
-				color: cards.score_to_color(paper.score.on),
-				shadow: color_to_shadow(cards.score_to_color(paper.score.on)),
+				color: cards.score_to_color(paper.scores.on),
+				shadow: color_to_shadow(cards.score_to_color(paper.scores.on)),
 				description: cards.TO_DESCRIPTION[paper.on],
 				is_card: true,
 			});
@@ -233,12 +233,14 @@
 				description: 'This paper has not been published in a journal yet',
 			};
 
+		const journal_ = journals[paper.journal.id as string];
+
 		return {
-			emoji: cards.score_to_emoji(paper.score.journal),
-			text: journals[paper.journal.id as string].title,
-			color: cards.score_to_color(paper.score.journal),
-			shadow: color_to_shadow(cards.score_to_color(paper.score.journal)),
-			journal: journals[paper.journal.id as string],
+			emoji: cards.score_to_emoji(journal_.score),
+			text: journal_.title,
+			color: cards.score_to_color(journal_.score),
+			shadow: color_to_shadow(cards.score_to_color(journal_.score)),
+			journal: journal_,
 		};
 	});
 
@@ -250,10 +252,10 @@
 			return null;
 
 		return {
-			emoji: cards.sample_size_score_to_emoji(paper.score.sample_size),
+			emoji: cards.sample_size_score_to_emoji(paper.scores.sample_size),
 			text: int_to_text(paper.sample_size),
-			color: cards.score_to_color(paper.score.sample_size),
-			shadow: color_to_shadow(cards.score_to_color(paper.score.sample_size)),
+			color: cards.score_to_color(paper.scores.sample_size),
+			shadow: color_to_shadow(cards.score_to_color(paper.scores.sample_size)),
 			description: int_to_text(paper.sample_size) + ' individuals were included in this study',
 		};
 	});
@@ -264,19 +266,19 @@
 			return null;
 
 		return {
-			emoji: cards.p_value_score_to_emoji(paper.score.p_value),
+			emoji: cards.p_value_score_to_emoji(paper.scores.p_value),
 			text: (paper.p_value.less_than ? ' < ' : ' ') + float_to_text(paper.p_value.value),
-			color: cards.score_to_color(paper.score.p_value),
-			shadow: color_to_shadow(cards.score_to_color(paper.score.p_value)),
+			color: cards.score_to_color(paper.scores.p_value),
+			shadow: color_to_shadow(cards.score_to_color(paper.scores.p_value)),
 			description: `There is ${paper.p_value.less_than ? 'less than' : ''} a ${float_to_text(paper.p_value.value * 100)}% probability that these results occurred by chance`,
 		};
 	});
 
 	const citations = $derived({
-		emoji: cards.citation_score_to_emoji(paper.score.citations_count),
+		emoji: cards.citation_score_to_emoji(paper.scores.citations_count),
 		text: int_to_text(paper.citations.count),
-		color: cards.score_to_color(paper.score.citations_count),
-		shadow: color_to_shadow(cards.score_to_color(paper.score.citations_count)),
+		color: cards.score_to_color(paper.scores.citations_count),
+		shadow: color_to_shadow(cards.score_to_color(paper.scores.citations_count)),
 		description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
 	});
 

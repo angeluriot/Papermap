@@ -95,22 +95,14 @@ export interface DataPaper
 }
 
 
-export interface PaperScore
+export interface PaperScores
 {
-	journal: number;
-	result: number;
-	type?: number;
-	review: number;
-	review_count: number;
-	on?: number;
-	citations: number;
 	citations_count: number;
-	year: number;
-	sample_size?: number;
-	p_value?: number;
-	conflict_of_interest: number;
-	overall: number;
-	notes?: number;
+	review_count: number;
+	type: number;
+	on: number;
+	sample_size: number;
+	p_value: number;
 }
 
 
@@ -118,7 +110,8 @@ export interface Paper extends DataPaper
 {
 	index: number;
 	uuid: string;
-	score: PaperScore;
+	scores: PaperScores;
+	score: number;
 	edit?: Edit;
 }
 
@@ -138,6 +131,6 @@ export interface SearchPaperResult
 
 export function paper_to_datapaper(paper: Paper): DataPaper
 {
-	const { index, uuid, score, edit, ...data } = paper;
+	const { index, uuid, scores, score, edit, ...data } = paper;
 	return data;
 }

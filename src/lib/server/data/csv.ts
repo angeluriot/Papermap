@@ -29,7 +29,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 {
 	const papers = (
 		Object.values(map.papers)
-		.toSorted((a, b) => b.score.overall - a.score.overall)
+		.toSorted((a, b) => b.score - a.score)
 		.map((paper) => ({
 			title: paper.title,
 			authors: array_to_string(paper.authors),

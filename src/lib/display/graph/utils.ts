@@ -20,7 +20,7 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 	const max_year = Math.max(...years);
 	const pad_year = (max_year - min_year) / (width ** 0.7);
 
-	const scores = Object.values(map.papers).map(paper => paper.score.overall);
+	const scores = Object.values(map.papers).map(paper => paper.score);
 	const min_score = Math.min(...scores);
 	const max_score = Math.max(...scores);
 	const pad_score = (max_score - min_score) / (height ** 0.7);

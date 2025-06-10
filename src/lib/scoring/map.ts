@@ -83,14 +83,14 @@ export function score_answers(map: Map): Record<string, number>
 	let paper_scores: Record<string, number> = {};
 
 	for (const paper of Object.values(map.papers))
-		paper_scores[paper.uuid] = paper.score.overall;
+		paper_scores[paper.uuid] = paper.score;
 
 	let paper_rank_scores = compute_normalized_ranking(paper_scores);
 
 	for (const paper of Object.values(map.papers))
 	{
 		const rank_score = paper_rank_scores[paper.uuid];
-		const score = ((1 - OVERVIEW_RANK_SCORE_COEF) * paper.score.overall + OVERVIEW_RANK_SCORE_COEF * rank_score) ** OVERVIEW_GAP_INCREASE;
+		const score = ((1 - OVERVIEW_RANK_SCORE_COEF) * paper.score + OVERVIEW_RANK_SCORE_COEF * rank_score) ** OVERVIEW_GAP_INCREASE;
 		const answer_id = paper.results.conclusion;
 
 		if (!answer_scores[answer_id])
