@@ -51,6 +51,7 @@
 	const impact_to_text = {
 		[NoteImpact.ExtremelyNegative]: 'Extremely negative',
 		[NoteImpact.Positive]: 'Positive',
+		[NoteImpact.Neutral]: 'Neutral',
 		[NoteImpact.Negative]: 'Negative',
 		[NoteImpact.ExtremelyPositive]: 'Extremely positive',
 	};
@@ -218,11 +219,11 @@
 			notes: notes.filter(
 				note => note.title.trim().length > 0 &&
 				note.description.trim().length > 0 &&
-				Object.values(NoteImpact).includes(note.impact.trim() as NoteImpact)
+				['', ...Object.values(NoteImpact)].includes(note.impact.trim() as NoteImpact | string)
 			).map(note => ({
 				title: note.title.trim(),
 				description: note.description.trim(),
-				impact: note.impact.trim() as NoteImpact,
+				impact: note.impact.trim() === '' ? NoteImpact.Neutral : note.impact.trim() as NoteImpact,
 			}))
 		};
 

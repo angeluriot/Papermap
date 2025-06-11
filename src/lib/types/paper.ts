@@ -40,6 +40,7 @@ export enum NoteImpact
 {
 	ExtremelyNegative = 'ExtremelyNegative',
 	Negative = 'Negative',
+	Neutral = 'Neutral',
 	Positive = 'Positive',
 	ExtremelyPositive = 'ExtremelyPositive',
 }

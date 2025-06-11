@@ -56,6 +56,7 @@ export const EMOJI_NAMES = {
 	'📃': 'page-with-curl',
 	'📑': 'bookmark-tabs',
 	'📭': 'open-mailbox-with-lowered-flag',
+	'📝': 'memo',
 	'🗂️': 'card-index-dividers',
 	'📊': 'bar-chart',
 	'🔗': 'link',
