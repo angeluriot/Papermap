@@ -356,7 +356,7 @@
 					class="edit-button relative card text-unselectable cursor-pointer overflow-hidden"
 					style="--shadow-color: #80000050" onclick={edit_paper}
 				>
-					{@render emoji('🙂')}
+					{@render emoji('✒️')}
 					<span>Edit</span>
 					<div class="absolute edit-mask bg-[#80000015]"></div>
 				</button>
@@ -364,7 +364,7 @@
 					class="delete-button relative card text-unselectable cursor-pointer overflow-hidden"
 					style="--shadow-color: #80000050" onclick={delete_paper}
 				>
-					{@render emoji('😨')}
+					{@render emoji('🗑️')}
 					<span>Delete</span>
 					<div class="absolute edit-mask bg-[#80000025]"></div>
 				</button>
