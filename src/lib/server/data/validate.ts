@@ -3,6 +3,7 @@ import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPap
 import { z } from 'zod';
 import { InvalidInternalDataError } from '$lib/errors';
 import { Color } from '$lib/colors';
+import { EMOJI_NAMES } from '../emojis';
 
 
 export const paper_schema = z.object({
@@ -61,6 +62,9 @@ export function validate_group(group: Group): void
 
 	if (!result.success)
 		throw new InvalidInternalDataError(`Invalid group ${group.id}: ${result.error.errors[0].message}`);
+
+	if (EMOJI_NAMES[group.emoji as keyof typeof EMOJI_NAMES] === undefined)
+		throw new InvalidInternalDataError(`Emoji SVG file not found: ${group.emoji}`);
 }
 
 
@@ -120,4 +124,15 @@ export function validate_map(map: DataMap): void
 
 	if (!result.success)
 		throw new InvalidInternalDataError(`Invalid map ${map.id}: ${result.error.errors[0].message}`);
+
+	if (EMOJI_NAMES[map.emoji as keyof typeof EMOJI_NAMES] === undefined)
+		throw new InvalidInternalDataError(`Emoji SVG file not found: ${map.emoji}`);
+
+	for (const consensus of Object.values(map.consensus))
+		if (EMOJI_NAMES[consensus.emoji as keyof typeof EMOJI_NAMES] === undefined)
+			throw new InvalidInternalDataError(`Emoji SVG file not found: ${consensus.emoji}`);
+
+	for (const conclusion of Object.values(map.conclusions))
+		if (EMOJI_NAMES[conclusion.emoji as keyof typeof EMOJI_NAMES] === undefined)
+			throw new InvalidInternalDataError(`Emoji SVG file not found: ${conclusion.emoji}`);
 }
