@@ -7,7 +7,7 @@ import { cut_in_half } from './utils';
 export function get_overview_by_color(map: Map)
 {
 	let data: {
-		[color: string]: {
+		[group: string]: {
 			x: number,
 			color: string,
 			width: number,
@@ -22,24 +22,24 @@ export function get_overview_by_color(map: Map)
 	for (const [answer_id, score] of Object.entries(map.overview))
 	{
 		const answer = map.conclusions[answer_id];
-		const color = answer.color;
+		const answer_group = map.conclusion_groups[answer.group];
 
-		if (!data[color])
+		if (!data[answer.group])
 		{
-			data[color] = {
+			data[answer.group] = {
 				x: 0,
-				color: COLORS[color].default,
+				color: COLORS[answer_group.color].default,
 				width: 0,
 				ids: [],
 				label: {
-					text: answer.text.length > 18 ? cut_in_half(answer.text) : [answer.text],
+					text: answer_group.text.length > 18 ? cut_in_half(answer_group.text) : [answer_group.text],
 					type: null,
 				},
 			};
 		}
 
-		data[color].width += score * 100;
-		data[color].ids.push(answer_id);
+		data[answer.group].width += score * 100;
+		data[answer.group].ids.push(answer_id);
 	}
 
 	let result = Object.values(data).sort((a, b) => Object.keys(map.conclusions).indexOf(a.ids[0]) - Object.keys(map.conclusions).indexOf(b.ids[0]));

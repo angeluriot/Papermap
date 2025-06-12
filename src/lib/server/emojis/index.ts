@@ -13,6 +13,7 @@ export const EMOJI_NAMES = {
 	'🤑': 'money-mouth-face',
 	'🤗': 'hugging-face',
 	'🫣': 'face-with-peeking-eye',
+	'🤔': 'thinking-face',
 	'😐': 'neutral-face',
 	'🫥': 'dotted-line-face',
 	'🤮': 'face-vomiting',
@@ -25,6 +26,7 @@ export const EMOJI_NAMES = {
 	'💩': 'pile-of-poo',
 
 	// People
+	'🤏': 'pinching-hand',
 	'👍': 'thumbs-up',
 	'👎': 'thumbs-down',
 	'👀': 'eyes',
@@ -67,6 +69,8 @@ export const EMOJI_NAMES = {
 	'🔬': 'microscope',
 
 	// Symbols
+	'➡️': 'right-arrow',
+	'⬅️': 'left-arrow',
 	'↪️': 'left-arrow-curving-right',
 	'↩️': 'right-arrow-curving-left',
 }

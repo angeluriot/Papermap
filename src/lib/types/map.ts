@@ -25,12 +25,18 @@ interface BaseMap
 			},
 		},
 	};
+	conclusion_groups: {
+		[id: string]: {
+			text: string,
+			color: Color,
+		},
+	};
 	conclusions: {
 		[id: string]: {
+			group: string,
 			emoji: string,
 			text: string,
 			description: string,
-			color: Color,
 			p_value: boolean,
 		},
 	};

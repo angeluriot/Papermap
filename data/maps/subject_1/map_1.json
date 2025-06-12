@@ -19,18 +19,10 @@
 			"description": "The literature has not yet reached a consensus on the effects of GMOs on human health",
 			"color": "Gray",
 			"coherence": {
-				"yes": 0.5,
-				"no": 0.5
-			}
-		},
-		"yes": {
-			"emoji": "👍",
-			"text": "Yes",
-			"description": "The literature suggests that GMOs have an impact on human health",
-			"color": "Green",
-			"coherence": {
-				"yes": 1,
-				"no_unlike_literature": 0
+				"no": 0.5,
+				"yes_but_low_confidence": 0.5,
+				"yes_but_small_effect": 0.5,
+				"yes": 0.5
 			}
 		},
 		"no": {
@@ -39,45 +31,119 @@
 			"description": "The literature suggests that GMOs have no effects on human health",
 			"color": "Red",
 			"coherence": {
-				"yes_unlike_literature": 0,
-				"no": 1
+				"no": 1,
+				"yes_but_low_confidence": 0,
+				"yes_but_small_effect": 0,
+				"yes_unlike_literature": 0
 			}
-		}
-	},
-	"conclusions": {
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that GMOs probably have no effects on human health, but more research is needed",
+			"color": "Red1H",
+			"coherence": {
+				"no": 0.75,
+				"yes_but_low_confidence": 0.25,
+				"yes_but_small_effect": 0.25,
+				"yes_unlike_literature": 0.25
+			}
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that GMOs may have an impact on human health, but more research is needed",
+			"color": "Green1H",
+			"coherence": {
+				"no_unlike_literature": 0.25,
+				"yes_but_low_confidence": 0.75,
+				"yes_but_small_effect": 0.75,
+				"yes": 0.75
+			}
+		},
 		"yes": {
 			"emoji": "👍",
 			"text": "Yes",
-			"description": "The results of the paper suggest that the GMOs evaluated have an impact on human health",
+			"description": "The literature suggests that GMOs have an impact on human health",
 			"color": "Green",
-			"p_value": true
-		},
-		"yes_unlike_literature": {
-			"emoji": "↪️",
-			"text": "Yes unlike literature",
-			"description": "The results of the paper suggest that the GMOs evaluated have an impact on human health, unlike what is reported in the literature",
-			"color": "Green1H",
-			"p_value": true
-		},
-		"no_unlike_literature": {
-			"emoji": "↩️",
-			"text": "No unlike literature",
-			"description": "The results of the paper show no significant impact on human health of the GMOs evaluated, unlike what is reported in the literature",
-			"color": "Red1H",
-			"p_value": false
-		},
+			"coherence": {
+				"no_unlike_literature": 0,
+				"yes_but_low_confidence": 1,
+				"yes_but_small_effect": 1,
+				"yes": 1
+			}
+		}
+	},
+	"conclusion_groups": {
 		"no": {
+			"text": "No",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Red1H"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
 			"emoji": "👎",
 			"text": "No",
 			"description": "The results of the paper show no significant impact on human health of the GMOs evaluated",
-			"color": "Red",
 			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant impact on human health of the GMOs evaluated, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that the GMOs evaluated may have an impact on human health, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that the GMOs evaluated may have a small impact on human health",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that the GMOs evaluated have an impact on human health, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that the GMOs evaluated have an impact on human health",
+			"p_value": true
 		}
 	},
 	"type": {
 		"no_causality": false,
 		"no_random": false,
-		"no_blind": false,
+		"no_blind": true,
 		"any": false
 	},
 	"on": {
@@ -121,6 +187,53 @@
 			},
 			"conflict_of_interest": false,
 			"notes": []
+		},
+		{
+			"title": "Theoretical perfect paper",
+			"authors": [
+				"John Smith"
+			],
+			"year": 2023,
+			"link": "https://fake-url.com",
+			"journal": {
+				"status": "Found",
+				"id": "S137773608",
+				"retracted": false
+			},
+			"citations": {
+				"count": 1000,
+				"critics": false
+			},
+			"results": {
+				"consensus": "yes",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "Fake quote.",
+			"review": {
+				"type": "MetaAnalysis",
+				"count": 300
+			},
+			"type": "BlindedRandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 100000,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": false,
+			"notes": [
+				{
+					"title": "Fake note 1",
+					"description": "Fake description",
+					"impact": "ExtremelyPositive"
+				},
+								{
+					"title": "Fake note 2",
+					"description": "Fake description",
+					"impact": "Positive"
+				}
+			]
 		}
 	]
 }

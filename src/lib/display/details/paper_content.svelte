@@ -96,12 +96,13 @@
 	const result = $derived.by(() =>
 	{
 		const answer = map.conclusions[paper.results.conclusion];
+		const answer_group = map.conclusion_groups[answer.group];
 
 		return {
 			emoji: answer.emoji,
 			text: answer.text,
-			color: COLORS[answer.color].default,
-			shadow: color_to_shadow(COLORS[answer.color].default),
+			color: COLORS[answer_group.color].default,
+			shadow: color_to_shadow(COLORS[answer_group.color].default),
 			description: answer.description,
 		};
 	});

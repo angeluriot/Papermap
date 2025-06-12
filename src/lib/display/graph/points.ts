@@ -105,6 +105,8 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 		const size = (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE;
 		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE
 		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
+		const conclusion = map.conclusions[paper.results.conclusion];
+		const conclusion_group = map.conclusion_groups[conclusion.group];
 
 		return {
 			i: 0,
@@ -114,9 +116,9 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			y: stats.height - (ratio(paper.score, stats.min_score, stats.max_score) * stats.height),
 			size,
 			focus_size,
-			fill: not_published ? 'transparent' : COLORS[map.conclusions[paper.results.conclusion].color].fill,
+			fill: not_published ? 'transparent' : COLORS[conclusion_group.color].fill,
 			stroke: {
-				color: COLORS[map.conclusions[paper.results.conclusion].color].stroke,
+				color: COLORS[conclusion_group.color].stroke,
 				width: stroke_width,
 				dasharray: not_published ? get_dasharray(size, stroke_width) : undefined,
 			},

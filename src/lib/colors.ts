@@ -3,6 +3,7 @@ export enum Color
 	Green = 'Green',
 	Green1H = 'Green1H',
 	Gray = 'Gray',
+	Yellow = 'Yellow',
 	Red1H = 'Red1H',
 	Red = 'Red',
 }
@@ -22,6 +23,11 @@ export const COLORS = {
 		default: '#abb4d6',
 		fill: '#abb4d6',
 		stroke: '#9097bf',
+	},
+	[Color.Yellow]: {
+		default: '#edcc24',
+		fill: '#edcc2b',
+		stroke: '#ddad26',
 	},
 	[Color.Red1H]: {
 		default: '#f29436',

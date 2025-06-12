@@ -92,13 +92,20 @@ const map_schema = z.object({
 			),
 		}).strict(),
 	),
+	conclusion_groups: z.record(
+		z.string(),
+		z.object({
+			text: z.string().nonempty(),
+			color: z.nativeEnum(Color),
+		}).strict(),
+	),
 	conclusions: z.record(
 		z.string(),
 		z.object({
+			group: z.string().nonempty(),
 			emoji: z.string().nonempty(),
 			text: z.string().nonempty(),
 			description: z.string().nonempty(),
-			color: z.nativeEnum(Color),
 			p_value: z.boolean(),
 		}).strict(),
 	),
