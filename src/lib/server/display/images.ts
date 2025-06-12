@@ -10,7 +10,7 @@ import { Resvg } from '@resvg/resvg-js';
 import { SatoshiMedium } from '$lib/fonts';
 import { get_preview_title, get_image_title, get_image_subtitle } from '$lib/server/display/title';
 import type { Map } from '$lib/types/map';
-import { get_svg_overview_by_color } from '$lib/display/overview';
+import { get_svg_overview } from '$lib/display/overview';
 
 
 export async function create_images(map: Map): Promise<void>
@@ -59,7 +59,7 @@ export async function create_images(map: Map): Promise<void>
 			((title as any)?.margin ?? 0) + ((title as any)?.padding_y ?? 0) + (title.height / 2) - stats.scale * 12
 		);
 
-		const overview = get_svg_overview_by_color(map, stats, overview_y, type, type === 'thumbnail' ? 1.5 : 1);
+		const overview = get_svg_overview(map, stats, overview_y, type, type === 'thumbnail' ? 1.5 : 1);
 
 		const svg = ejs.render(template, {
 			template_dir: join(C.LIB_DIR, 'server', 'templates'),

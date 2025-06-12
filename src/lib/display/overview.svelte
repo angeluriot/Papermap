@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Map } from '$lib/types/map';
 	import type { GraphPoint } from './graph/types';
-	import { get_overview_by_color } from './overview';
+	import { get_overview } from './overview';
 	import { constants as C } from '$lib/utils';
 
 	let { map, group_selected = $bindable(), point_selected = $bindable(), journal_info_open = $bindable(), input_selected = $bindable() }: {
@@ -12,7 +12,7 @@
 		input_selected: boolean,
 	} = $props();
 
-	const overview = get_overview_by_color(map);
+	const overview = get_overview(map);
 
 	function select_group(event: Event, i: number, ids: string[], clicked: boolean)
 	{

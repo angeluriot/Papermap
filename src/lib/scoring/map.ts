@@ -1,5 +1,5 @@
 import { ratio } from '$lib/utils';
-import type { DataMap, Group, Map } from '$lib/types/map';
+import type { DataMap, Map } from '$lib/types/map';
 import type { Paper } from '$lib/types/paper';
 import { score_paper } from './paper';
 import type { Journal } from '$lib/types/journal';
@@ -7,6 +7,8 @@ import type { Journal } from '$lib/types/journal';
 
 const OVERVIEW_RANK_SCORE_COEF = 0.1;
 const OVERVIEW_GAP_INCREASE = 3;
+const MISSING_PAPERS_NB = 10;
+const MISSING_PAPER_MAX = 0.8;
 
 
 export function compute_normalized_ranking(values: Record<string, number>): Record<string, number>
@@ -77,9 +79,9 @@ export function compute_normalized_ranking(values: Record<string, number>): Reco
 }
 
 
-export function score_answers(map: Map): Record<string, number>
+export function score_answer_groups(map: Map): Record<string, number>
 {
-	let answer_scores: Record<string, number> = {};
+	let answer_group_scores = Object.fromEntries(Object.entries(map.conclusion_groups).map(([id, group]) => [id, 0]));
 	let paper_scores: Record<string, number> = {};
 
 	for (const paper of Object.values(map.papers))
@@ -91,24 +93,28 @@ export function score_answers(map: Map): Record<string, number>
 	{
 		const rank_score = paper_rank_scores[paper.uuid];
 		const score = ((1 - OVERVIEW_RANK_SCORE_COEF) * paper.score + OVERVIEW_RANK_SCORE_COEF * rank_score) ** OVERVIEW_GAP_INCREASE;
-		const answer_id = paper.results.conclusion;
+		const answer_group_id = map.conclusions[paper.results.conclusion].group;
 
-		if (!answer_scores[answer_id])
-			answer_scores[answer_id] = 0;
-
-		answer_scores[answer_id] += score;
+		answer_group_scores[answer_group_id] += score;
 	}
 
-	for (const answer_id in map.conclusions)
-		if (!answer_scores[answer_id])
-			answer_scores[answer_id] = 0;
+	let best_papers = Object.values(paper_scores).sort((a, b) => b - a).slice(0, MISSING_PAPERS_NB);
 
-	const total = Object.values(answer_scores).reduce((acc, score) => acc + score, 0);
+	while (best_papers.length < MISSING_PAPERS_NB)
+		best_papers.push(0.0);
 
-	for (const answer_id in answer_scores)
-		answer_scores[answer_id] /= total;
+	const best_mean = best_papers.reduce((acc, score) => acc + score, 0) / MISSING_PAPERS_NB;
+	const best_score = ratio(best_mean, 0, MISSING_PAPER_MAX);
 
-	return answer_scores;
+	let total = Object.values(answer_group_scores).reduce((acc, score) => acc + score, 0);
+
+	answer_group_scores['more_research_needed'] = (total / best_score) - total;
+	total += answer_group_scores['more_research_needed'];
+
+	for (const answer_group_id in answer_group_scores)
+		answer_group_scores[answer_group_id] /= total;
+
+	return answer_group_scores;
 }
 
 
@@ -130,7 +136,7 @@ export function score_map(data_map: DataMap, journals: { [id: string]: Journal }
 		overview: {}
 	};
 
-	map.overview = score_answers(map);
+	map.overview = score_answer_groups(map);
 
 	return map;
 }
