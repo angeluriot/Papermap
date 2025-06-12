@@ -13,6 +13,33 @@
 	} = $props();
 
 	const overview = get_overview(map);
+	let other_label_elements: HTMLSpanElement[] = $state([]);
+	let container_element: HTMLDivElement | undefined = $state(undefined);
+
+	let positions = $derived.by(() =>
+	{
+		if (!container_element || other_label_elements.length === 0)
+			return other_label_elements.map(() => undefined);
+
+		const container_width = container_element.offsetWidth;
+
+		return overview.map((data, i) =>
+		{
+			if (data.label.type !== null)
+				return undefined;
+
+			const element = other_label_elements[i];
+
+			if (!element)
+				return data.x + data.width / 2;
+
+			const ideal_center = (data.x + data.width / 2) * container_width / 100;
+			const half_width = element.offsetWidth / 2;
+			const center = Math.max(half_width, Math.min(container_width - half_width, ideal_center));
+
+			return (center / container_width) * 100;
+		});
+	});
 
 	function select_group(event: Event, i: number, ids: string[], clicked: boolean)
 	{
@@ -43,7 +70,7 @@
 
 <svelte:window onclick={() => deselect_group(true)}/>
 
-<div class="overview-container text-nowrap relative flex-center-col flex-nowrap z-90">
+<div class="overview-container text-nowrap relative flex-center-col flex-nowrap z-90" bind:this={container_element}>
 	<div class="bar-container relative w-full">
 		<div class="bar absolute w-full rounded-full overflow-hidden flex flex-row flex-nowrap justify-start items-center">
 			{#each overview as data, i}
@@ -85,7 +112,8 @@
 			{#if data.label.type === null}
 				<span
 					class="absolute unselectable"
-					style="left: {data.x + data.width / 2}%; color: {data.color}; opacity: {group_selected !== null && group_selected.i == i ? 1 : 0};"
+					style="left: {positions[i] || data.x + data.width / 2}%; color: {data.color}; opacity: {group_selected !== null && group_selected.i == i ? 1 : 0};"
+					bind:this={other_label_elements[i]}
 				>
 					{#each data.label.text as list}
 						{list}<br/>

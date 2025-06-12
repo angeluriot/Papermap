@@ -142,4 +142,7 @@ export function validate_map(map: DataMap): void
 	for (const conclusion of Object.values(map.conclusions))
 		if (EMOJI_NAMES[conclusion.emoji as keyof typeof EMOJI_NAMES] === undefined)
 			throw new InvalidInternalDataError(`Emoji SVG file not found: ${conclusion.emoji}`);
+
+	if (map.conclusion_groups['more_research_needed'] === undefined)
+		throw new InvalidInternalDataError(`Conclusion group "more_research_needed" not found in map ${map.id}`);
 }
