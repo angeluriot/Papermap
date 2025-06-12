@@ -134,14 +134,15 @@ export function generate_map_title(): MapTitle
 }
 
 
-export function generate_group_node(): GroupNode
+export function generate_group_node(depth: number = 0): GroupNode
 {
 	const group = generate_group();
 	const maps: MapTitle[] = [];
 	const sub_groups: GroupNode[] = [];
 
-	while (Math.random() < 0.5)
-		sub_groups.push(generate_group_node());
+	if (depth < 2)
+		while (Math.random() < 0.5)
+			sub_groups.push(generate_group_node(depth + 1));
 
 	if (sub_groups.length === 0)
 		maps.push(generate_map_title());
