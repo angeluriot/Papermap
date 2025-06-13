@@ -1,4 +1,17 @@
 {
+	"groups": [
+		{
+			"id": "subject_2",
+			"emoji": "🐭",
+			"name": "Subject 2"
+		},
+		{
+			"id": "subject_3",
+			"emoji": "🏠",
+			"name": "Subject 3"
+		}
+	],
+	"id": "map_4",
 	"draft": false,
 	"emoji": "🧫",
 	"question": {
@@ -154,7 +167,7 @@
 	"papers": [
 		{
 			"id": "W2010228015",
-			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
+			"title": "Test",
 			"authors": [
 				"David A. Wolfe",
 				"Tracy Macpherson",
@@ -188,5 +201,6 @@
 			"conflict_of_interest": false,
 			"notes": []
 		}
-	]
+	],
+	"url": "/maps/map_4"
 }
