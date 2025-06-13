@@ -21,7 +21,7 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 
 		let local = url.searchParams.get('local') !== null;
 
-		if (local !== null && !C.DEV)
+		if (local && !C.DEV)
 			throw new InvalidDataError('Local edits are not allowed in production');
 
 		const data = await request.json() as PostRequest;
@@ -38,11 +38,12 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 		}
 
 		const { title, description } = get_pr_texts(map, map_id, data.comment, data.discord_username, data.edits)
+		const { groups, id, ...content } = edited_map;
 
 		const pr_url = await create_pull_request({
 			branch_name: `edit/${map_id.replace('_', '-')}`,
-			file_path: join(C.DATA_DIR, 'maps', ...map.groups.map(group => group.id), `${map.id}.json`),
-			new_content: JSON.stringify(edited_map, null, '\t') + '\n',
+			file_path: `data/maps/${map.groups.map(group => group.id).join('/')}/${map.id}.json`,
+			new_content: JSON.stringify(content, null, '\t') + '\n',
 			commit_message: title,
 			title,
 			description,

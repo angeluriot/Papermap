@@ -150,7 +150,6 @@ export async function import_datamap(id: string): Promise<DataMap>
 		groups: map_title.groups,
 		id: map_title.id,
 		...JSON.parse(await fs.readFile(join(C.DATA_DIR, 'maps', ...map_title.groups.map(group => group.id), `${map_title.id}.json`), 'utf-8')),
-		url: map_title.url,
 	};
 }
 
