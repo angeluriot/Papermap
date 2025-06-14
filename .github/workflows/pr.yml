@@ -1,0 +1,30 @@
+name: Discord
+
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: 22
+        script: |
+          cd ~/Papermap
+          npm run discord -- \
+            "pull request"
+            "${{ github.event.pull_request.html_url }}" \
+            "${{ github.event.pull_request.title }}" \
+            "${{ github.event.pull_request.body }}" \
+            "${{ github.event.pull_request.user.login }}" \
+            "${{ join(github.event.pull_request.labels.*.name, ',') }}"

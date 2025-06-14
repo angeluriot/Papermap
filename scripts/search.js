@@ -11,7 +11,7 @@ const coefs = {
 	citations: 1.0,
 	review_type: 2.0,
 	type: 2.0,
-}
+};
 
 const email = process.env.VITE_OPENALEX_EMAIL ?? '';
 const [, , title_search, abstract_search, text_search] = process.argv;
@@ -174,7 +174,7 @@ async function main()
 	if (results.length === 0)
 	{
 		console.log('No results found.');
-		return;
+		process.exit(0);
 	}
 
 	const index = JSON.parse(await fs.promises.readFile(join(process.cwd(), 'data', 'journals', 'index.json'), 'utf-8'));
@@ -244,6 +244,8 @@ async function main()
 		console.log(paper.title);
 		console.log(paper.doi, '\n');
 	}
+
+	process.exit(0);
 }
 
 

@@ -8,7 +8,8 @@
 		"build": "node ./scripts/clean.js && svelte-kit sync && vite build",
 		"deploy": "node ./scripts/clean.js && docker compose build && docker compose up -d --force-recreate && docker system prune -af --volumes",
 		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker system prune -af --volumes; node ./scripts/clean.js",
-		"search": "node ./scripts/search.js"
+		"search": "node ./scripts/search.js",
+		"discord": "node ./scripts/discord.js"
 	},
 	"repository": {
 		"type": "git",
@@ -38,6 +39,7 @@
 		"clone-deep": "^4.0.1",
 		"color": "^5.0.0",
 		"deep-equal": "^2.2.3",
+		"discord.js": "^14.19.3",
 		"dotenv": "^16.5.0",
 		"ejs": "^3.1.10",
 		"flexsearch": "^0.8.151",

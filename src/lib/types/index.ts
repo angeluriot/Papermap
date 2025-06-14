@@ -1,11 +1,11 @@
 export enum Label
 {
 	Bug = 'bug',
-	JournalChange = 'journal change',
-	MapChange = 'map change',
-	NewJournal = 'new journal',
+	Duplicate = 'duplicate',
+	Enhancement = 'enhancement',
+	MapUpdate = 'map update',
 	NewMap = 'new map',
-	OtherRequest = 'other request',
+	PapersUpdate = 'papers update',
 	Question = 'question',
 }
 
