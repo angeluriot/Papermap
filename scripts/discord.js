@@ -61,7 +61,7 @@ async function main()
 	let final_author = '';
 
 	if (discord_username)
-		final_author = `@${discord_username}`;
+		final_author = `<@${discord_username}>`;
 	else if (github_username)
 		final_author = `**${github_username}**`;
 
