@@ -1,4 +1,4 @@
-name: Discord
+name: Issue
 
 on:
   issues:
@@ -20,9 +20,9 @@ jobs:
         script: |
           cd ~/Papermap
           npm run discord -- \
-            "issue"
-            "${{ github.event.issue.html_url }}"
-            "${{ github.event.issue.title }}"
-            "${{ github.event.issue.body }}"
-            "${{ github.event.issue.user.login }}"
+            "issue" \
+            "${{ github.event.issue.html_url }}" \
+            "${{ github.event.issue.title }}" \
+            "${{ github.event.issue.body }}" \
+            "${{ github.event.issue.user.login }}" \
             "${{ join(github.event.issue.labels.*.name, ',') }}"

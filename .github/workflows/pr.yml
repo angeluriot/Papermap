@@ -1,4 +1,4 @@
-name: Discord
+name: PR
 
 on:
   pull_request:
@@ -22,7 +22,7 @@ jobs:
         script: |
           cd ~/Papermap
           npm run discord -- \
-            "pull request"
+            "pull request" \
             "${{ github.event.pull_request.html_url }}" \
             "${{ github.event.pull_request.title }}" \
             "${{ github.event.pull_request.body }}" \
