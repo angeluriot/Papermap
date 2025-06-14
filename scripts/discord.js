@@ -3,7 +3,9 @@ import 'dotenv/config';
 
 
 const token = process.env.VITE_DISCORD_TOKEN ?? '';
-const [, , type, url, title, body, author, labels_string] = process.argv;
+const [, , type, url, input_title, input_body, author, labels_string] = process.argv;
+const title = input_title ? input_title.replace('\\"', '"') : '';
+const body = input_body ? input_body.replace('\\"', '"').replace('\\n', '\n') : '';
 const label_list = labels_string ? labels_string.split(',').filter(l => l.trim().length > 0) : [];
 const content_channels = {
 	new_maps: '1362753544913944667',

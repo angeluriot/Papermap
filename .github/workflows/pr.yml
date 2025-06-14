@@ -25,7 +25,7 @@ jobs:
           npm run discord -- \
             "pull request" \
             "${{ github.event.pull_request.html_url }}" \
-            "${{ github.event.pull_request.title }}" \
-            "${{ github.event.pull_request.body }}" \
+            "${{ replace(github.event.pull_request.title, '"', '\\"') }}" \
+            "${{ replace(replace(github.event.pull_request.body, '"', '\\"'), '\n', '\\n') }}" \
             "${{ github.event.pull_request.user.login }}" \
             "${{ join(github.event.pull_request.labels.*.name, ',') }}"

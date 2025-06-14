@@ -23,7 +23,7 @@ jobs:
           npm run discord -- \
             "issue" \
             "${{ github.event.issue.html_url }}" \
-            "${{ github.event.issue.title }}" \
-            "${{ github.event.issue.body }}" \
+            "${{ replace(github.event.issue.title, '"', '\\"') }}" \
+            "${{ replace(replace(github.event.issue.body, '"', '\\"'), '\n', '\\n') }}" \
             "${{ github.event.issue.user.login }}" \
             "${{ join(github.event.issue.labels.*.name, ',') }}"
