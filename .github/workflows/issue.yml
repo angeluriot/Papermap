@@ -12,19 +12,20 @@ jobs:
     steps:
     - name: Deploy
       env:
-        INPUT_URL: ${{ github.event.issue.html_url }}
-        INPUT_TITLE: ${{ github.event.issue.title }}
-        INPUT_BODY: ${{ github.event.issue.body }}
-        INPUT_USER: ${{ github.event.issue.user.login }}
-        INPUT_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+        URL: ${{ github.event.issue.html_url }}
+        TITLE: ${{ github.event.issue.title }}
+        BODY: ${{ github.event.issue.body }}
+        USER: ${{ github.event.issue.user.login }}
+        LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         port: 22
-        allenvs: true
+        envs: URL,TITLE,BODY,USER,LABELS
         script: |
           cd ~/Papermap
           npm i discord.js
-          npm run discord -- "issue" "$INPUT_URL" "$INPUT_TITLE" "$INPUT_BODY" "$INPUT_USER" "$INPUT_LABELS"
+          echo "$TITLE"
+          npm run discord -- "issue" "$URL" "$TITLE" "$BODY" "$USER" "$LABELS"
