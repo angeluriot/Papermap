@@ -13,19 +13,20 @@ jobs:
 
     steps:
     - name: Deploy
+      env:
+        INPUT_URL: ${{ github.event.pull_request.html_url }}
+        INPUT_TITLE: ${{ github.event.pull_request.title }}
+        INPUT_BODY: ${{ github.event.pull_request.body }}
+        INPUT_USER: ${{ github.event.pull_request.user.login }}
+        INPUT_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         port: 22
+        allenvs: true
         script: |
           cd ~/Papermap
           npm i discord.js
-          npm run discord -- \
-            "pull request" \
-            "${{ github.event.pull_request.html_url }}" \
-            "${{ replace(github.event.pull_request.title, '"', '\\"') }}" \
-            "${{ replace(replace(github.event.pull_request.body, '"', '\\"'), '\n', '\\n') }}" \
-            "${{ github.event.pull_request.user.login }}" \
-            "${{ join(github.event.pull_request.labels.*.name, ',') }}"
+          npm run discord -- "pull request" "$INPUT_URL" "$INPUT_TITLE" "$INPUT_BODY" "$INPUT_USER" "$INPUT_LABELS"
