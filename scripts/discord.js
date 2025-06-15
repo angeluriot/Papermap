@@ -5,6 +5,7 @@ import 'dotenv/config';
 const token = process.env.VITE_DISCORD_TOKEN ?? '';
 const [, , type, url, title, body, author, labels_string] = process.argv;
 const label_list = labels_string ? labels_string.split(',').filter(l => l.trim().length > 0) : [];
+const server_id = '1362190024371736726';
 const content_channels = {
 	new_maps: '1362753544913944667',
 	update_maps: '1362754510417694821',
@@ -33,11 +34,18 @@ const emojis = {
 };
 
 
-async function send_message(channel_id, message)
+async function get_client()
 {
-	const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
+	const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages] });
 	client.once(Events.ClientReady, () => {});
 	await client.login(token);
+
+	return client;
+}
+
+
+async function send_message(client, channel_id, message)
+{
 	const channel = await client.channels.fetch(channel_id);
 
 	if (!channel || !(channel instanceof TextChannel))
@@ -47,21 +55,34 @@ async function send_message(channel_id, message)
 }
 
 
-function get_discord_username(body)
+async function get_user_id(client, body)
 {
 	const match = body.match(/## 👤 Discord\n`([^`]+)`/);
-	return match ? match[1].trim() : null;
+	const username = match ? match[1].trim() : null;
+
+	if (!username)
+		return null;
+
+	const guild = await client.guilds.fetch(server_id);
+	await guild.members.fetch();
+	const member = guild.members.cache.find(m => m.user.username.toLowerCase() === username.toLowerCase());
+
+	if (!member)
+		return null;
+
+	return member.id;
 }
 
 
 async function main()
 {
+	const client = await get_client();
 	const github_username = author !== 'papermap-bot' ? author : null;
-	const discord_username = get_discord_username(body);
+	const discord_id = await get_user_id(client, body);
 	let final_author = '';
 
-	if (discord_username)
-		final_author = `<@${discord_username}>`;
+	if (discord_id)
+		final_author = `<@${discord_id}>`;
 	else if (github_username)
 		final_author = `**${github_username}**`;
 
@@ -72,7 +93,7 @@ async function main()
 
 	if (label_list.length != 1)
 	{
-		await send_message(code_channels.other, `${emoji} New **${type}**${from}${final_author}!\n*${title}*\n${url}`);
+		await send_message(client, code_channels.other, `${emoji} New **${type}**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
@@ -81,43 +102,43 @@ async function main()
 	if (label === labels.bug)
 	{
 		if (type === 'issue')
-			await send_message(code_channels.bug, `${emoji} New **🐛 bug**${found_by}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.bug, `${emoji} New **🐛 bug**${found_by}${final_author}!\n*${title}*\n${url}`);
 		else
-			await send_message(code_channels.bug, `${emoji} New **🐛 bug fix**${requested_by}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.bug, `${emoji} New **🐛 bug fix**${requested_by}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.enhancement)
 	{
-		await send_message(code_channels.feature, `${emoji} New **✨ feature**${requested_by}${final_author}!\n*${title}*\n${url}`);
+		await send_message(client, code_channels.feature, `${emoji} New **✨ feature**${requested_by}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.map_update)
 	{
-		await send_message(content_channels.update_maps, `${emoji} New **✏️ map update**${requested_by}${final_author}!\n*${title}*\n${url}`);
+		await send_message(client, content_channels.update_maps, `${emoji} New **✏️ map update**${requested_by}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.new_map)
 	{
-		await send_message(content_channels.new_maps, `${emoji} New **🗺️ map**${requested_by}${final_author}!\n*${title}*\n${url}`);
+		await send_message(client, content_channels.new_maps, `${emoji} New **🗺️ map**${requested_by}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.papers_update)
 	{
-		await send_message(content_channels.update_papers, `${emoji} New **📝 papers update**${requested_by}${final_author}!\n*${title}*\n${url}`);
+		await send_message(client, content_channels.update_papers, `${emoji} New **📝 papers update**${requested_by}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.question)
 	{
-		await send_message(content_channels.other, `${emoji} New **❓ question**${from}${final_author}!\n*${title}*\n${url}`);
+		await send_message(client, content_channels.other, `${emoji} New **❓ question**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
-	await send_message(content_channels.other, `${emoji} New **${type}**${from}${final_author}!\n*${title}*\n${url}`);
+	await send_message(client, content_channels.other, `${emoji} New **${type}**${from}${final_author}!\n*${title}*\n${url}`);
 	process.exit(0);
 }
 
