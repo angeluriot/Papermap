@@ -12,6 +12,7 @@ export const constants = {
 	LIB_DIR: join(process.cwd(), 'src/lib'),
 	TMP_DIR: join(process.cwd(), 'tmp'),
 	DATA_DIR: join(process.cwd(), 'data'),
+	FAKE_DATA: import.meta.env['VITE_FAKE_DATA'] === 'true',
 	GITHUB_APP_ID: import.meta.env['VITE_GITHUB_APP_ID'] ? parseInt(import.meta.env['VITE_GITHUB_APP_ID']) as number : undefined,
 	GITHUB_PRIVATE_KEY: import.meta.env['VITE_GITHUB_PRIVATE_KEY'] as string | undefined,
 	GITHUB_CLIENT_ID: import.meta.env['VITE_GITHUB_CLIENT_ID'] as string | undefined,

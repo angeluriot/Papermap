@@ -116,7 +116,7 @@
 		width: 1.2em;
 		height: 1.2em;
 		top: calc(50% - 0.02em);
-		left: 1.35em;
+		left: 1.28em;
 		transform: translateY(-50%);
 	}
 
@@ -132,8 +132,8 @@
 
 	input
 	{
-		max-width: calc(100vw - calc(2 * 1.5em + 12em + 1.5em + 3.15em + 0.65em));
-		padding: 0.85em 1.45em 0.8em 3.15em;
+		max-width: calc(100vw - calc(2 * 1.5em + 12em + 1.5em + 3.05em + 0.65em));
+		padding: 0.85em 1.45em 0.8em 3.05em;
 		font-weight: 575;
 		letter-spacing: 0.005em;
 		background-color: white;
@@ -160,8 +160,8 @@
 	{
 		input
 		{
-			min-width: calc(100vw - calc(2 * 1.5em + 3.15em + 0.65em));
-			max-width: calc(100vw - calc(2 * 1.5em + 3.15em + 0.65em));
+			min-width: calc(100vw - calc(2 * 1.5em + 3.05em + 0.65em));
+			max-width: calc(100vw - calc(2 * 1.5em + 3.05em + 0.65em));
 		}
 
 		.input-container:hover input

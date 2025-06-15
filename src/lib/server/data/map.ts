@@ -74,11 +74,13 @@ async function import_group_node(path: string): Promise<GroupNode>
 
 	validate_group(group);
 
-	for (let i = 0; i < Math.floor(Math.random() * 5); i++)
-		maps.push(generate_map_title());
+	if (C.FAKE_DATA)
+		for (let i = 0; i < Math.floor(Math.random() * 5); i++)
+			maps.push(generate_map_title());
 
-	while (Math.random() < 0.5)
-		sub_groups.push(generate_group_node());
+	if (C.FAKE_DATA)
+		while (Math.random() < 0.5)
+			sub_groups.push(generate_group_node());
 
 	let group_node: GroupNode = {
 		...group,
@@ -159,8 +161,9 @@ export async function import_map(id: string): Promise<{ map: Map, journals: { [i
 	const data_map = await import_datamap(id);
 	const journal_ids = await get_journal_ids();
 
-	for (let i = 0; i < 50; i++)
-		data_map.papers.push(generate_paper(data_map, journal_ids));
+	if (C.FAKE_DATA)
+		for (let i = 0; i < 50; i++)
+			data_map.papers.push(generate_paper(data_map, journal_ids));
 
 	const journals = await get_journals(
 		data_map.papers

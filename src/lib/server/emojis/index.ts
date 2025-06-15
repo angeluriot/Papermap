@@ -44,6 +44,7 @@ export const EMOJI_NAMES = {
 	// Activity
 	'🏆': 'trophy',
 	'🎲': 'game-die',
+	'🧩': 'puzzle-piece',
 
 	// Travel & Places
 	'🏠': 'house',
@@ -67,6 +68,8 @@ export const EMOJI_NAMES = {
 	'🔗': 'link',
 	'🧫': 'petri-dish',
 	'🔬': 'microscope',
+	'💉': 'syringe',
+	'💊': 'pill',
 
 	// Symbols
 	'➡️': 'right-arrow',
