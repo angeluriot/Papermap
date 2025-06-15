@@ -55,14 +55,15 @@ async function send_message(client, channel_id, message)
 }
 
 
-async function get_user_id(client, body)
+function get_discord_username(body)
 {
 	const match = body.match(/## 👤 Discord\n`([^`]+)`/);
-	const username = match ? match[1].trim() : null;
+	return match ? match[1].trim() : null;
+}
 
-	if (!username)
-		return null;
 
+async function get_user_id(client, username)
+{
 	const guild = await client.guilds.fetch(server_id);
 	await guild.members.fetch();
 	const member = guild.members.cache.find(m => m.user.username.toLowerCase() === username.toLowerCase());
@@ -77,14 +78,31 @@ async function get_user_id(client, body)
 async function main()
 {
 	const client = await get_client();
-	const github_username = author !== 'papermap-bot' ? author : null;
-	const discord_id = await get_user_id(client, body);
+
+	let usernames = [];
+	let user_ids = [];
+	const discord_username = get_discord_username(body);
+
+	if (discord_username)
+		usernames.push(discord_username);
+
+	if (author !== 'papermap-bot')
+		usernames.push(author);
+
+	for (const username of usernames)
+	{
+		const id = await get_user_id(client, username);
+
+		if (id)
+			user_ids.push(id);
+	}
+
 	let final_author = '';
 
-	if (discord_id)
-		final_author = `<@${discord_id}>`;
-	else if (github_username)
-		final_author = `**${github_username}**`;
+	if (user_ids.length > 0)
+		final_author = `<@${user_ids[0]}>`;
+	else if (usernames.length > 0)
+		final_author = `**${usernames[0]}**`;
 
 	const from = final_author !== '' ? ' from ' : '';
 	const found_by = final_author !== '' ? ' found by ' : ' found';
