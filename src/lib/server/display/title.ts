@@ -43,16 +43,17 @@ export async function get_image_title(map: Map, stats: GraphStats)
 }
 
 
-export async function get_image_subtitle(map: Map, stats: GraphStats, title_width: number)
+export async function get_image_subtitle(map: Map, stats: GraphStats)
 {
 	const font_size = stats.width * 0.017;
 	const line_height = font_size * 1.2;
 	const bottom_margin = stats.width * 0.012;
+	const width = stats.width * 0.6;
 	let lines: string[] = [''];
 
 	for (let word of map.description.split(' '))
 	{
-		if (rendered_text_size(lines[lines.length - 1] + ' ' + word, SatoshiMedium, font_size).width > title_width * 1.05)
+		if (rendered_text_size(lines[lines.length - 1] + ' ' + word, SatoshiMedium, font_size).width > width * 1.05)
 			lines.push(word);
 		else
 			lines[lines.length - 1] += ' ' + word;

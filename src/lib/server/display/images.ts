@@ -46,7 +46,7 @@ export async function create_images(map: Map): Promise<void>
 		const points = pt.get_graph_points(map, stats, font_scale);
 		const margin = stats.scale * 14;
 		const title = type === 'image' ? await get_image_title(map, stats) : await get_preview_title(map, stats, type === 'preview');
-		const subtitle = type === 'image' ? await get_image_subtitle(map, stats, title.width) : null;
+		const subtitle = type === 'image' ? await get_image_subtitle(map, stats) : null;
 
 		const title_global_height = title.height + ((title as any)?.gap ?? 0) + (subtitle?.height ?? 0) + (subtitle?.bottom_margin ?? 0)
 		const bottom_margin = 8;
