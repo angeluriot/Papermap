@@ -13,6 +13,8 @@
 	} = $props();
 
 	const overview = get_overview(map);
+	const labels_2_lines = overview.some(data => data.label.type !== null && data.label.text.length > 1);
+	const nb_labels = overview.reduce((acc, data) => acc + (data.label.type !== null ? 1 : 0), 0);
 	let other_label_elements: HTMLSpanElement[] = $state([]);
 	let container_element: HTMLDivElement | undefined = $state(undefined);
 
@@ -100,7 +102,7 @@
 			{#if data.label.type !== null}
 				<span
 					class="unselectable text-{data.label.type}"
-					style="color: {data.color}; opacity: {group_selected === null || group_selected.i == i ? 1 : 0};"
+					style="color: {data.color}; opacity: {nb_labels !== 1 && (group_selected === null || group_selected.i == i) ? 1 : 0};"
 				>
 					{data.label.text.join('\n')}
 				</span>
@@ -109,10 +111,10 @@
 	</div>
 	<div class="other-labels w-full absolute">
 		{#each overview as data, i}
-			{#if data.label.type === null}
+			{#if data.label.type === null || nb_labels === 1}
 				<span
 					class="absolute unselectable"
-					style="left: {positions[i] || data.x + data.width / 2}%; color: {data.color}; opacity: {group_selected !== null && group_selected.i == i ? 1 : 0};"
+					style="left: {positions[i] || data.x + data.width / 2}%; color: {data.color}; opacity: {(nb_labels === 1 && data.label.type !== null) || (group_selected !== null && group_selected.i == i) ? 1 : 0}; margin-top: {labels_2_lines ? '-0.6' : '0'}em;"
 					bind:this={other_label_elements[i]}
 				>
 					{#each data.label.text as list}
@@ -189,6 +191,7 @@
 
 	.other-labels span
 	{
+		margin-top: -0.6em;
 		transform: translateX(-50%);
 		text-align: center;
 	}

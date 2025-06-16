@@ -73,6 +73,7 @@ export interface Group
 	id: string;
 	emoji: string;
 	name: string;
+	draft: boolean;
 }
 
 

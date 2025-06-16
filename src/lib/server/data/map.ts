@@ -39,7 +39,8 @@ async function import_group_node(path: string): Promise<GroupNode>
 		{
 			group = {
 				id: path.split('/')[path.split('/').length - 1],
-				...JSON.parse(await fs.readFile(`${path}/${file.name}`, 'utf-8'))
+				...JSON.parse(await fs.readFile(`${path}/${file.name}`, 'utf-8')),
+				draft: false,
 			};
 		}
 
@@ -74,11 +75,14 @@ async function import_group_node(path: string): Promise<GroupNode>
 
 	validate_group(group);
 
-	if (C.FAKE_DATA)
+	if (maps.every(map => map.draft) && sub_groups.every(sub_group => sub_group.draft))
+		group.draft = true;
+
+	if (C.FAKE_DATA && !group.draft)
 		for (let i = 0; i < Math.floor(Math.random() * 5); i++)
 			maps.push(generate_map_title());
 
-	if (C.FAKE_DATA)
+	if (C.FAKE_DATA && !group.draft)
 		while (Math.random() < 0.5)
 			sub_groups.push(generate_group_node());
 
@@ -137,6 +141,18 @@ function flatten_structure(group_nodes: GroupNode[]): { [id: string]: MapTitle }
 }
 
 
+export function remove_draft(group_nodes: GroupNode[]): GroupNode[]
+{
+	return group_nodes
+		.filter(group_node => !group_node.draft)
+		.map(group_node => ({
+			...group_node,
+			maps: group_node.maps.filter(map => !map.draft),
+			sub_groups: remove_draft(group_node.sub_groups),
+		}));
+}
+
+
 export const maps_structure = await import_structure(join(C.DATA_DIR, 'maps'));
 export const map_titles = flatten_structure(maps_structure);
 
@@ -172,6 +188,12 @@ export async function import_map(id: string): Promise<{ map: Map, journals: { [i
 	);
 
 	let map = score_map(data_map, journals);
+
+	if (map.draft)
+	{
+		map.question.short = '[Draft] ' + map.question.short;
+		map.question.long = '[Draft] ' + map.question.long;
+	}
 
 	return { map, journals };
 }

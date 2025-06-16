@@ -167,7 +167,7 @@ export async function get_journal_from_work(index, work)
 
 async function main()
 {
-	console.log(`Searching for works with title: "${title_search}" and text: "${text_search}"...`);
+	console.log(`Searching for works with title: "${title_search}", abstract: "${abstract_search}" and text: "${text_search}"...`);
 
 	let results = await api_call();
 

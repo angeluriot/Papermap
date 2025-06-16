@@ -24,7 +24,7 @@ export const load: PageServerLoad = async ({ params }: { params: { map: string }
 		emojis: await load_svgs(),
 		map,
 		journals,
-		maps: Object.values(map_titles),
+		maps: Object.values(map_titles).filter(map => !map.draft),
 		hash: get_hash(map),
 	};
 };

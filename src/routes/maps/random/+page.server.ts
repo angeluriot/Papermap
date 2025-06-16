@@ -10,7 +10,7 @@ export const csr = true;
 
 export const load: PageServerLoad = async () =>
 {
-	const maps = Object.values(map_titles);
+	const maps = Object.values(map_titles).filter(map => !map.draft);
 	const url = maps[Math.floor(Math.random() * maps.length)].url;
 	throw redirect(302, url);
 };

@@ -16,13 +16,39 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 	const scale = (width + height) * 0.001;
 
 	const years = Object.values(map.papers).map(paper => paper.year + seedrandom(paper.title).quick());
-	const min_year = Math.min(...years);
-	const max_year = Math.max(...years);
+	let min_year = 1950;
+	let max_year = new Date().getFullYear();
+
+	if (years.length > 0)
+	{
+		min_year = Math.min(...years);
+		max_year = Math.max(...years);
+
+		if (min_year === max_year)
+		{
+			min_year -= 1;
+			max_year += 1;
+		}
+	}
+
 	const pad_year = (max_year - min_year) / (width ** 0.7);
 
 	const scores = Object.values(map.papers).map(paper => paper.score);
-	const min_score = Math.min(...scores);
-	const max_score = Math.max(...scores);
+	let min_score = 0;
+	let max_score = 1;
+
+	if (scores.length > 0)
+	{
+		min_score = Math.min(...scores);
+		max_score = Math.max(...scores);
+
+		if (min_score === max_score)
+		{
+			min_score -= 0.1;
+			max_score += 0.1;
+		}
+	}
+
 	const pad_score = (max_score - min_score) / (height ** 0.7);
 
 	return {

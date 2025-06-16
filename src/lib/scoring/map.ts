@@ -82,6 +82,13 @@ export function compute_normalized_ranking(values: Record<string, number>): Reco
 export function score_answer_groups(map: Map): Record<string, number>
 {
 	let answer_group_scores = Object.fromEntries(Object.entries(map.conclusion_groups).map(([id, group]) => [id, 0]));
+
+	if (Object.keys(map.papers).length === 0)
+	{
+		answer_group_scores['more_research_needed'] = 1.0;
+		return answer_group_scores;
+	}
+
 	let paper_scores: Record<string, number> = {};
 
 	for (const paper of Object.values(map.papers))

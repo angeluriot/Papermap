@@ -53,6 +53,7 @@ const group_schema = z.object({
 	id: z.string().nonempty(),
 	emoji: z.string().nonempty(),
 	name: z.string().nonempty(),
+	draft: z.boolean(),
 }).strict();
 
 
