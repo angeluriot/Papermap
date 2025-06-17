@@ -1,4 +1,4 @@
-import type { DataPaper } from '$lib/types/paper';
+import { MissingReason, type DataPaper } from '$lib/types/paper';
 
 
 export function sort_paper_attributes(paper: DataPaper): DataPaper
@@ -13,16 +13,10 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 	result.year = paper.year;
 	result.link = paper.link;
 
-	let journal: any = {};
-
-	journal.status = paper.journal.status;
-
-	if (paper.journal.id !== undefined)
-		journal.id = paper.journal.id;
-
-	journal.retracted = paper.journal.retracted;
-
-	result.journal = journal;
+	result.journal = {
+		id: paper.journal.id,
+		retracted: paper.journal.retracted,
+	};
 
 	result.citations = {
 		count: paper.citations.count,
@@ -45,22 +39,17 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 		};
 	}
 
-	if (paper.type !== undefined)
-		result.type = paper.type;
+	result.type = paper.type;
+	result.on = paper.on;
+	result.sample_size = paper.sample_size;
 
-	if (paper.on !== undefined)
-		result.on = paper.on;
-
-	if (paper.sample_size !== undefined)
-		result.sample_size = paper.sample_size;
-
-	if (paper.p_value !== undefined)
-	{
+	if (Object.keys(MissingReason).includes(paper.p_value as MissingReason))
+		result.p_value = paper.p_value;
+	else
 		result.p_value = {
-			value: paper.p_value.value,
-			less_than: paper.p_value.less_than
+			value: (paper.p_value as any).value,
+			less_than: (paper.p_value as any).less_than
 		};
-	}
 
 	result.conflict_of_interest = paper.conflict_of_interest;
 
