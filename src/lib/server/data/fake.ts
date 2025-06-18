@@ -1,4 +1,4 @@
-import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
+import { ConflictOfInterest, JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
 import { type DataMap, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/server/emojis';
@@ -42,9 +42,14 @@ function random_times<T>(generator: () => T, min: number, max: number): T[]
 
 export function generate_paper(map: DataMap, journal_ids: { id: string, proba: number }[]): DataPaper
 {
-	const journal_status = random_choice(
-		[JournalStatus.NotPublished, JournalStatus.NotFound, JournalStatus.Found],
-		[1, 1, 10]
+	const journal_id = random_choice(
+		[random_choice(journal_ids.map(j => j.id), journal_ids.map(j => j.proba)), JournalMissingReason.NotFound, JournalMissingReason.NotPublished],
+		[10, 1, 1],
+	);
+
+	const citations_count = random_choice(
+		[5 + Math.round((Math.random() ** 4) * 500), MissingReason.NotSpecified] as (number | MissingReason.NotSpecified)[],
+		[10, 1],
 	);
 
 	let quote = faker.lorem.sentence({ min: 15, max: 30 });
@@ -53,24 +58,22 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		if (quote[i] === ' ' && Math.random() < 0.05)
 			quote = quote.slice(0, i) + ' [...]' + quote.slice(i);
 
-	const type = random_choice([...Object.keys(PaperType), undefined] as (PaperType | undefined)[])
-	const consensus = random_choice(Object.keys(map.consensus))
-	const conclusion = random_choice(Object.keys(map.conclusions).filter(answer => map.consensus[consensus].coherence[answer] !== undefined))
+	const consensus = random_choice([random_choice(Object.keys(map.consensus)), MissingReason.NoAccess], [10, 1]);
+	const conclusion = random_choice(Object.keys(map.consensus[consensus === MissingReason.NoAccess ? 'no_consensus' : consensus].coherence))
 
 	return {
 		id: random_choice([faker.string.uuid(), undefined]),
 		title: faker.lorem.sentence({ min: 8, max: 22 }),
-		authors: random_times(() => faker.person.fullName(), 1, 5),
+		authors: random_times(() => faker.person.fullName(), 1, 4),
 		year: 2025 - Math.round(Math.random() * 50),
 		link: faker.internet.url(),
 		journal: {
-			status: journal_status,
-			id: journal_status === JournalStatus.Found ? random_choice(journal_ids.map(j => j.id), journal_ids.map(j => j.proba)) : undefined,
-			retracted: journal_status === JournalStatus.NotPublished ? false : random_choice([false, true], [10, 1]),
+			id: journal_id,
+			retracted: journal_id === JournalMissingReason.NotPublished ? false : random_choice([false, true], [10, 1]),
 		},
 		citations: {
-			count: 5 + Math.round((Math.random() ** 4) * 500),
-			critics: random_choice([false, true], [10, 1]),
+			count: citations_count,
+			critics: citations_count === MissingReason.NotSpecified ? false : random_choice([false, true], [10, 1]),
 		},
 		results: {
 			consensus,
@@ -80,16 +83,22 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		quote,
 		review: Math.random() < 0.2 ? {
 			type: random_choice(Object.keys(ReviewType) as ReviewType[]),
-			count: 5 + Math.round((Math.random() ** 3) * 200),
+			count: random_choice([5 + Math.round((Math.random() ** 3) * 200), random_choice([MissingReason.NoAccess, MissingReason.NotSpecified])], [10, 1]),
 		} : undefined,
-		type,
-		on: type ? random_choice([...Object.keys(StudyOn), undefined] as (StudyOn | undefined)[]) : undefined,
+		type: random_choice(
+			[random_choice(Object.keys(PaperType) as PaperType[]), random_choice(Object.keys(MissingReason) as MissingReason[])],
+			[10, 1],
+		),
+		on: random_choice(
+			[random_choice(Object.keys(StudyOn) as StudyOn[]), random_choice(Object.keys(MissingReason) as MissingReason[])],
+			[10, 1],
+		),
 		sample_size: 5 + Math.round((Math.random() ** 5) * 10000),
 		p_value: Math.random() < 0.9 && map.conclusions[conclusion].p_value ? {
 			value: Math.random() * 0.05,
 			less_than: Math.random() < 0.5,
-		} : undefined,
-		conflict_of_interest: Math.random() < 0.1,
+		} : random_choice(Object.keys(MissingReason) as MissingReason[]),
+		conflict_of_interest: random_choice([random_choice(Object.keys(ConflictOfInterest) as ConflictOfInterest[]), MissingReason.NoAccess], [10, 1]),
 		notes: random_times(() => ({
 			title: faker.lorem.sentence({ min: 2, max: 5 }).slice(0, -1),
 			description: faker.lorem.sentence({ min: 5, max: 15 }).slice(0, -1),
@@ -107,6 +116,7 @@ export function generate_group(): Group
 		id: group_name.toLowerCase().replace(/ /g, '_'),
 		emoji: random_choice(Object.keys(EMOJI_NAMES)),
 		name: group_name[0].toUpperCase() + group_name.slice(1),
+		draft: false,
 	}
 }
 
@@ -127,7 +137,7 @@ export function generate_map_title(): MapTitle
 		},
 		description: faker.lorem.sentence({ min: 20, max: 30 }).slice(0, -1),
 		tags: faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1).split(' ').map(tag => tag.toLowerCase().replace(/[^a-z]/g, '')),
-		url: random_choice(['/maps/map_1', '/maps/map_2', '/maps/map_3', '/maps/map_4']), //`/maps/${id}`,
+		url: random_choice(['/maps/do_vaccines_cause_autism']),
 		hash: faker.string.uuid(),
 		fake: true,
 	}

@@ -1,5 +1,5 @@
 import type { DataMap, Group } from '$lib/types/map';
-import { JournalStatus, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
+import { ConflictOfInterest, MissingReason, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
 import { z } from 'zod';
 import { InvalidInternalDataError } from '$lib/errors';
 import { Color } from '$lib/colors';
@@ -13,32 +13,31 @@ export const paper_schema = z.object({
 	year: z.number().min(1500).max(new Date().getFullYear() + 1).int(),
 	link: z.string().nonempty(),
 	journal: z.object({
-		status: z.nativeEnum(JournalStatus),
-		id: z.string().optional(),
+		id: z.string().nonempty(),
 		retracted: z.boolean(),
 	}).strict(),
 	citations: z.object({
-		count: z.number().int().min(0),
+		count: z.union([z.number().int().min(0), z.literal(MissingReason.NotSpecified)]),
 		critics: z.boolean(),
 	}).strict(),
 	results: z.object({
-		consensus: z.string(),
-		conclusion: z.string(),
+		consensus: z.string().nonempty(),
+		conclusion: z.string().nonempty(),
 		indirect: z.boolean(),
 	}).strict(),
 	quote: z.string().nonempty(),
 	review: z.object({
 		type: z.nativeEnum(ReviewType),
-		count: z.number().int().min(1),
+		count: z.union([z.number().int().min(1), z.literal(MissingReason.NoAccess), z.literal(MissingReason.NotSpecified)]),
 	}).strict().optional(),
-	type: z.nativeEnum(PaperType).optional(),
-	on: z.nativeEnum(StudyOn).optional(),
-	sample_size: z.number().int().min(1).optional(),
-	p_value: z.object({
+	type: z.union([z.nativeEnum(PaperType), z.nativeEnum(MissingReason)]),
+	on: z.union([z.nativeEnum(StudyOn), z.nativeEnum(MissingReason)]),
+	sample_size: z.union([z.number().int().min(1).optional(), z.nativeEnum(MissingReason)]),
+	p_value: z.union([z.object({
 		value: z.number().min(0).max(1),
 		less_than: z.boolean(),
-	}).strict().optional(),
-	conflict_of_interest: z.boolean(),
+	}).strict(), z.nativeEnum(MissingReason)]),
+	conflict_of_interest: z.union([z.nativeEnum(ConflictOfInterest), z.literal(MissingReason.NoAccess)]),
 	notes: z.array(
 		z.object({
 			title: z.string().nonempty(),
@@ -146,4 +145,7 @@ export function validate_map(map: DataMap): void
 
 	if (map.conclusion_groups['more_research_needed'] === undefined)
 		throw new InvalidInternalDataError(`Conclusion group "more_research_needed" not found in map ${map.id}`);
+
+	if (map.consensus['no_consensus'] === undefined)
+		throw new InvalidInternalDataError(`Consensus "no_consensus" not found in map ${map.id}`);
 }

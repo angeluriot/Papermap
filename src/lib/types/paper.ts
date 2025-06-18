@@ -1,9 +1,16 @@
 import type { Journal } from './journal';
 
 
-export enum JournalStatus
+export enum MissingReason
 {
-	Found = 'Found',
+	NoAccess = 'NoAccess',
+	NotSpecified = 'NotSpecified',
+	NotApplicable = 'NotApplicable',
+}
+
+
+export enum JournalMissingReason
+{
 	NotFound = 'NotFound',
 	NotPublished = 'NotPublished',
 }
@@ -36,6 +43,13 @@ export enum ReviewType
 }
 
 
+export enum ConflictOfInterest
+{
+	No = 'No',
+	Yes = 'Yes',
+}
+
+
 export enum NoteImpact
 {
 	ExtremelyNegative = 'ExtremelyNegative',
@@ -62,32 +76,31 @@ export interface DataPaper
 	year: number;
 	link: string;
 	journal: {
-		status: JournalStatus,
-		id?: string,
+		id: string | JournalMissingReason,
 		retracted: boolean,
 	};
 	citations: {
-		count: number,
+		count: number | MissingReason.NotSpecified,
 		critics: boolean,
 	};
 	results: {
-		consensus: string,
+		consensus: string | MissingReason.NoAccess,
 		conclusion: string,
 		indirect: boolean,
 	};
 	quote: string;
 	review?: {
 		type: ReviewType,
-		count: number,
+		count: number | MissingReason.NoAccess | MissingReason.NotSpecified,
 	};
-	type?: PaperType;
-	on?: StudyOn;
-	sample_size?: number;
-	p_value?: {
+	type: PaperType | MissingReason;
+	on: StudyOn | MissingReason;
+	sample_size: number | MissingReason;
+	p_value: {
 		value: number,
 		less_than: boolean,
-	};
-	conflict_of_interest: boolean;
+	} | MissingReason;
+	conflict_of_interest: ConflictOfInterest | MissingReason.NoAccess;
 	notes: {
 		title: string,
 		description: string,
@@ -134,4 +147,18 @@ export function paper_to_datapaper(paper: Paper): DataPaper
 {
 	const { index, uuid, scores, score, edit, ...data } = paper;
 	return data;
+}
+
+
+export function no_access(paper: Paper | DataPaper)
+{
+	return (
+		paper.results.consensus === MissingReason.NoAccess ||
+		(paper.review && paper.review.count === MissingReason.NoAccess) ||
+		paper.type === MissingReason.NoAccess ||
+		paper.on === MissingReason.NoAccess ||
+		paper.sample_size === MissingReason.NoAccess ||
+		paper.p_value === MissingReason.NoAccess ||
+		paper.conflict_of_interest === MissingReason.NoAccess
+	);
 }

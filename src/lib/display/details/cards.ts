@@ -1,5 +1,5 @@
 import { Color, COLORS } from '$lib/colors';
-import { StudyOn, PaperType, ReviewType, NoteImpact } from '$lib/types/paper';
+import { StudyOn, PaperType, ReviewType, NoteImpact, MissingReason } from '$lib/types/paper';
 import * as ColorLib from 'color';
 
 
@@ -32,6 +32,9 @@ export const TO_TEXT = {
 	[ReviewType.NarrativeReview]: 'Narrative Review',
 	[ReviewType.SystematicReview]: 'Systematic Review',
 	[ReviewType.MetaAnalysis]: 'Meta-Analysis',
+	[MissingReason.NoAccess]: 'No Access',
+	[MissingReason.NotSpecified]: 'Not Specified',
+	[MissingReason.NotApplicable]: 'Not Applicable',
 }
 
 

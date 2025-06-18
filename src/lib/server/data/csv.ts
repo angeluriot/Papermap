@@ -5,6 +5,7 @@ import { promises as fs } from 'fs';
 import { join } from 'path';
 import * as cards from '$lib/display/details/cards';
 import { float_to_text } from '$lib/display/utils';
+import { ConflictOfInterest, JournalMissingReason, MissingReason, PaperType, StudyOn } from '$lib/types/paper';
 
 
 function array_to_string(array: string[]): string
@@ -33,27 +34,27 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 		.map((paper) => ({
 			title: paper.title,
 			authors: array_to_string(paper.authors),
-			journal: paper.journal.id ? journals[paper.journal.id].title : '',
+			journal: Object.keys(JournalMissingReason).includes(paper.journal.id) ? '' : journals[paper.journal.id].title,
 			retracted: paper.journal.retracted ? 'Retracted' : '',
 			year: paper.year,
 			link: paper.link,
-			consensus: map.consensus[paper.results.consensus].text,
+			consensus: paper.results.consensus === MissingReason.NoAccess ? '' : map.consensus[paper.results.consensus].text,
 			conclusion: map.conclusions[paper.results.conclusion].text,
 			quote: paper.quote,
 			review: paper.review ? remove_uppercase(cards.TO_TEXT[paper.review.type]) : '',
-			review_count: paper.review ? paper.review.count : '',
-			type: paper.type ? remove_uppercase(cards.TO_TEXT[paper.type]) : '',
-			on: paper.on ? remove_uppercase(cards.TO_TEXT[paper.on]) : '',
-			citations: paper.citations.count,
+			review_count: typeof paper.review?.count === 'number' ? paper.review.count : '',
+			type: Object.keys(MissingReason).includes(paper.type) ? '' : remove_uppercase(cards.TO_TEXT[paper.type as PaperType]),
+			on: Object.keys(MissingReason).includes(paper.on) ? '' : remove_uppercase(cards.TO_TEXT[paper.on as StudyOn]),
+			citations: paper.citations.count === MissingReason.NotSpecified ? '' : paper.citations.count,
 			critics: paper.citations.critics ? 'Critics' : '',
-			sample_size: paper.sample_size ?? '',
-			p_value: paper.p_value ? (paper.p_value.less_than ? '<' : '') + float_to_text(paper.p_value.value) : '',
-			conflict_of_interest: paper.conflict_of_interest ? 'Conflict of interest' : '',
+			sample_size: typeof paper.sample_size === 'number' ? paper.sample_size : '',
+			p_value: typeof paper.p_value === 'object' ? (paper.p_value.less_than ? '<' : '') + float_to_text(paper.p_value.value) : '',
+			conflict_of_interest: paper.conflict_of_interest === ConflictOfInterest.Yes ? 'Conflict of interest' : '',
 			notes: paper.notes.map((note) => `${note.title}: ${note.description}`).join(', '),
 		}))
 	);
 
-	let csv = 'Title,Authors,Journal,Retracted,Year,Link,Consensus,Conclusion,Quote,Review,Review count,Type,On,Citations,Critics,Sample size,P value,Conflict of interest,Notes\n';
+	let csv = 'Title,Authors,Journal,Retracted,Year,Link,Previous consensus,Conclusion,Quote,Review,Review count,Type,On,Citations,Critics,Sample size,P value,Conflict of interest,Notes\n';
 
 	for (const paper of papers)
 		csv += Object.values(paper).map((value) => `"${value.toString().replace(/"/g, '""')}"`).join(',') + '\n';

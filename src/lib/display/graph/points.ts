@@ -1,6 +1,6 @@
 import { COLORS } from '$lib/colors';
 import type { Map } from '$lib/types/map';
-import { JournalStatus, type Paper } from '$lib/types/paper';
+import { MissingReason, no_access, type Paper } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import type { GraphPoint, GraphStats } from './types';
 import seedrandom from 'seedrandom';
@@ -101,8 +101,16 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 {
 	let points: GraphPoint[] = Object.values(map.papers).map((paper: Paper) =>
 	{
-		const not_published = paper.journal.status == JournalStatus.NotPublished || paper.journal.retracted;
-		const size = (paper.review ? paper.review.count ** 0.3 : 1) * stats.sub_scales.point_size * POINT_SIZE;
+		const missing_data = no_access(paper);
+		let size = 1;
+
+		if (paper.review)
+		{
+			size = typeof paper.review.count === 'number' ? paper.review.count : 2
+			size = size ** 0.3;
+		}
+
+		size *= stats.sub_scales.point_size * POINT_SIZE
 		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE
 		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
 		const conclusion = map.conclusions[paper.results.conclusion];
@@ -116,11 +124,11 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			y: stats.height - (ratio(paper.score, stats.min_score, stats.max_score) * stats.height),
 			size,
 			focus_size,
-			fill: not_published ? 'transparent' : COLORS[conclusion_group.color].fill,
+			fill: missing_data ? 'transparent' : COLORS[conclusion_group.color].fill,
 			stroke: {
 				color: COLORS[conclusion_group.color].stroke,
 				width: stroke_width,
-				dasharray: not_published ? get_dasharray(size, stroke_width) : undefined,
+				dasharray: missing_data ? get_dasharray(size, stroke_width) : undefined,
 			},
 			opacity: paper.edit !== undefined ? 0.33 : 1,
 			label: {

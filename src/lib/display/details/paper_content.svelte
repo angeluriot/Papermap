@@ -2,7 +2,7 @@
 	import { COLORS, Color } from '$lib/colors';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { Edit, JournalStatus, type Paper, StudyOn } from '$lib/types/paper';
+	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, type Paper, StudyOn } from '$lib/types/paper';
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
@@ -82,6 +82,15 @@
 
 	const consensus = $derived.by(() =>
 	{
+		if (paper.results.consensus === MissingReason.NoAccess)
+			return {
+				emoji: '🔒',
+				text: 'No access',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: "The previous consensus is not available because we couldn't access the full text of the paper",
+			};
+
 		const answer = map.consensus[paper.results.consensus];
 
 		return {
@@ -158,37 +167,92 @@
 
 			result.push({ text: 'of', is_card: false });
 
-			const nb_emoji = cards.review_count_score_to_emoji(paper.scores.review_count);
-
-			result.push({
-				emoji: nb_emoji,
-				text: int_to_text(paper.review.count) + ' Papers',
-				color: cards.score_to_color(paper.scores.review_count),
-				shadow: color_to_shadow(cards.score_to_color(paper.scores.review_count)),
-				description: int_to_text(paper.review.count) + ' papers were included in this ' + cards.TO_TEXT[paper.review.type].slice(2).toLowerCase(),
-				is_card: true,
-			});
-
-			if (paper.type)
+			if (paper.review.count === MissingReason.NoAccess)
 			{
-				result.push({ text: 'that are mostly', is_card: false });
-
 				result.push({
-					emoji: cards.TO_EMOJI[paper.type],
-					text: cards.TO_TEXT_PLURAL[paper.type],
-					color: cards.score_to_color(paper.scores.type),
-					shadow: color_to_shadow(cards.score_to_color(paper.scores.type)),
-					description: cards.TO_DESCRIPTION[paper.type],
+					emoji: '🔒',
+					text: 'No access',
+					color: COLORS[Color.Gray].default,
+					shadow: color_to_shadow(COLORS[Color.Gray].default),
+					description: `The number of papers included in this ${cards.TO_TEXT[paper.review.type].toLowerCase()} is not available because we couldn't access the full text of the paper`,
+					is_card: true,
+				});
+
+				result.push({ text: 'papers', is_card: false })
+			}
+
+			else if (paper.review.count === MissingReason.NotSpecified)
+			{
+				result.push({
+					emoji: '🤷',
+					text: 'Not specified',
+					color: COLORS[Color.Gray].default,
+					shadow: color_to_shadow(COLORS[Color.Gray].default),
+					description: `The number of papers included in this ${cards.TO_TEXT[paper.review.type].toLowerCase()} is not specified`,
+					is_card: true,
+				});
+
+				result.push({ text: 'papers', is_card: false });
+			}
+
+			else
+			{
+				result.push({
+					emoji: cards.review_count_score_to_emoji(paper.scores.review_count),
+					text: int_to_text(paper.review.count) + ' Papers',
+					color: cards.score_to_color(paper.scores.review_count),
+					shadow: color_to_shadow(cards.score_to_color(paper.scores.review_count)),
+					description: int_to_text(paper.review.count) + ' papers were included in this ' + cards.TO_TEXT[paper.review.type].toLowerCase(),
 					is_card: true,
 				});
 			}
 		}
 
-		else if (paper.type)
+		if (paper.type !== MissingReason.NotApplicable && result.length > 0)
+		{
+			if (!result[result.length - 1].is_card)
+				result[result.length - 1].text += ' that are mostly';
+			else
+				result.push({ text: 'that are mostly', is_card: false });
+		}
+
+		if (paper.type === MissingReason.NoAccess)
+		{
+			result.push({
+				emoji: '🔒',
+				text: 'No access',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: (
+					paper.review ?
+					`The type of the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} is not available because we couldn't access the full text of the paper` :
+					"The type of study is not available because we couldn't access the full text of the paper"
+				),
+				is_card: true,
+			});
+		}
+
+		else if (paper.type === MissingReason.NotSpecified)
+		{
+			result.push({
+				emoji: '🤷',
+				text: 'Not specified',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: (
+					paper.review ?
+					`This ${cards.TO_TEXT[paper.review.type].toLowerCase()} does not specify the type of the papers it reviews` :
+					'The type of study is not explicitly specified in the paper'
+				),
+				is_card: true,
+			});
+		}
+
+		else if (paper.type !== MissingReason.NotApplicable)
 		{
 			result.push({
 				emoji: cards.TO_EMOJI[paper.type],
-				text: cards.TO_TEXT[paper.type],
+				text: paper.review ? cards.TO_TEXT_PLURAL[paper.type] : cards.TO_TEXT[paper.type],
 				color: cards.score_to_color(paper.scores.type),
 				shadow: color_to_shadow(cards.score_to_color(paper.scores.type)),
 				description: cards.TO_DESCRIPTION[paper.type],
@@ -196,19 +260,59 @@
 			});
 		}
 
-		if (paper.type && paper.on)
+		if (result.length > 0)
 		{
-			if (paper.on !== StudyOn.InVitro)
-				result.push({ text: 'on', is_card: false });
+			if (paper.on !== MissingReason.NotApplicable && paper.on !== StudyOn.InVitro)
+			{
+				if (!result[result.length - 1].is_card)
+					result[result.length - 1].text += ' on';
+				else
+					result.push({ text: 'on', is_card: false });
+			}
 
-			result.push({
-				emoji: cards.TO_EMOJI[paper.on],
-				text: cards.TO_TEXT[paper.on],
-				color: cards.score_to_color(paper.scores.on),
-				shadow: color_to_shadow(cards.score_to_color(paper.scores.on)),
-				description: cards.TO_DESCRIPTION[paper.on],
-				is_card: true,
-			});
+			if (paper.on === MissingReason.NoAccess)
+			{
+				result.push({
+					emoji: '🔒',
+					text: 'No access',
+					color: COLORS[Color.Gray].default,
+					shadow: color_to_shadow(COLORS[Color.Gray].default),
+					description: (
+						paper.review ?
+						`The subjects on which the experiments were performed in the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} are not available because we couldn't access the full text of the paper` :
+						"The subjects on which the experiments were performed are not available because we couldn't access the full text of the paper"
+					),
+					is_card: true,
+				});
+			}
+
+			else if (paper.on === MissingReason.NotSpecified)
+			{
+				result.push({
+					emoji: '🤷',
+					text: 'Not specified',
+					color: COLORS[Color.Gray].default,
+					shadow: color_to_shadow(COLORS[Color.Gray].default),
+					description: (
+						paper.review ?
+						`This ${cards.TO_TEXT[paper.review.type].toLowerCase()} does not specify the subjects on which the experiments were performed` :
+						'The paper does not specify the subjects on which the experiments were performed'
+					),
+					is_card: true,
+				});
+			}
+
+			else if (paper.on !== MissingReason.NotApplicable)
+			{
+				result.push({
+					emoji: cards.TO_EMOJI[paper.on],
+					text: cards.TO_TEXT[paper.on],
+					color: cards.score_to_color(paper.scores.on),
+					shadow: color_to_shadow(cards.score_to_color(paper.scores.on)),
+					description: cards.TO_DESCRIPTION[paper.on],
+					is_card: true,
+				});
+			}
 		}
 
 		return result;
@@ -216,7 +320,7 @@
 
 	const journal = $derived.by(() =>
 	{
-		if (paper.journal.status === JournalStatus.NotFound)
+		if (paper.journal.id === JournalMissingReason.NotFound)
 			return {
 				emoji: '🤷',
 				text: 'Journal not found',
@@ -225,7 +329,7 @@
 				description: 'This paper was published in a journal that is not in the Papermap database',
 			};
 
-		if (paper.journal.status === JournalStatus.NotPublished)
+		if (paper.journal.id === JournalMissingReason.NotPublished)
 			return {
 				emoji: '📭',
 				text: 'Not published yet',
@@ -234,7 +338,7 @@
 				description: 'This paper has not been published in a journal yet',
 			};
 
-		const journal_ = journals[paper.journal.id as string];
+		const journal_ = journals[paper.journal.id];
 
 		return {
 			emoji: cards.score_to_emoji(journal_.score),
@@ -249,7 +353,29 @@
 
 	const sample_size = $derived.by(() =>
 	{
-		if (paper.sample_size === undefined)
+		if (paper.sample_size === MissingReason.NoAccess)
+		{
+			return {
+				emoji: '🔒',
+				text: 'No access',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: "The number of participants in the study is not available because we couldn't access the full text of the paper",
+			};
+		}
+
+		else if (paper.sample_size === MissingReason.NotSpecified)
+		{
+			return {
+				emoji: '🤷',
+				text: 'Not specified',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: 'The paper does not specify the number of participants in the study',
+			}
+		}
+
+		if (paper.sample_size === MissingReason.NotApplicable)
 			return null;
 
 		return {
@@ -263,7 +389,29 @@
 
 	const p_value = $derived.by(() =>
 	{
-		if (paper.p_value === undefined)
+		if (paper.p_value === MissingReason.NoAccess)
+		{
+			return {
+				emoji: '🔒',
+				text: 'No access',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: "The p-value of the results is not available because we couldn't access the full text of the paper",
+			};
+		}
+
+		else if (paper.p_value === MissingReason.NotSpecified)
+		{
+			return {
+				emoji: '🤷',
+				text: 'Not specified',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: 'The paper does not specify the p-value of their results',
+			}
+		}
+
+		if (paper.p_value === MissingReason.NotApplicable)
 			return null;
 
 		return {
@@ -275,19 +423,45 @@
 		};
 	});
 
-	const citations = $derived({
-		emoji: cards.citation_score_to_emoji(paper.scores.citations_count),
-		text: int_to_text(paper.citations.count),
-		color: cards.score_to_color(paper.scores.citations_count),
-		shadow: color_to_shadow(cards.score_to_color(paper.scores.citations_count)),
-		description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
+	const citations = $derived.by(() =>
+	{
+		if (paper.citations.count === MissingReason.NotSpecified)
+		{
+			return {
+				emoji: '🤷',
+				text: 'Not specified',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: 'The number of times the paper has been cited in other papers is unknown',
+			}
+		}
+
+		return {
+			emoji: cards.citation_score_to_emoji(paper.scores.citations_count),
+			text: int_to_text(paper.citations.count),
+			color: cards.score_to_color(paper.scores.citations_count),
+			shadow: color_to_shadow(cards.score_to_color(paper.scores.citations_count)),
+			description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
+		}
 	});
 
 	const critics = $derived(paper.citations.critics);
 
 	const conflict_of_interest = $derived.by(() =>
 	{
-		if (paper.conflict_of_interest)
+		if (paper.conflict_of_interest === MissingReason.NoAccess)
+		{
+			return {
+				emoji: '🔒',
+				text: 'No access',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: "The authors' conflict of interest is not available because we couldn't access the full text of the paper",
+			};
+		}
+
+		else if (paper.conflict_of_interest === ConflictOfInterest.Yes)
+		{
 			return {
 				emoji: '🤑',
 				text: 'Yes',
@@ -295,6 +469,7 @@
 				shadow: color_to_shadow(COLORS[Color.Red].default),
 				description: "The authors or funders have conflicting interests that may have influenced the conclusion",
 			};
+		}
 
 		return {
 			emoji: '😇',

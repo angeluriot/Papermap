@@ -132,7 +132,7 @@ export function score_map(data_map: DataMap, journals: { [id: string]: Journal }
 
 	for (const data_paper of data_map.papers)
 	{
-		const paper = score_paper(data_map, data_paper.journal.id ? journals[data_paper.journal.id] : undefined, data_paper, index);
+		const paper = score_paper(data_map, journals[data_paper.journal.id], data_paper, index);
 		papers[paper.uuid] = paper;
 		index++;
 	}

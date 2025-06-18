@@ -1,11 +1,14 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
-import { type DataPaper, type PaperScores, type Paper, PaperType, NoteImpact, ReviewType, StudyOn } from '$lib/types/paper';
+import { type DataPaper, type PaperScores, type Paper, PaperType, NoteImpact, ReviewType, StudyOn, MissingReason, ConflictOfInterest } from '$lib/types/paper';
 import { get_uuid, ratio } from '$lib/utils';
 
 
 const TYPE_SCORES = {
 	no_causality: {
+		[MissingReason.NoAccess]:						0.6,
+		[MissingReason.NotSpecified]:					0.0,
+		[MissingReason.NotApplicable]:					1.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.CrossSectionalStudy]:				0.6,
 		[PaperType.CohortStudy]:						0.8,
@@ -14,6 +17,9 @@ const TYPE_SCORES = {
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 	no_random: {
+		[MissingReason.NoAccess]:						0.2,
+		[MissingReason.NotSpecified]:					0.0,
+		[MissingReason.NotApplicable]:					1.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.CrossSectionalStudy]:				0.2,
 		[PaperType.CohortStudy]:						0.3,
@@ -22,6 +28,9 @@ const TYPE_SCORES = {
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 	no_blind: {
+		[MissingReason.NoAccess]:						0.2,
+		[MissingReason.NotSpecified]:					0.0,
+		[MissingReason.NotApplicable]:					1.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.CrossSectionalStudy]:				0.1,
 		[PaperType.CohortStudy]:						0.2,
@@ -30,6 +39,9 @@ const TYPE_SCORES = {
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 	default: {
+		[MissingReason.NoAccess]:						0.1,
+		[MissingReason.NotSpecified]:					0.0,
+		[MissingReason.NotApplicable]:					1.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.CrossSectionalStudy]:				0.1,
 		[PaperType.CohortStudy]:						0.2,
@@ -46,14 +58,20 @@ const REVIEW_TYPE_SCORES = {
 const REVIEW_COUNT_HALF_SCORE = 30.0;
 const ON_SCORES = {
 	any_animal: {
-		[StudyOn.InVitro]:	0.0,
-		[StudyOn.Animals]:	1.0,
-		[StudyOn.Humans]:	1.0,
+		[MissingReason.NoAccess]:		0.6,
+		[MissingReason.NotSpecified]:	0.0,
+		[MissingReason.NotApplicable]:	1.0,
+		[StudyOn.InVitro]:				0.0,
+		[StudyOn.Animals]:				1.0,
+		[StudyOn.Humans]:				1.0,
 	},
 	default: {
-		[StudyOn.InVitro]:	0.0,
-		[StudyOn.Animals]:	0.4,
-		[StudyOn.Humans]:	1.0,
+		[MissingReason.NoAccess]:		0.3,
+		[MissingReason.NotSpecified]:	0.0,
+		[MissingReason.NotApplicable]:	1.0,
+		[StudyOn.InVitro]:				0.0,
+		[StudyOn.Animals]:				0.4,
+		[StudyOn.Humans]:				1.0,
 	},
 }
 const CITATIONS_HALF_SCORE = 50.0;
@@ -96,6 +114,9 @@ export function score_journal(paper: DataPaper, journal: Journal | undefined): n
 
 export function score_citations(paper: DataPaper): number
 {
+	if (paper.citations.count === MissingReason.NotSpecified)
+		return 0.1;
+
 	let score = paper.citations.count;
 
 	score /= CITATIONS_HALF_SCORE;
@@ -113,6 +134,9 @@ export function score_critics(paper: DataPaper): number
 
 export function score_coherence(map: DataMap | Map, paper: DataPaper): number
 {
+	if (paper.results.consensus === MissingReason.NoAccess)
+		return 0.5;
+
 	return map.consensus[paper.results.consensus].coherence[paper.results.conclusion];
 }
 
@@ -131,7 +155,16 @@ function score_review_type(paper: DataPaper): number
 
 function score_review_count(paper: DataPaper): number
 {
-	let score = paper.review ? paper.review.count : 0;
+	if (!paper.review)
+		return 0.0;
+
+	if (paper.review.count === MissingReason.NoAccess)
+		return 0.25;
+
+	if (paper.review.count === MissingReason.NotSpecified)
+		return 0.1;
+
+	let score = paper.review.count;
 
 	score /= REVIEW_COUNT_HALF_SCORE;
 	score /= score + 1.0;
@@ -144,9 +177,6 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 {
 	if (map.type.any)
 		return 1.0;
-
-	if (!paper.type)
-		return 0.0;
 
 	if (map.type.no_causality)
 		return TYPE_SCORES.no_causality[paper.type];
@@ -166,9 +196,6 @@ export function score_on(map: DataMap | Map, paper: DataPaper): number
 	if (map.on.any_animal)
 		return 1.0;
 
-	if (!paper.on)
-		return 0.0;
-
 	if (map.on.any_animal)
 		return ON_SCORES.any_animal[paper.on];
 
@@ -178,10 +205,13 @@ export function score_on(map: DataMap | Map, paper: DataPaper): number
 
 function score_sample_size(map: DataMap | Map, paper: DataPaper): number
 {
-	if (map.no_sample_size)
+	if (map.no_sample_size || paper.sample_size === MissingReason.NotApplicable)
 		return 1.0;
 
-	if (paper.sample_size === undefined)
+	if (paper.sample_size === MissingReason.NoAccess)
+		return 0.25;
+
+	if (paper.sample_size === MissingReason.NotSpecified)
 		return 0.0;
 
 	let half_score = SAMPLE_SIZE_HALF_SCORE;
@@ -198,10 +228,13 @@ function score_sample_size(map: DataMap | Map, paper: DataPaper): number
 
 function score_p_value(map: DataMap | Map, paper: DataPaper): number
 {
-	if (!map.conclusions[paper.results.conclusion].p_value)
+	if (!map.conclusions[paper.results.conclusion].p_value || paper.p_value === MissingReason.NotApplicable)
 		return 1.0;
 
-	if (!paper.p_value)
+	if (paper.p_value === MissingReason.NoAccess)
+		return 0.25;
+
+	if (paper.p_value === MissingReason.NotSpecified)
 		return 0.0;
 
 	let p_value_score = paper.p_value.less_than ? paper.p_value.value / 2.0 : paper.p_value.value;
@@ -213,7 +246,10 @@ function score_p_value(map: DataMap | Map, paper: DataPaper): number
 
 function score_conflict_of_interest(paper: DataPaper): number
 {
-	return paper.conflict_of_interest ? 0.0 : 1.0;
+	if (paper.conflict_of_interest === MissingReason.NoAccess)
+		return 0.8;
+
+	return paper.conflict_of_interest === ConflictOfInterest.Yes ? 0.0 : 1.0;
 }
 
 
@@ -226,9 +262,9 @@ function score_notes(paper: DataPaper): number[]
 		if (note.impact === NoteImpact.ExtremelyNegative)
 			scores.push(0.0);
 		else if (note.impact === NoteImpact.Negative)
-			scores.push(0.7);
+			scores.push(0.8);
 		else if (note.impact === NoteImpact.Positive)
-			scores.push(1.3);
+			scores.push(1.2);
 		else if (note.impact === NoteImpact.ExtremelyPositive)
 			scores.push(2.0);
 	}

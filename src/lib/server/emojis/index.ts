@@ -64,6 +64,7 @@ export const EMOJI_NAMES = {
 	'📝': 'memo',
 	'🗂️': 'card-index-dividers',
 	'📊': 'bar-chart',
+	'🔒': 'locked',
 	'🗑️': 'wastebasket',
 	'🔗': 'link',
 	'🧫': 'petri-dish',

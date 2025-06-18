@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Map } from '$lib/types/map';
-	import { Edit, JournalStatus, NoteImpact, paper_to_datapaper, PaperType, ReviewType, StudyOn, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
+	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, NoteImpact, paper_to_datapaper, PaperType, ReviewType, StudyOn, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
 	import SmallAdd from '$lib/svgs/small-add.svg';
 	import SmallRemove from '$lib/svgs/small-remove.svg';
 	import { TO_TEXT, TO_TEXT_PLURAL } from '../details/cards';
@@ -39,11 +39,14 @@
 	let quote: string = $state('');
 	let review_type: string = $state('');
 	let review_count: number | null = $state(null);
+	let review_count_missing_reason: string = $state('');
 	let type: string = $state('');
 	let on: string = $state('');
 	let sample_size: number | null = $state(null);
+	let sample_size_missing_reason: string = $state('');
 	let p_value_prefix: string = $state('');
 	let p_value: number | null = $state(null);
+	let p_value_missing_reason: string = $state('');
 	let conflict_of_interest: string = $state('');
 	let notes: { title: string, description: string, impact: string }[] = $state([]);
 	let loading = $state(false);
@@ -75,7 +78,7 @@
 			authors = cloneDeep(result.authors ?? ['']);
 			year = cloneDeep(result.year ?? null);
 			link = cloneDeep(result.link ?? '');
-			journal_status = cloneDeep(result.journal ? 'yes' : 'no');
+			journal_status = cloneDeep(result.journal ? 'yes' : '');
 
 			let temp: JournalTitle | null = result.journal ? { id: result.journal.id, title: result.journal.title } : null;
 
@@ -92,55 +95,79 @@
 	{
 		if (paper !== null)
 		{
-			const journal_data = paper.journal.id ? journals[paper.journal.id] : undefined;
+			const journal_data = journals[paper.journal.id];
 			let temp: JournalTitle | null = journal_data ? { id: journal_data.id, title: journal_data.title } : null;
 
 			if (temp && journal_data?.publisher)
 				temp.publisher = journal_data.publisher;
 
-			if (paper.journal.status === JournalStatus.NotFound)
-				temp = { id: 'not_found', title: '(Not found)' };
+			if (paper.journal.id === JournalMissingReason.NotFound)
+				temp = { id: JournalMissingReason.NotFound, title: '(Not found)' };
 
 			id = cloneDeep(paper.id ?? null);
-			title = cloneDeep(paper.title ?? '');
-			authors = cloneDeep(paper.authors ?? ['']);
-			year = cloneDeep(paper.year ?? null);
-			link = cloneDeep(paper.link ?? '');
-			journal_status = cloneDeep(paper.journal.status === JournalStatus.NotPublished ? 'no' : 'yes');
+			title = cloneDeep(paper.title);
+			authors = cloneDeep(paper.authors);
+			year = cloneDeep(paper.year);
+			link = cloneDeep(paper.link);
+			journal_status = cloneDeep(paper.journal.id === JournalMissingReason.NotPublished ? 'no' : 'yes');
 			journal_search = '';
 			journal = cloneDeep(temp);
-			retracted = cloneDeep(paper.journal.retracted ?? false);
-			citations = cloneDeep(paper.citations?.count ?? null);
-			critics = cloneDeep(paper.citations?.critics ?? false);
-			consensus = cloneDeep(paper.results.consensus ?? '');
-			conclusion = cloneDeep(paper.results.conclusion ?? '');
-			indirect = cloneDeep(paper.results.indirect ?? false);
-			quote = cloneDeep(paper.quote ?? '');
+			retracted = cloneDeep(paper.journal.retracted);
+			citations = cloneDeep(paper.citations.count !== MissingReason.NotSpecified ? paper.citations.count : null);
+			critics = cloneDeep(paper.citations.critics);
+			consensus = cloneDeep(paper.results.consensus);
+			conclusion = cloneDeep(paper.results.conclusion);
+			indirect = cloneDeep(paper.results.indirect);
+			quote = cloneDeep(paper.quote);
 			review_type = cloneDeep(paper.review?.type ?? 'null');
-			review_count = cloneDeep(paper.review?.count ?? null);
-			type = cloneDeep(paper.type ?? 'null');
-			on = cloneDeep(paper.on ?? 'null');
-			sample_size = cloneDeep(paper.sample_size ?? null);
-			p_value_prefix = cloneDeep(paper.p_value ? (paper.p_value.less_than ? 'less' : 'equal') : '');
-			p_value = cloneDeep(paper.p_value?.value ?? null);
-			conflict_of_interest = cloneDeep(paper.conflict_of_interest ? 'yes' : 'no');
+			review_count = cloneDeep(typeof paper.review?.count === 'number' ? paper.review?.count : null);
+			review_count_missing_reason = cloneDeep(paper.review && typeof paper.review.count !== 'number' ? paper.review.count : '');
+			type = cloneDeep(paper.type);
+			on = cloneDeep(paper.on);
+			sample_size = cloneDeep(typeof paper.sample_size === 'number' ? paper.sample_size : null);
+			sample_size_missing_reason = cloneDeep(typeof paper.sample_size !== 'number' ? paper.sample_size : '');
+			p_value_prefix = cloneDeep(typeof paper.p_value === 'object' ? (paper.p_value.less_than ? 'less' : 'equal') : '');
+			p_value = cloneDeep(typeof paper.p_value === 'object' ? paper.p_value.value : null);
+			p_value_missing_reason = cloneDeep(typeof paper.p_value !== 'object' ? paper.p_value : '');
+			conflict_of_interest = cloneDeep(paper.conflict_of_interest);
 			notes = cloneDeep(paper.notes ?? []);
 		}
 	});
 
 	$effect(() =>
 	{
-		if (consensus !== '' && conclusion !== '' && map.consensus[consensus].coherence[conclusion] === undefined)
+		if (journal_status === 'no')
+		{
+			journal_search = '';
+			journal = null;
+		}
+
+		if (consensus !== '' && consensus !== MissingReason.NoAccess && conclusion !== '' && map.consensus[consensus].coherence[conclusion] === undefined)
 			conclusion = '';
+
+		if (review_type === 'null')
+		{
+			review_count = null;
+			review_count_missing_reason = '';
+		}
+
+		if (review_count !== null)
+			review_count_missing_reason = '';
+
+		if (sample_size !== null)
+			sample_size_missing_reason = '';
 
 		if (p_value !== null && p_value_prefix === '')
 			p_value_prefix = 'equal';
+
+		if (p_value !== null)
+			p_value_missing_reason = '';
 	});
 
 	let is_review = $derived(review_type !== '' && review_type !== 'null');
 	let autocomplete_focused = $state(false);
 
-	function is_valid()
+	function is_valid(): boolean
 	{
 		return (
 			title.trim().length > 0 &&
@@ -149,16 +176,25 @@
 			link.trim().length > 0 &&
 			journal_status !== '' &&
 			(journal_status === 'no' || journal !== null) &&
-			citations !== null && citations >= 0 && Number.isInteger(citations) &&
+			(citations === null || (citations >= 0 && Number.isInteger(citations))) &&
 			consensus !== '' &&
 			conclusion !== '' &&
 			quote.trim().length > 0 &&
 			review_type !== '' &&
-			(review_type === 'null' || (review_count !== null && review_count > 0 && Number.isInteger(review_count))) &&
+			(review_type === 'null' || (
+				(review_count !== null && review_count >= 0 && Number.isInteger(review_count)) ||
+				(review_count === null && review_count_missing_reason !== '')
+			)) &&
 			type !== '' &&
 			on !== '' &&
-			(sample_size === null || (sample_size > 0 && Number.isInteger(sample_size))) &&
-			(p_value === null || (p_value_prefix !== '' && p_value >= 0 && p_value <= 1)) &&
+			(
+				(sample_size !== null && sample_size >= 0 && Number.isInteger(sample_size)) ||
+				(sample_size === null && sample_size_missing_reason !== '')
+			) &&
+			(
+				(p_value !== null && p_value_prefix !== '' && p_value >= 0 && p_value <= 1) ||
+				(p_value === null && p_value_missing_reason !== '')
+			) &&
 			conflict_of_interest !== ''
 		);
 	}
@@ -183,30 +219,17 @@
 		if (!is_valid())
 			return null;
 
-		let journal_attribute: any = {
-			retracted: retracted,
-			status: JournalStatus.NotPublished
-		};
-
-		if (journal)
-		{
-			if (journal.id === 'not_found')
-				journal_attribute.status = JournalStatus.NotFound;
-			else
-			{
-				journal_attribute.id = journal.id;
-				journal_attribute.status = JournalStatus.Found;
-			}
-		}
-
 		let data_paper: DataPaper = {
 			title: title.trim(),
 			authors: authors.filter(author => author.trim().length > 0).map(author => author.trim()),
 			year: year as number,
 			link: link.trim(),
-			journal: journal_attribute,
+			journal: {
+				id: journal ? journal.id : JournalMissingReason.NotPublished,
+				retracted,
+			},
 			citations: {
-				count: citations as number,
+				count: citations !== null ? citations : MissingReason.NotSpecified,
 				critics: critics,
 			},
 			results: {
@@ -215,7 +238,14 @@
 				indirect: indirect,
 			},
 			quote: quote.trim(),
-			conflict_of_interest: conflict_of_interest.trim() === 'yes',
+			type: type.trim() as PaperType | MissingReason,
+			on: on.trim() as StudyOn | MissingReason,
+			sample_size: sample_size !== null ? sample_size : sample_size_missing_reason.trim() as MissingReason,
+			p_value: p_value !== null && p_value_prefix !== '' ? {
+				value: p_value,
+				less_than: p_value_prefix.trim() === 'less',
+			} : p_value_missing_reason.trim() as MissingReason,
+			conflict_of_interest: conflict_of_interest.trim() as ConflictOfInterest,
 			notes: notes.filter(
 				note => note.title.trim().length > 0 &&
 				note.description.trim().length > 0 &&
@@ -230,28 +260,11 @@
 		if (id !== null && id !== '')
 			data_paper.id = id;
 
-		if (Object.values(ReviewType).includes(review_type.trim() as ReviewType))
+		if (review_type !== '' && review_type !== 'null')
 		{
 			data_paper.review = {
 				type: review_type.trim() as ReviewType,
-				count: review_count as number,
-			};
-		}
-
-		if (Object.values(PaperType).includes(type.trim() as PaperType))
-			data_paper.type = type.trim() as PaperType;
-
-		if (Object.values(StudyOn).includes(on.trim() as StudyOn))
-			data_paper.on = on.trim() as StudyOn;
-
-		if (sample_size !== null)
-			data_paper.sample_size = sample_size;
-
-		if (p_value !== null && p_value_prefix !== '')
-		{
-			data_paper.p_value = {
-				value: p_value,
-				less_than: p_value_prefix.trim() === 'less',
+				count: review_count !== null ? review_count : review_count_missing_reason.trim() as MissingReason.NoAccess | MissingReason.NotSpecified,
 			};
 		}
 
@@ -281,7 +294,7 @@
 
 		let journal_data: Journal | undefined = undefined;
 
-		if (data_paper.journal.id !== undefined)
+		if (!Object.keys(JournalMissingReason).includes(data_paper.journal.id))
 		{
 			if (journals[data_paper.journal.id] !== undefined)
 				journal_data = journals[data_paper.journal.id];
@@ -294,10 +307,7 @@
 				journals[journal_data.id] = journal_data;
 
 			if (journal_data === undefined)
-			{
-				delete data_paper.journal.id;
-				data_paper.journal.status = JournalStatus.NotFound;
-			}
+				data_paper.journal.id = JournalMissingReason.NotFound;
 		}
 
 		return score_paper(map, journal_data, data_paper, index);
@@ -477,9 +487,9 @@
 		</div>
 	{/if}
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label unselectable">
 			<span>Citations</span>
-			<span class="required">*</span>
+			<span class="optional unselectable">(optional)</span>
 		</div>
 		<input bind:value={citations} type="number" min=0 placeholder="The number of times the paper has been cited"/>
 	</div>
@@ -506,6 +516,7 @@
 			{#each Object.entries(map.consensus) as [id, c]}
 				<option value={id}>{c.text}</option>
 			{/each}
+			<option value={MissingReason.NoAccess}>(No access)</option>
 		</select>
 	</div>
 	{#if consensus !== ''}
@@ -519,7 +530,7 @@
 			</div>
 			<select bind:value={conclusion}>
 				<option value="" disabled selected hidden></option>
-				{#each Object.keys(map.consensus[consensus].coherence) as id}
+				{#each Object.keys(map.consensus[consensus === MissingReason.NoAccess ? 'no_consensus': consensus].coherence) as id}
 					<option value={id}>{map.conclusions[id].text}</option>
 				{/each}
 			</select>
@@ -562,6 +573,13 @@
 				<span class="required">*</span>
 			</div>
 			<input bind:value={review_count} type="number" min=0 placeholder="The number of papers included in the review"/>
+			{#if review_count === null}
+				<select bind:value={review_count_missing_reason}>
+					<option value="" disabled selected hidden></option>
+					<option value={MissingReason.NoAccess}>No access</option>
+					<option value={MissingReason.NotSpecified}>Not specified</option>
+				</select>
+			{/if}
 		</div>
 	{/if}
 	<div class="input">
@@ -575,10 +593,12 @@
 		</div>
 		<select bind:value={type}>
 			<option value="" disabled selected hidden></option>
-			<option value="null">(No specific type{#if is_review}s{/if})</option>
 			{#each Object.values(PaperType).map(id => to_id_text(id, is_review)) as [id, text]}
 				<option value={id}>{text}</option>
 			{/each}
+			<option value={MissingReason.NoAccess}>(No access)</option>
+			<option value={MissingReason.NotSpecified}>(Not specified)</option>
+			<option value={MissingReason.NotApplicable}>(No specific type{#if is_review}s{/if})</option>
 		</select>
 	</div>
 	<div class="input">
@@ -588,9 +608,11 @@
 		</div>
 		<select bind:value={on}>
 			<option value="" disabled selected hidden></option>
-			<option value="null">(Not applicable)</option>
 			{#each Object.values(StudyOn).map(id => to_id_text(id, false)) as [id, text]}
 				<option value={id}>{text}</option>
+			{/each}
+			{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
+				<option value={id}>({text})</option>
 			{/each}
 		</select>
 	</div>
@@ -603,6 +625,14 @@
 			bind:value={sample_size} type="number" min=1
 			placeholder={is_review ? 'The total number of participants in the included papers' : 'The number of participants in the study'}
 		/>
+		{#if sample_size === null}
+			<select bind:value={sample_size_missing_reason}>
+				<option value="" disabled selected hidden></option>
+				{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
+					<option value={id}>{text}</option>
+				{/each}
+			</select>
+		{/if}
 	</div>
 	<div class="input">
 		<div class="label unselectable">
@@ -617,6 +647,14 @@
 			</select>
 			<input bind:value={p_value} type="number" min=0 max=1 step=0.01 placeholder="The p-value of the results"/>
 		</div>
+		{#if p_value === null}
+			<select bind:value={p_value_missing_reason}>
+				<option value="" disabled selected hidden></option>
+				{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
+					<option value={id}>{text}</option>
+				{/each}
+			</select>
+		{/if}
 	</div>
 	<div class="input">
 		<div class="label unselectable flex-center-row">
@@ -625,8 +663,9 @@
 		</div>
 		<select bind:value={conflict_of_interest}>
 			<option value="" disabled selected hidden></option>
-			<option value="no">No</option>
-			<option value="yes">Yes</option>
+			<option value={ConflictOfInterest.No}>No</option>
+			<option value={ConflictOfInterest.Yes}>Yes</option>
+			<option value={MissingReason.NoAccess}>(No access)</option>
 		</select>
 	</div>
 	<div class="input">

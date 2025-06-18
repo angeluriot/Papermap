@@ -2,7 +2,7 @@ import { score_map } from '$lib/scoring/map';
 import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Group, GroupNode, Map, MapTitle } from '$lib/types/map';
-import { type DataPaper } from '$lib/types/paper';
+import { JournalMissingReason, type DataPaper } from '$lib/types/paper';
 import { get_journal_ids, get_journals } from './journal';
 import { validate_group, validate_map } from './validate';
 import { generate_group_node, generate_map_title, generate_paper } from './fake';
@@ -184,7 +184,7 @@ export async function import_map(id: string): Promise<{ map: Map, journals: { [i
 	const journals = await get_journals(
 		data_map.papers
 		.map((paper: DataPaper) => paper.journal.id)
-		.filter((id: string | undefined) => id !== undefined) as string[]
+		.filter(id => !Object.keys(JournalMissingReason).includes(id)) as string[]
 	);
 
 	let map = score_map(data_map, journals);
