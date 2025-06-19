@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { constants as C } from '$lib/utils';
 	import type { PageProps } from './$types';
-	import { Edit } from '$lib/types/paper';
+	import { Edit, paper_to_datapaper } from '$lib/types/paper';
 	import Graph from '$lib/display/graph/graph.svelte';
 	import type { GraphPoint } from '$lib/display/graph/types';
 	import Title from '$lib/display/title.svelte';
@@ -13,6 +13,7 @@
 	import Popup from '$lib/display/edit/popup.svelte';
 	import { onMount } from 'svelte';
 	import cloneDeep from 'clone-deep';
+	import deepEqual from 'deep-equal';
 
 	const { data }: PageProps = $props();
 
@@ -104,6 +105,26 @@
 				return;
 
 			map.papers[uuid] = cloneDeep(initial_papers[uuid]);
+		});
+
+		document.addEventListener('paper_edited', (event: Event) =>
+		{
+			const uuid = (event as CustomEvent).detail as string | undefined;
+
+			if (uuid === undefined)
+				return;
+
+			const initial_paper = initial_papers[uuid];
+			const current_paper = map.papers[uuid];
+
+			if (initial_paper === undefined || current_paper === undefined || current_paper.edit !== Edit.Edited)
+				return;
+
+			const initial = paper_to_datapaper(JSON.parse(JSON.stringify(initial_paper)));
+			const current = paper_to_datapaper(JSON.parse(JSON.stringify(current_paper)));
+
+			if (deepEqual(initial, current))
+				delete current_paper.edit;
 		});
 	});
 </script>

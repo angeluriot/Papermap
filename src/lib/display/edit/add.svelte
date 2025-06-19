@@ -363,6 +363,9 @@
 			final_paper.edit = Edit.Edited;
 
 		map.papers[final_paper.uuid] = final_paper;
+		const event = new CustomEvent('paper_edited', { detail: paper.uuid });
+		document.dispatchEvent(event);
+
 		loading = false;
 		hide();
 	}
