@@ -152,45 +152,5 @@
 		"any": false
 	},
 	"no_sample_size": false,
-	"papers": [
-		{
-			"id": "W2010228015",
-			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
-			"authors": [
-				"David A. Wolfe",
-				"Tracy Macpherson",
-				"Ronald Blount",
-				"Vicky V. Wolfe"
-			],
-			"year": 1986,
-			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
-			"journal": {
-				"id": "S53055215",
-				"retracted": false
-			},
-			"citations": {
-				"count": 68,
-				"critics": false
-			},
-			"results": {
-				"consensus": "yes",
-				"conclusion": "yes",
-				"indirect": false
-			},
-			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse.",
-			"review": {
-				"type": "MetaAnalysis",
-				"count": 5
-			},
-			"type": "RandomizedControlledTrial",
-			"on": "Humans",
-			"sample_size": 290,
-			"p_value": {
-				"value": 0.001,
-				"less_than": true
-			},
-			"conflict_of_interest": "No",
-			"notes": []
-		}
-	]
+	"papers": []
 }

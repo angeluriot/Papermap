@@ -9,12 +9,18 @@ const OVERVIEW_RANK_SCORE_COEF = 0.1;
 const OVERVIEW_GAP_INCREASE = 3;
 const MISSING_PAPERS_NB = 10;
 const MISSING_PAPER_MAX = 0.8;
+const BEST_PAPERS_COEF = 0.8;
+const MAX_GROUP_COEF = 0.1;
+const NO_CONSENSUS_COEF = 0.1;
 
 
 export function compute_normalized_ranking(values: Record<string, number>): Record<string, number>
 {
 	if (Object.keys(values).length === 0)
 		return {};
+
+	if (Object.values(values).length === 1)
+		return { [Object.keys(values)[0]]: 0.5 };
 
 	// Group identical values
 	let values_dict: Record<number, string[]> = {};
@@ -79,6 +85,26 @@ export function compute_normalized_ranking(values: Record<string, number>): Reco
 }
 
 
+function compute_more_research(map: Map, paper_scores: Record<string, number>, answer_group_scores: { [k: string]: number }, total: number): number
+{
+	let best_papers = Object.values(paper_scores).sort((a, b) => b - a).slice(0, MISSING_PAPERS_NB);
+
+	while (best_papers.length < MISSING_PAPERS_NB)
+		best_papers.push(0.0);
+
+	const best_mean = best_papers.reduce((acc, score) => acc + score, 0) / MISSING_PAPERS_NB;
+	const best_score = ratio(best_mean, 0, MISSING_PAPER_MAX);
+	const max_group_score = Object.values(answer_group_scores).reduce((acc, score) => Math.max(acc, score), 0) / total;
+	const no_consensus_score = Object.values(map.papers).filter(paper => paper.results.consensus === 'no_consensus').length / Object.keys(map.papers).length;
+
+	return (
+		(1 - best_score) * BEST_PAPERS_COEF +
+		(1 - max_group_score) * MAX_GROUP_COEF +
+		no_consensus_score * NO_CONSENSUS_COEF
+	);
+}
+
+
 export function score_answer_groups(map: Map): Record<string, number>
 {
 	let answer_group_scores = Object.fromEntries(Object.entries(map.conclusion_groups).map(([id, group]) => [id, 0]));
@@ -105,17 +131,10 @@ export function score_answer_groups(map: Map): Record<string, number>
 		answer_group_scores[answer_group_id] += score;
 	}
 
-	let best_papers = Object.values(paper_scores).sort((a, b) => b - a).slice(0, MISSING_PAPERS_NB);
-
-	while (best_papers.length < MISSING_PAPERS_NB)
-		best_papers.push(0.0);
-
-	const best_mean = best_papers.reduce((acc, score) => acc + score, 0) / MISSING_PAPERS_NB;
-	const best_score = ratio(best_mean, 0, MISSING_PAPER_MAX);
-
 	let total = Object.values(answer_group_scores).reduce((acc, score) => acc + score, 0);
+	let more_research_score = compute_more_research(map, paper_scores, answer_group_scores, total);
 
-	answer_group_scores['more_research_needed'] = (total / best_score) - total;
+	answer_group_scores['more_research_needed'] = (total / (1 - more_research_score)) - total;
 	total += answer_group_scores['more_research_needed'];
 
 	for (const answer_group_id in answer_group_scores)
