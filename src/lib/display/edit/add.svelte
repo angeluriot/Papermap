@@ -43,7 +43,7 @@
 	let type: string = $state('');
 	let on: string = $state('');
 	let sample_size: number | null = $state(null);
-	let sample_size_missing_reason: string = $state('');
+	let sample_size_missing_reason: string = $state(map.no_sample_size ? MissingReason.NotApplicable : '');
 	let p_value_prefix: string = $state('');
 	let p_value: number | null = $state(null);
 	let p_value_missing_reason: string = $state('');
@@ -144,6 +144,18 @@
 
 		if (consensus !== '' && consensus !== MissingReason.NoAccess && conclusion !== '' && map.consensus[consensus].coherence[conclusion] === undefined)
 			conclusion = '';
+
+		if (
+			conclusion !== '' && !map.conclusions[conclusion].p_value &&
+			p_value === null && p_value_missing_reason === ''
+		)
+			p_value_missing_reason = MissingReason.NotApplicable;
+
+		if (
+			review_type === ReviewType.NarrativeReview || review_type === ReviewType.SystematicReview &&
+			p_value === null && p_value_missing_reason === ''
+		)
+			p_value_missing_reason = MissingReason.NotApplicable;
 
 		if (review_type === 'null')
 		{
@@ -571,9 +583,9 @@
 	</div>
 	{#if is_review}
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label unselectable">
 				<span>Number of papers included</span>
-				<span class="required">*</span>
+				<span class="optional unselectable">(optional)</span>
 			</div>
 			<input bind:value={review_count} type="number" min=0 placeholder="The number of papers included in the review"/>
 			{#if review_count === null}
