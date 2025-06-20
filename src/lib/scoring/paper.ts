@@ -175,19 +175,27 @@ function score_review_count(paper: DataPaper): number
 
 function score_type(map: DataMap | Map, paper: DataPaper): number
 {
+	let score = 0.0;
+
 	if (map.type.any)
-		return 1.0;
+		score = 1.0;
 
-	if (map.type.no_causality)
-		return TYPE_SCORES.no_causality[paper.type];
+	else if (map.type.no_causality)
+		score = TYPE_SCORES.no_causality[paper.type];
 
-	if (map.type.no_random)
-		return TYPE_SCORES.no_random[paper.type];
+	else if (map.type.no_random)
+		score = TYPE_SCORES.no_random[paper.type];
 
-	if (map.type.no_blind)
-		return TYPE_SCORES.no_blind[paper.type];
+	else if (map.type.no_blind)
+		score = TYPE_SCORES.no_blind[paper.type];
 
-	return TYPE_SCORES.default[paper.type];
+	else
+		score = TYPE_SCORES.default[paper.type];
+
+	if (!map.conclusions[paper.results.conclusion].p_value || paper.p_value === MissingReason.NotApplicable)
+		score = 0.5 + score / 2;
+
+	return score;
 }
 
 
