@@ -10,7 +10,7 @@ export const paper_schema = z.object({
 	id: z.string().optional(),
 	title: z.string().nonempty(),
 	authors: z.array(z.string().nonempty()).min(1).max(4),
-	year: z.number().min(1500).max(new Date().getFullYear() + 1).int(),
+	year: z.number().min(1500).max(new Date().getFullYear()).int(),
 	link: z.string().nonempty(),
 	journal: z.object({
 		id: z.string().nonempty(),

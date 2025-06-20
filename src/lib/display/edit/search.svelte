@@ -137,7 +137,7 @@
 		<div class="label unselectable flex-center-row">
 			<span>Year</span>
 		</div>
-		<input bind:value={year} type="number" min=1500 max={new Date().getFullYear() + 1} placeholder="The year of publication"/>
+		<input bind:value={year} type="number" min=1500 max={new Date().getFullYear()} placeholder="The year of publication"/>
 	</div>
 	<div class="buttons w-full flex-center-row text-nowrap" style="{had_error ? 'justify-content: space-evenly;' : ''}">
 		<button
