@@ -194,17 +194,17 @@
 			quote.trim().length > 0 &&
 			review_type !== '' &&
 			(review_type === 'null' || (
-				(review_count !== null && review_count >= 0 && Number.isInteger(review_count)) ||
+				(review_count !== null && review_count > 0 && Number.isInteger(review_count)) ||
 				(review_count === null && review_count_missing_reason !== '')
 			)) &&
 			type !== '' &&
 			on !== '' &&
 			(
-				(sample_size !== null && sample_size >= 0 && Number.isInteger(sample_size)) ||
+				(sample_size !== null && sample_size > 0 && Number.isInteger(sample_size)) ||
 				(sample_size === null && sample_size_missing_reason !== '')
 			) &&
 			(
-				(p_value !== null && p_value_prefix !== '' && p_value >= 0 && p_value <= 1) ||
+				(p_value !== null && p_value_prefix !== '' && p_value > 0 && p_value < 1) ||
 				(p_value === null && p_value_missing_reason !== '')
 			) &&
 			conflict_of_interest !== ''
@@ -587,7 +587,7 @@
 				<span>Number of papers included</span>
 				<span class="optional unselectable">(optional)</span>
 			</div>
-			<input bind:value={review_count} type="number" min=0 placeholder="The number of papers included in the review"/>
+			<input bind:value={review_count} type="number" min=1 placeholder="The number of papers included in the review"/>
 			{#if review_count === null}
 				<select bind:value={review_count_missing_reason}>
 					<option value="" disabled selected hidden></option>
