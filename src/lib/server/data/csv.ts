@@ -50,7 +50,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 			sample_size: typeof paper.sample_size === 'number' ? paper.sample_size : '',
 			p_value: typeof paper.p_value === 'object' ? (paper.p_value.less_than ? '<' : '') + float_to_text(paper.p_value.value) : '',
 			conflict_of_interest: paper.conflict_of_interest === ConflictOfInterest.Yes ? 'Conflict of interest' : '',
-			notes: paper.notes.map((note) => `${note.title}: ${note.description}`).join(', '),
+			notes: paper.notes.map((note) => `${note.title}: ${note.description}`).join(' | '),
 		}))
 	);
 

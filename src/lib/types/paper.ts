@@ -104,6 +104,7 @@ export interface DataPaper
 	notes: {
 		title: string,
 		description: string,
+		link?: string,
 		impact: NoteImpact,
 	}[];
 }

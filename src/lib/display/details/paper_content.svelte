@@ -492,6 +492,7 @@
 				color: cards.impact_to_color(note.impact),
 				shadow: color_to_shadow(cards.impact_to_color(note.impact)),
 				description: note.description,
+				link: note.link,
 			});
 		}
 
@@ -742,13 +743,15 @@
 				<span class="subtitle unselectable">Notes:</span>
 				<div class="cards">
 					{#each notes as note}
-						<div class="card text-unselectable" style="background-color: {note.color}; --shadow-color: {note.shadow};">
-							{@render emoji(note.emoji)}
-							<span>{note.text}</span>
-							<div class="info-ext">
-								<InfoBubble {emojis} text={note.description} {width} {height}/>
+						<a href={note.link} target={note.link ? '_blank' : undefined}>
+							<div class="card text-unselectable" style="background-color: {note.color}; --shadow-color: {note.shadow};">
+								{@render emoji(note.emoji)}
+								<span>{note.text}</span>
+								<div class="info-ext">
+									<InfoBubble {emojis} text={note.description} link={note.link !== undefined} {width} {height}/>
+								</div>
 							</div>
-						</div>
+						</a>
 					{/each}
 				</div>
 			</div>

@@ -2,9 +2,10 @@
 	import type { Journal } from '$lib/types/journal';
 	import JournalInfo from './journal.svelte';
 
-	let { emojis, text, journal, width, height }: {
+	let { emojis, text, link, journal, width, height }: {
 		emojis: Record<string, string>,
 		text?: string,
+		link?: boolean,
 		journal?: Journal,
 		width: number,
 		height: number
@@ -15,7 +16,7 @@
 	const info_left_limit = 9.5;
 	const window_padding = 3;
 
-	let info_width = $derived(text !== undefined ? Math.round(Math.min(5 + text.length * 0.18, 20)) : 22);
+	let info_width = $derived(text !== undefined ? Math.round(Math.max(Math.min(5 + text.length * 0.18, 20), link ? 7 : 0)) : 22);
 	let info_height = $state(0);
 	let info: HTMLDivElement | undefined = $state(undefined);
 
@@ -83,7 +84,7 @@
 	>
 		{#if text !== undefined}
 			<span class="text" style="width: {info_final_width}em;">
-				{text}
+				{text}{#if link}<br/>(click to open){/if}
 			</span>
 		{:else if journal !== undefined}
 			<div class="journal" style="width: {info_final_width}em;">

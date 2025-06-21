@@ -48,7 +48,7 @@
 	let p_value: number | null = $state(null);
 	let p_value_missing_reason: string = $state('');
 	let conflict_of_interest: string = $state('');
-	let notes: { title: string, description: string, impact: string }[] = $state([]);
+	let notes: { title: string, description: string, link: string, impact: string }[] = $state([]);
 	let loading = $state(false);
 
 	const impact_to_text = {
@@ -130,7 +130,13 @@
 			p_value = cloneDeep(typeof paper.p_value === 'object' ? paper.p_value.value : null);
 			p_value_missing_reason = cloneDeep(typeof paper.p_value !== 'object' ? paper.p_value : '');
 			conflict_of_interest = cloneDeep(paper.conflict_of_interest);
-			notes = cloneDeep(paper.notes ?? []);
+
+			notes = cloneDeep(paper.notes.map(note => ({
+				title: note.title,
+				description: note.description,
+				link: note.link ?? '',
+				impact: note.impact,
+			})));
 		}
 	});
 
@@ -262,11 +268,18 @@
 				note => note.title.trim().length > 0 &&
 				note.description.trim().length > 0 &&
 				['', ...Object.values(NoteImpact)].includes(note.impact.trim() as NoteImpact | string)
-			).map(note => ({
-				title: note.title.trim(),
-				description: note.description.trim(),
-				impact: note.impact.trim() === '' ? NoteImpact.Neutral : note.impact.trim() as NoteImpact,
-			}))
+			).map(note => {
+				let n: any = {
+					title: note.title.trim(),
+					description: note.description.trim(),
+					impact: note.impact.trim() === '' ? NoteImpact.Neutral : note.impact.trim() as NoteImpact,
+				};
+
+				if (note.link.trim().length > 0)
+					n.link = note.link.trim();
+
+				return n;
+			})
 		};
 
 		if (id !== null && id !== '')
@@ -700,6 +713,10 @@
 					</div>
 					<textarea class="small" bind:value={notes[i].description} placeholder="A short description of the note"></textarea>
 					<div class="sublabel unselectable">
+						<span>Link</span>
+					</div>
+					<input bind:value={notes[i].link} type="text" placeholder="A link if needed"/>
+					<div class="sublabel unselectable">
 						<span>Impact on the paper score</span>
 					</div>
 					<select bind:value={notes[i].impact}>
@@ -722,7 +739,7 @@
 		{#if notes.length < 5}
 			<div
 				class="rounded-full"
-				onclick={() => notes.push({title: '', description: '', impact:''})}
+				onclick={() => notes.push({title: '', description: '', link: '', impact:''})}
 				onkeydown={null} role="button" tabindex={0}
 			>
 				<img class="add rounded-full img-unselectable" src={SmallAdd} alt="add"/>

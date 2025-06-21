@@ -102,6 +102,7 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		notes: random_times(() => ({
 			title: faker.lorem.sentence({ min: 2, max: 5 }).slice(0, -1),
 			description: faker.lorem.sentence({ min: 5, max: 15 }).slice(0, -1),
+			link: Math.random() < 0.5 ? faker.internet.url() : undefined,
 			impact: random_choice(Object.keys(NoteImpact) as NoteImpact[]),
 		}), 0, 3),
 	}

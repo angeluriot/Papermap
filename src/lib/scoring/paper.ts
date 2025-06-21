@@ -92,7 +92,7 @@ const COEFS = {
 	sample_size: 0.2,
 	p_value: 0.1,
 	conflict_of_interest: 0.6,
-	notes: 0.2,
+	notes: 0.5,
 	publication_bias: 0.2,
 }
 

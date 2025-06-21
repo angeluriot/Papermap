@@ -30,15 +30,15 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 		validate_request(data, map.papers.length);
 
 		const edited_map = await edit_map(map, data.edits);
+		const { groups, id, ...content } = edited_map;
 
 		if (local)
 		{
-			await fs.writeFile(join(C.DATA_DIR, 'maps', ...map.groups.map(group => group.id), `${map.id}.json`), JSON.stringify(edited_map, null, '\t') + '\n');
+			await fs.writeFile(join(C.DATA_DIR, 'maps', ...map.groups.map(group => group.id), `${map.id}.json`), JSON.stringify(content, null, '\t') + '\n');
 			return json({});
 		}
 
 		const { title, description } = get_pr_texts(map, map_id, data.comment, data.discord_username, data.edits)
-		const { groups, id, ...content } = edited_map;
 
 		const pr_url = await create_pull_request({
 			branch_name: `edit/${map_id.replace('_', '-')}`,

@@ -42,6 +42,7 @@ export const paper_schema = z.object({
 		z.object({
 			title: z.string().nonempty(),
 			description: z.string().nonempty(),
+			link: z.string().nonempty().optional(),
 			impact: z.nativeEnum(NoteImpact),
 		}).strict(),
 	),

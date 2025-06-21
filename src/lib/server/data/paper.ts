@@ -53,11 +53,22 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 
 	result.conflict_of_interest = paper.conflict_of_interest;
 
-	result.notes = paper.notes.map((note: any) => ({
-		title: note.title,
-		description: note.description,
-		impact: note.impact,
-	}));
+	result.notes = paper.notes.map((note: any) =>
+	{
+		if (note.link === undefined)
+			return {
+				title: note.title,
+				description: note.description,
+				impact: note.impact,
+			};
+
+		return {
+			title: note.title,
+			description: note.description,
+			link: note.link,
+			impact: note.impact,
+		};
+	});
 
 	return result;
 }
