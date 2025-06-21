@@ -59,7 +59,7 @@ export const TO_DESCRIPTION = {
 	[StudyOn.InVitro]: 'An experiment conducted in a controlled environment outside of a living organism',
 	[StudyOn.Animals]: 'An experiment conducted on non‑human living organisms (often mice or rats)',
 	[StudyOn.Humans]: 'An experiment conducted on human subjects',
-	[PaperType.CaseReport]: 'A report describing observations from a unique clinical case',
+	[PaperType.CaseReport]: 'A report describing observations from a single patient or a small group of patients',
 	[PaperType.CrossSectionalStudy]: 'An analysis of population data at a given point in time',
 	[PaperType.CohortStudy]: 'A study that follows a group of individuals over time to observe outcomes',
 	[PaperType.ClinicalTrial]: 'An experiment assessing the effects of an intervention under controlled conditions',
