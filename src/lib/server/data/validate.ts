@@ -45,7 +45,7 @@ export const paper_schema = z.object({
 			link: z.string().nonempty().optional(),
 			impact: z.nativeEnum(NoteImpact),
 		}).strict(),
-	).max(10),
+	).max(5),
 }).strict();
 
 
