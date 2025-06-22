@@ -72,7 +72,7 @@
 
 <svelte:window onclick={() => deselect_group(true)}/>
 
-<div class="overview-container text-nowrap relative flex-center-col flex-nowrap z-90" bind:this={container_element}>
+<div class="overview-container text-nowrap relative flex-center-col flex-nowrap z-90 selectable" bind:this={container_element}>
 	<div class="bar-container relative w-full">
 		<div class="bar absolute w-full rounded-full overflow-hidden flex flex-row flex-nowrap justify-start items-center">
 			{#each overview as data, i}

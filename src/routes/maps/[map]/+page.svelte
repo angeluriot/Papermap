@@ -171,8 +171,8 @@
 			/>
 		{/if}
 	</div>
-	<div class="top flex flex-row justify-start items-start flex-nowrap relative">
-		<div class="title-container flex flex-row-reverse justify-center items-center flex-nowrap relative" style="{input_selected ? 'z-index: 100000;' : ''}">
+	<div class="top flex flex-row justify-start items-start flex-nowrap relative unselectable">
+		<div class="title-container flex flex-row-reverse justify-center items-center flex-nowrap relative selectable" style="{input_selected ? 'z-index: 100000;' : ''}">
 			<div class="title-component relative">
 				<Title {emojis} {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
 			</div>
