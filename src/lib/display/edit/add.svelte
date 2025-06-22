@@ -736,7 +736,7 @@
 			</div>
 			<div style="height: {i < notes.length - 1 ? '0.5em' : '0em'};"></div>
 		{/each}
-		{#if notes.length < 5}
+		{#if notes.length < 10}
 			<div
 				class="rounded-full"
 				onclick={() => notes.push({title: '', description: '', link: '', impact:''})}
