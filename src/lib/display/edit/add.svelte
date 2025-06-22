@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Map } from '$lib/types/map';
-	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, NoteImpact, paper_to_datapaper, PaperType, ReviewType, StudyOn, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
+	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, NoteImpact, paper_to_datapaper, PaperType, ReviewedPapersType, ReviewedStudiesOn, ReviewType, StudyOn, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
 	import SmallAdd from '$lib/svgs/small-add.svg';
 	import SmallRemove from '$lib/svgs/small-remove.svg';
 	import { TO_TEXT, TO_TEXT_PLURAL } from '../details/cards';
@@ -167,6 +167,12 @@
 		{
 			review_count = null;
 			review_count_missing_reason = '';
+
+			if (type === ReviewedPapersType.DiverseTypes)
+				type = '';
+
+			if (on === ReviewedStudiesOn.DiverseSubjects)
+				on = '';
 		}
 
 		if (review_count !== null)
@@ -256,8 +262,8 @@
 				indirect: indirect,
 			},
 			quote: quote.trim(),
-			type: type.trim() as PaperType | MissingReason,
-			on: on.trim() as StudyOn | MissingReason,
+			type: type.trim() as PaperType | ReviewedPapersType.DiverseTypes | MissingReason,
+			on: on.trim() as StudyOn | ReviewedStudiesOn.DiverseSubjects | MissingReason,
 			sample_size: sample_size !== null ? sample_size : sample_size_missing_reason.trim() as MissingReason,
 			p_value: p_value !== null && p_value_prefix !== '' ? {
 				value: p_value,
@@ -624,6 +630,9 @@
 			{#each Object.values(PaperType).map(id => to_id_text(id, is_review)) as [id, text]}
 				<option value={id}>{text}</option>
 			{/each}
+			{#if is_review}
+				<option value={ReviewedPapersType.DiverseTypes}>(Diverse types)</option>
+			{/if}
 			<option value={MissingReason.NoAccess}>(No access)</option>
 			<option value={MissingReason.NotSpecified}>(Not specified)</option>
 			<option value={MissingReason.NotApplicable}>(No specific type{#if is_review}s{/if})</option>
@@ -639,6 +648,9 @@
 			{#each Object.values(StudyOn).map(id => to_id_text(id, false)) as [id, text]}
 				<option value={id}>{text}</option>
 			{/each}
+			{#if is_review}
+				<option value={ReviewedStudiesOn.DiverseSubjects}>(Diverse subjects)</option>
+			{/if}
 			{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
 				<option value={id}>({text})</option>
 			{/each}

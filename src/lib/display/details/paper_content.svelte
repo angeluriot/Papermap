@@ -2,7 +2,7 @@
 	import { COLORS, Color } from '$lib/colors';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, type Paper, StudyOn } from '$lib/types/paper';
+	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, type Paper, ReviewedPapersType, ReviewedStudiesOn, StudyOn } from '$lib/types/paper';
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
@@ -208,7 +208,7 @@
 			}
 		}
 
-		if (paper.type !== MissingReason.NotApplicable && result.length > 0)
+		if (paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes && result.length > 0)
 		{
 			if (!result[result.length - 1].is_card)
 				result[result.length - 1].text += ' that are mostly';
@@ -248,7 +248,7 @@
 			});
 		}
 
-		else if (paper.type !== MissingReason.NotApplicable)
+		else if (paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes)
 		{
 			result.push({
 				emoji: cards.TO_EMOJI[paper.type],
@@ -262,7 +262,7 @@
 
 		if (result.length > 0)
 		{
-			if (paper.on !== MissingReason.NotApplicable && paper.on !== StudyOn.InVitro)
+			if (paper.on !== MissingReason.NotApplicable && paper.on !== ReviewedStudiesOn.DiverseSubjects && paper.on !== StudyOn.InVitro)
 			{
 				if (!result[result.length - 1].is_card)
 					result[result.length - 1].text += ' on';
@@ -302,7 +302,7 @@
 				});
 			}
 
-			else if (paper.on !== MissingReason.NotApplicable)
+			else if (paper.on !== MissingReason.NotApplicable && paper.on !== ReviewedStudiesOn.DiverseSubjects)
 			{
 				result.push({
 					emoji: cards.TO_EMOJI[paper.on],

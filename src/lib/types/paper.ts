@@ -24,6 +24,18 @@ export enum StudyOn
 }
 
 
+export enum ReviewedPapersType
+{
+	DiverseTypes = 'DiverseTypes'
+}
+
+
+export enum ReviewedStudiesOn
+{
+	DiverseSubjects = 'DiverseSubjects'
+}
+
+
 export enum PaperType
 {
 	CaseReport = 'CaseReport',
@@ -93,8 +105,8 @@ export interface DataPaper
 		type: ReviewType,
 		count: number | MissingReason.NoAccess | MissingReason.NotSpecified,
 	};
-	type: PaperType | MissingReason;
-	on: StudyOn | MissingReason;
+	type: PaperType | ReviewedPapersType.DiverseTypes | MissingReason;
+	on: StudyOn | ReviewedStudiesOn.DiverseSubjects | MissingReason;
 	sample_size: number | MissingReason;
 	p_value: {
 		value: number,

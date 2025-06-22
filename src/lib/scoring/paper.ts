@@ -1,6 +1,6 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
-import { type DataPaper, type PaperScores, type Paper, PaperType, NoteImpact, ReviewType, StudyOn, MissingReason, ConflictOfInterest } from '$lib/types/paper';
+import { type DataPaper, type PaperScores, type Paper, PaperType, NoteImpact, ReviewType, StudyOn, MissingReason, ConflictOfInterest, ReviewedPapersType, ReviewedStudiesOn } from '$lib/types/paper';
 import { get_uuid, ratio } from '$lib/utils';
 
 
@@ -15,6 +15,7 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.8,
 		[PaperType.RandomizedControlledTrial]:			1.0,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
+		[ReviewedPapersType.DiverseTypes]:				0.8,
 	},
 	no_random: {
 		[MissingReason.NoAccess]:						0.2,
@@ -26,6 +27,7 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.3,
 		[PaperType.RandomizedControlledTrial]:			1.0,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
+		[ReviewedPapersType.DiverseTypes]:				0.5,
 	},
 	no_blind: {
 		[MissingReason.NoAccess]:						0.2,
@@ -37,6 +39,7 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.2,
 		[PaperType.RandomizedControlledTrial]:			0.9,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
+		[ReviewedPapersType.DiverseTypes]:				0.5,
 	},
 	default: {
 		[MissingReason.NoAccess]:						0.1,
@@ -48,6 +51,7 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.2,
 		[PaperType.RandomizedControlledTrial]:			0.6,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
+		[ReviewedPapersType.DiverseTypes]:				0.5,
 	},
 }
 const REVIEW_TYPE_SCORES = {
@@ -58,20 +62,22 @@ const REVIEW_TYPE_SCORES = {
 const REVIEW_COUNT_HALF_SCORE = 30.0;
 const ON_SCORES = {
 	any_animal: {
-		[MissingReason.NoAccess]:		0.6,
-		[MissingReason.NotSpecified]:	0.0,
-		[MissingReason.NotApplicable]:	1.0,
-		[StudyOn.InVitro]:				0.0,
-		[StudyOn.Animals]:				1.0,
-		[StudyOn.Humans]:				1.0,
+		[MissingReason.NoAccess]:				0.6,
+		[MissingReason.NotSpecified]:			0.0,
+		[MissingReason.NotApplicable]:			1.0,
+		[StudyOn.InVitro]:						0.0,
+		[StudyOn.Animals]:						1.0,
+		[StudyOn.Humans]:						1.0,
+		[ReviewedStudiesOn.DiverseSubjects]:	0.8,
 	},
 	default: {
-		[MissingReason.NoAccess]:		0.3,
-		[MissingReason.NotSpecified]:	0.0,
-		[MissingReason.NotApplicable]:	1.0,
-		[StudyOn.InVitro]:				0.0,
-		[StudyOn.Animals]:				0.4,
-		[StudyOn.Humans]:				1.0,
+		[MissingReason.NoAccess]:				0.3,
+		[MissingReason.NotSpecified]:			0.0,
+		[MissingReason.NotApplicable]:			1.0,
+		[StudyOn.InVitro]:						0.0,
+		[StudyOn.Animals]:						0.4,
+		[StudyOn.Humans]:						1.0,
+		[ReviewedStudiesOn.DiverseSubjects]:	0.6,
 	},
 }
 const CITATIONS_HALF_SCORE = 50.0;

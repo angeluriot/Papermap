@@ -1,5 +1,5 @@
 import { Color, COLORS } from '$lib/colors';
-import { StudyOn, PaperType, ReviewType, NoteImpact, MissingReason } from '$lib/types/paper';
+import { StudyOn, PaperType, ReviewType, NoteImpact, MissingReason, ReviewedPapersType, ReviewedStudiesOn } from '$lib/types/paper';
 import * as ColorLib from 'color';
 
 
@@ -23,12 +23,14 @@ export const TO_TEXT = {
 	[StudyOn.InVitro]: 'In Vitro',
 	[StudyOn.Animals]: 'Animals',
 	[StudyOn.Humans]: 'Humans',
+	[ReviewedStudiesOn.DiverseSubjects]: 'Diverse Subjects',
 	[PaperType.CaseReport]: 'Case Report',
 	[PaperType.CrossSectionalStudy]: 'Cross-Sectional Study',
 	[PaperType.CohortStudy]: 'Cohort Study',
 	[PaperType.ClinicalTrial]: 'Clinical Trial',
 	[PaperType.RandomizedControlledTrial]: 'Randomized Controlled Trial',
 	[PaperType.BlindedRandomizedControlledTrial]: 'Blinded Randomized Controlled Trial',
+	[ReviewedPapersType.DiverseTypes]: 'Diverse Types',
 	[ReviewType.NarrativeReview]: 'Narrative Review',
 	[ReviewType.SystematicReview]: 'Systematic Review',
 	[ReviewType.MetaAnalysis]: 'Meta-Analysis',
@@ -45,6 +47,7 @@ export const TO_TEXT_PLURAL = {
 	[PaperType.ClinicalTrial]: 'Clinical Trials',
 	[PaperType.RandomizedControlledTrial]: 'Randomized Controlled Trials',
 	[PaperType.BlindedRandomizedControlledTrial]: 'Blinded Randomized Controlled Trials',
+	[ReviewedPapersType.DiverseTypes]: 'Diverse Types',
 }
 
 
