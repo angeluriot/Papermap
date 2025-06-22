@@ -217,10 +217,13 @@ export function score_on(map: DataMap | Map, paper: DataPaper): number
 }
 
 
-function score_sample_size(map: DataMap | Map, paper: DataPaper): number
+function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_score: number): number
 {
 	if (map.no_sample_size || paper.sample_size === MissingReason.NotApplicable)
 		return 1.0;
+
+	if (paper.review && (paper.sample_size === MissingReason.NoAccess || paper.sample_size === MissingReason.NotSpecified))
+		return review_count_score;
 
 	if (paper.sample_size === MissingReason.NoAccess)
 		return 0.25;
@@ -305,7 +308,7 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	let review_count_score = score_review_count(paper);
 	let type_score = score_type(map, paper);
 	let on_score = score_on(map, paper);
-	let sample_size_score = score_sample_size(map, paper);
+	let sample_size_score = score_sample_size(map, paper, review_count_score);
 	let p_value_score = score_p_value(map, paper);
 	let conflict_of_interest_score = score_conflict_of_interest(paper);
 	let notes_scores = score_notes(paper);
