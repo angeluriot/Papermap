@@ -460,23 +460,12 @@
 			};
 		}
 
-		else if (paper.conflict_of_interest === ConflictOfInterest.Yes)
-		{
-			return {
-				emoji: '🤑',
-				text: 'Yes',
-				color: COLORS[Color.Red].default,
-				shadow: color_to_shadow(COLORS[Color.Red].default),
-				description: "The authors or funders have conflicting interests that may have influenced the conclusion",
-			};
-		}
-
 		return {
-			emoji: '😇',
-			text: 'No',
-			color: COLORS[Color.Green].default,
-			shadow: color_to_shadow(COLORS[Color.Green].default),
-			description: "The authors declared no conflict of interest",
+			emoji: cards.TO_EMOJI[paper.conflict_of_interest],
+			text: cards.TO_TEXT[paper.conflict_of_interest],
+			color: cards.conflict_of_interest_to_color(paper.conflict_of_interest),
+			shadow: color_to_shadow(cards.conflict_of_interest_to_color(paper.conflict_of_interest)),
+			description: cards.TO_DESCRIPTION[paper.conflict_of_interest],
 		};
 	});
 

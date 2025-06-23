@@ -269,7 +269,7 @@
 				value: p_value,
 				less_than: p_value_prefix.trim() === 'less',
 			} : p_value_missing_reason.trim() as MissingReason,
-			conflict_of_interest: conflict_of_interest.trim() as ConflictOfInterest,
+			conflict_of_interest: conflict_of_interest.trim() as ConflictOfInterest | MissingReason.NoAccess,
 			notes: notes.filter(
 				note => note.title.trim().length > 0 &&
 				note.description.trim().length > 0 &&
@@ -703,8 +703,9 @@
 		</div>
 		<select bind:value={conflict_of_interest}>
 			<option value="" disabled selected hidden></option>
-			<option value={ConflictOfInterest.No}>No</option>
-			<option value={ConflictOfInterest.Yes}>Yes</option>
+			{#each Object.values(ConflictOfInterest).map(id => to_id_text(id, false)) as [id, text]}
+				<option value={id}>{text}</option>
+			{/each}
 			<option value={MissingReason.NoAccess}>(No access)</option>
 		</select>
 	</div>

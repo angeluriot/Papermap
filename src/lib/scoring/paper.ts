@@ -263,10 +263,17 @@ function score_p_value(map: DataMap | Map, paper: DataPaper): number
 
 function score_conflict_of_interest(paper: DataPaper): number
 {
-	if (paper.conflict_of_interest === MissingReason.NoAccess)
-		return 0.8;
-
-	return paper.conflict_of_interest === ConflictOfInterest.Yes ? 0.0 : 1.0;
+	switch (paper.conflict_of_interest)
+	{
+		case MissingReason.NoAccess:
+			return 0.6;
+		case ConflictOfInterest.None:
+			return 1.0;
+		case ConflictOfInterest.SomeLinks:
+			return 0.4;
+		case ConflictOfInterest.Yes:
+			return 0.0;
+	}
 }
 
 

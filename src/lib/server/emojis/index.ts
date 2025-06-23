@@ -19,6 +19,7 @@ export const EMOJI_NAMES = {
 	'🤮': 'face-vomiting',
 	'😵': 'dizzy-face',
 	'😎': 'smiling-face-with-sunglasses',
+	'🧐': 'face-with-monocle',
 	'🫤': 'face-with-diagonal-mouth',
 	'☹️': 'frowning-face',
 	'😨': 'fearful-face',

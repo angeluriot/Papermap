@@ -57,7 +57,8 @@ export enum ReviewType
 
 export enum ConflictOfInterest
 {
-	No = 'No',
+	None = 'None',
+	SomeLinks = 'SomeLinks',
 	Yes = 'Yes',
 }
 
