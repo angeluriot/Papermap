@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { SearchPaperResult } from '$lib/types/paper';
+	import type { Paper, SearchPaperResult } from '$lib/types/paper';
 	import Loading from '../loading.svelte';
 	import Link from '$lib/svgs/link.svg';
 
-	let { result = $bindable(), page = $bindable() }: {
+	let { papers, result = $bindable(), page = $bindable() }: {
+		papers: { [uuid: string]: Paper },
 		result: SearchPaperResult | null,
 		page: 'search' | 'add' | 'send',
 	} = $props();
@@ -83,6 +84,14 @@
 		}
 
 		result = response_json.results[0];
+
+		if (Object.values(papers).map(p => p.id).includes(result.id))
+		{
+			alert('This paper is already in the map.');
+			loading = false;
+			return;
+		}
+
 		page = 'add';
 	}
 

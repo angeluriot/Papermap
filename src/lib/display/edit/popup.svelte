@@ -79,7 +79,7 @@
 			<img src={Cross} alt="Close"/>
 		</div>
 		{#if page === 'search'}
-			<Search bind:result={result} bind:page={page}/>
+			<Search papers={map.papers} bind:result={result} bind:page={page}/>
 		{:else if page === 'add'}
 			{#if paper === null}
 				<div class="back absolute cursor-pointer left-0 top-0" onclick={go_back} onkeydown={null} role="button" tabindex={0}>
