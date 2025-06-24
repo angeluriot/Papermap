@@ -33,13 +33,22 @@
 			const element = other_label_elements[i];
 
 			if (!element)
-				return data.x + data.width / 2;
+				return { position: data.x + data.width / 2, align: 'center' };
 
 			const ideal_center = (data.x + data.width / 2) * container_width / 100;
 			const half_width = element.offsetWidth / 2;
 			const center = Math.max(half_width, Math.min(container_width - half_width, ideal_center));
+			let align = 'center';
 
-			return (center / container_width) * 100;
+			if (ideal_center <= half_width)
+				align = 'left';
+			else if (ideal_center >= container_width - half_width)
+				align = 'right';
+
+			return {
+				position: (center / container_width) * 100,
+				align,
+			};
 		});
 	});
 
@@ -114,7 +123,7 @@
 			{#if data.label.type === null || nb_labels === 1}
 				<span
 					class="absolute unselectable"
-					style="left: {positions[i] || data.x + data.width / 2}%; color: {data.color}; opacity: {(nb_labels === 1 && data.label.type !== null) || (group_selected !== null && group_selected.i == i) ? 1 : 0}; margin-top: {labels_2_lines ? '-0.6' : '0'}em;"
+					style="left: {positions[i]?.position || data.x + data.width / 2}%; color: {data.color}; opacity: {(nb_labels === 1 && data.label.type !== null) || (group_selected !== null && group_selected.i == i) ? 1 : 0}; margin-top: {labels_2_lines ? '-0.6' : '0'}em; text-align: {positions[i]?.align || 'center'};"
 					bind:this={other_label_elements[i]}
 				>
 					{#each data.label.text as list}
@@ -193,6 +202,5 @@
 	{
 		margin-top: -0.6em;
 		transform: translateX(-50%);
-		text-align: center;
 	}
 </style>
