@@ -238,6 +238,25 @@
 		return result.journal;
 	}
 
+	function clean_quote(quote: string): string
+	{
+		let cleaned_quote = quote.replace('[...]', ' [...] ').replace('\n', ' ').trim();
+
+		while (cleaned_quote.includes('  '))
+			cleaned_quote = cleaned_quote.replace('  ', ' ');
+
+		if (cleaned_quote.startsWith('[...]'))
+			cleaned_quote = cleaned_quote.slice(5).trim();
+
+		if (cleaned_quote.endsWith('[...]'))
+			cleaned_quote = cleaned_quote.slice(0, -5).trim();
+
+		if (cleaned_quote.endsWith('.'))
+			cleaned_quote = cleaned_quote.slice(0, -1).trim();
+
+		return cleaned_quote;
+	}
+
 	function create_data_paper(): DataPaper | null
 	{
 		if (!is_valid())
@@ -261,7 +280,7 @@
 				conclusion: conclusion.trim(),
 				indirect: indirect,
 			},
-			quote: quote.trim(),
+			quote: clean_quote(quote),
 			type: type.trim() as PaperType | ReviewedPapersType.DiverseTypes | MissingReason,
 			on: on.trim() as StudyOn | ReviewedStudiesOn.DiverseSubjects | MissingReason,
 			sample_size: sample_size !== null ? sample_size : sample_size_missing_reason.trim() as MissingReason,
