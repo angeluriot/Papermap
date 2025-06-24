@@ -48,6 +48,7 @@ export const EMOJI_NAMES = {
 	'🧩': 'puzzle-piece',
 
 	// Travel & Places
+	'🌐': 'globe-with-meridians',
 	'🏠': 'house',
 
 	// Objects
@@ -65,8 +66,9 @@ export const EMOJI_NAMES = {
 	'📝': 'memo',
 	'🗂️': 'card-index-dividers',
 	'📊': 'bar-chart',
-	'🔒': 'locked',
 	'🗑️': 'wastebasket',
+	'🔒': 'locked',
+	'⚖️': 'balance-scale',
 	'🔗': 'link',
 	'🧫': 'petri-dish',
 	'🔬': 'microscope',

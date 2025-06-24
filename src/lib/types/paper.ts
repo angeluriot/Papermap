@@ -39,7 +39,9 @@ export enum ReviewedStudiesOn
 export enum PaperType
 {
 	CaseReport = 'CaseReport',
+	EcologicalStudy = 'EcologicalStudy',
 	CrossSectionalStudy = 'CrossSectionalStudy',
+	CaseControlStudy = 'CaseControlStudy',
 	CohortStudy = 'CohortStudy',
 	ClinicalTrial = 'ClinicalTrial',
 	RandomizedControlledTrial = 'RandomizedControlledTrial',

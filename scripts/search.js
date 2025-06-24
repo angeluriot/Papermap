@@ -217,7 +217,7 @@ async function main()
 		else if (clean_title.includes('cohort'))
 			type = 0.4;
 
-		else if (clean_title.includes('crosssectional'))
+		else if (clean_title.includes('casecontrol') || clean_title.includes('crosssectional') || clean_title.includes('ecological'))
 			type = 0.2;
 
 		else if (clean_title.includes('casereport'))
