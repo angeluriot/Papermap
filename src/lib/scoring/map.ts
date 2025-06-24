@@ -12,6 +12,7 @@ const MISSING_PAPER_MAX = 0.8;
 const BEST_PAPERS_COEF = 0.8;
 const MAX_GROUP_COEF = 0.1;
 const NO_CONSENSUS_COEF = 0.1;
+const SMALL_GROUP_LIMIT = 0.015;
 
 
 export function compute_normalized_ranking(values: Record<string, number>): Record<string, number>
@@ -136,6 +137,19 @@ export function score_answer_groups(map: Map): Record<string, number>
 
 	answer_group_scores['more_research_needed'] = (total / (1 - more_research_score)) - total;
 	total += answer_group_scores['more_research_needed'];
+
+	for (const answer_group_id in answer_group_scores)
+		answer_group_scores[answer_group_id] /= total;
+
+	for (const id in answer_group_scores)
+		if (answer_group_scores[id] <= SMALL_GROUP_LIMIT / 2)
+			answer_group_scores[id] = 0.0;
+
+	for (const answer_group_id in answer_group_scores)
+		if (answer_group_scores[answer_group_id] >= SMALL_GROUP_LIMIT / 2 && answer_group_scores[answer_group_id] < SMALL_GROUP_LIMIT)
+			answer_group_scores[answer_group_id] = SMALL_GROUP_LIMIT;
+
+	total = Object.values(answer_group_scores).reduce((acc, score) => acc + score, 0);
 
 	for (const answer_group_id in answer_group_scores)
 		answer_group_scores[answer_group_id] /= total;
