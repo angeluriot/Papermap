@@ -1,6 +1,6 @@
 import { COLORS } from '$lib/colors';
 import type { Map } from '$lib/types/map';
-import { MissingReason, no_access, type Paper } from '$lib/types/paper';
+import { no_access, type Paper } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import type { GraphPoint, GraphStats } from './types';
 import seedrandom from 'seedrandom';
