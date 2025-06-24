@@ -2,7 +2,7 @@
 	import { COLORS, Color } from '$lib/colors';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, type Paper, ReviewedPapersType, ReviewedStudiesOn, StudyOn } from '$lib/types/paper';
+	import { Edit, JournalMissingReason, MissingReason, type Paper, ReviewedPapersType, ReviewedStudiesOn, StudyOn } from '$lib/types/paper';
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';

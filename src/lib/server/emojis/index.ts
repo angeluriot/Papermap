@@ -36,6 +36,7 @@ export const EMOJI_NAMES = {
 	'🧑‍🏫': 'teacher',
 	'🧍': 'person-standing',
 	'🧑‍🤝‍🧑': 'people-holding-hands',
+	'👥': 'busts-in-silhouette',
 	'👪': 'family',
 	'🧑‍🧑‍🧒‍🧒': 'family-adult-adult-child-child',
 
@@ -48,6 +49,7 @@ export const EMOJI_NAMES = {
 	'🧩': 'puzzle-piece',
 
 	// Travel & Places
+	'🌍': 'globe-showing-europe-africa',
 	'🌐': 'globe-with-meridians',
 	'🏠': 'house',
 
