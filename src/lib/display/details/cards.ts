@@ -185,7 +185,7 @@ export function impact_to_emoji(impact: NoteImpact | undefined): string
 	if (impact === NoteImpact.Negative) return			'👎';
 	if (impact === NoteImpact.Neutral) return			'📝';
 	if (impact === NoteImpact.Positive) return			'👍';
-	if (impact === NoteImpact.ExtremelyPositive) return	'🏆';
+	if (impact === NoteImpact.VeryPositive) return		'🏆';
 	return												'🤷';
 }
 
@@ -205,6 +205,6 @@ export function impact_to_color(impact: NoteImpact | undefined): string
 	if (impact === NoteImpact.Negative) return			COLORS[Color.Red1H].default;
 	if (impact === NoteImpact.Neutral) return			COLORS[Color.Gray].default;
 	if (impact === NoteImpact.Positive) return			COLORS[Color.Green1H].default;
-	if (impact === NoteImpact.ExtremelyPositive) return	COLORS[Color.Green].default;
+	if (impact === NoteImpact.VeryPositive) return		COLORS[Color.Green].default;
 	return												COLORS[Color.Gray].default;
 }

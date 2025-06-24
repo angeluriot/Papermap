@@ -71,7 +71,7 @@ export enum NoteImpact
 	Negative = 'Negative',
 	Neutral = 'Neutral',
 	Positive = 'Positive',
-	ExtremelyPositive = 'ExtremelyPositive',
+	VeryPositive = 'VeryPositive',
 }
 
 

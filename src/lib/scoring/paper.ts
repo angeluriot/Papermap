@@ -297,8 +297,8 @@ function score_notes(paper: DataPaper): number[]
 			scores.push(0.8);
 		else if (note.impact === NoteImpact.Positive)
 			scores.push(1.2);
-		else if (note.impact === NoteImpact.ExtremelyPositive)
-			scores.push(2.0);
+		else if (note.impact === NoteImpact.VeryPositive)
+			scores.push(1.5);
 	}
 
 	return scores;

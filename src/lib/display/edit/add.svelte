@@ -56,7 +56,7 @@
 		[NoteImpact.Positive]: 'Positive',
 		[NoteImpact.Neutral]: 'Neutral',
 		[NoteImpact.Negative]: 'Negative',
-		[NoteImpact.ExtremelyPositive]: 'Extremely positive',
+		[NoteImpact.VeryPositive]: 'Very positive',
 	};
 
 	function to_id_text(id: string, plural: boolean): string[]
