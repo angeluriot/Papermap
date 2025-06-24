@@ -181,11 +181,11 @@ export function p_value_score_to_emoji(score: number | undefined): string
 
 export function impact_to_emoji(impact: NoteImpact | undefined): string
 {
-	if (impact === NoteImpact.ExtremelyNegative) return	'💩';
+	if (impact === NoteImpact.ExtremelyNegative) return	'🤮';
 	if (impact === NoteImpact.Negative) return			'👎';
 	if (impact === NoteImpact.Neutral) return			'📝';
 	if (impact === NoteImpact.Positive) return			'👍';
-	if (impact === NoteImpact.VeryPositive) return		'🏆';
+	if (impact === NoteImpact.VeryPositive) return		'🥰';
 	return												'🤷';
 }
 
