@@ -206,7 +206,7 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 	else
 		score = TYPE_SCORES.default[paper.type];
 
-	if (!map.conclusions[paper.results.conclusion].p_value || paper.p_value === MissingReason.NotApplicable)
+	if (!map.conclusions[paper.results.conclusion].p_value)
 		score = 0.5 + score / 2;
 
 	return score;
