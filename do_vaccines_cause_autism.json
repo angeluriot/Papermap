@@ -1,0 +1,156 @@
+{
+	"draft": false,
+	"emoji": "🧩",
+	"question": {
+		"short": "Do vaccines cause autism?",
+		"long": "Do vaccines increase the risk of developing autism or ASD?"
+	},
+	"description": "Results from studies evaluating the impact of vaccines on the development of autism or ASD (Autism Spectrum Disorder).",
+	"tags": [
+		"vaccines",
+		"autism",
+		"children",
+		"health",
+		"medicine"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of vaccines on autism",
+			"color": "Gray",
+			"coherence": {
+				"no": 0.5,
+				"yes_but_low_confidence": 0.5,
+				"yes_but_small_effect": 0.5,
+				"yes": 0.5
+			}
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that vaccines do not cause autism",
+			"color": "Red",
+			"coherence": {
+				"no": 1,
+				"yes_but_low_confidence": 0,
+				"yes_but_small_effect": 0,
+				"yes_unlike_literature": 0
+			}
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that vaccines probably don't cause autism, but more research is needed",
+			"color": "Red1H",
+			"coherence": {
+				"no": 0.75,
+				"yes_but_low_confidence": 0.25,
+				"yes_but_small_effect": 0.25,
+				"yes_unlike_literature": 0.25
+			}
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that vaccines may cause autism, but more research is needed",
+			"color": "Green1H",
+			"coherence": {
+				"no_unlike_literature": 0.25,
+				"yes_but_low_confidence": 0.75,
+				"yes_but_small_effect": 0.75,
+				"yes": 0.75
+			}
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that vaccines cause autism",
+			"color": "Green",
+			"coherence": {
+				"no_unlike_literature": 0,
+				"yes_but_low_confidence": 1,
+				"yes_but_small_effect": 1,
+				"yes": 1
+			}
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Red1H"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant effect of the vaccines evaluated on the risk of developing autism",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant effect of the vaccines evaluated on the risk of developing autism, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that the vaccines evaluated may increase the risk of developing autism, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that the vaccines evaluated may have a small effect on the risk of developing autism",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that the vaccines evaluated may increase the risk of developing autism, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that the vaccines evaluated increase the risk of developing autism",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_causality": false,
+		"no_random": false,
+		"no_blind": false,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": []
+}
