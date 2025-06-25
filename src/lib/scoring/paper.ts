@@ -278,7 +278,9 @@ function score_conflict_of_interest(paper: DataPaper): number
 		case ConflictOfInterest.None:
 			return 1.0;
 		case ConflictOfInterest.SomeLinks:
-			return 0.4;
+			return 0.5;
+		case ConflictOfInterest.YesButOppositeResults:
+			return 0.8;
 		case ConflictOfInterest.Yes:
 			return 0.0;
 	}

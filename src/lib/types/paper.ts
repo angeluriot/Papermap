@@ -61,6 +61,7 @@ export enum ConflictOfInterest
 {
 	None = 'None',
 	SomeLinks = 'SomeLinks',
+	YesButOppositeResults = 'YesButOppositeResults',
 	Yes = 'Yes',
 }
 

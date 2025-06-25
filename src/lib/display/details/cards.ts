@@ -20,6 +20,7 @@ export const TO_EMOJI = {
 	[ReviewType.MetaAnalysis]: '📊',
 	[ConflictOfInterest.None]: '😇',
 	[ConflictOfInterest.SomeLinks]: '🧐',
+	[ConflictOfInterest.YesButOppositeResults]: '↩️',
 	[ConflictOfInterest.Yes]: '🤑',
 }
 
@@ -46,6 +47,7 @@ export const TO_TEXT = {
 	[MissingReason.NotApplicable]: 'Not Applicable',
 	[ConflictOfInterest.None]: 'None',
 	[ConflictOfInterest.SomeLinks]: 'Some Links',
+	[ConflictOfInterest.YesButOppositeResults]: 'Yes but opposite results',
 	[ConflictOfInterest.Yes]: 'Yes',
 }
 
@@ -86,7 +88,8 @@ export const TO_DESCRIPTION = {
 	[ReviewType.SystematicReview]: 'A comprehensive review of existing literature using a structured methodology to minimize bias',
 	[ReviewType.MetaAnalysis]: 'A statistical analysis that combines the results of multiple scientific studies',
 	[ConflictOfInterest.None]: 'The authors declared no conflict of interest and no external sources contradict this',
-	[ConflictOfInterest.SomeLinks]: 'Some authors had links to the industry in the past',
+	[ConflictOfInterest.SomeLinks]: 'Some authors had links to biased persons or organizations in the past',
+	[ConflictOfInterest.YesButOppositeResults]: 'The authors or funders have conflicting interests but the results are the opposite of what would benefit them',
 	[ConflictOfInterest.Yes]: 'The authors or funders have conflicting interests that may have influenced the conclusion',
 }
 
@@ -192,10 +195,11 @@ export function impact_to_emoji(impact: NoteImpact | undefined): string
 
 export function conflict_of_interest_to_color(conflict_of_interest: ConflictOfInterest | undefined): string
 {
-	if (conflict_of_interest === ConflictOfInterest.None) return		COLORS[Color.Green].default;
-	if (conflict_of_interest === ConflictOfInterest.SomeLinks) return	'#ef8a37';
-	if (conflict_of_interest === ConflictOfInterest.Yes) return			COLORS[Color.Red].default;
-	return																COLORS[Color.Gray].default;
+	if (conflict_of_interest === ConflictOfInterest.None) return					COLORS[Color.Green].default;
+	if (conflict_of_interest === ConflictOfInterest.SomeLinks) return				'#ef8a37';
+	if (conflict_of_interest === ConflictOfInterest.YesButOppositeResults) return	COLORS[Color.Green1H].default;
+	if (conflict_of_interest === ConflictOfInterest.Yes) return						COLORS[Color.Red].default;
+	return																			COLORS[Color.Gray].default;
 }
 
 
