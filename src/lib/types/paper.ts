@@ -26,13 +26,15 @@ export enum StudyOn
 
 export enum ReviewedPapersType
 {
-	DiverseTypes = 'DiverseTypes'
+	DiverseObservationalStudies = 'DiverseObservationalStudies',
+	DiverseClinicalTrials = 'DiverseClinicalTrials',
+	DiverseTypes = 'DiverseTypes',
 }
 
 
 export enum ReviewedStudiesOn
 {
-	DiverseSubjects = 'DiverseSubjects'
+	DiverseSubjects = 'DiverseSubjects',
 }
 
 
@@ -110,8 +112,8 @@ export interface DataPaper
 		type: ReviewType,
 		count: number | MissingReason.NoAccess | MissingReason.NotSpecified,
 	};
-	type: PaperType | ReviewedPapersType.DiverseTypes | MissingReason;
-	on: StudyOn | ReviewedStudiesOn.DiverseSubjects | MissingReason;
+	type: PaperType | ReviewedPapersType | MissingReason;
+	on: StudyOn | ReviewedStudiesOn | MissingReason;
 	sample_size: number | MissingReason;
 	p_value: {
 		value: number,

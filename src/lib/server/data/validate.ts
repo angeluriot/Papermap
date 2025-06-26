@@ -31,8 +31,8 @@ export const paper_schema = z.object({
 		type: z.nativeEnum(ReviewType),
 		count: z.union([z.number().int().min(1), z.literal(MissingReason.NoAccess), z.literal(MissingReason.NotSpecified)]),
 	}).strict().optional(),
-	type: z.union([z.nativeEnum(PaperType), z.literal(ReviewedPapersType.DiverseTypes), z.nativeEnum(MissingReason)]),
-	on: z.union([z.nativeEnum(StudyOn), z.literal(ReviewedStudiesOn.DiverseSubjects), z.nativeEnum(MissingReason)]),
+	type: z.union([z.nativeEnum(PaperType), z.nativeEnum(ReviewedPapersType), z.nativeEnum(MissingReason)]),
+	on: z.union([z.nativeEnum(StudyOn), z.nativeEnum(ReviewedStudiesOn), z.nativeEnum(MissingReason)]),
 	sample_size: z.union([z.number().int().min(1).optional(), z.nativeEnum(MissingReason)]),
 	p_value: z.union([z.object({
 		value: z.number().min(0).max(1),

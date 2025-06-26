@@ -72,6 +72,7 @@ export const EMOJI_NAMES = {
 	'🔒': 'locked',
 	'⚖️': 'balance-scale',
 	'🔗': 'link',
+	'🧪': 'test-tube',
 	'🧫': 'petri-dish',
 	'🔬': 'microscope',
 	'💉': 'syringe',

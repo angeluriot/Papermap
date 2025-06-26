@@ -170,10 +170,10 @@
 			review_count = null;
 			review_count_missing_reason = '';
 
-			if (type === ReviewedPapersType.DiverseTypes)
+			if (Object.keys(ReviewedPapersType).includes(type))
 				type = '';
 
-			if (on === ReviewedStudiesOn.DiverseSubjects)
+			if (Object.keys(ReviewedStudiesOn).includes(on))
 				on = '';
 		}
 
@@ -283,8 +283,8 @@
 				indirect: indirect,
 			},
 			quote: clean_quote(quote),
-			type: type.trim() as PaperType | ReviewedPapersType.DiverseTypes | MissingReason,
-			on: on.trim() as StudyOn | ReviewedStudiesOn.DiverseSubjects | MissingReason,
+			type: type.trim() as PaperType | ReviewedPapersType | MissingReason,
+			on: on.trim() as StudyOn | ReviewedStudiesOn | MissingReason,
 			sample_size: sample_size !== null ? sample_size : sample_size_missing_reason.trim() as MissingReason,
 			p_value: p_value !== null && p_value_prefix !== '' ? {
 				value: p_value,
@@ -655,7 +655,9 @@
 				<option value={id}>{text}</option>
 			{/each}
 			{#if is_review}
-				<option value={ReviewedPapersType.DiverseTypes}>(Diverse types)</option>
+				{#each Object.values(ReviewedPapersType).map(id => to_id_text(id, is_review)) as [id, text]}
+					<option value={id}>({text})</option>
+				{/each}
 			{/if}
 			<option value={MissingReason.NoAccess}>(No access)</option>
 			<option value={MissingReason.NotSpecified}>(Not specified)</option>

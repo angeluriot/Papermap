@@ -17,7 +17,6 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.8,
 		[PaperType.RandomizedControlledTrial]:			1.0,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
-		[ReviewedPapersType.DiverseTypes]:				0.8,
 	},
 	no_random: {
 		[MissingReason.NoAccess]:						0.3,
@@ -31,7 +30,6 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.4,
 		[PaperType.RandomizedControlledTrial]:			1.0,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
-		[ReviewedPapersType.DiverseTypes]:				0.5,
 	},
 	no_blind: {
 		[MissingReason.NoAccess]:						0.2,
@@ -45,7 +43,6 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.2,
 		[PaperType.RandomizedControlledTrial]:			0.9,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
-		[ReviewedPapersType.DiverseTypes]:				0.5,
 	},
 	default: {
 		[MissingReason.NoAccess]:						0.1,
@@ -59,7 +56,6 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:						0.2,
 		[PaperType.RandomizedControlledTrial]:			0.6,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
-		[ReviewedPapersType.DiverseTypes]:				0.5,
 	},
 }
 const REVIEW_TYPE_SCORES = {
@@ -76,7 +72,6 @@ const ON_SCORES = {
 		[StudyOn.InVitro]:						0.0,
 		[StudyOn.Animals]:						1.0,
 		[StudyOn.Humans]:						1.0,
-		[ReviewedStudiesOn.DiverseSubjects]:	0.8,
 	},
 	default: {
 		[MissingReason.NoAccess]:				0.3,
@@ -85,7 +80,6 @@ const ON_SCORES = {
 		[StudyOn.InVitro]:						0.0,
 		[StudyOn.Animals]:						0.4,
 		[StudyOn.Humans]:						1.0,
-		[ReviewedStudiesOn.DiverseSubjects]:	0.6,
 	},
 }
 const CITATIONS_HALF_SCORE = 50.0;
@@ -189,22 +183,32 @@ function score_review_count(paper: DataPaper): number
 
 function score_type(map: DataMap | Map, paper: DataPaper): number
 {
-	let score = 0.0;
-
 	if (map.type.any)
-		score = 1.0;
+		return 1.0;
 
-	else if (map.type.no_causality)
-		score = TYPE_SCORES.no_causality[paper.type];
+	let type_scores = TYPE_SCORES.default;
+
+	if (map.type.no_causality)
+		type_scores = TYPE_SCORES.no_causality;
 
 	else if (map.type.no_random)
-		score = TYPE_SCORES.no_random[paper.type];
+		type_scores = TYPE_SCORES.no_random;
 
 	else if (map.type.no_blind)
-		score = TYPE_SCORES.no_blind[paper.type];
+		type_scores = TYPE_SCORES.no_blind;
 
+	let types: (PaperType | MissingReason)[] = [];
+
+	if (paper.type == ReviewedPapersType.DiverseObservationalStudies)
+		types = [PaperType.CaseReport, PaperType.EcologicalStudy, PaperType.CrossSectionalStudy, PaperType.CaseControlStudy, PaperType.CohortStudy];
+	else if (paper.type == ReviewedPapersType.DiverseClinicalTrials)
+		types = [PaperType.ClinicalTrial, PaperType.RandomizedControlledTrial, PaperType.BlindedRandomizedControlledTrial];
+	else if (paper.type == ReviewedPapersType.DiverseTypes)
+		types = Object.keys(PaperType) as PaperType[];
 	else
-		score = TYPE_SCORES.default[paper.type];
+		types = [paper.type];
+
+	let score = types.map(type => type_scores[type]).reduce((acc, score) => acc + score, 0.0) / types.length;
 
 	if (!map.conclusions[paper.results.conclusion].p_value)
 		score = 0.5 + score / 2;
@@ -218,10 +222,19 @@ export function score_on(map: DataMap | Map, paper: DataPaper): number
 	if (map.on.any_animal)
 		return 1.0;
 
-	if (map.on.any_animal)
-		return ON_SCORES.any_animal[paper.on];
+	let on_scores = ON_SCORES.default;
 
-	return ON_SCORES.default[paper.on];
+	if (map.on.any_animal)
+		on_scores = ON_SCORES.any_animal;
+
+	let ons: (StudyOn | MissingReason)[] = [];
+
+	if (paper.on == ReviewedStudiesOn.DiverseSubjects)
+		ons = Object.keys(StudyOn) as StudyOn[];
+	else
+		ons = [paper.on];
+
+	return ons.map(subject => on_scores[subject]).reduce((acc, score) => acc + score, 0.0) / ons.length;
 }
 
 
