@@ -17,7 +17,7 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 {
 	const scale = (width + height) * 0.001;
 
-	const years = Object.values(map.papers).map(paper => paper.year + seedrandom(paper.title).quick());
+	const years = Object.values(map.papers).map(paper => paper.year + (paper.override_seed !== undefined ? paper.override_seed : seedrandom(paper.title).quick()));
 	let min_year = 1950;
 	let max_year = new Date().getFullYear();
 

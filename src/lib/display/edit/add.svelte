@@ -24,6 +24,7 @@
 
 	let id: string | null = $state(null);
 	let title = $state('');
+	let override_seed: number | undefined = $state(undefined);
 	let authors: string[] = $state(['']);
 	let year: number | null = $state(null);
 	let link = $state('');
@@ -106,6 +107,7 @@
 
 			id = cloneDeep(paper.id ?? null);
 			title = cloneDeep(paper.title);
+			override_seed = cloneDeep(paper.override_seed);
 			authors = cloneDeep(paper.authors);
 			year = cloneDeep(paper.year);
 			link = cloneDeep(paper.link);
@@ -309,6 +311,9 @@
 
 		if (id !== null && id !== '')
 			data_paper.id = id;
+
+		if (override_seed !== undefined)
+			data_paper.override_seed = override_seed;
 
 		if (review_type !== '' && review_type !== 'null')
 		{

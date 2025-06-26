@@ -120,7 +120,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			i: 0,
 			uuid: paper.uuid,
 			answer: paper.results.conclusion,
-			x: ratio(paper.year + seedrandom(paper.title).quick(), stats.min_year, stats.max_year) * stats.width,
+			x: ratio(paper.year + (paper.override_seed !== undefined ? paper.override_seed : seedrandom(paper.title).quick()), stats.min_year, stats.max_year) * stats.width,
 			y: stats.height - (ratio(paper.score, stats.min_score, stats.max_score) * stats.height),
 			size,
 			focus_size,

@@ -9,6 +9,10 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 		result.id = paper.id;
 
 	result.title = paper.title;
+
+	if (paper.override_seed !== undefined)
+		result.override_seed = paper.override_seed;
+
 	result.authors = paper.authors;
 	result.year = paper.year;
 	result.link = paper.link;

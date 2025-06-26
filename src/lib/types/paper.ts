@@ -88,6 +88,7 @@ export interface DataPaper
 {
 	id?: string;
 	title: string;
+	override_seed?: number;
 	authors: string[];
 	year: number;
 	link: string;
