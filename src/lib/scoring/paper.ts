@@ -87,6 +87,7 @@ const MIN_YEAR = 1900;
 const SAMPLE_SIZE_HALF_SCORE = 200.0;
 const RCT_SAMPLE_SIZE_HALF_SCORE = 30.0;
 const MAX_P_VALUE = 0.05;
+const NO_P_VALUE_TYPE_INCREASE = 0.3;
 const COEFS = {
 	year: 0.1,
 	journal: 0.5,
@@ -211,7 +212,7 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 	let score = types.map(type => type_scores[type]).reduce((acc, score) => acc + score, 0.0) / types.length;
 
 	if (!map.conclusions[paper.results.conclusion].p_value)
-		score = 0.5 + score / 2;
+		score += (1.0 - score) * NO_P_VALUE_TYPE_INCREASE;
 
 	return score;
 }
