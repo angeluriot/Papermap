@@ -14,16 +14,16 @@ const coefs = {
 };
 
 const email = process.env.VITE_OPENALEX_EMAIL ?? '';
-const [, , title_search, abstract_search, text_search] = process.argv;
+const [, , title_search, abstract_search, text_search, map_id] = process.argv;
 
 
-export function clamp(value, min, max)
+function clamp(value, min, max)
 {
 	return Math.max(min, Math.min(max, value));
 }
 
 
-export function ratio(value, min, max, cut = true)
+function ratio(value, min, max, cut = true)
 {
 	if (min >= max)
 		throw new Error('min must be less than max');
@@ -34,7 +34,7 @@ export function ratio(value, min, max, cut = true)
 }
 
 
-export function clean_id(id)
+function clean_id(id)
 {
 	let cleaned_id = id;
 
@@ -128,7 +128,7 @@ async function api_call()
 }
 
 
-export async function get_journal(index, id)
+async function get_journal(index, id)
 {
 	const result = index[id];
 
@@ -145,7 +145,7 @@ export async function get_journal(index, id)
 }
 
 
-export async function get_journal_from_work(index, work)
+async function get_journal_from_work(index, work)
 {
 	if (work?.is_retracted)
 		return null;
@@ -165,6 +165,41 @@ export async function get_journal_from_work(index, work)
 }
 
 
+async function get_map(id)
+{
+	async function walk_directory(dir)
+	{
+		const entries = await fs.promises.readdir(dir, { withFileTypes: true });
+
+		for (const entry of entries)
+		{
+			const full_path = join(dir, entry.name);
+
+			if (entry.isDirectory())
+			{
+				const result = await walk_directory(full_path);
+
+				if (result)
+					return result;
+			}
+
+			else if (entry.isFile() && entry.name === `${id}.json`)
+				return full_path;
+		}
+
+		return null;
+	}
+
+	const file_path = await walk_directory(join(process.cwd(), 'data', 'maps'));
+
+	if (!file_path)
+		return null;
+
+	const content = await fs.promises.readFile(file_path, 'utf-8');
+	return JSON.parse(content);
+}
+
+
 async function main()
 {
 	console.log(`Searching for works with title: "${title_search}", abstract: "${abstract_search}" and text: "${text_search}"...`);
@@ -180,8 +215,14 @@ async function main()
 	const index = JSON.parse(await fs.promises.readFile(join(process.cwd(), 'data', 'journals', 'index.json'), 'utf-8'));
 	let papers = [];
 
+	const map = map_id ? await get_map(map_id) : null;
+	const map_ids = map ? map.papers.map(paper => paper.id).filter(id => id !== undefined) : [];
+
 	for (const work of results)
 	{
+		if (map_ids.includes(clean_id(work.id)))
+			continue;
+
 		let year = work?.publication_year ? ratio(work?.publication_year, 1900, new Date().getFullYear()) : 0.0;
 
 		let journal = await get_journal_from_work(index, work);
