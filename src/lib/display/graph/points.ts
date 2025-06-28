@@ -107,7 +107,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 
 		if (paper.review)
 		{
-			size = typeof paper.review.count === 'number' ? paper.review.count : 2
+			size = typeof paper.review.count === 'number' ? paper.review.count : 3;
 			size *= paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1;
 			size = size ** 0.3;
 		}
