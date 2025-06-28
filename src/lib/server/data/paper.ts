@@ -39,6 +39,7 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 	{
 		result.review = {
 			type: paper.review.type,
+			reviews: paper.review.reviews,
 			count: paper.review.count,
 		};
 	}

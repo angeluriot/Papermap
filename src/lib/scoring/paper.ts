@@ -88,6 +88,7 @@ const SAMPLE_SIZE_HALF_SCORE = 200.0;
 const RCT_SAMPLE_SIZE_HALF_SCORE = 30.0;
 const MAX_P_VALUE = 0.05;
 const NO_P_VALUE_TYPE_INCREASE = 0.3;
+export const REVIEW_OF_REVIEWS_MULTIPLIER = 5;
 const COEFS = {
 	year: 0.1,
 	journal: 0.5,
@@ -168,12 +169,12 @@ function score_review_count(paper: DataPaper): number
 		return 0.0;
 
 	if (paper.review.count === MissingReason.NoAccess)
-		return 0.25;
+		return paper.review.reviews ? 0.5 : 0.25;
 
 	if (paper.review.count === MissingReason.NotSpecified)
-		return 0.1;
+		return paper.review.reviews ? 0.2 : 0.1;
 
-	let score = paper.review.count;
+	let score = paper.review.count * (paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1);
 
 	score /= REVIEW_COUNT_HALF_SCORE;
 	score /= score + 1.0;

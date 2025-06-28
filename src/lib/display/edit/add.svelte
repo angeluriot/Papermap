@@ -39,6 +39,7 @@
 	let indirect: boolean = $state(false);
 	let quote: string = $state('');
 	let review_type: string = $state('');
+	let review_reviews: boolean = $state(false);
 	let review_count: number | null = $state(null);
 	let review_count_missing_reason: string = $state('');
 	let type: string = $state('');
@@ -122,6 +123,7 @@
 			indirect = cloneDeep(paper.results.indirect);
 			quote = cloneDeep(paper.quote);
 			review_type = cloneDeep(paper.review?.type ?? 'null');
+			review_reviews = cloneDeep(paper.review?.reviews ?? false);
 			review_count = cloneDeep(typeof paper.review?.count === 'number' ? paper.review?.count : null);
 			review_count_missing_reason = cloneDeep(paper.review && typeof paper.review.count !== 'number' ? paper.review.count : '');
 			type = cloneDeep(paper.type);
@@ -167,6 +169,7 @@
 
 		if (review_type === 'null')
 		{
+			review_reviews = false;
 			review_count = null;
 			review_count_missing_reason = '';
 
@@ -319,6 +322,7 @@
 		{
 			data_paper.review = {
 				type: review_type.trim() as ReviewType,
+				reviews: review_reviews,
 				count: review_count !== null ? review_count : review_count_missing_reason.trim() as MissingReason.NoAccess | MissingReason.NotSpecified,
 			};
 		}
@@ -625,6 +629,16 @@
 		</select>
 	</div>
 	{#if is_review}
+		<div class="input checkbox">
+			<input bind:checked={review_reviews} type="checkbox"/>
+			<div
+				class="label" role="button" tabindex={0} onkeydown={null}
+				onclick={() => { review_reviews = !review_reviews; }}
+			>
+				<span class="unselectable">Review of reviews</span>
+				<span class="optional unselectable">(Most of the reviewed papers are literature reviews themselves)</span>
+			</div>
+		</div>
 		<div class="input">
 			<div class="label unselectable">
 				<span>Number of papers included</span>

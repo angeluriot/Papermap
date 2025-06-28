@@ -29,6 +29,7 @@ export const paper_schema = z.object({
 	quote: z.string().nonempty(),
 	review: z.object({
 		type: z.nativeEnum(ReviewType),
+		reviews: z.boolean(),
 		count: z.union([z.number().int().min(1), z.literal(MissingReason.NoAccess), z.literal(MissingReason.NotSpecified)]),
 	}).strict().optional(),
 	type: z.union([z.nativeEnum(PaperType), z.nativeEnum(ReviewedPapersType), z.nativeEnum(MissingReason)]),

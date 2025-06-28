@@ -110,6 +110,7 @@ export interface DataPaper
 	quote: string;
 	review?: {
 		type: ReviewType,
+		reviews: boolean,
 		count: number | MissingReason.NoAccess | MissingReason.NotSpecified,
 	};
 	type: PaperType | ReviewedPapersType | MissingReason;

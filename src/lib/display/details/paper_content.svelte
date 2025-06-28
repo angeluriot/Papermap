@@ -2,7 +2,7 @@
 	import { COLORS, Color } from '$lib/colors';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { Edit, JournalMissingReason, MissingReason, type Paper, ReviewedPapersType, ReviewedStudiesOn, StudyOn } from '$lib/types/paper';
+	import { Edit, JournalMissingReason, MissingReason, type Paper, ReviewType, ReviewedPapersType, ReviewedStudiesOn, StudyOn } from '$lib/types/paper';
 	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
@@ -208,12 +208,27 @@
 			}
 		}
 
-		if (paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes && result.length > 0)
+		if ((paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes && result.length > 0) || paper.review?.reviews)
 		{
 			if (!result[result.length - 1].is_card)
 				result[result.length - 1].text += ' that are mostly';
 			else
 				result.push({ text: 'that are mostly', is_card: false });
+		}
+
+		if (paper.review?.reviews)
+		{
+			result.push({
+				emoji: cards.TO_EMOJI[ReviewType.NarrativeReview],
+				text: 'Literature reviews',
+				color: cards.REVIEW_COLORS[ReviewType.NarrativeReview],
+				shadow: color_to_shadow(cards.REVIEW_COLORS[ReviewType.NarrativeReview]),
+				description: cards.TO_DESCRIPTION[ReviewType.NarrativeReview],
+				is_card: true,
+			});
+
+			if (paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes)
+				result.push({ text: 'of', is_card: false });
 		}
 
 		if (paper.type === MissingReason.NoAccess)

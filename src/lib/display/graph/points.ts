@@ -1,4 +1,5 @@
 import { COLORS } from '$lib/colors';
+import { REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
 import type { Map } from '$lib/types/map';
 import { no_access, type Paper } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
@@ -107,6 +108,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 		if (paper.review)
 		{
 			size = typeof paper.review.count === 'number' ? paper.review.count : 2
+			size *= paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1;
 			size = size ** 0.3;
 		}
 
