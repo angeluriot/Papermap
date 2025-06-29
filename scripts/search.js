@@ -79,6 +79,8 @@ async function api_call()
 	if (text_search && text_search.length > 0)
 		search.push('fulltext.search:' + text_search);
 
+	search.push('type:types/article|types/review|types/preprint');
+
 	let query = new URLSearchParams({
 		'filter': search.join(','),
 		'mailto': email,
