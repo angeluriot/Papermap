@@ -12,7 +12,8 @@ const MISSING_PAPER_MAX = 0.8;
 const BEST_PAPERS_COEF = 0.8;
 const MAX_GROUP_COEF = 0.1;
 const NO_CONSENSUS_COEF = 0.1;
-const SMALL_GROUP_LIMIT = 0.015;
+const MORE_RESEARCH_MIN = 0.1;
+const MIN_GROUP_SIZE = 0.01;
 
 
 export function compute_normalized_ranking(values: Record<string, number>): Record<string, number>
@@ -98,11 +99,13 @@ function compute_more_research(map: Map, paper_scores: Record<string, number>, a
 	const max_group_score = Object.values(answer_group_scores).reduce((acc, score) => Math.max(acc, score), 0) / total;
 	const no_consensus_score = Object.values(map.papers).filter(paper => paper.results.consensus === 'no_consensus').length / Object.keys(map.papers).length;
 
-	return (
+	const final = (
 		(1 - best_score) * BEST_PAPERS_COEF +
 		(1 - max_group_score) * MAX_GROUP_COEF +
 		no_consensus_score * NO_CONSENSUS_COEF
 	);
+
+	return ratio(final, MORE_RESEARCH_MIN, 1.0);
 }
 
 
@@ -142,12 +145,8 @@ export function score_answer_groups(map: Map): Record<string, number>
 		answer_group_scores[answer_group_id] /= total;
 
 	for (const id in answer_group_scores)
-		if (answer_group_scores[id] <= SMALL_GROUP_LIMIT / 2)
-			answer_group_scores[id] = 0.0;
-
-	for (const answer_group_id in answer_group_scores)
-		if (answer_group_scores[answer_group_id] >= SMALL_GROUP_LIMIT / 2 && answer_group_scores[answer_group_id] < SMALL_GROUP_LIMIT)
-			answer_group_scores[answer_group_id] = SMALL_GROUP_LIMIT;
+		if (answer_group_scores[id] > 0.0)
+			answer_group_scores[id] = Math.max(answer_group_scores[id], MIN_GROUP_SIZE);
 
 	total = Object.values(answer_group_scores).reduce((acc, score) => acc + score, 0);
 
