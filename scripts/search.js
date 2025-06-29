@@ -204,7 +204,7 @@ async function get_map(id)
 
 async function main()
 {
-	console.log(`Searching for works with title: "${title_search}", abstract: "${abstract_search}" and text: "${text_search}"...`);
+	console.log(`Searching for works with title: "${title_search}", abstract: "${abstract_search}" and text: "${text_search}"`);
 
 	let results = await api_call();
 
@@ -213,6 +213,8 @@ async function main()
 		console.log('No results found.');
 		process.exit(0);
 	}
+
+	console.log(`Found ${results.length} papers`);
 
 	const index = JSON.parse(await fs.promises.readFile(join(process.cwd(), 'data', 'journals', 'index.json'), 'utf-8'));
 	let papers = [];
@@ -278,6 +280,8 @@ async function main()
 
 		papers.push({ title: work?.title, doi: work?.doi, score: score });
 	}
+
+	console.log(`${results.length - papers.length} papers already in the map\n`);
 
 	papers.sort((a, b) => a.score - b.score);
 	papers = papers.slice(papers.length - 100);
