@@ -8,7 +8,7 @@ export const POINTS_SIZE = 1.1;
 export const POINTS_OPACITY = 0.12;
 
 export const AXIS_COLOR = '#2d2f3d';
-export const BEST_TICK_DISTANCE = 1.7;
+export const BEST_TICK_DISTANCE = 1.9;
 export const X_PADDING = 5;
 export const Y_PADDING = 3;
 export const MINOR_TICK_SIZE = 2.3;
