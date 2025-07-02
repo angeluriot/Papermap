@@ -74,6 +74,9 @@ export async function search_paper(doi?: string, title?: string, year?: number):
 	if (exact_matches.length == 1)
 		return exact_matches;
 
+	if (exact_matches.length > 1)
+		return [exact_matches.toSorted((a, b) => (b.citations ?? 0) - (a.citations ?? 0))[0]];
+
 	if (title && year)
 		exact_matches = results.filter(paper => clean_text(paper.title ?? '') == clean_text(title) && paper.year == year);
 
