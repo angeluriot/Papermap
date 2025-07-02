@@ -38,7 +38,7 @@
 		if (title.trim().length > 0)
 			query_params['title'] = title.trim();
 
-		if (year !== null && !isNaN(year))
+		if (year !== null && year >= 1500 && year <= new Date().getFullYear() && Number.isInteger(year))
 			query_params['year'] = year.toString();
 
 		let query = new URLSearchParams(query_params);
@@ -101,18 +101,18 @@
 			return;
 
 		loading = true;
-		let res: Record<string, string> = {};
+		let res: SearchPaperResult = {};
 
 		if (doi.trim().length > 0)
-			res['doi'] = doi.trim();
+			res.link = doi.trim();
 
 		if (title.trim().length > 0)
-			res['title'] = title.trim();
+			res.title = title.trim();
 
-		if (year !== null && !isNaN(year))
-			res['year'] = year.toString();
+		if (year !== null && year >= 1500 && year <= new Date().getFullYear() && Number.isInteger(year))
+			res.year = year;
 
-		result = Object.keys(res).length > 0 ? res : null;
+		result = res;
 		loading = false;
 		page = 'add';
 	}
