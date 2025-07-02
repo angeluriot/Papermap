@@ -87,6 +87,7 @@ const MIN_YEAR = 1900;
 const SAMPLE_SIZE_HALF_SCORE = 200.0;
 const RCT_SAMPLE_SIZE_HALF_SCORE = 30.0;
 const MAX_P_VALUE = 0.05;
+const P_VALUE_EXP = 2;
 const NO_P_VALUE_TYPE_INCREASE = 0.3;
 export const REVIEW_OF_REVIEWS_MULTIPLIER = 5;
 const COEFS = {
@@ -115,7 +116,7 @@ function score_year(paper: DataPaper): number
 
 export function score_journal(paper: DataPaper, journal: Journal | undefined): number
 {
-	if (!journal || !journal.score || paper.journal.retracted)
+	if (!journal?.score || paper.journal.retracted)
 		return 0.0;
 
 	return journal.score;
@@ -278,7 +279,7 @@ function score_p_value(map: DataMap | Map, paper: DataPaper): number
 		return 0.0;
 
 	let p_value_score = paper.p_value.less_than ? paper.p_value.value / 2.0 : paper.p_value.value;
-	p_value_score = 1.0 - ratio(p_value_score, 0.0, MAX_P_VALUE);
+	p_value_score = (1.0 - ratio(p_value_score, 0.0, MAX_P_VALUE)) ** P_VALUE_EXP;
 
 	return p_value_score;
 }
