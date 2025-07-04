@@ -152,5 +152,4895 @@
 		"any": false
 	},
 	"no_sample_size": false,
-	"papers": []
+	"papers": [
+		{
+			"id": "W2010453107",
+			"title": "Measles Vaccines: a review of adverse events",
+			"override_seed": 0.9,
+			"authors": [
+				"Philippe Duclos",
+				"Brian J. Ward"
+			],
+			"year": 1998,
+			"link": "https://doi.org/10.2165/00002018-199819060-00002",
+			"journal": {
+				"id": "S49488433",
+				"retracted": false
+			},
+			"citations": {
+				"count": 79,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The alleged associations between measles vaccination and [...] autism are based upon weak science and have largely been refuted by a large volume of stronger work",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2106409867",
+			"title": "MMR and Autism",
+			"override_seed": 0.3,
+			"authors": [
+				"Christopher Gillberg",
+				"Harald Heijbel"
+			],
+			"year": 1998,
+			"link": "https://doi.org/10.1177/1362361398024007",
+			"journal": {
+				"id": "S1824407",
+				"retracted": false
+			},
+			"citations": {
+				"count": 89,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We believe that this Swedish ecological study of autism cannot be taken to support the hypothesis of an association between MMR and autistic disorder",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": 55,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2056339438",
+			"title": "No evidence for measles, mumps, and rubella vaccine-associated inflammatory bowel disease or autism in a 14-year prospective study",
+			"authors": [
+				"Heikki Peltola",
+				"Annamari Patja",
+				"Pauli Leinikki",
+				"Martti Valle"
+			],
+			"year": 1998,
+			"link": "https://doi.org/10.1016/s0140-6736(98)24018-9",
+			"journal": {
+				"id": "S49861241",
+				"retracted": false
+			},
+			"citations": {
+				"count": 231,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Over a decade’s effort to detect all severe adverse events associated with MMR vaccine could find no data supporting the hypothesis that it would cause pervasive developmental disorder",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 31,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2117847125",
+			"title": "RETRACTED: Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children",
+			"override_seed": 0,
+			"authors": [
+				"A J Wakefield",
+				"SH Murch",
+				"Anthony A. Attama",
+				"J. C. Linnell"
+			],
+			"year": 1998,
+			"link": "https://doi.org/10.1016/s0140-6736(97)11096-0",
+			"journal": {
+				"id": "S49861241",
+				"retracted": true
+			},
+			"citations": {
+				"count": 2859,
+				"critics": true
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Onset of behavioural symptoms was associated, by the parents, with measles, mumps, and rubella vaccination [...] Behavioural disorders included autism (nine)",
+			"type": "CaseReport",
+			"on": "Humans",
+			"sample_size": 12,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Data manipulation",
+					"description": "Symptoms before vaccination deliberately hidden, changes in reported measurement dates, data selection, patients recruited through anti-vaccine campaigners",
+					"link": "https://doi.org/10.1136/bmj.c5347",
+					"impact": "ExtremelyNegative"
+				},
+				{
+					"title": "Undisclosed conflict of interest",
+					"description": "The first author was secretly funded by a lawyer pursuing vaccine‐injury litigation",
+					"link": "https://doi.org/10.1136/bmj.c5347",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Anti-vaccine activist",
+					"description": "The first author is an anti-vaccine activist that directed the movie \"Vaxxed: From Cover-Up to Catastrophe\"",
+					"link": "https://en.wikipedia.org/wiki/Andrew_Wakefield",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"id": "W2136419435",
+			"title": "Autism and measles, mumps, and rubella vaccine: no epidemiological evidence for a causal association",
+			"authors": [
+				"Brent Taylor",
+				"Elizabeth Miller",
+				"Paddy Farrington",
+				"Maria-Christina Petropoulos"
+			],
+			"year": 1999,
+			"link": "https://doi.org/10.1016/s0140-6736(99)01239-8",
+			"journal": {
+				"id": "S49861241",
+				"retracted": false
+			},
+			"citations": {
+				"count": 764,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our analyses do not support a causal association between MMR vaccine and autism",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 498,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2090759568",
+			"title": "Autism and measles, mumps, and rubella vaccine: No epidemiological evidence for a causal association",
+			"authors": [
+				"Bill Taylor",
+				"E Miller",
+				"Paddy Farrington",
+				"M-C Petropoulos"
+			],
+			"year": 2000,
+			"link": "https://doi.org/10.1016/s0022-3476(00)90067-2",
+			"journal": {
+				"id": "S3774022",
+				"retracted": false
+			},
+			"citations": {
+				"count": 60,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our analyses do not support a causal association between MMR vaccine and autism",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": 498,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2114526368",
+			"title": "Autism and Measles-Mumps-Rubella Vaccination",
+			"override_seed": 0,
+			"authors": [
+				"Frank DeStefano",
+				"Robert T. Chen"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.2165/00023210-200115110-00002",
+			"journal": {
+				"id": "S153913659",
+				"retracted": false
+			},
+			"citations": {
+				"count": 26,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Currently, the weight of the available epidemiological and related evidence does not support a causal association between MMR vaccine, or any other vaccine or vaccine constituent, and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2104912466",
+			"title": "Autism: a novel form of mercury poisoning",
+			"authors": [
+				"Sallie Bernard",
+				"Albert Enayati",
+				"Lyn Redwood",
+				"H Roger"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1054/mehy.2000.1281",
+			"journal": {
+				"id": "S27514295",
+				"retracted": false
+			},
+			"citations": {
+				"count": 360,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_yes",
+				"conclusion": "yes",
+				"indirect": true
+			},
+			"quote": "Due to the extensive parallels between autism and HgP, the likelihood of a causal relationship is great",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "CaseReport",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Non-peer-reviewed journal",
+					"description": "Medical Hypotheses is a not-conventionally-peer-reviewed journal designed to promote unconventional ideas",
+					"link": "https://publications.parliament.uk/pa/cm201012/cmselect/cmsctech/856/856.pdf",
+					"impact": "Negative"
+				},
+				{
+					"title": "Anti-vaccine organization",
+					"description": "All the authors are part of an organization (SafeMinds) dedicated to promoting the idea that mercury and vaccines cause autism",
+					"link": "https://www.wikidoc.org/index.php/Safe_Minds",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Most vaccines now mercury-free",
+					"description": "The paper focuses on the effects of mercury, which has now been removed from most vaccines",
+					"link": "http://doi.org/10.1056/NEJMp078187",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W1889456959",
+			"title": "Do children who become autistic consult more often after MMR vaccination?",
+			"override_seed": 0.3,
+			"authors": [
+				"Stephen DeWilde",
+				"Iain M. Carey",
+				"Nelson G. Richards",
+				"Shona Hilton"
+			],
+			"year": 2001,
+			"link": "https://bjgp.org/content/51/464/226.short",
+			"journal": {
+				"id": "S92370695",
+				"retracted": false
+			},
+			"citations": {
+				"count": 37,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "MMR vaccination does not appear to cause any dramatic decline in the behaviour of children who subsequently become autistic",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 355,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2108531015",
+			"title": "Measles-Mumps-Rubella Vaccine and Autistic Spectrum Disorder: Report From the New Challenges in Childhood Immunizations Conference Convened in Oak Brook, Illinois, June 12–13, 2000",
+			"authors": [
+				"Neal A. Halsey",
+				"Susan Hyman"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1542/peds.107.5.e84",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 154,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The available evidence does not support the hypothesis that MMR vaccine causes autism or associated disorders",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2072979656",
+			"title": "MMR and autism: further evidence against a causal association",
+			"override_seed": 0.75,
+			"authors": [
+				"Paddy Farrington",
+				"Elizabeth Miller",
+				"Brent Taylor"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1016/s0264-410x(01)00097-4",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 231,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our results do not support the hypothesis that MMR or measles-containing vaccines cause autism at any time after vaccination",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 357,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2409590998",
+			"title": "MMR, autism and inflammatory bowel disease: responding to patient concerns using an evidence‐based framework",
+			"override_seed": 0.6,
+			"authors": [
+				"C Raina Maclntyre",
+				"Peter B. Mclntyre"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.5694/j.1326-5377.2001.tb143058.x",
+			"journal": {
+				"id": "S13978405",
+				"retracted": false
+			},
+			"citations": {
+				"count": 5,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no convincing evidence that the MMR vaccine is associated with autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2148194409",
+			"title": "Mumps, measles, and rubella vaccine and the incidence of autism recorded by general practitioners: a time trend analysis",
+			"authors": [
+				"James A. Kaye"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1136/bmj.322.7284.460",
+			"journal": {
+				"id": "S192814187",
+				"retracted": false
+			},
+			"citations": {
+				"count": 388,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "These data provide evidence against a causal association between MMR vaccination and the risk of autism",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": 257728,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2151324155",
+			"title": "No Evidence for A New Variant of Measles-Mumps-Rubella–Induced Autism",
+			"override_seed": 0,
+			"authors": [
+				"Éric Fombonne",
+				"Suniti Chakrabarti"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1542/peds.108.4.e58",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 316,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No evidence was found to support a distinct syndrome of MMR-induced autism",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 262,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2087636597",
+			"title": "Time Trends in Autism and in MMR Immunization Coverage in California",
+			"override_seed": 0.45,
+			"authors": [
+				"Loring G. Dales",
+				"Sandra Jo Hammer",
+				"Natalie J. Smith"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1001/jama.285.9.1183",
+			"journal": {
+				"id": "S172573765",
+				"retracted": false
+			},
+			"citations": {
+				"count": 342,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "These data do not suggest an association between MMR immunization among young children and an increase in autism occurrence",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": 18750,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2073545687",
+			"title": "A Population-Based Study of Measles, Mumps, and Rubella Vaccination and Autism",
+			"authors": [
+				"Kreesten Meldgaard Madsen",
+				"Anders Hviid",
+				"Mogens Vestergaard",
+				"Diana Schendel"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1056/nejmoa021134",
+			"journal": {
+				"id": "S62468778",
+				"retracted": false
+			},
+			"citations": {
+				"count": 703,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study provides strong evidence against the hypothesis that MMR vaccination causes autism",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 537303,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2082489477",
+			"title": "Autism and MMR vaccination in North London; no causal relationship",
+			"override_seed": 0.1,
+			"authors": [
+				"Brent Taylor",
+				"Raghu Lingam",
+				"Andrea Simmons",
+				"Julia Stowe"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1038/sj.mp.4001163",
+			"journal": {
+				"id": "S71149355",
+				"retracted": false
+			},
+			"citations": {
+				"count": 29,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "These results provide no support for a 'new-variant' form of autism associated with bowel problems or regression and further evidence against any involvement of MMR vaccination in the initiation of autism",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 473,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2082353003",
+			"title": "Measles, Mumps and Rubella Vaccine, Autism and Inflammatory Bowel Disease",
+			"authors": [
+				"David Elliman",
+				"Helen Bedford"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.2165/00128072-200204100-00001",
+			"journal": {
+				"id": "S84493273",
+				"retracted": false
+			},
+			"citations": {
+				"count": 13,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Since there is no evidence to suggest that MMR is associated with the development of autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2165196939",
+			"title": "Measles, mumps, and rubella vaccination and bowel problems or developmental regression in children with autism: population study",
+			"override_seed": 0.5,
+			"authors": [
+				"Bruce Taylor"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1136/bmj.324.7334.393",
+			"journal": {
+				"id": "S192814187",
+				"retracted": false
+			},
+			"citations": {
+				"count": 357,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "These findings provide no support for an MMR associated \"new variant\" form of autism with developmental regression",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 473,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2101048460",
+			"title": "MMR and autism: an overview of the debate to date",
+			"override_seed": 0.6,
+			"authors": [
+				"Anastasia T Phelan"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.12968/bjon.2002.11.9.10175",
+			"journal": {
+				"id": "S2751401339",
+				"retracted": false
+			},
+			"citations": {
+				"count": 2,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Despite [...] the overwhelming scientific opinion that argues against a link between MMR vaccine and ASD, the controversy continues",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2110349400",
+			"title": "MMR and autism: moving from controversy toward consensus",
+			"override_seed": 0,
+			"authors": [
+				"Susan Coffin"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1586/14760584.1.2.145",
+			"journal": {
+				"id": "S163950488",
+				"retracted": false
+			},
+			"citations": {
+				"count": 2,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Controlled studies have failed to find an association between recent or any receipt of the MMR vaccine and ASD",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2150042309",
+			"title": "MMR vaccination and autism: is there a link?",
+			"override_seed": 0.35,
+			"authors": [
+				"W. Thompson",
+				"Frank DeStefano"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1517/14740338.1.2.115",
+			"journal": {
+				"id": "S20709540",
+				"retracted": false
+			},
+			"citations": {
+				"count": 9,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Currently, the weight of the available epidemiological and related evidence does not support a causal link between MMR vaccine and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2312964316",
+			"title": "MMR vaccine and autism: a review of the evidence for a causal association",
+			"override_seed": 0.05,
+			"authors": [
+				"Frank DeStefano"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1038/sj.mp.4001181",
+			"journal": {
+				"id": "S71149355",
+				"retracted": false
+			},
+			"citations": {
+				"count": 18,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The weight of the currently available epidemiological and related evidence argues against a causal association",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2122056698",
+			"title": "Neurologic Disorders After Measles-Mumps-Rubella Vaccination",
+			"authors": [
+				"Anna-Mari Mäkelä",
+				"J. Pekka Nuorti",
+				"Heikki Peltola"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1542/peds.110.5.957",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 170,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We did not identify any association between MMR vaccination and encephalitis, aseptic meningitis, or autism",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 535544,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2163223893",
+			"title": "Potential viral pathogenic mechanism for new variant inflammatory bowel disease",
+			"authors": [
+				"V Uhlmann",
+				"C M Martin",
+				"O Sheils",
+				"L Pilkington"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1136/mp.55.2.84",
+			"journal": {
+				"id": "S68106708",
+				"retracted": false
+			},
+			"citations": {
+				"count": 176,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "The data confirm an association between the presence of measles virus and gut pathology in children with developmental disorder",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 161,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": [
+				{
+					"title": "Omitted information",
+					"description": "Crucial information such as participants' vaccination status or the interval between vaccination and biopsy collection was suspiciously omitted from the analysis",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Controversial author",
+					"description": "One of the authors, Andrew Wakefield, was found to have undeclared conflicts of interest and to have manipulated evidence in related work, he is also an anti-vaccine activist",
+					"link": "https://fr.wikipedia.org/wiki/Andrew_Wakefield",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Vaccine VS natural infection",
+					"description": "No analysis has been done to determine whether it was vaccine virus or natural measles virus",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W98043794",
+			"title": "Vaccine adverse events: separating myth from reality.",
+			"authors": [
+				"Sanford R. Kimmel"
+			],
+			"year": 2002,
+			"link": "https://www.aafp.org/pubs/afp/issues/2002/1201/p2113.html",
+			"journal": {
+				"id": "S154286738",
+				"retracted": false
+			},
+			"citations": {
+				"count": 149,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Currently, no substantial evidence links measles-mumps-rubella vaccine to autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2152917714",
+			"title": "Association Between Thimerosal-Containing Vaccine and Autism",
+			"override_seed": 0,
+			"authors": [
+				"Anders Hviid",
+				"Michael Stellfeld",
+				"Jan Wohlfahrt",
+				"Mads Melbye"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1001/jama.290.13.1763",
+			"journal": {
+				"id": "S172573765",
+				"retracted": false
+			},
+			"citations": {
+				"count": 325,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The results do not support a causal relationship between childhood vaccination with thimerosal-containing vaccines and development of autistic-spectrum disorders",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 467450,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2024046899",
+			"title": "Association of Autistic Spectrum Disorder and the Measles, Mumps, and Rubella Vaccine",
+			"override_seed": 0.4,
+			"authors": [
+				"Kumanan Wilson",
+				"Ed Mills",
+				"Cory Ross",
+				"Jessie McGowan"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1001/archpedi.157.7.628",
+			"journal": {
+				"id": "S4210192535",
+				"retracted": false
+			},
+			"citations": {
+				"count": 94,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The current literature does not suggest an association between ASD and the MMR vaccine",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 12
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1996832957",
+			"title": "Autism and thimerosal-containing vaccines",
+			"override_seed": 0,
+			"authors": [
+				"Paul A. Stehr-Green",
+				"Peet Tüll",
+				"Michael Stellfeld",
+				"Preben-Bo Mortenson"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1016/s0749-3797(03)00113-2",
+			"journal": {
+				"id": "S195759676",
+				"retracted": false
+			},
+			"citations": {
+				"count": 174,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The body of existing data [...] is not consistent with the hypothesis that increased exposure to Thimerosal-containing vaccines is responsible for the apparent increase in the rates of autism",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2101662070",
+			"title": "Epidemiology and Possible Causes of Autism",
+			"override_seed": 0.7,
+			"authors": [
+				"Hershel Jick",
+				"James A. Kaye"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1592/phco.23.15.1524.31955",
+			"journal": {
+				"id": "S122731057",
+				"retracted": false
+			},
+			"citations": {
+				"count": 66,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "These results, based on cumulative incidence in consecutive cohorts, provide conclusive evidence that the MMR vaccine could not have caused the dramatic rise in incidence of autism",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 750,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1985761653",
+			"title": "Measles-mumps-rubella vaccine and the development of autism",
+			"override_seed": 0.95,
+			"authors": [
+				"Elizabeth Miller"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1016/s1045-1870(03)00034-7",
+			"journal": {
+				"id": "S108600424",
+				"retracted": false
+			},
+			"citations": {
+				"count": 26,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No epidemiologic evidence suggests an association between MMR vaccination and autism. Moreover, epidemiologic evidence against such an association is compelling",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2164294804",
+			"title": "Measles-Mumps-Rubella Vaccine and the Development of Autism or Inflammatory Bowel Disease: The Controversy Should End",
+			"override_seed": 0.65,
+			"authors": [
+				"Jennifer D’Souza",
+				"Timothy J. Todd"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.5863/1551-6776-8.3.187",
+			"journal": {
+				"id": "S4210193554",
+				"retracted": false
+			},
+			"citations": {
+				"count": 2,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The available epidemiological and scientific evidence does not support a causal association between the MMR vaccine and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2168921834",
+			"title": "Measles, mumps, rubella (MMR) vaccine",
+			"override_seed": 0.3,
+			"authors": [
+				"Anand Prakash Dubey",
+				"Sayantan Banerjee"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1007/bf02723162",
+			"journal": {
+				"id": "S90284741",
+				"retracted": false
+			},
+			"citations": {
+				"count": 10,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Epidemiological studies do not support a causative link between MMR and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2049587614",
+			"title": "MMR and autistic enterocolitis: consistent epidemiological failure to find an association",
+			"override_seed": 0,
+			"authors": [
+				"Éric Fombonne",
+				"Edwin H. Cook"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1038/sj.mp.4001266",
+			"journal": {
+				"id": "S71149355",
+				"retracted": false
+			},
+			"citations": {
+				"count": 34,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "How many more well-powered epidemiological investigations of representative samples will be necessary for this hypothesis to be completely discarded?",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2147918475",
+			"title": "Safety of Thimerosal-Containing Vaccines: A Two-Phased Study of Computerized Health Maintenance Organization Databases",
+			"override_seed": 0.8,
+			"authors": [
+				"Thomas Verstraeten",
+				"Robert L. Davis",
+				"Frank DeStefano",
+				"Tracy A. Lieu"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1542/peds.112.5.1039",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 255,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No consistent significant associations were found between thimerosal-containing vaccines and neurodevelopmental outcomes",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 124170,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2135364553",
+			"title": "There is little evidence that combined vaccination against measles, mumps, and rubella is associated with autism",
+			"override_seed": 0.85,
+			"authors": [
+				"Lee Tidmarsh"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1136/ebmh.6.2.62",
+			"journal": {
+				"id": "S160517820",
+				"retracted": false
+			},
+			"citations": {
+				"count": 3,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The authors found no evidence that the combined measles, mumps and rubella vaccination is associated with the development of autism",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 537303,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2054843027",
+			"title": "Thimerosal and Autism?",
+			"override_seed": 0.2,
+			"authors": [
+				"K. B. Nelson",
+				"Margaret L. Bauman"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1542/peds.111.3.674",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 132,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "On the basis of current evidence, we consider it improbable that thimerosal and autism are linked",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2135807836",
+			"title": "Thimerosal and the Occurrence of Autism: Negative Ecological Evidence From Danish Population-Based Data",
+			"override_seed": 0.6,
+			"authors": [
+				"Kreesten Meldgaard Madsen",
+				"Marlene Briciet Lauritsen",
+				"Carsten Bøcker Pedersen",
+				"Poul Thorsen"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1542/peds.112.3.604",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 240,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our ecological data do not support a correlation between thimerosal-containing vaccines and the incidence of autism",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": 956,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1992761557",
+			"title": "Unintended events following immunization with MMR: a systematic review",
+			"override_seed": 0.3,
+			"authors": [
+				"Tom Jefferson",
+				"Deirdre Price",
+				"Vittorio Demicheli",
+				"Elvira Bianco"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1016/s0264-410x(03)00271-8",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 85,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Exposure to MMR is unlikely to be associated with [...] autism",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 22
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2169567320",
+			"title": "Age at First Measles-Mumps-Rubella Vaccination in Children With Autism and School-Matched Control Subjects: A Population-Based Study in Metropolitan Atlanta",
+			"override_seed": 0.1,
+			"authors": [
+				"Frank DeStefano",
+				"Tanya Karapurkar Bhasin",
+				"W. Thompson",
+				"Marshalyn Yeargin‐Allsopp"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1542/peds.113.2.259",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 131,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Overall, the age at time of first MMR administration was similar among case and control children",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 2448,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2012804740",
+			"title": "Does the MMR triple vaccine cause autism?",
+			"override_seed": 0.35,
+			"authors": [
+				"Nitu Sengupta",
+				"Helen Bedford",
+				"David Elliman",
+				"Robert Booy"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1016/j.ehbc.2004.08.004",
+			"journal": {
+				"id": "S53513426",
+				"retracted": false
+			},
+			"citations": {
+				"count": 362,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is overwhelming evidence that MMR vaccine is not causally related to autism",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 10
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2089329374",
+			"title": "Exploring the evidence surrounding the debate on MMR and autism",
+			"authors": [
+				"Edward Purssell"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.12968/bjon.2004.13.14.14309",
+			"journal": {
+				"id": "S2751401339",
+				"retracted": false
+			},
+			"citations": {
+				"count": 7,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This article looks at the evidence for a link between MMR and autism, finding that while a plausible hypothesis has been constructed, there is no substantive evidence for such a link and that the quality of this evidence is, in many cases, poor",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2004234014",
+			"title": "Immunizations, immunology, and autism",
+			"override_seed": 0,
+			"authors": [
+				"Michael Chez",
+				"Kathleen Chin",
+				"Paul C. Hung"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1016/j.spen.2004.07.005",
+			"journal": {
+				"id": "S8713311",
+				"retracted": false
+			},
+			"citations": {
+				"count": 17,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We summarize from multiple population-based studies and extensive review committee reports that neither immunization nor thimerosal exposure has been conclusively linked to autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2087791351",
+			"title": "MMR Vaccination and Autism",
+			"override_seed": 0,
+			"authors": [
+				"Kreesten Meldgaard Madsen",
+				"Mogens Vestergaard"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.2165/00002018-200427120-00001",
+			"journal": {
+				"id": "S49488433",
+				"retracted": false
+			},
+			"citations": {
+				"count": 38,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "A review of the literature revealed no convincing scientific evidence to support a causal relationship between the use of MMR vaccines and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 10
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2107557001",
+			"title": "MMR vaccination and pervasive developmental disorders: a case-control study",
+			"override_seed": 0.7,
+			"authors": [
+				"Liam Smeeth",
+				"Claire Cook",
+				"Éric Fombonne",
+				"Lisa Heavey"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1016/s0140-6736(04)17020-7",
+			"journal": {
+				"id": "S49861241",
+				"retracted": false
+			},
+			"citations": {
+				"count": 251,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our findings suggest that MMR vaccination is not associated with an increased risk of pervasive developmental disorders",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 5763,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2060711003",
+			"title": "MMR vaccine and autism: an update of the scientific evidence",
+			"override_seed": 0.6,
+			"authors": [
+				"Frank DeStefano",
+				"W. Thompson"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1586/14760584.3.1.19",
+			"journal": {
+				"id": "S163950488",
+				"retracted": false
+			},
+			"citations": {
+				"count": 124,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The evidence now is convincing that the measles-mumps-rubella vaccine does not cause autism or any particular subtypes of autistic spectrum disorder",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2108528265",
+			"title": "Neurotoxic effects of postnatal thimerosal are mouse strain dependent",
+			"override_seed": 0.9,
+			"authors": [
+				"Mady Hornig",
+				"David Chian",
+				"W. Ian Lipkin"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1038/sj.mp.4001529",
+			"journal": {
+				"id": "S71149355",
+				"retracted": false
+			},
+			"citations": {
+				"count": 164,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": true
+			},
+			"quote": "Profound behavioral and neuropathologic disturbances were observed after postnatal thimerosal in SJL/J (H-2ˢ) mice",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": "NotSpecified",
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Most vaccines now mercury-free",
+					"description": "The paper focuses on the effects of mercury, which has now been removed from most vaccines",
+					"link": "http://doi.org/10.1056/NEJMp078187",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2164671692",
+			"title": "No evidence for links between autism, MMR and measles virus",
+			"override_seed": 0.8,
+			"authors": [
+				"W. Chen",
+				"Sabine Landau",
+				"P Sham",
+				"Éric Fombonne"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1017/s0033291703001259",
+			"journal": {
+				"id": "S71144982",
+				"retracted": false
+			},
+			"citations": {
+				"count": 129,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No increased risk of AD following exposures to wild measles and vaccinations with monovalent measles, and Urabe or Jeryl-Lynn variants of MMR was detected",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": 2407,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2110166769",
+			"title": "Relationship Between MMR Vaccine and Autism",
+			"override_seed": 0.95,
+			"authors": [
+				"Kristin C. Klein",
+				"Emily B Diehl"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1345/aph.1d293",
+			"journal": {
+				"id": "S113426163",
+				"retracted": false
+			},
+			"citations": {
+				"count": 23,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Based upon the current literature, it appears that there is no relationship between MMR vaccination and the development of autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 10
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2093914065",
+			"title": "Review: existing epidemiological evidence does not show an association between mumps, measles, and rubella vaccination and autism",
+			"override_seed": 0.45,
+			"authors": [
+				"Susan M. Jack"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1136/ebn.7.1.25",
+			"journal": {
+				"id": "S168740313",
+				"retracted": false
+			},
+			"citations": {
+				"count": 4,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Rates of autistic spectrum disorder (ASD) are not higher in children who receive mumps, measles, and rubella (MMR) vaccination",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 12
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2100810138",
+			"title": "Thimerosal Exposure in Infants and Developmental Disorders: A Prospective Cohort Study in the United Kingdom Does Not Support a Causal Association",
+			"override_seed": 0.6,
+			"authors": [
+				"Jon Heron",
+				"Jean Golding"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1542/peds.2003-1176-l",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 216,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We could find no convincing evidence that early exposure to thimerosal had any deleterious effect on neurologic or psychological outcome",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 12956,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2149103321",
+			"title": "Thimerosal Exposure in Infants and Developmental Disorders: A Retrospective Cohort Study in the United Kingdom Does Not Support a Causal Association",
+			"override_seed": 0.95,
+			"authors": [
+				"Nick Andrews",
+				"Elizabeth Miller",
+				"Andrew J. Grant",
+				"Julia Stowe"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1542/peds.2003-1177-l",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 227,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There was no evidence that thimerosal exposure via DTP/DT vaccines causes neurodevelopmental disorders",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 109863,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2169021074",
+			"title": "Thimerosal-Containing Vaccines and Autistic Spectrum Disorder: A Critical Review of Published Original Data",
+			"override_seed": 0.1,
+			"authors": [
+				"Sarah K. Parker",
+				"Benjamin Schwartz",
+				"James T. Todd",
+				"Larry K. Pickering"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1542/peds.2004-0434",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 229,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Studies do not demonstrate a link between thimerosal-containing vaccines and ASD",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 12
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2109213804",
+			"title": "Aetiology of autism: findings and questions",
+			"override_seed": 0.4,
+			"authors": [
+				"Michael Rutter"
+			],
+			"year": 2005,
+			"link": "https://doi.org/10.1111/j.1365-2788.2005.00676.x",
+			"journal": {
+				"id": "S67377460",
+				"retracted": false
+			},
+			"citations": {
+				"count": 165,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The rate of ASD shows no particular association with either the stopping or starting of MMR [...] . The evidence with respect to a possible association with Thimerosal, a preservative in some vaccines, is much more limited but, again, there is no supporting epidemiological evidence of a causal association",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1975331319",
+			"title": "No effect of MMR withdrawal on the incidence of autism: a total population study",
+			"override_seed": 0.9,
+			"authors": [
+				"Hideo Honda",
+				"Yasuo Shimizu",
+				"Michael Rutter"
+			],
+			"year": 2005,
+			"link": "https://doi.org/10.1111/j.1469-7610.2005.01425.x",
+			"journal": {
+				"id": "S177929781",
+				"retracted": false
+			},
+			"citations": {
+				"count": 299,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "MMR vaccination is most unlikely to be a main cause of ASD",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 31426,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2076695337",
+			"title": "Review: vaccines containing thimerosal are not associated with autistic spectrum disorders in children",
+			"override_seed": 0.45,
+			"authors": [
+				"William M. McMahon"
+			],
+			"year": 2005,
+			"link": "https://doi.org/10.1136/ebmh.8.1.23",
+			"journal": {
+				"id": "S160517820",
+				"retracted": false
+			},
+			"citations": {
+				"count": 3,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no association between thimerosal-containing vaccines and autism in children",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 12
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2128594986",
+			"title": "Immunizations and Autism: A Review of the Literature",
+			"override_seed": 0,
+			"authors": [
+				"Asif Doja",
+				"Wendy Roberts"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1017/s031716710000528x",
+			"journal": {
+				"id": "S3196323",
+				"retracted": false
+			},
+			"citations": {
+				"count": 117,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The overwhelming majority showing no causal association between the Measles-Mumps-Rubella vaccine and autism. The vaccine preservative thimerosal has alternatively been hypothesized to have a possible causal role in autism. Again, no convincing evidence was found to support this claim",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2000764724",
+			"title": "Is There a ‘Regressive Phenotype’ of Autism Spectrum Disorder Associated with the Measles-Mumps-Rubella Vaccine? A CPEA Study",
+			"override_seed": 0,
+			"authors": [
+				"Jennifer Richler",
+				"Rhiannon Luyster",
+				"Susan Risi",
+				"Wan-Ling Hsu"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1007/s10803-005-0070-1",
+			"journal": {
+				"id": "S181451930",
+				"retracted": false
+			},
+			"citations": {
+				"count": 137,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There was no evidence that onset of autistic symptoms or of regression was related to measles-mumps-rubella vaccination",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 382,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1991698391",
+			"title": "MMR-Vaccine and Regression in Autism Spectrum Disorders: Negative Results Presented from Japan",
+			"override_seed": 0.4,
+			"authors": [
+				"Tokio Uchiyama",
+				"Michiko Kurosawa",
+				"Yutaka Inaba"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1007/s10803-006-0157-3",
+			"journal": {
+				"id": "S181451930",
+				"retracted": false
+			},
+			"citations": {
+				"count": 58,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our results cast additional doubt on the hypothesis that developmental regression in children with ASD is associated with MMR",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 904,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2140996251",
+			"title": "Pervasive Developmental Disorders in Montreal, Quebec, Canada: Prevalence and Links With Immunizations",
+			"authors": [
+				"Éric Fombonne",
+				"Rita Zakarian",
+				"Andrew J. Bennett",
+				"Linyan Meng"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1542/peds.2005-2993",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 404,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No relationship was found between pervasive developmental disorder rates and 1- or 2-dose measles-mumps-rubella immunization schedule",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": 27749,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2123149325",
+			"title": "Postlicensure epidemiology of childhood vaccination: the Danish experience",
+			"override_seed": 0.8,
+			"authors": [
+				"Anders Hviid"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1586/14760584.5.5.641",
+			"journal": {
+				"id": "S163950488",
+				"retracted": false
+			},
+			"citations": {
+				"count": 46,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "MMR vaccine and thimerosal-containing vaccines do not increase the risk of autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1994489056",
+			"title": "Vaccines and the changing epidemiology of autism",
+			"override_seed": 0.45,
+			"authors": [
+				"Brent Taylor"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1111/j.1365-2214.2006.00655.x",
+			"journal": {
+				"id": "S140531128",
+				"retracted": false
+			},
+			"citations": {
+				"count": 74,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no scientific evidence that the measles, mumps and rubella (MMR) vaccine or the mercury preservative used in some vaccines plays any part in the aetiology or triggering of autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2146637392",
+			"title": "A Case Series of Children with Apparent Mercury Toxic Encephalopathies Manifesting with Clinical Symptoms of Regressive Autistic Disorders∗",
+			"authors": [
+				"David A. Geier",
+				"Mark R. Geier"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1080/15287390701212141",
+			"journal": {
+				"id": "S85071590",
+				"retracted": false
+			},
+			"citations": {
+				"count": 70,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_yes",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "These previously normally developing children suffered mercury toxic encephalopathies that manifested with clinical symptoms consistent with regressive ASDs",
+			"type": "CaseReport",
+			"on": "Humans",
+			"sample_size": 9,
+			"p_value": {
+				"value": 0.05,
+				"less_than": false
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": [
+				{
+					"title": "Controversial authors",
+					"description": "The authors have a long history of highly criticized and even retracted publications, undisclosed conflicts of interest, dishonesty, data manipulation, and revoked medical licenses",
+					"link": "https://en.wikipedia.org/wiki/Mark_Geier",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Most vaccines now mercury-free",
+					"description": "The paper focuses on the effects of mercury, which has now been removed from most vaccines",
+					"link": "http://doi.org/10.1056/NEJMp078187",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2117762261",
+			"title": "Early Thimerosal Exposure and Neuropsychological Outcomes at 7 to 10 Years",
+			"authors": [
+				"W. Thompson",
+				"Cristofer Price",
+				"Barbara Goodson",
+				"David K. Shay"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1056/nejmoa071434",
+			"journal": {
+				"id": "S62468778",
+				"retracted": false
+			},
+			"citations": {
+				"count": 278,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our study does not support a causal association between early exposure to mercury from thimerosal-containing vaccines and immune globulins and deficits in neuropsychological functioning",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 1047,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W1985888104",
+			"title": "Lack of association between Rh status, Rh immune globulin in pregnancy and autism",
+			"override_seed": 0.2,
+			"authors": [
+				"Judith H. Miles",
+				"Tomoo Takahashi"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1002/ajmg.a.31846",
+			"journal": {
+				"id": "S180901878",
+				"retracted": false
+			},
+			"citations": {
+				"count": 39,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "These findings support the consensus that exposure to ethylmercury in thimerosal is not the cause of the increased prevalence of autism",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 214,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2118638832",
+			"title": "Low-Level Neonatal Thimerosal Exposure: Further Evaluation of Altered Neurotoxic Potential in SJL Mice",
+			"override_seed": 0.1,
+			"authors": [
+				"Robert F. Berman",
+				"Isaac N. Pessah",
+				"Peter R. Mouton",
+				"Deepak Mav"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1093/toxsci/kfm265",
+			"journal": {
+				"id": "S186282544",
+				"retracted": false
+			},
+			"citations": {
+				"count": 54,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Considered together the present results do not indicate pervasive developmental neurotoxicity following vaccine-level thimerosal injections in SJL mice, and provide little if any support for the hypothesis that thimerosal exposure contributes to the etiology of neurodevelopmental disorders",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 187,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1978204736",
+			"title": "Vaccination, seizures and 'vaccine damage'",
+			"override_seed": 0.75,
+			"authors": [
+				"Natasha J. Brown",
+				"Samuel F. Berkovic",
+				"Ingrid E. Scheffer"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1097/wco.0b013e3280555160",
+			"journal": {
+				"id": "S177945262",
+				"retracted": false
+			},
+			"citations": {
+				"count": 52,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The weight of epidemiological evidence does not support a relationship between vaccination and childhood epileptic encephalopathies or autism spectrum disorders",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2132122848",
+			"title": "Vaccines and Autism: Evidence Does Not Support a Causal Association",
+			"override_seed": 0.45,
+			"authors": [
+				"Frank DeStefano"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1038/sj.clpt.6100407",
+			"journal": {
+				"id": "S159852663",
+				"retracted": false
+			},
+			"citations": {
+				"count": 132,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The current scientific evidence does not support a causal association between MMR vaccine or TCVs and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2005250252",
+			"title": "Continuing Increases in Autism Reported to California's Developmental Services System",
+			"override_seed": 0,
+			"authors": [
+				"R. S. Schechter",
+				"Judith K. Grether"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1001/archgenpsychiatry.2007.1",
+			"journal": {
+				"id": "S126359496",
+				"retracted": false
+			},
+			"citations": {
+				"count": 166,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The DDS data do not support the hypothesis that exposure to thimerosal during childhood is a primary cause of autism",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2153492790",
+			"title": "Lack of Association between Measles Virus Vaccine and Autism with Enteropathy: A Case-Control Study",
+			"override_seed": 0.2,
+			"authors": [
+				"Mady Hornig",
+				"Thomas Briese",
+				"Timothy Buie",
+				"Margaret L. Bauman"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1371/journal.pone.0003140",
+			"journal": {
+				"id": "S202381698",
+				"retracted": false
+			},
+			"citations": {
+				"count": 149,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study provides strong evidence against association of autism with persistent MV RNA in the GI tract or MMR exposure",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 38,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "YesButOppositeResults",
+			"notes": []
+		},
+		{
+			"id": "W2149225338",
+			"title": "Measles vaccination and antibody response in autism spectrum disorders",
+			"override_seed": 0.9,
+			"authors": [
+				"Gillian Baird",
+				"Andrew Pickles",
+				"Emily Simonoff",
+				"Tony Charman"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1136/adc.2007.122937",
+			"journal": {
+				"id": "S207294652",
+				"retracted": false
+			},
+			"citations": {
+				"count": 72,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No association between measles vaccination and ASD was shown",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 240,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2094580611",
+			"title": "Regression of language and non‐language skills in pervasive developmental disorders",
+			"override_seed": 0.3,
+			"authors": [
+				"Alain Meilleur",
+				"Éric Fombonne"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1111/j.1365-2788.2008.01134.x",
+			"journal": {
+				"id": "S67377460",
+				"retracted": false
+			},
+			"citations": {
+				"count": 86,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Thimerosal has no specific association with regressive autism",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 135,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1966243205",
+			"title": "Are Neuropathological Conditions Relevant to Ethylmercury Exposure?",
+			"override_seed": 0.55,
+			"authors": [
+				"Michael Aschner",
+				"Sandra Ceccatelli"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1007/s12640-009-9113-2",
+			"journal": {
+				"id": "S95346388",
+				"retracted": false
+			},
+			"citations": {
+				"count": 42,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Methodologically sound and rigorous epidemiological studies have largely failed in finding a significant correlation between thimerosal containing vaccines and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2101343552",
+			"title": "Autism and Vaccination - The Current Evidence",
+			"override_seed": 0.5,
+			"authors": [
+				"Lisa Miller",
+				"Joni Reynolds"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1111/j.1744-6155.2009.00194.x",
+			"journal": {
+				"id": "S150022352",
+				"retracted": false
+			},
+			"citations": {
+				"count": 87,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Rigorous scientific studies have not identified links between autism and either thimerosal-containing vaccine or the measles, mumps, and rubella vaccine",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2145766615",
+			"title": "Neuropsychological Performance 10 Years After Immunization in Infancy With Thimerosal-Containing Vaccines",
+			"authors": [
+				"Alberto Eugenio Tozzi",
+				"Patrizia Bisiacchi",
+				"Vincenza Tarantino",
+				"Barbara De Mei"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1542/peds.2008-0795",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 64,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The lack of consistency among the results of our study [...] suggests that an association between thimerosal exposure through vaccination in infancy and neuropsychological deficits is unlikely or clinically negligible",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 1403,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Randomization and blindness",
+					"description": "This cohort study is based on groups from an earlier clinical trial who were randomly assigned under double-blind conditions",
+					"impact": "VeryPositive"
+				}
+			]
+		},
+		{
+			"id": "W2116891078",
+			"title": "Vaccines and Autism: A Tale of Shifting Hypotheses",
+			"override_seed": 0,
+			"authors": [
+				"Jeffrey S. Gerber",
+				"Paul A. Offit"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1086/596476",
+			"journal": {
+				"id": "S72350973",
+				"retracted": false
+			},
+			"citations": {
+				"count": 332,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Twenty epidemiologic studies have shown that neither thimerosal nor MMR vaccine causes autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 20
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2101325975",
+			"title": "Closer look at autism and the measles-mumps-rubella vaccine",
+			"override_seed": 0.9,
+			"authors": [
+				"Emily Hensley",
+				"Leslie Briars"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1331/japha.2010.10004",
+			"journal": {
+				"id": "S4210228861",
+				"retracted": false
+			},
+			"citations": {
+				"count": 10,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The evidence presented does not show a causal relationship between the MMR vaccine and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 20
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2142378755",
+			"title": "Does thimerosal or other mercury exposure increase the risk for autism? A review of current literature.",
+			"override_seed": 0.3,
+			"authors": [
+				"Stephen Schultz"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.55782/ane-2010-1790",
+			"journal": {
+				"id": "S87096862",
+				"retracted": false
+			},
+			"citations": {
+				"count": 53,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The evidence presented here does not support a causal association between autism and mercury exposure from the preservative thimerosal",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 17
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1965589730",
+			"title": "Hepatitis B Vaccination of Male Neonates and Autism Diagnosis, NHIS 1997–2002",
+			"override_seed": 0,
+			"authors": [
+				"Carolyn M. Gallagher",
+				"Melody S. Goodman"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1080/15287394.2010.519317",
+			"journal": {
+				"id": "S85071590",
+				"retracted": false
+			},
+			"citations": {
+				"count": 69,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "The results of the study indicate that U.S. male neonates vaccinated with the hepatitis B vaccine prior to 1999 incurred a threefold greater risk for autism diagnosis",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 79883,
+			"p_value": {
+				"value": 0.031,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2011584144",
+			"title": "Lack of Association Between Measles-Mumps-Rubella Vaccination and Autism in Children",
+			"override_seed": 0.7,
+			"authors": [
+				"Dorota Mrozek‐Budzyn",
+				"Agnieszka Kiełtyka",
+				"Renata Majewska"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1097/inf.0b013e3181c40a8a",
+			"journal": {
+				"id": "S109369870",
+				"retracted": false
+			},
+			"citations": {
+				"count": 73,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The study provides evidence against the association of autism with either MMR or a single measles vaccine",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 288,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2060010041",
+			"title": "MMR vaccine and autism: Is there a link?",
+			"override_seed": 0.45,
+			"authors": [
+				"Melissa L. Kemp",
+				"Benjamin L. Hart"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1097/01720610-201006000-00012",
+			"journal": {
+				"id": "S4393916186",
+				"retracted": false
+			},
+			"citations": {
+				"count": 6,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The evidence clearly shows that there is no link between vaccination against measles, mumps, and rubella, and an increased risk for the development of a PDD, such as autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 4
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2162067829",
+			"title": "On-time Vaccine Receipt in the First Year Does Not Adversely Affect Neuropsychological Outcomes",
+			"override_seed": 0.8,
+			"authors": [
+				"Michael J. Smith",
+				"Charles R. Woods"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1542/peds.2009-2489",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 29,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study provides the strongest clinical outcomes evidence to date that ontime receipt of vaccines during infancy has no adverse effect on neurodevelopmental outcomes 7 to 10 years later",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 1047,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2119967425",
+			"title": "Prenatal and Infant Exposure to Thimerosal From Vaccines and Immunoglobulins and Risk of Autism",
+			"override_seed": 0.9,
+			"authors": [
+				"Cristofer Price",
+				"W. Thompson",
+				"Barbara Goodson",
+				"Eric Weintraub"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1542/peds.2010-0309",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 169,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study revealed no increased risk of ASD associated with receipt of thimerosal-containing vaccines",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1008,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W164401598",
+			"title": "Prevalence of Pervasive Developmental Disorders among Children at the English Montreal School Board",
+			"override_seed": 0,
+			"authors": [
+				"Tamara Lazoff",
+				"Lihong Zhong",
+				"Tania Piperni",
+				"Éric Fombonne"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1177/070674371005501105",
+			"journal": {
+				"id": "S8901149",
+				"retracted": false
+			},
+			"citations": {
+				"count": 77,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No change in the underlying population trends for PDD rates could be observed in relation to thimerosal discontinuation",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 23635,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W1862484496",
+			"title": "Thimerosal-Containing Vaccines and Autism: A Review of Recent Epidemiologic Studies",
+			"authors": [
+				"Anne M. Hurley",
+				"Mina Tadrous",
+				"Elizabeth Miller"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.5863/1551-6776-15.3.173",
+			"journal": {
+				"id": "S4210193554",
+				"retracted": false
+			},
+			"citations": {
+				"count": 31,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Studies have consistently failed to identify a cause-effect relationship between thimerosal and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W1937278607",
+			"title": "Vaccination of children - a systematic review",
+			"authors": [
+				"Anne K. Örtqvist",
+				"Mats Blennow",
+				"R M Carlsson",
+				"Hanson La"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1111/j.1651-2227.2010.01823.x",
+			"journal": {
+				"id": "S178469169",
+				"retracted": false
+			},
+			"citations": {
+				"count": 18,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "MMR vaccination does not cause autism or autism spectrum disorder",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2093150351",
+			"title": "What causes autism? Exploring the environmental contribution",
+			"override_seed": 0,
+			"authors": [
+				"Philip J. Landrigan"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1097/mop.0b013e328336eb9a",
+			"journal": {
+				"id": "S204673346",
+				"retracted": false
+			},
+			"citations": {
+				"count": 421,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Taken together, this extensive series of high-quality, peer-reviewed studies has failed to show any association between autism and childhood immunization",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W119668077",
+			"title": "What Every Behavior Analyst Should Know About the “MMR Causes Autism” Hypothesis",
+			"authors": [
+				"William H. Ahearn"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1007/bf03391757",
+			"journal": {
+				"id": "S2764616832",
+				"retracted": false
+			},
+			"citations": {
+				"count": 4,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This, in combination with numerous other studies showing no relation between the MMR vaccine and ASDs [...] provides strong evidence against the \"MMR causes autism\" hypothesis",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2115844381",
+			"title": "A Positive Association found between Autism Prevalence and Childhood Vaccination uptake across the U.S. Population",
+			"authors": [
+				"Gayle Delong"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.1080/15287394.2011.573736",
+			"journal": {
+				"id": "S85071590",
+				"retracted": false
+			},
+			"citations": {
+				"count": 30,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_yes",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Evidence presented in this paper suggests a possible link between susceptible children receiving a battery of vaccinations and developing autism or speech disorders",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Anti-vaccine organization",
+					"description": "The author is on the board of directors and research committee of SafeMinds, an anti-vaccine organization",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"id": "W2169212303",
+			"title": "Do aluminum vaccine adjuvants contribute to the rising prevalence of autism?",
+			"override_seed": 0.6,
+			"authors": [
+				"Lucija Tomljenovic",
+				"Christopher A. Shaw"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.1016/j.jinorgbio.2011.08.008",
+			"journal": {
+				"id": "S155362585",
+				"retracted": false
+			},
+			"citations": {
+				"count": 103,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "We show that Al-adjuvanted vaccines may be a significant etiological factor in the rising prevalence of ASD in the Western world",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": {
+				"value": 0.0018,
+				"less_than": false
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": [
+				{
+					"title": "Controversial author",
+					"description": "The second author has a long history of highly criticized and even retracted publications, close relations with several anti-vaccine organizations, and is the senior editor of an anti-vaccine journal",
+					"link": "https://en.wikipedia.org/wiki/Christopher_Shaw_(neuroscientist)",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"id": "W2118808350",
+			"title": "Theoretical aspects of autism: Causes - A review",
+			"override_seed": 0,
+			"authors": [
+				"Helen V. Ratajczak"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.3109/1547691x.2010.545086",
+			"journal": {
+				"id": "S82112532",
+				"retracted": false
+			},
+			"citations": {
+				"count": 171,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": true
+			},
+			"quote": "Documented causes of autism include [...] encephalitis following vaccination",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Strange choices",
+					"description": "For some reason, the author decided to ignore all the large-scale epidemiological studies that refuted this link and instead focus on indirect hypotheses and speculations from controversial authors and anti-vaccine blogs",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"id": "W1980037492",
+			"title": "Dispelling vaccine myths: MMR and considerations for practicing pharmacists",
+			"authors": [
+				"Megan M. Mormann",
+				"Carolyn Gilbertson",
+				"Gary Milavetz",
+				"Susan S. Vos"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1331/japha.2012.11239",
+			"journal": {
+				"id": "S4210228861",
+				"retracted": false
+			},
+			"citations": {
+				"count": 6,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Subsequent well-designed and complete research published on MMR and ASDs has used larger sample sizes and shown no elevated risk between the MMR vaccine and ASDs",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2008817530",
+			"title": "The combined measles, mumps, and rubella vaccines and the total number of vaccines are not associated with development of autism spectrum disorder: The first case–control study in Asia",
+			"authors": [
+				"Yota Uno",
+				"Tokio Uchiyama",
+				"Michiko Kurosawa",
+				"Branko Aleksić"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1016/j.vaccine.2012.01.093",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 52,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There were not any convincing evidences that MMR vaccination and increasing the number of vaccine injections were associated with an increased risk of ASD",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 413,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2118352176",
+			"title": "A two-phase study evaluating the relationship between Thimerosal-containing vaccine administration and the risk for an autism spectrum disorder diagnosis in the United States",
+			"override_seed": 0,
+			"authors": [
+				"David A. Geier",
+				"Brian S. Hooker",
+				"Janet K. Kern",
+				"Paul King"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1186/2047-9158-2-25",
+			"journal": {
+				"id": "S2764798395",
+				"retracted": false
+			},
+			"citations": {
+				"count": 44,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "The present study provides new epidemiological evidence supporting an association between increasing organic-Hg exposure from Thimerosal-containing childhood vaccines and the subsequent risk of an ASD diagnosis",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 25939,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Controversial author",
+					"description": "The first author has a long history of highly criticized and even retracted publications, undisclosed conflicts of interest, dishonesty, data manipulation, and revoked medical licenses",
+					"link": "https://en.wikipedia.org/wiki/Mark_Geier",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Anti-vaccine activist",
+					"description": "The second author is an anti-vaccine activist",
+					"link": "https://en.wikipedia.org/wiki/Brian_Hooker_(bioengineer)",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Most vaccines now mercury-free",
+					"description": "The paper focuses on the effects of mercury, which has now been removed from most vaccines",
+					"link": "http://doi.org/10.1056/NEJMp078187",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W1995205529",
+			"title": "Aluminum in the central nervous system (CNS): toxicity in humans and animals, vaccine adjuvants, and autoimmunity",
+			"override_seed": 0.9,
+			"authors": [
+				"C. Shaw",
+				"Lucija Tomljenovic"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1007/s12026-013-8403-1",
+			"journal": {
+				"id": "S70378559",
+				"retracted": false
+			},
+			"citations": {
+				"count": 259,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "In young children, a highly significant correlation exists between the number of pediatric aluminum-adjuvanted vaccines administered and the rate of autism spectrum disorders",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Controversial author",
+					"description": "The first author has a long history of highly criticized and even retracted publications, close relations with several anti-vaccine organizations, and is the senior editor of an anti-vaccine journal",
+					"link": "https://en.wikipedia.org/wiki/Christopher_Shaw_(neuroscientist)",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"id": "W2120272491",
+			"title": "Increasing Exposure to Antibody-Stimulating Proteins and Polysaccharides in Vaccines Is Not Associated with Risk of Autism",
+			"authors": [
+				"Frank DeStefano",
+				"Cristofer Price",
+				"Eric Weintraub"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1016/j.jpeds.2013.02.001",
+			"journal": {
+				"id": "S3774022",
+				"retracted": false
+			},
+			"citations": {
+				"count": 105,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Increasing exposure to antibody-stimulating proteins and polysaccharides in vaccines during the first 2 years of life was not related to the risk of developing an ASD",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1008,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W85874538",
+			"title": "Response to measles-mumps-rubella vaccine in children with autism spectrum disorders.",
+			"override_seed": 0.9,
+			"authors": [
+				"Ivan Gentile",
+				"Carmela Bravaccio",
+				"Raffaele Bonavolta",
+				"Emanuela Zappulo"
+			],
+			"year": 2013,
+			"link": "https://iv.iiarjournals.org/content/27/3/377.short",
+			"journal": {
+				"id": "S115443242",
+				"retracted": false
+			},
+			"citations": {
+				"count": 7,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our results support the arguments against a role of MMR vaccination as a causal factor or co-factor in development of ASD",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 60,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2078323753",
+			"title": "A meta-analysis of the evidence on the impact of prenatal and early infancy exposures to mercury on autism and attention deficit/hyperactivity disorder in the childhood",
+			"authors": [
+				"Kouichi Yoshimasu",
+				"Chikako Kiyohara",
+				"Shigeki Takemura",
+				"Kunihiko Nakai"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1016/j.neuro.2014.06.007",
+			"journal": {
+				"id": "S115834843",
+				"retracted": false
+			},
+			"citations": {
+				"count": 96,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The current findings suggest that mercury exposures on embryos or early infants from thimerosal containing vaccine are not significantly associated with an increased risk of ASD or ADHD/ADD",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 14
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2163400119",
+			"title": "Measles-mumps-rubella vaccination timing and autism among young african american boys: a reanalysis of CDC data",
+			"override_seed": 0.9,
+			"authors": [
+				"Brian S. Hooker"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1186/2047-9158-3-16",
+			"journal": {
+				"id": "S2764798395",
+				"retracted": true
+			},
+			"citations": {
+				"count": 31,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "The present study provides new epidemiologic evidence showing that African American males receiving the MMR vaccine prior to 24 months of age or 36 months of age are more likely to receive an autism diagnosis",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 2448,
+			"p_value": {
+				"value": 0.0138,
+				"less_than": false
+			},
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Undisclosed conflict of interest",
+					"description": "Translational Neurodegeneration refers to an undeclared competing interest as one of the reasons for the paper's retraction",
+					"link": "https://doi.org/10.1186/2047-9158-3-22",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Statistical analysis validity",
+					"description": "\"Reanalysis\" of data from a study that found no link, case-control data analyzed using a cohort method, lots of subgroups created to increase the chances of false positives",
+					"impact": "Negative"
+				},
+				{
+					"title": "Anti-vaccine activist",
+					"description": "The author is an anti-vaccine activist",
+					"link": "https://en.wikipedia.org/wiki/Brian_Hooker_(bioengineer)",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"id": "W2139237735",
+			"title": "Safety of Vaccines Used for Routine Immunization of US Children: A Systematic Review",
+			"authors": [
+				"Margaret Maglione",
+				"Lopamudra Das",
+				"Laura Raaen",
+				"Alexandria Smith"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1542/peds.2014-1079",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 240,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is strong evidence that MMR vaccine is not associated with autism",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 67
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2025926911",
+			"title": "Vaccines are not associated with autism: An evidence-based meta-analysis of case-control and cohort studies",
+			"authors": [
+				"Luke Taylor",
+				"Amy L. Swerdfeger",
+				"Guy D. Eslick"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1016/j.vaccine.2014.04.085",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 489,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This meta-analysis of five case-control and five cohort studies has found no evidence for the link between vaccination and the\nsubsequent risk of developing autism or autistic spectrum disorder",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 10
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 1266327,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2118818309",
+			"title": "Administration of thimerosal-containing vaccines to infant rhesus macaques does not result in autism-like behavior or neuropathology",
+			"authors": [
+				"Bharathi S. Gadad",
+				"Wenhao Li",
+				"Umar Yazdani",
+				"Stephen Grady"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1073/pnas.1500968112",
+			"journal": {
+				"id": "S125754415",
+				"retracted": false
+			},
+			"citations": {
+				"count": 37,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "These data indicate that administration of TCVs and/or the MMR vaccine to rhesus macaques does not result in neuropathological abnormalities, or aberrant behaviors, like those observed in ASD",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 79,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2169082498",
+			"title": "Autism Occurrence by MMR Vaccine Status Among US Children With Older Siblings With and Without Autism",
+			"override_seed": 0.4,
+			"authors": [
+				"Anjali Jain",
+				"Jaclyn Marshall",
+				"Ami Buikema",
+				"Tim Bancroft"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1001/jama.2015.3077",
+			"journal": {
+				"id": "S172573765",
+				"retracted": false
+			},
+			"citations": {
+				"count": 172,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "MMR vaccine receipt was not associated with an increased risk of ASD at any age",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 95727,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2035969458",
+			"title": "Early exposure to the combined measles-mumps-rubella vaccine and thimerosal-containing vaccines and risk of autism spectrum disorder",
+			"authors": [
+				"Yota Uno",
+				"Tokio Uchiyama",
+				"Michiko Kurosawa",
+				"Branko Aleksić"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1016/j.vaccine.2014.12.036",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 45,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No convincing evidence was found in this study that MMR vaccination and increasing thimerosal dose were associated with an increased risk of ASD onset",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 413,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2005410910",
+			"title": "Examination of the Safety of Pediatric Vaccine Schedules in a Non-Human Primate Model: Assessments of Neurodevelopment, Learning, and Social Behavior",
+			"override_seed": 0,
+			"authors": [
+				"Britni Curtis",
+				"Noelle Liberato",
+				"Megan Rulien",
+				"Kelly Morrisroe"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1289/ehp.1408257",
+			"journal": {
+				"id": "S10446503",
+				"retracted": false
+			},
+			"citations": {
+				"count": 27,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This comprehensive 5-year case-control study [...] provided no consistent evidence of neurodevelopmental deficits or aberrant behavior in vaccinated animals",
+			"type": "CaseControlStudy",
+			"on": "Animals",
+			"sample_size": 79,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2244673070",
+			"title": "Vaccine Safety: Medical Contraindications, Myths, and Risk Communication",
+			"authors": [
+				"Michael J. Smith"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1542/pir.36-6-227",
+			"journal": {
+				"id": "S118940750",
+				"retracted": false
+			},
+			"citations": {
+				"count": 11,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "On the basis of strong evidence, neither measles-mumps-rubella vaccine nor thimerosal causes autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2289472719",
+			"title": "Annual Research Review: The role of the environment in the developmental psychopathology of autism spectrum condition",
+			"authors": [
+				"William Mandy",
+				"Meng‐Chuan Lai"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1111/jcpp.12501",
+			"journal": {
+				"id": "S177929781",
+				"retracted": false
+			},
+			"citations": {
+				"count": 257,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Many large-scale epidemiological studies have refuted the idea that MMR vaccine [...] or thiomersal-containing vaccines [...] act as postnatal risks for the incidence of ASC",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2557810093",
+			"title": "Association Between Influenza Infection and Vaccination During Pregnancy and Risk of Autism Spectrum Disorder",
+			"override_seed": 0.9,
+			"authors": [
+				"Ousseny Zerbo",
+				"Yinge Qian",
+				"Cathleen K. Yoshida",
+				"Bruce Fireman"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1001/jamapediatrics.2016.3609",
+			"journal": {
+				"id": "S14226812",
+				"retracted": false
+			},
+			"citations": {
+				"count": 90,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Maternal influenza infection during pregnancy was not associated with increased ASD risk in this study",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 196929,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2528957557",
+			"title": "Measles and Measles Vaccination",
+			"override_seed": 0.5,
+			"authors": [
+				"Johan C. Bester"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1001/jamapediatrics.2016.1787",
+			"journal": {
+				"id": "S14226812",
+				"retracted": false
+			},
+			"citations": {
+				"count": 131,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no link between the measles vaccination and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 45
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2270516658",
+			"title": "Parental report of vaccine receipt in children with autism spectrum disorder: Do rates differ by pattern of ASD onset?",
+			"override_seed": 0,
+			"authors": [
+				"Robin P. Goin‐Kochel",
+				"Sarah S. Mire",
+				"Allison G. Dempsey",
+				"Rachel H. Fein"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1016/j.vaccine.2016.02.008",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 13,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Findings do not support a connection between regressive-onset ASD and vaccines in this cohort",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 2755,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2596453284",
+			"title": "Environmental risk factors for autism: an evidence-based review of systematic reviews and meta-analyses",
+			"authors": [
+				"Amirhossein Modabbernia",
+				"Eva Velthorst",
+				"Abraham Reichenberg"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1186/s13229-017-0121-4",
+			"journal": {
+				"id": "S1216394",
+				"retracted": false
+			},
+			"citations": {
+				"count": 669,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Current evidence suggests that several environmental factors including vaccination, [...] thimerosal exposure, [...] are unrelated to risk of ASD",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": true,
+				"count": 32
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2594100684",
+			"title": "Increased risk for an atypical autism diagnosis following Thimerosal-containing vaccine exposure in the United States: A prospective longitudinal case-control study in the Vaccine Safety Datalink",
+			"override_seed": 0.9,
+			"authors": [
+				"David A. Geier",
+				"Janet K. Kern",
+				"Mark R. Geier"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1016/j.jtemb.2017.03.005",
+			"journal": {
+				"id": "S165809374",
+				"retracted": false
+			},
+			"citations": {
+				"count": 20,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "The present study provides important epidemiological evidence significantly associating increasing Hg exposure from Thimerosal containing childhood vaccines and the subsequent risk of atypical autism diagnosis",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 15380,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": [
+				{
+					"title": "Controversial authors",
+					"description": "The first and last authors have a long history of highly criticized and even retracted publications, undisclosed conflicts of interest, dishonesty, data manipulation, and revoked medical licenses",
+					"link": "https://en.wikipedia.org/wiki/Mark_Geier",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Questionable bibliography",
+					"description": "The authors describe the extensive literature of large-scale epistemological studies as \"a few epidemiological studies\", and claim that they have been strongly criticized by referring only to their own papers",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Most vaccines now mercury-free",
+					"description": "The paper focuses on the effects of mercury, which has now been removed from most vaccines",
+					"link": "http://doi.org/10.1056/NEJMp078187",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2790159891",
+			"title": "Pilot comparative study on the health of vaccinated and unvaccinated 6- to 12- year old U.S. children",
+			"authors": [
+				"Anthony R. Mawson",
+				"Brian D. Ray",
+				"Azad R. Bhuiyan",
+				"Binu Jacob"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.15761/jts.1000186",
+			"journal": {
+				"id": "S4210228273",
+				"retracted": false
+			},
+			"citations": {
+				"count": 18,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "Vaccination was associated with an apparent synergistic increase in the odds of NDD",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 666,
+			"p_value": {
+				"value": 0.013,
+				"less_than": false
+			},
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Data quality",
+					"description": "All health and vaccination data were based on an anonymous online questionnaire with no clinical verification, and recruitment was conducted through homeschool networks that explicitly mentioned the study’s background",
+					"impact": "Negative"
+				},
+				{
+					"title": "Anti-vaccine funding",
+					"description": "The study was supported by grants from anti-vaccine organizations like Generation Rescue or the Children’s Medical Safety Research Institute",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "Retraction history",
+					"description": "The paper has been retracted twice and is currently available in a predatory journal",
+					"link": "https://retractionwatch.com/2017/05/08/retracted-vaccine-autism-study-republished/",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"title": "Vaccine Adverse Events: Separating Myth from Reality",
+			"override_seed": 0.4,
+			"authors": [
+				"Jeanne P Spencer",
+				"Ruth H Trondsen Pawlowski",
+				"Stephanie Thomas"
+			],
+			"year": 2017,
+			"link": "https://www.aafp.org/pubs/afp/issues/2017/0615/p786.html",
+			"journal": {
+				"id": "S154286738",
+				"retracted": false
+			},
+			"citations": {
+				"count": 168,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Multiple studies have found no causal link between vaccination and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2796325751",
+			"title": "Adverse events of vaccines and the consequences of non-vaccination: a critical review",
+			"override_seed": 0.5,
+			"authors": [
+				"Luana Raposo de Melo Moraes Aps",
+				"Marco Aurélio Floriano Piantola",
+				"Sara Araújo Pereira",
+				"Julia Tavares de Castro"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.11606/s1518-8787.2018052000384",
+			"journal": {
+				"id": "S164583999",
+				"retracted": false
+			},
+			"citations": {
+				"count": 75,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No causal relationship has been demonstrated between the administration of vaccines and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2794301251",
+			"title": "Current status of vaccines in psychiatry - A narrative review",
+			"authors": [
+				"Pooja Patnaik Kuppili",
+				"Harshini Manohar",
+				"Vikas Menon"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1016/j.ajp.2018.02.004",
+			"journal": {
+				"id": "S152361726",
+				"retracted": false
+			},
+			"citations": {
+				"count": 6,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No evidence was found to suggest an association between Autism and MMR /Thiomersal vaccination",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 31
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2887748904",
+			"title": "Prenatal Tetanus, Diphtheria, Acellular Pertussis Vaccination and Autism Spectrum Disorder",
+			"override_seed": 0,
+			"authors": [
+				"Tracy A. Becerra-Culqui",
+				"Darios Getahun",
+				"Vicki Y. Chiu",
+				"Lina S. Sy"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1542/peds.2018-0120",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 29,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Prenatal Tdap vaccination was not associated with an increased risk of autism spectrum disorder (ASD)",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 81993,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2906413783",
+			"title": "The contribution of environmental exposure to the etiology of autism spectrum disorder",
+			"override_seed": 0.1,
+			"authors": [
+				"Sven Bölte",
+				"Sonya Girdler",
+				"Peter B. Marschik"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1007/s00018-018-2988-4",
+			"journal": {
+				"id": "S60362788",
+				"retracted": false
+			},
+			"citations": {
+				"count": 423,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Epidemiological studies demonstrate no evidence for vaccination posing an autism risk",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2971524645",
+			"title": "Measles, Mumps, Rubella Vaccination and Autism",
+			"override_seed": 0,
+			"authors": [
+				"Anders Hviid",
+				"Jørgen Vinsløv Hansen",
+				"Morten Frisch",
+				"Mads Melbye"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.7326/m18-2101",
+			"journal": {
+				"id": "S119722071",
+				"retracted": false
+			},
+			"citations": {
+				"count": 120,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The study strongly supports that MMR vaccination does not increase the risk for autism, does not trigger autism in susceptible children, and is not associated with clustering of autism cases after vaccination",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 657461,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4376522559",
+			"title": "Measles, Mumps, Rubella Vaccination and Autism",
+			"authors": [
+				"Anders Hviid",
+				"Jørgen Vinsløv Hansen",
+				"Morten Frisch",
+				"Mads Melbye"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.7326/m18-2101",
+			"journal": {
+				"id": "S119722071",
+				"retracted": false
+			},
+			"citations": {
+				"count": 3,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The study strongly supports that MMR vaccination does not increase the risk for autism",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 657461,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2912136724",
+			"title": "Principal Controversies in Vaccine Safety in the United States",
+			"override_seed": 0.5,
+			"authors": [
+				"Frank DeStefano",
+				"Heather Monk Bodenstab",
+				"Paul A. Offit"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1093/cid/ciz135",
+			"journal": {
+				"id": "S72350973",
+				"retracted": false
+			},
+			"citations": {
+				"count": 77,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The evidence is strong that MMR vaccine does not cause autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2937418321",
+			"title": "The MMR Vaccine and Autism",
+			"override_seed": 0,
+			"authors": [
+				"Frank DeStefano",
+				"Tom T. Shimabukuro"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1146/annurev-virology-092818-015515",
+			"journal": {
+				"id": "S2764917282",
+				"retracted": false
+			},
+			"citations": {
+				"count": 97,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Several epidemiologic studies have not found an association between MMR vaccination and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3082342448",
+			"title": "Maternal Influenza A(H1N1) Immunization During Pregnancy and Risk for Autism Spectrum Disorder in Offspring",
+			"override_seed": 0.9,
+			"authors": [
+				"Jonas F. Ludvigsson",
+				"Henric Winell",
+				"Sven Sandin",
+				"Sven Cnattingius"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.7326/m20-0167",
+			"journal": {
+				"id": "S119722071",
+				"retracted": false
+			},
+			"citations": {
+				"count": 14,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This large cohort study found no association between maternal H1N1 vaccination during pregnancy and risk for ASD in the offspring",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 69019,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3007186753",
+			"title": "Multiple Risk Factors: A Challenge in the Management of Autism",
+			"override_seed": 0.35,
+			"authors": [
+				"Muhammad Shahid Nadeem",
+				"Fahad A. Al‐Abbasi",
+				"Imran Kazmi",
+				"Bibi Nazia Murtaza"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.2174/1381612826666200226101218",
+			"journal": {
+				"id": "S55674637",
+				"retracted": false
+			},
+			"citations": {
+				"count": 28,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No association of autism could be found with vaccines in recent studies",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3002868191",
+			"title": "The science of vaccine safety: Summary of meeting at Wellcome Trust",
+			"override_seed": 0,
+			"authors": [
+				"Stanley A. Plotkin",
+				"Paul A. Offit",
+				"Frank DeStefano",
+				"Heidi J. Larson"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1016/j.vaccine.2020.01.024",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 26,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No well-designed study ever supported a risk association of autism with vaccines, and the convergence of negative findings across investigators, study designs, samples and countries has been impressive",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3010721747",
+			"title": "Vaccine Safety: Myths and Misinformation",
+			"authors": [
+				"Sarah Geoghegan",
+				"Kevin O’Callaghan",
+				"Paul A. Offit"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.3389/fmicb.2020.00372",
+			"journal": {
+				"id": "S2484704948",
+				"retracted": false
+			},
+			"citations": {
+				"count": 249,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Multiple large scale studies, including a study of half a million children have shown no association between receipt of MMR and risk of autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3171061226",
+			"title": "Review: Vaccine Myth-Buster - Cleaning Up With Prejudices and Dangerous Misinformation",
+			"override_seed": 0.8,
+			"authors": [
+				"Paul Löffler"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.3389/fimmu.2021.663280",
+			"journal": {
+				"id": "S2595292759",
+				"retracted": false
+			},
+			"citations": {
+				"count": 33,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no evidence for an association between vaccines and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3158493829",
+			"title": "Reviewing the association between aluminum adjuvants in the vaccines and autism spectrum disorder",
+			"authors": [
+				"Alberto Boretti"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1016/j.jtemb.2021.126764",
+			"journal": {
+				"id": "S165809374",
+				"retracted": false
+			},
+			"citations": {
+				"count": 16,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_yes",
+				"conclusion": "yes",
+				"indirect": true
+			},
+			"quote": "This review of lines of evidence in support of the hypothesis that aluminum adjuvants in vaccines might be a causal factor in neurodevelopmental disorders concludes that this correlation is clear",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3164160246",
+			"title": "Safety of vaccines used for routine immunization in the United States: An updated systematic review and meta-analysis",
+			"override_seed": 0.9,
+			"authors": [
+				"Courtney A. Gidengil",
+				"Matthew Bidwell Goetz",
+				"Sydne J Newberry",
+				"Margaret Maglione"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1016/j.vaccine.2021.03.079",
+			"journal": {
+				"id": "S27359860",
+				"retracted": false
+			},
+			"citations": {
+				"count": 54,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Strength of evidence was high for no increased risk of autism following measles, mumps, and rubella (MMR) vaccine",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 518
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4200299284",
+			"title": "The myth of vaccination and autism spectrum",
+			"override_seed": 0.3,
+			"authors": [
+				"Lidia V. Gabis",
+				"Odelia Leon Attia",
+				"Mia Goldman",
+				"Noy Barak"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1016/j.ejpn.2021.12.011",
+			"journal": {
+				"id": "S30097070",
+				"retracted": false
+			},
+			"citations": {
+				"count": 32,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Despite the overwhelming data demonstrating that there is no link between vaccines and autism, many parents are hesitant to immunize their children because of the alleged association",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3163446107",
+			"title": "Vaccine safety issues at the turn of the 21st century",
+			"override_seed": 0.9,
+			"authors": [
+				"Laura Conklin",
+				"Anders Hviid",
+				"Walter A. Orenstein",
+				"Andrew J. Pollard"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1136/bmjgh-2020-004898",
+			"journal": {
+				"id": "S2764928273",
+				"retracted": false
+			},
+			"citations": {
+				"count": 41,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The Committee found a lack of association between different vaccinations or ingredients and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4226208059",
+			"title": "Vaccines for measles, mumps, rubella, and varicella in children",
+			"override_seed": 0,
+			"authors": [
+				"Carlo Di Pietrantonj",
+				"Alessandro Rivetti",
+				"Pasquale Marchione",
+				"Maria Grazia Debalini"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1002/14651858.cd004407.pub5",
+			"journal": {
+				"id": "S4210172715",
+				"retracted": false
+			},
+			"citations": {
+				"count": 62,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our review shows that MMR, MMRV and MMR+V vaccines are effective [...] with no evidence of an increased risk of autism",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 138
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": 23480668,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4291635189",
+			"title": "Does Vaccination Increase the Risk of Autism Spectrum Disorder?",
+			"authors": [
+				"Shaza A Mohammed",
+				"Shriya Rajashekar",
+				"Suganya Giri Ravindran",
+				"Meghana Kakarla"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.7759/cureus.27921",
+			"journal": {
+				"id": "S2738950867",
+				"retracted": false
+			},
+			"citations": {
+				"count": 6,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "According to our review, there is no link between the development of ASD and immunization",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 21
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4213109302",
+			"title": "Prenatal Influenza Vaccination or Influenza Infection and Autism Spectrum Disorder in Offspring",
+			"override_seed": 0.9,
+			"authors": [
+				"Tracy A. Becerra-Culqui",
+				"Darios Getahun",
+				"Vicki Y. Chiu",
+				"Lina S. Sy"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1093/cid/ciac101",
+			"journal": {
+				"id": "S72350973",
+				"retracted": false
+			},
+			"citations": {
+				"count": 11,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Prenatal influenza vaccination or infection was not associated with ASD risk in offspring",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 84739,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W4390742471",
+			"title": "Environmental Risk Factors in Autism Spectrum Disorder: A Narrative Review",
+			"authors": [
+				"Konstantin Yenkoyan",
+				"Meri Mkhitaryan",
+				"Geir Bjørklund"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.2174/0109298673252471231121045529",
+			"journal": {
+				"id": "S33159018",
+				"retracted": false
+			},
+			"citations": {
+				"count": 17,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The evidence presented in this paper suggests that certain factors, such as vaccination, [...] are not linked to ASD risk",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4390699772",
+			"title": "Prenatal Exposure to COVID-19 mRNA Vaccine BNT162b2 Induces Autism-Like Behaviors in Male Neonatal Rats: Insights into WNT and BDNF Signaling Perturbations",
+			"authors": [
+				"Mümin Alper Erdoğan",
+				"Orkun Gürbüz",
+				"Mehmet Fatih Bozkurt",
+				"Oytun Erbaş"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1007/s11064-023-04089-2",
+			"journal": {
+				"id": "S174790897",
+				"retracted": false
+			},
+			"citations": {
+				"count": 4,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "Our research provides insights into the effects of the COVID-19 mRNA BNT162b2 vaccine on WNT gene expression, BDNF levels, and certain neurodevelopmental markers in a rat model",
+			"type": "RandomizedControlledTrial",
+			"on": "Animals",
+			"sample_size": 40,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Same with natural infection",
+					"description": "The interpretation given by the authors implies that we should expect the same phenomenon, if not worse, with a real infection",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W4410909094",
+			"title": "The vaccine-autism connection: No link, still debate, and we are failing to learn the lessons",
+			"authors": [
+				"Sheffali Gulati",
+				"Indar Kumar Sharawat",
+				"Prateek Kumar Panda",
+				"Sanjeev V. Kothare"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.1177/13623613251345281",
+			"journal": {
+				"id": "S1824407",
+				"retracted": false
+			},
+			"citations": {
+				"count": 0,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Extensive reviews and large-scale studies have consistently demonstrated no association between autism and the MMR vaccine or vaccine components like thimerosal",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 12
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 2013752,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
 }
