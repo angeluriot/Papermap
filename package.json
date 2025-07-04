@@ -9,6 +9,7 @@
 		"deploy": "node ./scripts/clean.js && docker compose build && docker compose up -d --force-recreate && docker system prune -af --volumes",
 		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker system prune -af --volumes; node ./scripts/clean.js",
 		"search": "node ./scripts/search.js",
+		"find-more": "node ./scripts/find_more.js",
 		"discord": "node ./scripts/discord.js"
 	},
 	"repository": {
