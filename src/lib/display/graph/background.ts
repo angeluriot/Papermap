@@ -102,7 +102,7 @@ export function get_x_axis(stats: GraphStats, font_scale: number = 1): Tick[]
 			ticks.push({
 				start: { x, y: stats.height - s * MAJOR_TICK_SIZE },
 				end: { x, y: stats.height + s * MAJOR_TICK_SIZE },
-				value: Math.round(scaled_i),
+				value: scaled_i,
 				opacity: MAJOR_TICK_OPACITY,
 				width: s * TICK_WIDTH,
 				type: 'major',
@@ -207,7 +207,7 @@ export function get_y_axis(stats: GraphStats, x_axis: Tick[], font_scale: number
 			ticks.push({
 				start: { x: -s * MINOR_TICK_SIZE, y },
 				end: { x: s * MINOR_TICK_SIZE, y },
-				value: Math.round(scaled_i),
+				value: scaled_i,
 				opacity: MINOR_TICK_OPACITY,
 				width: s * TICK_WIDTH,
 				type: 'minor',
@@ -217,7 +217,7 @@ export function get_y_axis(stats: GraphStats, x_axis: Tick[], font_scale: number
 			ticks.push({
 				start: { x: 0, y },
 				end: { x: 0, y },
-				value: Math.round(scaled_i),
+				value: scaled_i,
 				opacity: 0,
 				width: s * TICK_WIDTH,
 				type: null,

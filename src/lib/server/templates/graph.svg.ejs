@@ -5,6 +5,45 @@
 			<circle cx="<%= point.x %>" cy="<%= point.y %>" r="<%= point.size %>" fill="<%= points_color %>" opacity="<%= points_opacity %>"/>
 		<% }); %>
 	</g>
+</g>
+<g class="plot">
+	<% points.forEach(point => { %>
+		<g class="dot">
+			<circle
+				cx="<%= point.x %>"
+				cy="<%= point.y %>"
+				r="<%= point.size %>"
+				fill="<%= point.fill %>"
+				stroke="<%= point.stroke.color %>"
+				stroke-width="<%= point.stroke.width %>"
+				stroke-dasharray="<%= point.stroke.dasharray %>"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</g>
+		<% if (point.label.shown) { %>
+			<text
+				x="<%= point.label.x %>"
+				y="<%= point.label.y %>"
+				fill="<%= point.stroke.color %>"
+				stroke="<%= point.stroke.color %>"
+				stroke-width="<%= text_stroke %>"
+				font-family="<%= font.name %>"
+				font-size="<%= point.label.font_size %>"
+				text-anchor="middle"
+				alignment-baseline="central"
+				dominant-baseline="central"
+			>
+				<% point.label.text.split('\n').forEach((line, i) => { %>
+					<tspan x="<%= point.label.x %>" dy="<%= i === 0 ? -point.label.line_height * 0.5 : point.label.line_height %>">
+						<%= line %>
+					</tspan>
+				<% }); %>
+			</text>
+		<% } %>
+	<% }); %>
+</g>
+<g class="axis">
 	<g class="x-axis">
 		<% x_axis.forEach(tick => { %>
 			<% if (tick.type !== null) { %>
@@ -94,41 +133,4 @@
 			<%= y_title.text %>
 		</text>
 	</g>
-</g>
-<g class="plot">
-	<% points.forEach(point => { %>
-		<g class="dot">
-			<circle
-				cx="<%= point.x %>"
-				cy="<%= point.y %>"
-				r="<%= point.size %>"
-				fill="<%= point.fill %>"
-				stroke="<%= point.stroke.color %>"
-				stroke-width="<%= point.stroke.width %>"
-				stroke-dasharray="<%= point.stroke.dasharray %>"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-		</g>
-		<% if (point.label.shown) { %>
-			<text
-				x="<%= point.label.x %>"
-				y="<%= point.label.y %>"
-				fill="<%= point.stroke.color %>"
-				stroke="<%= point.stroke.color %>"
-				stroke-width="<%= text_stroke %>"
-				font-family="<%= font.name %>"
-				font-size="<%= point.label.font_size %>"
-				text-anchor="middle"
-				alignment-baseline="central"
-				dominant-baseline="central"
-			>
-				<% point.label.text.split('\n').forEach((line, i) => { %>
-					<tspan x="<%= point.label.x %>" dy="<%= i === 0 ? -point.label.line_height * 0.5 : point.label.line_height %>">
-						<%= line %>
-					</tspan>
-				<% }); %>
-			</text>
-		<% } %>
-	<% }); %>
 </g>
