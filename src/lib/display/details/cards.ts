@@ -192,11 +192,13 @@ export function p_value_score_to_emoji(score: number | undefined): string
 
 export function impact_to_emoji(impact: NoteImpact | undefined): string
 {
-	if (impact === NoteImpact.ExtremelyNegative) return	'🤮';
+	if (impact === NoteImpact.ExtremelyNegative) return	'💩';
+	if (impact === NoteImpact.VeryNegative) return		'😨';
 	if (impact === NoteImpact.Negative) return			'👎';
 	if (impact === NoteImpact.Neutral) return			'📝';
 	if (impact === NoteImpact.Positive) return			'👍';
 	if (impact === NoteImpact.VeryPositive) return		'🥰';
+	if (impact === NoteImpact.ExtremelyPositive) return	'🏆';
 	return												'🤷';
 }
 
@@ -213,10 +215,12 @@ export function conflict_of_interest_to_color(conflict_of_interest: ConflictOfIn
 
 export function impact_to_color(impact: NoteImpact | undefined): string
 {
-	if (impact === NoteImpact.ExtremelyNegative) return	COLORS[Color.Red].default;
-	if (impact === NoteImpact.Negative) return			COLORS[Color.Red1H].default;
+	if (impact === NoteImpact.ExtremelyNegative) return	'#ea3f60';
+	if (impact === NoteImpact.VeryNegative) return		'#ee6a4b';
+	if (impact === NoteImpact.Negative) return			'#ed9935';
 	if (impact === NoteImpact.Neutral) return			COLORS[Color.Gray].default;
-	if (impact === NoteImpact.Positive) return			COLORS[Color.Green1H].default;
-	if (impact === NoteImpact.VeryPositive) return		COLORS[Color.Green].default;
+	if (impact === NoteImpact.Positive) return			'#a6d535';
+	if (impact === NoteImpact.VeryPositive) return		'#68ce60';
+	if (impact === NoteImpact.ExtremelyPositive) return	'#24c68c';
 	return												COLORS[Color.Gray].default;
 }

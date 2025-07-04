@@ -55,10 +55,12 @@
 
 	const impact_to_text = {
 		[NoteImpact.ExtremelyNegative]: 'Extremely negative',
-		[NoteImpact.Positive]: 'Positive',
-		[NoteImpact.Neutral]: 'Neutral',
+		[NoteImpact.VeryNegative]: 'Very negative',
 		[NoteImpact.Negative]: 'Negative',
+		[NoteImpact.Neutral]: 'Neutral',
+		[NoteImpact.Positive]: 'Positive',
 		[NoteImpact.VeryPositive]: 'Very positive',
+		[NoteImpact.ExtremelyPositive]: 'Extremely positive',
 	};
 
 	function to_id_text(id: string, plural: boolean): string[]

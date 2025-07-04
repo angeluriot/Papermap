@@ -311,12 +311,16 @@ function score_notes(paper: DataPaper): number[]
 	{
 		if (note.impact === NoteImpact.ExtremelyNegative)
 			scores.push(0.0);
+		else if (note.impact === NoteImpact.VeryNegative)
+			scores.push(0.5);
 		else if (note.impact === NoteImpact.Negative)
 			scores.push(0.8);
 		else if (note.impact === NoteImpact.Positive)
 			scores.push(1.2);
 		else if (note.impact === NoteImpact.VeryPositive)
 			scores.push(1.5);
+		else if (note.impact === NoteImpact.ExtremelyPositive)
+			scores.push(2.0);
 	}
 
 	return scores;
