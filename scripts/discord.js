@@ -86,7 +86,7 @@ async function main()
 	if (discord_username)
 		usernames.push(discord_username);
 
-	if (author !== 'papermap-bot')
+	if (!author.includes('papermap-bot'))
 		usernames.push(author);
 
 	for (const username of usernames)
