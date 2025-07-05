@@ -13,6 +13,7 @@
 	import deepEqual from 'deep-equal';
 	import cloneDeep from 'clone-deep';
 	import Loading from '../loading.svelte';
+	import { get_standard_name } from '../utils';
 
 	let { map = $bindable(), journals = $bindable(), result, paper, hide }: {
 		map: Map,
@@ -62,6 +63,9 @@
 		[NoteImpact.VeryPositive]: 'Very positive',
 		[NoteImpact.ExtremelyPositive]: 'Extremely positive',
 	};
+	const bad_paper_threshold = 0.3;
+	const max_author_bad_papers = 3;
+	const max_journal_bad_papers = 5;
 
 	function to_id_text(id: string, plural: boolean): string[]
 	{
@@ -374,6 +378,67 @@
 		return score_paper(map, journal_data, data_paper, index);
 	}
 
+	function post_checks(final_paper: Paper): boolean
+	{
+		for (const author of final_paper.authors)
+		{
+			let nb = 0;
+
+			for (const paper of Object.values(map.papers))
+			{
+				if (paper.score > bad_paper_threshold)
+					continue;
+
+				for (const other_author of paper.authors)
+					if (get_standard_name(author) === get_standard_name(other_author))
+						nb++;
+			}
+
+			if (nb >= max_author_bad_papers)
+			{
+				if (final_paper.authors.length === 1)
+					alert(`There is already ${nb} papers from this author with a bad score (<${bad_paper_threshold}).`);
+				else
+					alert(`There is already ${nb} papers from ${author} with a bad score (<${bad_paper_threshold}).`);
+
+				return false;
+			}
+		}
+
+		if (final_paper.journal.id !== JournalMissingReason.NotPublished && final_paper.journal.id !== JournalMissingReason.NotFound)
+		{
+			let nb = 0;
+
+			for (const paper of Object.values(map.papers))
+			{
+				if (paper.score > bad_paper_threshold)
+					continue;
+
+				if (final_paper.journal.id === paper.journal.id)
+					nb++;
+			}
+
+			if (nb >= max_journal_bad_papers)
+			{
+				alert(`There is already ${nb} papers from this journal with a bad score (<${bad_paper_threshold}).`);
+				return false;
+			}
+		}
+
+		if (final_paper.journal.id === JournalMissingReason.NotPublished)
+		{
+			if (final_paper.citations.count === 0)
+			{
+				alert(`Preprints need at least one citation from a published paper.`);
+				return false;
+			}
+
+			return confirm(`Preprints need at least one citation from a published paper, is it the case?`);
+		}
+
+		return true;
+	}
+
 	async function add_paper()
 	{
 		if (loading)
@@ -384,6 +449,12 @@
 		let final_paper = await create_paper(-1);
 
 		if (final_paper === null)
+		{
+			loading = false;
+			return;
+		}
+
+		if (!post_checks(final_paper))
 		{
 			loading = false;
 			return;
@@ -411,6 +482,12 @@
 		let final_paper = await create_paper(paper.index);
 
 		if (final_paper === null)
+		{
+			loading = false;
+			return;
+		}
+
+		if (!post_checks(final_paper))
 		{
 			loading = false;
 			return;

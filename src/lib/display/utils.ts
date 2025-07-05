@@ -57,3 +57,15 @@ export function cut_in_half(text: string): string[]
 
 	return cuts[0].result;
 }
+
+
+export function get_standard_name(author: string): string
+{
+	const names = author.split(' ');
+	let result = '';
+
+	for (let i = 0; i < names.length - 1; i++)
+		result += names[i][0].toUpperCase();
+
+	return names[names.length - 1] + ' ' + result;
+}

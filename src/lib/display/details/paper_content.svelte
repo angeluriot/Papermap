@@ -4,7 +4,7 @@
 	import type { Map } from '$lib/types/map';
 	import { Edit, JournalMissingReason, MissingReason, type Paper, ReviewType, ReviewedPapersType, ReviewedStudiesOn, StudyOn } from '$lib/types/paper';
 	import * as cards from './cards';
-	import { float_to_text, int_to_text } from '../utils';
+	import { float_to_text, get_standard_name, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
 	import Link from '$lib/svgs/link.svg';
 
@@ -53,29 +53,18 @@
 		return cards.color_to_shadow(color) + '50';
 	}
 
-	function get_name(author: string): string
-	{
-		const names = author.split(' ');
-		let result = '';
-
-		for (let i = 0; i < names.length - 1; i++)
-			result += names[i][0].toUpperCase();
-
-		return names[names.length - 1] + ' ' + result;
-	}
-
 	const authors = $derived.by(() =>
 	{
 		if (paper.authors.length === 1)
-			return get_name(paper.authors[0]);
+			return get_standard_name(paper.authors[0]);
 
 		if (paper.authors.length === 2)
-			return get_name(paper.authors[0]) + ' & ' + get_name(paper.authors[1]);
+			return get_standard_name(paper.authors[0]) + ' & ' + get_standard_name(paper.authors[1]);
 
 		if (paper.authors.length === 3)
-			return get_name(paper.authors[0]) + ', ' + get_name(paper.authors[1]) + ' & ' + get_name(paper.authors[2]);
+			return get_standard_name(paper.authors[0]) + ', ' + get_standard_name(paper.authors[1]) + ' & ' + get_standard_name(paper.authors[2]);
 
-		return get_name(paper.authors[0]) + ', ' + get_name(paper.authors[1]) + ', ' + get_name(paper.authors[2]) + ', et al.';
+		return get_standard_name(paper.authors[0]) + ', ' + get_standard_name(paper.authors[1]) + ', ' + get_standard_name(paper.authors[2]) + ', et al.';
 	});
 
 	const year = $derived(paper.year);
