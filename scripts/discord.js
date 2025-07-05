@@ -57,8 +57,8 @@ async function send_message(client, channel_id, message)
 
 function get_discord_username(body)
 {
-	const match = body.match(/## 👤 Discord\n`([^`]+)`/);
-	return match ? match[1].trim() : null;
+	let match = body.match(/## 👤 Discord\n`([^`]+)`/);
+	return match ? match[1].trim().slice(1).trim() : null;
 }
 
 

@@ -23,8 +23,13 @@ export function get_new_map_issue(data: NewMapRequest): { title: string, descrip
 	if (data.comment && data.comment.trim().length > 0)
 		description += '\n\n## 💬 Comment\n' + data.comment.trim();
 
-	if (data.discord_username && data.discord_username.trim().length > 0)
-		description += '\n\n## 👤 Discord\n' + '`' + data.discord_username.trim() + '`';
+	let discord_username = data.discord_username ? data.discord_username.trim() : null;
+
+	if (discord_username && (discord_username.startsWith('@') || discord_username.startsWith('#')))
+		discord_username = discord_username.slice(1).trim();
+
+	if (discord_username && discord_username.length > 0)
+		description += '\n\n## 👤 Discord\n' + '`@' + discord_username + '`';
 
 	return { title, description };
 }

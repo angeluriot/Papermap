@@ -52,8 +52,13 @@ export function get_pr_texts(map: DataMap, map_id: string, comment: string | und
 	if (comment && comment.trim().length > 0)
 		description += '\n\n## 💬 Comment\n' + comment.trim();
 
-	if (discord_username && discord_username.trim().length > 0)
-		description += '\n\n## 👤 Discord\n' + '`' + discord_username.trim() + '`';
+	let final_username = discord_username ? discord_username.trim() : null;
+
+	if (final_username && (final_username.startsWith('@') || final_username.startsWith('#')))
+		final_username = final_username.slice(1).trim();
+
+	if (final_username && final_username.length > 0)
+		description += '\n\n## 👤 Discord\n' + '`@' + final_username + '`';
 
 	return { title, description };
 }
