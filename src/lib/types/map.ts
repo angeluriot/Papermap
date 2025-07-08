@@ -41,9 +41,9 @@ interface BaseMap
 		},
 	};
 	type: {
-		no_causality: boolean,
-		no_random: boolean,
 		no_blind: boolean,
+		no_random: boolean,
+		no_causality: boolean,
 		any: boolean,
 	}
 	on: {

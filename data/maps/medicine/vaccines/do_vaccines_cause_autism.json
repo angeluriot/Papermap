@@ -142,9 +142,9 @@
 		}
 	},
 	"type": {
-		"no_causality": false,
-		"no_random": false,
 		"no_blind": false,
+		"no_random": false,
+		"no_causality": false,
 		"any": false
 	},
 	"on": {

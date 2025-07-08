@@ -1,0 +1,409 @@
+{
+	"draft": false,
+	"emoji": "🤖",
+	"question": {
+		"short": "What are the effects of sexual education on children?",
+		"long": "What are the effects of sexual education programs on children?"
+	},
+	"description": "Results from studies evaluating the benefit-risk balance of sexual education programs for children aimed at preventing child sexual abuse.",
+	"tags": [
+		"education",
+		"prevention",
+		"child",
+		"children",
+		"sexual abuse"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of sexual education programs",
+			"color": "Gray",
+			"coherence": {
+				"negative": 0.5,
+				"negative_but_small_effect": 0.5,
+				"negative_but_low_confidence": 0.5,
+				"negative_but_mixed": 0.5,
+				"mixed": 0.5,
+				"no_effect": 0.5,
+				"positive_but_mixed": 0.5,
+				"positive_but_low_confidence": 0.5,
+				"positive_but_small_effect": 0.5,
+				"positive": 0.5
+			}
+		},
+		"negative": {
+			"emoji": "👎",
+			"text": "Negative",
+			"description": "The literature suggests that sexual education programs mostly have negative effects on children",
+			"color": "Red",
+			"coherence": {
+				"negative": 1,
+				"negative_but_small_effect": 1,
+				"negative_but_low_confidence": 1,
+				"negative_but_mixed": 1,
+				"mixed": 0.5,
+				"no_effect": 0.5,
+				"positive_but_mixed": 0,
+				"positive_but_low_confidence": 0,
+				"positive_but_small_effect": 0,
+				"positive_unlike_literature": 0
+			}
+		},
+		"towards_negative": {
+			"emoji": "⬅️",
+			"text": "Towards negative",
+			"description": "The literature suggests that sexual education programs may have negative effects on children, but more research is needed",
+			"color": "Red1H",
+			"coherence": {
+				"negative": 0.75,
+				"negative_but_small_effect": 0.75,
+				"negative_but_low_confidence": 0.75,
+				"negative_but_mixed": 0.75,
+				"mixed": 0.75,
+				"no_effect": 0.75,
+				"positive_but_mixed": 0.25,
+				"positive_but_low_confidence": 0.25,
+				"positive_but_small_effect": 0.25,
+				"positive_unlike_literature": 0.25
+			}
+		},
+		"no_effect": {
+			"emoji": "🫥",
+			"text": "No effect",
+			"description": "The literature suggests that sexual education programs have no significant effect on children",
+			"color": "Gray",
+			"coherence": {
+				"negative": 0.5,
+				"negative_but_small_effect": 0.75,
+				"negative_but_low_confidence": 0.75,
+				"negative_but_mixed": 0.75,
+				"mixed": 1,
+				"no_effect": 1,
+				"positive_but_mixed": 0.75,
+				"positive_but_low_confidence": 0.75,
+				"positive_but_small_effect": 0.75,
+				"positive": 0.5
+			}
+		},
+		"towards_positive": {
+			"emoji": "➡️",
+			"text": "Towards positive",
+			"description": "The literature suggests that sexual education programs may have positive effects on children, but more research is needed",
+			"color": "Green1H",
+			"coherence": {
+				"negative_unlike_literature": 0.25,
+				"negative_but_small_effect": 0.25,
+				"negative_but_low_confidence": 0.25,
+				"negative_but_mixed": 0.25,
+				"mixed": 0.75,
+				"no_effect": 0.75,
+				"positive_but_mixed": 0.75,
+				"positive_but_low_confidence": 0.75,
+				"positive_but_small_effect": 0.75,
+				"positive": 0.75
+			}
+		},
+		"positive": {
+			"emoji": "👍",
+			"text": "Positive",
+			"description": "The literature suggests that sexual education programs mostly have positive effects on children",
+			"color": "Green",
+			"coherence": {
+				"negative_unlike_literature": 0,
+				"negative_but_small_effect": 0,
+				"negative_but_low_confidence": 0,
+				"negative_but_mixed": 0,
+				"mixed": 0.5,
+				"no_effect": 0.5,
+				"positive_but_mixed": 1,
+				"positive_but_low_confidence": 1,
+				"positive_but_small_effect": 1,
+				"positive": 1
+			}
+		}
+	},
+	"conclusion_groups": {
+		"negative": {
+			"text": "Negative",
+			"color": "Red"
+		},
+		"negative_but": {
+			"text": "Negative but...",
+			"color": "Red1H"
+		},
+		"mixed": {
+			"text": "Mixed",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"no_effect": {
+			"text": "No effect",
+			"color": "Gray"
+		},
+		"positive_but": {
+			"text": "Positive but...",
+			"color": "Green1H"
+		},
+		"positive": {
+			"text": "Positive",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"negative": {
+			"group": "negative",
+			"emoji": "👎",
+			"text": "Negative",
+			"description": "The results of the paper suggest that the AI systems tested mostly have a negative impact on education",
+			"p_value": true
+		},
+		"negative_unlike_literature": {
+			"group": "negative_but",
+			"emoji": "↩️",
+			"text": "Negative unlike literature",
+			"description": "The results of the paper suggest that the AI systems tested mostly have a negative impact on education, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"negative_but_small_effect": {
+			"group": "negative_but",
+			"emoji": "🤏",
+			"text": "Negative but small effect",
+			"description": "The results of the paper suggest that the AI systems tested may have a small negative impact on education",
+			"p_value": true
+		},
+		"negative_but_low_confidence": {
+			"group": "negative_but",
+			"emoji": "🤔",
+			"text": "Negative but low confidence",
+			"description": "The results of the paper suggest that the AI systems tested may have a negative impact on education, but the evidence is not strong",
+			"p_value": true
+		},
+		"negative_but_mixed": {
+			"group": "negative_but",
+			"emoji": "🔀",
+			"text": "Negative but mixed results",
+			"description": "The results of the paper suggest that the AI systems tested mostly have a negative impact on education, but can also have positive effects",
+			"p_value": false
+		},
+		"mixed": {
+			"group": "mixed",
+			"emoji": "🔀",
+			"text": "Mixed results",
+			"description": "The results of the paper suggest that the AI systems tested have both positive and negative impacts on education",
+			"p_value": false
+		},
+		"no_effect": {
+			"group": "no_effect",
+			"emoji": "🫥",
+			"text": "No effect",
+			"description": "The results of the paper suggest that the AI systems tested have no significant impact on education",
+			"p_value": false
+		},
+		"positive_but_mixed": {
+			"group": "positive_but",
+			"emoji": "🔀",
+			"text": "Positive but mixed results",
+			"description": "The results of the paper suggest that the AI systems tested mostly have a positive impact on education, but can also have negative effects",
+			"p_value": true
+		},
+		"positive_but_low_confidence": {
+			"group": "positive_but",
+			"emoji": "🤔",
+			"text": "Positive but low confidence",
+			"description": "The results of the paper suggest that the AI systems tested may have a positive impact on education, but the evidence is not strong",
+			"p_value": true
+		},
+		"positive_but_small_effect": {
+			"group": "positive_but",
+			"emoji": "🤏",
+			"text": "Positive but small effect",
+			"description": "The results of the paper suggest that the AI systems tested may have a small positive impact on education",
+			"p_value": true
+		},
+		"positive_unlike_literature": {
+			"group": "positive_but",
+			"emoji": "↪️",
+			"text": "Positive unlike literature",
+			"description": "The results of the paper suggest that the AI systems tested mostly have a positive impact on education, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"positive": {
+			"group": "positive",
+			"emoji": "👍",
+			"text": "Positive",
+			"description": "The results of the paper suggest that the AI systems tested mostly have a positive impact on education",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_blind": true,
+		"no_random": false,
+		"no_causality": false,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": [
+		{
+			"id": "W4405157165",
+			"title": "A systematic review of literature reviews on artificial intelligence in education (AIED): a roadmap to a future research agenda",
+			"authors": [
+				"Muhammad Yasir Mustafa",
+				"Ahmed Tlili",
+				"Γεώργιος Λαμπρόπουλος",
+				"Ronghuai Huang"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1186/s40561-024-00350-5",
+			"journal": {
+				"id": "S2494786546",
+				"retracted": false
+			},
+			"citations": {
+				"count": 10,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive_but_mixed",
+				"indirect": false
+			},
+			"quote": "The analysis of AIED literature reviews has identifed signifcant advantages that AIED can bring to education. At the same time, there are various challenges that need the attention of researchers and practitioners",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": true,
+				"count": 143
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Editorial board members",
+					"description": "Two of the paper's authors serve on the journal's editorial board, which could influence publication decisions",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W4396766974",
+			"title": "Artificial intelligence in education: A systematic literature review",
+			"authors": [
+				"Shan Wang",
+				"Fang Wang",
+				"Zhen Zhu",
+				"Jingxuan Wang"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1016/j.eswa.2024.124167",
+			"journal": {
+				"id": "S13144211",
+				"retracted": false
+			},
+			"citations": {
+				"count": 90,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Several studies have highlighted the significant positive impact of AI technology on students’ academic performance",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 125
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4400128681",
+			"title": "The impact of large language models on higher education: exploring the connection between AI and Education 4.0",
+			"authors": [
+				"Iris Cristina Peláez‐Sánchez",
+				"Davis Velarde-Camaqui",
+				"Leonardo David Glasserman‐Morales"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.3389/feduc.2024.1392091",
+			"journal": {
+				"id": "S2596526815",
+				"retracted": false
+			},
+			"citations": {
+				"count": 10,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The findings underscore the significant potential of LLMs to enrich higher education, aligning with Education 4.0 by fostering more autonomous, collaborative, and interactive learning",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 83
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4410129808",
+			"title": "The effect of ChatGPT on students’ learning performance, learning perception, and higher-order thinking: insights from a meta-analysis",
+			"authors": [
+				"Jin Wang",
+				"Wenxiang Fan"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.1057/s41599-025-04787-y",
+			"journal": {
+				"id": "S4210206302",
+				"retracted": false
+			},
+			"citations": {
+				"count": 0,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The results indicate that ChatGPT has a large positive impact on improving learning performance",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 51
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
+}

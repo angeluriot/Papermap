@@ -25,6 +25,7 @@ export const EMOJI_NAMES = {
 	'😨': 'fearful-face',
 	'😠': 'angry-face',
 	'💩': 'pile-of-poo',
+	'🤖': 'robot',
 
 	// People
 	'🤏': 'pinching-hand',
@@ -52,6 +53,7 @@ export const EMOJI_NAMES = {
 	'🌍': 'globe-showing-europe-africa',
 	'🌐': 'globe-with-meridians',
 	'🏠': 'house',
+	'🏫': 'school',
 
 	// Objects
 	'⏳': 'hourglass-not-done',
@@ -83,6 +85,7 @@ export const EMOJI_NAMES = {
 	'⬅️': 'left-arrow',
 	'↪️': 'left-arrow-curving-right',
 	'↩️': 'right-arrow-curving-left',
+	'🔀': 'shuffle-tracks-button',
 }
 
 

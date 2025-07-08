@@ -5,16 +5,29 @@ import { get_uuid, ratio } from '$lib/utils';
 
 
 const TYPE_SCORES = {
-	no_causality: {
-		[MissingReason.NoAccess]:						0.6,
+	default: {
+		[MissingReason.NoAccess]:						0.2,
 		[MissingReason.NotSpecified]:					0.0,
 		[MissingReason.NotApplicable]:					1.0,
 		[PaperType.CaseReport]:							0.0,
-		[PaperType.EcologicalStudy]:					0.6,
-		[PaperType.CrossSectionalStudy]:				0.6,
-		[PaperType.CaseControlStudy]:					0.6,
-		[PaperType.CohortStudy]:						0.8,
-		[PaperType.ClinicalTrial]:						0.8,
+		[PaperType.EcologicalStudy]:					0.2,
+		[PaperType.CrossSectionalStudy]:				0.2,
+		[PaperType.CaseControlStudy]:					0.2,
+		[PaperType.CohortStudy]:						0.3,
+		[PaperType.ClinicalTrial]:						0.3,
+		[PaperType.RandomizedControlledTrial]:			0.7,
+		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
+	},
+	no_blind: {
+		[MissingReason.NoAccess]:						0.3,
+		[MissingReason.NotSpecified]:					0.0,
+		[MissingReason.NotApplicable]:					1.0,
+		[PaperType.CaseReport]:							0.0,
+		[PaperType.EcologicalStudy]:					0.3,
+		[PaperType.CrossSectionalStudy]:				0.3,
+		[PaperType.CaseControlStudy]:					0.3,
+		[PaperType.CohortStudy]:						0.4,
+		[PaperType.ClinicalTrial]:						0.4,
 		[PaperType.RandomizedControlledTrial]:			1.0,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
@@ -31,30 +44,17 @@ const TYPE_SCORES = {
 		[PaperType.RandomizedControlledTrial]:			1.0,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
-	no_blind: {
-		[MissingReason.NoAccess]:						0.3,
+	no_causality: {
+		[MissingReason.NoAccess]:						0.6,
 		[MissingReason.NotSpecified]:					0.0,
 		[MissingReason.NotApplicable]:					1.0,
 		[PaperType.CaseReport]:							0.0,
-		[PaperType.EcologicalStudy]:					0.3,
-		[PaperType.CrossSectionalStudy]:				0.3,
-		[PaperType.CaseControlStudy]:					0.3,
-		[PaperType.CohortStudy]:						0.4,
-		[PaperType.ClinicalTrial]:						0.4,
+		[PaperType.EcologicalStudy]:					0.6,
+		[PaperType.CrossSectionalStudy]:				0.6,
+		[PaperType.CaseControlStudy]:					0.6,
+		[PaperType.CohortStudy]:						0.8,
+		[PaperType.ClinicalTrial]:						0.8,
 		[PaperType.RandomizedControlledTrial]:			1.0,
-		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
-	},
-	default: {
-		[MissingReason.NoAccess]:						0.2,
-		[MissingReason.NotSpecified]:					0.0,
-		[MissingReason.NotApplicable]:					1.0,
-		[PaperType.CaseReport]:							0.0,
-		[PaperType.EcologicalStudy]:					0.2,
-		[PaperType.CrossSectionalStudy]:				0.2,
-		[PaperType.CaseControlStudy]:					0.2,
-		[PaperType.CohortStudy]:						0.3,
-		[PaperType.ClinicalTrial]:						0.3,
-		[PaperType.RandomizedControlledTrial]:			0.7,
 		[PaperType.BlindedRandomizedControlledTrial]:	1.0,
 	},
 }
@@ -104,7 +104,7 @@ const COEFS = {
 	p_value: 0.1,
 	conflict_of_interest: 0.6,
 	notes: 0.5,
-	publication_bias: 0.2,
+	publication_bias: 0.1,
 }
 
 
