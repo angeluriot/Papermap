@@ -40,9 +40,9 @@
 
 		let query = (
 			(journal.title.trim() + ' Scientific Journal')
-			.replace(/[^a-zA-Z\s]+/g, '')
+			.replaceAll(/[^a-zA-Z\s]+/g, '')
 			.trim()
-			.replace(/[\s]+/g, '+')
+			.replaceAll(/[\s]+/g, '+')
 		);
 
 		return `http://www.google.com/search?q=${query}&btnI=I`;

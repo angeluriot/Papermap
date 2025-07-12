@@ -25,6 +25,7 @@ export const EMOJI_NAMES = {
 	'😨': 'fearful-face',
 	'😠': 'angry-face',
 	'💩': 'pile-of-poo',
+	'🤖': 'robot',
 
 	// People
 	'🤏': 'pinching-hand',
@@ -52,9 +53,11 @@ export const EMOJI_NAMES = {
 	'🌍': 'globe-showing-europe-africa',
 	'🌐': 'globe-with-meridians',
 	'🏠': 'house',
+	'🏫': 'school',
 
 	// Objects
 	'⏳': 'hourglass-not-done',
+	'🧸': 'teddy-bear',
 	'🎛️': 'control-knobs',
 	'📸': 'camera-with-flash',
 	'🔍': 'magnifying-glass-tilted-left',
@@ -79,10 +82,12 @@ export const EMOJI_NAMES = {
 	'💊': 'pill',
 
 	// Symbols
+	'🚻': 'restroom',
 	'➡️': 'right-arrow',
 	'⬅️': 'left-arrow',
 	'↪️': 'left-arrow-curving-right',
 	'↩️': 'right-arrow-curving-left',
+	'🔀': 'shuffle-tracks-button',
 }
 
 
@@ -95,7 +100,7 @@ export async function load_svgs()
 		try
 		{
 			let svg = await fs.readFile(join(C.LIB_DIR, 'server', 'emojis', 'svgs', `${name}.svg`), 'utf-8');
-			svg = svg.replace(/<\?xml[\s\S]*?\?>\s*/g, '');
+			svg = svg.replaceAll(/<\?xml[\s\S]*?\?>\s*/g, '');
 			svgs[emoji] = svg.slice(0, 5) + 'width="100%" height="100%" ' + svg.slice(5);
 		}
 

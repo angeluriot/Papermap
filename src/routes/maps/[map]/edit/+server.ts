@@ -41,7 +41,7 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 		const { title, description } = get_pr_texts(map, map_id, data.comment, data.discord_username, data.edits)
 
 		const pr_url = await create_pull_request({
-			branch_name: `edit/${map_id.replace('_', '-')}`,
+			branch_name: `edit/${map_id.replaceAll('_', '-')}`,
 			file_path: `data/maps/${map.groups.map(group => group.id).join('/')}/${map.id}.json`,
 			new_content: JSON.stringify(content, null, '\t') + '\n',
 			commit_message: title,

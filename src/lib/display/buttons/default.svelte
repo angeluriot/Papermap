@@ -11,7 +11,7 @@
 
 	let { map, hash, edit_mode = $bindable() }: { map: Map, hash: string, edit_mode: boolean } = $props();
 
-	const file_name = map.question.short.toLowerCase().replace(/\s+/g, '-').replace('?', '').replace('.', '');
+	const file_name = map.question.short.toLowerCase().replaceAll(/\s+/g, '-').replaceAll('?', '').replaceAll('.', '');
 	const file_url = `/maps/${map.id}/`;
 	let copied = $state(false);
 	let timeouts: NodeJS.Timeout[] = $state([]);

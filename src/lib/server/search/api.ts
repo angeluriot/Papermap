@@ -245,7 +245,7 @@ export async function openalex_search(doi?: string, title?: string, year?: numbe
 		if (title && year)
 		{
 			let query = new URLSearchParams({
-				'filter': `title.search:"${title}",publication_year:${year.toString()}`,
+				'filter': `title.search:"${title.replaceAll(',', '')}",publication_year:${year.toString()}`,
 				'mailto': C.OPENALEX_EMAIL ?? '',
 				'per-page': '2',
 				'page': '1',

@@ -251,10 +251,10 @@
 
 	function clean_quote(quote: string): string
 	{
-		let cleaned_quote = quote.replace('[...]', ' [...] ').replace('\n', ' ').trim();
+		let cleaned_quote = quote.replaceAll('[...]', ' [...] ').replaceAll('\n', ' ').trim();
 
 		while (cleaned_quote.includes('  '))
-			cleaned_quote = cleaned_quote.replace('  ', ' ');
+			cleaned_quote = cleaned_quote.replaceAll('  ', ' ');
 
 		if (cleaned_quote.startsWith('[...]'))
 			cleaned_quote = cleaned_quote.slice(5).trim();
@@ -520,7 +520,7 @@
 			{#if paper == null}
 				Add a new paper
 			{:else}
-				Edit "{get_label(paper).replace('\n', ' ').trim()}"
+				Edit "{get_label(paper).replaceAll('\n', ' ').trim()}"
 			{/if}
 		</h1>
 		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/paper.md" target="_blank" class="help flex-center-row">

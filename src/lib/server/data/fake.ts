@@ -115,7 +115,7 @@ export function generate_group(): Group
 	const group_name = faker.lorem.words({ min: 1, max: 3 });
 
 	return {
-		id: group_name.toLowerCase().replace(/ /g, '_'),
+		id: group_name.toLowerCase().replaceAll(/ /g, '_'),
 		emoji: random_choice(Object.keys(EMOJI_NAMES)),
 		name: group_name[0].toUpperCase() + group_name.slice(1),
 		draft: false,
@@ -126,7 +126,7 @@ export function generate_group(): Group
 export function generate_map_title(): MapTitle
 {
 	const short = faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1);
-	const id = short.toLowerCase().replace(/ /g, '_')
+	const id = short.toLowerCase().replaceAll(/ /g, '_')
 
 	return {
 		groups: [],
@@ -138,7 +138,7 @@ export function generate_map_title(): MapTitle
 			long: faker.lorem.sentence({ min: 8, max: 12 }).slice(0, -1) + '?',
 		},
 		description: faker.lorem.sentence({ min: 20, max: 30 }).slice(0, -1),
-		tags: faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1).split(' ').map(tag => tag.toLowerCase().replace(/[^a-z]/g, '')),
+		tags: faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1).split(' ').map(tag => tag.toLowerCase().replaceAll(/[^a-z]/g, '')),
 		url: random_choice(['/maps/do_vaccines_cause_autism']),
 		hash: faker.string.uuid(),
 		fake: true,

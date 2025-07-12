@@ -77,22 +77,22 @@ export function clean_id(id: string): string
 	let cleaned_id = id;
 
 	if (cleaned_id.startsWith('openalex.org/'))
-		return cleaned_id.replace('openalex.org/', '').trim();
+		return cleaned_id.replaceAll('openalex.org/', '').trim();
 
 	if (cleaned_id.startsWith('http://openalex.org/'))
-		return cleaned_id.replace('http://openalex.org/', '').trim();
+		return cleaned_id.replaceAll('http://openalex.org/', '').trim();
 
 	if (cleaned_id.startsWith('https://openalex.org/'))
-		return cleaned_id.replace('https://openalex.org/', '').trim();
+		return cleaned_id.replaceAll('https://openalex.org/', '').trim();
 
 	if (cleaned_id.startsWith('www.openalex.org/'))
-		return cleaned_id.replace('www.openalex.org/', '').trim();
+		return cleaned_id.replaceAll('www.openalex.org/', '').trim();
 
 	if (cleaned_id.startsWith('http://www.openalex.org/'))
-		return cleaned_id.replace('http://www.openalex.org/', '').trim();
+		return cleaned_id.replaceAll('http://www.openalex.org/', '').trim();
 
 	if (cleaned_id.startsWith('https://www.openalex.org/'))
-		return cleaned_id.replace('https://www.openalex.org/', '').trim();
+		return cleaned_id.replaceAll('https://www.openalex.org/', '').trim();
 
 	while (cleaned_id.startsWith('/'))
 		cleaned_id = cleaned_id.substring(1).trim();

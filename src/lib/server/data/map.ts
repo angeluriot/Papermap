@@ -46,7 +46,7 @@ async function import_group_node(path: string): Promise<GroupNode>
 
 		else if (file.name.endsWith('.json') && !file.name.startsWith('_'))
 		{
-			const id = file.name.replace('.json', '');
+			const id = file.name.replaceAll('.json', '');
 
 			const map: DataMap = {
 				groups: [],

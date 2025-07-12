@@ -53,7 +53,7 @@ export function get_hash(object: any): string
 
 export function clean_text(text: string): string
 {
-	return text.replace(/[^a-zA-Z0-9]/g, '').toLowerCase().trim();
+	return text.replaceAll(/[^a-zA-Z0-9]/g, '').toLowerCase().trim();
 }
 
 
@@ -71,22 +71,22 @@ export function clean_doi(doi: string): string
 		return cleaned_doi.slice(4).trim();
 
 	if (cleaned_doi.startsWith('doi.org/'))
-		return cleaned_doi.replace('doi.org/', '').trim();
+		return cleaned_doi.replaceAll('doi.org/', '').trim();
 
 	if (cleaned_doi.startsWith('http://doi.org/'))
-		return cleaned_doi.replace('http://doi.org/', '').trim();
+		return cleaned_doi.replaceAll('http://doi.org/', '').trim();
 
 	if (cleaned_doi.startsWith('https://doi.org/'))
-		return cleaned_doi.replace('https://doi.org/', '').trim();
+		return cleaned_doi.replaceAll('https://doi.org/', '').trim();
 
 	if (cleaned_doi.startsWith('www.doi.org/'))
-		return cleaned_doi.replace('www.doi.org/', '').trim();
+		return cleaned_doi.replaceAll('www.doi.org/', '').trim();
 
 	if (cleaned_doi.startsWith('http://www.doi.org/'))
-		return cleaned_doi.replace('http://www.doi.org/', '').trim();
+		return cleaned_doi.replaceAll('http://www.doi.org/', '').trim();
 
 	if (cleaned_doi.startsWith('https://www.doi.org/'))
-		return cleaned_doi.replace('https://www.doi.org/', '').trim();
+		return cleaned_doi.replaceAll('https://www.doi.org/', '').trim();
 
 	while (cleaned_doi.startsWith('/'))
 		cleaned_doi = cleaned_doi.substring(1).trim();

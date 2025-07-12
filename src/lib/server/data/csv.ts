@@ -57,7 +57,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 	let csv = 'Title,Authors,Journal,Retracted,Year,Link,Previous consensus,Conclusion,Quote,Review,Review count,Type,On,Citations,Critics,Sample size,P value,Conflict of interest,Notes\n';
 
 	for (const paper of papers)
-		csv += Object.values(paper).map((value) => `"${value.toString().replace(/"/g, '""')}"`).join(',') + '\n';
+		csv += Object.values(paper).map((value) => `"${value.toString().replaceAll(/"/g, '""')}"`).join(',') + '\n';
 
 	await fs.writeFile(join(C.TMP_DIR, map.id, 'data.csv'), csv);
 }
