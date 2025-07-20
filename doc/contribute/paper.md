@@ -560,6 +560,7 @@ The chance of observing the same results if there is no real effect, a low p-val
 	</tbody>
 </table>
 
+* If multiple p-values are reported, use the one that is the most relevant to the map's question
 * This field only applies to papers that report a statistically significant effect, if the paper concludes that there is no significant effect, select `Not applicable`
 * If you don't have access to the full text of the paper and the abstract does not help, select `No access`
 * If the p-value is not specified, select `Not specified`

@@ -7,7 +7,7 @@ import { get_graph_points } from './points';
 
 const X_MIN_PADDING = 17;
 const X_MAX_PADDING = 10;
-const Y_MIN_PADDING = 20;
+const Y_MIN_PADDING = 8;
 const Y_MAX_PADDING_LARGE = 20;
 const Y_MAX_PADDING_TIGHT = 25;
 const OVERFLOW_PADDING = 20;
@@ -57,8 +57,8 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 	let stats = {
 		min_year: min_year - pad_year * X_MIN_PADDING,
 		max_year: max_year + pad_year * X_MAX_PADDING,
-		min_score: final_min_score < 0 ? final_min_score * 0.4 : final_min_score,
-		max_score: max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE) * top_margin_scale,
+		min_score: Math.min(final_min_score, 0),
+		max_score: Math.max(max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE) * top_margin_scale, 1),
 		width,
 		height,
 		scale,

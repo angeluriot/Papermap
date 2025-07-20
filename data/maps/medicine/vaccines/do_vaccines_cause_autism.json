@@ -1045,6 +1045,7 @@
 		{
 			"id": "W98043794",
 			"title": "Vaccine adverse events: separating myth from reality.",
+			"override_seed": 0.7,
 			"authors": [
 				"Sanford R. Kimmel"
 			],

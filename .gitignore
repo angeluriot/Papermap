@@ -3,6 +3,7 @@
 /notes.txt
 /.vscode
 /act
+/scripts/ignore
 
 # Node
 /package-lock.json

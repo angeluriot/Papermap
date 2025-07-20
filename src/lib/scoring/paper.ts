@@ -95,7 +95,7 @@ const COEFS = {
 	journal: 0.5,
 	citations: 0.1,
 	critics: 0.5,
-	coherence: 0.2,
+	coherence: 0.1,
 	direct: 0.5,
 	review: 0.4,
 	type: 0.7,

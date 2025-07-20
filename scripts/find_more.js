@@ -8,6 +8,17 @@ const [, , map_id] = process.argv;
 const nb_per_page = 90;
 
 
+export function ratio(value, min, max)
+{
+	if (min >= max)
+		throw new Error('min must be less than max');
+
+	const result = (value - min) / (max - min);
+
+	return Math.max(0, Math.min(1, result));
+}
+
+
 function clean_id(id)
 {
 	let cleaned_id = id;
@@ -81,7 +92,7 @@ async function api_find_paper_ids(papers)
 
 	let query = new URLSearchParams({
 		'filter': 'openalex:' + ids.join('|'),
-		'select': 'referenced_works',
+		'select': 'id,referenced_works',
 		'mailto': email,
 		'per-page': nb_per_page.toString(),
 	});
@@ -104,7 +115,7 @@ async function api_get_papers(paper_ids)
 
 	let query = new URLSearchParams({
 		'filter': 'openalex:' + ids.join('|'),
-		'select': 'id,title,doi',
+		'select': 'id,title,doi,publication_year',
 		'mailto': email,
 		'per-page': nb_per_page.toString(),
 	});
@@ -121,12 +132,27 @@ async function api_get_papers(paper_ids)
 }
 
 
+async function import_ignore()
+{
+	try
+	{
+		const content = await fs.promises.readFile(join(process.cwd(), 'scripts', 'ignore', `${map_id}.txt`), 'utf-8');
+		return content.split('\n').map(line => line.trim()).filter(line => line.length > 0).map(clean_id);
+	}
+
+	catch (error)
+	{
+		return [];
+	}
+}
+
+
 async function main()
 {
 	const map = await get_map(map_id);
 	const results = await api_find_paper_ids(map.papers);
-	let map_ids = new Set(map.papers.filter(paper => paper.id).map(paper => paper.id));
-	let papers_dict = {};
+	const ignore_ids = new Set([...map.papers.filter(paper => paper.id).map(paper => paper.id), ...(await import_ignore())]);
+	let papers_nb = {};
 
 	for (const result of results)
 	{
@@ -137,29 +163,28 @@ async function main()
 
 			const cleaned_id = clean_id(id);
 
-			if (map_ids.has(cleaned_id))
+			if (ignore_ids.has(cleaned_id))
 				continue;
 
-			if (papers_dict[cleaned_id] === undefined)
-				papers_dict[cleaned_id] = 0;
+			if (papers_nb[cleaned_id] === undefined)
+				papers_nb[cleaned_id] = 0;
 
-			papers_dict[cleaned_id]++;
+			papers_nb[cleaned_id]++;
 		}
 	}
 
-	const paper_ids = Object.entries(papers_dict).toSorted((a, b) => b[1] - a[1]).map(entry => entry[0]);
+	const paper_ids = Object.entries(papers_nb).toSorted((a, b) => b[1] - a[1]).map(entry => entry[0]);
 	const paper_results = await api_get_papers(paper_ids);
 	const papers = paper_results.map(paper => ({
+		id: clean_id(paper.id),
 		title: paper.title,
 		doi: paper.doi,
-		nb: paper.id && paper.id.length > 0 ? papers_dict[clean_id(paper.id)] : 0,
-	})).toSorted((a, b) => a.nb - b.nb);
+		score: papers_nb[clean_id(paper.id)] / (map.papers.filter(p => p.year >= paper.publication_year).length || 1),
+		nb: papers_nb[clean_id(paper.id)],
+	})).toSorted((a, b) => a.score - b.score);
 
 	for (const paper of papers)
-	{
-		console.log('(' + paper.nb + ') ' + paper.title);
-		console.log(paper.doi, '\n');
-	}
+		console.log((paper.score * 100).toFixed(0) + '% (' + paper.nb + ')\n' + paper.id + '\n' + paper.title + '\n' + paper.doi + '\n');
 
 	process.exit(0);
 }
