@@ -1,0 +1,3320 @@
+{
+	"draft": false,
+	"emoji": "🧸",
+	"question": {
+		"short": "What are the effects of sexual education on children?",
+		"long": "What are the effects of sexual education programs on children?"
+	},
+	"description": "Results from studies evaluating the risk-benefit ratio of sexual education programs for children aimed at preventing child sexual abuse.",
+	"tags": [
+		"education",
+		"prevention",
+		"child",
+		"children",
+		"sexual abuse"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of sexual education programs",
+			"color": "Gray",
+			"coherence": {
+				"negative": 0.5,
+				"negative_but_small_effect": 0.5,
+				"negative_but_low_confidence": 0.5,
+				"negative_but_mixed": 0.5,
+				"mixed": 0.5,
+				"no_effect": 0.5,
+				"positive_but_mixed": 0.5,
+				"positive_but_low_confidence": 0.5,
+				"positive_but_small_effect": 0.5,
+				"positive": 0.5
+			}
+		},
+		"negative": {
+			"emoji": "👎",
+			"text": "Negative",
+			"description": "The literature suggests that sexual education programs mostly have negative effects on children",
+			"color": "Red",
+			"coherence": {
+				"negative": 1,
+				"negative_but_small_effect": 1,
+				"negative_but_low_confidence": 1,
+				"negative_but_mixed": 1,
+				"mixed": 0.5,
+				"no_effect": 0.5,
+				"positive_but_mixed": 0,
+				"positive_but_low_confidence": 0,
+				"positive_but_small_effect": 0,
+				"positive_unlike_literature": 0
+			}
+		},
+		"towards_negative": {
+			"emoji": "⬅️",
+			"text": "Towards negative",
+			"description": "The literature suggests that sexual education programs may have negative effects on children, but more research is needed",
+			"color": "Red1H",
+			"coherence": {
+				"negative": 0.75,
+				"negative_but_small_effect": 0.75,
+				"negative_but_low_confidence": 0.75,
+				"negative_but_mixed": 0.75,
+				"mixed": 0.75,
+				"no_effect": 0.75,
+				"positive_but_mixed": 0.25,
+				"positive_but_low_confidence": 0.25,
+				"positive_but_small_effect": 0.25,
+				"positive_unlike_literature": 0.25
+			}
+		},
+		"no_effect": {
+			"emoji": "🫥",
+			"text": "No effect",
+			"description": "The literature suggests that sexual education programs have no significant effect on children",
+			"color": "Gray",
+			"coherence": {
+				"negative": 0.5,
+				"negative_but_small_effect": 0.75,
+				"negative_but_low_confidence": 0.75,
+				"negative_but_mixed": 0.75,
+				"mixed": 1,
+				"no_effect": 1,
+				"positive_but_mixed": 0.75,
+				"positive_but_low_confidence": 0.75,
+				"positive_but_small_effect": 0.75,
+				"positive": 0.5
+			}
+		},
+		"towards_positive": {
+			"emoji": "➡️",
+			"text": "Towards positive",
+			"description": "The literature suggests that sexual education programs may have positive effects on children, but more research is needed",
+			"color": "Green1H",
+			"coherence": {
+				"negative_unlike_literature": 0.25,
+				"negative_but_small_effect": 0.25,
+				"negative_but_low_confidence": 0.25,
+				"negative_but_mixed": 0.25,
+				"mixed": 0.75,
+				"no_effect": 0.75,
+				"positive_but_mixed": 0.75,
+				"positive_but_low_confidence": 0.75,
+				"positive_but_small_effect": 0.75,
+				"positive": 0.75
+			}
+		},
+		"positive": {
+			"emoji": "👍",
+			"text": "Positive",
+			"description": "The literature suggests that sexual education programs mostly have positive effects on children",
+			"color": "Green",
+			"coherence": {
+				"negative_unlike_literature": 0,
+				"negative_but_small_effect": 0,
+				"negative_but_low_confidence": 0,
+				"negative_but_mixed": 0,
+				"mixed": 0.5,
+				"no_effect": 0.5,
+				"positive_but_mixed": 1,
+				"positive_but_low_confidence": 1,
+				"positive_but_small_effect": 1,
+				"positive": 1
+			}
+		}
+	},
+	"conclusion_groups": {
+		"negative": {
+			"text": "Negative",
+			"color": "Red"
+		},
+		"negative_but": {
+			"text": "Negative but...",
+			"color": "Red1H"
+		},
+		"mixed": {
+			"text": "Mixed",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"no_effect": {
+			"text": "No effect",
+			"color": "Gray"
+		},
+		"positive_but": {
+			"text": "Positive but...",
+			"color": "Green1H"
+		},
+		"positive": {
+			"text": "Positive",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"negative": {
+			"group": "negative",
+			"emoji": "👎",
+			"text": "Negative",
+			"description": "The results of the paper suggest that the sexual education programs tested mostly have negative effects on children",
+			"p_value": true
+		},
+		"negative_unlike_literature": {
+			"group": "negative_but",
+			"emoji": "↩️",
+			"text": "Negative unlike literature",
+			"description": "The results of the paper suggest that the sexual education programs tested mostly have negative effects on children, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"negative_but_small_effect": {
+			"group": "negative_but",
+			"emoji": "🤏",
+			"text": "Negative but small effect",
+			"description": "The results of the paper suggest that the sexual education programs tested may have small negative effects on children",
+			"p_value": true
+		},
+		"negative_but_low_confidence": {
+			"group": "negative_but",
+			"emoji": "🤔",
+			"text": "Negative but low confidence",
+			"description": "The results of the paper suggest that the sexual education programs tested may have negative effects on children, but the evidence is not strong",
+			"p_value": true
+		},
+		"negative_but_mixed": {
+			"group": "negative_but",
+			"emoji": "🔀",
+			"text": "Negative but mixed results",
+			"description": "The results of the paper suggest that the sexual education programs tested mostly have negative effects on children, but can also have positive effects",
+			"p_value": true
+		},
+		"mixed": {
+			"group": "mixed",
+			"emoji": "🔀",
+			"text": "Mixed results",
+			"description": "The results of the paper suggest that the sexual education programs tested have both positive and negative effects on children",
+			"p_value": false
+		},
+		"no_effect": {
+			"group": "no_effect",
+			"emoji": "🫥",
+			"text": "No effect",
+			"description": "The results of the paper suggest that the sexual education programs tested have no significant effect on children",
+			"p_value": false
+		},
+		"positive_but_mixed": {
+			"group": "positive_but",
+			"emoji": "🔀",
+			"text": "Positive but mixed results",
+			"description": "The results of the paper suggest that the sexual education programs tested mostly have positive effects on children, but can also have negative effects",
+			"p_value": true
+		},
+		"positive_but_low_confidence": {
+			"group": "positive_but",
+			"emoji": "🤔",
+			"text": "Positive but low confidence",
+			"description": "The results of the paper suggest that the sexual education programs tested may have positive effects on children, but the evidence is not strong",
+			"p_value": true
+		},
+		"positive_but_small_effect": {
+			"group": "positive_but",
+			"emoji": "🤏",
+			"text": "Positive but small effect",
+			"description": "The results of the paper suggest that the sexual education programs tested may have small positive effects on children",
+			"p_value": true
+		},
+		"positive_unlike_literature": {
+			"group": "positive_but",
+			"emoji": "↪️",
+			"text": "Positive unlike literature",
+			"description": "The results of the paper suggest that the sexual education programs tested mostly have positive effects on children, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"positive": {
+			"group": "positive",
+			"emoji": "👍",
+			"text": "Positive",
+			"description": "The results of the paper suggest that the sexual education programs tested mostly have positive effects on children",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_blind": true,
+		"no_random": false,
+		"no_causality": false,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": [
+		{
+			"id": "W2131958236",
+			"title": "An evaluation of a program to prevent the sexual victimization of young children",
+			"override_seed": 0,
+			"authors": [
+				"Jon R. Conte",
+				"Carole Rosen",
+				"Leslee Saperstein",
+				"Roberta Shermack"
+			],
+			"year": 1985,
+			"link": "https://doi.org/10.1016/0145-2134(85)90027-4",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 121,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "Results of a repeated measures multivariate analysis of variance indicate that children in the prevention training group significantly increased their knowledge of prevention concept's while children in the control group did not",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 40,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2138434872",
+			"title": "Educating Children About Sexual Abuse: Implications for Pediatric Intervention and Possible Prevention1",
+			"authors": [
+				"Debra A. Saslawsky",
+				"Sandy K. Wurtele"
+			],
+			"year": 1986,
+			"link": "https://doi.org/10.1093/jpepsy/11.2.235",
+			"journal": {
+				"id": "S44167674",
+				"retracted": false
+			},
+			"citations": {
+				"count": 99,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Children who viewed the film demonstrated significantly greater knowledge about sexual abuse and enhanced personal safety skills when compared to controls [...] These gains were maintained at the 3-month follow-up assessment",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 67,
+			"p_value": {
+				"value": 0.02,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2010228015",
+			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
+			"override_seed": 0,
+			"authors": [
+				"David A. Wolfe",
+				"Tracy Macpherson",
+				"Ronald L. Blount",
+				"David A. Wolfe"
+			],
+			"year": 1986,
+			"link": "https://doi.org/10.1016/0145-2134(86)90036-0",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 68,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 290,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4254660222",
+			"title": "Teaching personal safety skills for potential prevention of sexual abuse: A comparison of treatments.",
+			"override_seed": 0.9,
+			"authors": [
+				"Sandy K. Wurtele",
+				"Debra A. Saslawsky",
+				"Cindy Miller",
+				"Scott R. Marrs"
+			],
+			"year": 1986,
+			"link": "https://doi.org/10.1037/0022-006x.54.5.688",
+			"journal": {
+				"id": "S118719888",
+				"retracted": false
+			},
+			"citations": {
+				"count": 84,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The results demonstrate that groups of children can be taught about sexual abuse and can learn appropriate self-protective responses",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 71,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2065277804",
+			"title": "An Evaluation of Side Effects Associated with Participation in a Child Sexual Abuse Prevention Program",
+			"override_seed": 0.8,
+			"authors": [
+				"Sandy K. Wurtele",
+				"Cindy Miller‐Perrin"
+			],
+			"year": 1987,
+			"link": "https://doi.org/10.1111/j.1746-1561.1987.tb07838.x",
+			"journal": {
+				"id": "S58099514",
+				"retracted": false
+			},
+			"citations": {
+				"count": 49,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Results from this study suggest sexual abuse prevention programs can be implemented in schools without harming the participants. Children showed no changes in how fearful they were of several people and certain situations as a result of participating in the Behavioral Skills Training program. In addition, parents observed no increases in their children's problematic behaviors or in their fears as a result of program participation",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 26,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2037788020",
+			"title": "Evaluation of a school-based sexual abuse prevention program: Cognitive and emotional effects",
+			"override_seed": 0,
+			"authors": [
+				"Renée L. Binder",
+				"Dale E. McNiel"
+			],
+			"year": 1987,
+			"link": "https://doi.org/10.1016/0145-2134(87)90075-5",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 87,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The program was helpful in teaching elementary school children strategies for coping with situations of potential abuse. Furthermore, the program increased parents’ confidence in their children’s knowledge and self-protection. No evidence was found of harmful emotional effects of the program",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 88,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2100430454",
+			"title": "Measuring actual reduction of risk to child abuse: A new approach",
+			"authors": [
+				"George E. Fryer",
+				"Sherryll Kerns Kraizer",
+				"Thomas Mlyoshi"
+			],
+			"year": 1987,
+			"link": "https://doi.org/10.1016/0145-2134(87)90055-x",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 105,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Experimental group children reported learning more about the differences between good and bad touching, and being more likely to both report instances of sexual victimization and utilize program specific preventive skills, relative to controls",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 349,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2060355511",
+			"title": "Promoting awareness and prevention of child sexual victimization using the Red Flag/Green Flag program: An evaluation with follow-up",
+			"override_seed": 0.9,
+			"authors": [
+				"David J. Kolko",
+				"Joanne T. Moser",
+				"John Litz",
+				"Judith M. Hughes"
+			],
+			"year": 1987,
+			"link": "https://doi.org/10.1007/bf00976368",
+			"journal": {
+				"id": "S53301456",
+				"retracted": false
+			},
+			"citations": {
+				"count": 56,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Among the findings obtained, experimental group children reported learning more about the differences between good and bad touching, and being more likely to both report instances of sexual victimization and utilize program-specific preventive skills, relative to controls",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 349,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2053282236",
+			"title": "The prevention of sexual abuse: Examination of the effectiveness of a program with kindergarten-age children",
+			"override_seed": 0.5,
+			"authors": [
+				"Pam Harvey",
+				"Rex Forehand",
+				"Carvin L. Brown",
+				"Thomas Holmes"
+			],
+			"year": 1988,
+			"link": "https://doi.org/10.1016/s0005-7894(88)80014-5",
+			"journal": {
+				"id": "S56240272",
+				"retracted": false
+			},
+			"citations": {
+				"count": 66,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Relative to the control group, at both a three-week posttest and a seven-week follow-up, children participating in the prevention program demonstrated more knowledge about preventing abuse and performed better on simulated scenes involving sexual abuse. The results indicate that children as young as kindergartenage can be taught skills to prevent sexual abuse",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 71,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1975803663",
+			"title": "Classroom training in sexual victimization awareness and prevention skills: An extension of the Red Flag/Green Flag people program",
+			"authors": [
+				"David J. Kolko",
+				"Joanne T. Moser",
+				"Judith M. Hughes"
+			],
+			"year": 1989,
+			"link": "https://doi.org/10.1007/bf00985655",
+			"journal": {
+				"id": "S53301456",
+				"retracted": false
+			},
+			"citations": {
+				"count": 44,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Results indicated greater gains in general knowledge and prevention skills at post-training and 6-month follow-up for trained than control children",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 337,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4232776206",
+			"title": "Comparison of programs for teaching personal safety skills to preschoolers.",
+			"authors": [
+				"Sandy K. Wurtele",
+				"Laura C. Kast",
+				"Cindy Miller‐Perrin",
+				"Patricia A. Kondrick"
+			],
+			"year": 1989,
+			"link": "https://doi.org/10.1037/0022-006x.57.4.505",
+			"journal": {
+				"id": "S118719888",
+				"retracted": false
+			},
+			"citations": {
+				"count": 64,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Compared with a control presentation, both programs were effective in enhancing children's knowledge and prevention skills without making them fearful, suggesting that preschool children can benefit from such programs",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 100,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2002922698",
+			"title": "Prevention of child sexual abuse: Myth or reality.",
+			"authors": [
+				"N. Dickon Reppucci",
+				"Jeffrey J. Haugaard"
+			],
+			"year": 1989,
+			"link": "https://doi.org/10.1037/0003-066x.44.10.1266",
+			"journal": {
+				"id": "S80146597",
+				"retracted": false
+			},
+			"citations": {
+				"count": 96,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "mixed",
+				"indirect": false
+			},
+			"quote": "We conclude that it is unclear whether prevention programs are working or even that they are more beneficial than harmful",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2085528796",
+			"title": "An evaluation of a preschool curriculum to educate children in the prevention of sexual abuse",
+			"authors": [
+				"Rosemarie Ratto",
+				"G. Anne Bogat"
+			],
+			"year": 1990,
+			"link": "https://doi.org/10.1002/1520-6629(199007)18:3<289::aid-jcop2290180310>3.0.co;2-1",
+			"journal": {
+				"id": "S72553257",
+				"retracted": false
+			},
+			"citations": {
+				"count": 27,
+				"critics": false
+			},
+			"results": {
+				"consensus": "NoAccess",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Results indicated that children in the experimental group, when compared to the control group, were able to learn the sexual abuse prevention concepts measured by the PSQ and retain this knowledge at follow-up. [...] No significant increase in fear was noted in the children participating in the program",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 39,
+			"p_value": "NoAccess",
+			"conflict_of_interest": "NoAccess",
+			"notes": []
+		},
+		{
+			"id": "W2135105463",
+			"title": "Evaluation of a Preschool Antivictimization Prevention Program",
+			"override_seed": 0.9,
+			"authors": [
+				"Joseph M. Peraino"
+			],
+			"year": 1990,
+			"link": "https://doi.org/10.1177/088626090005004007",
+			"journal": {
+				"id": "S45333638",
+				"retracted": false
+			},
+			"citations": {
+				"count": 19,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Results showed that preschoolers who received the program scored significantly higher at posttest than did no-program preschoolers. [...] Follow-up testing demonstrated retention of learned concepts",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 46,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2040856674",
+			"title": "Teaching personal safety skills to four-year-old children: A behavioral approach",
+			"override_seed": 0,
+			"authors": [
+				"Sandy K. Wurtele"
+			],
+			"year": 1990,
+			"link": "https://doi.org/10.1016/s0005-7894(05)80186-8",
+			"journal": {
+				"id": "S56240272",
+				"retracted": false
+			},
+			"citations": {
+				"count": 78,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Preschoolers who had participated in the training program demonstrated greater knowledge about sexual abuse and higher levels of personal safety skills compared to controls, and these gains were maintained at the one-month follow-up",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 24,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1989460686",
+			"title": "Child sexual abuse prevention: Evaluation and one-year follow-up",
+			"override_seed": 0,
+			"authors": [
+				"Ann Hazzard",
+				"Carol Webb",
+				"Carol Kleemeier",
+				"Lisa Angert"
+			],
+			"year": 1991,
+			"link": "https://doi.org/10.1016/0145-2134(91)90097-w",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 125,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Treatment children exhibited significantly greater knowledge and better ability to discriminate safe from unsafe situations on the video measure than control children at posttesting. These gains were maintained at 6-week follow-up testing. There were no differences in treatment and control children's self-reported anxiety or parents' reports of negative emotional/behavioral consequences, which were minimal",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 399,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2085437336",
+			"title": "The Touch Discrimination Component of Sexual Abuse Prevention Training",
+			"override_seed": 0.3,
+			"authors": [
+				"Elaine Blumberg",
+				"Michèle Chadwick",
+				"Linda Fogarty",
+				"Timothy W. Speth"
+			],
+			"year": 1991,
+			"link": "https://doi.org/10.1177/088626091006001002",
+			"journal": {
+				"id": "S45333638",
+				"retracted": false
+			},
+			"citations": {
+				"count": 56,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The data from this study indicate that children receiving a role-play-based sexual abuse prevention program significantly improved on a touch discrimination task as compared to subjects in a control condition. [...] The present study indicates that prevention programs have the potential to make children less suspicious and more realistic about nurturing touch, rather than increasing children's fears",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 264,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1995201931",
+			"title": "A comparison of teachers vs. parents as instructors of a personal safety program for preschoolers",
+			"override_seed": 0,
+			"authors": [
+				"Sandy K. Wurtele",
+				"Elizabeth I. Gillispie",
+				"Lisa L. Currier",
+				"Corrina F. Franklin"
+			],
+			"year": 1992,
+			"link": "https://doi.org/10.1016/0145-2134(92)90013-h",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 82,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Children in both of these groups demonstrated greater knowledge about sexual abuse and higher levels of personal safety skills compared with controls. Knowledge and skill gains were maintained at the two-month follow-up. No program-related increases in negative behaviors were reported by teachers",
+			"type": "BlindedRandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 61,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2328768845",
+			"title": "Child sexual abuse prevention: Research review and recommendations",
+			"override_seed": 0.5,
+			"authors": [
+				"Jill Duerr Berrick",
+				"Richard P. Barth"
+			],
+			"year": 1992,
+			"link": "https://doi.org/10.1093/swra/28.4.6",
+			"journal": {
+				"id": "S2734879500",
+				"retracted": false
+			},
+			"citations": {
+				"count": 74,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "The metaanalysis demonstrates that children at all ages can improve their scores on child abuse knowledge measures but does not inform whether the type or amount of knowledge they learn sufficiently protects them from abuse",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 31
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 9847,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2049341609",
+			"title": "Sexual abuse prevention education for young children: A comparison of teachers and parents as instructors",
+			"override_seed": 0.7,
+			"authors": [
+				"Sandy K. Wurtele",
+				"Laura C. Kast",
+				"Anastasia M. Melzer"
+			],
+			"year": 1992,
+			"link": "https://doi.org/10.1016/0145-2134(92)90088-9",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 103,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Preschoolers who were taught a personal safety program, whether by teachers, parents, or both, significantly improved in their ability to recognize inappropriate-touch requests and demonstrated higher levels of personal safety skills",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 172,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2005580312",
+			"title": "The ability of elementary school children to learn child sexual abuse prevention concepts",
+			"override_seed": 0,
+			"authors": [
+				"Leslie M. Tutty"
+			],
+			"year": 1992,
+			"link": "https://doi.org/10.1016/0145-2134(92)90046-t",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 82,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "The analyses of the C.K.A.Q. scores demonstrate that children who participated in the Hamilton/Wentworth Community Child Abuse Prevention Program learned the prevention concepts taught to a significantly greater extent than those children of similar ages who did not view the play",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 400,
+			"p_value": {
+				"value": 0.013,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2040934912",
+			"title": "The Failure of a School-based Child Sexual Abuse Prevention Program",
+			"override_seed": 0.9,
+			"authors": [
+				"David Pelcovitz",
+				"Naomi A. Adler",
+				"Sandra J. Kaplan",
+				"Linda Packman"
+			],
+			"year": 1992,
+			"link": "https://doi.org/10.1097/00004583-199209000-00017",
+			"journal": {
+				"id": "S60711021",
+				"retracted": false
+			},
+			"citations": {
+				"count": 31,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_effect",
+				"indirect": false
+			},
+			"quote": "Results point to the ineffectiveness of brief, single presentation, prevention efforts not geared to specific developmental levels of the audience",
+			"type": "CaseReport",
+			"on": "Humans",
+			"sample_size": 22,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2036273604",
+			"title": "Follow-up data on the effectiveness of New Zealand's national school based child protection program",
+			"authors": [
+				"Freda Briggs",
+				"Russell Hawkins"
+			],
+			"year": 1994,
+			"link": "https://doi.org/10.1016/0145-2134(94)90013-2",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 58,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "There is evidence that the Keeping Ourselves Safe program increased skills and knowledge in areas associated with self protection in the short term. Assessment a further 12 months after the program suggests that children go on to make further skill and knowledge gains. Assessment following a second administration of the program suggests that the repetition leads to further gains",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 252,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2037455948",
+			"title": "Prevention of Child Sexual Abuse",
+			"authors": [
+				"Deborah Daro"
+			],
+			"year": 1994,
+			"link": "https://doi.org/10.2307/1602531",
+			"journal": {
+				"id": "S2920767",
+				"retracted": false
+			},
+			"citations": {
+				"count": 117,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "A major benefit of personal safety education programs may be an increased rate of disclosures by children of past or present abuse. A major area of concern may be the potential for safety education programs to engender fear and anxiety in children. Research on negative impacts is limited, and results have been mixed. The author concludes that prevention programs overall have beneficial impacts",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 38
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2013156241",
+			"title": "Primary Prevention of Child Sexual Abuse: A Critical Review. Part II",
+			"authors": [
+				"Harriet L. MacMillan",
+				"James H. MacMillan",
+				"David R. Offord",
+				"Lauren E. Griffith"
+			],
+			"year": 1994,
+			"link": "https://doi.org/10.1111/j.1469-7610.1994.tb02299.x",
+			"journal": {
+				"id": "S177929781",
+				"retracted": false
+			},
+			"citations": {
+				"count": 74,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "This paper has reviewed the evidence for effectiveness of interventions in the prevention of child sexual abuse and abduction. Among the interventions, there is evidence that education programs aimed at the prevention of child sexual abuse and abduction can improve knowledge and prevention skills of children under experimental conditions. However, whether education of children leads to prevention of child sexual abuse in real-life situations remains to be established",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 19
+			},
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2027897758",
+			"title": "Evaluation of a School-Based Child Abuse Prevention Program",
+			"override_seed": 0,
+			"authors": [
+				"Surjit Singh Dhooper",
+				"Phyllis L. Schneider"
+			],
+			"year": 1995,
+			"link": "https://doi.org/10.1177/104973159500500104",
+			"journal": {
+				"id": "S188440287",
+				"retracted": false
+			},
+			"citations": {
+				"count": 29,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The results of this study suggest that the school-based child abuse educational program [...] is an effective means of increasing awareness of child abuse. The children, both male and female and at three grade levels, showed significant increases in their mean scores on a child abuse questionnaire that measured an overall understanding of child abuse, ability to discriminate between normal discipline and physical abuse, capacity to distinguish between acceptable touches and sexual abuse, and appropriate responses to situations of abuse",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 796,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2170274357",
+			"title": "The effectiveness of victimization prevention instruction: An evaluation of children's responses to actual threats and assaults",
+			"override_seed": 0.9,
+			"authors": [
+				"David Finkelhor",
+				"Nancy L. Asdigian",
+				"Jennifer Dziuba-Leatherman"
+			],
+			"year": 1995,
+			"link": "https://doi.org/10.1016/0145-2134(94)00112-8",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 150,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive_but_mixed",
+				"indirect": false
+			},
+			"quote": "Comprehensive parental instruction also had positive effects on knowledge, the use of preferred self-protection strategies and the likelihood of disclosure. [...] The children with more comprehensive school programs suffered more injuries during sexual victimizations than other children. This is probably related to their greater tendency to fight back during those episodes",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 2000,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2001066775",
+			"title": "Victimization prevention programs for children: a follow-up.",
+			"authors": [
+				"David Finkelhor",
+				"Nancy L. Asdigian",
+				"Jennifer Dziuba-Leatherman"
+			],
+			"year": 1995,
+			"link": "https://doi.org/10.2105/ajph.85.12.1684",
+			"journal": {
+				"id": "S168049282",
+				"retracted": false
+			},
+			"citations": {
+				"count": 88,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Prevention education was not associated with a reduced incidence of completed victimization or injury, two crucial and desired outcomes from prevention efforts. But it was associated with an increased likelihood that the children would disclose the victimizations, increased feelings that they had been successful in protecting themselves from more serious consequences, and decreased levels of self-blame",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 1457,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2092125531",
+			"title": "Evaluation of the effectiveness of project TRUST: An elementary school-based victimization prevention strategy",
+			"override_seed": 0,
+			"authors": [
+				"Dick Oldfield",
+				"Bevely J. Hays",
+				"Mary Erickson Megel"
+			],
+			"year": 1996,
+			"link": "https://doi.org/10.1016/0145-2134(96)00070-1",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 60,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "These findings support the effectiveness of Project TRUST as a strategy to increase prevention knowledge and generate abuse disclosures wilhout creating student anxiety",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 1269,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2082139370",
+			"title": "Child sexual abuse prevention programs: Evaluating who do you tell",
+			"override_seed": 0.9,
+			"authors": [
+				"Leslie M. Tutty"
+			],
+			"year": 1997,
+			"link": "https://doi.org/10.1016/s0145-2134(97)00048-3",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 120,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "An analysis of covariance showed that children who received the program increased their knowledge levels of both Inappropriate Touch (p = .000) and Appropriate Touch (p = .012) to a significantly greater degree than children in the control group",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 231,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2084304692",
+			"title": "Positive and negative effects of a child sexual abuse prevention program",
+			"authors": [
+				"Margot Taal",
+				"Monique Edelaar"
+			],
+			"year": 1997,
+			"link": "https://doi.org/10.1016/s0145-2134(96)00179-2",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 53,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "mixed",
+				"indirect": false
+			},
+			"quote": "Results indicated short term overall effects of the program for the choice of safety strategies. Immediately after participation in the program the youngest and the oldest children felt less in control of an abusive interaction, the youngest pupils thought that refusal was less feasible but they appreciated physical touch more than before. These effects, however, were only of a short duration. In the long run children thought refusing more feasible and younger children showed less social anxiousness. As an unwanted side effect of the program the oldest children developed feelings of discomfort about being touched",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 292,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2048844696",
+			"title": "Prevention of child sexual abuse victimization: A meta-analysis of school programs",
+			"override_seed": 0.9,
+			"authors": [
+				"Jan Rispens",
+				"André Alemán",
+				"Paul P. Goudena"
+			],
+			"year": 1997,
+			"link": "https://doi.org/10.1016/s0145-2134(97)00058-6",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 186,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Children do learn sexual abuse concepts and acquire the self-protection skills that are taught in sexual abuse victimization prevention programs",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 16
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 3980,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1981335861",
+			"title": "Teaching personal safety skills to young children: An investigation of age and gender across five studies",
+			"override_seed": 0,
+			"authors": [
+				"Sandy K. Wurtele",
+				"Julie Sarno Owens"
+			],
+			"year": 1997,
+			"link": "https://doi.org/10.1016/s0145-2134(97)00040-9",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 99,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Preschoolers who had participated in the BST program demonstrated greater knowledge and higher levels of personal safety skills compared with controls. Boys and girls reacted similarly to the program, as did children from younger and older age groups. These results provide support for the assertion that most preschool aged children can benefit from participating in a developmentally appropriate personal safety program",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 406,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1970640435",
+			"title": "Evaluation of the effectiveness of the stay safe primary prevention programme for child sexual abuse",
+			"override_seed": 0,
+			"authors": [
+				"Deirdre MacIntyre",
+				"Alan Carr"
+			],
+			"year": 1999,
+			"link": "https://doi.org/10.1016/s0145-2134(99)00092-7",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 95,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The findings suggest that the Stay Safe Programme was effective in training children in safety skills and so may usefully be used as a primary prevention intervention for child abuse",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 772,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2036182014",
+			"title": "Helping children to the other side of silence: a study of the impact of the stay safe programme on Irish children’s disclosures of sexual victimization",
+			"override_seed": 0.9,
+			"authors": [
+				"Deirdre MacIntyre",
+				"Alan Carr"
+			],
+			"year": 1999,
+			"link": "https://doi.org/10.1016/s0145-2134(99)00097-6",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 39,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "These findings show that the Stay Safe child sexual abuse prevention program was successful in achieving its secondary prevention goal of promoting children’s effective disclosures of sexual victimization",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 588,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2014492350",
+			"title": "Child Sexual Abuse Prevention Programs: A Meta-Analysis",
+			"override_seed": 0,
+			"authors": [
+				"M. Katherine Davis",
+				"Christine A. Gidycz"
+			],
+			"year": 2000,
+			"link": "https://doi.org/10.1207/s15374424jccp2902_11",
+			"journal": {
+				"id": "S51579063",
+				"retracted": false
+			},
+			"citations": {
+				"count": 249,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "These effect sizes can only be interpreted as improvements in the prevention-related knowledge and skills of children who participated in programs",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 27
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 8115,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2009811242",
+			"title": "Child sexual abuse prevention programs: do they decrease the occurrence of child sexual abuse?",
+			"override_seed": 0.9,
+			"authors": [
+				"Laura E. Gibson",
+				"Harold Leitenberg"
+			],
+			"year": 2000,
+			"link": "https://doi.org/10.1016/s0145-2134(00)00179-4",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 165,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "This is the first study to find that school-based child sexual abuse prevention programs are associated with a reduced incidence of child sexual abuse. Additionally, contrary to concerns voiced in the literature, there was no evidence that prevention programs are associated with decreased sexual satisfaction or avoidance of sex in adulthood",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 825,
+			"p_value": {
+				"value": 0.01,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2113912926",
+			"title": "Prevention of child sexual abuse: implications of programme evaluation research",
+			"override_seed": 0.95,
+			"authors": [
+				"Deirdre MacIntyre",
+				"Alan Carr"
+			],
+			"year": 2000,
+			"link": "https://doi.org/10.1002/1099-0852(200005/06)9:3<183::aid-car595>3.0.co;2-i",
+			"journal": {
+				"id": "S125708707",
+				"retracted": false
+			},
+			"citations": {
+				"count": 65,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "First, child abuse prevention programmes can lead to significant gains in children's, parents' and teachers' safety knowledge and skills. For children, gains may occur in safety related concepts and safety skills",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 30
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1544650217",
+			"title": "What Children Learn from Sexual Abuse Prevention Programs: Difficult Concepts and Developmental Issues",
+			"override_seed": 0.6,
+			"authors": [
+				"Leslie M. Tutty"
+			],
+			"year": 2000,
+			"link": "https://doi.org/10.1177/104973150001000301",
+			"journal": {
+				"id": "S188440287",
+				"retracted": false
+			},
+			"citations": {
+				"count": 69,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "In comparison to children who had not yet been in the \"Who Do You Tell\" program, participants learned more concepts about secrets, permission to tell, and permission at times to say no to an adult. These are not inconsequential ideas and do reflect central themes for the majority of prevention programs",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 231,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1985206893",
+			"title": "Do elementary school-based child abuse prevention programs work? A high school follow-up",
+			"authors": [
+				"Susan F. Ko",
+				"Merith Cosden"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1002/1520-6807(200101)38:1<57::aid-pits6>3.0.co;2-w",
+			"journal": {
+				"id": "S61821002",
+				"retracted": false
+			},
+			"citations": {
+				"count": 47,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Students who attended prevention programs were more knowledgeable about abuse concepts and reported fewer incidents of abuse. However, the effectiveness of students’ responses to abuse, even when they were using strategies taught by the prevention programs, was variable",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 137,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2063038733",
+			"title": "Proximate effects of a child sexual abuse prevention program in elementary school children",
+			"override_seed": 0.9,
+			"authors": [
+				"Martine Hébert",
+				"Francine Lavoie",
+				"Christiane Piché",
+				"Michèle Poitras"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1016/s0145-2134(01)00223-x",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 123,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Young elementary school children involved in a relatively brief prevention program appear to gain knowledge and prevention skills as they were better able to identify appropriate behaviors when faced with situations depicted on video-vignettes compared to waiting-list control children, and this does not appear to be due to a sensitizing effect. Moreover, the knowledge acquired appears to be maintained at follow-up",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 133,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2023057071",
+			"title": "Evaluation of a Child Abuse Prevention Curriculum for Third‐Grade Students: Assessment of Knowledge and Efficacy Expectations",
+			"authors": [
+				"Joseph A. Dake",
+				"James H. Price",
+				"Judy Murnan"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1111/j.1746-1561.2003.tb03576.x",
+			"journal": {
+				"id": "S58099514",
+				"retracted": false
+			},
+			"citations": {
+				"count": 27,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "Children who completed the program recorded a significant increase in their knowledge regarding child abuse",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 341,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1972508428",
+			"title": "Teaching Young Children to Discriminate Abusive From Nonabusive Situations Using Multiple Exemplars in a Modified Discrete Trial Teaching Format",
+			"authors": [
+				"Cynthia L. Boyle",
+				"John R. Lutzker"
+			],
+			"year": 2005,
+			"link": "https://doi.org/10.1007/s10896-005-3169-4",
+			"journal": {
+				"id": "S53301456",
+				"retracted": false
+			},
+			"citations": {
+				"count": 49,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "All participants showed increases in correct responding on generalization role-play probes and maintained these increases over a 3-and 6-week follow-up",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 3,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2161145281",
+			"title": "Prevention of Sexual Abuse Through Educational Programs Directed Toward Children",
+			"authors": [
+				"David Finkelhor"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1542/peds.2007-0754",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": {
+				"count": 120,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The weight of currently available evidence shows that it is worth providing children with high-quality prevention-education programs: Much research has suggested that children acquire the concepts. Some research has suggested that the programs promote disclosure. One study found lower rates of victimization for children who were exposed to these programs. A study found that children who are exposed to prevention education have less self blame if they are victimized",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2047558122",
+			"title": "Child sexual abuse: from prevention to self‐protection",
+			"authors": [
+				"Maureen C. Kenny",
+				"Vjolca Capri",
+				"R Reena",
+				"Thakkar‐Kolar"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1002/car.1012",
+			"journal": {
+				"id": "S125708707",
+				"retracted": false
+			},
+			"citations": {
+				"count": 138,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Children who participate in self-protection programmes show significant gains in knowledge and skills. [...] The majority of children reported that they felt safer after completion of a prevention programme",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 21
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2015784507",
+			"title": "A group‐randomized evaluation of a theatre‐based sexual abuse prevention programme for primary school children in Germany",
+			"override_seed": 0,
+			"authors": [
+				"Barbara Krahé",
+				"Lena Knappert"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1002/casp.1009",
+			"journal": {
+				"id": "S68503284",
+				"retracted": false
+			},
+			"citations": {
+				"count": 42,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The skills scores went up significantly from pre-intervention baseline after participants had seen the play, while no changes were observed in a waiting-list control group. The immediate post intervention effects were maintained at two follow-ups after 2 and 30 weeks, respectively. Furthermore, there was no indication that the intervention made children generally suspicious of friendly behaviour from adults",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 148,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2062147200",
+			"title": "Preventing Sexual Abuse of Children in the Twenty-First Century: Preparing for Challenges and Opportunities",
+			"authors": [
+				"Sandy K. Wurtele"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1080/10538710802584650",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 227,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Child-focused sexual abuse prevention programs can teach children to distinguish between abusive and nonabusive situations, increase their knowledge, and enhance their personal safety skills. They can do so without producing negative side effects and may actually have positive side effects. There is also preliminary evidence that children are able to apply this information in real-life situations and that prevention programs have led to a reduced incidence of CSA cases",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2129957335",
+			"title": "School-Based Child Sexual Abuse Prevention Programs: A Review of Effectiveness",
+			"override_seed": 0.9,
+			"authors": [
+				"Keith J. Topping",
+				"Ian Barron"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.3102/0034654308325582",
+			"journal": {
+				"id": "S92895470",
+				"retracted": false
+			},
+			"citations": {
+				"count": 236,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive_but_mixed",
+				"indirect": false
+			},
+			"quote": "Most investigators claimed that their results showed significant impact in primary prevention (increasing all children’s knowledge or awareness and/or abuse prevention skills) [...] Several programs reported some negative effects",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 22
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": 10480,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2121445594",
+			"title": "The Prevention of Childhood Sexual Abuse",
+			"authors": [
+				"David Finkelhor"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1353/foc.0.0035",
+			"journal": {
+				"id": "S2920767",
+				"retracted": false
+			},
+			"citations": {
+				"count": 387,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Although researchers have conducted no experimental evaluations of whether educational programs prevent sexual abuse, they have provided a variety of supportive empirical findings so far. They show, for example, that young people do acquire the concepts. One observational retrospective study found a reduction in abuse associated with program exposure; others found an increase in disclosure, a sense of personal efficacy, and a decrease in self-blame",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2098432732",
+			"title": "Children's abilities to recognize a “good” person as a potential perpetrator of childhood sexual abuse",
+			"override_seed": 0.4,
+			"authors": [
+				"Maureen C. Kenny",
+				"Sandy K. Wurtele"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1016/j.chiabu.2009.11.007",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 49,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Pre-test results demonstrated that young children had difficulty recognizing the inappropriateness of a request when it was made by a “good” person. Post-test findings demonstrated that children as young as 3 years of age can learn the inappropriateness of such requests even when coming from “good” people",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 93,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1988080159",
+			"title": "A Sexual Assault Primary Prevention Model with Diverse Urban Youth",
+			"authors": [
+				"Melissa K. Smothers",
+				"Diann Smothers"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.1080/10538712.2011.622355",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 24,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The program was found to be effective at increasing participant’s knowledge of sexual abuse, awareness of school and community sexual assault support resources, and identification of components of healthy and unhealthy relationships",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 202,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2004180775",
+			"title": "Evaluation of a school-based sexual abuse prevention curriculum in Malaysia",
+			"authors": [
+				"Richard A. Weatherley",
+				"Siti Hajar Abu Bakar Ah",
+				"O. Noralina",
+				"Mettilda John"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.1016/j.childyouth.2011.09.009",
+			"journal": {
+				"id": "S10873304",
+				"retracted": false
+			},
+			"citations": {
+				"count": 54,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "A comparison of posttest responses showed substantial gains in knowledge by the experimental group students on about two-thirds of the questionnaire items that were not shared by control group students. In almost all cases, the children performed as well, and often better on the second posttest, conducted two months after the conclusion of the program",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 445,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2067683261",
+			"title": "Evaluation of a Personal Safety Program with Latino Preschoolers",
+			"authors": [
+				"Maureen C. Kenny",
+				"Sandy K. Wurtele",
+				"Laura Gabriela Espinosa Alonso"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1080/10538712.2012.675426",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 60,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Compared with controls, participating children demonstrated enhanced ability to recognize inappropriate touches, learned correct genital terminology, were able to recognize the inappropriateness of touch requests made by \"good\" people, demonstrated higher levels of personal safety skills, and learned general safety rules. Gains in knowledge were maintained at three-month follow-up",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 123,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2082980122",
+			"title": "Evaluation of a Sexual Abuse Prevention Workshop in a Multicultural, Impoverished Urban Area",
+			"override_seed": 0.9,
+			"authors": [
+				"Isabelle Daigneault",
+				"Martine Hébert",
+				"Pierre McDuff",
+				"Jean‐Yves Frappier"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1080/10538712.2012.703291",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 38,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "Results revealed that participants in this sample obtained low scores on measures of sexual abuse knowledge and that short booster sessions that elicit children’s recall of the learned material might produce greater improvements [...] In addition, there was no negative impact from the workshop in terms of children’s feelings of safety",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 160,
+			"p_value": {
+				"value": 0.008,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2100215496",
+			"title": "Increasing Knowledge of Sexual Abuse",
+			"authors": [
+				"Charlene K. Baker",
+				"Kristen Gleason",
+				"Rachel Naai",
+				"Jennifer Mitchell"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1177/1049731512468796",
+			"journal": {
+				"id": "S188440287",
+				"retracted": false
+			},
+			"citations": {
+				"count": 54,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Findings from this study support the efficacy of the MBMB curriculum in increasing children’s knowledge of child sexual abuse prevention topics. In particular, it appears that a train-the-trainer model has utility for teaching children about inappropriate touching and what to do if it happens to them",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 80,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2046223254",
+			"title": "Pilot Evaluation of a Sexual Abuse Prevention Program for Taiwanese Children",
+			"override_seed": 0,
+			"authors": [
+				"Yi‐Chuen Chen",
+				"Beverly L. Fortson",
+				"Kai-Wen Tseng"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1080/10538712.2012.726699",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 42,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive_but_small_effect",
+				"indirect": false
+			},
+			"quote": "Children’s self-protection skills improved regardless of age after participation in the program. The program, however, did not successfully improve children’s knowledge of sexuality and safety. Although future studies should modify the program content to better target knowledge of sexuality and safety, these results are promising for a pilot of this skills-based CSA prevention program in Taiwan",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 46,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1974819626",
+			"title": "Evaluation of a Sexual Abuse Prevention Education for Chinese Preschoolers",
+			"override_seed": 0,
+			"authors": [
+				"Wenjing Zhang",
+				"Jingqi Chen",
+				"Yanan Feng",
+				"Jingyi Li"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1177/1049731513510409",
+			"journal": {
+				"id": "S188440287",
+				"retracted": false
+			},
+			"citations": {
+				"count": 65,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Following program participation, preschool children in the intervention group demonstrated greater knowledge about sexual abuse prevention and higher levels of self-protection skills compared with children in the wait-list control group",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 150,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W169367288",
+			"title": "The Effectiveness of Psycho-Educational School-Based Child Sexual Abuse Prevention Training Program on Turkish Elementary Students.",
+			"override_seed": 0.8,
+			"authors": [
+				"A. Rezan Çeçen",
+				"Özlem Kaf Hasırcı"
+			],
+			"year": 2013,
+			"link": "https://files.eric.ed.gov/fulltext/EJ1017300.pdf",
+			"journal": {
+				"id": "S175388953",
+				"retracted": false
+			},
+			"citations": {
+				"count": 42,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The prevention child sexual abuse program was effective on 4th grade students and this effect was lasting eight weeks later",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 36,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2124658159",
+			"title": "Application of a child abuse prevention programme in an educational context",
+			"authors": [
+				"Juan Manuel Moreno Manso",
+				"Elena García-Baamonde",
+				"Macarena Blázquez Alonso",
+				"José Manuel Pozueco-Romero"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.6018/analesps.30.3.154231",
+			"journal": {
+				"id": "S187497233",
+				"retracted": false
+			},
+			"citations": {
+				"count": 12,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The evaluation of the programme shows that the pupils in the experimental group resolved the situations with increasing skill, confidence and determination; and that they could see more clearly where to look for help in terms of protection measures. The tutors evaluated the programme positively, considering the contents useful for prevention",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 317,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2129186134",
+			"title": "School-Based Childhood Sexual Abuse Prevention Programs",
+			"override_seed": 0.6,
+			"authors": [
+				"Candice M. Fryda",
+				"Polly A. Hulme"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1177/1059840514544125",
+			"journal": {
+				"id": "S121038253",
+				"retracted": false
+			},
+			"citations": {
+				"count": 70,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "According to the child outcome measures chosen, the majority of programs were successful. [...] Most children did not suffer negative effects",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 31
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1430200026",
+			"title": "Empowering and protecting children by enhancing knowledge, skills and well-being: A randomized trial of Learn to BE SAFE with Emmy™",
+			"override_seed": 0.95,
+			"authors": [
+				"R. Barry Dale",
+				"Dianne C. Shanley",
+				"Melanie J. Zimmer‐Gembeck",
+				"Katrina Lines"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1016/j.chiabu.2015.07.016",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 34,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Outcomes from this evaluation demonstrated that it improved children’s knowledge of protective behaviors, increased their intention to choose safe responses to unsafe situations, and increased their use of protective behaviors according to parent report",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 245,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1952384271",
+			"title": "Knowledge Gains Following a Child Sexual Abuse Prevention Program Among Urban Students: A Cluster-Randomized Evaluation",
+			"authors": [
+				"Mary L. Pulido",
+				"Sarah Dauber",
+				"Brenda A. Tully",
+				"Paige Hamilton"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.2105/ajph.2015.302594",
+			"journal": {
+				"id": "S168049282",
+				"retracted": false
+			},
+			"citations": {
+				"count": 68,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The intervention group showed significantly greater improvement than the control group on knowledge of inappropriate touch",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 492,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1717762653",
+			"title": "School-based education programmes for the prevention of child sexual abuse",
+			"authors": [
+				"Kerryann Walsh",
+				"Karen Zwi",
+				"Susan Woolfenden",
+				"Aron Shlonsky"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1002/14651858.cd004380.pub3",
+			"journal": {
+				"id": "S4210172715",
+				"retracted": false
+			},
+			"citations": {
+				"count": 287,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The studies included in this review show evidence of improvements in protective behaviours and knowledge among children exposed to school-based programmes. [...] Programme participation does not generate increased or decreased child anxiety or fear",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 29
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 5802,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2549665311",
+			"title": "Community-level moderators of a school-based childhood sexual assault prevention program",
+			"authors": [
+				"Matthew C. Morris",
+				"Chrystyna D. Kouros",
+				"Kim Janecek",
+				"Rachel Freeman"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1016/j.chiabu.2016.10.005",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 36,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Results of this cluster RCT showed that children in Grades 2 through 6 who completed the Safe@Last program had significantly better knowledge scores at the post-intervention assessment than did those in the waitlist control condition",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 1177,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2511835825",
+			"title": "Effects of the Child Sexual Abuse Prevention Education (C-SAPE) Program on South Korean Fifth-Grade Students’ Competence in Terms of Knowledge and Self-Protective Behaviors",
+			"authors": [
+				"Shin‐Jeong Kim",
+				"Kyung‐Ah Kang"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1177/1059840516664182",
+			"journal": {
+				"id": "S121038253",
+				"retracted": false
+			},
+			"citations": {
+				"count": 37,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Significant differences were found between the experimental and control groups’ mean difference (post-pre) in competence scores [...] , especially in the category of self-protective behaviors",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 89,
+			"p_value": {
+				"value": 0.001,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2516853114",
+			"title": "Evaluation of Safer, Smarter Kids: Child Sexual Abuse Prevention Curriculum for Kindergartners",
+			"authors": [
+				"Donna Marie Brown"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1007/s10560-016-0458-0",
+			"journal": {
+				"id": "S4210168042",
+				"retracted": false
+			},
+			"citations": {
+				"count": 21,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The results indicated that completion of the Safer, Smarter Kids curriculum was followed by a significant increase in students’ knowledge of key prevention concepts",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 1169,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2755158923",
+			"title": "Child Sexual Abuse Prevention Opportunities: Parenting, Programs, and the Reduction of Risk",
+			"authors": [
+				"Julia Rudolph",
+				"Melanie J. Zimmer‐Gembeck",
+				"Dianne C. Shanley",
+				"Russell Hawkins"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1177/1077559517729479",
+			"journal": {
+				"id": "S125441779",
+				"retracted": false
+			},
+			"citations": {
+				"count": 130,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "mixed",
+				"indirect": false
+			},
+			"quote": "In this article, we first describe why teaching young children about CSA protective behaviors might not be sufficient for prevention. We then narratively review the existing research on parents and prevention and the parenting and family circumstances that may increase a child’s risk of experiencing sexual abuse",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2760848075",
+			"title": "Evaluation of a sexual abuse prevention education program for school-age children in China: a comparison of teachers and parents as instructors",
+			"override_seed": 0.9,
+			"authors": [
+				"Yaqiong Jin",
+				"Jing Chen",
+				"Yingying Jiang",
+				"Bin Yu"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1093/her/cyx047",
+			"journal": {
+				"id": "S81330422",
+				"retracted": false
+			},
+			"citations": {
+				"count": 55,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The findings reveal that children in the teacher education group demonstrated the highest level of CSA prevention knowledge and skills, followed by the parent education group, while children in the control group showed the least improvements. The knowledge and skills gains were retained at a 12-week follow-up",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 484,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2894965133",
+			"title": "Effectiveness of a school-based intervention to prevent child sexual abuse—Evaluation of the German IGEL program",
+			"authors": [
+				"Fabian Czerwinski",
+				"Emily Finne",
+				"Jana Alfes",
+				"Petra Kolip"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1016/j.chiabu.2018.08.023",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 33,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The outcome evaluation indicates that the IGEL program is an effective intervention in terms of knowledge about CSA and known courses of action, and may therefore contribute to the prevention of CSA in primary schools",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 291,
+			"p_value": {
+				"value": 0.001,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2805310809",
+			"title": "Preventing Child Sexual Abuse: Body Safety Training for Young Children in Turkey",
+			"authors": [
+				"Gülseren Çıtak Tunç",
+				"Gülay Görak",
+				"Nurcan Özyazıcıoğlu",
+				"Bedriye Ak"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1080/10538712.2018.1477001",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 70,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The “Body Safety Training programme” is effective in increasing the child sexual abuse prevention and self-protection skills in Turkish young children",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 83,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2916566579",
+			"title": "“I have the right to feel safe”: Evaluation of a school-based child sexual abuse prevention program in Ecuador",
+			"override_seed": 0,
+			"authors": [
+				"Gabriela Bustamante",
+				"María Soledad Andrade",
+				"Caley Mikesell",
+				"Clara Cullen"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1016/j.chiabu.2019.02.009",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 39,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The self-protection program increased and maintained CSA knowledge six months after the intervention finished",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 4932,
+			"p_value": {
+				"value": 0.004,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2949142044",
+			"title": "Child Sexual Abuse Victimization Prevention Programs in Preschool and Kindergarten: Implications for Practice",
+			"authors": [
+				"Megan Manheim",
+				"Richard Felicetti",
+				"Gillian Moloney"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1080/10538712.2019.1627687",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 32,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Children were seven times more likely to show self-protective behavior in simulated situations when having participated in a school-based CSA program than those who did not participate",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2966603751",
+			"title": "Randomized controlled trial of the Child Protection Unit: Grade and gender as moderators of CSA prevention concepts in elementary students",
+			"authors": [
+				"Amanda B. Nickerson",
+				"Jenine Tulledge",
+				"Margaret Manges",
+				"Samantha Kesselring"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1016/j.chiabu.2019.104101",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 23,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Girls scored higher than boys in CSA knowledge and ability to recognize, refuse, and report unsafe touches, but both boys and girls made significant gains",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 2172,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W3099480503",
+			"title": "Efficacy of a Sexual Abuse Prevention Program with Children on an Indian Reservation",
+			"authors": [
+				"Katie M. Edwards",
+				"Laura Siller",
+				"Leon Leader Charge",
+				"Simone Bordeaux"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1080/10538712.2020.1847229",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 13,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "We found that some domains of children’s knowledge of CSA as well as their efficacy to resist an attack increased from pre- to posttest. Moreover, 83% of children reported that they liked IMpower, and 96% of children reported that IMpower helped keep them safe",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 48,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3108646070",
+			"title": "Evaluation of a school-based sexual abuse prevention program for female children with intellectual disabilities in rural Pakistan- A feasibility study",
+			"authors": [
+				"Azza Warraitch",
+				"Rizwana Amin",
+				"Alina Rashid"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1016/j.apnr.2020.151391",
+			"journal": {
+				"id": "S144851420",
+				"retracted": false
+			},
+			"citations": {
+				"count": 24,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The school-based sexual abuse prevention program was shown to be acceptable, feasible and efficacious in improving sexual abuse prevention knowledge and skills of female children",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 15,
+			"p_value": {
+				"value": 0.001,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3008678748",
+			"title": "Preventing Child Sexual Abuse Using Picture Books: The Effect of Book Character and Message Framing",
+			"authors": [
+				"Sangruo Huang",
+				"Chen Cui"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1080/10538712.2020.1719449",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 17,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Children who were exposed to the prevention book were significantly more likely to recognize a potential abuse situation and refuse an inappropriate touch request than children who were not exposed to the book",
+			"type": "BlindedRandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 180,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3092958856",
+			"title": "Three Decades of Research: The Case for Comprehensive Sex Education",
+			"override_seed": 0.45,
+			"authors": [
+				"Eva S. Goldfarb",
+				"Lisa Lieberman"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1016/j.jadohealth.2020.07.036",
+			"journal": {
+				"id": "S101177023",
+				"retracted": false
+			},
+			"citations": {
+				"count": 546,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The literature on sexual abuse prevention efforts in early grades reviewed here shows strong evidence that young children can develop self-protective knowledge, skills, and intentions, including an increased likelihood of reporting sexual abuse and knowing how to respond in a dangerous situation, all without increasing anxiety",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 80
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W3119361146",
+			"title": "“I am Learning to Protect Myself with Mika:” A Teacher-based Child Sexual Abuse Prevention Program in Turkey",
+			"override_seed": 0.9,
+			"authors": [
+				"Rukiye Kızıltepe",
+				"Duygu Eslek",
+				"Türkan Yılmaz Irmak",
+				"Duygu Güngör"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1177/0886260520986272",
+			"journal": {
+				"id": "S45333638",
+				"retracted": false
+			},
+			"citations": {
+				"count": 11,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The increase in self-protection skills was greater for participants in the intervention group than for those in the wait-list comparison group from pre-test to post-test. Two-month followup analysis showed that gain in knowledge and skills was maintained",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 290,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3164115297",
+			"title": "Effective Components of School-Based Prevention Programs for Child Abuse: A Meta-Analytic Review",
+			"override_seed": 0,
+			"authors": [
+				"Jeanne Gubbels",
+				"Claudia E. van der Put",
+				"Geert‐Jan J. M. Stams",
+				"Mark Assink"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1007/s10567-021-00353-5",
+			"journal": {
+				"id": "S10577759",
+				"retracted": false
+			},
+			"citations": {
+				"count": 38,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "In general, school-based prevention programs show positive efects on both knowledge and self-protection skills",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 37
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3133068982",
+			"title": "Evaluation of a School-Based Child Physical and Sexual Abuse Prevention Program",
+			"override_seed": 0.95,
+			"authors": [
+				"Erika L. Thompson",
+				"Zhengyang Zhou",
+				"Ashvita Garg",
+				"Danielle Rohr"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1177/1090198120988252",
+			"journal": {
+				"id": "S10201666",
+				"retracted": false
+			},
+			"citations": {
+				"count": 8,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "This study provides evidence to support the efficacy of the Play it Safe! program for increasing children’s physical and sexual abuse prevention knowledge and skills",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 539,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3188359875",
+			"title": "Evaluation of the Child Safety Matters Curriculum for Improving Knowledge about Victimization among Elementary School Children: A Randomized Trial",
+			"authors": [
+				"Erin A. Weeks",
+				"Daniel J. Whitaker",
+				"Stacy Pendarvis",
+				"David Finkelhor"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1080/10538712.2021.1960458",
+			"journal": {
+				"id": "S168051025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 3,
+				"critics": false
+			},
+			"results": {
+				"consensus": "NoAccess",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Intervention students displayed a greater increase in knowledge for the information taught in the CSM program as compared to students who did not receive the intervention",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 2414,
+			"p_value": "NoAccess",
+			"conflict_of_interest": "NoAccess",
+			"notes": []
+		},
+		{
+			"id": "W3181885869",
+			"title": "The effect of sexuality education program on the sexual development of children aged 60–72 months",
+			"authors": [
+				"Songül Yasemin Özgün",
+				"Burhan Çapri"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1007/s12144-021-02040-8",
+			"journal": {
+				"id": "S203585231",
+				"retracted": false
+			},
+			"citations": {
+				"count": 6,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "Accordingly, in the light of the significance of this difference between post-test scores, it can be said that the sexuality education program was effective in increasing sexuality knowledge",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 58,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4286685274",
+			"title": "Effectiveness of school-based child sexual abuse intervention among school children in the new millennium era: Systematic review and meta-analyses",
+			"override_seed": 0.45,
+			"authors": [
+				"Ruhana Che Yusof",
+				"Mohd Noor Norhayati",
+				"Yacob Mohd Azman"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.3389/fpubh.2022.909254",
+			"journal": {
+				"id": "S2595931848",
+				"retracted": false
+			},
+			"citations": {
+				"count": 15,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The programs were found to be effective in improving the knowledge, skills, and attitude of the students",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 29
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 14817,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4387388140",
+			"title": "Effectiveness of child sexual abuse prevention programs on knowledge acquisition: A meta-analytical study",
+			"override_seed": 0.95,
+			"authors": [
+				"Marta Ferragut",
+				"M. Victoria Cerezo",
+				"Margarita Ortiz‐Tallo",
+				"Raquel Rodríguez‐Fernández"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1016/j.chiabu.2023.106489",
+			"journal": {
+				"id": "S53055215",
+				"retracted": false
+			},
+			"citations": {
+				"count": 2,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The results of this work show that these prevention programs are helpful in improving the participants’ knowledge",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 31
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 13669,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4323036355",
+			"title": "Implementation of a Universal School-Based Child Sexual Abuse Prevention Program: A Longitudinal Cohort Study",
+			"authors": [
+				"Kate Guastaferro",
+				"Stacey L. Shipe",
+				"Christian M. Connell",
+				"Elizabeth J. Letourneau"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1177/08862605231158765",
+			"journal": {
+				"id": "S45333638",
+				"retracted": false
+			},
+			"citations": {
+				"count": 13,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "This study demonstrates that a single-session, universal school based CSA prevention program can effectively increase children’s knowledge when implemented and disseminated on a wide scale and knowledge gains can be retained 12-months post intervention",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 3673,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4393058027",
+			"title": "The effectiveness of school-based child sexual abuse prevention programmes among primary school-aged children: A systematic review",
+			"override_seed": 0.9,
+			"authors": [
+				"Pinar Celik"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1016/j.ijedro.2024.100348",
+			"journal": {
+				"id": "S4210236200",
+				"retracted": false
+			},
+			"citations": {
+				"count": 9,
+				"critics": false
+			},
+			"results": {
+				"consensus": "positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "In terms of outcomes and results, the interventions have significantly impacted knowledge, skills, confidence, and awareness in the short and long term. [...] This systematic review highlights the importance of child sexual abuse prevention programmes in schools and the need for further research",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 13
+			},
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 8970,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4395031067",
+			"title": "Training and evaluation of robot-based psychological intervention program for preventing child sexual abuse",
+			"authors": [
+				"Mohammad Tahan",
+				"Gholamali Afrooz",
+				"Jafar Bolhari"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1016/j.chipro.2024.100030",
+			"journal": {
+				"id": "S4317411217",
+				"retracted": false
+			},
+			"citations": {
+				"count": 0,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The psychological intervention program increased children's knowledge and awareness concerning the prevention of sexual abuse and associated coping skills. Furthermore, psychological intervention programs were effective in preventing child sexual abuse",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 80,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4411868304",
+			"title": "The effect of an educational program on knowledge about sexual abuse prevention among child laborers: a quasi-experimental study",
+			"authors": [
+				"Jamalodin Begjani",
+				"Niloofar Najafali Dizaji",
+				"Jila Mirlashari",
+				"Lotfollah Mohseni"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.1186/s12889-025-23447-z",
+			"journal": {
+				"id": "S200437886",
+				"retracted": false
+			},
+			"citations": {
+				"count": 0,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_positive",
+				"conclusion": "positive",
+				"indirect": false
+			},
+			"quote": "The educational program significantly enhanced knowledge about sexual abuse prevention among child laborers, with sustained improvements observed at the three-month follow-up. This intervention provides a promising model for empowering vulnerable children with the knowledge needed to protect themselves",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 60,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
+}
