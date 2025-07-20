@@ -18,6 +18,36 @@
 	let canvas: HTMLCanvasElement | undefined = $state(undefined);
 	let reload = $state({});
 
+	let display_text = $derived.by(() =>
+	{
+		reload;
+
+		if (!canvas || !input_element)
+			return map.question.long;
+
+		width;
+		height;
+		const ctx = canvas.getContext('2d');
+
+		if (!ctx)
+			return map.question.long;
+
+		const style = getComputedStyle(input_element);
+		ctx.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+		ctx.letterSpacing = style.letterSpacing;
+
+		const padding_left = parseFloat(style.paddingLeft);
+		const padding_right = parseFloat(style.paddingRight);
+
+		const max_width_css = parseFloat(style.maxWidth);
+		const long_text_width = ctx.measureText(map.question.long).width + padding_left + padding_right;
+
+		if (long_text_width > max_width_css)
+			return map.question.short;
+
+		return map.question.long;
+	});
+
 	let input_width = $derived.by(() =>
 	{
 		reload;
@@ -36,12 +66,12 @@
 		ctx.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
 		ctx.letterSpacing = style.letterSpacing;
 
-		const text_width = ctx.measureText(map.question.long).width;
+		const text_width = ctx.measureText(display_text).width;
 
-		const pl = parseFloat(style.paddingLeft);
-		const pr = parseFloat(style.paddingRight);
+		const padding_left = parseFloat(style.paddingLeft);
+		const padding_right = parseFloat(style.paddingRight);
 
-		return `${Math.ceil(text_width + pl + pr)}px`;
+		return `${Math.ceil(text_width + padding_left + padding_right)}px`;
 	});
 
 	function select_input(event: Event)
@@ -96,7 +126,7 @@
 	<div class="emoji absolute unselectable z-10">{@html emojis[map.emoji]}</div>
 	<input
 		type="text" spellcheck="false" class="rounded-full relative"
-		placeholder={map.question.long} bind:value={search} bind:this={input_element}
+		placeholder={display_text} bind:value={search} bind:this={input_element}
 		style="width: {input_width}; {search_element?.shown() ? 'border-radius: 1.575em 1.575em 0em 0em;' : 'border-radius: 1.575em;'}"
 	/>
 	<div class="search absolute w-full bg-white" style="display: {search_element?.shown() ? 'block' : 'none'};">

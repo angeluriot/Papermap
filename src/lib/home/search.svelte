@@ -162,16 +162,19 @@
 
 			else if (event.key === 'Enter')
 			{
-				const selected = results[selected_i === null ? 0 : selected_i];
+				if (selected_i !== null)
+				{
+					const selected = results[selected_i];
 
-				if (selected === 'all')
-					window.location.href = '/maps';
+					if (selected === 'all')
+						window.location.href = '/maps';
 
-				else if (selected === 'new')
-					new_map(search);
+					else if (selected === 'new')
+						new_map(search);
 
-				else
-					window.location.href = selected.url;
+					else
+						window.location.href = selected.url;
+				}
 
 				event.preventDefault();
 			}
