@@ -8,7 +8,7 @@ const TYPE_SCORES = {
 	default: {
 		[MissingReason.NoAccess]:						0.2,
 		[MissingReason.NotSpecified]:					0.0,
-		[MissingReason.NotApplicable]:					1.0,
+		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.2,
 		[PaperType.CrossSectionalStudy]:				0.2,
@@ -21,7 +21,7 @@ const TYPE_SCORES = {
 	no_blind: {
 		[MissingReason.NoAccess]:						0.3,
 		[MissingReason.NotSpecified]:					0.0,
-		[MissingReason.NotApplicable]:					1.0,
+		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.3,
 		[PaperType.CrossSectionalStudy]:				0.3,
@@ -34,7 +34,7 @@ const TYPE_SCORES = {
 	no_random: {
 		[MissingReason.NoAccess]:						0.3,
 		[MissingReason.NotSpecified]:					0.0,
-		[MissingReason.NotApplicable]:					1.0,
+		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.3,
 		[PaperType.CrossSectionalStudy]:				0.3,
@@ -47,7 +47,7 @@ const TYPE_SCORES = {
 	no_causality: {
 		[MissingReason.NoAccess]:						0.6,
 		[MissingReason.NotSpecified]:					0.0,
-		[MissingReason.NotApplicable]:					1.0,
+		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.6,
 		[PaperType.CrossSectionalStudy]:				0.6,
@@ -68,7 +68,7 @@ const ON_SCORES = {
 	any_animal: {
 		[MissingReason.NoAccess]:				0.6,
 		[MissingReason.NotSpecified]:			0.0,
-		[MissingReason.NotApplicable]:			1.0,
+		[MissingReason.NotApplicable]:			0.0,
 		[StudyOn.InVitro]:						0.0,
 		[StudyOn.Animals]:						1.0,
 		[StudyOn.Humans]:						1.0,
@@ -76,7 +76,7 @@ const ON_SCORES = {
 	default: {
 		[MissingReason.NoAccess]:				0.3,
 		[MissingReason.NotSpecified]:			0.0,
-		[MissingReason.NotApplicable]:			1.0,
+		[MissingReason.NotApplicable]:			0.0,
 		[StudyOn.InVitro]:						0.0,
 		[StudyOn.Animals]:						0.4,
 		[StudyOn.Humans]:						1.0,
@@ -222,7 +222,7 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 
 export function score_on(map: DataMap | Map, paper: DataPaper): number
 {
-	if (map.on.any_animal)
+	if (map.on.any)
 		return 1.0;
 
 	let on_scores = ON_SCORES.default;
