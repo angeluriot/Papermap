@@ -224,6 +224,7 @@ The consensus in the literature at the time according to the paper about the map
 				<code>Towards no</code><br/>
 				<code>Towards yes</code><br/>
 				<code>Yes</code><br/>
+				<code>(Not specified)</code><br/>
 				<code>(No access)</code>
 			</td>
 		</tr>
@@ -235,6 +236,7 @@ The consensus in the literature at the time according to the paper about the map
 </table>
 
 * If unclear, select `No consensus yet`
+* If the paper does not mention previous work, select `Not specified`
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
 ## Paper result
