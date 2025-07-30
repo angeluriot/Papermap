@@ -21,6 +21,7 @@
 			"color": "Gray",
 			"coherence": {
 				"no": 0.5,
+				"no_but_mixed_results": 0.5,
 				"yes_but_low_confidence": 0.5,
 				"yes_but_small_effect": 0.5,
 				"yes": 0.5
@@ -33,6 +34,7 @@
 			"color": "Red",
 			"coherence": {
 				"no": 1,
+				"no_but_mixed_results": 1,
 				"yes_but_low_confidence": 0,
 				"yes_but_small_effect": 0,
 				"yes_unlike_literature": 0
@@ -45,6 +47,7 @@
 			"color": "Red1H",
 			"coherence": {
 				"no": 0.75,
+				"no_but_mixed_results": 0.75,
 				"yes_but_low_confidence": 0.25,
 				"yes_but_small_effect": 0.25,
 				"yes_unlike_literature": 0.25
@@ -57,6 +60,7 @@
 			"color": "Green1H",
 			"coherence": {
 				"no_unlike_literature": 0.25,
+				"no_but_mixed_results": 0.25,
 				"yes_but_low_confidence": 0.75,
 				"yes_but_small_effect": 0.75,
 				"yes": 0.75
@@ -69,6 +73,7 @@
 			"color": "Green",
 			"coherence": {
 				"no_unlike_literature": 0,
+				"no_but_mixed_results": 0,
 				"yes_but_low_confidence": 1,
 				"yes_but_small_effect": 1,
 				"yes": 1
@@ -110,6 +115,13 @@
 			"emoji": "↩️",
 			"text": "No unlike literature",
 			"description": "The results of the paper show no significant effect of the vaccines evaluated on the risk of developing autism, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🔀",
+			"text": "No but mixed results",
+			"description": "The results of the paper show no significant overall effect of the vaccines evaluated on the risk of developing autism, but there are mixed results on specific cases",
 			"p_value": false
 		},
 		"yes_but_low_confidence": {
@@ -339,6 +351,7 @@
 		{
 			"id": "W2090759568",
 			"title": "Autism and measles, mumps, and rubella vaccine: No epidemiological evidence for a causal association",
+			"override_seed": 0,
 			"authors": [
 				"Bill Taylor",
 				"E Miller",
@@ -1358,7 +1371,7 @@
 		{
 			"id": "W2147918475",
 			"title": "Safety of Thimerosal-Containing Vaccines: A Two-Phased Study of Computerized Health Maintenance Organization Databases",
-			"override_seed": 0.8,
+			"override_seed": 0.4,
 			"authors": [
 				"Thomas Verstraeten",
 				"Robert L. Davis",
@@ -1528,7 +1541,7 @@
 		{
 			"id": "W2169567320",
 			"title": "Age at First Measles-Mumps-Rubella Vaccination in Children With Autism and School-Matched Control Subjects: A Population-Based Study in Metropolitan Atlanta",
-			"override_seed": 0.1,
+			"override_seed": 0.3,
 			"authors": [
 				"Frank DeStefano",
 				"Tanya Karapurkar Bhasin",
@@ -2816,7 +2829,7 @@
 		{
 			"id": "W2101325975",
 			"title": "Closer look at autism and the measles-mumps-rubella vaccine",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Emily Hensley",
 				"Leslie Briars"
@@ -2921,7 +2934,7 @@
 		{
 			"id": "W2011584144",
 			"title": "Lack of Association Between Measles-Mumps-Rubella Vaccination and Autism in Children",
-			"override_seed": 0.7,
+			"override_seed": 0.5,
 			"authors": [
 				"Dorota Mrozek‐Budzyn",
 				"Agnieszka Kiełtyka",
@@ -3194,6 +3207,7 @@
 		{
 			"id": "W119668077",
 			"title": "What Every Behavior Analyst Should Know About the “MMR Causes Autism” Hypothesis",
+			"override_seed": 0.7,
 			"authors": [
 				"William H. Ahearn"
 			],
@@ -3969,7 +3983,7 @@
 		{
 			"id": "W2528957557",
 			"title": "Measles and Measles Vaccination",
-			"override_seed": 0.5,
+			"override_seed": 0.9,
 			"authors": [
 				"Johan C. Bester"
 			],
@@ -4177,7 +4191,7 @@
 		},
 		{
 			"title": "Vaccine Adverse Events: Separating Myth from Reality",
-			"override_seed": 0.4,
+			"override_seed": 0.45,
 			"authors": [
 				"Jeanne P Spencer",
 				"Ruth H Trondsen Pawlowski",
@@ -4252,6 +4266,7 @@
 		{
 			"id": "W2794301251",
 			"title": "Current status of vaccines in psychiatry - A narrative review",
+			"override_seed": 0.3,
 			"authors": [
 				"Pooja Patnaik Kuppili",
 				"Harshini Manohar",
@@ -4321,7 +4336,7 @@
 		{
 			"id": "W2906413783",
 			"title": "The contribution of environmental exposure to the etiology of autism spectrum disorder",
-			"override_seed": 0.1,
+			"override_seed": 0.3,
 			"authors": [
 				"Sven Bölte",
 				"Sonya Girdler",
@@ -4358,7 +4373,7 @@
 		{
 			"id": "W2971524645",
 			"title": "Measles, Mumps, Rubella Vaccination and Autism",
-			"override_seed": 0,
+			"override_seed": 0.2,
 			"authors": [
 				"Anders Hviid",
 				"Jørgen Vinsløv Hansen",
@@ -4391,6 +4406,7 @@
 		{
 			"id": "W4376522559",
 			"title": "Measles, Mumps, Rubella Vaccination and Autism",
+			"override_seed": 0.9,
 			"authors": [
 				"Anders Hviid",
 				"Jørgen Vinsløv Hansen",
@@ -4728,7 +4744,7 @@
 				"critics": false
 			},
 			"results": {
-				"consensus": "no_consensus",
+				"consensus": "NotSpecified",
 				"conclusion": "no",
 				"indirect": false
 			},
@@ -4842,7 +4858,7 @@
 				"critics": false
 			},
 			"results": {
-				"consensus": "no_consensus",
+				"consensus": "NotSpecified",
 				"conclusion": "no",
 				"indirect": false
 			},
@@ -4978,7 +4994,7 @@
 			"link": "https://doi.org/10.1007/s11064-023-04089-2",
 			"journal": {
 				"id": "S174790897",
-				"retracted": false
+				"retracted": true
 			},
 			"citations": {
 				"count": 4,

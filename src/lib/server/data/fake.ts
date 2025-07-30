@@ -58,7 +58,7 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		if (quote[i] === ' ' && Math.random() < 0.05)
 			quote = quote.slice(0, i) + ' [...]' + quote.slice(i);
 
-	const consensus = random_choice([random_choice(Object.keys(map.consensus)), MissingReason.NoAccess], [10, 1]);
+	const consensus = random_choice([random_choice(Object.keys(map.consensus)), MissingReason.NotSpecified, MissingReason.NoAccess], [10, 1]);
 	const conclusion = random_choice(Object.keys(map.consensus[consensus === MissingReason.NoAccess ? 'no_consensus' : consensus].coherence))
 
 	return {

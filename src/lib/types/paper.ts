@@ -105,7 +105,7 @@ export interface DataPaper
 		critics: boolean,
 	};
 	results: {
-		consensus: string | MissingReason.NoAccess,
+		consensus: string | MissingReason.NotSpecified | MissingReason.NoAccess,
 		conclusion: string,
 		indirect: boolean,
 	};

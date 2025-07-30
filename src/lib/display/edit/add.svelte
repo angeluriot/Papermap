@@ -158,7 +158,7 @@
 			journal = null;
 		}
 
-		if (consensus !== '' && consensus !== MissingReason.NoAccess && conclusion !== '' && map.consensus[consensus].coherence[conclusion] === undefined)
+		if (consensus !== '' && consensus !== MissingReason.NotSpecified && consensus !== MissingReason.NoAccess && conclusion !== '' && map.consensus[consensus].coherence[conclusion] === undefined)
 			conclusion = '';
 
 		if (
@@ -657,6 +657,7 @@
 			{#each Object.entries(map.consensus) as [id, c]}
 				<option value={id}>{c.text}</option>
 			{/each}
+			<option value={MissingReason.NotSpecified}>(Not specified)</option>
 			<option value={MissingReason.NoAccess}>(No access)</option>
 		</select>
 	</div>
@@ -671,7 +672,7 @@
 			</div>
 			<select bind:value={conclusion}>
 				<option value="" disabled selected hidden></option>
-				{#each Object.keys(map.consensus[consensus === MissingReason.NoAccess ? 'no_consensus': consensus].coherence) as id}
+				{#each Object.keys(map.consensus[consensus === MissingReason.NotSpecified || consensus === MissingReason.NoAccess ? 'no_consensus': consensus].coherence) as id}
 					<option value={id}>{map.conclusions[id].text}</option>
 				{/each}
 			</select>

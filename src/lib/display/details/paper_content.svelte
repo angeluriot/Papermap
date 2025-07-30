@@ -71,6 +71,15 @@
 
 	const consensus = $derived.by(() =>
 	{
+		if (paper.results.consensus === MissingReason.NotSpecified)
+			return {
+				emoji: '🤷',
+				text: 'Not specified',
+				color: COLORS[Color.Gray].default,
+				shadow: color_to_shadow(COLORS[Color.Gray].default),
+				description: 'The paper does not mention any prior literature on the topic',
+			};
+
 		if (paper.results.consensus === MissingReason.NoAccess)
 			return {
 				emoji: '🔒',

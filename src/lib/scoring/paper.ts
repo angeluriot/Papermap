@@ -11,8 +11,8 @@ const TYPE_SCORES = {
 		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.2,
-		[PaperType.CrossSectionalStudy]:				0.2,
-		[PaperType.CaseControlStudy]:					0.2,
+		[PaperType.CrossSectionalStudy]:				0.25,
+		[PaperType.CaseControlStudy]:					0.25,
 		[PaperType.CohortStudy]:						0.3,
 		[PaperType.ClinicalTrial]:						0.3,
 		[PaperType.RandomizedControlledTrial]:			0.7,
@@ -24,8 +24,8 @@ const TYPE_SCORES = {
 		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.3,
-		[PaperType.CrossSectionalStudy]:				0.3,
-		[PaperType.CaseControlStudy]:					0.3,
+		[PaperType.CrossSectionalStudy]:				0.35,
+		[PaperType.CaseControlStudy]:					0.35,
 		[PaperType.CohortStudy]:						0.4,
 		[PaperType.ClinicalTrial]:						0.4,
 		[PaperType.RandomizedControlledTrial]:			1.0,
@@ -37,8 +37,8 @@ const TYPE_SCORES = {
 		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.3,
-		[PaperType.CrossSectionalStudy]:				0.3,
-		[PaperType.CaseControlStudy]:					0.3,
+		[PaperType.CrossSectionalStudy]:				0.4,
+		[PaperType.CaseControlStudy]:					0.4,
 		[PaperType.CohortStudy]:						0.5,
 		[PaperType.ClinicalTrial]:						0.5,
 		[PaperType.RandomizedControlledTrial]:			1.0,
@@ -50,8 +50,8 @@ const TYPE_SCORES = {
 		[MissingReason.NotApplicable]:					0.0,
 		[PaperType.CaseReport]:							0.0,
 		[PaperType.EcologicalStudy]:					0.6,
-		[PaperType.CrossSectionalStudy]:				0.6,
-		[PaperType.CaseControlStudy]:					0.6,
+		[PaperType.CrossSectionalStudy]:				0.7,
+		[PaperType.CaseControlStudy]:					0.7,
 		[PaperType.CohortStudy]:						0.8,
 		[PaperType.ClinicalTrial]:						0.8,
 		[PaperType.RandomizedControlledTrial]:			1.0,
@@ -59,9 +59,9 @@ const TYPE_SCORES = {
 	},
 }
 const REVIEW_TYPE_SCORES = {
-	[ReviewType.NarrativeReview]:	1.0,
-	[ReviewType.SystematicReview]:	2.0,
-	[ReviewType.MetaAnalysis]:		3.0,
+	[ReviewType.NarrativeReview]:	0.5,
+	[ReviewType.SystematicReview]:	1.5,
+	[ReviewType.MetaAnalysis]:		2.0,
 }
 const REVIEW_COUNT_HALF_SCORE = 30.0;
 const ON_SCORES = {
@@ -78,14 +78,14 @@ const ON_SCORES = {
 		[MissingReason.NotSpecified]:			0.0,
 		[MissingReason.NotApplicable]:			0.0,
 		[StudyOn.InVitro]:						0.0,
-		[StudyOn.Animals]:						0.4,
+		[StudyOn.Animals]:						0.3,
 		[StudyOn.Humans]:						1.0,
 	},
 }
 const CITATIONS_HALF_SCORE = 50.0;
 const MIN_YEAR = 1900;
-const SAMPLE_SIZE_HALF_SCORE = 200.0;
-const RCT_SAMPLE_SIZE_HALF_SCORE = 30.0;
+const SAMPLE_SIZE_HALF_SCORE = 300.0;
+const RCT_SAMPLE_SIZE_HALF_SCORE = 50.0;
 const MAX_P_VALUE = 0.05;
 const P_VALUE_EXP = 2;
 const NO_P_VALUE_TYPE_INCREASE = 0.3;
@@ -97,7 +97,7 @@ const COEFS = {
 	critics: 0.5,
 	coherence: 0.1,
 	direct: 0.5,
-	review: 0.4,
+	review: 0.5,
 	type: 0.7,
 	on: 0.5,
 	sample_size: 0.2,
@@ -145,7 +145,7 @@ export function score_critics(paper: DataPaper): number
 
 export function score_coherence(map: DataMap | Map, paper: DataPaper): number
 {
-	if (paper.results.consensus === MissingReason.NoAccess)
+	if (paper.results.consensus === MissingReason.NotSpecified || paper.results.consensus === MissingReason.NoAccess)
 		return 0.5;
 
 	return map.consensus[paper.results.consensus].coherence[paper.results.conclusion];

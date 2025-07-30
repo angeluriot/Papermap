@@ -38,7 +38,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 			retracted: paper.journal.retracted ? 'Retracted' : '',
 			year: paper.year,
 			link: paper.link,
-			consensus: paper.results.consensus === MissingReason.NoAccess ? '' : map.consensus[paper.results.consensus].text,
+			consensus: paper.results.consensus === MissingReason.NotSpecified || paper.results.consensus === MissingReason.NoAccess ? '' : map.consensus[paper.results.consensus].text,
 			conclusion: map.conclusions[paper.results.conclusion].text,
 			quote: paper.quote,
 			review: paper.review ? remove_uppercase(cards.TO_TEXT[paper.review.type]) : '',
