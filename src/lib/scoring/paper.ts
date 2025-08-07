@@ -88,7 +88,7 @@ const SAMPLE_SIZE_HALF_SCORE = 300.0;
 const RCT_SAMPLE_SIZE_HALF_SCORE = 50.0;
 const MAX_P_VALUE = 0.05;
 const P_VALUE_EXP = 2;
-const NO_P_VALUE_TYPE_INCREASE = 0.3;
+const NO_P_VALUE_TYPE_INCREASE = 0.5;
 export const REVIEW_OF_REVIEWS_MULTIPLIER = 5;
 const COEFS = {
 	year: 0.1,
@@ -214,7 +214,7 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 	let score = types.map(type => type_scores[type]).reduce((acc, score) => acc + score, 0.0) / types.length;
 
 	if (!map.conclusions[paper.results.conclusion].p_value)
-		score += (1.0 - score) * NO_P_VALUE_TYPE_INCREASE;
+		score += NO_P_VALUE_TYPE_INCREASE * score * (1.0 - score);
 
 	return score;
 }
@@ -375,7 +375,9 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	review_score = (review_score * COEFS.review) + (1 - COEFS.review);
 	type_score = (type_score * COEFS.type) + (1 - COEFS.type);
 	on_score = (on_score * COEFS.on) + (1 - COEFS.on);
-	sample_size_score = (sample_size_score * COEFS.sample_size) + (1 - COEFS.sample_size);
+
+	let coef_sample_size = map.conclusions[paper.results.conclusion].p_value ? COEFS.sample_size * 0.5 : COEFS.sample_size * 1.5;
+	sample_size_score = (sample_size_score * coef_sample_size) + (1 - coef_sample_size);
 	p_value_score = (p_value_score * COEFS.p_value) + (1 - COEFS.p_value);
 	conflict_of_interest_score = (conflict_of_interest_score * COEFS.conflict_of_interest) + (1 - COEFS.conflict_of_interest);
 	notes_scores = notes_scores.map(score => (score * COEFS.notes) + (1 - COEFS.notes));

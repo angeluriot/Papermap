@@ -22,6 +22,7 @@
 			"coherence": {
 				"no": 0.5,
 				"no_but_mixed_results": 0.5,
+				"maybe": 0.5,
 				"yes_but_low_confidence": 0.5,
 				"yes_but_small_effect": 0.5,
 				"yes": 0.5
@@ -35,6 +36,7 @@
 			"coherence": {
 				"no": 1,
 				"no_but_mixed_results": 1,
+				"maybe": 0.5,
 				"yes_but_low_confidence": 0,
 				"yes_but_small_effect": 0,
 				"yes_unlike_literature": 0
@@ -48,6 +50,7 @@
 			"coherence": {
 				"no": 0.75,
 				"no_but_mixed_results": 0.75,
+				"maybe": 0.5,
 				"yes_but_low_confidence": 0.25,
 				"yes_but_small_effect": 0.25,
 				"yes_unlike_literature": 0.25
@@ -61,6 +64,7 @@
 			"coherence": {
 				"no_unlike_literature": 0.25,
 				"no_but_mixed_results": 0.25,
+				"maybe": 0.5,
 				"yes_but_low_confidence": 0.75,
 				"yes_but_small_effect": 0.75,
 				"yes": 0.75
@@ -74,6 +78,7 @@
 			"coherence": {
 				"no_unlike_literature": 0,
 				"no_but_mixed_results": 0,
+				"maybe": 0.5,
 				"yes_but_low_confidence": 1,
 				"yes_but_small_effect": 1,
 				"yes": 1
@@ -88,6 +93,10 @@
 		"no_but": {
 			"text": "No but...",
 			"color": "Red1H"
+		},
+		"maybe": {
+			"text": "Maybe",
+			"color": "Yellow"
 		},
 		"more_research_needed": {
 			"text": "More research needed",
@@ -122,6 +131,13 @@
 			"emoji": "🔀",
 			"text": "No but mixed results",
 			"description": "The results of the paper show no significant overall effect of the vaccines evaluated on the risk of developing autism, but there are mixed results on specific cases",
+			"p_value": false
+		},
+		"maybe": {
+			"group": "maybe",
+			"emoji": "🤷",
+			"text": "Maybe",
+			"description": "The results of the paper suggest that the vaccines evaluated might have an effect on the risk of developing autism, but the evidence is not strong enough to conclude",
 			"p_value": false
 		},
 		"yes_but_low_confidence": {
@@ -544,7 +560,7 @@
 		{
 			"id": "W2072979656",
 			"title": "MMR and autism: further evidence against a causal association",
-			"override_seed": 0.75,
+			"override_seed": 0.9,
 			"authors": [
 				"Paddy Farrington",
 				"Elizabeth Miller",
@@ -1197,7 +1213,7 @@
 		{
 			"id": "W2101662070",
 			"title": "Epidemiology and Possible Causes of Autism",
-			"override_seed": 0.7,
+			"override_seed": 0.9,
 			"authors": [
 				"Hershel Jick",
 				"James A. Kaye"
@@ -1541,7 +1557,7 @@
 		{
 			"id": "W2169567320",
 			"title": "Age at First Measles-Mumps-Rubella Vaccination in Children With Autism and School-Matched Control Subjects: A Population-Based Study in Metropolitan Atlanta",
-			"override_seed": 0.3,
+			"override_seed": 0.8,
 			"authors": [
 				"Frank DeStefano",
 				"Tanya Karapurkar Bhasin",
@@ -1934,7 +1950,7 @@
 		{
 			"id": "W2100810138",
 			"title": "Thimerosal Exposure in Infants and Developmental Disorders: A Prospective Cohort Study in the United Kingdom Does Not Support a Causal Association",
-			"override_seed": 0.6,
+			"override_seed": 0.5,
 			"authors": [
 				"Jon Heron",
 				"Jean Golding"
@@ -2055,7 +2071,7 @@
 				"conclusion": "no",
 				"indirect": false
 			},
-			"quote": "The rate of ASD shows no particular association with either the stopping or starting of MMR [...] . The evidence with respect to a possible association with Thimerosal, a preservative in some vaccines, is much more limited but, again, there is no supporting epidemiological evidence of a causal association",
+			"quote": "The rate of ASD shows no particular association with either the stopping or starting of MMR. [...] The evidence with respect to a possible association with Thimerosal, a preservative in some vaccines, is much more limited but, again, there is no supporting epidemiological evidence of a causal association",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
@@ -2900,7 +2916,7 @@
 		{
 			"id": "W1965589730",
 			"title": "Hepatitis B Vaccination of Male Neonates and Autism Diagnosis, NHIS 1997–2002",
-			"override_seed": 0,
+			"override_seed": 0.6,
 			"authors": [
 				"Carolyn M. Gallagher",
 				"Melody S. Goodman"
@@ -2934,7 +2950,7 @@
 		{
 			"id": "W2011584144",
 			"title": "Lack of Association Between Measles-Mumps-Rubella Vaccination and Autism in Children",
-			"override_seed": 0.5,
+			"override_seed": 0.1,
 			"authors": [
 				"Dorota Mrozek‐Budzyn",
 				"Agnieszka Kiełtyka",

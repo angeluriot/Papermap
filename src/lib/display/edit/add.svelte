@@ -63,7 +63,7 @@
 		[NoteImpact.VeryPositive]: 'Very positive',
 		[NoteImpact.ExtremelyPositive]: 'Extremely positive',
 	};
-	const bad_paper_threshold = 0.3;
+	const bad_paper_threshold = 0.2;
 	const max_author_bad_papers = 3;
 	const max_journal_bad_papers = 5;
 
@@ -396,11 +396,7 @@
 
 			if (nb >= max_author_bad_papers)
 			{
-				if (final_paper.authors.length === 1)
-					alert(`There is already ${nb} papers from this author with a bad score (<${bad_paper_threshold}).`);
-				else
-					alert(`There is already ${nb} papers from ${author} with a bad score (<${bad_paper_threshold}).`);
-
+				alert(`There is already ${nb} papers from ${author} with a low score (<${bad_paper_threshold}).`);
 				return false;
 			}
 		}
@@ -420,7 +416,7 @@
 
 			if (nb >= max_journal_bad_papers)
 			{
-				alert(`There is already ${nb} papers from this journal with a bad score (<${bad_paper_threshold}).`);
+				alert(`There is already ${nb} papers from ${journal?.title ?? 'this journal'} with a low score (<${bad_paper_threshold}).`);
 				return false;
 			}
 		}

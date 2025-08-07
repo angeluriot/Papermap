@@ -50,7 +50,7 @@ export const TO_TEXT = {
 	[MissingReason.NotSpecified]: 'Not Specified',
 	[MissingReason.NotApplicable]: 'Not Applicable',
 	[ConflictOfInterest.None]: 'None',
-	[ConflictOfInterest.SomeLinks]: 'Some Links',
+	[ConflictOfInterest.SomeLinks]: 'Some links',
 	[ConflictOfInterest.YesButOppositeResults]: 'Yes but opposite results',
 	[ConflictOfInterest.Yes]: 'Yes',
 }

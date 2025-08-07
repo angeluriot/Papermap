@@ -636,9 +636,11 @@ Additional information about the paper.
 							<td>
 								👆 Choice:<br/>
 								<code>Extremely negative</code><br/>
+								<code>Very negative</code><br/>
 								<code>Negative</code><br/>
 								<code>Neutral</code><br/>
 								<code>Positive</code><br/>
+								<code>Very positive</code><br/>
 								<code>Extremely positive</code><br/>
 							</td>
 						</tr>
