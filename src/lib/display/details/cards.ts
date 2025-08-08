@@ -17,6 +17,7 @@ export const TO_EMOJI = {
 	[PaperType.BlindedRandomizedControlledTrial]: '🫣',
 	[ReviewedPapersType.DiverseObservationalStudies]: '👀',
 	[ReviewedPapersType.DiverseClinicalTrials]: '🧪',
+	[ReviewType.Review]: '🔍',
 	[ReviewType.NarrativeReview]: '📖',
 	[ReviewType.SystematicReview]: '🗂️',
 	[ReviewType.MetaAnalysis]: '📊',
@@ -43,6 +44,7 @@ export const TO_TEXT = {
 	[ReviewedPapersType.DiverseObservationalStudies]: 'Diverse Observational Studies',
 	[ReviewedPapersType.DiverseClinicalTrials]: 'Diverse Clinical Trials',
 	[ReviewedPapersType.DiverseTypes]: 'Diverse Types',
+	[ReviewType.Review]: 'Review',
 	[ReviewType.NarrativeReview]: 'Narrative Review',
 	[ReviewType.SystematicReview]: 'Systematic Review',
 	[ReviewType.MetaAnalysis]: 'Meta-Analysis',
@@ -72,6 +74,7 @@ export const TO_TEXT_PLURAL = {
 
 
 export const REVIEW_COLORS = {
+	[ReviewType.Review]: '#48c7e5',
 	[ReviewType.NarrativeReview]: '#48c7e5',
 	[ReviewType.SystematicReview]: '#5d97ed',
 	[ReviewType.MetaAnalysis]: '#5d75ed',
@@ -92,6 +95,7 @@ export const TO_DESCRIPTION = {
 	[PaperType.BlindedRandomizedControlledTrial]: 'A randomized controlled trial where participants and/or researchers are unaware of group assignments to reduce bias',
 	[ReviewedPapersType.DiverseObservationalStudies]: 'Diverse observational studies (case reports, ecological studies, cross-sectional studies, case-control studies or cohort studies)',
 	[ReviewedPapersType.DiverseClinicalTrials]: 'Diverse clinical trials with or without randomization or blinding',
+	[ReviewType.Review]: 'A reanalysis or commentary on existing literature',
 	[ReviewType.NarrativeReview]: 'A qualitative summary of the existing literature on a particular topic',
 	[ReviewType.SystematicReview]: 'A comprehensive review of existing literature using a structured methodology to minimize bias',
 	[ReviewType.MetaAnalysis]: 'A statistical analysis that combines the results of multiple scientific studies',

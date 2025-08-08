@@ -59,6 +59,7 @@ const TYPE_SCORES = {
 	},
 }
 const REVIEW_TYPE_SCORES = {
+	[ReviewType.Review]:			0.0,
 	[ReviewType.NarrativeReview]:	0.5,
 	[ReviewType.SystematicReview]:	1.5,
 	[ReviewType.MetaAnalysis]:		2.0,

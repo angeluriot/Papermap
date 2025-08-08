@@ -151,6 +151,7 @@
 	const paper_type_parts = $derived.by(() =>
 	{
 		let result: ({ text: string, is_card: false } | { emoji: string, text: string, color: string, shadow: string, description: string, is_card: true })[] = [];
+		let review_one = paper.review?.count === 1;
 
 		if (paper.review)
 		{
@@ -163,7 +164,7 @@
 				is_card: true,
 			});
 
-			result.push({ text: 'of', is_card: false });
+			result.push({ text: 'of' + (review_one ? ' a' : ''), is_card: false });
 
 			if (paper.review.count === MissingReason.NoAccess)
 			{
@@ -193,7 +194,7 @@
 				result.push({ text: 'papers', is_card: false });
 			}
 
-			else
+			else if (!review_one)
 			{
 				result.push({
 					emoji: cards.review_count_score_to_emoji(paper.scores.review_count),
@@ -206,7 +207,7 @@
 			}
 		}
 
-		if ((paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes && result.length > 0) || paper.review?.reviews)
+		if (!review_one && ((paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes && result.length > 0) || paper.review?.reviews))
 		{
 			if (!result[result.length - 1].is_card)
 				result[result.length - 1].text += ' that are mostly';
@@ -218,7 +219,7 @@
 		{
 			result.push({
 				emoji: cards.TO_EMOJI[ReviewType.NarrativeReview],
-				text: 'Literature reviews',
+				text: 'Literature review' + (review_one ? '' : 's'),
 				color: cards.REVIEW_COLORS[ReviewType.NarrativeReview],
 				shadow: color_to_shadow(cards.REVIEW_COLORS[ReviewType.NarrativeReview]),
 				description: cards.TO_DESCRIPTION[ReviewType.NarrativeReview],
@@ -265,7 +266,7 @@
 		{
 			result.push({
 				emoji: cards.TO_EMOJI[paper.type],
-				text: paper.review ? cards.TO_TEXT_PLURAL[paper.type] : cards.TO_TEXT[paper.type],
+				text: paper.review && (!review_one || paper.review.reviews) ? cards.TO_TEXT_PLURAL[paper.type] : cards.TO_TEXT[paper.type],
 				color: cards.score_to_color(paper.scores.type),
 				shadow: color_to_shadow(cards.score_to_color(paper.scores.type)),
 				description: cards.TO_DESCRIPTION[paper.type],

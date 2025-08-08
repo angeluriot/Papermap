@@ -53,6 +53,7 @@ export enum PaperType
 
 export enum ReviewType
 {
+	Review = 'Review',
 	NarrativeReview = 'NarrativeReview',
 	SystematicReview = 'SystematicReview',
 	MetaAnalysis = 'MetaAnalysis',

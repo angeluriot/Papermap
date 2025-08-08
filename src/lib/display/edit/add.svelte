@@ -200,6 +200,7 @@
 	});
 
 	let is_review = $derived(review_type !== '' && review_type !== 'null');
+	let is_review_multiple = $derived(review_type !== '' && review_type !== 'null' && review_count !== 1);
 	let autocomplete_focused = $state(false);
 
 	function is_valid(): boolean
@@ -732,7 +733,7 @@
 	{/if}
 	<div class="input">
 		<div class="label unselectable flex-center-row">
-			{#if is_review}
+			{#if is_review_multiple && review_count != 1}
 				<span>Study type of most papers</span>
 			{:else}
 				<span>Study type</span>
@@ -741,22 +742,22 @@
 		</div>
 		<select bind:value={type}>
 			<option value="" disabled selected hidden></option>
-			{#each Object.values(PaperType).map(id => to_id_text(id, is_review)) as [id, text]}
+			{#each Object.values(PaperType).map(id => to_id_text(id, is_review_multiple)) as [id, text]}
 				<option value={id}>{text}</option>
 			{/each}
-			{#if is_review}
-				{#each Object.values(ReviewedPapersType).map(id => to_id_text(id, is_review)) as [id, text]}
+			{#if is_review_multiple}
+				{#each Object.values(ReviewedPapersType).map(id => to_id_text(id, is_review_multiple)) as [id, text]}
 					<option value={id}>({text})</option>
 				{/each}
 			{/if}
 			<option value={MissingReason.NoAccess}>(No access)</option>
 			<option value={MissingReason.NotSpecified}>(Not specified)</option>
-			<option value={MissingReason.NotApplicable}>(No specific type{#if is_review}s{/if})</option>
+			<option value={MissingReason.NotApplicable}>(No specific type{#if is_review_multiple}s{/if})</option>
 		</select>
 	</div>
 	<div class="input">
 		<div class="label unselectable flex-center-row">
-			<span>Subjects {#if is_review}in most papers{/if}</span>
+			<span>Subjects {#if is_review_multiple}in most papers{/if}</span>
 			<span class="required">*</span>
 		</div>
 		<select bind:value={on}>
@@ -764,7 +765,7 @@
 			{#each Object.values(StudyOn).map(id => to_id_text(id, false)) as [id, text]}
 				<option value={id}>{text}</option>
 			{/each}
-			{#if is_review}
+			{#if is_review_multiple}
 				<option value={ReviewedStudiesOn.DiverseSubjects}>(Diverse subjects)</option>
 			{/if}
 			{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
@@ -774,12 +775,12 @@
 	</div>
 	<div class="input">
 		<div class="label unselectable">
-			<span>{#if is_review}Total sample{:else}Sample{/if} size</span>
+			<span>{#if is_review_multiple}Total sample{:else}Sample{/if} size</span>
 			<span class="optional unselectable">(optional)</span>
 		</div>
 		<input
 			bind:value={sample_size} type="number" min=1
-			placeholder={is_review ? 'The total number of participants in the included papers' : 'The number of participants in the study'}
+			placeholder={is_review_multiple ? 'The total number of participants in the included papers' : 'The number of participants in the study'}
 		/>
 		{#if sample_size === null}
 			<select bind:value={sample_size_missing_reason}>
