@@ -381,44 +381,47 @@
 
 	function post_checks(final_paper: Paper): boolean
 	{
-		for (const author of final_paper.authors)
+		if (final_paper.score < bad_paper_threshold)
 		{
-			let nb = 0;
-
-			for (const paper of Object.values(map.papers))
+			for (const author of final_paper.authors)
 			{
-				if (paper.score > bad_paper_threshold)
-					continue;
+				let nb = 0;
 
-				for (const other_author of paper.authors)
-					if (get_standard_name(author) === get_standard_name(other_author))
+				for (const paper of Object.values(map.papers))
+				{
+					if (paper.score >= bad_paper_threshold)
+						continue;
+
+					for (const other_author of paper.authors)
+						if (get_standard_name(author) === get_standard_name(other_author))
+							nb++;
+				}
+
+				if (nb >= max_author_bad_papers)
+				{
+					alert(`There is already ${nb} papers from ${author} with a low score (<${bad_paper_threshold}).`);
+					return false;
+				}
+			}
+
+			if (final_paper.journal.id !== JournalMissingReason.NotPublished && final_paper.journal.id !== JournalMissingReason.NotFound)
+			{
+				let nb = 0;
+
+				for (const paper of Object.values(map.papers))
+				{
+					if (paper.score >= bad_paper_threshold)
+						continue;
+
+					if (final_paper.journal.id === paper.journal.id)
 						nb++;
-			}
+				}
 
-			if (nb >= max_author_bad_papers)
-			{
-				alert(`There is already ${nb} papers from ${author} with a low score (<${bad_paper_threshold}).`);
-				return false;
-			}
-		}
-
-		if (final_paper.journal.id !== JournalMissingReason.NotPublished && final_paper.journal.id !== JournalMissingReason.NotFound)
-		{
-			let nb = 0;
-
-			for (const paper of Object.values(map.papers))
-			{
-				if (paper.score > bad_paper_threshold)
-					continue;
-
-				if (final_paper.journal.id === paper.journal.id)
-					nb++;
-			}
-
-			if (nb >= max_journal_bad_papers)
-			{
-				alert(`There is already ${nb} papers from ${journal?.title ?? 'this journal'} with a low score (<${bad_paper_threshold}).`);
-				return false;
+				if (nb >= max_journal_bad_papers)
+				{
+					alert(`There is already ${nb} papers from ${journal?.title ?? 'this journal'} with a low score (<${bad_paper_threshold}).`);
+					return false;
+				}
 			}
 		}
 
