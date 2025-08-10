@@ -330,6 +330,7 @@ The type of literature review, if the paper is one.
 			<td><b>Options</b></td>
 			<td>
 				<code>(Not a literature review)</code><br/>
+				<code>Review</code><br/>
 				<code>Narrative review</code><br/>
 				<code>Systematic review</code><br/>
 				<code>Meta-analysis</code><br/>
@@ -344,6 +345,7 @@ The type of literature review, if the paper is one.
 
 * The options are:
 	* `(Not a literature review)`: the paper is not a literature review
+	* `Review`: the paper is a reanalysis or commentary on existing literature
 	* `Narrative review`: the paper is a qualitative summary of the existing literature on a particular topic
 	* `Systematic review`: the paper is a comprehensive review of existing literature using a structured methodology to minimize bias
 	* `Meta-analysis`: the paper is a statistical analysis that combines the results of multiple scientific studies
