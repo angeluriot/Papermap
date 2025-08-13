@@ -4,7 +4,8 @@ import { join } from 'path';
 
 
 const email = process.env.VITE_OPENALEX_EMAIL ?? '';
-const [, , map_id] = process.argv;
+const map_id = process.argv[2];
+const only_reviews = process.argv[3] === 'true';
 const nb_per_page = 90;
 
 
@@ -88,7 +89,12 @@ async function get_map(id)
 
 async function api_find_paper_ids(papers)
 {
-	const ids = papers.filter(paper => paper.id).toSorted((a, b) => b.year - a.year).slice(0, nb_per_page).map(paper => paper.id);
+	const ids = papers
+		.filter(paper => paper.id)
+		.filter(paper => !only_reviews || paper.review)
+		.toSorted((a, b) => b.year - a.year)
+		.slice(0, nb_per_page)
+		.map(paper => paper.id);
 
 	let query = new URLSearchParams({
 		'filter': 'openalex:' + ids.join('|'),
