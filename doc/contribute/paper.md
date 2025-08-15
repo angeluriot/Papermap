@@ -637,13 +637,11 @@ Additional information about the paper.
 							<td>Impact</td>
 							<td>
 								👆 Choice:<br/>
-								<code>Extremely negative</code><br/>
 								<code>Very negative</code><br/>
 								<code>Negative</code><br/>
 								<code>Neutral</code><br/>
 								<code>Positive</code><br/>
 								<code>Very positive</code><br/>
-								<code>Extremely positive</code><br/>
 							</td>
 						</tr>
 					</tbody>
@@ -661,12 +659,10 @@ Additional information about the paper.
 * **Description** is a short description of the information
 * **Link** is optional, it can be used if the information does not come from the paper
 * **Impact** is a subjective assessment of the information's effect on the paper's credibility or its impact on the map's question:
-	* `Extremely negative` is for information that drastically reduces the credibility of the paper or its impact on the map's question (for example if it has been proven that the authors falsified their results or if there's a major calculation error that completely changes the conclusion)
-	* `Very negative` is for information that highly reduces the credibility of the paper or its impact on the map's question (for example if the authors are controversial and have done poor research in the past)
-	* `Negative` is for information that may reduce the credibility of the paper or its impact on the map's question (for example if there are criticisms about the quality of the data used in the paper)
+	* `Very negative` is for information that highly reduces the credibility of the paper or its impact on the map's question (for example if it has been proven that the authors falsified their results or if there's a major calculation error that completely changes the conclusion)
+	* `Negative` is for information that may reduce the credibility of the paper or its impact on the map's question (for example if there are criticisms about the quality of the data used in the paper or issues with the authors' previous work)
 	* `Neutral` is for information that does not significantly affect the credibility of the paper or its impact on the map's question
 	* `Positive` is for information that may increase the credibility of the paper or its impact on the map's question
 	* `Very positive` is for information that highly increases the credibility of the paper or its impact on the map's question (for example if an observational study is based on data from groups which were initially randomly assigned)
-	* `Extremely positive` is for information that drastically increases the credibility of the paper or its impact on the map's question (there is probably no such case)
 * Do not add notes about things that are already covered by the other fields
 * The maximum number of notes is `5`

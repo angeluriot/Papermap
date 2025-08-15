@@ -71,13 +71,11 @@ export enum ConflictOfInterest
 
 export enum NoteImpact
 {
-	ExtremelyNegative = 'ExtremelyNegative',
 	VeryNegative = 'VeryNegative',
 	Negative = 'Negative',
 	Neutral = 'Neutral',
 	Positive = 'Positive',
 	VeryPositive = 'VeryPositive',
-	ExtremelyPositive = 'ExtremelyPositive',
 }
 
 

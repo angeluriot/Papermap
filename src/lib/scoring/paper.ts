@@ -95,7 +95,7 @@ const COEFS = {
 	year: 0.1,
 	journal: 0.5,
 	citations: 0.1,
-	critics: 0.5,
+	critics: 0.4,
 	coherence: 0.1,
 	direct: 0.5,
 	review: 0.5,
@@ -310,18 +310,14 @@ function score_notes(paper: DataPaper): number[]
 
 	for (const note of paper.notes)
 	{
-		if (note.impact === NoteImpact.ExtremelyNegative)
+		if (note.impact === NoteImpact.VeryNegative)
 			scores.push(0.0);
-		else if (note.impact === NoteImpact.VeryNegative)
-			scores.push(0.5);
 		else if (note.impact === NoteImpact.Negative)
-			scores.push(0.8);
+			scores.push(0.7);
 		else if (note.impact === NoteImpact.Positive)
 			scores.push(1.2);
 		else if (note.impact === NoteImpact.VeryPositive)
 			scores.push(1.5);
-		else if (note.impact === NoteImpact.ExtremelyPositive)
-			scores.push(2.0);
 	}
 
 	return scores;

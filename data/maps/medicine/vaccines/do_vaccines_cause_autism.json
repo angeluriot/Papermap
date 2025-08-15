@@ -316,7 +316,7 @@
 					"title": "Data manipulation",
 					"description": "Symptoms before vaccination deliberately hidden, changes in reported measurement dates, data selection, patients recruited through anti-vaccine campaigners",
 					"link": "https://doi.org/10.1136/bmj.c5347",
-					"impact": "ExtremelyNegative"
+					"impact": "VeryNegative"
 				},
 				{
 					"title": "Undisclosed conflict of interest",
@@ -328,7 +328,7 @@
 					"title": "Anti-vaccine activist",
 					"description": "The first author is an anti-vaccine activist that directed the movie \"Vaxxed: From Cover-Up to Catastrophe\"",
 					"link": "https://en.wikipedia.org/wiki/Andrew_Wakefield",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				}
 			]
 		},
@@ -479,7 +479,7 @@
 					"title": "Anti-vaccine organization",
 					"description": "All the authors are part of an organization (SafeMinds) dedicated to promoting the idea that mercury and vaccines cause autism",
 					"link": "https://www.wikidoc.org/index.php/Safe_Minds",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Most vaccines now mercury-free",
@@ -1056,13 +1056,13 @@
 				{
 					"title": "Omitted information",
 					"description": "Crucial information such as participants' vaccination status or the interval between vaccination and biopsy collection was suspiciously omitted from the analysis",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Controversial author",
 					"description": "One of the authors, Andrew Wakefield, was found to have undeclared conflicts of interest and to have manipulated evidence in related work, he is also an anti-vaccine activist",
 					"link": "https://fr.wikipedia.org/wiki/Andrew_Wakefield",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Vaccine VS natural infection",
@@ -2390,7 +2390,7 @@
 					"title": "Controversial authors",
 					"description": "The authors have a long history of highly criticized and even retracted publications, undisclosed conflicts of interest, dishonesty, data manipulation, and revoked medical licenses",
 					"link": "https://en.wikipedia.org/wiki/Mark_Geier",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Most vaccines now mercury-free",
@@ -2802,7 +2802,7 @@
 				{
 					"title": "Randomization and blindness",
 					"description": "This cohort study is based on groups from an earlier clinical trial who were randomly assigned under double-blind conditions",
-					"impact": "Positive"
+					"impact": "VeryPositive"
 				}
 			]
 		},
@@ -3286,7 +3286,7 @@
 				{
 					"title": "Anti-vaccine organization",
 					"description": "The author is on the board of directors and research committee of SafeMinds, an anti-vaccine organization",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				}
 			]
 		},
@@ -3327,7 +3327,7 @@
 					"title": "Controversial author",
 					"description": "The second author has a long history of highly criticized and even retracted publications, close relations with several anti-vaccine organizations, and is the senior editor of an anti-vaccine journal",
 					"link": "https://en.wikipedia.org/wiki/Christopher_Shaw_(neuroscientist)",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				}
 			]
 		},
@@ -3368,7 +3368,7 @@
 				{
 					"title": "Strange choices",
 					"description": "For some reason, the author decided to ignore all the large-scale epidemiological studies that refuted this link and instead focus on indirect hypotheses and speculations from controversial authors and anti-vaccine blogs",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				}
 			]
 		},
@@ -3480,13 +3480,13 @@
 					"title": "Controversial author",
 					"description": "The first author has a long history of highly criticized and even retracted publications, undisclosed conflicts of interest, dishonesty, data manipulation, and revoked medical licenses",
 					"link": "https://en.wikipedia.org/wiki/Mark_Geier",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Anti-vaccine activist",
 					"description": "The second author is an anti-vaccine activist",
 					"link": "https://en.wikipedia.org/wiki/Brian_Hooker_(bioengineer)",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Most vaccines now mercury-free",
@@ -3535,7 +3535,7 @@
 					"title": "Controversial author",
 					"description": "The first author has a long history of highly criticized and even retracted publications, close relations with several anti-vaccine organizations, and is the senior editor of an anti-vaccine journal",
 					"link": "https://en.wikipedia.org/wiki/Christopher_Shaw_(neuroscientist)",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				}
 			]
 		},
@@ -3687,7 +3687,7 @@
 					"title": "Anti-vaccine activist",
 					"description": "The author is an anti-vaccine activist",
 					"link": "https://en.wikipedia.org/wiki/Brian_Hooker_(bioengineer)",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				}
 			]
 		},
@@ -4138,12 +4138,12 @@
 					"title": "Controversial authors",
 					"description": "The first and last authors have a long history of highly criticized and even retracted publications, undisclosed conflicts of interest, dishonesty, data manipulation, and revoked medical licenses",
 					"link": "https://en.wikipedia.org/wiki/Mark_Geier",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Questionable bibliography",
 					"description": "The authors describe the extensive literature of large-scale epistemological studies as \"a few epidemiological studies\", and claim that they have been strongly criticized by referring only to their own papers",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Most vaccines now mercury-free",
@@ -4195,7 +4195,7 @@
 				{
 					"title": "Anti-vaccine funding",
 					"description": "The study was supported by grants from anti-vaccine organizations like Generation Rescue or the Children’s Medical Safety Research Institute",
-					"impact": "VeryNegative"
+					"impact": "Negative"
 				},
 				{
 					"title": "Retraction history",

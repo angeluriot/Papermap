@@ -55,13 +55,11 @@
 	let loading = $state(false);
 
 	const impact_to_text = {
-		[NoteImpact.ExtremelyNegative]: 'Extremely negative',
 		[NoteImpact.VeryNegative]: 'Very negative',
 		[NoteImpact.Negative]: 'Negative',
 		[NoteImpact.Neutral]: 'Neutral',
 		[NoteImpact.Positive]: 'Positive',
 		[NoteImpact.VeryPositive]: 'Very positive',
-		[NoteImpact.ExtremelyPositive]: 'Extremely positive',
 	};
 	const bad_paper_threshold = 0.2;
 	const max_author_bad_papers = 3;
@@ -381,7 +379,7 @@
 
 	function post_checks(final_paper: Paper): boolean
 	{
-		if (final_paper.score < bad_paper_threshold)
+		if (!paper && final_paper.score < bad_paper_threshold)
 		{
 			for (const author of final_paper.authors)
 			{
