@@ -22,10 +22,7 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 		retracted: paper.journal.retracted,
 	};
 
-	result.citations = {
-		count: paper.citations.count,
-		critics: paper.citations.critics,
-	};
+	result.citations = paper.citations;
 
 	result.results = {
 		consensus: paper.results.consensus,

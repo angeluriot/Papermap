@@ -17,10 +17,7 @@ export const paper_schema = z.object({
 		id: z.string().nonempty(),
 		retracted: z.boolean(),
 	}).strict(),
-	citations: z.object({
-		count: z.union([z.number().int().min(0), z.literal(MissingReason.NotSpecified)]),
-		critics: z.boolean(),
-	}).strict(),
+	citations: z.union([z.number().int().min(0), z.literal(MissingReason.NotSpecified)]),
 	results: z.object({
 		consensus: z.string().nonempty(),
 		conclusion: z.string().nonempty(),

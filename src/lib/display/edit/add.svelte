@@ -34,7 +34,6 @@
 	let journal: JournalTitle | null = $state(null);
 	let retracted: boolean = $state(false);
 	let citations: number | null = $state(null);
-	let critics: boolean = $state(false);
 	let consensus: string = $state('');
 	let conclusion: string = $state('');
 	let indirect: boolean = $state(false);
@@ -120,8 +119,7 @@
 			journal_search = '';
 			journal = cloneDeep(temp);
 			retracted = cloneDeep(paper.journal.retracted);
-			citations = cloneDeep(paper.citations.count !== MissingReason.NotSpecified ? paper.citations.count : null);
-			critics = cloneDeep(paper.citations.critics);
+			citations = cloneDeep(paper.citations !== MissingReason.NotSpecified ? paper.citations : null);
 			consensus = cloneDeep(paper.results.consensus);
 			conclusion = cloneDeep(paper.results.conclusion);
 			indirect = cloneDeep(paper.results.indirect);
@@ -281,10 +279,7 @@
 				id: journal ? journal.id : JournalMissingReason.NotPublished,
 				retracted,
 			},
-			citations: {
-				count: citations !== null ? citations : MissingReason.NotSpecified,
-				critics: critics,
-			},
+			citations: citations !== null ? citations : MissingReason.NotSpecified,
 			results: {
 				consensus: consensus.trim(),
 				conclusion: conclusion.trim(),
@@ -425,7 +420,7 @@
 
 		if (final_paper.journal.id === JournalMissingReason.NotPublished)
 		{
-			if (final_paper.citations.count === 0)
+			if (final_paper.citations === 0)
 			{
 				alert(`Preprints need at least one citation from a published paper.`);
 				return false;
@@ -631,16 +626,6 @@
 			<span class="optional unselectable">(optional)</span>
 		</div>
 		<input bind:value={citations} type="number" min=0 placeholder="The number of times the paper has been cited"/>
-	</div>
-	<div class="input checkbox">
-		<input bind:checked={critics} type="checkbox"/>
-		<div
-			class="label" role="button" tabindex={0} onkeydown={null}
-			onclick={() => { critics = !critics; }}
-		>
-			<span class="unselectable">Mostly critics</span>
-			<span class="optional unselectable">(Most of the citations are critical of the paper)</span>
-		</div>
 	</div>
 	<div class="input">
 		<div class="label unselectable flex-center-row">

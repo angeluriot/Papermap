@@ -45,8 +45,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 			review_count: typeof paper.review?.count === 'number' ? paper.review.count : '',
 			type: Object.keys(MissingReason).includes(paper.type) ? '' : remove_uppercase(cards.TO_TEXT[paper.type as PaperType]),
 			on: Object.keys(MissingReason).includes(paper.on) ? '' : remove_uppercase(cards.TO_TEXT[paper.on as StudyOn]),
-			citations: paper.citations.count === MissingReason.NotSpecified ? '' : paper.citations.count,
-			critics: paper.citations.critics ? 'Critics' : '',
+			citations: paper.citations === MissingReason.NotSpecified ? '' : paper.citations,
 			sample_size: typeof paper.sample_size === 'number' ? paper.sample_size : '',
 			p_value: typeof paper.p_value === 'object' ? (paper.p_value.less_than ? '<' : '') + float_to_text(paper.p_value.value) : '',
 			conflict_of_interest: paper.conflict_of_interest === MissingReason.NoAccess ? '' : remove_uppercase(cards.TO_TEXT[paper.conflict_of_interest as ConflictOfInterest]),
@@ -54,7 +53,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 		}))
 	);
 
-	let csv = 'Title,Authors,Journal,Retracted,Year,Link,Previous consensus,Conclusion,Quote,Review,Review count,Type,On,Citations,Critics,Sample size,P value,Conflict of interest,Notes\n';
+	let csv = 'Title,Authors,Journal,Retracted,Year,Link,Previous consensus,Conclusion,Quote,Review,Review count,Type,On,Citations,Sample size,P value,Conflict of interest,Notes\n';
 
 	for (const paper of papers)
 		csv += Object.values(paper).map((value) => `"${value.toString().replaceAll(/"/g, '""')}"`).join(',') + '\n';

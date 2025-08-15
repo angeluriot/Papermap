@@ -439,7 +439,7 @@
 
 	const citations = $derived.by(() =>
 	{
-		if (paper.citations.count === MissingReason.NotSpecified)
+		if (paper.citations === MissingReason.NotSpecified)
 		{
 			return {
 				emoji: '🤷',
@@ -451,15 +451,13 @@
 		}
 
 		return {
-			emoji: cards.citation_score_to_emoji(paper.scores.citations_count),
-			text: int_to_text(paper.citations.count),
-			color: cards.score_to_color(paper.scores.citations_count),
-			shadow: color_to_shadow(cards.score_to_color(paper.scores.citations_count)),
-			description: 'This paper has been cited ' + int_to_text(paper.citations.count) + ' times in other papers',
+			emoji: cards.citation_score_to_emoji(paper.scores.citations),
+			text: int_to_text(paper.citations),
+			color: cards.score_to_color(paper.scores.citations),
+			shadow: color_to_shadow(cards.score_to_color(paper.scores.citations)),
+			description: 'This paper has been cited ' + int_to_text(paper.citations) + ' times in other papers',
 		}
 	});
-
-	const critics = $derived(paper.citations.critics);
 
 	const conflict_of_interest = $derived.by(() =>
 	{
@@ -715,18 +713,6 @@
 						<InfoBubble {emojis} text={citations.description} {width} {height}/>
 					</div>
 				</div>
-				{#if critics}
-					<div
-						class="card text-unselectable"
-						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
-					>
-						{@render emoji('😠')}
-						<span>Mostly critics</span>
-						<div class="info-ext">
-							<InfoBubble {emojis} text="Most of the citations are critical of this paper" {width} {height}/>
-						</div>
-					</div>
-				{/if}
 			</div>
 		</div>
 		<div class="subtitle-cards">

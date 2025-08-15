@@ -195,10 +195,7 @@
 				"id": "S49488433",
 				"retracted": false
 			},
-			"citations": {
-				"count": 79,
-				"critics": false
-			},
+			"citations": 79,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -231,10 +228,7 @@
 				"id": "S1824407",
 				"retracted": false
 			},
-			"citations": {
-				"count": 89,
-				"critics": false
-			},
+			"citations": 89,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -263,10 +257,7 @@
 				"id": "S49861241",
 				"retracted": false
 			},
-			"citations": {
-				"count": 231,
-				"critics": false
-			},
+			"citations": 231,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -296,10 +287,7 @@
 				"id": "S49861241",
 				"retracted": true
 			},
-			"citations": {
-				"count": 2859,
-				"critics": true
-			},
+			"citations": 2859,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes_but_low_confidence",
@@ -347,10 +335,7 @@
 				"id": "S49861241",
 				"retracted": false
 			},
-			"citations": {
-				"count": 764,
-				"critics": false
-			},
+			"citations": 764,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -380,10 +365,7 @@
 				"id": "S3774022",
 				"retracted": false
 			},
-			"citations": {
-				"count": 60,
-				"critics": false
-			},
+			"citations": 60,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -411,10 +393,7 @@
 				"id": "S153913659",
 				"retracted": false
 			},
-			"citations": {
-				"count": 26,
-				"critics": false
-			},
+			"citations": 26,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -448,10 +427,7 @@
 				"id": "S27514295",
 				"retracted": false
 			},
-			"citations": {
-				"count": 360,
-				"critics": false
-			},
+			"citations": 360,
 			"results": {
 				"consensus": "towards_yes",
 				"conclusion": "yes",
@@ -505,10 +481,7 @@
 				"id": "S92370695",
 				"retracted": false
 			},
-			"citations": {
-				"count": 37,
-				"critics": false
-			},
+			"citations": 37,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -535,10 +508,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 154,
-				"critics": false
-			},
+			"citations": 154,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -572,10 +542,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 231,
-				"critics": false
-			},
+			"citations": 231,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -603,10 +570,7 @@
 				"id": "S13978405",
 				"retracted": false
 			},
-			"citations": {
-				"count": 5,
-				"critics": false
-			},
+			"citations": 5,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -637,10 +601,7 @@
 				"id": "S192814187",
 				"retracted": false
 			},
-			"citations": {
-				"count": 388,
-				"critics": false
-			},
+			"citations": 388,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -668,10 +629,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 316,
-				"critics": false
-			},
+			"citations": 316,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -700,10 +658,7 @@
 				"id": "S172573765",
 				"retracted": false
 			},
-			"citations": {
-				"count": 342,
-				"critics": false
-			},
+			"citations": 342,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -732,10 +687,7 @@
 				"id": "S62468778",
 				"retracted": false
 			},
-			"citations": {
-				"count": 703,
-				"critics": false
-			},
+			"citations": 703,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -765,10 +717,7 @@
 				"id": "S71149355",
 				"retracted": false
 			},
-			"citations": {
-				"count": 29,
-				"critics": false
-			},
+			"citations": 29,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -795,10 +744,7 @@
 				"id": "S84493273",
 				"retracted": false
 			},
-			"citations": {
-				"count": 13,
-				"critics": false
-			},
+			"citations": 13,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -830,10 +776,7 @@
 				"id": "S192814187",
 				"retracted": false
 			},
-			"citations": {
-				"count": 357,
-				"critics": false
-			},
+			"citations": 357,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -860,10 +803,7 @@
 				"id": "S2751401339",
 				"retracted": false
 			},
-			"citations": {
-				"count": 2,
-				"critics": false
-			},
+			"citations": 2,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -895,10 +835,7 @@
 				"id": "S163950488",
 				"retracted": false
 			},
-			"citations": {
-				"count": 2,
-				"critics": false
-			},
+			"citations": 2,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -931,10 +868,7 @@
 				"id": "S20709540",
 				"retracted": false
 			},
-			"citations": {
-				"count": 9,
-				"critics": false
-			},
+			"citations": 9,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -966,10 +900,7 @@
 				"id": "S71149355",
 				"retracted": false
 			},
-			"citations": {
-				"count": 18,
-				"critics": false
-			},
+			"citations": 18,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1002,10 +933,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 170,
-				"critics": false
-			},
+			"citations": 170,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -1034,10 +962,7 @@
 				"id": "S68106708",
 				"retracted": false
 			},
-			"citations": {
-				"count": 176,
-				"critics": false
-			},
+			"citations": 176,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -1084,10 +1009,7 @@
 				"id": "S154286738",
 				"retracted": false
 			},
-			"citations": {
-				"count": 149,
-				"critics": false
-			},
+			"citations": 149,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1122,10 +1044,7 @@
 				"id": "S172573765",
 				"retracted": false
 			},
-			"citations": {
-				"count": 325,
-				"critics": false
-			},
+			"citations": 325,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -1155,10 +1074,7 @@
 				"id": "S4210192535",
 				"retracted": false
 			},
-			"citations": {
-				"count": 94,
-				"critics": false
-			},
+			"citations": 94,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1193,10 +1109,7 @@
 				"id": "S195759676",
 				"retracted": false
 			},
-			"citations": {
-				"count": 174,
-				"critics": false
-			},
+			"citations": 174,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -1224,10 +1137,7 @@
 				"id": "S122731057",
 				"retracted": false
 			},
-			"citations": {
-				"count": 66,
-				"critics": false
-			},
+			"citations": 66,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1254,10 +1164,7 @@
 				"id": "S108600424",
 				"retracted": false
 			},
-			"citations": {
-				"count": 26,
-				"critics": false
-			},
+			"citations": 26,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1290,10 +1197,7 @@
 				"id": "S4210193554",
 				"retracted": false
 			},
-			"citations": {
-				"count": 2,
-				"critics": false
-			},
+			"citations": 2,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1326,10 +1230,7 @@
 				"id": "S90284741",
 				"retracted": false
 			},
-			"citations": {
-				"count": 10,
-				"critics": false
-			},
+			"citations": 10,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1362,10 +1263,7 @@
 				"id": "S71149355",
 				"retracted": false
 			},
-			"citations": {
-				"count": 34,
-				"critics": false
-			},
+			"citations": 34,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1400,10 +1298,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 255,
-				"critics": false
-			},
+			"citations": 255,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -1430,10 +1325,7 @@
 				"id": "S160517820",
 				"retracted": false
 			},
-			"citations": {
-				"count": 3,
-				"critics": false
-			},
+			"citations": 3,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1461,10 +1353,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 132,
-				"critics": false
-			},
+			"citations": 132,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -1499,10 +1388,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 240,
-				"critics": false
-			},
+			"citations": 240,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1532,10 +1418,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 85,
-				"critics": false
-			},
+			"citations": 85,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1570,10 +1453,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 131,
-				"critics": false
-			},
+			"citations": 131,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1603,10 +1483,7 @@
 				"id": "S53513426",
 				"retracted": false
 			},
-			"citations": {
-				"count": 362,
-				"critics": false
-			},
+			"citations": 362,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1637,10 +1514,7 @@
 				"id": "S2751401339",
 				"retracted": false
 			},
-			"citations": {
-				"count": 7,
-				"critics": false
-			},
+			"citations": 7,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1674,10 +1548,7 @@
 				"id": "S8713311",
 				"retracted": false
 			},
-			"citations": {
-				"count": 17,
-				"critics": false
-			},
+			"citations": 17,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1710,10 +1581,7 @@
 				"id": "S49488433",
 				"retracted": false
 			},
-			"citations": {
-				"count": 38,
-				"critics": false
-			},
+			"citations": 38,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1748,10 +1616,7 @@
 				"id": "S49861241",
 				"retracted": false
 			},
-			"citations": {
-				"count": 251,
-				"critics": false
-			},
+			"citations": 251,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -1779,10 +1644,7 @@
 				"id": "S163950488",
 				"retracted": false
 			},
-			"citations": {
-				"count": 124,
-				"critics": false
-			},
+			"citations": 124,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1816,10 +1678,7 @@
 				"id": "S71149355",
 				"retracted": false
 			},
-			"citations": {
-				"count": 164,
-				"critics": false
-			},
+			"citations": 164,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -1859,10 +1718,7 @@
 				"id": "S71144982",
 				"retracted": false
 			},
-			"citations": {
-				"count": 129,
-				"critics": false
-			},
+			"citations": 129,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -1890,10 +1746,7 @@
 				"id": "S113426163",
 				"retracted": false
 			},
-			"citations": {
-				"count": 23,
-				"critics": false
-			},
+			"citations": 23,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1925,10 +1778,7 @@
 				"id": "S168740313",
 				"retracted": false
 			},
-			"citations": {
-				"count": 4,
-				"critics": false
-			},
+			"citations": 4,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -1961,10 +1811,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 216,
-				"critics": false
-			},
+			"citations": 216,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -1994,10 +1841,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 227,
-				"critics": false
-			},
+			"citations": 227,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -2027,10 +1871,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 229,
-				"critics": false
-			},
+			"citations": 229,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2062,10 +1903,7 @@
 				"id": "S67377460",
 				"retracted": false
 			},
-			"citations": {
-				"count": 165,
-				"critics": false
-			},
+			"citations": 165,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2099,10 +1937,7 @@
 				"id": "S177929781",
 				"retracted": false
 			},
-			"citations": {
-				"count": 299,
-				"critics": false
-			},
+			"citations": 299,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -2129,10 +1964,7 @@
 				"id": "S160517820",
 				"retracted": false
 			},
-			"citations": {
-				"count": 3,
-				"critics": false
-			},
+			"citations": 3,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2165,10 +1997,7 @@
 				"id": "S3196323",
 				"retracted": false
 			},
-			"citations": {
-				"count": 117,
-				"critics": false
-			},
+			"citations": 117,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2203,10 +2032,7 @@
 				"id": "S181451930",
 				"retracted": false
 			},
-			"citations": {
-				"count": 137,
-				"critics": false
-			},
+			"citations": 137,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2235,10 +2061,7 @@
 				"id": "S181451930",
 				"retracted": false
 			},
-			"citations": {
-				"count": 58,
-				"critics": false
-			},
+			"citations": 58,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2267,10 +2090,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 404,
-				"critics": false
-			},
+			"citations": 404,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2297,10 +2117,7 @@
 				"id": "S163950488",
 				"retracted": false
 			},
-			"citations": {
-				"count": 46,
-				"critics": false
-			},
+			"citations": 46,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2332,10 +2149,7 @@
 				"id": "S140531128",
 				"retracted": false
 			},
-			"citations": {
-				"count": 74,
-				"critics": false
-			},
+			"citations": 74,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2367,10 +2181,7 @@
 				"id": "S85071590",
 				"retracted": false
 			},
-			"citations": {
-				"count": 70,
-				"critics": false
-			},
+			"citations": 70,
 			"results": {
 				"consensus": "towards_yes",
 				"conclusion": "yes_but_low_confidence",
@@ -2415,10 +2226,7 @@
 				"id": "S62468778",
 				"retracted": false
 			},
-			"citations": {
-				"count": 278,
-				"critics": false
-			},
+			"citations": 278,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -2446,10 +2254,7 @@
 				"id": "S180901878",
 				"retracted": false
 			},
-			"citations": {
-				"count": 39,
-				"critics": false
-			},
+			"citations": 39,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2479,10 +2284,7 @@
 				"id": "S186282544",
 				"retracted": false
 			},
-			"citations": {
-				"count": 54,
-				"critics": false
-			},
+			"citations": 54,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2511,10 +2313,7 @@
 				"id": "S177945262",
 				"retracted": false
 			},
-			"citations": {
-				"count": 52,
-				"critics": false
-			},
+			"citations": 52,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2546,10 +2345,7 @@
 				"id": "S159852663",
 				"retracted": false
 			},
-			"citations": {
-				"count": 132,
-				"critics": false
-			},
+			"citations": 132,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2582,10 +2378,7 @@
 				"id": "S126359496",
 				"retracted": false
 			},
-			"citations": {
-				"count": 166,
-				"critics": false
-			},
+			"citations": 166,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2615,10 +2408,7 @@
 				"id": "S202381698",
 				"retracted": false
 			},
-			"citations": {
-				"count": 149,
-				"critics": false
-			},
+			"citations": 149,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2648,10 +2438,7 @@
 				"id": "S207294652",
 				"retracted": false
 			},
-			"citations": {
-				"count": 72,
-				"critics": false
-			},
+			"citations": 72,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2679,10 +2466,7 @@
 				"id": "S67377460",
 				"retracted": false
 			},
-			"citations": {
-				"count": 86,
-				"critics": false
-			},
+			"citations": 86,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2710,10 +2494,7 @@
 				"id": "S95346388",
 				"retracted": false
 			},
-			"citations": {
-				"count": 42,
-				"critics": false
-			},
+			"citations": 42,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2746,10 +2527,7 @@
 				"id": "S150022352",
 				"retracted": false
 			},
-			"citations": {
-				"count": 87,
-				"critics": false
-			},
+			"citations": 87,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2783,10 +2561,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 64,
-				"critics": false
-			},
+			"citations": 64,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2820,10 +2595,7 @@
 				"id": "S72350973",
 				"retracted": false
 			},
-			"citations": {
-				"count": 332,
-				"critics": false
-			},
+			"citations": 332,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2856,10 +2628,7 @@
 				"id": "S4210228861",
 				"retracted": false
 			},
-			"citations": {
-				"count": 10,
-				"critics": false
-			},
+			"citations": 10,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2891,10 +2660,7 @@
 				"id": "S87096862",
 				"retracted": false
 			},
-			"citations": {
-				"count": 53,
-				"critics": false
-			},
+			"citations": 53,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -2927,10 +2693,7 @@
 				"id": "S85071590",
 				"retracted": false
 			},
-			"citations": {
-				"count": 69,
-				"critics": false
-			},
+			"citations": 69,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -2962,10 +2725,7 @@
 				"id": "S109369870",
 				"retracted": false
 			},
-			"citations": {
-				"count": 73,
-				"critics": false
-			},
+			"citations": 73,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -2993,10 +2753,7 @@
 				"id": "S4393916186",
 				"retracted": false
 			},
-			"citations": {
-				"count": 6,
-				"critics": false
-			},
+			"citations": 6,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3029,10 +2786,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 29,
-				"critics": false
-			},
+			"citations": 29,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3062,10 +2816,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 169,
-				"critics": false
-			},
+			"citations": 169,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -3095,10 +2846,7 @@
 				"id": "S8901149",
 				"retracted": false
 			},
-			"citations": {
-				"count": 77,
-				"critics": false
-			},
+			"citations": 77,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -3126,10 +2874,7 @@
 				"id": "S4210193554",
 				"retracted": false
 			},
-			"citations": {
-				"count": 31,
-				"critics": false
-			},
+			"citations": 31,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3163,10 +2908,7 @@
 				"id": "S178469169",
 				"retracted": false
 			},
-			"citations": {
-				"count": 18,
-				"critics": false
-			},
+			"citations": 18,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3198,10 +2940,7 @@
 				"id": "S204673346",
 				"retracted": false
 			},
-			"citations": {
-				"count": 421,
-				"critics": false
-			},
+			"citations": 421,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3233,10 +2972,7 @@
 				"id": "S2764616832",
 				"retracted": false
 			},
-			"citations": {
-				"count": 4,
-				"critics": false
-			},
+			"citations": 4,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3267,10 +3003,7 @@
 				"id": "S85071590",
 				"retracted": false
 			},
-			"citations": {
-				"count": 30,
-				"critics": false
-			},
+			"citations": 30,
 			"results": {
 				"consensus": "towards_yes",
 				"conclusion": "yes_but_low_confidence",
@@ -3304,10 +3037,7 @@
 				"id": "S155362585",
 				"retracted": false
 			},
-			"citations": {
-				"count": 103,
-				"critics": false
-			},
+			"citations": 103,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -3344,10 +3074,7 @@
 				"id": "S82112532",
 				"retracted": false
 			},
-			"citations": {
-				"count": 171,
-				"critics": false
-			},
+			"citations": 171,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -3387,10 +3114,7 @@
 				"id": "S4210228861",
 				"retracted": false
 			},
-			"citations": {
-				"count": 6,
-				"critics": false
-			},
+			"citations": 6,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3424,10 +3148,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 52,
-				"critics": false
-			},
+			"citations": 52,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -3457,10 +3178,7 @@
 				"id": "S2764798395",
 				"retracted": false
 			},
-			"citations": {
-				"count": 44,
-				"critics": false
-			},
+			"citations": 44,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -3510,10 +3228,7 @@
 				"id": "S70378559",
 				"retracted": false
 			},
-			"citations": {
-				"count": 259,
-				"critics": false
-			},
+			"citations": 259,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -3553,10 +3268,7 @@
 				"id": "S3774022",
 				"retracted": false
 			},
-			"citations": {
-				"count": 105,
-				"critics": false
-			},
+			"citations": 105,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -3586,10 +3298,7 @@
 				"id": "S115443242",
 				"retracted": false
 			},
-			"citations": {
-				"count": 7,
-				"critics": false
-			},
+			"citations": 7,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -3618,10 +3327,7 @@
 				"id": "S115834843",
 				"retracted": false
 			},
-			"citations": {
-				"count": 96,
-				"critics": false
-			},
+			"citations": 96,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -3653,10 +3359,7 @@
 				"id": "S2764798395",
 				"retracted": true
 			},
-			"citations": {
-				"count": 31,
-				"critics": false
-			},
+			"citations": 31,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "yes_unlike_literature",
@@ -3706,10 +3409,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 240,
-				"critics": false
-			},
+			"citations": 240,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3742,10 +3442,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 489,
-				"critics": false
-			},
+			"citations": 489,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -3779,10 +3476,7 @@
 				"id": "S125754415",
 				"retracted": false
 			},
-			"citations": {
-				"count": 37,
-				"critics": false
-			},
+			"citations": 37,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3812,10 +3506,7 @@
 				"id": "S172573765",
 				"retracted": false
 			},
-			"citations": {
-				"count": 172,
-				"critics": false
-			},
+			"citations": 172,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3844,10 +3535,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 45,
-				"critics": false
-			},
+			"citations": 45,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -3877,10 +3565,7 @@
 				"id": "S10446503",
 				"retracted": false
 			},
-			"citations": {
-				"count": 27,
-				"critics": false
-			},
+			"citations": 27,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -3906,10 +3591,7 @@
 				"id": "S118940750",
 				"retracted": false
 			},
-			"citations": {
-				"count": 11,
-				"critics": false
-			},
+			"citations": 11,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3941,10 +3623,7 @@
 				"id": "S177929781",
 				"retracted": false
 			},
-			"citations": {
-				"count": 257,
-				"critics": false
-			},
+			"citations": 257,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -3979,10 +3658,7 @@
 				"id": "S14226812",
 				"retracted": false
 			},
-			"citations": {
-				"count": 90,
-				"critics": false
-			},
+			"citations": 90,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -4009,10 +3685,7 @@
 				"id": "S14226812",
 				"retracted": false
 			},
-			"citations": {
-				"count": 131,
-				"critics": false
-			},
+			"citations": 131,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4047,10 +3720,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 13,
-				"critics": false
-			},
+			"citations": 13,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4078,10 +3748,7 @@
 				"id": "S1216394",
 				"retracted": false
 			},
-			"citations": {
-				"count": 669,
-				"critics": false
-			},
+			"citations": 669,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4115,10 +3782,7 @@
 				"id": "S165809374",
 				"retracted": false
 			},
-			"citations": {
-				"count": 20,
-				"critics": false
-			},
+			"citations": 20,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -4168,10 +3832,7 @@
 				"id": "S4210228273",
 				"retracted": false
 			},
-			"citations": {
-				"count": 18,
-				"critics": false
-			},
+			"citations": 18,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "yes_unlike_literature",
@@ -4219,10 +3880,7 @@
 				"id": "S154286738",
 				"retracted": false
 			},
-			"citations": {
-				"count": 168,
-				"critics": false
-			},
+			"citations": 168,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4257,10 +3915,7 @@
 				"id": "S164583999",
 				"retracted": false
 			},
-			"citations": {
-				"count": 75,
-				"critics": false
-			},
+			"citations": 75,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4294,10 +3949,7 @@
 				"id": "S152361726",
 				"retracted": false
 			},
-			"citations": {
-				"count": 6,
-				"critics": false
-			},
+			"citations": 6,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4332,10 +3984,7 @@
 				"id": "S77494981",
 				"retracted": false
 			},
-			"citations": {
-				"count": 29,
-				"critics": false
-			},
+			"citations": 29,
 			"results": {
 				"consensus": "towards_no",
 				"conclusion": "no",
@@ -4364,10 +4013,7 @@
 				"id": "S60362788",
 				"retracted": false
 			},
-			"citations": {
-				"count": 423,
-				"critics": false
-			},
+			"citations": 423,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4402,10 +4048,7 @@
 				"id": "S119722071",
 				"retracted": false
 			},
-			"citations": {
-				"count": 120,
-				"critics": false
-			},
+			"citations": 120,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4435,10 +4078,7 @@
 				"id": "S119722071",
 				"retracted": false
 			},
-			"citations": {
-				"count": 3,
-				"critics": false
-			},
+			"citations": 3,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4467,10 +4107,7 @@
 				"id": "S72350973",
 				"retracted": false
 			},
-			"citations": {
-				"count": 77,
-				"critics": false
-			},
+			"citations": 77,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4503,10 +4140,7 @@
 				"id": "S2764917282",
 				"retracted": false
 			},
-			"citations": {
-				"count": 97,
-				"critics": false
-			},
+			"citations": 97,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4541,10 +4175,7 @@
 				"id": "S119722071",
 				"retracted": false
 			},
-			"citations": {
-				"count": 14,
-				"critics": false
-			},
+			"citations": 14,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "no",
@@ -4574,10 +4205,7 @@
 				"id": "S55674637",
 				"retracted": false
 			},
-			"citations": {
-				"count": 28,
-				"critics": false
-			},
+			"citations": 28,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4612,10 +4240,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 26,
-				"critics": false
-			},
+			"citations": 26,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4648,10 +4273,7 @@
 				"id": "S2484704948",
 				"retracted": false
 			},
-			"citations": {
-				"count": 249,
-				"critics": false
-			},
+			"citations": 249,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4683,10 +4305,7 @@
 				"id": "S2595292759",
 				"retracted": false
 			},
-			"citations": {
-				"count": 33,
-				"critics": false
-			},
+			"citations": 33,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4717,10 +4336,7 @@
 				"id": "S165809374",
 				"retracted": false
 			},
-			"citations": {
-				"count": 16,
-				"critics": false
-			},
+			"citations": 16,
 			"results": {
 				"consensus": "towards_yes",
 				"conclusion": "yes",
@@ -4755,10 +4371,7 @@
 				"id": "S27359860",
 				"retracted": false
 			},
-			"citations": {
-				"count": 54,
-				"critics": false
-			},
+			"citations": 54,
 			"results": {
 				"consensus": "NotSpecified",
 				"conclusion": "no",
@@ -4793,10 +4406,7 @@
 				"id": "S30097070",
 				"retracted": false
 			},
-			"citations": {
-				"count": 32,
-				"critics": false
-			},
+			"citations": 32,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4831,10 +4441,7 @@
 				"id": "S2764928273",
 				"retracted": false
 			},
-			"citations": {
-				"count": 41,
-				"critics": false
-			},
+			"citations": 41,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4869,10 +4476,7 @@
 				"id": "S4210172715",
 				"retracted": false
 			},
-			"citations": {
-				"count": 62,
-				"critics": false
-			},
+			"citations": 62,
 			"results": {
 				"consensus": "NotSpecified",
 				"conclusion": "no",
@@ -4906,10 +4510,7 @@
 				"id": "S2738950867",
 				"retracted": false
 			},
-			"citations": {
-				"count": 6,
-				"critics": false
-			},
+			"citations": 6,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4944,10 +4545,7 @@
 				"id": "S72350973",
 				"retracted": false
 			},
-			"citations": {
-				"count": 11,
-				"critics": false
-			},
+			"citations": 11,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -4975,10 +4573,7 @@
 				"id": "S33159018",
 				"retracted": false
 			},
-			"citations": {
-				"count": 17,
-				"critics": false
-			},
+			"citations": 17,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",
@@ -5012,10 +4607,7 @@
 				"id": "S174790897",
 				"retracted": true
 			},
-			"citations": {
-				"count": 4,
-				"critics": false
-			},
+			"citations": 4,
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
@@ -5053,10 +4645,7 @@
 				"id": "S1824407",
 				"retracted": false
 			},
-			"citations": {
-				"count": 0,
-				"critics": false
-			},
+			"citations": 0,
 			"results": {
 				"consensus": "no",
 				"conclusion": "no",

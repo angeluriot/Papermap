@@ -99,10 +99,7 @@ export interface DataPaper
 		id: string | JournalMissingReason,
 		retracted: boolean,
 	};
-	citations: {
-		count: number | MissingReason.NotSpecified,
-		critics: boolean,
-	};
+	citations: number | MissingReason.NotSpecified;
 	results: {
 		consensus: string | MissingReason.NotSpecified | MissingReason.NoAccess,
 		conclusion: string,
@@ -133,7 +130,7 @@ export interface DataPaper
 
 export interface PaperScores
 {
-	citations_count: number;
+	citations: number;
 	review_count: number;
 	type: number;
 	on: number;

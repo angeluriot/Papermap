@@ -47,11 +47,6 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		[10, 1, 1],
 	);
 
-	const citations_count = random_choice(
-		[5 + Math.round((Math.random() ** 4) * 500), MissingReason.NotSpecified] as (number | MissingReason.NotSpecified)[],
-		[10, 1],
-	);
-
 	let quote = faker.lorem.sentence({ min: 15, max: 30 });
 
 	for (let i = 0; i < quote.length; i++)
@@ -71,10 +66,10 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 			id: journal_id,
 			retracted: journal_id === JournalMissingReason.NotPublished ? false : random_choice([false, true], [10, 1]),
 		},
-		citations: {
-			count: citations_count,
-			critics: citations_count === MissingReason.NotSpecified ? false : random_choice([false, true], [10, 1]),
-		},
+		citations: random_choice(
+			[5 + Math.round((Math.random() ** 4) * 500), MissingReason.NotSpecified] as (number | MissingReason.NotSpecified)[],
+			[10, 1],
+		),
 		results: {
 			consensus,
 			conclusion,

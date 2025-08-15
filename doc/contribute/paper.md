@@ -186,25 +186,6 @@ The number of times the paper has been cited by other papers.
 * If the value has been automatically filled, keep it, even if you find a different one
 * If it has not been filled and you cannot find the value, leave it empty
 
-## Mostly critics
-
-Whether the citations are mostly critics or not.
-
-<table>
-	<tbody>
-		<tr>
-			<td><b>Type</b></td>
-			<td>✅ Checkbox</td>
-		</tr>
-		<tr>
-			<td><b>Required</b></td>
-			<td>✅ Yes</td>
-		</tr>
-	</tbody>
-</table>
-
-* This is for specific cases of papers that are so criticized that they end up with lots of citations, if you don't know, leave it unchecked
-
 ## Previous consensus
 
 The consensus in the literature at the time according to the paper about the map's question.

@@ -95,7 +95,6 @@ const COEFS = {
 	year: 0.1,
 	journal: 0.5,
 	citations: 0.1,
-	critics: 0.4,
 	coherence: 0.1,
 	direct: 0.5,
 	review: 0.5,
@@ -126,21 +125,15 @@ export function score_journal(paper: DataPaper, journal: Journal | undefined): n
 
 export function score_citations(paper: DataPaper): number
 {
-	if (paper.citations.count === MissingReason.NotSpecified)
+	if (paper.citations === MissingReason.NotSpecified)
 		return 0.1;
 
-	let score = paper.citations.count;
+	let score = paper.citations;
 
 	score /= CITATIONS_HALF_SCORE;
 	score /= score + 1.0;
 
 	return score;
-}
-
-
-export function score_critics(paper: DataPaper): number
-{
-	return paper.citations.critics ? 0.0 : 1.0;
 }
 
 
@@ -335,7 +328,6 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	let year_score = score_year(paper);
 	let journal_score = score_journal(paper, journal);
 	let citations_score = score_citations(paper);
-	let critics_score = score_critics(paper);
 	let coherence_score = score_coherence(map, paper);
 	let direct_score = score_direct(paper);
 	let review_type_score = score_review_type(paper);
@@ -349,7 +341,7 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	let publication_bias_score = score_publication_bias(map, paper);
 
 	let scores: PaperScores = {
-		citations_count: citations_score,
+		citations: citations_score,
 		review_count: review_count_score,
 		type: type_score,
 		on: on_score,
@@ -359,12 +351,7 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 
 	year_score = (year_score * COEFS.year) + (1 - COEFS.year);
 	journal_score = (journal_score * COEFS.journal) + (1 - COEFS.journal);
-
-	if (critics_score > 0.5)
-		citations_score = 0.0;
-
 	citations_score = (citations_score * COEFS.citations) + (1 - COEFS.citations);
-	critics_score = (critics_score * COEFS.critics) + (1 - COEFS.critics);
 	coherence_score = (coherence_score * COEFS.coherence) + (1 - COEFS.coherence);
 	direct_score = (direct_score * COEFS.direct) + (1 - COEFS.direct);
 
@@ -384,7 +371,6 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 		year_score *
 		journal_score *
 		citations_score *
-		critics_score *
 		coherence_score *
 		direct_score *
 		review_score *
