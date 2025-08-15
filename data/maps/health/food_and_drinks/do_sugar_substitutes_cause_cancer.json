@@ -1,0 +1,3307 @@
+{
+	"draft": false,
+	"emoji": "🍬",
+	"question": {
+		"short": "Do sugar substitutes cause cancer?",
+		"long": "Does sugar substitute consumption increase the risk of developing cancer?"
+	},
+	"description": "Results from studies evaluating the impact of sugar substitute consumption on the risk of developing cancer.",
+	"tags": [
+		"sugar substitutes",
+		"artificial sweeteners",
+		"cancer",
+		"sucralose",
+		"aspartame",
+		"saccharin",
+		"stevia"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of sugar substitutes on cancer",
+			"color": "Gray",
+			"coherence": {
+				"no": 0.5,
+				"no_but_mixed_results": 0.5,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0.5,
+				"yes_but_small_effect": 0.5,
+				"yes": 0.5
+			}
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that sugar substitutes do not cause cancer",
+			"color": "Red",
+			"coherence": {
+				"no": 1,
+				"no_but_mixed_results": 1,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0,
+				"yes_but_small_effect": 0,
+				"yes_unlike_literature": 0
+			}
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that sugar substitutes probably don't cause cancer, but more research is needed",
+			"color": "Red1H",
+			"coherence": {
+				"no": 0.75,
+				"no_but_mixed_results": 0.75,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0.25,
+				"yes_but_small_effect": 0.25,
+				"yes_unlike_literature": 0.25
+			}
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that sugar substitutes may cause cancer, but more research is needed",
+			"color": "Green1H",
+			"coherence": {
+				"no_unlike_literature": 0.25,
+				"no_but_mixed_results": 0.25,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0.75,
+				"yes_but_small_effect": 0.75,
+				"yes": 0.75
+			}
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that sugar substitutes cause cancer",
+			"color": "Green",
+			"coherence": {
+				"no_unlike_literature": 0,
+				"no_but_mixed_results": 0,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 1,
+				"yes_but_small_effect": 1,
+				"yes": 1
+			}
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Red1H"
+		},
+		"maybe": {
+			"text": "Maybe",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant effect of the sugar substitutes evaluated on the risk of developing cancer",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant effect of the sugar substitutes evaluated on the risk of developing cancer, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🔀",
+			"text": "No but mixed results",
+			"description": "The results of the paper show no significant overall effect of the sugar substitutes evaluated on the risk of developing cancer, but there are mixed results on specific cases",
+			"p_value": false
+		},
+		"maybe": {
+			"group": "maybe",
+			"emoji": "🤷",
+			"text": "Maybe",
+			"description": "The results of the paper suggest that the sugar substitutes evaluated might have an effect on the risk of developing cancer, but the evidence is not strong enough to conclude",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that the sugar substitutes evaluated may increase the risk of developing cancer, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that the sugar substitutes evaluated may have a small effect on the risk of developing cancer",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that the sugar substitutes evaluated may increase the risk of developing cancer, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that the sugar substitutes evaluated increase the risk of developing cancer",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_blind": false,
+		"no_random": false,
+		"no_causality": false,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": [
+		{
+			"id": "W2018272533",
+			"title": "Bladder Tumors in Rats Fed Cyclohexylamine or High Doses of a Mixture of Cyclamate and Saccharin",
+			"authors": [
+				"J. M. Price",
+				"Claude G. Biava",
+				"B. L. Oser",
+				"Eugene E. Vogin"
+			],
+			"year": 1970,
+			"link": "https://doi.org/10.1126/science.167.3921.1131",
+			"journal": {
+				"id": "S3880285",
+				"retracted": false
+			},
+			"citations": {
+				"count": 222,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "Papillary transitional cell tumors were found in the urinary bladders in 8 rats out of 80 that received 2600 milligrams per kilogram of body weight per day of a mixture of sodium cyclamate and sodium saccharin for up to 105 weeks",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 320,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "YesButOppositeResults",
+			"notes": [
+				{
+					"title": "Unrealistic doses",
+					"description": "The doses at which effects were observed are far beyond human-acceptable levels",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2082340479",
+			"title": "Bladder cancer mortality in England and Wales in relation to cigarette smoking and saccharin consumption",
+			"authors": [
+				"Bruce K. Armstrong",
+				"Richard Doll"
+			],
+			"year": 1974,
+			"link": "https://doi.org/10.1136/jech.28.4.233",
+			"journal": {
+				"id": "S156988948",
+				"retracted": false
+			},
+			"citations": {
+				"count": 82,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Examination of the trends in mortality from bladder cancer provides no evidence of any break in continuity that could be attributed to the use of saccharin since 1939",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1863265091",
+			"title": "Bladder cancer: smoking, beverages and artificial sweeteners.",
+			"authors": [
+				"Robert W. Morgan",
+				"Meera Jain"
+			],
+			"year": 1974,
+			"link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1955852/",
+			"journal": {
+				"id": "S4362743",
+				"retracted": false
+			},
+			"citations": {
+				"count": 123,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Tea and coffee intake did not increase the risk of disease nor did prolonged use of artificial sweeteners",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 464,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2033201464",
+			"title": "Bladder cancer mortality in diabetics in relation to saccharin consumption and smoking habits.",
+			"authors": [
+				"Bruce K. Armstrong",
+				"Richard Doll"
+			],
+			"year": 1975,
+			"link": "https://doi.org/10.1136/jech.29.2.73",
+			"journal": {
+				"id": "S156988948",
+				"retracted": false
+			},
+			"citations": {
+				"count": 76,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In this study we have been unable to find evidence of an increased risk of bladder cancer in diabetics, some of whom must have consumed above average amounts of saccharin for more than 20 years",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 38442,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1861987274",
+			"title": "Coffee Drinking and Cancer of the Lower Urinary Tract",
+			"authors": [
+				"Dennis Simon",
+				"S Yen",
+				"Peter Cole"
+			],
+			"year": 1975,
+			"link": "https://doi.org/10.1093/jnci/54.3.587",
+			"journal": {
+				"id": "S98010888",
+				"retracted": false
+			},
+			"citations": {
+				"count": 102,
+				"critics": false
+			},
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Use of nondairy creamers, saccharin, or cyclamates was not associated with increased risk of disease",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 525,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2416676486",
+			"title": "Non-nutritive Sweeteners and Human Bladder Cancer: Preliminary Findings",
+			"authors": [
+				"Irving I. Kessler"
+			],
+			"year": 1976,
+			"link": "https://doi.org/10.1016/s0022-5347(17)59104-1",
+			"journal": {
+				"id": "S30525748",
+				"retracted": false
+			},
+			"citations": {
+				"count": 39,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The present findings suggest that ingestion of non-nutritive sweeteners, at least at the moderate dietary levels reported by our patient sample, is not associated with an increased risk of bladder cancer",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 418,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2029493423",
+			"title": "Artificial sweeteners and human bladder cancer",
+			"override_seed": 0.9,
+			"authors": [
+				"Geoffrey R. Howe",
+				"J D Burch",
+				"Anthony B. Miller",
+				"B Morrison"
+			],
+			"year": 1977,
+			"link": "https://doi.org/10.1016/s0140-6736(77)91428-3",
+			"journal": {
+				"id": "S49861241",
+				"retracted": false
+			},
+			"citations": {
+				"count": 123,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "We have demonstrated a positive association between use of artificial sweeteners and risk of bladder cancer in males. The effect has been demonstrated primarily for reported saccharin use, insufficient data being available to evaluate cyclamate use",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1264,
+			"p_value": {
+				"value": 0.009,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2028211588",
+			"title": "The epidemiology of bladder cancer: a second look",
+			"authors": [
+				"Ernst L. Wynder",
+				"Robert Goldsmith"
+			],
+			"year": 1977,
+			"link": "https://doi.org/10.1002/1097-0142(197709)40:3<1246::aid-cncr2820400340>3.0.co;2-5",
+			"journal": {
+				"id": "S126033908",
+				"retracted": false
+			},
+			"citations": {
+				"count": 294,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Users of artificial sweetners were not over-represented among the cases",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1464,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2084782329",
+			"title": "Saccharin, Cyclamate, and Human Bladder Cancer",
+			"authors": [
+				"Irving I. Kessler"
+			],
+			"year": 1978,
+			"link": "https://doi.org/10.1001/jama.1978.03290040027017",
+			"journal": {
+				"id": "S172573765",
+				"retracted": false
+			},
+			"citations": {
+				"count": 72,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "It is concluded that neither saccharin nor cyclamate is likely to be carcinogenic in man, at least at the moderate dietary ingestion levels reported by the patient sample",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1038,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1993718965",
+			"title": "Artificial Sweetener Use and Bladder Cancer: A Case-Control Study",
+			"override_seed": 0.9,
+			"authors": [
+				"Ernst L. Wynder",
+				"Steven D. Stellman"
+			],
+			"year": 1980,
+			"link": "https://doi.org/10.1126/science.7355283",
+			"journal": {
+				"id": "S3880285",
+				"retracted": false
+			},
+			"citations": {
+				"count": 77,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No association was found between use of artificial sweeteners or diet beverages and bladder cancer",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 734,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2071036678",
+			"title": "Artificial Sweeteners and Cancer of the Lower Urinary Tract",
+			"override_seed": 0,
+			"authors": [
+				"Alan S. Morrison",
+				"Julie E. Buring"
+			],
+			"year": 1980,
+			"link": "https://doi.org/10.1056/nejm198003063021001",
+			"journal": {
+				"id": "S62468778",
+				"retracted": false
+			},
+			"citations": {
+				"count": 99,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study suggests that, as a group, users of artificial sweeteners have little or no excess risk of cancer of the lower urinary tract",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1128,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1495536526",
+			"title": "Artificial sweeteners and human bladder cancer",
+			"override_seed": 0.9,
+			"authors": [
+				"R N Hoover",
+				"Patricia Hartge Strasser"
+			],
+			"year": 1980,
+			"link": "https://doi.org/10.1016/s0140-6736(80)91350-1",
+			"journal": {
+				"id": "S49861241",
+				"retracted": false
+			},
+			"citations": {
+				"count": 153,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We conclude that past AS use has had a minimal effect, if any, on bladder cancer rates",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 8793,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2028348553",
+			"title": "Incidence of brain tumors in rats fed aspartame",
+			"authors": [
+				"Hiroyuki Ishii"
+			],
+			"year": 1981,
+			"link": "https://doi.org/10.1016/0378-4274(81)90089-8",
+			"journal": {
+				"id": "S205878144",
+				"retracted": false
+			},
+			"citations": {
+				"count": 62,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_yes",
+				"conclusion": "no_unlike_literature",
+				"indirect": false
+			},
+			"quote": "There was no significant difference in the incidence of brain tumors between control and test groups. It is concluded that neither APM nor DKP caused brain tumors in rats in this study",
+			"type": "RandomizedControlledTrial",
+			"on": "Animals",
+			"sample_size": 860,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2092248609",
+			"title": "The epidemiology of bladder cancer in West Yorkshire. A preliminary report on non-occupational aetiologies",
+			"authors": [
+				"Raymond A. Cartwright",
+				"Rafid Adib",
+				"Robin W. Glashan",
+				"B. K. GRAY"
+			],
+			"year": 1981,
+			"link": "https://doi.org/10.1093/carcin/2.4.343",
+			"journal": {
+				"id": "S184620562",
+				"retracted": false
+			},
+			"citations": {
+				"count": 53,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "In the present study saccharin was only investigated as a sugar substitute and a risk is apparent only amongst males who are non-smokers, a smaller and insignificant risk was demonstrated amongst non-smoking females. [...] The significance of these results is doubtful",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1901,
+			"p_value": {
+				"value": 0.002,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2042429087",
+			"title": "Artificial sweeteners and absence of bladder cancer risk in Copenhagen",
+			"authors": [
+				"O. Møller‐Jensen",
+				"Jens B. Knudsen",
+				"Bent L. Sørensen",
+				"J Clemmesen"
+			],
+			"year": 1983,
+			"link": "https://doi.org/10.1002/ijc.2910320510",
+			"journal": {
+				"id": "S5382288",
+				"retracted": false
+			},
+			"citations": {
+				"count": 40,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This population-based case-control investigation provides further evidence that it is highly unlikely that the consumption of artificial sweeteners has contributed to current bladder cancer rates in man",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 1175,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1997442377",
+			"title": "Evaluation of the dose response and in utero exposure to saccharin in the rat",
+			"authors": [
+				"Gerald P. Schoenig",
+				"Edwin I. Goldenthal",
+				"Robert G. Geil",
+				"Chris Frith"
+			],
+			"year": 1985,
+			"link": "https://doi.org/10.1016/0278-6915(85)90142-5",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": {
+				"count": 101,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "A clear dose response for urinary bladder tumours was observed in the second-generation NaS-treated male rats",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 2500,
+			"p_value": {
+				"value": 0.0005,
+				"less_than": true
+			},
+			"conflict_of_interest": "YesButOppositeResults",
+			"notes": [
+				{
+					"title": "Specific case",
+					"description": "The result only applies to male rats that were exposed in utero to a single sugar substitute (saccharin)",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W1929612993",
+			"title": "A case-control study of factors affecting the development of renal cell cancer",
+			"authors": [
+				"Marc T. Goodman",
+				"Hal Morgenstern",
+				"Ernst L. Wynder"
+			],
+			"year": 1986,
+			"link": "https://doi.org/10.1093/oxfordjournals.aje.a114482",
+			"journal": {
+				"id": "S170967050",
+				"retracted": false
+			},
+			"citations": {
+				"count": 172,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No significant differences between cases and controls were found for either the amount or duration of artificial sweetener use or the lifetime consumption of saccharin",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 534,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1974416404",
+			"title": "Dietary factors and breast‐cancer risk in Denmark",
+			"authors": [
+				"Marianne Ewertz",
+				"Caroline Gill"
+			],
+			"year": 1990,
+			"link": "https://doi.org/10.1002/ijc.2910460505",
+			"journal": {
+				"id": "S5382288",
+				"retracted": false
+			},
+			"citations": {
+				"count": 140,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The risk of breast cancer was not associated with consumption of [...] artificial sweeteners",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 2796,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2084194755",
+			"title": "Associations between Bladder Cancer Risk Factors and Tumor Stage and Grade at Diagnosis",
+			"authors": [
+				"Susan R. Sturgeon",
+				"Patricia Hartge",
+				"Debra T. Silverman",
+				"Arlene F. Kantor"
+			],
+			"year": 1994,
+			"link": "https://doi.org/10.1097/00001648-199403000-00012",
+			"journal": {
+				"id": "S15470582",
+				"retracted": false
+			},
+			"citations": {
+				"count": 117,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Analysis of the total dataset revealed a modest association between heavy use of artificial sweeteners and risk of bladder cancer, but subsequent studies have not confirmed this association",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 5794,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2005657172",
+			"title": "Increasing Brain Tumor Rates: Is There a Link to Aspartame?",
+			"authors": [
+				"John W. Olney",
+				"Nuri B. Farber",
+				"Edward L. Spitznagel",
+				"Lee N. Robins"
+			],
+			"year": 1996,
+			"link": "https://doi.org/10.1097/00005072-199611000-00002",
+			"journal": {
+				"id": "S38023437",
+				"retracted": false
+			},
+			"citations": {
+				"count": 147,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Therefore, although our analysis does not establish definitive proof of a causal link between aspartame and the recent increase in incidence and shift in malignancy of brain tumors that occurred in the United States several years after aspartame was introduced, it does indicate the need for a reassessment of the carcinogenic potential of this agent which is currently being ingested widely throughout many parts of the world",
+			"type": "EcologicalStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2153556838",
+			"title": "Aspartame Consumption in Relation to Childhood Brain Tumor Risk: Results From a Case-Control Study",
+			"authors": [
+				"James G. Gurney",
+				"Janice M. Pogoda",
+				"Elizabeth A. Holly",
+				"Stephen S. Hecht"
+			],
+			"year": 1997,
+			"link": "https://doi.org/10.1093/jnci/89.14.1072",
+			"journal": {
+				"id": "S98010888",
+				"retracted": false
+			},
+			"citations": {
+				"count": 69,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Case children were no more likely than control children to consume foods containing aspartame, either from all sources of aspartame combined or from diet drinks. There was no suggestion of a dose-response relation based on age at first consumption, number of years of consumption, or frequency of consumption",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 150,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2131799918",
+			"title": "Long-Term Toxicity and Carcinogenicity Study of Cyclamate in Nonhuman Primates",
+			"authors": [
+				"Seiji Takayama",
+				"A.G. Renwick",
+				"Sven-Erik Johansson",
+				"Unnur P. Thorgeirsson"
+			],
+			"year": 2000,
+			"link": "https://doi.org/10.1093/toxsci/53.1.33",
+			"journal": {
+				"id": "S186282544",
+				"retracted": false
+			},
+			"citations": {
+				"count": 55,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The overall conclusion is that the testicular abnormalities and the sporadic cases of different malignancies found after more than 20 years of dosing do not provide clear evidence of a toxic or carcinogenic effect of sodium cyclamate in monkeys",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 37,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2161960007",
+			"title": "Aspartame: Review of Safety",
+			"override_seed": 0.9,
+			"authors": [
+				"Harriett H. Butchko",
+				"W. Wayne Stargel",
+				"C.Phil Comer",
+				"Dale A. Mayhew"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1006/rtph.2002.1542",
+			"journal": {
+				"id": "S87719511",
+				"retracted": false
+			},
+			"citations": {
+				"count": 241,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The conclusion of this up-to-date review is in agreement with that of international regulatory agencies and expert committees: the weight of scientific evidence is clear that aspartame is safe for its intended use",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2032751799",
+			"title": "The comet assay with 8 mouse organs: results with 39 currently used food additives",
+			"override_seed": 0,
+			"authors": [
+				"Yū F. Sasaki",
+				"Satomi Kawaguchi",
+				"Asako Kamaya",
+				"Miyuki Ohshita"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1016/s1383-5718(02)00128-6",
+			"journal": {
+				"id": "S29775604",
+				"retracted": false
+			},
+			"citations": {
+				"count": 718,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": true
+			},
+			"quote": "Four sweeteners (sodium cyclamate, saccharin, sodium saccharin, and sucralose) also induced DNA damage in gastrointestinal organs",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": "NotSpecified",
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Unrealistic doses",
+					"description": "The doses at which effects were observed are far beyond human-acceptable levels",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2126904148",
+			"title": "Artificial sweeteners—do they bear a carcinogenic risk?",
+			"authors": [
+				"Martin R. Weihrauch",
+				"Volker Diehl"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1093/annonc/mdh256",
+			"journal": {
+				"id": "S41454044",
+				"retracted": false
+			},
+			"citations": {
+				"count": 282,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "As many artificial sweeteners are combined in today’s products, the carcinogenic risk of a single substance is difficult to assess. However, according to the current literature, the possible risk of artificial sweeteners to induce cancer seems to be negligible",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2016092552",
+			"title": "First Experimental Demonstration of the Multipotential Carcinogenic Effects of Aspartame Administered in the Feed to Sprague-Dawley Rats",
+			"authors": [
+				"Morando Soffritti",
+				"Fiorella Belpoggi",
+				"Davide Degli Esposti",
+				"Luca Lambertini"
+			],
+			"year": 2005,
+			"link": "https://doi.org/10.1289/ehp.8711",
+			"journal": {
+				"id": "S10446503",
+				"retracted": false
+			},
+			"citations": {
+				"count": 250,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "The results of this mega-experiment indicate that APM is a multipotential carcinogenic agent, even at a daily dose of 20 mg/kg body weight, much less than the current acceptable daily intake",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 1800,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Controversial institute",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
+					"impact": "Negative"
+				},
+				{
+					"title": "No dose-response relationship",
+					"description": "Low and inconsistent dose-response relationship despite huge differences in dose between groups (several orders of magnitude)",
+					"impact": "Negative"
+				},
+				{
+					"title": "Non-standard design",
+					"description": "Data transparency issues, high‑density housing, use of pathogen‑carrier animals and full‑lifespan design",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2106811247",
+			"title": "Sugar-Sweetened Soft Drink Consumption and Risk of Pancreatic Cancer in Two Prospective Cohorts",
+			"override_seed": 0,
+			"authors": [
+				"Eva Schernhammer",
+				"Frank B. Hu",
+				"Ed Giovannucci",
+				"Dominique S. Michaud"
+			],
+			"year": 2005,
+			"link": "https://doi.org/10.1158/1055-9965.epi-05-0059",
+			"journal": {
+				"id": "S8391440",
+				"retracted": false
+			},
+			"citations": {
+				"count": 109,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We similarly examined the risk of pancreatic cancer according to intake of diet soft drinks but failed to observe a significant relation between diet soft drink intake and pancreatic cancer risk",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 138158,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2104535906",
+			"title": "Artificial sweeteners and cancer risk in a network of case–control studies",
+			"override_seed": 0,
+			"authors": [
+				"Silvano Gallus",
+				"Lorenza Scotti",
+				"Eva Negri",
+				"Renato Talamini"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1093/annonc/mdl346",
+			"journal": {
+				"id": "S41454044",
+				"retracted": false
+			},
+			"citations": {
+				"count": 99,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study provides no evidence that saccharin or other sweeteners (mainly aspartame) increase the risk of cancer at several common sites in humans",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 16004,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2052738915",
+			"title": "Consumption of Aspartame-Containing Beverages and Incidence of Hematopoietic and Brain Malignancies",
+			"override_seed": 0.9,
+			"authors": [
+				"Unhee Lim",
+				"Amy F. Subar",
+				"Traci Mouw",
+				"Patricia Hartge"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1158/1055-9965.epi-06-0203",
+			"journal": {
+				"id": "S8391440",
+				"retracted": false
+			},
+			"citations": {
+				"count": 103,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our findings do not support the hypothesis that aspartame increases hematopoietic or brain cancer risk",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 473984,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2130284699",
+			"title": "Aspartame: A Safety Evaluation Based on Current Use Levels, Regulations, and Toxicological and Epidemiological Studies",
+			"override_seed": 0,
+			"authors": [
+				"Bernadene A. Magnuson",
+				"George A. Burdock",
+				"John Doull",
+				"R. Kroes"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1080/10408440701516184",
+			"journal": {
+				"id": "S78069630",
+				"retracted": false
+			},
+			"citations": {
+				"count": 334,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The studies provide no evidence to support an association between aspartame and cancer in any tissue. The weight of existing evidence is that aspartame is safe at current levels of consumption as a nonnutritive sweetener",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2027808454",
+			"title": "Life-Span Exposure to Low Doses of Aspartame Beginning during Prenatal Life Increases Cancer Effects in Rats",
+			"override_seed": 0.9,
+			"authors": [
+				"Morando Soffritti",
+				"Fiorella Belpoggi",
+				"Eva Tibaldi",
+				"Davide Degli Esposti"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1289/ehp.10271",
+			"journal": {
+				"id": "S10446503",
+				"retracted": false
+			},
+			"citations": {
+				"count": 194,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "The results of this carcinogenicity bioassay confirm and reinforce the first experimental demonstration of APM’s multipotential carcinogenicity at a dose level close to the acceptable daily intake for humans",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 470,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Controversial institute",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
+					"impact": "Negative"
+				},
+				{
+					"title": "Non-standard design",
+					"description": "Data transparency issues, high‑density housing, use of pathogen‑carrier animals and full‑lifespan design",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2022887220",
+			"title": "Artificial sweetener consumption and urinary tract tumors in Cordoba, Argentina",
+			"authors": [
+				"María Marta Andreatta",
+				"Sonia Edith Muñoz",
+				"María Josefina Lantieri",
+				"Aldo R. Eynard"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1016/j.ypmed.2008.03.015",
+			"journal": {
+				"id": "S8081180",
+				"retracted": false
+			},
+			"citations": {
+				"count": 69,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "Regular use of AS for 10 years or more was positively associated with UTT",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 594,
+			"p_value": {
+				"value": 0.02,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2128261360",
+			"title": "Artificial Sweeteners and the Risk of Gastric, Pancreatic, and Endometrial Cancers in Italy",
+			"authors": [
+				"Cristina Bosetti",
+				"Silvano Gallus",
+				"Renato Talamini",
+				"Maurizio Montella"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1158/1055-9965.epi-09-0365",
+			"journal": {
+				"id": "S8391440",
+				"retracted": false
+			},
+			"citations": {
+				"count": 72,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The present study adds further evidence on the absence of an adverse effect of low-calorie sweetener (including aspartame) consumption on the risk of common neoplams in the Italian population",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 3117,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2098207607",
+			"title": "Mycoplasma pulmonis and Lymphoma in Bioassays in Rats",
+			"override_seed": 0,
+			"authors": [
+				"Trenton R. Schoeb",
+				"Ernest E. McConnell",
+				"M. Juliana",
+				"J K Davis"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1354/vp.08-vp-0240-s-com",
+			"journal": {
+				"id": "S195318895",
+				"retracted": false
+			},
+			"citations": {
+				"count": 44,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We suggest that a plausible alternative explanation for the reported results of these bioassays is that the studies were confounded by M. pulmonis disease and that lesions of the disease were interpreted as lymphoma",
+			"review": {
+				"type": "Review",
+				"reviews": false,
+				"count": 3
+			},
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 2960,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2110674814",
+			"title": "Sweets, sweetened beverages, and risk of pancreatic cancer in a large population-based case–control study",
+			"override_seed": 0.9,
+			"authors": [
+				"June M. Chan",
+				"Furong Wang",
+				"Elizabeth A. Holly"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1007/s10552-009-9323-1",
+			"journal": {
+				"id": "S150168663",
+				"retracted": false
+			},
+			"citations": {
+				"count": 51,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Low-calorie soft drinks were associated with increased risk among men only",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 2233,
+			"p_value": {
+				"value": 0.06,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2123880692",
+			"title": "Aspartame administered in feed, beginning prenatally through life span, induces cancers of the liver and lung in male Swiss mice",
+			"authors": [
+				"Morando Soffritti",
+				"Fiorella Belpoggi",
+				"Marco Manservigi",
+				"Eva Tibaldi"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1002/ajim.20896",
+			"journal": {
+				"id": "S109435702",
+				"retracted": false
+			},
+			"citations": {
+				"count": 123,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "The results of the present study confirm that APM is a carcinogenic agent in multiple sites in rodents, and that this effect is induced in two species, rats (males and females) and mice (males). No carcinogenic effects were observed in female mice",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 852,
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Controversial institute",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
+					"impact": "Negative"
+				},
+				{
+					"title": "Non-standard design",
+					"description": "Data transparency issues, high‑density housing, use of pathogen‑carrier animals and full‑lifespan design",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2148076216",
+			"title": "Consumption of artificial sweetener– and sugar-containing soda and risk of lymphoma and leukemia in men and women",
+			"authors": [
+				"Eva Schernhammer",
+				"Kimberly A. Bertrand",
+				"Brenda M. Birmann",
+				"Laura Sampson"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.3945/ajcn.111.030833",
+			"journal": {
+				"id": "S71285955",
+				"retracted": false
+			},
+			"citations": {
+				"count": 132,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Although our findings preserve the possibility of a detrimental effect of a constituent of diet soda, such as aspartame, on select cancers, the inconsistent sex effects and occurrence of an apparent cancer risk in individuals who consume regular soda do not permit the ruling out of chance as an explanation",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 125028,
+			"p_value": {
+				"value": 0.05,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Inconsistent results",
+					"description": "Depending on the case, there was an association for only one gender or for only both genders together",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W1977044984",
+			"title": "Aspartame, low-calorie sweeteners and disease: Regulatory safety and epidemiological issues",
+			"authors": [
+				"Marina Marinovich",
+				"C. Galli",
+				"Cristina Bosetti",
+				"Silvano Gallus"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1016/j.fct.2013.07.040",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": {
+				"count": 76,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "With reference to epidemiologic data, evidence on low-calorie sweeteners – and specifically aspartame – does not support the existence of a consistent association with hematopoietic neoplasms, brain cancer, digestive sites, breast, prostate and several other neoplasms",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4236665471",
+			"title": "Scientific Opinion on the re‐evaluation of aspartame (E 951) as a food additive",
+			"authors": [
+				"EFSA"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.2903/j.efsa.2013.3496",
+			"journal": {
+				"id": "S2738498342",
+				"retracted": false
+			},
+			"citations": {
+				"count": 123,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Overall, the Panel considered that the results of these epidemiological studies do not suggest an increased risk associated with aspartame consumption for the types of cancer examined",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2145834137",
+			"title": "Artificially and Sugar-Sweetened Carbonated Beverage Consumption Is Not Associated with Risk of Lymphoid Neoplasms in Older Men and Women",
+			"authors": [
+				"Marjorie L. McCullough",
+				"Lauren R. Teras",
+				"Roma Shah",
+				"W. Ryan Diver"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.3945/jn.114.197475",
+			"journal": {
+				"id": "S88153332",
+				"retracted": false
+			},
+			"citations": {
+				"count": 34,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Overall, results of this study suggest that moderate consumption levels of artificially and sugar-sweetened carbonated beverages are unlikely to increase the risk of NHL in older men and women",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 100442,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1996445220",
+			"title": "Consumption of soft drinks and juices and risk of liver and biliary tract cancers in a European cohort",
+			"authors": [
+				"Magdalena Stępień",
+				"Talita Duarte‐Salles",
+				"Veronika Fedirko",
+				"Antonia Trichopoulou"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1007/s00394-014-0818-5",
+			"journal": {
+				"id": "S4210183135",
+				"retracted": false
+			},
+			"citations": {
+				"count": 67,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_small_effect",
+				"indirect": false
+			},
+			"quote": "In sub-group analyses available for 91% of the cohort artificially sweetened soft drinks increased HCC risk by 6% per 1 serving increment",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 477206,
+			"p_value": {
+				"value": 0.01,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2002651256",
+			"title": "Sweetened carbonated beverage consumption and cancer risk",
+			"override_seed": 0,
+			"authors": [
+				"Peter Boyle",
+				"Alice Koechlin",
+				"Philippe Autier"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1097/cej.0000000000000015",
+			"journal": {
+				"id": "S35423025",
+				"retracted": false
+			},
+			"citations": {
+				"count": 38,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The meta-analyses showed no link with the consumption of sweetened, carbonated beverages and the risk of cancer overall or individual types of cancer",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 37
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W1977826880",
+			"title": "The effect of five artificial sweeteners on Caco-2, HT-29 and HEK-293 cells",
+			"authors": [
+				"A D van Eyk"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.3109/01480545.2014.966381",
+			"journal": {
+				"id": "S17820993",
+				"retracted": false
+			},
+			"citations": {
+				"count": 60,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": true
+			},
+			"quote": "Sucralose and sodium saccharin seemed to elicit the greatest degree of DNA fragmentation of all the sweeteners tested in all the cell lines used",
+			"type": "ClinicalTrial",
+			"on": "InVitro",
+			"sample_size": "NotSpecified",
+			"p_value": {
+				"value": 0.002,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W32539008",
+			"title": "The Role of Dietary and Lifestyle Factors in the Development of Colorectal Cancer: Case Control Study in Minia, Egypt",
+			"override_seed": 0.95,
+			"authors": [
+				"Eman Mahfouz",
+				"Refaat Sadek",
+				"Wafaa Mohamed Abdel-Latief",
+				"Fadia Abdel-Hamed Mosallem"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.21101/cejph.a3919",
+			"journal": {
+				"id": "S2504672647",
+				"retracted": false
+			},
+			"citations": {
+				"count": 66,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "The most significant dietary and lifestyle CRC risk factors were higher consumption of red meat, preserved food, artificial sweeteners, fast foods, soft drinks, spicy foods, processed meat, and smoking",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 450,
+			"p_value": {
+				"value": 0.003,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Questionable results",
+					"description": "The reported effect is very imprecise (odds ratio between 2.7 and 159.7) and extremely large (twice that of smoking and 20 times that of alcohol) which clearly stands out from the rest of the literature",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W1883087042",
+			"title": "Review of the nutritional benefits and risks related to intense sweeteners",
+			"authors": [
+				"Olivier Bruyère",
+				"Serge H. Ahmed",
+				"Catherine Atlan",
+				"Jacques Belegaud"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1186/s13690-015-0092-x",
+			"journal": {
+				"id": "S2764539601",
+				"retracted": false
+			},
+			"citations": {
+				"count": 52,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "On the whole, the epidemiological studies do not show any effects of IS consumption on cancer risk",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 383
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1492780847",
+			"title": "Systematic review of the relationship between artificial sweetener consumption and cancer in humans: analysis of 599,741 participants",
+			"authors": [
+				"Ajay Mishra",
+				"Kamran Ahmed",
+				"Saied Froghi",
+				"Prokar Dasgupta"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1111/ijcp.12703",
+			"journal": {
+				"id": "S22344484",
+				"retracted": false
+			},
+			"citations": {
+				"count": 44,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The statistical value of this review is limited by the heterogeneity and observational designs of the included studies. Although there is limited evidence to suggest that heavy consumption may increase the risk of certain cancers, overall the data presented are inconclusive as to any relationship between artificial sweeteners and cancer",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 5
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 599741,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2521366066",
+			"title": "Sucralose Non-Carcinogenicity: A Review of the Scientific and Regulatory Rationale",
+			"authors": [
+				"Colin Berry",
+				"David Brusick",
+				"Samuel M. Cohen",
+				"Jerry F. Hardisty"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1080/01635581.2016.1224366",
+			"journal": {
+				"id": "S105083709",
+				"retracted": false
+			},
+			"citations": {
+				"count": 34,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In summary, sucralose does not demonstrate carcinogenic activity even when exposure levels are several orders of magnitude greater than the range of anticipated daily ingestion levels",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2499651799",
+			"title": "Sweet-beverage consumption and risk of pancreatic cancer in the European Prospective Investigation into Cancer and Nutrition (EPIC)",
+			"authors": [
+				"Eva María Navarrete‐Muñoz",
+				"Petra A. Wark",
+				"Dora Romaguera",
+				"Nirmala Bhoo‐Pathy"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.3945/ajcn.116.130963",
+			"journal": {
+				"id": "S71285955",
+				"retracted": false
+			},
+			"citations": {
+				"count": 39,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In conclusion, in this large prospective cohort study, no soft-drink category was associated with pancreatic cancer",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 477199,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2752311095",
+			"title": "Health outcomes of non-nutritive sweeteners: analysis of the research landscape",
+			"authors": [
+				"Szimonetta Lohner",
+				"Ingrid Toews",
+				"Joerg J Meerpohl"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1186/s12937-017-0278-x",
+			"journal": {
+				"id": "S134899435",
+				"retracted": false
+			},
+			"citations": {
+				"count": 166,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In healthy subjects appetite and short term food intake, risk of cancer, risk of diabetes, risk of dental caries are the most investigated health outcomes, all of them without any conclusive evidence",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 372
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2788203274",
+			"title": "Consumption of sugar-sweetened and artificially sweetened soft drinks and risk of obesity-related cancers",
+			"authors": [
+				"Allison Hodge",
+				"Julie K. Bassett",
+				"Roger L. Milne",
+				"Dallas R. English"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1017/s1368980017002555",
+			"journal": {
+				"id": "S115427279",
+				"retracted": false
+			},
+			"citations": {
+				"count": 104,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "For artificially sweetened soft drinks, the HR for obesity-related cancers was not associated with consumption",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 35593,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2784325197",
+			"title": "Systematic review and evaluation of aspartame carcinogenicity bioassays using quality criteria",
+			"authors": [
+				"Lois A. Haighton",
+				"Ashley Roberts",
+				"B.S. WALTERS",
+				"Barry Lynch"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1016/j.yrtph.2018.01.009",
+			"journal": {
+				"id": "S87719511",
+				"retracted": false
+			},
+			"citations": {
+				"count": 20,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "As the Klimisch Code 2 studies demonstrated a lack of carcinogenic potential, and as aspartame is hydrolyzed to common components and lacks genotoxic activity, a conclusion that aspartame is not carcinogenic is supported",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 9
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Animals",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2907742136",
+			"title": "Association between intake of non-sugar sweeteners and health outcomes: systematic review and meta-analyses of randomised and non-randomised controlled trials and observational studies",
+			"override_seed": 0.9,
+			"authors": [
+				"Ingrid Toews",
+				"Szimonetta Lohner",
+				"Daniela Kuellenberg de Gaudry",
+				"Harriet Sommer"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1136/bmj.k4718",
+			"journal": {
+				"id": "S192814187",
+				"retracted": false
+			},
+			"citations": {
+				"count": 222,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Most health outcomes did not seem to have differences between the NSS exposed and unexposed groups",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 56
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2988248742",
+			"title": "Consumption of sugar‐sweetened and artificially sweetened soft drinks and risk of cancers not related to obesity",
+			"authors": [
+				"Julie K. Bassett",
+				"Roger L. Milne",
+				"Dallas R. English",
+				"Graham G. Giles"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1002/ijc.32772",
+			"journal": {
+				"id": "S5382288",
+				"retracted": false
+			},
+			"citations": {
+				"count": 23,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes_unlike_literature",
+				"indirect": false
+			},
+			"quote": "The positive association we observed in the present study between frequency of consumption of artificially-sweetened soft drinks and cancer unrelated to obesity was not expected and could be due to unmeasured confounding or to chance",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 35109,
+			"p_value": {
+				"value": 0.006,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4256564332",
+			"title": "Lack of potential carcinogenicity for aspartame – Systematic evaluation and integration of mechanistic data into the totality of the evidence",
+			"authors": [
+				"Daniele Wikoff",
+				"Grace A. Chappell",
+				"Seneca Fitch",
+				"Candace Doepker"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1016/j.fct.2019.110866",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": {
+				"count": 14,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The consistency in lack of carcinogenic findings in experimental animal and human studies collectively demonstrate that aspartame consumption is unlikely to be carcinogenic to humans",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 62
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2956235322",
+			"title": "Sugary drink consumption and risk of cancer: results from NutriNet-Santé prospective cohort",
+			"authors": [
+				"Eloi Chazelas",
+				"Bernard Srour",
+				"Elisa Desmetz",
+				"Emmanuelle Kesse‐Guyot"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1136/bmj.l2408",
+			"journal": {
+				"id": "S192814187",
+				"retracted": false
+			},
+			"citations": {
+				"count": 181,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The consumption of artificially sweetened beverages was not associated with the risk of cancer",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 101257,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3106561566",
+			"title": "High Concentrations of Aspartame Induce Pro-Angiogenic Effects in Ovo and Cytotoxic Effects in HT-29 Human Colorectal Carcinoma Cells",
+			"authors": [
+				"Anca Laura Maghiari",
+				"Dorina Coricovac",
+				"Iulia Pînzaru",
+				"Ioana Macașoi"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.3390/nu12123600",
+			"journal": {
+				"id": "S110785341",
+				"retracted": false
+			},
+			"citations": {
+				"count": 32,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "maybe",
+				"indirect": true
+			},
+			"quote": "The concentrations that proved to be cytotoxic in vitro exerted a pro-angiogenic effect in ovo and presented a weak irritant potential at vascular level. These data might represent a background for further studies aiming to elucidate aspartame’s mechanism of action in tumor cells",
+			"type": "ClinicalTrial",
+			"on": "InVitro",
+			"sample_size": "NotSpecified",
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3027449028",
+			"title": "Identification of aspartame-induced haematopoietic and lymphoid tumours in rats after lifetime treatment",
+			"authors": [
+				"Eva Tibaldi",
+				"Federica Gnudi",
+				"Simona Panzacchi",
+				"Daniele Mandrioli"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1016/j.acthis.2020.151548",
+			"journal": {
+				"id": "S4210188353",
+				"retracted": false
+			},
+			"citations": {
+				"count": 16,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_yes",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "After the HLT cases re-evaluation, the results obtained are consistent with those reported in the previous RI publication and reinforce the hypothesis that APM has a leukaemogenic and lymphomatogenic effect",
+			"review": {
+				"type": "Review",
+				"reviews": false,
+				"count": 1
+			},
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 470,
+			"p_value": {
+				"value": 0.03,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Controversial institute",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
+					"impact": "Negative"
+				},
+				{
+					"title": "Non-independent review",
+					"description": "The authors of the review are affiliated with the same institute that produced the reviewed paper",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W3153374447",
+			"title": "Aspartame and cancer – new evidence for causation",
+			"authors": [
+				"Philip J. Landrigan",
+				"Kurt Straíf"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1186/s12940-021-00725-y",
+			"journal": {
+				"id": "S191320764",
+				"retracted": false
+			},
+			"citations": {
+				"count": 73,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "These new findings confirm that aspartame is a chemical carcinogen in rodents",
+			"review": {
+				"type": "Review",
+				"reviews": false,
+				"count": 3
+			},
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": 3122,
+			"p_value": {
+				"value": 0.03,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Controversial institute",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
+					"impact": "Negative"
+				},
+				{
+					"title": "Non-independent review",
+					"description": "The authors of the review are affiliated with the same institute that produced the reviewed papers",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W3168933003",
+			"title": "Association of soft drink and 100% fruit juice consumption with all-cause mortality, cardiovascular diseases mortality, and cancer mortality: A systematic review and dose-response meta-analysis of prospective cohort studies",
+			"override_seed": 0.7,
+			"authors": [
+				"Bei Pan",
+				"Long Ge",
+				"Honghao Lai",
+				"Qi Wang"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1080/10408398.2021.1937040",
+			"journal": {
+				"id": "S70620193",
+				"retracted": false
+			},
+			"citations": {
+				"count": 54,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The association of SSBs and ASBs with cancer mortality was not significant, with a very low certainty of evidence",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 13
+			},
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 1539127,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3126446391",
+			"title": "Consumption of Sweet Beverages and Cancer Risk. A Systematic Review and Meta-Analysis of Observational Studies",
+			"override_seed": 0,
+			"authors": [
+				"Fjorida Llaha",
+				"Mercedes Gil‐Lespinard",
+				"Pelin Unal",
+				"Izar Villasante"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.3390/nu13020516",
+			"journal": {
+				"id": "S110785341",
+				"retracted": false
+			},
+			"citations": {
+				"count": 66,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_but_mixed_results",
+				"indirect": false
+			},
+			"quote": "Current evidence indicates that higher incidence of some cancers is related to a high consumption of SSBs. However, the evidence is limited to make recommendations regarding ASBs and FJs. This subject requires further investigation",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 27
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 4458056,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3191134431",
+			"title": "Intake of artificial sweeteners among adults is associated with reduced odds of gastrointestinal luminal cancers: a meta-analysis of cohort and case-control studies",
+			"override_seed": 0,
+			"authors": [
+				"Adam Tepler",
+				"Gila Hoffman",
+				"Shawn Jindal",
+				"Neeraj Narula"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1016/j.nutres.2021.07.007",
+			"journal": {
+				"id": "S123713480",
+				"retracted": false
+			},
+			"citations": {
+				"count": 12,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Overall, these data, which represent over 1 million people globally, are congruent with the majority of contemporary epidemiological data demonstrating no association between AS and increased risk of cancer",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 8
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 1043496,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3153854992",
+			"title": "Soft Drink and Juice Consumption and Renal Cell Carcinoma Incidence and Mortality in the European Prospective Investigation into Cancer and Nutrition",
+			"override_seed": 0,
+			"authors": [
+				"Alicia K. Heath",
+				"Joanna Clasen",
+				"Nick P. Jayanth",
+				"Mazda Jenab"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1158/1055-9965.epi-20-1726",
+			"journal": {
+				"id": "S8391440",
+				"retracted": false
+			},
+			"citations": {
+				"count": 13,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There was no higher risk of incident RCC associated with consumption of juices, total soft drinks, sugar-sweetened soft drinks, or artificially sweetened soft drinks",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 389220,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W3168881515",
+			"title": "Sugar-Sweetened Beverages, Artificially Sweetened Beverages, and Breast Cancer Risk: Results From 2 Prospective US Cohorts",
+			"override_seed": 0.9,
+			"authors": [
+				"Andrea Romanos-Nanclares",
+				"Laura C. Collins",
+				"Frank B. Hu",
+				"Walter C. Willett"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1093/jn/nxab172",
+			"journal": {
+				"id": "S88153332",
+				"retracted": false
+			},
+			"citations": {
+				"count": 19,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our findings also suggest no substantial increase in the risk of breast cancer with consumption of ASBs",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 175798,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3174508420",
+			"title": "The relationship between the use of artificial sweeteners and cancer: A meta‐analysis of case–control studies",
+			"override_seed": 0,
+			"authors": [
+				"Liping Liu",
+				"Peng Zhang",
+				"Yuanxin Wang",
+				"Weiwei Cui"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1002/fsn3.2395",
+			"journal": {
+				"id": "S2764587058",
+				"retracted": false
+			},
+			"citations": {
+				"count": 20,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Our findings indicated that the consumption of artificial sweeteners was not associated with an increase in cancer when all types of cancers are analyzed comprehensively. Interestingly, the use of artificial sweeteners is inversely related to urinary system cancer risk when analyzing women individually",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 10
+			},
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 32738,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4220938135",
+			"title": "Artificial sweeteners and cancer risk: Results from the NutriNet-Santé population-based cohort study",
+			"override_seed": 0,
+			"authors": [
+				"Charlotte Debras",
+				"Eloi Chazelas",
+				"Bernard Srour",
+				"Nathalie Druesne‐Pecollo"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1371/journal.pmed.1003950",
+			"journal": {
+				"id": "S197939330",
+				"retracted": false
+			},
+			"citations": {
+				"count": 218,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_small_effect",
+				"indirect": false
+			},
+			"quote": "This large-scale population-based cohort study suggests associations between artificial sweeteners, especially aspartame and acesulfame-K, and cancer risk, more specifically breast and obesity-related cancers",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 102865,
+			"p_value": {
+				"value": 0.002,
+				"less_than": false
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": [
+				{
+					"title": "No dose-response relationship",
+					"description": "Risk of cancer was often similar or even higher in the lower consumer group than the higher consumer group",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W4311531706",
+			"title": "Association of Artificially Sweetened Beverage Consumption and Urinary Tract Cancers in the Women’s Health Initiative Observational Study",
+			"override_seed": 0,
+			"authors": [
+				"Nancy E. Ringel",
+				"Kathleen M. Hovey",
+				"Chris Andrews",
+				"Yasmin Mossavar‐Rahmani"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1016/j.euros.2022.11.016",
+			"journal": {
+				"id": "S4210182343",
+				"retracted": false
+			},
+			"citations": {
+				"count": 5,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_small_effect",
+				"indirect": false
+			},
+			"quote": "In this study of postmenopausal women in the USA, higher consumption of ASBs was associated with a higher risk of incident kidney cancer, but not with the risk of incident bladder cancer",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 80388,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4296021762",
+			"title": "Can Artificial Sweeteners Increase the Risk of Cancer Incidence and Mortality: Evidence from Prospective Studies",
+			"override_seed": 0.8,
+			"authors": [
+				"Shoumeng Yan",
+				"Feifei Yan",
+				"Liping Liu",
+				"Bo Li"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.3390/nu14183742",
+			"journal": {
+				"id": "S110785341",
+				"retracted": false
+			},
+			"citations": {
+				"count": 20,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_but_mixed_results",
+				"indirect": false
+			},
+			"quote": "The results of our research demonstrated that artificial sweeteners’ intake seemed not to increase the risk of overall cancer incidence and mortality. However, in Europe, the consumption of artificial sweeteners could increase cancer incidence",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 25
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 3739775,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4307269043",
+			"title": "Is the Use of Artificial Sweeteners Beneficial for Patients with Diabetes Mellitus? The Advantages and Disadvantages of Artificial Sweeteners",
+			"authors": [
+				"Katsumi Iizuka"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.3390/nu14214446",
+			"journal": {
+				"id": "S110785341",
+				"retracted": false
+			},
+			"citations": {
+				"count": 51,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Only European data showed an association with cancer incidence, as opposed to the United States or Oceania. [...] In the NutriNet-Sante population-based cohort study, artificial sweeteners were also associated with increased cancer risk. [...] This finding might be due to the relationship between obesity and artificial sweeteners",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4283119820",
+			"title": "Sweetened beverage consumption and risk of liver cancer by diabetes status: A pooled analysis",
+			"override_seed": 0.4,
+			"authors": [
+				"Gieira S. Jones",
+				"Barry I. Graubard",
+				"Yesenia Ramirez",
+				"Linda M. Liao"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1016/j.canep.2022.102201",
+			"journal": {
+				"id": "S71791848",
+				"retracted": false
+			},
+			"citations": {
+				"count": 23,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes_but_small_effect",
+				"indirect": false
+			},
+			"quote": "Among persons with diabetes, AS soda consumption was linked to liver cancer",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 553874,
+			"p_value": "NoAccess",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4376613188",
+			"title": "Artificially Sweetened Beverages and Health Outcomes: An Umbrella Review",
+			"override_seed": 0,
+			"authors": [
+				"C. Díaz",
+				"Leandro F. M. Rezende",
+				"Angelo Sabag",
+				"Dong Hoon Lee"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1016/j.advnut.2023.05.010",
+			"journal": {
+				"id": "S2491932416",
+				"retracted": false
+			},
+			"citations": {
+				"count": 26,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "maybe",
+				"indirect": false
+			},
+			"quote": "Weak observational evidence was observed for other health outcomes: cancer risk at several sites (colorectal, pancreatic, and gastrointestinal), cancer mortality, chronic kidney disease, or cardiovascular mortality",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": true,
+				"count": 11
+			},
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4388210620",
+			"title": "Association between Artificial Sweetener-Aspartame Consumption and Colorectal Cancer Risk: Evidence-Based Strategies",
+			"override_seed": 0.1,
+			"authors": [
+				"Chenglou Zhu",
+				"Dandan Ji",
+				"Jichun Ma",
+				"Mingxu Da"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1159/000534812",
+			"journal": {
+				"id": "S198727964",
+				"retracted": false
+			},
+			"citations": {
+				"count": 2,
+				"critics": false
+			},
+			"results": {
+				"consensus": "NoAccess",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Moreover, low, medium, and high exposures were not associated with an increased risk of mortality due to CRC. The results of our meta-analysis showed that a low intake of ASs may be associated with a lower risk of CRC",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 10
+			},
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 711537,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "NoAccess",
+			"notes": []
+		},
+		{
+			"id": "W4321003399",
+			"title": "Association between Consumption of Artificial Sweeteners and Breast Cancer Risk: A Systematic Review and Meta-Analysis of Observational Studies",
+			"override_seed": 0.9,
+			"authors": [
+				"Xia Ye",
+				"Yeyuan Zhang",
+				"Yujing He",
+				"Mingyuan Sheng"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1080/01635581.2023.2178957",
+			"journal": {
+				"id": "S105083709",
+				"retracted": false
+			},
+			"citations": {
+				"count": 7,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study confirmed that there was no relationship between the exposure of artificial sweeteners and the incidence of BC",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 5
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 322009,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4383711204",
+			"title": "Association between consumption of sweeteners and endometrial cancer risk: a systematic review and meta-analysis of observational studies",
+			"override_seed": 0.95,
+			"authors": [
+				"Huiping Li",
+				"Yeyuan Zhang",
+				"Yujing He",
+				"Jianing Huang"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1017/s0007114523001484",
+			"journal": {
+				"id": "S4218381",
+				"retracted": false
+			},
+			"citations": {
+				"count": 4,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "According to statistical findings, there was no difference in the incidence of EC between population exposed to nonnutritional sweeteners and those not exposed to non-nutritional sweeteners",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 12
+			},
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 572820,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4384156863",
+			"title": "Carcinogenicity of aspartame, methyleugenol, and isoeugenol",
+			"override_seed": 0.95,
+			"authors": [
+				"Elio Ríboli",
+				"Frederick A. Beland",
+				"Dirk W. Lachenmeier",
+				"M. Matilde Marques"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1016/s1470-2045(23)00341-8",
+			"journal": {
+				"id": "S116900674",
+				"retracted": false
+			},
+			"citations": {
+				"count": 70,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "maybe",
+				"indirect": false
+			},
+			"quote": "Aspartame was classified as \"possibly carcinogenic to humans\" (Group 2B) based on \"limited\" evidence for cancer in humans",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": [
+				{
+					"title": "Controversial references",
+					"description": "Most of the studies referenced as evidence of an effect have faced significant criticism regarding their methods and interpretation",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W4380870578",
+			"title": "Consumption of aspartame and other artificial sweeteners and risk of cancer in the Spanish multicase‐control study (MCC‐Spain)",
+			"override_seed": 0,
+			"authors": [
+				"Anna Palomar‐Cros",
+				"Kurt Straíf",
+				"Dora Romaguera",
+				"Núria Aragonés"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1002/ijc.34577",
+			"journal": {
+				"id": "S5382288",
+				"retracted": false
+			},
+			"citations": {
+				"count": 15,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_but_mixed_results",
+				"indirect": false
+			},
+			"quote": "We did not find associations between use of AS and cancer, but found associations between high consumption of aspartame and other AS and different cancer types among participants with diabetes",
+			"type": "CaseControlStudy",
+			"on": "Humans",
+			"sample_size": 8452,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4388861152",
+			"title": "Is there a promoting role for artificial sweeteners in the evolution of bladder cancer? A meta-analysis of current literature",
+			"override_seed": 0.2,
+			"authors": [
+				"I Bálint",
+				"Bence T. ERDODI"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.23736/s2724-5691.23.10000-1",
+			"journal": {
+				"id": "S4210225277",
+				"retracted": false
+			},
+			"citations": {
+				"count": 3,
+				"critics": false
+			},
+			"results": {
+				"consensus": "NoAccess",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "According to our results, the carcinogenic risk of artificial sweeteners is not proven. Saccharin should not be kept as a promoter in urothelial malignant transformation",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 21
+			},
+			"type": "NoAccess",
+			"on": "Humans",
+			"sample_size": 116568,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "NoAccess",
+			"notes": []
+		},
+		{
+			"id": "W4322761839",
+			"title": "Non-sugar sweeteners and cancer: Toxicological and epidemiological evidence",
+			"override_seed": 0,
+			"authors": [
+				"Sofia Pavanello",
+				"Angelo Moretto",
+				"Carlo La Vecchia",
+				"Gianfranco Alicandro"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1016/j.yrtph.2023.105369",
+			"journal": {
+				"id": "S87719511",
+				"retracted": false
+			},
+			"citations": {
+				"count": 34,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Based on the review of both the experimental data on genotoxicity or carcinogenicity of the specific NSS evaluated, and the epidemiological studies it can be concluded that there is no evidence of cancer risk associated to NSS consumption",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 68
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W4385658221",
+			"title": "Sugar-Sweetened and Artificially Sweetened Beverages and Risk of Liver Cancer and Chronic Liver Disease Mortality",
+			"authors": [
+				"Longgang Zhao",
+				"Xinyuan Zhang",
+				"Mace Coday",
+				"David O. Garcia"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1001/jama.2023.12618",
+			"journal": {
+				"id": "S172573765",
+				"retracted": false
+			},
+			"citations": {
+				"count": 52,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Compared with intake of 3 or fewer artificially sweetened beverages per month, individuals who consumed 1 or more artificially sweetened beverages per day did not have significantly increased incidence of liver cancer or chronic liver disease mortality",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 64787,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4386067996",
+			"title": "Sweeteners and the Gut Microbiome: Effects on Gastrointestinal Cancers",
+			"override_seed": 0,
+			"authors": [
+				"Raghad Khalid AL-Ishaq",
+				"Peter Kubatka",
+				"Dietrich Büsselberg"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.3390/nu15173675",
+			"journal": {
+				"id": "S110785341",
+				"retracted": false
+			},
+			"citations": {
+				"count": 5,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Here, and in most of the reported articles, it has been shown that these natural and synthetic sweeteners lack genotoxicity and carcinogenicity and are safe when consumed in moderation",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 104
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4390430838",
+			"title": "The Impact of Artificial Sweeteners on Human Health and Cancer Association: A Comprehensive Clinical Review",
+			"authors": [
+				"Wissam Ghusn",
+				"Roopa Naik",
+				"Marcel Yibrin"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.7759/cureus.51299",
+			"journal": {
+				"id": "S2738950867",
+				"retracted": false
+			},
+			"citations": {
+				"count": 13,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Although multiple studies associate ASs with increased cancer risk, the majority of recent research data, including systematic reviews and meta-analyses, show no link between the use of ASs and cancer risk",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4392515887",
+			"title": "Artificially sweetened beverages consumption and risk of obesity-related cancers: a wide-angled Mendelian randomization study",
+			"override_seed": 0.9,
+			"authors": [
+				"Xing Jin",
+				"Mengyue Wu",
+				"Shuangshuang Dong",
+				"Hui Liu"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.3389/fnut.2024.1347724",
+			"journal": {
+				"id": "S2596909297",
+				"retracted": false
+			},
+			"citations": {
+				"count": 1,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "Genetically predicted ASB consumption was positively associated with the risk of colorectal cancer and breast cancer",
+			"type": "NotApplicable",
+			"on": "Humans",
+			"sample_size": 85852,
+			"p_value": {
+				"value": 0.016,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4402650656",
+			"title": "Chronic Use of Artificial Sweeteners: Pros and Cons",
+			"override_seed": 0.95,
+			"authors": [
+				"Lydia Kossiva",
+				"Konstantinos Kakleas",
+				"Foteini Christodouli",
+				"Alexandra Soldatou"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.3390/nu16183162",
+			"journal": {
+				"id": "S110785341",
+				"retracted": false
+			},
+			"citations": {
+				"count": 12,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "maybe",
+				"indirect": false
+			},
+			"quote": "The relationship between the consumption of artificial sweeteners and the occurrence of cancer according to meta-analyses is inconsistent",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 141
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4403484968",
+			"title": "Consumption of aspartame and risk of breast cancer in the Nurses’ Health Studies",
+			"override_seed": 0.9,
+			"authors": [
+				"Andrea Romanos-Nanclares",
+				"Eva Schernhammer",
+				"Walter C. Willett",
+				"Michelle D. Holmes"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1093/jnci/djae259",
+			"journal": {
+				"id": "S98010888",
+				"retracted": false
+			},
+			"citations": {
+				"count": 2,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Overall, there was no association between aspartame consumption and invasive breast cancer risk. [...] In these cohorts, aspartame consumption did not increase breast cancer risk",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 10814,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "NoAccess",
+			"notes": []
+		},
+		{
+			"id": "W4405508889",
+			"title": "Research Progress on the Relationship Between Artificial Sweeteners and Breast Cancer",
+			"override_seed": 0.5,
+			"authors": [
+				"Xianqiang Yu",
+				"Yu Zeng",
+				"Xiaoli Chen",
+				"Meijun Liu"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.3390/biomedicines12122871",
+			"journal": {
+				"id": "S2737005842",
+				"retracted": false
+			},
+			"citations": {
+				"count": 3,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The relationship between artificial sweeteners and breast cancer remains unclear, and existing research results are contradictory",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4406152759",
+			"title": "An integrative analysis reveals cancer risk associated with artificial sweeteners",
+			"override_seed": 0.9,
+			"authors": [
+				"Jumin Xie",
+				"Ying Zhu",
+				"Zixuan Yang",
+				"Yu Zhang"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.1186/s12967-024-06047-0",
+			"journal": {
+				"id": "S142026636",
+				"retracted": false
+			},
+			"citations": {
+				"count": 4,
+				"critics": false
+			},
+			"results": {
+				"consensus": "yes",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "This study integrated data mining, machine learning, network toxicology, molecular docking, molecular dynamics simulations, and clinical sample analysis to demonstrate that AS increases the risk of kidney cancer, lowgrade glioma, breast cancer, and prostate cancer through multiple targets and signaling pathways",
+			"type": "NotApplicable",
+			"on": "Humans",
+			"sample_size": 2625,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4409712458",
+			"title": "Artificial Sweeteners: Benefits, Risks and Controversy",
+			"authors": [
+				"Sayantan Ray",
+				"Rajan Palui"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.1177/09760016251336000",
+			"journal": {
+				"id": "S2764836552",
+				"retracted": false
+			},
+			"citations": {
+				"count": 3,
+				"critics": false
+			},
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The possible risk of carcinogenesis reported with AS use is seen only in much higher exposure than the ADI level",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4412093008",
+			"title": "Aspartame and Human Health: A Mini-Review of Carcinogenic and Systemic Effects",
+			"authors": [
+				"Nour El Doueihy",
+				"Joya Ghaleb",
+				"Karl Kfoury",
+				"Katy Kaleen Khouzami"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.3390/jox15040114",
+			"journal": {
+				"id": "S4210179895",
+				"retracted": false
+			},
+			"citations": {
+				"count": 0,
+				"critics": false
+			},
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_but_mixed_results",
+				"indirect": false
+			},
+			"quote": "In summary, this mini-review has examined the potential link between aspartame and carcinogenesis. While some studies suggest a possible association, the overall body of evidence remains inconclusive",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
+}

@@ -44,6 +44,10 @@ export const EMOJI_NAMES = {
 	// Animals & Nature
 	'🐭': 'mouse-face',
 
+	// Food & Drink
+	'🍬': 'candy',
+	'🍽️': 'fork-and-knife-with-plate',
+
 	// Activity
 	'🏆': 'trophy',
 	'🎲': 'game-die',
@@ -82,6 +86,7 @@ export const EMOJI_NAMES = {
 	'💊': 'pill',
 
 	// Symbols
+	'💖': 'sparkling-heart',
 	'🚻': 'restroom',
 	'➡️': 'right-arrow',
 	'⬅️': 'left-arrow',
