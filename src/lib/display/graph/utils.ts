@@ -52,13 +52,16 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 	}
 
 	const pad_score = (max_score - min_score) / (height ** 0.7);
-	const final_min_score = min_score - pad_score * Y_MIN_PADDING * bottom_margin_scale;
+	const final_min_year = min_year - pad_year * X_MIN_PADDING;
+	const final_max_year = max_year + pad_year * X_MAX_PADDING;
+	const final_min_score = Math.min(min_score - pad_score * Y_MIN_PADDING * bottom_margin_scale, 0);
+	const final_max_score = Math.max(max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE) * top_margin_scale, 1)
 
 	let stats = {
-		min_year: min_year - pad_year * X_MIN_PADDING,
-		max_year: max_year + pad_year * X_MAX_PADDING,
-		min_score: Math.min(final_min_score, 0),
-		max_score: Math.max(max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE) * top_margin_scale, 1),
+		min_year: years.length > 0 ? final_min_year : 1950,
+		max_year: years.length > 0 ? final_max_year : new Date().getFullYear(),
+		min_score: scores.length > 0 ? final_min_score : 0,
+		max_score: scores.length > 0 ? final_max_score : 1,
 		width,
 		height,
 		scale,
