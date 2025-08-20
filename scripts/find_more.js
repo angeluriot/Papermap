@@ -190,7 +190,7 @@ async function main()
 	})).toSorted((a, b) => a.score - b.score);
 
 	for (const paper of papers)
-		console.log((paper.score * 100).toFixed(0) + '% (' + paper.nb + ')\n' + paper.id + '\n' + paper.title + '\n' + paper.doi + '\n');
+		console.log((Math.min(paper.score, 1) * 100).toFixed(0) + '% (' + paper.nb + ')\n' + paper.id + '\n' + paper.title + '\n' + paper.doi + '\n');
 
 	process.exit(0);
 }
