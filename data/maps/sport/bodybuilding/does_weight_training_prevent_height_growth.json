@@ -1,0 +1,1114 @@
+{
+	"draft": false,
+	"emoji": "🧑‍🧒",
+	"question": {
+		"short": "Does weight training prevent height growth?",
+		"long": "Does weight training prevent height growth?"
+	},
+	"description": "Results from studies evaluating the impact of weight training on height growth in children and adolescents.",
+	"tags": [
+		"bodybuilding",
+		"weight",
+		"resistance",
+		"training",
+		"height",
+		"linear",
+		"growth",
+		"children",
+		"adolescents"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of weight training on height growth",
+			"color": "Gray",
+			"coherence": {
+				"no": 0.5,
+				"no_but_mixed_results": 0.5,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0.5,
+				"yes_but_small_effect": 0.5,
+				"yes": 0.5
+			}
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that weight training does not prevent height growth",
+			"color": "Red",
+			"coherence": {
+				"no": 1,
+				"no_but_mixed_results": 1,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0,
+				"yes_but_small_effect": 0,
+				"yes_unlike_literature": 0
+			}
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that weight training probably doesn't prevent height growth, but more research is needed",
+			"color": "Red1H",
+			"coherence": {
+				"no": 0.75,
+				"no_but_mixed_results": 0.75,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0.25,
+				"yes_but_small_effect": 0.25,
+				"yes_unlike_literature": 0.25
+			}
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that weight training may prevent height growth, but more research is needed",
+			"color": "Green1H",
+			"coherence": {
+				"no_unlike_literature": 0.25,
+				"no_but_mixed_results": 0.25,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 0.75,
+				"yes_but_small_effect": 0.75,
+				"yes": 0.75
+			}
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that weight training prevents height growth",
+			"color": "Green",
+			"coherence": {
+				"no_unlike_literature": 0,
+				"no_but_mixed_results": 0,
+				"maybe": 0.5,
+				"yes_but_low_confidence": 1,
+				"yes_but_small_effect": 1,
+				"yes": 1
+			}
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Red1H"
+		},
+		"maybe": {
+			"text": "Maybe",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant effect of weight training on height growth",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant effect of weight training on height growth, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🔀",
+			"text": "No but mixed results",
+			"description": "The results of the paper show no significant overall effect of weight training on height growth, but there are mixed results on specific cases",
+			"p_value": false
+		},
+		"maybe": {
+			"group": "maybe",
+			"emoji": "🤷",
+			"text": "Maybe",
+			"description": "The results of the paper suggest that weight training might have an effect on height growth, but the evidence is not strong enough to conclude",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that weight training may prevent height growth, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that weight training may have a small effect on height growth",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that weight training may prevent height growth, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that weight training prevents height growth",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_blind": true,
+		"no_random": false,
+		"no_causality": false,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": [
+		{
+			"id": "W2013747771",
+			"title": "The effects of hydraulic resistance strength training in pre-pubertal males",
+			"authors": [
+				"Arthur Weltman",
+				"Carol A. Janney",
+				"Clark B. Rians",
+				"Ken Strand"
+			],
+			"year": 1986,
+			"link": "https://doi.org/10.1249/00005768-198612000-00005",
+			"journal": {
+				"id": "S14544163",
+				"retracted": false
+			},
+			"citations": 163,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Both groups increased in height and weight during the 14 wk. Although a trend for greater growth rate was observed in the strength training group, a significant two-way interaction was not observed for height",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 26,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W1987279215",
+			"title": "Strength training for prepubescent males: Is it safe?",
+			"authors": [
+				"Clark B. Rians",
+				"Arthur Weltman",
+				"Bernard R. Cahill",
+				"Carol A. Janney"
+			],
+			"year": 1987,
+			"link": "https://doi.org/10.1177/036354658701500510",
+			"journal": {
+				"id": "S154904565",
+				"retracted": false
+			},
+			"citations": 83,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Results showed that in the short term, supervised concentric strength training results in a low injury rate and does not adversely affect bone, muscle, or epiphyses ; nor does it adversely affect growth, development, flexibility, or motor performance",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 28,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2101643994",
+			"title": "The Effects of Upper Body Resistance Training on Prepubescent Children",
+			"authors": [
+				"Judith Siegel",
+				"David N. Camaione",
+				"Thomas G. Manfredi"
+			],
+			"year": 1989,
+			"link": "https://doi.org/10.1123/pes.1.2.145",
+			"journal": {
+				"id": "S83692137",
+				"retracted": false
+			},
+			"citations": 52,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There was a tendency for the experimental group toward greater height gain",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 96,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2060590963",
+			"title": "Strength training effects in prepubescent boys",
+			"authors": [
+				"J. Ramsay",
+				"Cameron J.R. Blimkie",
+				"KAREN SMITH",
+				"Scott H. Garner"
+			],
+			"year": 1990,
+			"link": "https://doi.org/10.1249/00005768-199010000-00011",
+			"journal": {
+				"id": "S14544163",
+				"retracted": false
+			},
+			"citations": 389,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There were no significant differences in age, height, weight, sum of two skinfolds, or percent body fat between the experimental and control groups initially or after training",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 26,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2031575283",
+			"title": "Resistance Training During Preadolescence",
+			"authors": [
+				"Cameron J.R. Blimkie"
+			],
+			"year": 1993,
+			"link": "https://doi.org/10.2165/00007256-199315060-00004",
+			"journal": {
+				"id": "S137994755",
+				"retracted": false
+			},
+			"citations": 117,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Short term resistance training appears to have no effect on somatic growth (height or weight)",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2116951976",
+			"title": "The Effects of a Twice-A-Week Strength Training Program on Children",
+			"authors": [
+				"Avery D. Faigenbaum",
+				"Leonard D. Zaichkowsky",
+				"Wayne L. Westcott",
+				"Lyle J. Micheli"
+			],
+			"year": 1993,
+			"link": "https://doi.org/10.1123/pes.5.4.339",
+			"journal": {
+				"id": "S83692137",
+				"retracted": false
+			},
+			"citations": 119,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Significant main effects for time, indicative of growth, were noted for height and weight following the training period",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 23,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2614418993",
+			"title": "The Effects of Strength Training and Detraining on Children",
+			"authors": [
+				"Avery D. Faigenbaum",
+				"Wayne L. Westcott",
+				"Lyle J. Micheli",
+				"A. Ross Outerbridge"
+			],
+			"year": 1996,
+			"link": "https://journals.lww.com/nsca-jscr/abstract/1996/05000/the_effects_of_strength_training_and_detraining_on.10.aspx",
+			"journal": {
+				"id": "S150708336",
+				"retracted": false
+			},
+			"citations": 157,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There were no significant differences in height or weight between groups either before or after the training and detraining periods",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 24,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1988416366",
+			"title": "Youth resistance training: position statement paper and literature review",
+			"authors": [
+				"Avery D. Faigenbaum",
+				"William J. Kraemer",
+				"Bernard R. Cahill",
+				"Jeff Chandler"
+			],
+			"year": 1996,
+			"link": "https://journals.lww.com/nsca-scj/citation/1996/12000/youth_resistance_training__position_statement.14.aspx",
+			"journal": {
+				"id": "S4210170594",
+				"retracted": false
+			},
+			"citations": 69,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Despite the old myth that resistance training will stunt the statural growth of children, current observations indicate that youth resistance training (up to 20 weeks) will not have an adverse effect on growth patterns",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2161976258",
+			"title": "The Effect of Long-Term Resistance Training on Anthropometric Measures, Muscle Strength, and Self Concept in Pre-Pubertal Boys",
+			"override_seed": 0,
+			"authors": [
+				"Eliahu Sadres",
+				"Alon Eliakim",
+				"Naama Constantini",
+				"Ronnie Lidor"
+			],
+			"year": 2001,
+			"link": "https://doi.org/10.1123/pes.13.4.357",
+			"journal": {
+				"id": "S83692137",
+				"retracted": false
+			},
+			"citations": 54,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No differences were observed in the gain in body height between groups",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 49,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1989299773",
+			"title": "Effects of resistance training on protein utilization in healthy children",
+			"override_seed": 0.9,
+			"authors": [
+				"Matthew A. Pikosky",
+				"Avery D. Faigenbaum",
+				"Wayne Westcott",
+				"Nancy R. Rodriguez"
+			],
+			"year": 2002,
+			"link": "https://doi.org/10.1097/00005768-200205000-00015",
+			"journal": {
+				"id": "S14544163",
+				"retracted": false
+			},
+			"citations": 43,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "During the investigation, significant increases in weight, height, FFM, FM, and body mass index were noted",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 11,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2396382209",
+			"title": "Resistance training, skeletal muscle and growth.",
+			"authors": [
+				"Bareket Falk",
+				"Alon Eliakim"
+			],
+			"year": 2003,
+			"link": "https://pubmed.ncbi.nlm.nih.gov/16437017/",
+			"journal": {
+				"id": "S2755702600",
+				"retracted": false
+			},
+			"citations": 61,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Scientific evidence indicates that resistance training results in increased serum IGF-I and that there is no detrimental effect on linear growth",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NoAccess"
+			},
+			"type": "NoAccess",
+			"on": "Humans",
+			"sample_size": "NoAccess",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "NoAccess",
+			"notes": []
+		},
+		{
+			"id": "W2071549027",
+			"title": "Effects of Resistance Training on the Physical Capacities of Adolescent Soccer Players",
+			"authors": [
+				"Marios Christou",
+				"Ilias Smilios",
+				"Konstantinos Sotiropoulos",
+				"Konstantinos A. Volaklis"
+			],
+			"year": 2006,
+			"link": "https://pubmed.ncbi.nlm.nih.gov/15320685/",
+			"journal": {
+				"id": "S150708336",
+				"retracted": false
+			},
+			"citations": 238,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Significant main effects were observed for height and weight, but no differences were found between groups",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 26,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2084971406",
+			"title": "Weight Training in Youth-Growth, Maturation, and Safety: An Evidence-Based Review",
+			"authors": [
+				"Robert M. Malina"
+			],
+			"year": 2006,
+			"link": "https://doi.org/10.1097/01.jsm.0000248843.31874.be",
+			"journal": {
+				"id": "S19541889",
+				"retracted": false
+			},
+			"citations": 187,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Resistance training programs do not influence growth in height and weight of pre- and early-adolescent youth",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 22
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 832,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1992255097",
+			"title": "Resistance Training for Children and Adolescents",
+			"override_seed": 0,
+			"authors": [
+				"Avery D. Faigenbaum"
+			],
+			"year": 2007,
+			"link": "https://doi.org/10.1177/1559827606296814",
+			"journal": {
+				"id": "S84585612",
+				"retracted": false
+			},
+			"citations": 56,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Scientific evidence indicates that there is no detriment of youth resistance training on linear growth in children and adolescents",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2154776027",
+			"title": "Canadian Society for Exercise Physiology position paper: resistance training in children and adolescents",
+			"override_seed": 0,
+			"authors": [
+				"David G. Behm",
+				"Avery D. Faigenbaum",
+				"Baraket Falk",
+				"Panagiota Klentrou"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1139/h08-020",
+			"journal": {
+				"id": "S173941543",
+				"retracted": false
+			},
+			"citations": 348,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Data suggest that regular participation in a well-designed RT program does not negatively impact growth or maturation of youth. Traditional fears associated with youth RT have been replaced with more recent findings that indicate that regular participation in weightbearing physical activities is essential for normal bone growth and development",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2121629594",
+			"title": "Strength Training by Children and Adolescents",
+			"authors": [
+				"CSMF"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1542/peds.2007-3790",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": 323,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Appropriate strength-training programs have no apparent adverse effect on linear growth",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2131528817",
+			"title": "Strength Training Recommendations for the Young Athlete",
+			"override_seed": 0.9,
+			"authors": [
+				"Jeffrey M Vaughn",
+				"Lyle J. Micheli"
+			],
+			"year": 2008,
+			"link": "https://doi.org/10.1016/j.pmr.2007.11.004",
+			"journal": {
+				"id": "S98107870",
+				"retracted": false
+			},
+			"citations": 21,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Data suggest that regular participation in a well-designed RT program does not negatively impact growth or maturation of youth",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2125598153",
+			"title": "Resistance training among young athletes: safety, efficacy and injury prevention effects",
+			"authors": [
+				"Avery D. Faigenbaum",
+				"Gregory D. Myer"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1136/bjsm.2009.068098",
+			"journal": {
+				"id": "S136578784",
+				"retracted": false
+			},
+			"citations": 371,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no evidence that resistance training will negatively impact growth in height during childhood and adolescence",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": 36
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": 7319,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2040866219",
+			"title": "Strength Training in Children and Adolescents: Raising the Bar for Young Athletes?",
+			"override_seed": 0.9,
+			"authors": [
+				"Katherine S. Dahab",
+				"Teri M. McCambridge"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1177/1941738109334215",
+			"journal": {
+				"id": "S86871763",
+				"retracted": false
+			},
+			"citations": 97,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "A well-designed strength training program following the recommended loads, sets, and repetitions appropriate for the young athlete’s age and body habitus should not excessively stress growth plates [...] while favorably influencing bone growth and development in youth by increasing bone mineral density",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1968867688",
+			"title": "Youth Resistance Training: Updated Position Statement Paper From the National Strength and Conditioning Association",
+			"override_seed": 0,
+			"authors": [
+				"Avery D. Faigenbaum",
+				"William J. Kraemer",
+				"Cameron J.R. Blimkie",
+				"Ian Jeffreys"
+			],
+			"year": 2009,
+			"link": "https://doi.org/10.1519/jsc.0b013e31819df407",
+			"journal": {
+				"id": "S150708336",
+				"retracted": false
+			},
+			"citations": 945,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no detrimental effect of resistance training on linear growth in children and adolescents",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2086447787",
+			"title": "Pediatric Resistance Training: Benefits, Concerns, and Program Design Considerations",
+			"authors": [
+				"Avery D. Faigenbaum",
+				"Gregory D. Myer"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1249/jsr.0b013e3181de1214",
+			"journal": {
+				"id": "S156722506",
+				"retracted": false
+			},
+			"citations": 134,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There is no evidence to suggest that resistance training will negatively impact growth and maturation during childhood and adolescence",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2166432718",
+			"title": "Position statement on youth resistance training: the 2014 International Consensus",
+			"override_seed": 0,
+			"authors": [
+				"Rhodri S. Lloyd",
+				"Avery D. Faigenbaum",
+				"Michael H. Stone",
+				"Jon L. Oliver"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1136/bjsports-2013-092952",
+			"journal": {
+				"id": "S136578784",
+				"retracted": false
+			},
+			"citations": 484,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No scientific evidence indicates that resistance training will have an adverse effect on linear growth during childhood or adolescence or reduce eventual height in adulthood",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W1987654215",
+			"title": "There is No Need to Avoid Resistance Training (Weight Lifting) until Physeal Closure",
+			"override_seed": 0.9,
+			"authors": [
+				"Michael C. Milone",
+				"Joseph Bernstein",
+				"Kevin B. Freedman",
+				"Fotios P. Tjoumakaris"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.3810/psm.2013.11.2041",
+			"journal": {
+				"id": "S136800548",
+				"retracted": false
+			},
+			"citations": 8,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Just as many studies have shown that resistance training is not acutely dangerous to a youthful physis, there is limited clinical evidence that suggests weight lifting does not alter linear growth in the short term",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2427577391",
+			"title": "Treinamento de Força para Crianças: Uma Metanálise Sobre Alterações do Crescimento Longitudinal, Força e Composição Corporal",
+			"authors": [
+				"R.R.S. Frois",
+				"Lílian Alves Pereira",
+				"Cintia Mota Cardeal",
+				"Ricardo Yukio Asano"
+			],
+			"year": 2014,
+			"link": "https://pesquisa.bvsalud.org/portal/resource/pt/lil-733928",
+			"journal": {
+				"id": "S4210170075",
+				"retracted": false
+			},
+			"citations": 2,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The level of longitudinal growth was also superior in the experimental groups. Therefore, this research suggests that RT as an intervention for favorable gains in strength, muscle hypertrophy and longitudinal growth in individuals over seven to 12 years",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"count": 22
+			},
+			"type": "DiverseClinicalTrials",
+			"on": "Humans",
+			"sample_size": 1259,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2615799653",
+			"title": "Resistance training for children and adolescents",
+			"authors": [
+				"Allison M. Myers",
+				"Nicholas Beam",
+				"Joseph Fakhoury"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.21037/tp.2017.04.01",
+			"journal": {
+				"id": "S2764863491",
+				"retracted": false
+			},
+			"citations": 86,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In the past, it was thought RT was detrimental to youth athletes [...] resulting in concern for increased physeal injuries and the potential for stunted growth. Multiple studies have since discredited this theory by demonstrating there is no adverse effects of RT in youth athletes, when designed properly",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2735318220",
+			"title": "Resistance Training in Youth Improves Athletic Performance: A Systematic Review",
+			"override_seed": 0,
+			"authors": [
+				"Antigone S. Vesci",
+				"Kathryn A. Webster",
+				"Mark Sich",
+				"Lee Marinko"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.3928/19425864-20170504-01",
+			"journal": {
+				"id": "S67345041",
+				"retracted": false
+			},
+			"citations": 4,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In addition, there has been no documented detrimental effect of appropriately designed resistance training programs on linear growth in children and adolescents",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"count": 21
+			},
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 1052,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2906562090",
+			"title": "Effects of physical activity on children's growth",
+			"override_seed": 0.9,
+			"authors": [
+				"João Guilherme Bezerra Alves",
+				"Guilherme Victor Alves"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1016/j.jped.2018.11.003",
+			"journal": {
+				"id": "S66095140",
+				"retracted": false
+			},
+			"citations": 97,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Physical exercise does not appear to impair the child’s linear growth and contributes to the ideal shaping of bone and muscle tissues, ensuring possible beneficial effects throughout life",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": true,
+				"count": 36
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2480350260",
+			"title": "Resistance Training for Children and Adolescents",
+			"authors": [
+				"Paul R. Stricker",
+				"Avery D. Faigenbaum",
+				"Teri M. McCambridge",
+				"Cynthia R. LaBella"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1542/peds.2020-1011",
+			"journal": {
+				"id": "S77494981",
+				"retracted": false
+			},
+			"citations": 182,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Appropriately designed resistance training programs have no apparent negative effect on linear growth",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3214724980",
+			"title": "Weightlifting for Children and Adolescents: A Narrative Review",
+			"authors": [
+				"Kyle C. Pierce",
+				"W. Guy Hornsby",
+				"Michael H. Stone"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1177/19417381211056094",
+			"journal": {
+				"id": "S86871763",
+				"retracted": false
+			},
+			"citations": 20,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "There was no evidence that weightlifting training \"stunted\" growth",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"count": "NotSpecified"
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
+}

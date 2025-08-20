@@ -36,10 +36,13 @@ export const EMOJI_NAMES = {
 	'🤷': 'person-shrugging',
 	'🧑‍🏫': 'teacher',
 	'🧍': 'person-standing',
+	'🏃‍➡️': 'person-running-facing-right',
+	'🏋️': 'person-lifting-weights',
 	'🧑‍🤝‍🧑': 'people-holding-hands',
 	'👥': 'busts-in-silhouette',
 	'👪': 'family',
 	'🧑‍🧑‍🧒‍🧒': 'family-adult-adult-child-child',
+	'🧑‍🧒': 'family-adult-child',
 
 	// Animals & Nature
 	'🐭': 'mouse-face',
