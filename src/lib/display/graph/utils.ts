@@ -26,7 +26,7 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 		min_year = Math.min(...years);
 		max_year = Math.max(...years);
 
-		if (min_year === max_year)
+		if (max_year - min_year < 1)
 		{
 			min_year -= 1;
 			max_year += 1;
