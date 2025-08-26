@@ -99,7 +99,7 @@ const COEFS = {
 	direct: 0.5,
 	review: 0.5,
 	type: 0.7,
-	on: 0.5,
+	on: 0.6,
 	sample_size: 0.2,
 	p_value: 0.1,
 	conflict_of_interest: 0.6,
@@ -204,6 +204,9 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 		types = Object.keys(PaperType) as PaperType[];
 	else
 		types = [paper.type];
+
+	if (paper.on === StudyOn.Animals && (paper.type === PaperType.ClinicalTrial || paper.type === PaperType.BlindedRandomizedControlledTrial))
+		types.push(PaperType.RandomizedControlledTrial);
 
 	let score = types.map(type => type_scores[type]).reduce((acc, score) => acc + score, 0.0) / types.length;
 

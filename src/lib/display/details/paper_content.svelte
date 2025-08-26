@@ -136,16 +136,12 @@
 
 	const quote_parts = $derived.by(() =>
 	{
-		const parts = paper.quote.split('[...]');
-		let result = [{ text: parts[0].trim(), italic: true }];
+		const parts = paper.quote.split(/(\[.*?\])/);
 
-		for (let i = 1; i < parts.length; i++)
-		{
-			result.push({ text: ' [...] ', italic: false });
-			result.push({ text: parts[i].trim(), italic: true });
-		}
-
-		return result;
+		return parts.filter(part => part.length > 0).map(part => ({
+			text: part,
+			italic: !part.startsWith('[')
+		}));
 	});
 
 	const paper_type_parts = $derived.by(() =>

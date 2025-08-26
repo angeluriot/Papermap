@@ -59,15 +59,15 @@ export function clean_text(text: string): string
 
 export function clean_doi(doi: string): string
 {
-	let cleaned_doi = doi;
+	let cleaned_doi = doi.toLowerCase().trim();
 
-	if (cleaned_doi.toLowerCase().startsWith('doi '))
+	if (cleaned_doi.startsWith('doi '))
 		return cleaned_doi.slice(4).trim();
 
-	if (cleaned_doi.toLowerCase().startsWith('doi:'))
+	if (cleaned_doi.startsWith('doi:'))
 		return cleaned_doi.slice(4).trim();
 
-	if (cleaned_doi.toLowerCase().startsWith('doi/'))
+	if (cleaned_doi.startsWith('doi/'))
 		return cleaned_doi.slice(4).trim();
 
 	if (cleaned_doi.startsWith('doi.org/'))
