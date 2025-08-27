@@ -24,6 +24,9 @@ export function get_last_name(author: string): string
 
 export function get_label(paper: Paper): string
 {
+	if (paper.institution)
+		return paper.institution.acronym + '\n' + paper.year;
+
 	if (paper.authors.length === 1)
 		return get_last_name(paper.authors[0]) + '\n' + paper.year;
 
@@ -141,7 +144,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 				text: get_label(paper),
 				font_size: stats.sub_scales.point_stroke * FONT_SIZE * font_scale,
 				line_height: stats.sub_scales.point_stroke * LINE_HEIGHT * font_scale,
-				shown: paper.authors.length > 0,
+				shown: paper.institution !== undefined || paper.authors.length > 0,
 			},
 		};
 	}).sort((a, b) => b.size - a.size);

@@ -10,7 +10,11 @@ export const paper_schema = z.object({
 	id: z.string().optional(),
 	title: z.string().nonempty(),
 	override_seed: z.number().min(0).max(1).optional(),
-	authors: z.array(z.string().nonempty()).min(1).max(4),
+	institution: z.object({
+		name: z.string().nonempty(),
+		acronym: z.string().nonempty(),
+	}).strict().optional(),
+	authors: z.array(z.string().nonempty()).min(0).max(4),
 	year: z.number().min(1500).max(new Date().getFullYear()).int(),
 	link: z.string().nonempty(),
 	journal: z.object({

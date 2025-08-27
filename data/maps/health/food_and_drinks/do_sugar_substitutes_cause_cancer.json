@@ -1391,9 +1391,11 @@
 		{
 			"id": "W4236665471",
 			"title": "Scientific Opinion on the re‐evaluation of aspartame (E 951) as a food additive",
-			"authors": [
-				"EFSA"
-			],
+			"institution": {
+				"name": "European Food Safety Authority",
+				"acronym": "EFSA"
+			},
+			"authors": [],
 			"year": 2013,
 			"link": "https://doi.org/10.2903/j.efsa.2013.3496",
 			"journal": {

@@ -55,6 +55,9 @@
 
 	const authors = $derived.by(() =>
 	{
+		if (paper.institution)
+			return paper.institution.name;
+
 		if (paper.authors.length === 1)
 			return get_standard_name(paper.authors[0]);
 
@@ -340,6 +343,10 @@
 			};
 
 		if (paper.journal.id === JournalMissingReason.NotPublished)
+		{
+			if (paper.institution)
+				return null;
+
 			return {
 				emoji: '📭',
 				text: 'Not published yet',
@@ -347,6 +354,7 @@
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
 				description: 'This paper has not been published in a journal yet',
 			};
+		}
 
 		const journal_ = journals[paper.journal.id];
 
@@ -633,44 +641,46 @@
 				</div>
 			</div>
 		{/if}
-		<div class="subtitle-cards">
-			<span class="subtitle unselectable">Journal:</span>
-			<div class="cards">
-				<div
-					class="card text-unselectable"
-					style="background-color: {journal.color}; --shadow-color: {journal.shadow};"
-					onclick={event => { if (journal.journal !== undefined) journal_info_open = true; event.stopPropagation(); }}
-					onkeydown={null}
-					role="button" tabindex={0}
-				>
-					{@render emoji(journal.emoji)}
-					<span>{journal.text}</span>
-					<div
-						class="info-ext" style="{journal_info_open ? 'display: block;' : ''}"
-						onclick={event => event.stopPropagation()} onkeydown={null}
-						role="button" tabindex={2}
-					>
-						{#if journal.journal !== undefined}
-							<InfoBubble {emojis} journal={journal.journal} {width} {height}/>
-						{:else}
-							<InfoBubble {emojis} text={journal.description} {width} {height}/>
-						{/if}
-					</div>
-				</div>
-				{#if retracted}
+		{#if journal !== null}
+			<div class="subtitle-cards">
+				<span class="subtitle unselectable">Journal:</span>
+				<div class="cards">
 					<div
 						class="card text-unselectable"
-						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
+						style="background-color: {journal.color}; --shadow-color: {journal.shadow};"
+						onclick={event => { if (journal.journal !== undefined) journal_info_open = true; event.stopPropagation(); }}
+						onkeydown={null}
+						role="button" tabindex={0}
 					>
-						{@render emoji('😵')}
-						<span>Retracted</span>
-						<div class="info-ext">
-							<InfoBubble {emojis} text="This paper has been retracted by the journal" {width} {height}/>
+						{@render emoji(journal.emoji)}
+						<span>{journal.text}</span>
+						<div
+							class="info-ext" style="{journal_info_open ? 'display: block;' : ''}"
+							onclick={event => event.stopPropagation()} onkeydown={null}
+							role="button" tabindex={2}
+						>
+							{#if journal.journal !== undefined}
+								<InfoBubble {emojis} journal={journal.journal} {width} {height}/>
+							{:else}
+								<InfoBubble {emojis} text={journal.description} {width} {height}/>
+							{/if}
 						</div>
 					</div>
-				{/if}
+					{#if retracted}
+						<div
+							class="card text-unselectable"
+							style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
+						>
+							{@render emoji('😵')}
+							<span>Retracted</span>
+							<div class="info-ext">
+								<InfoBubble {emojis} text="This paper has been retracted by the journal" {width} {height}/>
+							</div>
+						</div>
+					{/if}
+				</div>
 			</div>
-		</div>
+		{/if}
 		{#if sample_size !== null}
 			<div class="subtitle-cards">
 				<span class="subtitle unselectable">Sample size:</span>

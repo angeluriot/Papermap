@@ -13,6 +13,12 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 	if (paper.override_seed !== undefined)
 		result.override_seed = paper.override_seed;
 
+	if (paper.institution !== undefined)
+		result.institution = {
+			name: paper.institution.name,
+			acronym: paper.institution.acronym,
+		};
+
 	result.authors = paper.authors;
 	result.year = paper.year;
 	result.link = paper.link;

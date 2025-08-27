@@ -645,9 +645,11 @@
 		{
 			"id": "W2121629594",
 			"title": "Strength Training by Children and Adolescents",
-			"authors": [
-				"CSMF"
-			],
+			"institution": {
+				"name": "Council on Sports Medicine and Fitness",
+				"acronym": "COSMF"
+			},
+			"authors": [],
 			"year": 2008,
 			"link": "https://doi.org/10.1542/peds.2007-3790",
 			"journal": {

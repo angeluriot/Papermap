@@ -55,11 +55,17 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 
 	const consensus = random_choice([random_choice(Object.keys(map.consensus)), MissingReason.NotSpecified, MissingReason.NoAccess], [10, 1]);
 	const conclusion = random_choice(Object.keys(map.consensus[consensus === MissingReason.NoAccess ? 'no_consensus' : consensus].coherence))
+	const is_institution = random_choice([true, false], [1, 10]);
+	const institution_name = faker.company.name();
 
 	return {
 		id: random_choice([faker.string.uuid(), undefined]),
 		title: faker.lorem.sentence({ min: 8, max: 22 }),
-		authors: random_times(() => faker.person.fullName(), 1, 4),
+		institution: is_institution ? {
+			name: institution_name,
+			acronym: institution_name.split(' ').map(word => word[0].toUpperCase()).join(''),
+		} : undefined,
+		authors: is_institution ? [] : random_times(() => faker.person.fullName(), 1, 4),
 		year: 2025 - Math.round(Math.random() * 50),
 		link: faker.internet.url(),
 		journal: {

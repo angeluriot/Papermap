@@ -116,10 +116,15 @@ function score_year(paper: DataPaper): number
 
 export function score_journal(paper: DataPaper, journal: Journal | undefined): number
 {
-	if (!journal?.score || paper.journal.retracted)
-		return 0.0;
+	let journal_score = journal?.score ?? 0.0;
 
-	return journal.score;
+	if (paper.institution)
+		journal_score = Math.max(journal_score, 0.8);
+
+	if (paper.journal.retracted)
+		journal_score = 0.0;
+
+	return journal_score;
 }
 
 

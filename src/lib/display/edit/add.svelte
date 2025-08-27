@@ -26,6 +26,9 @@
 	let id: string | null = $state(null);
 	let title = $state('');
 	let override_seed: number | undefined = $state(undefined);
+	let institution_status: string = $state('');
+	let institution_name: string = $state('');
+	let institution_acronym: string = $state('');
 	let authors: string[] = $state(['']);
 	let year: number | null = $state(null);
 	let link = $state('');
@@ -81,6 +84,10 @@
 			id = cloneDeep(result.id ?? null);
 			title = cloneDeep(result.title ?? '');
 			authors = cloneDeep(result.authors ?? ['']);
+
+			if (authors.length > 1 || authors[0].trim().length > 0)
+				institution_status = 'no';
+
 			year = cloneDeep(result.year ?? null);
 			link = cloneDeep(result.link ?? '');
 			journal_status = cloneDeep(result.journal ? 'yes' : '');
@@ -112,7 +119,10 @@
 			id = cloneDeep(paper.id ?? null);
 			title = cloneDeep(paper.title);
 			override_seed = cloneDeep(paper.override_seed);
-			authors = cloneDeep(paper.authors);
+			institution_status = cloneDeep(paper.institution ? 'yes' : 'no');
+			institution_name = cloneDeep(paper.institution?.name ?? '');
+			institution_acronym = cloneDeep(paper.institution?.acronym ?? '');
+			authors = cloneDeep(paper.authors.length === 0 ? [''] : paper.authors);
 			year = cloneDeep(paper.year);
 			link = cloneDeep(paper.link);
 			journal_status = cloneDeep(paper.journal.id === JournalMissingReason.NotPublished ? 'no' : 'yes');
@@ -148,6 +158,15 @@
 
 	$effect(() =>
 	{
+		if (institution_status === 'no')
+		{
+			institution_name = '';
+			institution_acronym = '';
+		}
+
+		if (institution_status === 'yes')
+			authors = [''];
+
 		if (journal_status === 'no')
 		{
 			journal_search = '';
@@ -203,7 +222,8 @@
 	{
 		return (
 			title.trim().length > 0 &&
-			authors.filter(a => a.trim().length > 0).length > 0 &&
+			(institution_status === 'no' || (institution_name.trim().length > 0 && institution_acronym.trim().length > 0)) &&
+			(institution_status === 'yes' || authors.filter(a => a.trim().length > 0).length > 0) &&
 			year !== null && year >= 1500 && year <= new Date().getFullYear() && Number.isInteger(year) &&
 			link.trim().length > 0 &&
 			journal_status !== '' &&
@@ -318,6 +338,12 @@
 		if (override_seed !== undefined)
 			data_paper.override_seed = override_seed;
 
+		if (institution_status === 'yes')
+			data_paper.institution = {
+				name: institution_name.trim(),
+				acronym: institution_acronym.trim(),
+			};
+
 		if (review_type !== '' && review_type !== 'null')
 		{
 			data_paper.review = {
@@ -376,6 +402,26 @@
 	{
 		if (!paper && final_paper.score < bad_paper_threshold)
 		{
+			if (final_paper.institution)
+			{
+				let nb = 0;
+
+				for (const paper of Object.values(map.papers))
+				{
+					if (paper.score >= bad_paper_threshold)
+						continue;
+
+					if (final_paper.institution.acronym === paper.institution?.acronym)
+						nb++;
+				}
+
+				if (nb >= max_author_bad_papers)
+				{
+					alert(`There is already ${nb} papers from ${final_paper.institution.name} with a low score (<${bad_paper_threshold}).`);
+					return false;
+				}
+			}
+
 			for (const author of final_paper.authors)
 			{
 				let nb = 0;
@@ -418,7 +464,7 @@
 			}
 		}
 
-		if (final_paper.journal.id === JournalMissingReason.NotPublished)
+		if (final_paper.journal.id === JournalMissingReason.NotPublished && final_paper.institution === undefined)
 		{
 			if (final_paper.citations === 0)
 			{
@@ -532,33 +578,61 @@
 	</div>
 	<div class="input">
 		<div class="label unselectable flex-center-row">
-			<span>Authors</span>
+			<span>Is an institutional report</span>
 			<span class="required">*</span>
 		</div>
-		{#each authors as _, i}
-			<div class="input-button flex-center-row w-full">
-				<input bind:value={authors[i]} type="text" placeholder="The full name of the author"/>
-				{#if i > 0}
-					<div
-						class="rounded-full"
-						onclick={() => authors.splice(i, 1)}
-						onkeydown={null} role="button" tabindex={i}
-					>
-						<img class="remove rounded-full img-unselectable" src={SmallRemove} alt="remove"/>
-					</div>
-				{/if}
-			</div>
-		{/each}
-		{#if authors.length < 4}
-			<div
-				class="rounded-full"
-				onclick={() => authors.push('')}
-				onkeydown={null} role="button" tabindex={0}
-			>
-				<img class="add rounded-full img-unselectable" src={SmallAdd} alt="add"/>
-			</div>
-		{/if}
+		<select bind:value={institution_status}>
+			<option value="" disabled selected hidden></option>
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select>
 	</div>
+	{#if institution_status == 'yes'}
+		<div class="input">
+			<div class="label unselectable flex-center-row">
+				<span>Institution name</span>
+				<span class="required">*</span>
+			</div>
+			<input bind:value={institution_name} type="text" placeholder="The name of the institution"/>
+		</div>
+		<div class="input">
+			<div class="label unselectable flex-center-row">
+				<span>Institution acronym</span>
+				<span class="required">*</span>
+			</div>
+			<input bind:value={institution_acronym} type="text" placeholder="The acronym of the institution (or abbreviation)"/>
+		</div>
+	{:else if institution_status == 'no'}
+		<div class="input">
+			<div class="label unselectable flex-center-row">
+				<span>Authors</span>
+				<span class="required">*</span>
+			</div>
+			{#each authors as _, i}
+				<div class="input-button flex-center-row w-full">
+					<input bind:value={authors[i]} type="text" placeholder="The full name of the author"/>
+					{#if i > 0}
+						<div
+							class="rounded-full"
+							onclick={() => authors.splice(i, 1)}
+							onkeydown={null} role="button" tabindex={i}
+						>
+							<img class="remove rounded-full img-unselectable" src={SmallRemove} alt="remove"/>
+						</div>
+					{/if}
+				</div>
+			{/each}
+			{#if authors.length < 4}
+				<div
+					class="rounded-full"
+					onclick={() => authors.push('')}
+					onkeydown={null} role="button" tabindex={0}
+				>
+					<img class="add rounded-full img-unselectable" src={SmallAdd} alt="add"/>
+				</div>
+			{/if}
+		</div>
+	{/if}
 	<div class="input">
 		<div class="label unselectable flex-center-row">
 			<span>Year</span>
@@ -575,13 +649,13 @@
 	</div>
 	<div class="input">
 		<div class="label unselectable flex-center-row">
-			<span>Has been published</span>
+			<span>Has been published {institution_status === 'yes' ? 'in a journal' : ''}</span>
 			<span class="required">*</span>
 		</div>
 		<select bind:value={journal_status}>
 			<option value="" disabled selected hidden></option>
 			<option value="yes">Yes</option>
-			<option value="no">No (preprint)</option>
+			<option value="no">No {institution_status === 'no' ? '(preprint)' : ''}</option>
 		</select>
 	</div>
 	{#if journal_status == 'yes'}

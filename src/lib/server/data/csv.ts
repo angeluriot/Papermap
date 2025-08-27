@@ -33,7 +33,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 		.toSorted((a, b) => b.score - a.score)
 		.map((paper) => ({
 			title: paper.title,
-			authors: array_to_string(paper.authors),
+			authors: paper.institution ? paper.institution.name : array_to_string(paper.authors),
 			journal: Object.keys(JournalMissingReason).includes(paper.journal.id) ? '' : journals[paper.journal.id].title,
 			retracted: paper.journal.retracted ? 'Retracted' : '',
 			year: paper.year,
