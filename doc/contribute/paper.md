@@ -25,12 +25,90 @@ The title of the paper.
 
 * If multiple versions exist, use the latest one (including changes like `RETRACTED: ...`)
 
-## Authors*
+## Is an institutional report*
 
-The authors of the paper.
+Whether the paper is a report from an institution (a health agency or a government authority for example).
 
 <table>
 	<tbody>
+		<tr>
+			<td><b>Type</b></td>
+			<td>👆 Choice</td>
+		</tr>
+		<tr>
+			<td><b>Options</b></td>
+			<td>
+				<code>Yes</code><br/>
+				<code>No</code>
+			</td>
+		</tr>
+		<tr>
+			<td><b>Required</b></td>
+			<td>✅ Yes</td>
+		</tr>
+	</tbody>
+</table>
+
+* The options are:
+	* `Yes`: the paper is a report from an institution (a health agency or a government authority for example)
+	* `No`: the paper is not a report from an institution
+
+## Institution name*
+
+The name of the institution that authored the paper.
+
+<table>
+	<tbody>
+		<tr>
+			<td><b>Condition</b></td>
+			<td><b>Is an institutional report</b> = <code>Yes</code></td>
+		</tr>
+		<tr>
+			<td><b>Type</b></td>
+			<td>✍️ Text</td>
+		</tr>
+		<tr>
+			<td><b>Required</b></td>
+			<td>✅ Yes</td>
+		</tr>
+	</tbody>
+</table>
+
+* For example: "European Food Safety Authority"
+
+## Institution acronym*
+
+The acronym (or abbreviation) of the institution that authored the paper.
+
+<table>
+	<tbody>
+		<tr>
+			<td><b>Condition</b></td>
+			<td><b>Is an institutional report</b> = <code>Yes</code></td>
+		</tr>
+		<tr>
+			<td><b>Type</b></td>
+			<td>✍️ Text</td>
+		</tr>
+		<tr>
+			<td><b>Required</b></td>
+			<td>✅ Yes</td>
+		</tr>
+	</tbody>
+</table>
+
+* For example: "EFSA"
+
+## Authors*
+
+The authors of the paper (if not an institution).
+
+<table>
+	<tbody>
+		<tr>
+			<td><b>Condition</b></td>
+			<td><b>Is an institutional report</b> = <code>No</code></td>
+		</tr>
 		<tr>
 			<td><b>Type</b></td>
 			<td>📋 List of texts</td>
@@ -99,7 +177,7 @@ Whether the paper has been published in a journal or not.
 			<td><b>Options</b></td>
 			<td>
 				<code>Yes</code><br/>
-				<code>No (preprint)</code>
+				<code>No</code>
 			</td>
 		</tr>
 		<tr>
@@ -111,7 +189,7 @@ Whether the paper has been published in a journal or not.
 
 * The options are:
 	* `Yes`: the paper has been published in a journal
-	* `No (preprint)`: the paper is a preprint, it has not been published in a journal yet
+	* `No`: the paper is a preprint (or an institutional report), it has not been published in a journal yet
 
 
 ## Journal*

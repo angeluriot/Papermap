@@ -85,7 +85,7 @@
 			title = cloneDeep(result.title ?? '');
 			authors = cloneDeep(result.authors ?? ['']);
 
-			if (authors.length > 1 || authors[0].trim().length > 0)
+			if ((result.authors ?? []).length > 0)
 				institution_status = 'no';
 
 			year = cloneDeep(result.year ?? null);
