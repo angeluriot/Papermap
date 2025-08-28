@@ -6,7 +6,7 @@ import type { Journal } from '$lib/types/journal';
 
 
 const OVERVIEW_RANK_SCORE_COEF = 0.1;
-const OVERVIEW_GAP_INCREASE = 2;
+const OVERVIEW_GAP_INCREASE = 1.5;
 const MISSING_PAPERS_NB = 10;
 const MISSING_PAPER_MAX = 0.8;
 const BEST_PAPERS_COEF = 0.8;

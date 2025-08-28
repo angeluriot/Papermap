@@ -1587,6 +1587,7 @@
 		{
 			"id": "W1883087042",
 			"title": "Review of the nutritional benefits and risks related to intense sweeteners",
+			"override_seed": 0,
 			"authors": [
 				"Olivier Bruyère",
 				"Serge H. Ahmed",
@@ -1718,6 +1719,7 @@
 		{
 			"id": "W2752311095",
 			"title": "Health outcomes of non-nutritive sweeteners: analysis of the research landscape",
+			"override_seed": 0.95,
 			"authors": [
 				"Szimonetta Lohner",
 				"Ingrid Toews",

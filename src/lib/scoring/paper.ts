@@ -91,20 +91,33 @@ const MAX_P_VALUE = 0.05;
 const P_VALUE_EXP = 2;
 const NO_P_VALUE_TYPE_INCREASE = 0.5;
 export const REVIEW_OF_REVIEWS_MULTIPLIER = 5;
+const DIVERSE_TYPE_INCREASE = 0.4;
+const DIVERSE_ON_INCREASE = 0.8;
 const COEFS = {
 	year: 0.1,
 	journal: 0.5,
 	citations: 0.1,
 	coherence: 0.1,
 	direct: 0.5,
-	review: 0.5,
-	type: 0.7,
-	on: 0.6,
+	review: 0.4,
+	type: 0.6,
+	on: 0.5,
 	sample_size: 0.2,
 	p_value: 0.1,
-	conflict_of_interest: 0.6,
+	conflict_of_interest: 0.5,
 	notes: 0.5,
 	publication_bias: 0.1,
+}
+
+
+function custom_mean(values: number[], review_count_score: number, increase: number): number
+{
+	if (values.length === 0)
+		return 0;
+
+	let mean = values.reduce((acc, val) => acc + val, 0) / values.length;
+
+	return mean + (Math.max(...values) - mean) * review_count_score * increase;
 }
 
 
@@ -183,7 +196,7 @@ function score_review_count(paper: DataPaper): number
 }
 
 
-function score_type(map: DataMap | Map, paper: DataPaper): number
+function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: number): number
 {
 	if (map.type.any)
 		return 1.0;
@@ -210,10 +223,15 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 	else
 		types = [paper.type];
 
-	if (paper.on === StudyOn.Animals && (paper.type === PaperType.ClinicalTrial || paper.type === PaperType.BlindedRandomizedControlledTrial))
-		types.push(PaperType.RandomizedControlledTrial);
+	let increase = DIVERSE_TYPE_INCREASE;
 
-	let score = types.map(type => type_scores[type]).reduce((acc, score) => acc + score, 0.0) / types.length;
+	if (paper.on === StudyOn.Animals && (paper.type === PaperType.ClinicalTrial || paper.type === PaperType.BlindedRandomizedControlledTrial))
+	{
+		types.push(PaperType.RandomizedControlledTrial);
+		increase = 0.0;
+	}
+
+	let score = custom_mean(types.map(type => type_scores[type]), review_count_score, increase);
 
 	if (!map.conclusions[paper.results.conclusion].p_value)
 		score += NO_P_VALUE_TYPE_INCREASE * score * (1.0 - score);
@@ -222,7 +240,7 @@ function score_type(map: DataMap | Map, paper: DataPaper): number
 }
 
 
-export function score_on(map: DataMap | Map, paper: DataPaper): number
+export function score_on(map: DataMap | Map, paper: DataPaper, review_count_score: number): number
 {
 	if (map.on.any)
 		return 1.0;
@@ -239,7 +257,7 @@ export function score_on(map: DataMap | Map, paper: DataPaper): number
 	else
 		ons = [paper.on];
 
-	return ons.map(subject => on_scores[subject]).reduce((acc, score) => acc + score, 0.0) / ons.length;
+	return custom_mean(ons.map(subject => on_scores[subject]), review_count_score, DIVERSE_ON_INCREASE);
 }
 
 
@@ -327,7 +345,7 @@ function score_notes(paper: DataPaper): number[]
 
 function score_publication_bias(map: DataMap | Map, paper: DataPaper): number
 {
-	return map.conclusions[paper.results.conclusion].p_value ? 0.0 : 1.0;
+	return paper.institution || !map.conclusions[paper.results.conclusion].p_value ? 1.0 : 0.0;
 }
 
 
@@ -340,8 +358,8 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	let direct_score = score_direct(paper);
 	let review_type_score = score_review_type(paper);
 	let review_count_score = score_review_count(paper);
-	let type_score = score_type(map, paper);
-	let on_score = score_on(map, paper);
+	let type_score = score_type(map, paper, review_count_score);
+	let on_score = score_on(map, paper, review_count_score);
 	let sample_size_score = score_sample_size(map, paper, review_count_score);
 	let p_value_score = score_p_value(map, paper);
 	let conflict_of_interest_score = score_conflict_of_interest(paper);
