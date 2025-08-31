@@ -1,7 +1,7 @@
 import { COLORS } from '$lib/colors';
-import { REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
+import { REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
 import type { Map } from '$lib/types/map';
-import { no_access, type Paper } from '$lib/types/paper';
+import { MissingReason, no_access, ReviewType, type Paper } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import type { GraphPoint, GraphStats } from './types';
 import seedrandom from 'seedrandom';
@@ -110,9 +110,13 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 
 		if (paper.review)
 		{
-			size = typeof paper.review.count === 'number' ? paper.review.count : 3;
+			size = paper.review.count !== MissingReason.NoAccess ? paper.review.count : 5;
 			size *= paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1;
-			size = size ** 0.3;
+			size *= paper.review.estimate ? REVIEW_COUNT_ESTIMATE_RATIO : 1;
+			size *= paper.review.subpart || paper.results.indirect ? REVIEW_COUNT_SUBPART_RATIO : 1;
+			size *= paper.review.type === ReviewType.NarrativeReview ? 0.75 : 1;
+			size = size ** 0.55;
+			size = 1 + Math.max(size - 1, 0) * 0.25;
 		}
 
 		size *= stats.sub_scales.point_size * POINT_SIZE

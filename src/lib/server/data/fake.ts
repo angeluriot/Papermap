@@ -85,7 +85,9 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		review: Math.random() < 0.2 ? {
 			type: random_choice(Object.keys(ReviewType) as ReviewType[]),
 			reviews: Math.random() < 0.2,
-			count: random_choice([5 + Math.round((Math.random() ** 3) * 200), random_choice([MissingReason.NoAccess, MissingReason.NotSpecified])], [10, 1]),
+			estimate: random_choice([true, false], [1, 1]),
+			count: random_choice([5 + Math.round((Math.random() ** 3) * 200), MissingReason.NoAccess], [10, 1]),
+			subpart: random_choice([true, false], [1, 1]),
 		} : undefined,
 		type: random_choice(
 			[random_choice(Object.keys(PaperType) as PaperType[]), random_choice(Object.keys(MissingReason) as MissingReason[])],

@@ -179,28 +179,20 @@
 				result.push({ text: 'papers', is_card: false })
 			}
 
-			else if (paper.review.count === MissingReason.NotSpecified)
-			{
-				result.push({
-					emoji: '🤷',
-					text: 'Not specified',
-					color: COLORS[Color.Gray].default,
-					shadow: color_to_shadow(COLORS[Color.Gray].default),
-					description: `The number of papers included in this ${cards.TO_TEXT[paper.review.type].toLowerCase()} is not specified`,
-					is_card: true,
-				});
-
-				result.push({ text: 'papers', is_card: false });
-			}
-
 			else if (!review_one)
 			{
 				result.push({
 					emoji: cards.review_count_score_to_emoji(paper.scores.review_count),
-					text: int_to_text(paper.review.count) + ' Papers',
+					text: (paper.review.estimate ? '≈ ' : '') + int_to_text(paper.review.count) + ' Papers' + (paper.review.subpart ? '*' : ''),
 					color: cards.score_to_color(paper.scores.review_count),
 					shadow: color_to_shadow(cards.score_to_color(paper.scores.review_count)),
-					description: int_to_text(paper.review.count) + ' papers were included in this ' + cards.TO_TEXT[paper.review.type].toLowerCase(),
+					description: (
+						(paper.review.estimate ? 'About ' : '') +
+						int_to_text(paper.review.count) +
+						' papers were included in this ' +
+						cards.TO_TEXT[paper.review.type].toLowerCase() +
+						(paper.review.subpart ? ' (but only a small portion of them were actually used to answer the question of this page)' : '')
+					),
 					is_card: true,
 				});
 			}

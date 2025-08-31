@@ -91,6 +91,8 @@ const MAX_P_VALUE = 0.05;
 const P_VALUE_EXP = 2;
 const NO_P_VALUE_TYPE_INCREASE = 0.5;
 export const REVIEW_OF_REVIEWS_MULTIPLIER = 5;
+export const REVIEW_COUNT_ESTIMATE_RATIO = 0.75;
+export const REVIEW_COUNT_SUBPART_RATIO = 0.25;
 const DIVERSE_TYPE_INCREASE = 0.4;
 const DIVERSE_ON_INCREASE = 0.8;
 const COEFS = {
@@ -99,11 +101,11 @@ const COEFS = {
 	citations: 0.1,
 	coherence: 0.1,
 	direct: 0.5,
-	review: 0.4,
+	review: 0.5,
 	type: 0.6,
 	on: 0.5,
 	sample_size: 0.2,
-	p_value: 0.1,
+	p_value: 0.2,
 	conflict_of_interest: 0.5,
 	notes: 0.5,
 	publication_bias: 0.1,
@@ -181,14 +183,11 @@ function score_review_count(paper: DataPaper): number
 	if (!paper.review)
 		return 0.0;
 
-	if (paper.review.count === MissingReason.NoAccess)
-		return paper.review.reviews ? 0.5 : 0.25;
+	let score = paper.review.count !== MissingReason.NoAccess ? paper.review.count : 5;
 
-	if (paper.review.count === MissingReason.NotSpecified)
-		return paper.review.reviews ? 0.2 : 0.1;
-
-	let score = paper.review.count * (paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1);
-
+	score *= paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1;
+	score *= paper.review.estimate ? REVIEW_COUNT_ESTIMATE_RATIO : 1;
+	score *= paper.review.subpart ? REVIEW_COUNT_SUBPART_RATIO : 1;
 	score /= REVIEW_COUNT_HALF_SCORE;
 	score /= score + 1.0;
 
@@ -267,7 +266,7 @@ function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_sc
 		return 1.0;
 
 	if (paper.review && (paper.sample_size === MissingReason.NoAccess || paper.sample_size === MissingReason.NotSpecified))
-		return review_count_score;
+		return review_count_score + (1 - review_count_score) * 0.3;
 
 	if (paper.sample_size === MissingReason.NoAccess)
 		return 0.25;
@@ -310,7 +309,7 @@ function score_conflict_of_interest(paper: DataPaper): number
 	switch (paper.conflict_of_interest)
 	{
 		case MissingReason.NoAccess:
-			return 0.6;
+			return 0.7;
 		case ConflictOfInterest.None:
 			return 1.0;
 		case ConflictOfInterest.SomeLinks:

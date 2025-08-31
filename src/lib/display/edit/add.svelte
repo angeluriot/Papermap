@@ -43,8 +43,10 @@
 	let quote: string = $state('');
 	let review_type: string = $state('');
 	let review_reviews: boolean = $state(false);
+	let review_estimate: string = $state('');
 	let review_count: number | null = $state(null);
 	let review_count_missing_reason: string = $state('');
+	let review_subpart: boolean = $state(false);
 	let type: string = $state('');
 	let on: string = $state('');
 	let sample_size: number | null = $state(null);
@@ -136,8 +138,10 @@
 			quote = cloneDeep(paper.quote);
 			review_type = cloneDeep(paper.review?.type ?? 'null');
 			review_reviews = cloneDeep(paper.review?.reviews ?? false);
+			review_estimate = cloneDeep(paper.review ? (paper.review.estimate ? 'around' : 'equal') : '');
 			review_count = cloneDeep(typeof paper.review?.count === 'number' ? paper.review?.count : null);
 			review_count_missing_reason = cloneDeep(paper.review && typeof paper.review.count !== 'number' ? paper.review.count : '');
+			review_subpart = cloneDeep(paper.review?.subpart ?? false);
 			type = cloneDeep(paper.type);
 			on = cloneDeep(paper.on);
 			sample_size = cloneDeep(typeof paper.sample_size === 'number' ? paper.sample_size : null);
@@ -191,8 +195,10 @@
 		if (review_type === 'null')
 		{
 			review_reviews = false;
+			review_estimate = '';
 			review_count = null;
 			review_count_missing_reason = '';
+			review_subpart = false;
 
 			if (Object.keys(ReviewedPapersType).includes(type))
 				type = '';
@@ -200,6 +206,9 @@
 			if (Object.keys(ReviewedStudiesOn).includes(on))
 				on = '';
 		}
+
+		if (review_count !== null && review_estimate === '')
+			review_estimate = 'equal';
 
 		if (review_count !== null)
 			review_count_missing_reason = '';
@@ -234,7 +243,7 @@
 			quote.trim().length > 0 &&
 			review_type !== '' &&
 			(review_type === 'null' || (
-				(review_count !== null && review_count > 0 && Number.isInteger(review_count)) ||
+				(review_count !== null && review_estimate !== '' && review_count > 0 && Number.isInteger(review_count)) ||
 				(review_count === null && review_count_missing_reason !== '')
 			)) &&
 			type !== '' &&
@@ -349,7 +358,9 @@
 			data_paper.review = {
 				type: review_type.trim() as ReviewType,
 				reviews: review_reviews,
-				count: review_count !== null ? review_count : review_count_missing_reason.trim() as MissingReason.NoAccess | MissingReason.NotSpecified,
+				estimate: review_estimate.trim() === 'around',
+				count: review_count !== null ? review_count : review_count_missing_reason.trim() as MissingReason.NoAccess,
+				subpart: review_subpart,
 			};
 		}
 
@@ -746,7 +757,7 @@
 		</div>
 	{/if}
 	<div class="input">
-		<div class="label unselectable">
+		<div class="label unselectable flex-center-row">
 			<span>Quote</span>
 			<span class="required">*</span>
 		</div>
@@ -777,18 +788,34 @@
 			</div>
 		</div>
 		<div class="input">
-			<div class="label unselectable">
+			<div class="label unselectable flex-center-row">
 				<span>Number of papers included</span>
-				<span class="optional unselectable">(optional)</span>
+				<span class="required">*</span>
 			</div>
-			<input bind:value={review_count} type="number" min=1 placeholder="The number of papers included in the review"/>
+			<div class="w-full flex-center-row" style="gap: 0.5em;">
+				<select bind:value={review_estimate} style="width: 4em;">
+					<option value="" disabled selected hidden></option>
+					<option value="equal">=</option>
+					<option value="around">≈</option>
+				</select>
+				<input bind:value={review_count} type="number" min=1 placeholder="The number of papers included in the review"/>
+			</div>
 			{#if review_count === null}
 				<select bind:value={review_count_missing_reason}>
 					<option value="" disabled selected hidden></option>
 					<option value={MissingReason.NoAccess}>No access</option>
-					<option value={MissingReason.NotSpecified}>Not specified</option>
 				</select>
 			{/if}
+		</div>
+		<div class="input checkbox">
+			<input bind:checked={review_subpart} type="checkbox"/>
+			<div
+				class="label" role="button" tabindex={0} onkeydown={null}
+				onclick={() => { review_subpart = !review_subpart; }}
+			>
+				<span class="unselectable">Minor topic</span>
+				<span class="optional unselectable">(Only a small portion of the papers are actually used to answer the question of this page)</span>
+			</div>
 		</div>
 	{/if}
 	<div class="input">

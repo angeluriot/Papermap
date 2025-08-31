@@ -622,7 +622,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 15,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -841,7 +843,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 31
+				"estimate": false,
+				"count": 31,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -994,7 +998,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 38
+				"estimate": false,
+				"count": 38,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -1028,7 +1034,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 19
+				"estimate": false,
+				"count": 19,
+				"subpart": false
 			},
 			"type": "RandomizedControlledTrial",
 			"on": "Humans",
@@ -1245,7 +1253,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 16
+				"estimate": false,
+				"count": 16,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -1374,7 +1384,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 27
+				"estimate": false,
+				"count": 27,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -1438,7 +1450,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 30
+				"estimate": false,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -1620,7 +1634,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -1654,7 +1670,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 21
+				"estimate": false,
+				"count": 21,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -1716,7 +1734,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -1749,7 +1769,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 22
+				"estimate": false,
+				"count": 22,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -1780,7 +1802,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -2130,7 +2154,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 31
+				"estimate": false,
+				"count": 31,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -2229,7 +2255,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 29
+				"estimate": false,
+				"count": 29,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -2357,7 +2385,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -2520,7 +2550,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -2678,7 +2710,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 80
+				"estimate": false,
+				"count": 80,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -2746,7 +2780,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 37
+				"estimate": false,
+				"count": 37,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -2875,7 +2911,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 29
+				"estimate": false,
+				"count": 29,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -2913,7 +2951,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 31
+				"estimate": false,
+				"count": 31,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -2980,7 +3020,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 13
+				"estimate": false,
+				"count": 13,
+				"subpart": false
 			},
 			"type": "RandomizedControlledTrial",
 			"on": "Humans",

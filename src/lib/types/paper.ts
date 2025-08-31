@@ -113,7 +113,9 @@ export interface DataPaper
 	review?: {
 		type: ReviewType,
 		reviews: boolean,
-		count: number | MissingReason.NoAccess | MissingReason.NotSpecified,
+		estimate: boolean,
+		count: number | MissingReason.NoAccess,
+		subpart: boolean,
 	};
 	type: PaperType | ReviewedPapersType | MissingReason;
 	on: StudyOn | ReviewedStudiesOn | MissingReason;

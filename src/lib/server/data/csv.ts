@@ -42,7 +42,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 			conclusion: map.conclusions[paper.results.conclusion].text,
 			quote: paper.quote,
 			review: paper.review ? remove_uppercase(cards.TO_TEXT[paper.review.type]) : '',
-			review_count: typeof paper.review?.count === 'number' ? paper.review.count : '',
+			review_count: typeof paper.review?.count === 'number' ? `${paper.review.estimate ? '≈ ' : ''}${paper.review.count}` : '',
 			type: Object.keys(MissingReason).includes(paper.type) ? '' : remove_uppercase(cards.TO_TEXT[paper.type as PaperType]),
 			on: Object.keys(MissingReason).includes(paper.on) ? '' : remove_uppercase(cards.TO_TEXT[paper.on as StudyOn]),
 			citations: paper.citations === MissingReason.NotSpecified ? '' : paper.citations,

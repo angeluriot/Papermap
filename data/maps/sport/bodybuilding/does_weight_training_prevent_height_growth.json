@@ -322,7 +322,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 25,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -414,7 +416,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -506,7 +510,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NoAccess"
+				"estimate": false,
+				"count": "NoAccess",
+				"subpart": false
 			},
 			"type": "NoAccess",
 			"on": "Humans",
@@ -566,7 +572,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 22
+				"estimate": false,
+				"count": 22,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -598,7 +606,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 70,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -633,7 +643,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -666,7 +678,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -699,7 +713,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -731,7 +747,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 36
+				"estimate": false,
+				"count": 36,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -764,7 +782,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -799,7 +819,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 150,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -831,7 +853,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 25,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -866,7 +890,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 150,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -901,7 +927,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -935,7 +963,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 22
+				"estimate": false,
+				"count": 22,
+				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
 			"on": "Humans",
@@ -968,7 +998,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -1003,7 +1035,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 21
+				"estimate": false,
+				"count": 21,
+				"subpart": true
 			},
 			"type": "RandomizedControlledTrial",
 			"on": "Humans",
@@ -1035,8 +1069,10 @@
 			"quote": "Physical exercise does not appear to impair the child’s linear growth and contributes to the ideal shaping of bone and muscle tissues, ensuring possible beneficial effects throughout life",
 			"review": {
 				"type": "NarrativeReview",
-				"reviews": true,
-				"count": 36
+				"reviews": false,
+				"estimate": false,
+				"count": 36,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -1070,7 +1106,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -1103,7 +1141,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 100,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",

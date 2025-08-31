@@ -205,7 +205,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -403,7 +405,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -437,7 +441,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 150,
+				"subpart": false
 			},
 			"type": "CaseReport",
 			"on": "DiverseSubjects",
@@ -518,7 +524,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 150,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -580,7 +588,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 15,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -754,7 +764,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -813,7 +825,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 15,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -845,7 +859,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -878,7 +894,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -910,7 +928,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1019,7 +1039,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1084,7 +1106,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 12
+				"estimate": false,
+				"count": 12,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1174,7 +1198,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1207,7 +1233,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 25,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1240,7 +1268,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 15,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1273,7 +1303,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1363,7 +1395,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "DiverseSubjects",
@@ -1428,7 +1462,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 22
+				"estimate": false,
+				"count": 22,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -1493,7 +1529,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 10
+				"estimate": false,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1524,7 +1562,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1558,7 +1598,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 40,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -1591,7 +1633,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 10
+				"estimate": false,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1654,7 +1698,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 15,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1756,7 +1802,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 10
+				"estimate": false,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1788,7 +1836,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 12
+				"estimate": false,
+				"count": 12,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1881,7 +1931,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 12
+				"estimate": false,
+				"count": 12,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1913,7 +1965,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -1974,7 +2028,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 12
+				"estimate": false,
+				"count": 12,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2007,7 +2063,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 25,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2127,7 +2185,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2159,7 +2219,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2323,7 +2385,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 25,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2355,7 +2419,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -2504,7 +2570,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 60,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -2537,7 +2605,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -2605,7 +2675,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 20
+				"estimate": false,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2638,7 +2710,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 20
+				"estimate": false,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2670,7 +2744,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 17
+				"estimate": false,
+				"count": 17,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2763,7 +2839,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 4
+				"estimate": false,
+				"count": 4,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2884,7 +2962,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2918,7 +2998,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 200,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2950,7 +3032,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -2982,7 +3066,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 20,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -3084,7 +3170,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 100,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -3124,7 +3212,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3238,7 +3328,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -3337,7 +3429,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 14
+				"estimate": false,
+				"count": 14,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3419,7 +3513,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 67
+				"estimate": false,
+				"count": 67,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -3452,7 +3548,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 10
+				"estimate": false,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3601,7 +3699,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 10,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3633,7 +3733,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 120,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3695,7 +3797,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 45
+				"estimate": false,
+				"count": 45,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3758,7 +3862,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": true,
-				"count": 32
+				"estimate": false,
+				"count": 32,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -3890,7 +3996,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3925,7 +4033,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 100,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -3959,7 +4069,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": 31
+				"estimate": false,
+				"count": 31,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -4023,7 +4135,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 250,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4117,7 +4231,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4150,7 +4266,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": false,
+				"count": 11,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4215,7 +4333,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 200,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -4250,7 +4370,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 120,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4283,7 +4405,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 40,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4315,7 +4439,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 150,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -4346,7 +4472,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 70,
+				"subpart": false
 			},
 			"type": "DiverseTypes",
 			"on": "DiverseSubjects",
@@ -4381,7 +4509,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 518
+				"estimate": false,
+				"count": 518,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -4416,7 +4546,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 50,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4451,7 +4583,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 30,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4486,7 +4620,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 138
+				"estimate": false,
+				"count": 138,
+				"subpart": true
 			},
 			"type": "DiverseTypes",
 			"on": "Humans",
@@ -4520,7 +4656,9 @@
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
-				"count": 21
+				"estimate": false,
+				"count": 21,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4583,7 +4721,9 @@
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
-				"count": "NotSpecified"
+				"estimate": true,
+				"count": 120,
+				"subpart": true
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
@@ -4655,7 +4795,9 @@
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
-				"count": 12
+				"estimate": false,
+				"count": 12,
+				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
