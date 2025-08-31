@@ -92,10 +92,7 @@ const map_schema = z.object({
 			text: z.string().nonempty(),
 			description: z.string().nonempty(),
 			color: z.nativeEnum(Color),
-			coherence: z.record(
-				z.string().nonempty(),
-				z.number().min(0).max(1),
-			),
+			unavailable: z.array(z.string().nonempty()),
 		}).strict(),
 	),
 	conclusion_groups: z.record(

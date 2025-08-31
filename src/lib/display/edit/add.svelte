@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Map } from '$lib/types/map';
+	import { get_available_conclusions, type Map } from '$lib/types/map';
 	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, NoteImpact, paper_to_datapaper, PaperType, ReviewedPapersType, ReviewedStudiesOn, ReviewType, StudyOn, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
 	import SmallAdd from '$lib/svgs/small-add.svg';
 	import SmallRemove from '$lib/svgs/small-remove.svg';
@@ -177,7 +177,7 @@
 			journal = null;
 		}
 
-		if (consensus !== '' && consensus !== MissingReason.NotSpecified && consensus !== MissingReason.NoAccess && conclusion !== '' && map.consensus[consensus].coherence[conclusion] === undefined)
+		if (consensus !== '' && consensus !== MissingReason.NotSpecified && consensus !== MissingReason.NoAccess && conclusion !== '' && map.consensus[consensus].unavailable.includes(conclusion))
 			conclusion = '';
 
 		if (
@@ -740,7 +740,7 @@
 			</div>
 			<select bind:value={conclusion}>
 				<option value="" disabled selected hidden></option>
-				{#each Object.keys(map.consensus[consensus === MissingReason.NotSpecified || consensus === MissingReason.NoAccess ? 'no_consensus': consensus].coherence) as id}
+				{#each get_available_conclusions(map, consensus) as id}
 					<option value={id}>{map.conclusions[id].text}</option>
 				{/each}
 			</select>

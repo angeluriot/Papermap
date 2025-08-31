@@ -99,7 +99,6 @@ const COEFS = {
 	year: 0.1,
 	journal: 0.5,
 	citations: 0.1,
-	coherence: 0.1,
 	direct: 0.5,
 	review: 0.5,
 	type: 0.6,
@@ -154,15 +153,6 @@ export function score_citations(paper: DataPaper): number
 	score /= score + 1.0;
 
 	return score;
-}
-
-
-export function score_coherence(map: DataMap | Map, paper: DataPaper): number
-{
-	if (paper.results.consensus === MissingReason.NotSpecified || paper.results.consensus === MissingReason.NoAccess)
-		return 0.5;
-
-	return map.consensus[paper.results.consensus].coherence[paper.results.conclusion];
 }
 
 
@@ -353,7 +343,6 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	let year_score = score_year(paper);
 	let journal_score = score_journal(paper, journal);
 	let citations_score = score_citations(paper);
-	let coherence_score = score_coherence(map, paper);
 	let direct_score = score_direct(paper);
 	let review_type_score = score_review_type(paper);
 	let review_count_score = score_review_count(paper);
@@ -377,7 +366,6 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	year_score = (year_score * COEFS.year) + (1 - COEFS.year);
 	journal_score = (journal_score * COEFS.journal) + (1 - COEFS.journal);
 	citations_score = (citations_score * COEFS.citations) + (1 - COEFS.citations);
-	coherence_score = (coherence_score * COEFS.coherence) + (1 - COEFS.coherence);
 	direct_score = (direct_score * COEFS.direct) + (1 - COEFS.direct);
 
 	let review_score = 1 + review_type_score * review_count_score;
@@ -396,7 +384,6 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 		year_score *
 		journal_score *
 		citations_score *
-		coherence_score *
 		direct_score *
 		review_score *
 		type_score *

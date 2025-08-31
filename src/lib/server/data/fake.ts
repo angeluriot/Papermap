@@ -1,5 +1,5 @@
 import { ConflictOfInterest, JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
-import { type DataMap, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
+import { get_available_conclusions, type DataMap, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/server/emojis';
 
@@ -54,7 +54,7 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 			quote = quote.slice(0, i) + ' [...]' + quote.slice(i);
 
 	const consensus = random_choice([random_choice(Object.keys(map.consensus)), MissingReason.NotSpecified, MissingReason.NoAccess], [10, 1]);
-	const conclusion = random_choice(Object.keys(map.consensus[consensus === MissingReason.NoAccess ? 'no_consensus' : consensus].coherence))
+	const conclusion = random_choice(get_available_conclusions(map, consensus));
 	const is_institution = random_choice([true, false], [1, 10]);
 	const institution_name = faker.company.name();
 
@@ -85,9 +85,9 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 		review: Math.random() < 0.2 ? {
 			type: random_choice(Object.keys(ReviewType) as ReviewType[]),
 			reviews: Math.random() < 0.2,
-			estimate: random_choice([true, false], [1, 1]),
+			estimate: random_choice([true, false]),
 			count: random_choice([5 + Math.round((Math.random() ** 3) * 200), MissingReason.NoAccess], [10, 1]),
-			subpart: random_choice([true, false], [1, 1]),
+			subpart: random_choice([true, false]),
 		} : undefined,
 		type: random_choice(
 			[random_choice(Object.keys(PaperType) as PaperType[]), random_choice(Object.keys(MissingReason) as MissingReason[])],

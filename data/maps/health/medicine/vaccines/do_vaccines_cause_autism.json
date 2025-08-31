@@ -19,70 +19,35 @@
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of vaccines on autism",
 			"color": "Gray",
-			"coherence": {
-				"no": 0.5,
-				"no_but_mixed_results": 0.5,
-				"maybe": 0.5,
-				"yes_but_low_confidence": 0.5,
-				"yes_but_small_effect": 0.5,
-				"yes": 0.5
-			}
+			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
 		},
 		"no": {
 			"emoji": "👎",
 			"text": "No",
 			"description": "The literature suggests that vaccines do not cause autism",
 			"color": "Red",
-			"coherence": {
-				"no": 1,
-				"no_but_mixed_results": 1,
-				"maybe": 0.5,
-				"yes_but_low_confidence": 0,
-				"yes_but_small_effect": 0,
-				"yes_unlike_literature": 0
-			}
+			"unavailable": ["no_unlike_literature", "yes"]
 		},
 		"towards_no": {
 			"emoji": "⬅️",
 			"text": "Towards no",
 			"description": "The literature suggests that vaccines probably don't cause autism, but more research is needed",
 			"color": "Red1H",
-			"coherence": {
-				"no": 0.75,
-				"no_but_mixed_results": 0.75,
-				"maybe": 0.5,
-				"yes_but_low_confidence": 0.25,
-				"yes_but_small_effect": 0.25,
-				"yes_unlike_literature": 0.25
-			}
+			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
 		},
 		"towards_yes": {
 			"emoji": "➡️",
 			"text": "Towards yes",
 			"description": "The literature suggests that vaccines may cause autism, but more research is needed",
 			"color": "Green1H",
-			"coherence": {
-				"no_unlike_literature": 0.25,
-				"no_but_mixed_results": 0.25,
-				"maybe": 0.5,
-				"yes_but_low_confidence": 0.75,
-				"yes_but_small_effect": 0.75,
-				"yes": 0.75
-			}
+			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
 		},
 		"yes": {
 			"emoji": "👍",
 			"text": "Yes",
 			"description": "The literature suggests that vaccines cause autism",
 			"color": "Green",
-			"coherence": {
-				"no_unlike_literature": 0,
-				"no_but_mixed_results": 0,
-				"maybe": 0.5,
-				"yes_but_low_confidence": 1,
-				"yes_but_small_effect": 1,
-				"yes": 1
-			}
+			"unavailable": ["no", "yes_unlike_literature"]
 		}
 	},
 	"conclusion_groups": {

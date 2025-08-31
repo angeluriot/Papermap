@@ -1,4 +1,4 @@
-import type { DataPaper, Paper } from './paper';
+import { MissingReason, type DataPaper, type Paper } from './paper';
 import type { Color } from '$lib/colors';
 
 
@@ -20,9 +20,7 @@ interface BaseMap
 			text: string,
 			description: string,
 			color: Color,
-			coherence: {
-				[id: string]: number,
-			},
+			unavailable: string[],
 		},
 	};
 	conclusion_groups: {
@@ -99,4 +97,12 @@ export interface MapTitle
 	url: string;
 	hash: string;
 	fake?: true;
+}
+
+
+export function get_available_conclusions(map: DataMap | Map, consensus: string): string[]
+{
+	return Object.keys(map.conclusions).filter(
+		id => !map.consensus[consensus.replace(MissingReason.NotSpecified, 'no_consensus').replace(MissingReason.NoAccess, 'no_consensus')].unavailable.includes(id)
+	);
 }
