@@ -139,12 +139,20 @@
 
 	const quote_parts = $derived.by(() =>
 	{
-		const parts = paper.quote.split(/(\[.*?\])/);
+		const raw_parts = paper.quote.split(/(\[.*?\])/);
 
-		return parts.filter(part => part.length > 0).map(part => ({
+		let parts = raw_parts.filter(part => part.length > 0).map(part => ({
 			text: part,
 			italic: !part.startsWith('[')
 		}));
+
+		if (parts.some(p => p.italic))
+		{
+			parts[0].text = '“' + parts[0].text;
+			parts[parts.length - 1].text = parts[parts.length - 1].text + '”';
+		}
+
+		return parts;
 	});
 
 	const paper_type_parts = $derived.by(() =>
@@ -596,7 +604,7 @@
 		<p>
 			{#each quote_parts as part, i}
 				{#if part.italic}
-					<i>{i === 0 ? '“' : ''}{part.text}{i === quote_parts.length - 1 ? '”' : ''}</i>
+					<i>{part.text}</i>
 				{:else}
 					{part.text}
 				{/if}
