@@ -460,14 +460,36 @@ The number of papers included in the literature review (if the paper is one).
 			<td colspan="2">
 				❌ No but with justification:<br/>
 				<code>No access</code><br/>
-				<code>Not specified</code><br/>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
+* If the number of papers included is not specified, give an approximation
 * If you don't have access to the full text of the paper and the abstract does not help, select `No access`
-* If the number of papers included is not specified, select `Not specified`
+
+## Minor topic
+
+Whether the question of the map is the main subject of the review or only a small portion of the papers included are actually used to answer it.
+
+<table>
+	<tbody>
+		<tr>
+			<td><b>Condition</b></td>
+			<td colspan="2">
+				<b>Review type</b> selected and ≠ <code>(Not a literature review)</code>
+			</td>
+		</tr>
+		<tr>
+			<td><b>Type</b></td>
+			<td>✅ Checkbox</td>
+		</tr>
+		<tr>
+			<td><b>Required</b></td>
+			<td>✅ Yes</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Study type
 
