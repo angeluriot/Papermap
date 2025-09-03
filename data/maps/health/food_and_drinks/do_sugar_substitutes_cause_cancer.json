@@ -21,35 +21,50 @@
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of sugar substitutes on cancer",
 			"color": "Gray",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"no": {
 			"emoji": "👎",
 			"text": "No",
 			"description": "The literature suggests that sugar substitutes do not cause cancer",
 			"color": "Red",
-			"unavailable": ["no_unlike_literature", "yes"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
 		},
 		"towards_no": {
 			"emoji": "⬅️",
 			"text": "Towards no",
 			"description": "The literature suggests that sugar substitutes probably don't cause cancer, but more research is needed",
 			"color": "Red1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"towards_yes": {
 			"emoji": "➡️",
 			"text": "Towards yes",
 			"description": "The literature suggests that sugar substitutes may cause cancer, but more research is needed",
 			"color": "Green1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"yes": {
 			"emoji": "👍",
 			"text": "Yes",
 			"description": "The literature suggests that sugar substitutes cause cancer",
 			"color": "Green",
-			"unavailable": ["no", "yes_unlike_literature"]
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
 		}
 	},
 	"conclusion_groups": {
@@ -1804,7 +1819,7 @@
 		},
 		{
 			"id": "W2907742136",
-			"title": "Association between intake of non-sugar sweeteners and health outcomes: systematic review and meta-analyses of randomised and non-randomised controlled trials and observational studies",
+			"title": "5Association between intake of non-sugar sweeteners and health outcomes: systematic review and meta-analyses of randomised and non-randomised controlled trials and observational studies",
 			"override_seed": 0.9,
 			"authors": [
 				"Ingrid Toews",
