@@ -3,6 +3,7 @@ import { InvalidDataError, NotFoundError } from '$lib/errors';
 import type { Params } from './types';
 import { validate_params } from './validate';
 import { get_journal } from '$lib/server/data/journal';
+import newrelic from 'newrelic';
 
 
 export async function GET({ params }: { params: Params }): Promise<Response>
@@ -22,6 +23,7 @@ export async function GET({ params }: { params: Params }): Promise<Response>
 	catch (error: any)
 	{
 		console.error(error);
+		newrelic.addCustomAttribute('custom_error', error.message);
 
 		if (error instanceof InvalidDataError)
 			return http_error(400, error.message);

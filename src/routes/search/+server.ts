@@ -1,6 +1,7 @@
 import { search_paper } from '$lib/server/search/paper';
 import { json, error as http_error, type RequestHandler } from '@sveltejs/kit';
 import { InvalidDataError, OpenAlexAPIError } from '$lib/errors';
+import newrelic from 'newrelic';
 
 
 export const GET: RequestHandler = async ({ url }) =>
@@ -26,6 +27,7 @@ export const GET: RequestHandler = async ({ url }) =>
 	catch (error: any)
 	{
 		console.error(error);
+		newrelic.addCustomAttribute('custom_error', error.message);
 
 		if (error instanceof InvalidDataError)
 			return http_error(400, error.message);

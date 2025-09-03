@@ -4,6 +4,7 @@ import { get_new_map_issue, type NewMapRequest } from '$lib/github/issue';
 import { validate_request } from './validate';
 import { Label } from '$lib/types';
 import { GitHubAPIError, InvalidDataError } from '$lib/errors';
+import newrelic from 'newrelic';
 
 
 export async function POST({ request }: { request: Request }): Promise<Response>
@@ -27,6 +28,7 @@ export async function POST({ request }: { request: Request }): Promise<Response>
 	catch (error: any)
 	{
 		console.error(error);
+		newrelic.addCustomAttribute('custom_error', error.message);
 
 		if (error instanceof InvalidDataError)
 			return http_error(400, error.message);

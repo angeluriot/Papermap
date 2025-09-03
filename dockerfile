@@ -9,4 +9,4 @@ RUN npm install --omit=dev
 RUN npm run build
 
 EXPOSE 3000
-CMD [ "node", "build" ]
+CMD [ "node", "server.js" ]

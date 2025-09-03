@@ -10,6 +10,7 @@ import { GitHubAPIError, InvalidDataError, NotFoundError } from '$lib/errors';
 import { import_datamap } from '$lib/server/data/map';
 import { validate_params } from '../validate';
 import { validate_request } from './validate';
+import newrelic from 'newrelic';
 
 
 export const POST: RequestHandler = async ({ url, params, request }) =>
@@ -56,6 +57,7 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 	catch (error: any)
 	{
 		console.error(error);
+		newrelic.addCustomAttribute('custom_error', error.message);
 
 		if (error instanceof InvalidDataError)
 			return http_error(400, error.message);
