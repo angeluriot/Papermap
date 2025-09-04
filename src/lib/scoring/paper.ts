@@ -241,6 +241,9 @@ export function score_on(map: DataMap | Map, paper: DataPaper, review_count_scor
 	if (map.on.any_animal)
 		on_scores = ON_SCORES.any_animal;
 
+	if (paper.type === MissingReason.NotApplicable && paper.on === MissingReason.NotApplicable)
+		return 1.0;
+
 	let ons: (StudyOn | MissingReason)[] = [];
 
 	if (paper.on == ReviewedStudiesOn.DiverseSubjects)
