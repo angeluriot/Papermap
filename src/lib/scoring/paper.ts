@@ -97,13 +97,15 @@ const DIVERSE_TYPE_INCREASE = 0.4;
 const DIVERSE_ON_INCREASE = 0.8;
 const COEFS = {
 	year: 0.1,
+	year_review: 0.2,
 	journal: 0.5,
 	citations: 0.1,
 	direct: 0.5,
 	review: 0.5,
 	type: 0.6,
 	on: 0.5,
-	sample_size: 0.2,
+	sample_size_effect: 0.1,
+	sample_size_no_effect: 0.3,
 	p_value: 0.2,
 	conflict_of_interest: 0.5,
 	notes: 0.5,
@@ -363,7 +365,8 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 		p_value: p_value_score,
 	};
 
-	year_score = (year_score * COEFS.year) + (1 - COEFS.year);
+	let coef_year = paper.review ? COEFS.year_review : COEFS.year;
+	year_score = (year_score * coef_year) + (1 - coef_year);
 	journal_score = (journal_score * COEFS.journal) + (1 - COEFS.journal);
 	citations_score = (citations_score * COEFS.citations) + (1 - COEFS.citations);
 	direct_score = (direct_score * COEFS.direct) + (1 - COEFS.direct);
@@ -373,7 +376,7 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal
 	type_score = (type_score * COEFS.type) + (1 - COEFS.type);
 	on_score = (on_score * COEFS.on) + (1 - COEFS.on);
 
-	let coef_sample_size = map.conclusions[paper.results.conclusion].p_value ? COEFS.sample_size * 0.5 : COEFS.sample_size * 1.5;
+	let coef_sample_size = map.conclusions[paper.results.conclusion].p_value ? COEFS.sample_size_effect : COEFS.sample_size_no_effect;
 	sample_size_score = (sample_size_score * coef_sample_size) + (1 - coef_sample_size);
 	p_value_score = (p_value_score * COEFS.p_value) + (1 - COEFS.p_value);
 	conflict_of_interest_score = (conflict_of_interest_score * COEFS.conflict_of_interest) + (1 - COEFS.conflict_of_interest);
