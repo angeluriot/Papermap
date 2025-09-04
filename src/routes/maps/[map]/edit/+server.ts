@@ -57,7 +57,9 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 	catch (error: any)
 	{
 		console.error(error);
-		newrelic.addCustomAttribute('custom_error', error.message);
+
+		if (C.PROD)
+			newrelic.addCustomAttribute('custom_error', error.message);
 
 		if (error instanceof InvalidDataError)
 			return http_error(400, error.message);

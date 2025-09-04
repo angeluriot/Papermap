@@ -18,3 +18,4 @@
 
 # Temp
 /tmp
+/newrelic_agent.log
