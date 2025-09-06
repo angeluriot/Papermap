@@ -4,7 +4,7 @@
 	"description": "The Papermap website.",
 	"type": "module",
 	"scripts": {
-		"dev": "node ./scripts/clean.js && svelte-kit sync && vite dev",
+		"dev": "node ./scripts/clean.js && svelte-kit sync && cross-env NEW_RELIC_ENABLED=false vite dev",
 		"build": "node ./scripts/clean.js && svelte-kit sync && vite build",
 		"deploy": "node ./scripts/clean.js && docker compose build && docker compose up -d --force-recreate && docker system prune -af --volumes",
 		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker system prune -af --volumes; node ./scripts/clean.js",
@@ -68,6 +68,7 @@
 		"@types/pg": "^8.15.1",
 		"@types/request-ip": "^0.0.41",
 		"@types/seedrandom": "^3.0.8",
+		"cross-env": "^10.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0"
 	}
