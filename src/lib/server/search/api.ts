@@ -1,6 +1,7 @@
 import { clean_doi } from '$lib/server/utils';
 import { OpenAlexAPIError } from '$lib/errors';
 import { constants as C } from '$lib/server/utils';
+import { clean_id } from '$lib/utils';
 
 
 export interface OpenAlexPaper
@@ -221,8 +222,10 @@ export async function openalex_search(doi?: string, title?: string, year?: numbe
 
 		if (doi)
 		{
+			let id = clean_id(doi);
+
 			let query = new URLSearchParams({
-				'filter': 'doi:' + clean_doi(doi),
+				'filter': /^W\d+$/.test(id) ? 'openalex:' + id : 'doi:' + clean_doi(doi),
 				'mailto': C.OPENALEX_EMAIL ?? '',
 				'per-page': '2',
 				'page': '1',
