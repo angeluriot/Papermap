@@ -16,6 +16,7 @@ export const EMOJI_NAMES = {
 	'🤔': 'thinking-face',
 	'😐': 'neutral-face',
 	'🫥': 'dotted-line-face',
+	'😮‍💨': 'face-exhaling',
 	'🤮': 'face-vomiting',
 	'😵': 'dizzy-face',
 	'😎': 'smiling-face-with-sunglasses',
@@ -87,15 +88,18 @@ export const EMOJI_NAMES = {
 	'🔬': 'microscope',
 	'💉': 'syringe',
 	'💊': 'pill',
+	'🚬': 'cigarette',
 
 	// Symbols
 	'💖': 'sparkling-heart',
+	'💨': 'dashing-away',
 	'🚻': 'restroom',
 	'➡️': 'right-arrow',
 	'⬅️': 'left-arrow',
 	'↪️': 'left-arrow-curving-right',
 	'↩️': 'right-arrow-curving-left',
 	'🔀': 'shuffle-tracks-button',
+	'🟰': 'heavy-equals-sign'
 }
 
 
