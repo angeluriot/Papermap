@@ -1,0 +1,3140 @@
+{
+	"draft": false,
+	"emoji": "😮‍💨",
+	"question": {
+		"short": "Which is more harmful to health: smoking or vaping?",
+		"long": "Which is more harmful to health: smoking or vaping?"
+	},
+	"description": "Results from studies comparing the health effects of smoking and vaping.",
+	"tags": [
+		"health",
+		"smoking",
+		"vaping",
+		"cigarettes",
+		"e-cigarettes"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on whether smoking or vaping is more harmful to health",
+			"color": "Gray",
+			"unavailable": [
+				"smoking_unlike_literature",
+				"vaping_unlike_literature"
+			]
+		},
+		"smoking": {
+			"emoji": "🚬",
+			"text": "Smoking",
+			"description": "The literature suggests that smoking is more harmful to health than vaping",
+			"color": "Red",
+			"unavailable": [
+				"smoking_unlike_literature",
+				"vaping"
+			]
+		},
+		"towards_smoking": {
+			"emoji": "⬅️",
+			"text": "Towards smoking",
+			"description": "The literature suggests that smoking may be more harmful to health than vaping, but more research is needed",
+			"color": "Red1H",
+			"unavailable": [
+				"smoking_unlike_literature",
+				"vaping_unlike_literature"
+			]
+		},
+		"no_difference": {
+			"emoji": "🟰",
+			"text": "No difference",
+			"description": "The literature suggests that the health effects of smoking and vaping are similar",
+			"color": "Gray",
+			"unavailable": [
+				"smoking_unlike_literature",
+				"vaping_unlike_literature"
+			]
+		},
+		"towards_vaping": {
+			"emoji": "➡️",
+			"text": "Towards vaping",
+			"description": "The literature suggests that vaping may be more harmful to health than smoking, but more research is needed",
+			"color": "Green1H",
+			"unavailable": [
+				"smoking_unlike_literature",
+				"vaping_unlike_literature"
+			]
+		},
+		"vaping": {
+			"emoji": "💨",
+			"text": "Vaping",
+			"description": "The literature suggests that vaping is more harmful to health than smoking",
+			"color": "Green",
+			"unavailable": [
+				"smoking",
+				"vaping_unlike_literature"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"smoking": {
+			"text": "Smoking",
+			"color": "Red"
+		},
+		"smoking_but": {
+			"text": "Smoking but...",
+			"color": "Red1H"
+		},
+		"inconclusive": {
+			"text": "Inconclusive",
+			"color": "Gray"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"vaping_but": {
+			"text": "Vaping but...",
+			"color": "Green1H"
+		},
+		"vaping": {
+			"text": "Vaping",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"smoking": {
+			"group": "smoking",
+			"emoji": "🚬",
+			"text": "Smoking",
+			"description": "The results of the paper suggest that smoking is more harmful to health than vaping",
+			"p_value": true
+		},
+		"smoking_unlike_literature": {
+			"group": "smoking_but",
+			"emoji": "↩️",
+			"text": "Smoking unlike literature",
+			"description": "The results of the paper suggest that smoking may be more harmful to health than vaping, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"smoking_but_slight_difference": {
+			"group": "smoking_but",
+			"emoji": "🤏",
+			"text": "Smoking but slight difference",
+			"description": "The results of the paper suggest that smoking may be slightly more harmful to health than vaping",
+			"p_value": true
+		},
+		"smoking_but_low_confidence": {
+			"group": "smoking_but",
+			"emoji": "🤔",
+			"text": "Smoking but low confidence",
+			"description": "The results of the paper suggest that smoking may be more harmful to health than vaping, but the evidence is not strong",
+			"p_value": true
+		},
+		"smoking_but_mixed": {
+			"group": "smoking_but",
+			"emoji": "🔀",
+			"text": "Smoking but mixed results",
+			"description": "The results of the paper suggest that smoking is generally more harmful to health than vaping, except in certain cases",
+			"p_value": true
+		},
+		"mixed": {
+			"group": "inconclusive",
+			"emoji": "🔀",
+			"text": "Mixed results",
+			"description": "The results of the paper cannot determine which one is more harmful to health",
+			"p_value": false
+		},
+		"no_difference": {
+			"group": "inconclusive",
+			"emoji": "🟰",
+			"text": "No difference",
+			"description": "The results of the paper suggest that the health effects of smoking and vaping are similar",
+			"p_value": false
+		},
+		"no_results": {
+			"group": "inconclusive",
+			"emoji": "🤷",
+			"text": "No results",
+			"description": "There is not enough evidence to determine which one is more harmful to health",
+			"p_value": false
+		},
+		"vaping_but_mixed": {
+			"group": "vaping_but",
+			"emoji": "🔀",
+			"text": "Vaping but mixed results",
+			"description": "The results of the paper suggest that vaping is generally more harmful to health than smoking, except in certain cases",
+			"p_value": true
+		},
+		"vaping_but_low_confidence": {
+			"group": "vaping_but",
+			"emoji": "🤔",
+			"text": "Vaping but low confidence",
+			"description": "The results of the paper suggest that vaping may be more harmful to health than smoking, but the evidence is not strong",
+			"p_value": true
+		},
+		"vaping_but_slight_difference": {
+			"group": "vaping_but",
+			"emoji": "🤏",
+			"text": "Vaping but slight difference",
+			"description": "The results of the paper suggest that vaping may be slightly more harmful to health than smoking",
+			"p_value": true
+		},
+		"vaping_unlike_literature": {
+			"group": "vaping_but",
+			"emoji": "↪️",
+			"text": "Vaping unlike literature",
+			"description": "The results of the paper suggest that vaping may be more harmful to health than smoking, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"vaping": {
+			"group": "vaping",
+			"emoji": "💨",
+			"text": "Vaping",
+			"description": "The results of the paper suggest that vaping is more harmful to health than smoking",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_blind": true,
+		"no_random": false,
+		"no_causality": false,
+		"any": false
+	},
+	"on": {
+		"any_animal": false,
+		"any": false
+	},
+	"no_sample_size": false,
+	"papers": [
+		{
+			"id": "W2106457238",
+			"title": "A Clinical Laboratory Model for Evaluating the Acute Effects of Electronic “Cigarettes”: Nicotine Delivery Profile and Cardiovascular and Subjective Effects",
+			"authors": [
+				"Andrea R. Vansickel",
+				"Caroline O. Cobb",
+				"Michael F. Weaver",
+				"Thomas Eissenberg"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1158/1055-9965.epi-10-0288",
+			"journal": {
+				"id": "S8391440",
+				"retracted": false
+			},
+			"citations": 381,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Own brand significantly increased plasma nicotine and CO concentration and heart rate within the first five minutes of administration whereas NPRO EC, Hydro EC, and sham smoking did not",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 32,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2159546185",
+			"title": "Electronic cigarettes as a harm reduction strategy for tobacco control: A step forward or a repeat of past mistakes?",
+			"authors": [
+				"Zachary Cahn",
+				"Michael Siegel"
+			],
+			"year": 2010,
+			"link": "https://doi.org/10.1057/jphp.2010.41",
+			"journal": {
+				"id": "S59089974",
+				"retracted": false
+			},
+			"citations": 405,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The evidence reviewed in this article suggests that electronic cigarettes are a much safer alternative to tobacco cigarettes",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 18,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2049114027",
+			"title": "Acute effects of electronic and tobacco cigarette smoking on complete blood count",
+			"authors": [
+				"Andreas D. Flouris",
+				"Konstantina Poulianiti",
+				"Maria Chorti",
+				"Athanasios Z. Jamurtas"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1016/j.fct.2012.07.025",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": 157,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "It is concluded that acute active and passive smoking using the e-cigarettes tested in the current study does not influence CBC indices in smokers and never smokers, respectively. In contrast, acute active and passive tobacco cigarette smoking increase the secondary proteins of acute inflammatory load for at least one hour",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 30,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2133007934",
+			"title": "A fresh look at tobacco harm reduction: the case for the electronic cigarette",
+			"authors": [
+				"Riccardo Polosa",
+				"Brad Rodu",
+				"Pasquale Caponnetto",
+				"Marilena Maglia"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1186/1477-7517-10-19",
+			"journal": {
+				"id": "S150411170",
+				"retracted": false
+			},
+			"citations": 202,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "E-cigs deliver a nicotine vapour without the combustion products that are responsible for nearly all of smoking’s damaging effects",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 30,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2032302116",
+			"title": "Acute impact of active and passive electronic cigarette smoking on serum cotinine and lung function",
+			"authors": [
+				"Andreas D. Flouris",
+				"Maria Chorti",
+				"Konstantina Poulianiti",
+				"Athanasios Z. Jamurtas"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.3109/08958378.2012.758197",
+			"journal": {
+				"id": "S5694335",
+				"retracted": false
+			},
+			"citations": 414,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The studied e-cigarettes generate smaller changes in lung function but similar nicotinergic impact to tobacco cigarettes",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 30,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2123345166",
+			"title": "Comparison of the Cytotoxic Potential of Cigarette Smoke and Electronic Cigarette Vapour Extract on Cultured Myocardial Cells",
+			"authors": [
+				"Konstantinos Farsalinos",
+				"Giorgio Romagna",
+				"Elena Allifranchini",
+				"Emiliano Ripamonti"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.3390/ijerph10105146",
+			"journal": {
+				"id": "S15239247",
+				"retracted": false
+			},
+			"citations": 214,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Overall, EC vapour extracts showed significantly higher cell viability compared to CS extract, based on a realistic-use rather than a standardized comparative level of exposure. This supports the concept that ECs may be useful as tobacco harm reduction products",
+			"type": "NotApplicable",
+			"on": "InVitro",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W1974376880",
+			"title": "Cytotoxicity evaluation of electronic cigarette vapor extract on cultured mammalian fibroblasts (ClearStream-LIFE): comparison with tobacco cigarette smoke extract",
+			"authors": [
+				"Giorgio Romagna",
+				"Elena Allifranchini",
+				"Elena Bocchietto",
+				"Stefano Todeschi"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.3109/08958378.2013.793439",
+			"journal": {
+				"id": "S5694335",
+				"retracted": false
+			},
+			"citations": 181,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "This study indicates that EC vapor is significantly less cytotoxic compared tobacco CS",
+			"type": "NotApplicable",
+			"on": "InVitro",
+			"sample_size": "NotApplicable",
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Specific case",
+					"description": "The study is limited to a single early-generation device of e-cigarette",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2128364692",
+			"title": "EffiCiency and Safety of an eLectronic cigAreTte (ECLAT) as Tobacco Cigarettes Substitute: A Prospective 12-Month Randomized Control Design Study",
+			"authors": [
+				"Pasquale Caponnetto",
+				"Davide Campagna",
+				"Fabio Cibella",
+				"Jaymin B. Morjaria"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1371/journal.pone.0066317",
+			"journal": {
+				"id": "S202381698",
+				"retracted": false
+			},
+			"citations": 688,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "A significant reduction in frequency of reported symptoms was observed compared to baseline (Figure 8). Of all symptoms that progressively decreased throughout the study with the use of e-cigarettes, shortness of breath was substantially reduced from 20 to 4% already by week-2",
+			"type": "BlindedRandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 300,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Blinding and randomization out of scope",
+					"description": "The comparison between vaping and smoking (which is a minor topic) is a simple before/after analysis and does not benefit from blinding and randomization",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
+			"id": "W2128456085",
+			"title": "Levels of selected carcinogens and toxicants in vapour from electronic cigarettes",
+			"authors": [
+				"Maciej Ł. Goniewicz",
+				"Jakub Knysak",
+				"Michał Gawron",
+				"Leon Kośmider"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1136/tobaccocontrol-2012-050859",
+			"journal": {
+				"id": "S149729710",
+				"retracted": false
+			},
+			"citations": 1643,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": true
+			},
+			"quote": "The levels of the toxicants were 9–450 times lower than in cigarette smoke and were, in many cases, comparable with trace amounts found in the reference product",
+			"type": "NotApplicable",
+			"on": "NotApplicable",
+			"sample_size": "NotApplicable",
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2052671875",
+			"title": "Metal and Silicate Particles Including Nanoparticles Are Present in Electronic Cigarette Cartomizer Fluid and Aerosol",
+			"authors": [
+				"Monique Williams",
+				"Amanda Villarreal",
+				"Krassimir N. Bozhilov",
+				"Sabrina Lin"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.1371/journal.pone.0057987",
+			"journal": {
+				"id": "S202381698",
+				"retracted": false
+			},
+			"citations": 642,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "vaping_but_mixed",
+				"indirect": true
+			},
+			"quote": "While the outer fibers filtered out many of the tin particles, significant amounts of tin, other metals, and silicate beads escaped into the aerosol and would result in human exposure, in some cases probably greater than a conventional cigarette user would experience",
+			"type": "NotApplicable",
+			"on": "NotApplicable",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Specific case",
+					"description": "The study is limited to an early cartomizer design from only one brand",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2046826576",
+			"title": "A systematic review of health effects of electronic cigarettes",
+			"override_seed": 0,
+			"authors": [
+				"Charlotta Pisinger",
+				"Martin Døssing"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1016/j.ypmed.2014.10.009",
+			"journal": {
+				"id": "S8081180",
+				"retracted": false
+			},
+			"citations": 463,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "ECs cannot be regarded as safe, even though they probably are less harmful than CCs. The “harm reduction” strategy might be a gain for smokers reluctant to quit but ex- and never-smokers probably have an increased risk by using ECs",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 76,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2129661555",
+			"title": "Acute effects of using an electronic nicotine-delivery device (electronic cigarette) on myocardial function: comparison with the effects of regular cigarettes",
+			"authors": [
+				"Konstantinos Farsalinos",
+				"Dimitris Tsiapras",
+				"Stamatis Kyrzopoulos",
+				"Maria Savvopoulou"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1186/1471-2261-14-78",
+			"journal": {
+				"id": "S206686666",
+				"retracted": false
+			},
+			"citations": 168,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Although acute smoking causes a delay in myocardial relaxation, electronic cigarette use has no immediate effects",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 76,
+			"p_value": {
+				"value": 0.001,
+				"less_than": false
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2152193758",
+			"title": "Characteristics, Perceived Side Effects and Benefits of Electronic Cigarette Use: A Worldwide Survey of More than 19,000 Consumers",
+			"authors": [
+				"Konstantinos Farsalinos",
+				"Giorgio Romagna",
+				"Dimitris Tsiapras",
+				"Stamatis Kyrzopoulos"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.3390/ijerph110404356",
+			"journal": {
+				"id": "S15239247",
+				"retracted": false
+			},
+			"citations": 370,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Significant benefits are experienced by these people in physiologic functions and in some disease conditions, with former smokers (those who completely substituted smoking with EC use) being more likely to report such beneficial effects",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 19441,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": [
+				{
+					"title": "Possible selection/confirmation biases",
+					"description": "Outcomes are self-reported by dedicated users recruited through EC forums",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2055002750",
+			"title": "Chemical hazards present in liquids and vapors of electronic cigarettes",
+			"authors": [
+				"Christoph Hutzler",
+				"Meike Paschke",
+				"Svetlana Kruschinski",
+				"Frank Henkler"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1007/s00204-014-1294-7",
+			"journal": {
+				"id": "S87018847",
+				"retracted": false
+			},
+			"citations": 336,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking_but_mixed",
+				"indirect": true
+			},
+			"quote": "In the emissions of these fractions, which represent up to 40 % of total vapor volume, similar levels of formaldehyde were detected when compared to conventional tobacco cigarettes. By contrast, carbonylic compounds were hardly detectable in earlier collected fractions",
+			"type": "NotApplicable",
+			"on": "NotApplicable",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2164470169",
+			"title": "E-Cigarettes: A Scientific Review",
+			"override_seed": 0.9,
+			"authors": [
+				"Rachel Grana",
+				"Neal L. Benowitz",
+				"Stanton A. Glantz"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1161/circulationaha.114.007667",
+			"journal": {
+				"id": "S116251202",
+				"retracted": false
+			},
+			"citations": 1146,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "It is reasonable to assume that, if existing smokers switched completely from conventional cigarettes (with no other changes in use patterns) to e-cigarettes, there would be a lower disease burden caused by nicotine addiction",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 82,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2061929461",
+			"title": "Effect of Smoking Abstinence and Reduction in Asthmatic Smokers Switching to Electronic Cigarettes: Evidence for Harm Reversal",
+			"authors": [
+				"Riccardo Polosa",
+				"Jaymin B. Morjaria",
+				"Pasquale Caponnetto",
+				"Massimo Caruso"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.3390/ijerph110504965",
+			"journal": {
+				"id": "S15239247",
+				"retracted": false
+			},
+			"citations": 141,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "This small retrospective study indicates that regular use of e-cigs to substitute smoking is associated with objective and subjective improvements in asthma outcomes",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 18,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2013162227",
+			"title": "Effects of using electronic cigarettes on nicotine delivery and cardiovascular function in comparison with regular cigarettes",
+			"authors": [
+				"Xiaoli Yan",
+				"Carl D. D’Ruiz"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1016/j.yrtph.2014.11.004",
+			"journal": {
+				"id": "S87719511",
+				"retracted": false
+			},
+			"citations": 196,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The heart rate, systolic and diastolic blood pressure were significantly elevated after use of Marlboro® cigarettes, but the elevation was less after use of most of the e-cigs. Use of e-cigs had no impact on the exhaled CO levels, whereas the Marlboro® cigarette significantly increased the exhaled CO more than 8 times above the baseline. In conclusion, e-cigs could be a less harmful alternative for tobacco users",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 23,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2144345975",
+			"title": "Electronic cigarettes: human health effects",
+			"authors": [
+				"Priscilla Callahan-Lyon"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1136/tobaccocontrol-2013-051470",
+			"journal": {
+				"id": "S149729710",
+				"retracted": false
+			},
+			"citations": 437,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking_but_mixed",
+				"indirect": false
+			},
+			"quote": "E-cigarettes may provide a less harmful source of nicotine than traditional cigarettes, but evidence of decreased harm with long-term use is not available",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 44,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2031527413",
+			"title": "Estimating the Harms of Nicotine-Containing Products Using the MCDA Approach",
+			"authors": [
+				"David Nutt",
+				"Lawrence D. Phillips",
+				"David J.K. Balfour",
+				"H. Valerie Curran"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1159/000360220",
+			"journal": {
+				"id": "S98083841",
+				"retracted": false
+			},
+			"citations": 407,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The results of this study suggest that of all nicotinecontaining products, cigarettes (and small cigars in the USA) are very much the most harmful",
+			"type": "NotApplicable",
+			"on": "NotApplicable",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2124187240",
+			"title": "Safety evaluation and risk assessment of electronic cigarettes as tobacco cigarette substitutes: a systematic review",
+			"authors": [
+				"Konstantinos Farsalinos",
+				"Riccardo Polosa"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.1177/2042098614524430",
+			"journal": {
+				"id": "S2764500180",
+				"retracted": false
+			},
+			"citations": 589,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Currently available evidence indicates that electronic cigarettes are by far a less harmful alternative to smoking and significant health benefits are expected in smokers who switch from tobacco to electronic cigarettes",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 97,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"title": "E-cigarettes: an evidence update",
+			"institution": {
+				"name": "Public Health England",
+				"acronym": "PHE"
+			},
+			"authors": [],
+			"year": 2015,
+			"link": "https://www.gov.uk/government/publications/e-cigarettes-an-evidence-update",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 770,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "It had previously been estimated that EC are around 95% safer than smoking. This appears to remain a reasonable estimate. [...] Encouraging smokers who cannot or do not want to stop smoking to switch to EC could be adopted as one of the key strategies to reduce smoking related disease and death",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 94,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "\"95% less\" criticized",
+					"description": "The \"95% less harmful\" claim has been criticized for being based on insufficient evidence",
+					"link": "https://doi.org/10.1016/S0140-6736(15)00042-2",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W2190146831",
+			"title": "Effects of Switching to Electronic Cigarettes with and without Concurrent Smoking on Exposure to Nicotine, Carbon Monoxide, and Acrolein",
+			"authors": [
+				"Hayden McRobbie",
+				"Anna C. Phillips",
+				"Maciej Ł. Goniewicz",
+				"Katie Myers Smith"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1158/1940-6207.capr-15-0058",
+			"journal": {
+				"id": "S68240649",
+				"retracted": false
+			},
+			"citations": 168,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "EC use in both smokers who quit smoking and in dual users was accompanied by a significant decrease in tobacco smoke toxicant exposure",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 40,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2002643189",
+			"title": "Evaluation of E-Cigarette Liquid Vapor and Mainstream Cigarette Smoke after Direct Exposure of Primary Human Bronchial Epithelial Cells",
+			"authors": [
+				"Stefanie Scheffler",
+				"Hauke Dieken",
+				"Olaf Krischenowski",
+				"Christine Förster"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.3390/ijerph120403915",
+			"journal": {
+				"id": "S15239247",
+				"retracted": false
+			},
+			"citations": 162,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The viability of mainstream smoke cigarette exposed cells was 4.5–8 times lower and the oxidative stress levels 4.5–5 times higher than those of e-cigarette vapor exposed cells",
+			"type": "NotApplicable",
+			"on": "InVitro",
+			"sample_size": "NotSpecified",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2092850402",
+			"title": "Vapors Produced by Electronic Cigarettes and E-Juices with Flavorings Induce Toxicity, Oxidative Stress, and Inflammatory Response in Lung Epithelial Cells and in Mouse Lung",
+			"authors": [
+				"Chad A. Lerner",
+				"Isaac K. Sundar",
+				"Hongwei Yao",
+				"Janice Gerloff"
+			],
+			"year": 2015,
+			"link": "https://doi.org/10.1371/journal.pone.0116732",
+			"journal": {
+				"id": "S202381698",
+				"retracted": false
+			},
+			"citations": 607,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking_but_mixed",
+				"indirect": false
+			},
+			"quote": "Lung fibroblast viability following treatments with 2.5% propylene glycol, glycerin, or commercial e-liquids was not significantly different than control after 24 hrs. As expected, 2.5% CSE treatment caused significant cell death, leading to less than 20% viability after the 24 hrs",
+			"type": "ClinicalTrial",
+			"on": "InVitro",
+			"sample_size": "NotSpecified",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2340081798",
+			"title": "Acute Impact of Tobacco vs Electronic Cigarette Smoking on Oxidative Stress and Vascular Function",
+			"authors": [
+				"Roberto Carnevale",
+				"Sebastiano Sciarretta",
+				"Francesco Violi",
+				"Cristina Nocella"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1016/j.chest.2016.04.012",
+			"journal": {
+				"id": "S76900504",
+				"retracted": false
+			},
+			"citations": 365,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Our study demonstrates that both cigarettes have unfavorable effects on markers of oxidative stress and FMD after single use, although E cigarette appeared to have a lesser impact",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 40,
+			"p_value": {
+				"value": 0.001,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2466775130",
+			"title": "Changes in breathomics from a 1‐year randomized smoking cessation trial of electronic cigarettes",
+			"authors": [
+				"Davide Campagna",
+				"Fabio Cibella",
+				"Pasquale Caponnetto",
+				"Maria Domenica Amaradio"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1111/eci.12651",
+			"journal": {
+				"id": "S153084679",
+				"retracted": false
+			},
+			"citations": 67,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Smokers invited to switch to electronic cigarettes who completely abstained from smoking showed steady progressive improvements in their exhaled breath measurements and symptoms scores",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 300,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2410589274",
+			"title": "Cohort study of electronic cigarette use: effectiveness and safety at 24 months",
+			"authors": [
+				"Lamberto Manzoli",
+				"Maria Elena Flacco",
+				"Margherita Ferrante",
+				"Carlo La Vecchia"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1136/tobaccocontrol-2015-052822",
+			"journal": {
+				"id": "S149729710",
+				"retracted": false
+			},
+			"citations": 78,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "A substantial improvement, however, was observed for tobacco smokers or dual users who switched to e-cigarettes only. [...] The rate of adverse events was not lower in e-cigarette-only users than in tobacco smokers, which was expected in this phase of the study, given that the excess risk of tobacco smoking takes 1–5 years to substantially decrease",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 932,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2413436507",
+			"title": "E-cigarette use results in suppression of immune and inflammatory-response genes in nasal epithelial cells similar to cigarette smoke",
+			"authors": [
+				"Elizabeth M. Martin",
+				"Phillip W. Clapp",
+				"Meghan E. Rebuli",
+				"Erica A. Pawlak"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1152/ajplung.00170.2016",
+			"journal": {
+				"id": "S47245711",
+				"retracted": false
+			},
+			"citations": 226,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "vaping",
+				"indirect": false
+			},
+			"quote": "Vaping e-cigarettes was associated with a much greater number of gene expression changes and, in a gene-by-gene comparison, stronger levels of suppression compared with cigarette smokers",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 39,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2407038997",
+			"title": "Electronic cigarette exposure triggers neutrophil inflammatory responses",
+			"authors": [
+				"Andrew Higham",
+				"Nicholas J. W. Rattray",
+				"Jennifer Dewhurst",
+				"Drupad K. Trivedi"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1186/s12931-016-0368-x",
+			"journal": {
+				"id": "S186153782",
+				"retracted": false
+			},
+			"citations": 142,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "vaping_but_slight_difference",
+				"indirect": false
+			},
+			"quote": "Our comparisons with cigarette smoke provide important insights; MMP-9 and CXCL8 release caused by different e-cig brands were often similar to, or in excess of, the CSE response",
+			"type": "NotApplicable",
+			"on": "InVitro",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2566095111",
+			"title": "Evidence for harm reduction in COPD smokers who switch to electronic cigarettes",
+			"authors": [
+				"Riccardo Polosa",
+				"Jaymin B. Morjaria",
+				"Pasquale Caponnetto",
+				"Umberto Prosperini"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1186/s12931-016-0481-x",
+			"journal": {
+				"id": "S186153782",
+				"retracted": false
+			},
+			"citations": 119,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "There was a significant reduction in annual COPD exacerbations within the COPD EC user group [...] while no significant change was observed in the control group",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 48,
+			"p_value": {
+				"value": 0.005,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2514426073",
+			"title": "Exposure to Nicotine and Selected Toxicants in Cigarette Smokers Who Switched to Electronic Cigarettes: A Longitudinal Within-Subjects Observational Study",
+			"authors": [
+				"Maciej Ł. Goniewicz",
+				"Michał Gawron",
+				"Danielle M. Smith",
+				"Margaret Peng"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1093/ntr/ntw160",
+			"journal": {
+				"id": "S62426309",
+				"retracted": false
+			},
+			"citations": 291,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "After switching from tobacco to e-cigarettes, nicotine exposure remains unchanged, while exposure to selected carcinogens and toxicants is substantially reduced",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 20,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4247507781",
+			"title": "Guidance on the benefits and risks of the electronic cigarette or e-cigarette in the general population",
+			"institution": {
+				"name": "Haut Conseil de la Santé Publique",
+				"acronym": "HCSP"
+			},
+			"authors": [],
+			"year": 2016,
+			"link": "https://doi.org/10.1016/j.rmr.2016.03.003",
+			"journal": {
+				"id": "S6672359",
+				"retracted": false
+			},
+			"citations": 2,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "En matière de réduction des risques, on peut très raisonnablement admettre qu’un fumeur devenant utilisateur exclusif de cigarette électronique voit sa probabilité de développer des maladies liées à l’usage de tabac diminuer [When it comes to risk reduction, it is reasonable to assume that a smoker who switches exclusively to e-cigarettes will see a decrease in their likelihood of developing tobacco-related diseases]",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 20,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2303173857",
+			"title": "Persisting long term benefits of smoking abstinence and reduction in asthmatic smokers who have switched to electronic cigarettes.",
+			"authors": [
+				"Riccardo Polosa",
+				"Morjaria Jb",
+				"Pasquale Caponnetto",
+				"Massimo Caruso"
+			],
+			"year": 2016,
+			"link": "https://www.discoverymedicine.com/Riccardo-Polosa/2016/02/persisting-long-term-benefits-of-smoking-abstinence-and-reduction-in-asthmatic-smokers-who-have-switched-to-electronic-cigarettes/",
+			"journal": {
+				"id": "S2496382644",
+				"retracted": false
+			},
+			"citations": 86,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "This prospective study confirms that EC use [instead of CC use] ameliorates objective and subjective asthma outcomes and shows that these beneficial effects may persist in the long term",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 18,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2336834116",
+			"title": "Platelet activation, adhesion, inflammation, and aggregation potential are altered in the presence of electronic cigarette extracts of variable nicotine concentrations",
+			"authors": [
+				"Sarah Hom",
+				"Li Chen",
+				"Tony Wang",
+				"Berhane Ghebrehiwet"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.3109/09537104.2016.1158403",
+			"journal": {
+				"id": "S103305516",
+				"retracted": false
+			},
+			"citations": 131,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_difference",
+				"indirect": false
+			},
+			"quote": "Our findings suggest that e-vapor extracts pose a similar risk to as conventional tobacco products",
+			"type": "NotApplicable",
+			"on": "InVitro",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2472936346",
+			"title": "Reductions in biomarkers of exposure, impacts on smoking urge and assessment of product use and tolerability in adult smokers following partial or complete substitution of cigarettes with electronic cigarettes",
+			"authors": [
+				"Carl D. D’Ruiz",
+				"Donald W. Graff",
+				"Edward Robinson"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1186/s12889-016-3236-1",
+			"journal": {
+				"id": "S200437886",
+				"retracted": false
+			},
+			"citations": 63,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The results of this study demonstrate that smokers who completely substitute combustible cigarettes with ecigarettes over a short period of time (5-days) experience reductions in exposure to a number of known harmful tobacco-related toxicants and carcinogens similar to smokers who quit smoking over the same period of time",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 105,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2597766308",
+			"title": "Cardiovascular effects of electronic cigarettes",
+			"authors": [
+				"Neal L. Benowitz",
+				"Joseph Fraiman"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1038/nrcardio.2017.36",
+			"journal": {
+				"id": "S62674001",
+				"retracted": false
+			},
+			"citations": 270,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Although ECs might pose some cardiovascular risk to users, particularly those with existing cardiovascular disease, the risk is thought to be less than that of cigarette smoking based on qualitative and quantitative comparisons of EC aerosol versus cigarette smoke constituents. The adoption of ECs rather than cigarette smoking might, therefore, result in an overall benefit for public health",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 50,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2766814588",
+			"title": "E-Cigarette Use Causes a Unique Innate Immune Response in the Lung, Involving Increased Neutrophilic Activation and Altered Mucin Secretion",
+			"authors": [
+				"Boris Reidel",
+				"Giorgia Radicioni",
+				"Phillip W. Clapp",
+				"Amina A. Ford"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1164/rccm.201708-1590oc",
+			"journal": {
+				"id": "S93356601",
+				"retracted": false
+			},
+			"citations": 315,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "mixed",
+				"indirect": false
+			},
+			"quote": "Together, our results indicate that e-cigarette use alters the profile of innate defense proteins in airway secretions, inducing similar and unique changes relative to cigarette smoking. These data challenge the concept that e-cigarettes are a healthier alternative to cigarettes",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 44,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2586197770",
+			"title": "Nicotine, Carcinogen, and Toxin Exposure in Long-Term E-Cigarette and Nicotine Replacement Therapy Users",
+			"authors": [
+				"Lion Shahab",
+				"Maciej Ł. Goniewicz",
+				"Benjamin C. Blount",
+				"Jamie Brown"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.7326/m16-1107",
+			"journal": {
+				"id": "S119722071",
+				"retracted": false
+			},
+			"citations": 484,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Long-term NRT-only and e-cigarette–only use, but not dual use of NRTs or e-cigarettes with combustible cigarettes, is associated with substantially reduced levels of measured carcinogens and toxins relative to smoking only combustible cigarettes",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 181,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2888590649",
+			"title": "Association Between Electronic Cigarette Use and Myocardial Infarction",
+			"override_seed": 0.2,
+			"authors": [
+				"Talal Alzahrani",
+				"Ivan Peña",
+				"Nardos Temesgen",
+				"Stanton A. Glantz"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1016/j.amepre.2018.05.004",
+			"journal": {
+				"id": "S195759676",
+				"retracted": false
+			},
+			"citations": 326,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The point estimate of the odds of MI associated with daily e-cigarette use is lower than current cigarette smoking in the adjusted models",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 69046,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2882999281",
+			"title": "Association of Electronic Cigarette Use With Smoking Habits, Demographic Factors, and Respiratory Symptoms",
+			"authors": [
+				"Linnéa Hedman",
+				"Helena Bäckman",
+				"Caroline Stridsman",
+				"Jenny A. Bosson"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1001/jamanetworkopen.2018.0789",
+			"journal": {
+				"id": "S4210217848",
+				"retracted": false
+			},
+			"citations": 104,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Having any respiratory symptom was significantly associated with dual use, smoking only, and former smoking without e-cigarette use, while former smoking with e-cigarette use and nonsmoking with e-cigarette use did not reach statistical significance",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 30272,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2904941043",
+			"title": "Comparison of Nicotine and Toxicant Exposure in Users of Electronic Cigarettes and Combustible Cigarettes",
+			"authors": [
+				"Maciej Ł. Goniewicz",
+				"Danielle M. Smith",
+				"Kathryn C. Edwards",
+				"Benjamin C. Blount"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1001/jamanetworkopen.2018.5937",
+			"journal": {
+				"id": "S4210217848",
+				"retracted": false
+			},
+			"citations": 467,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Exclusive use of e-cigarettes appears to result in measurable exposure to known tobacco-related toxicants, generally at lower levels than cigarette smoking",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 5105,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W2887257221",
+			"title": "Comparison of the effects of e-cigarette vapor with cigarette smoke on lung function and inflammation in mice",
+			"authors": [
+				"Constantinos Glynos",
+				"Sofia‐Iris Bibli",
+				"Paraskevi Κatsaounou",
+				"Alexandra Pavlidou"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1152/ajplung.00389.2017",
+			"journal": {
+				"id": "S47245711",
+				"retracted": false
+			},
+			"citations": 182,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "mixed",
+				"indirect": false
+			},
+			"quote": "We conclude that both e-cig vaping and conventional cigarette smoking negatively impact lung biology",
+			"type": "ClinicalTrial",
+			"on": "Animals",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "YesButOppositeResults",
+			"notes": []
+		},
+		{
+			"id": "W2899690421",
+			"title": "E-cigarette use and respiratory disorder in an adult sample",
+			"override_seed": 0,
+			"authors": [
+				"Thomas A. Wills",
+				"Ian Pagano",
+				"Rebecca Williams",
+				"Elizabeth Tam"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1016/j.drugalcdep.2018.10.004",
+			"journal": {
+				"id": "S109998069",
+				"retracted": false
+			},
+			"citations": 175,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_difference",
+				"indirect": false
+			},
+			"quote": "In the multivariable analysis for chronic pulmonary disorder, e-cigarette use and smoking showed significant independent associations with respiratory disorder; the effect size was larger for smoking than for e cigarettes but both were significant",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 8087,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"title": "E-cigarettes and heated tobacco products: evidence review",
+			"institution": {
+				"name": "Public Health England",
+				"acronym": "PHE"
+			},
+			"authors": [],
+			"year": 2018,
+			"link": "https://www.gov.uk/government/publications/e-cigarettes-and-heated-tobacco-products-evidence-review",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 12,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Vaping poses only a small fraction of the risks of smoking and switching completely from smoking to vaping conveys substantial health benefits over continued smoking",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 100,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2765307661",
+			"title": "E-Cigarettes: Use, Effects on Smoking, Risks, and Policy Implications",
+			"override_seed": 0.9,
+			"authors": [
+				"Stanton A. Glantz",
+				"David Bareham"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1146/annurev-publhealth-040617-013757",
+			"journal": {
+				"id": "S113591250",
+				"retracted": false
+			},
+			"citations": 458,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_difference",
+				"indirect": false
+			},
+			"quote": "On the basis of the short-term effects that have been identified to date, e-cigarettes likely have cardiovascular and noncancer lung disease risks similar to those associated with smoking conventional cigarettes",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 100,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2888380009",
+			"title": "Health effects in COPD smokers who switch to electronic cigarettes: a retrospective-prospective 3-year follow-up",
+			"authors": [
+				"Riccardo Polosa",
+				"Jaymin B. Morjaria",
+				"Umberto Prosperini",
+				"Cristina Russo"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.2147/copd.s161138",
+			"journal": {
+				"id": "S105319247",
+				"retracted": false
+			},
+			"citations": 78,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The present study suggests that EC use [instead of smoking] may ameliorate objective and subjective COPD outcomes and that the benefits gained may persist long-term",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 44,
+			"p_value": {
+				"value": 0.004,
+				"less_than": false
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2887189186",
+			"title": "Impact of Tobacco Versus Electronic Cigarette Smoking on Platelet Function",
+			"authors": [
+				"Cristina Nocella",
+				"Giuseppe Biondi‐Zoccai",
+				"Sebastiano Sciarretta",
+				"Mariangela Peruzzi"
+			],
+			"year": 2018,
+			"link": "https://doi.org/10.1016/j.amjcard.2018.07.029",
+			"journal": {
+				"id": "S185186944",
+				"retracted": false
+			},
+			"citations": 88,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The effects of E-cigarettes were less pronounced than those of T cigarettes in nonsmokers. Conversely, the effect of E-cigarettes in smokers showed a less detrimental impact than T-cigarettes but only for platelet aggregation",
+			"type": "ClinicalTrial",
+			"on": "Humans",
+			"sample_size": 40,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4244204671",
+			"title": "Public Health Consequences of E-Cigarettes",
+			"override_seed": 0.9,
+			"institution": {
+				"name": "National Academies of Sciences, Engineering, and Medicine",
+				"acronym": "NASEM"
+			},
+			"authors": [],
+			"year": 2018,
+			"link": "https://doi.org/10.17226/24952",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 1153,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The evidence about harm reduction suggests that across a range of studies and outcomes, e-cigarettes pose less risk to an individual than combustible tobacco cigarettes",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 400,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2994948693",
+			"title": "A Randomized Clinical Trial Examining the Effects of Instructions for Electronic Cigarette Use on Smoking-Related Behaviors and Biomarkers of Exposure",
+			"authors": [
+				"Dorothy K. Hatsukami",
+				"Ellen Meier",
+				"Bruce R. Lindgren",
+				"Amanda J. Anderson"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1093/ntr/ntz233",
+			"journal": {
+				"id": "S62426309",
+				"retracted": false
+			},
+			"citations": 56,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Smokers instructed and incentivized to completely switch to e cigarettes resulted in lower smoking rates and greater reductions in exposures to harmful chemicals",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 264,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2913337886",
+			"title": "A Randomized Trial of E-Cigarettes versus Nicotine-Replacement Therapy",
+			"authors": [
+				"Peter Hájek",
+				"Anna Phillips‐Waller",
+				"Dunja Przulj",
+				"Francesca Pesola"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1056/nejmoa1808779",
+			"journal": {
+				"id": "S62468778",
+				"retracted": false
+			},
+			"citations": 1324,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The e-cigarette group reported greater declines in the incidence of cough and phlegm production from baseline to 52 weeks than did the nicotine-replacement group. There were no significant between group differences in the incidence of wheezing or shortness of breath",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 886,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2980933496",
+			"title": "Adult E-Cigarettes Use Associated with a Self-Reported Diagnosis of COPD",
+			"override_seed": 0.5,
+			"authors": [
+				"Mario F. Perez",
+				"Nkiruka C. Atuegwu",
+				"Erin L. Mead",
+				"Cheryl Oncken"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.3390/ijerph16203938",
+			"journal": {
+				"id": "S15239247",
+				"retracted": false
+			},
+			"citations": 51,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "smoking_but_mixed",
+				"indirect": false
+			},
+			"quote": "[Table 3 shows a much stronger COPD association for smoking, but for asthma the difference is smaller or even reversed in some cases]",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 214945,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2921911797",
+			"title": "Association Between E-Cigarette Use and Cardiovascular Disease Among Never and Current Combustible-Cigarette Smokers",
+			"authors": [
+				"Albert D. Osei",
+				"Mohammadhassan Mirbolouk",
+				"Olusola A. Orimoloye",
+				"Omar Dzaye"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1016/j.amjmed.2019.02.016",
+			"journal": {
+				"id": "S186920367",
+				"retracted": false
+			},
+			"citations": 188,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "We found no significant association between e-cigarette use and cardiovascular disease among never combustible-cigarette smokers [compared to an odds ratio of ≈2 for smokers according to Figure 1]. [...] [This] may be due to the younger age of this group. [...] Occasional use of e-cigarettes is the predominant pattern in never smokers, leading to low intensity of use",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 449092,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2996546933",
+			"title": "Association of E-Cigarette Use With Respiratory Disease Among Adults: A Longitudinal Analysis",
+			"authors": [
+				"Dharma Nand Bhatta",
+				"Stanton A. Glantz"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1016/j.amepre.2019.07.028",
+			"journal": {
+				"id": "S195759676",
+				"retracted": false
+			},
+			"citations": 257,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "This result suggests that switching from combustible tobacco to e-cigarettes would lower risk of developing respiratory disease",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 32320,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2913397411",
+			"title": "Association of smoking and electronic cigarette use with wheezing and related respiratory symptoms in adults: cross-sectional results from the Population Assessment of Tobacco and Health (PATH) study, wave 2",
+			"authors": [
+				"Dongmei Li",
+				"Isaac K. Sundar",
+				"Scott McIntosh",
+				"Deborah J. Ossip"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1136/tobaccocontrol-2018-054694",
+			"journal": {
+				"id": "S149729710",
+				"retracted": false
+			},
+			"citations": 120,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Current vapers had lower risk in wheezing and related respiratory symptoms than current smokers or dual users but higher than non-users. Both dual use and smoking significantly increased the risk of wheezing and related respiratory symptoms",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 28171,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2988313215",
+			"title": "Cardiovascular Effects of Switching From Tobacco Cigarettes to Electronic Cigarettes",
+			"authors": [
+				"George Casella",
+				"Muhammad Hussain",
+				"Thenmalar Vadiveloo",
+				"Sheila Ireland"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1016/j.jacc.2019.09.067",
+			"journal": {
+				"id": "S60865174",
+				"retracted": false
+			},
+			"citations": 200,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "TC smokers, particularly females, demonstrate significant improvement in vascular health within 1 month of switching from TC to EC. Switching from TC to EC may be considered a harms reduction measure",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 114,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2976191070",
+			"title": "Is e-cigarette use associated with coronary heart disease and myocardial infarction? Insights from the 2016 and 2017 National Health Interview Surveys",
+			"authors": [
+				"Konstantinos Farsalinos",
+				"Riccardo Polosa",
+				"Fabio Cibella",
+				"Raymond Niaura"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1177/2040622319877741",
+			"journal": {
+				"id": "S101854828",
+				"retracted": false
+			},
+			"citations": 57,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The pooled analysis of the 2016 and 2017 NHIS showed no association between e-cigarette use and MI or CHD. The associations between established risk factors, including smoking, and both conditions were remarkably consistent",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 59770,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W2996490128",
+			"title": "Use of Electronic Cigarettes and Self-Reported Chronic Obstructive Pulmonary Disease Diagnosis in Adults",
+			"authors": [
+				"Zidian Xie",
+				"Deborah J. Ossip",
+				"Irfan Rahman",
+				"Dongmei Li"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1093/ntr/ntz234",
+			"journal": {
+				"id": "S62426309",
+				"retracted": false
+			},
+			"citations": 73,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Compared to current smokers, current vapers who were either ex-smokers or never smoked showed significantly lower aORs, 0.85 and 0.39 respectively, suggesting that vaping has significantly lower association with self-reported COPD diagnosis compared to smoking",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 887182,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2975098224",
+			"title": "What are the respiratory effects of e-cigarettes?",
+			"authors": [
+				"Jeffrey E. Gotts",
+				"Sven‐Eric Jordt",
+				"Rob McConnell",
+				"Robert Tarran"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.1136/bmj.l5275",
+			"journal": {
+				"id": "S4393917726",
+				"retracted": false
+			},
+			"citations": 453,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_results",
+				"indirect": false
+			},
+			"quote": "We conclude that current knowledge of these effects is insufficient to determine whether the respiratory health effects of e-cigarette are less than those of combustible tobacco products",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 70,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"title": "WHO study group on tobacco product regulation. Report on the scientific basis of tobacco product regulation: seventh report of a WHO study group",
+			"institution": {
+				"name": "World Health Organization",
+				"acronym": "WHO"
+			},
+			"authors": [],
+			"year": 2019,
+			"link": "https://www.who.int/publications/i/item/who-study-group-on-tobacco-product-regulation-report-on-the-scientific-basis-of-tobacco-product-regulation-seventh-report-of-a-who-study-group",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 13,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Reviews of these studies have led various authors to conclude, with more or fewer caveats, that EN&NNDS are not harmless but are generally less dangerous than cigarettes, especially with regard to death from diseases associated with cigarette use",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 150,
+				"subpart": true
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2997885580",
+			"title": "Association Between E-Cigarette Use and Chronic Obstructive Pulmonary Disease by Smoking Status: Behavioral Risk Factor Surveillance System 2016 and 2017",
+			"authors": [
+				"Albert D. Osei",
+				"Mohammadhassan Mirbolouk",
+				"Olusola A. Orimoloye",
+				"Omar Dzaye"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1016/j.amepre.2019.10.014",
+			"journal": {
+				"id": "S195759676",
+				"retracted": false
+			},
+			"citations": 107,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "[Figure 1 shows an odds ratio of ≈2 for exclusive e-cigarette users and ≈4 for exclusive combustible cigarette smokers]",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 705159,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3091847179",
+			"title": "COPD smokers who switched to e-cigarettes: health outcomes at 5-year follow up",
+			"authors": [
+				"Riccardo Polosa",
+				"Jaymin B. Morjaria",
+				"Umberto Prosperini",
+				"Barbara Busà"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1177/2040622320961617",
+			"journal": {
+				"id": "S101854828",
+				"retracted": false
+			},
+			"citations": 71,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The present study suggests that EC use may ameliorate objective and subjective COPD outcomes, and that the benefits gained appear to persist long term. EC use for abstinence and smoking reduction may ameliorate some of the harm resulting from tobacco smoking in COPD patients",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 39,
+			"p_value": {
+				"value": 0.046,
+				"less_than": false
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W3100614931",
+			"title": "Effect of Pod e-Cigarettes vs Cigarettes on Carcinogen Exposure Among African American and Latinx Smokers",
+			"authors": [
+				"Kim Pulvers",
+				"Nicole L. Nollen",
+				"Myra Rice",
+				"Christopher H. Schmid"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1001/jamanetworkopen.2020.26324",
+			"journal": {
+				"id": "S4210217848",
+				"retracted": false
+			},
+			"citations": 84,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "This randomized clinical trial found that switching to NSPS e-cigarettes among adult smokers did not increase nicotine exposure and led to short-term reduction in the major pulmonary carcinogen, NNAL, compared with continued smoking",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 186,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3038983180",
+			"title": "Is vaping better than smoking for cardiorespiratory and muscle function?",
+			"authors": [
+				"Mohammad Z. Darabseh",
+				"James Selfe",
+				"Christopher I. Morse",
+				"Hans Degens"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.4081/mrm.2020.674",
+			"journal": {
+				"id": "S160879556",
+				"retracted": false
+			},
+			"citations": 17,
+			"results": {
+				"consensus": "no_difference",
+				"conclusion": "no_difference",
+				"indirect": false
+			},
+			"quote": "Vaping has been found to cause similar effects as smoking on lung function and cardiovascular function",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 15,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2999048419",
+			"title": "Risk of Stroke With E-Cigarette and Combustible Cigarette Use in Young Adults",
+			"authors": [
+				"Tarang Parekh",
+				"Sahithi Pemmasani",
+				"Rupak Desai"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1016/j.amepre.2019.10.008",
+			"journal": {
+				"id": "S195759676",
+				"retracted": false
+			},
+			"citations": 92,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Odds of stroke were lower for sole e-cigarette users versus current sole combustible cigarette users",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 161529,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3161678628",
+			"title": "An updated overview of e-cigarette impact on human health",
+			"authors": [
+				"Patrice Marqués",
+				"Laura Piqueras",
+				"María‐Jesús Sanz"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1186/s12931-021-01737-5",
+			"journal": {
+				"id": "S186153782",
+				"retracted": false
+			},
+			"citations": 369,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Based on the studies carried out so far, it seems that e-cigarette consumption is less toxic than tobacco smoking",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 80,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W3119590770",
+			"title": "Association of Cigarette and Electronic Cigarette Use Patterns With Levels of Inflammatory and Oxidative Stress Biomarkers Among US Adults",
+			"override_seed": 0.6,
+			"authors": [
+				"Andrew Stokes",
+				"Wubin Xie",
+				"Anna E Wilson",
+				"Hanqi Yang"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1161/circulationaha.120.051551",
+			"journal": {
+				"id": "S116251202",
+				"retracted": false
+			},
+			"citations": 53,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Compared with exclusive smokers, exclusive e-cigarette users had significantly lower levels of almost all inflammatory and oxidative stress biomarkers other than high-sensitivity C-reactive protein",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 7130,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"title": "Avis relatif aux bénéfices-risques de la cigarette électronique",
+			"institution": {
+				"name": "Haut Conseil de la Santé Publique",
+				"acronym": "HCSP"
+			},
+			"authors": [],
+			"year": 2021,
+			"link": "https://www.hcsp.fr/explore.cgi/avisrapportsdomaine?clefr=1138",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 4,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "On peut faire l’hypothèse que la consommation de SEDEN seul est moins à risque que la consommation de tabac mais plus à risque que l’absence de consommation [It can be assumed that consuming ENDS alone is less risky than smoking tobacco but more risky than not consuming anything at all]",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 66,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4287462074",
+			"title": "WHO study group on tobacco product regulation. Report on the scientific basis of tobacco product regulation: eighth report of a WHO study group",
+			"institution": {
+				"name": "World Health Organization",
+				"acronym": "WHO"
+			},
+			"authors": [],
+			"year": 2021,
+			"link": "https://www.who.int/publications/i/item/9789240022720",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 3,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Modelling and risk quantification have confirmed the exceptionally high adverse effects of tobacco cigarettes in relation to ENDS",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 300,
+				"subpart": true
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4298393805",
+			"title": "Association of tobacco product use with chronic obstructive pulmonary disease (COPD) prevalence and incidence in Waves 1 through 5 (2013–2019) of the Population Assessment of Tobacco and Health (PATH) Study",
+			"authors": [
+				"Laura M. Paulin",
+				"Michael J. Halenar",
+				"Kathryn C. Edwards",
+				"Kristin Lauten"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1186/s12931-022-02197-1",
+			"journal": {
+				"id": "S186153782",
+				"retracted": false
+			},
+			"citations": 24,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_difference",
+				"indirect": false
+			},
+			"quote": "COPD prevalence was not found to be lower in exclusive e-cigarette users compared to exclusive cigarette smokers",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 13752,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W4221013247",
+			"title": "Cardiovascular Outcomes among Combustible-Tobacco and Electronic Nicotine Delivery System (ENDS) Users in Waves 1 through 5 of the Population Assessment of Tobacco and Health (PATH) Study, 2013–2019",
+			"override_seed": 0,
+			"authors": [
+				"Martin C. Mahoney",
+				"Cheryl Rivard",
+				"Heather L. Kimmel",
+				"Hoda T. Hammad"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.3390/ijerph19074137",
+			"journal": {
+				"id": "S15239247",
+				"retracted": false
+			},
+			"citations": 11,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_difference",
+				"indirect": false
+			},
+			"quote": "We did not find sufficient evidence to suggest that transitioning to exclusive use of ENDS significantly changes the odds of CVD incidence",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 7820,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W4307348284",
+			"title": "Chronic E-Cigarette Use Impairs Endothelial Function on the Physiological and Cellular Levels",
+			"authors": [
+				"Leila Mohammadi",
+				"Daniel D Han",
+				"Fengyun Xu",
+				"Abel Huang"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1161/atvbaha.121.317749",
+			"journal": {
+				"id": "S3485792",
+				"retracted": false
+			},
+			"citations": 81,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "mixed",
+				"indirect": false
+			},
+			"quote": "FMD was reduced in both e-cigarette users and cigarette smokers relative to the nonusers. [...] E-cigarette user serum, but not smoker serum, increased microvascular endothelial cell permeability in a process involving RAGE and its ligands. [...] Some biomarkers that were unchanged in e-cigarette users were elevated in cigarette smokers",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 120,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4295011199",
+			"title": "E-cigarettes and myocardial infarction: A systematic review and meta-analysis",
+			"authors": [
+				"Akash Sharma",
+				"Ishita Gupta",
+				"U Venkatesh",
+				"AK Singh"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1016/j.ijcard.2022.09.007",
+			"journal": {
+				"id": "S13342628",
+				"retracted": false
+			},
+			"citations": 16,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Using ecigarettes reduces the risk of MI by half in comparison to traditional smoking",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"estimate": false,
+				"count": 4,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": 585306,
+			"p_value": {
+				"value": 0.02,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4226213346",
+			"title": "E-Cigarettes—a review of the evidence—harm versus harm reduction",
+			"authors": [
+				"Susan Feeney",
+				"Victoria Rossetti",
+				"Jill Terrien"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1177/1179173x221087524",
+			"journal": {
+				"id": "S4210196334",
+				"retracted": false
+			},
+			"citations": 62,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "There appears to be less exposure to fewer harmful substances with e cigarettes use when compared to traditional combustible cigarettes and for these reasons e-cigarettes are most likely less harmful than traditional combustible cigarettes",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 32,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4281867326",
+			"title": "Effect Comparison of E-Cigarette and Traditional Smoking and Association with Stroke—A Cross-Sectional Study of NHANES",
+			"authors": [
+				"Urvish Patel",
+				"Neel Patel",
+				"Mahika Khurana",
+				"Akshada Parulekar"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.3390/neurolint14020037",
+			"journal": {
+				"id": "S1017704",
+				"retracted": false
+			},
+			"citations": 25,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "vaping_but_mixed",
+				"indirect": false
+			},
+			"quote": "Though stroke was more prevalent in traditional smokers, the incidence of stroke was early-in-onset and was strongly associated with e-cigarette use compared to traditional smokers",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 79825,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Implausible sample size",
+					"description": "The paper claims 266,058 NHANES respondents and analyzes 79,825 smokers, while the CDC documents report only 18,248 respondents for the same period",
+					"link": "https://www.cdc.gov/nchs/hus/sources-definitions/nhanes.htm",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"id": "W4288855261",
+			"title": "Longitudinal Associations Between Exclusive and Dual Use of Electronic Nicotine Delivery Systems and Cigarettes and Self-Reported Incident Diagnosed Cardiovascular Disease Among Adults",
+			"authors": [
+				"Jana L. Hirschtick",
+				"Steven Cook",
+				"Akash Patel",
+				"Geoffrey D. Barnes"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1093/ntr/ntac182",
+			"journal": {
+				"id": "S62426309",
+				"retracted": false
+			},
+			"citations": 12,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Compared to non-use, exclusive cigarette use was associated with an increased risk of self-reported incident diagnosed cardiovascular disease over a 5-year period, while ENDS use was not associated with a statistically significant increase in the outcomes",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 22107,
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4291754731",
+			"title": "Medium- and longer-term cardiovascular effects of e-cigarettes in adults making a stop-smoking attempt: a randomized controlled trial",
+			"authors": [
+				"Markos Klonizakis",
+				"Anil Gumber",
+				"Emma McIntosh",
+				"Leonie S. Brose"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1186/s12916-022-02451-9",
+			"journal": {
+				"id": "S135560524",
+				"retracted": false
+			},
+			"citations": 31,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Smokers attempting to quit experienced a positive cardiovascular impact after both a 3- and 6-month period. None of the groups (i.e., nicotine-containing and nicotine-free e-cigarettes or NRT) offered superior cardiovascular benefits to the others",
+			"type": "RandomizedControlledTrial",
+			"on": "Humans",
+			"sample_size": 248,
+			"p_value": {
+				"value": 0.0001,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"title": "Nicotine vaping in England: 2022 evidence update",
+			"institution": {
+				"name": "Office for Health Improvement and Disparities",
+				"acronym": "OHID"
+			},
+			"authors": [],
+			"year": 2022,
+			"link": "https://www.gov.uk/government/publications/nicotine-vaping-in-england-2022-evidence-update",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 171,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Based on the reviewed evidence, we believe that the \"at least 95% less harmful estimate\" (that is, smoking is at least 20 times more harmful to users than vaping) remains broadly accurate at least over short- and medium-term periods, but it might now be more appropriate and unifying to summarise our findings using our other firm statement: that vaping poses only a small fraction of the risks of smoking",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 413,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4323363305",
+			"title": "Cigarettes, ENDS Use, and Chronic Obstructive Pulmonary Disease Incidence: A Prospective Longitudinal Study",
+			"authors": [
+				"Steven Cook",
+				"Jana L. Hirschtick",
+				"Nancy L. Fleischer",
+				"Douglas A. Arenberg"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1016/j.amepre.2023.01.038",
+			"journal": {
+				"id": "S195759676",
+				"retracted": false
+			},
+			"citations": 19,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "ENDS use did not significantly increase the risk of self-reported incident COPD over a 5-year period once current smoking status and cigarette pack years were included. Cigarette pack years, by contrast, remained associated with a net increase in COPD incidence risk",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 9861,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4372332628",
+			"title": "Comparison of biomarkers of exposure among US adult smokers, users of electronic nicotine delivery systems, dual users and nonusers, 2018–2019",
+			"authors": [
+				"Nathan M. Holt",
+				"Saul Shiffman",
+				"Ryan A. Black",
+				"Nicholas I. Goldenson"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1038/s41598-023-34427-x",
+			"journal": {
+				"id": "S196734849",
+				"retracted": false
+			},
+			"citations": 30,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "In this representative sample of US adults, exclusive use of ENDS (vs. cigarette smoking) was associated with much lower exposures to many harmful chemicals associated with smoking-related disease. BOE levels in dual users were directly related to their cigarette consumption. These BOE data provide further evidence that ENDS expose users to substantially lower levels of toxicants than combustible cigarettes, confirming their potential for harm reduction",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 3453,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
+			"id": "W4327900109",
+			"title": "Electronic cigarettes and health outcomes: umbrella and systematic review of the global evidence",
+			"authors": [
+				"Emily Banks",
+				"Amelia Yazidjoglou",
+				"Sinan Brown",
+				"Nhat Mai Nguyen"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.5694/mja2.51890",
+			"journal": {
+				"id": "S13978405",
+				"retracted": false
+			},
+			"citations": 163,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "no_results",
+				"indirect": false
+			},
+			"quote": "There is insufficient evidence regarding changes in respiratory symptoms, exacerbations of respiratory disease, lung function, and other respiratory measures in smokers who switch to exclusively using nicotine e-cigarettes",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 400,
+				"subpart": true
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4403600042",
+			"title": "Breaking the Myths Around e-Cigarettes: A Narrative Review Exploring the Impact of e-Cigarette on Human Health",
+			"authors": [
+				"Zareen Zohara",
+				"Alvi Azad"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.7759/cureus.72039",
+			"journal": {
+				"id": "S2738950867",
+				"retracted": false
+			},
+			"citations": 1,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Though there are reduced effects from e-cigarettes when compared with the traditional ones, there is an easy availability of e-cigarettes, which makes even the non-smokers try it for recreational purposes",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 30,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4391577851",
+			"title": "Comparative systematic review on the safety of e-cigarettes and conventional cigarettes",
+			"authors": [
+				"Josef Yayan",
+				"Karl-Josef Franke",
+				"Christian Biancosino",
+				"Kurt Rasche"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1016/j.fct.2024.114507",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": 16,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The reviewed studies consistently suggest that e-cigarettes may offer a less harmful alternative for adult smokers who are unable or unwilling to quit smoking",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 11,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "DiverseSubjects",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4402757690",
+			"title": "Comparing E-Cigarettes and Traditional Cigarettes in Relation to Myocardial Infarction, Arrhythmias, and Sudden Cardiac Death: A Systematic Review and Meta-Analysis",
+			"authors": [
+				"Mohammed Ibrahim Yacoub",
+				"Aziz Aslanoğlu",
+				"Fadi Khraim",
+				"Anas Alsharawneh"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1177/10998004241287782",
+			"journal": {
+				"id": "S144954103",
+				"retracted": false
+			},
+			"citations": 10,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "While e-cigarettes may present a lower cardiovascular risk compared to traditional cigarettes, they are not without harm. Both products are linked to increased risks of myocardial infarction and arrhythmias, though traditional cigarettes pose a higher overall threat",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"estimate": false,
+				"count": 20,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NoAccess",
+			"p_value": "NoAccess",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4404415562",
+			"title": "Comparing self-rated health among exclusive e-cigarette users and traditional cigarette smokers: an analysis of the Health Survey for England 2019",
+			"authors": [
+				"Yusuff Adebayo Adebisi",
+				"Duaa Abdullah Bafail"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1007/s11739-024-03817-y",
+			"journal": {
+				"id": "S140847651",
+				"retracted": false
+			},
+			"citations": 6,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Exclusive e-cigarette users were significantly more likely to report good health compared to exclusive cigarette smokers",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 1291,
+			"p_value": {
+				"value": 0.014,
+				"less_than": false
+			},
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"id": "W4401101487",
+			"title": "Direct health implications of e-cigarette use: a systematic scoping review with evidence assessment",
+			"authors": [
+				"Juan S. Izquierdo‐Condoy",
+				"Patricio Naranjo-Lara",
+				"Estefanía Morales-Lapo",
+				"Marlon R. Hidalgo"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.3389/fpubh.2024.1427752",
+			"journal": {
+				"id": "S2595931848",
+				"retracted": false
+			},
+			"citations": 13,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Smokers or former smokers who switch to e-cigarettes may reduce their exposure to carcinogens and lower their risk of developing severe health issues associated with conventional smoking",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 33,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": 76004,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4401512551",
+			"title": "Epigenomic Dysregulation in Youth Vapers: Implications for Disease Risk Assessment",
+			"authors": [
+				"Stella Tommasi",
+				"Luciano Brocchieri",
+				"Silvia Tornaletti",
+				"Ahmad Besaratinia"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1165/rcmb.2024-0207oc",
+			"journal": {
+				"id": "S171155024",
+				"retracted": false
+			},
+			"citations": 3,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking_but_mixed",
+				"indirect": false
+			},
+			"quote": "Notwithstanding the more than threefold difference in the number of DMRs between vapers and smokers (831 vs. 2,863), we observed striking similarities in the distribution and patterns of DNA methylation between the two groups in terms of DMRs’ characteristics, associated genes and TF motifs, GO terms, and affected molecular pathways",
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": 30,
+			"p_value": {
+				"value": 0.05,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4405618660",
+			"title": "Functionally important respiratory symptoms and continued cigarette use versus e-cigarette switching: population assessment of tobacco and health study waves 2-6",
+			"authors": [
+				"James D. Sargent",
+				"Kristin Lauten",
+				"Kathryn C. Edwards",
+				"Susanne E. Tanski"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1016/j.eclinm.2024.102951",
+			"journal": {
+				"id": "S2898347799",
+				"retracted": false
+			},
+			"citations": 2,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Switching completely from past 30-day use of cigarettes to e cigarettes had short-term beneficial associations with functionally important respiratory symptoms similar to quitting tobacco completely",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 5653,
+			"p_value": {
+				"value": 0.009,
+				"less_than": false
+			},
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4392185801",
+			"title": "Population-Based Disease Odds for E-Cigarettes and Dual Use versus Cigarettes",
+			"authors": [
+				"Stanton A. Glantz",
+				"Nhung Nguyen",
+				"André Luiz Oliveira da Silva"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1056/evidoa2300229",
+			"journal": {
+				"id": "S4210196357",
+				"retracted": false
+			},
+			"citations": 79,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "The odds of disease associated with e-cigarette use were not different from those associated with cigarette smoking for cardiovascular diseases, stroke, and metabolic dysfunction but were lower for asthma, COPD, and oral disease",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"estimate": false,
+				"count": 107,
+				"subpart": false
+			},
+			"type": "CrossSectionalStudy",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4403613465",
+			"title": "Prognosis after switching to electronic cigarettes following percutaneous coronary intervention: a Korean nationwide study",
+			"authors": [
+				"Danbee Kang",
+				"Ki Hong Choi",
+				"Hyun-Soo Kim",
+				"Hye‐Jeong Park"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1093/eurheartj/ehae705",
+			"journal": {
+				"id": "S181568219",
+				"retracted": false
+			},
+			"citations": 12,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Switching to E-cigarettes or quitting smoking was associated with a significantly lower risk of major adverse cardiac events (MACE) than continued combustible cigarette use",
+			"type": "CohortStudy",
+			"on": "Humans",
+			"sample_size": 17973,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4406930146",
+			"title": "Electronic cigarettes for smoking cessation",
+			"authors": [
+				"Nicola Lindson",
+				"Ailsa R. Butler",
+				"Hayden McRobbie",
+				"Chris Bullen"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.1002/14651858.cd010216.pub9",
+			"journal": {
+				"id": "S4210172715",
+				"retracted": false
+			},
+			"citations": 60,
+			"results": {
+				"consensus": "smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "In some studies, reduced toxin concentrations and biomarkers of harm were observed in people who smoked and switched to vaping, consistent with reductions seen in people who stopped smoking without EC",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"estimate": false,
+				"count": 90,
+				"subpart": true
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": 29044,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
+}
