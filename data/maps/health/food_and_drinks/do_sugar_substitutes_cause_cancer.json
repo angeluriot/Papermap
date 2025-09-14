@@ -21,35 +21,50 @@
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of sugar substitutes on cancer",
 			"color": "Gray",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"no": {
 			"emoji": "👎",
 			"text": "No",
 			"description": "The literature suggests that sugar substitutes do not cause cancer",
 			"color": "Red",
-			"unavailable": ["no_unlike_literature", "yes"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
 		},
 		"towards_no": {
 			"emoji": "⬅️",
 			"text": "Towards no",
 			"description": "The literature suggests that sugar substitutes probably don't cause cancer, but more research is needed",
 			"color": "Red1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"towards_yes": {
 			"emoji": "➡️",
 			"text": "Towards yes",
 			"description": "The literature suggests that sugar substitutes may cause cancer, but more research is needed",
 			"color": "Green1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"yes": {
 			"emoji": "👍",
 			"text": "Yes",
 			"description": "The literature suggests that sugar substitutes cause cancer",
 			"color": "Green",
-			"unavailable": ["no", "yes_unlike_literature"]
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
 		}
 	},
 	"conclusion_groups": {
@@ -2381,6 +2396,40 @@
 			"type": "DiverseObservationalStudies",
 			"on": "Humans",
 			"sample_size": 3739775,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"title": "Health effects of the use of non-sugar sweeteners: a systematic review and meta-analysis",
+			"institution": {
+				"name": "World Health Organization",
+				"acronym": "WHO"
+			},
+			"authors": [],
+			"year": 2022,
+			"link": "https://www.who.int/publications/i/item/9789240046429",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 168,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no_but_mixed_results",
+				"indirect": false
+			},
+			"quote": "No significant association was observed between higher intakes of primarily NSS-containing beverages and any type of cancer [...] [or] cancer mortality. [...] Subgroup analysis suggests that tabletop use of NSS, particularly saccharin, may be associated with bladder cancer. [...] However, only one or two studies contributed data to each of these results, so they must be interpreted with caution. All other results were nonsignificant",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": false,
+				"estimate": false,
+				"count": 283,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
 			"notes": []

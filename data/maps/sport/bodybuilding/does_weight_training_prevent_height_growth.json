@@ -23,35 +23,50 @@
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of weight training on height growth",
 			"color": "Gray",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"no": {
 			"emoji": "👎",
 			"text": "No",
 			"description": "The literature suggests that weight training does not prevent height growth",
 			"color": "Red",
-			"unavailable": ["no_unlike_literature", "yes"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
 		},
 		"towards_no": {
 			"emoji": "⬅️",
 			"text": "Towards no",
 			"description": "The literature suggests that weight training probably doesn't prevent height growth, but more research is needed",
 			"color": "Red1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"towards_yes": {
 			"emoji": "➡️",
 			"text": "Towards yes",
 			"description": "The literature suggests that weight training may prevent height growth, but more research is needed",
 			"color": "Green1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"yes": {
 			"emoji": "👍",
 			"text": "Yes",
 			"description": "The literature suggests that weight training prevents height growth",
 			"color": "Green",
-			"unavailable": ["no", "yes_unlike_literature"]
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
 		}
 	},
 	"conclusion_groups": {

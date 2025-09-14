@@ -19,35 +19,50 @@
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of vaccines on autism",
 			"color": "Gray",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"no": {
 			"emoji": "👎",
 			"text": "No",
 			"description": "The literature suggests that vaccines do not cause autism",
 			"color": "Red",
-			"unavailable": ["no_unlike_literature", "yes"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
 		},
 		"towards_no": {
 			"emoji": "⬅️",
 			"text": "Towards no",
 			"description": "The literature suggests that vaccines probably don't cause autism, but more research is needed",
 			"color": "Red1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"towards_yes": {
 			"emoji": "➡️",
 			"text": "Towards yes",
 			"description": "The literature suggests that vaccines may cause autism, but more research is needed",
 			"color": "Green1H",
-			"unavailable": ["no_unlike_literature", "yes_unlike_literature"]
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
 		},
 		"yes": {
 			"emoji": "👍",
 			"text": "Yes",
 			"description": "The literature suggests that vaccines cause autism",
 			"color": "Green",
-			"unavailable": ["no", "yes_unlike_literature"]
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
 		}
 	},
 	"conclusion_groups": {
@@ -462,6 +477,41 @@
 			"type": "CaseControlStudy",
 			"on": "Humans",
 			"sample_size": 355,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4299526172",
+			"title": "Immunization Safety Review: Measles-Mumps-Rubella Vaccine and Autism",
+			"institution": {
+				"name": "National Academies of Sciences, Engineering, and Medicine",
+				"acronym": "NASEM"
+			},
+			"authors": [],
+			"year": 2001,
+			"link": "https://doi.org/10.17226/10101",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 136,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The Immunization Safety Review Committee concludes that the evidence favors rejection of a causal relationship at the population level between MMR vaccine and ASD",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 9,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
 			"notes": []
@@ -1529,6 +1579,41 @@
 				"reviews": false,
 				"estimate": true,
 				"count": 20,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W2516576737",
+			"title": "Immunization Safety Review: Vaccines and Autism",
+			"institution": {
+				"name": "National Academies of Sciences, Engineering, and Medicine",
+				"acronym": "NASEM"
+			},
+			"authors": [],
+			"year": 2004,
+			"link": "https://doi.org/10.17226/10997",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 174,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The committee concludes that the body of epidemiological evidence favors rejection of a causal relationship between the MMR vaccine and autism. The committee also concludes that the body of epidemiological evidence favors rejection of a causal relationship between thimerosal-containing vaccines and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 25,
 				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
@@ -3153,6 +3238,41 @@
 			]
 		},
 		{
+			"id": "W4253880250",
+			"title": "Adverse Effects of Vaccines: Evidence and Causality",
+			"institution": {
+				"name": "National Academies of Sciences, Engineering, and Medicine",
+				"acronym": "NASEM"
+			},
+			"authors": [],
+			"year": 2012,
+			"link": "https://doi.org/10.17226/13164",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 263,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The evidence favors rejection of a causal relationship between MMR vaccine and autism",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 200,
+				"subpart": true
+			},
+			"type": "DiverseTypes",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
 			"id": "W1980037492",
 			"title": "Dispelling vaccine myths: MMR and considerations for practicing pharmacists",
 			"authors": [
@@ -3365,6 +3485,41 @@
 			"type": "CaseControlStudy",
 			"on": "Humans",
 			"sample_size": 60,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4212918779",
+			"title": "The Childhood Immunization Schedule and Safety: Stakeholder Concerns, Scientific Evidence, and Future Studies",
+			"institution": {
+				"name": "National Academies of Sciences, Engineering, and Medicine",
+				"acronym": "NASEM"
+			},
+			"authors": [],
+			"year": 2013,
+			"link": "https://doi.org/10.17226/13563",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 60,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In summary, the evidence of an association between autism and the overall immunization schedule is limited both in quantity and in quality and does not suggest a causal association",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 45,
+				"subpart": true
+			},
+			"type": "DiverseObservationalStudies",
+			"on": "Humans",
+			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
 			"notes": []
