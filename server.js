@@ -160,12 +160,12 @@ app.set('trust proxy', true);
 
 app.use(async (req, res, next) =>
 {
+	const method = req.method;
+	const path = normalize_path(req.path || '/');
+	const endpoint = match_endpoint(method, path);
+
 	try
 	{
-		const method = req.method;
-		const path = normalize_path(req.path || '/');
-		const endpoint = match_endpoint(method, path);
-
 		if (endpoint.route !== null)
 		{
 			const name = `${method} ${path}`;
@@ -212,24 +212,19 @@ app.use(async (req, res, next) =>
 
 	catch (error)
 	{
-		return next(error);
+		console.error(error);
+
+		if (endpoint.route !== null)
+			newrelic.addCustomAttribute('custom_error', error.message);
+
+		if (error instanceof InvalidRequestError)
+			return res.status(400).send(error.message);
+
+		if (error instanceof TooManyRequestsError)
+			return res.status(429).send(error.message);
+
+		return res.status(500).send('Internal server error');
 	}
-});
-
-app.use((err, req, res, next) =>
-{
-	console.error(err);
-
-	if (endpoint.route !== null)
-		newrelic.addCustomAttribute('custom_error', err.message);
-
-	if (err instanceof InvalidRequestError)
-		return res.status(400).send(err.message);
-
-	if (err instanceof TooManyRequestsError)
-		return res.status(429).send(err.message);
-
-	return res.status(500).send('Internal server error');
 });
 
 app.use(handler);
