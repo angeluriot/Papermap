@@ -1,5 +1,5 @@
 import type { DataMap, Group } from '$lib/types/map';
-import { ConflictOfInterest, MissingReason, NoteImpact, PaperType, ReviewedPapersType, ReviewedStudiesOn, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
+import { Blinding, ConflictOfInterest, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type DataPaper } from '$lib/types/paper';
 import { z } from 'zod';
 import { InvalidInternalDataError } from '$lib/errors';
 import { Color } from '$lib/colors';
@@ -21,7 +21,7 @@ export const paper_schema = z.object({
 		id: z.string().nonempty(),
 		retracted: z.boolean(),
 	}).strict(),
-	citations: z.union([z.number().int().min(0), z.literal(MissingReason.NotSpecified)]),
+	citations: z.number().int().min(0),
 	results: z.object({
 		consensus: z.string().nonempty(),
 		conclusion: z.string().nonempty(),
@@ -35,8 +35,8 @@ export const paper_schema = z.object({
 		count: z.union([z.number().int().min(1), z.literal(MissingReason.NoAccess)]),
 		subpart: z.boolean(),
 	}).strict().optional(),
-	type: z.union([z.nativeEnum(PaperType), z.nativeEnum(ReviewedPapersType), z.nativeEnum(MissingReason)]),
-	on: z.union([z.nativeEnum(StudyOn), z.nativeEnum(ReviewedStudiesOn), z.nativeEnum(MissingReason)]),
+	type: z.union([z.nativeEnum(PaperType), z.nativeEnum(ReviewedPapersType), z.literal(MissingReason.NoAccess)]),
+	blinding: z.union([z.nativeEnum(Blinding), z.nativeEnum(ReviewedPapersBlinding), z.literal(MissingReason.NoAccess)]),
 	sample_size: z.union([z.number().int().min(1).optional(), z.nativeEnum(MissingReason)]),
 	p_value: z.union([z.object({
 		value: z.number().min(0).max(1),
@@ -113,15 +113,11 @@ const map_schema = z.object({
 		}).strict(),
 	),
 	type: z.object({
-		no_blind: z.boolean(),
 		no_random: z.boolean(),
 		no_causality: z.boolean(),
 		any: z.boolean(),
 	}).strict(),
-	on: z.object({
-		any_animal: z.boolean(),
-		any: z.boolean(),
-	}).strict(),
+	no_blinding: z.boolean(),
 	no_sample_size: z.boolean(),
 	papers: z.array(paper_schema),
 	fake: z.literal(true).optional(),

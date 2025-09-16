@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { get_available_conclusions, type Map } from '$lib/types/map';
-	import { ConflictOfInterest, Edit, JournalMissingReason, MissingReason, NoteImpact, paper_to_datapaper, PaperType, ReviewedPapersType, ReviewedStudiesOn, ReviewType, StudyOn, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
+	import { Blinding, ConflictOfInterest, Edit, JournalMissingReason, MissingReason, NoteImpact, paper_to_datapaper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
 	import SmallAdd from '$lib/svgs/small-add.svg';
 	import SmallRemove from '$lib/svgs/small-remove.svg';
 	import { TO_TEXT, TO_TEXT_PLURAL } from '../details/cards';
@@ -48,7 +48,7 @@
 	let review_count_missing_reason: string = $state('');
 	let review_subpart: boolean = $state(false);
 	let type: string = $state('');
-	let on: string = $state('');
+	let blinding: string = $state('');
 	let sample_size: number | null = $state(null);
 	let sample_size_missing_reason: string = $state(map.no_sample_size ? MissingReason.NotApplicable : '');
 	let p_value_prefix: string = $state('');
@@ -58,6 +58,10 @@
 	let notes: { title: string, description: string, link: string, impact: string }[] = $state([]);
 	let loading = $state(false);
 
+	const blinding_to_text = {
+		[Blinding.Single]: 'Participants',
+		[Blinding.Double]: 'Participants and investigators',
+	};
 	const impact_to_text = {
 		[NoteImpact.VeryNegative]: 'Very negative',
 		[NoteImpact.Negative]: 'Negative',
@@ -71,6 +75,9 @@
 
 	function to_id_text(id: string, plural: boolean): string[]
 	{
+		if ((blinding_to_text as any)[id] !== undefined)
+			return [id, (blinding_to_text as any)[id]];
+
 		if ((impact_to_text as any)[id] !== undefined)
 			return [id, (impact_to_text as any)[id]];
 
@@ -131,7 +138,7 @@
 			journal_search = '';
 			journal = cloneDeep(temp);
 			retracted = cloneDeep(paper.journal.retracted);
-			citations = cloneDeep(paper.citations !== MissingReason.NotSpecified ? paper.citations : null);
+			citations = cloneDeep(paper.citations);
 			consensus = cloneDeep(paper.results.consensus);
 			conclusion = cloneDeep(paper.results.conclusion);
 			indirect = cloneDeep(paper.results.indirect);
@@ -143,7 +150,7 @@
 			review_count_missing_reason = cloneDeep(paper.review && typeof paper.review.count !== 'number' ? paper.review.count : '');
 			review_subpart = cloneDeep(paper.review?.subpart ?? false);
 			type = cloneDeep(paper.type);
-			on = cloneDeep(paper.on);
+			blinding = cloneDeep(paper.blinding);
 			sample_size = cloneDeep(typeof paper.sample_size === 'number' ? paper.sample_size : null);
 			sample_size_missing_reason = cloneDeep(typeof paper.sample_size !== 'number' ? paper.sample_size : '');
 			p_value_prefix = cloneDeep(typeof paper.p_value === 'object' ? (paper.p_value.less_than ? 'less' : 'equal') : '');
@@ -159,6 +166,26 @@
 			})));
 		}
 	});
+
+	let is_review = $derived(review_type !== '' && review_type !== 'null');
+	let is_review_multiple = $derived(review_type !== '' && review_type !== 'null' && review_count !== 1);
+	let blinding_available = $derived(!map.no_blinding && (
+		type === PaperType.RandomizedControlledTrial ||
+		type === ReviewedPapersType.DiverseClinicalTrials ||
+		type === ReviewedPapersType.DiverseHumanStudies ||
+		type === ReviewedPapersType.DiverseTypes
+	));
+	let only_diverse_blinding = $derived(
+		blinding_available && type !== PaperType.RandomizedControlledTrial
+	);
+	let sample_size_available = $derived(
+		!map.no_sample_size && type !== PaperType.InVitroStudy
+	);
+	let p_value_available = $derived(
+		(conclusion === '' || map.conclusions[conclusion].p_value) &&
+		review_type !== ReviewType.NarrativeReview &&
+		review_type !== ReviewType.SystematicReview
+	);
 
 	$effect(() =>
 	{
@@ -180,18 +207,6 @@
 		if (consensus !== '' && consensus !== MissingReason.NotSpecified && consensus !== MissingReason.NoAccess && conclusion !== '' && map.consensus[consensus].unavailable.includes(conclusion))
 			conclusion = '';
 
-		if (
-			conclusion !== '' && !map.conclusions[conclusion].p_value &&
-			p_value === null && p_value_missing_reason === ''
-		)
-			p_value_missing_reason = MissingReason.NotApplicable;
-
-		if (
-			review_type === ReviewType.NarrativeReview || review_type === ReviewType.SystematicReview &&
-			p_value === null && p_value_missing_reason === ''
-		)
-			p_value_missing_reason = MissingReason.NotApplicable;
-
 		if (review_type === 'null')
 		{
 			review_reviews = false;
@@ -203,8 +218,8 @@
 			if (Object.keys(ReviewedPapersType).includes(type))
 				type = '';
 
-			if (Object.keys(ReviewedStudiesOn).includes(on))
-				on = '';
+			if (Object.keys(ReviewedPapersBlinding).includes(blinding))
+				blinding = '';
 		}
 
 		if (review_count !== null && review_estimate === '')
@@ -213,18 +228,43 @@
 		if (review_count !== null)
 			review_count_missing_reason = '';
 
+		if (!blinding_available)
+			blinding = '';
+
+		if (only_diverse_blinding && (blinding === Blinding.Single || blinding === Blinding.Double))
+			blinding = '';
+
+		if (!sample_size_available)
+		{
+			sample_size = null;
+			sample_size_missing_reason = '';
+		}
+
 		if (sample_size !== null)
 			sample_size_missing_reason = '';
 
-		if (p_value !== null && p_value_prefix === '')
-			p_value_prefix = 'equal';
+		if (type !== PaperType.Other && sample_size_missing_reason === MissingReason.NotApplicable)
+			sample_size_missing_reason = '';
+
+		if (!p_value_available)
+		{
+			p_value_prefix = '';
+			p_value = null;
+			p_value_missing_reason = '';
+		}
 
 		if (p_value !== null)
+		{
+			p_value_missing_reason = '';
+
+			if (p_value_prefix === '')
+				p_value_prefix = 'equal';
+		}
+
+		if (type !== PaperType.Other && p_value_missing_reason === MissingReason.NotApplicable)
 			p_value_missing_reason = '';
 	});
 
-	let is_review = $derived(review_type !== '' && review_type !== 'null');
-	let is_review_multiple = $derived(review_type !== '' && review_type !== 'null' && review_count !== 1);
 	let autocomplete_focused = $state(false);
 
 	function is_valid(): boolean
@@ -237,7 +277,7 @@
 			link.trim().length > 0 &&
 			journal_status !== '' &&
 			(journal_status === 'no' || journal !== null) &&
-			(citations === null || (citations >= 0 && Number.isInteger(citations))) &&
+			citations !== null && citations >= 0 && Number.isInteger(citations) &&
 			consensus !== '' &&
 			conclusion !== '' &&
 			quote.trim().length > 0 &&
@@ -247,15 +287,18 @@
 				(review_count === null && review_count_missing_reason !== '')
 			)) &&
 			type !== '' &&
-			on !== '' &&
-			(
+			(!blinding_available || blinding !== '') &&
+			(!only_diverse_blinding || (blinding !== Blinding.Single && blinding !== Blinding.Double)) &&
+			(!sample_size_available || (
 				(sample_size !== null && sample_size > 0 && Number.isInteger(sample_size)) ||
 				(sample_size === null && sample_size_missing_reason !== '')
-			) &&
-			(
+			)) &&
+			(!sample_size_available || type === PaperType.Other || sample_size_missing_reason !== MissingReason.NotApplicable) &&
+			(!p_value_available || (
 				(p_value !== null && p_value_prefix !== '' && p_value > 0 && p_value < 1) ||
 				(p_value === null && p_value_missing_reason !== '')
-			) &&
+			)) &&
+			(!p_value_available || type === PaperType.Other || p_value_missing_reason !== MissingReason.NotApplicable) &&
 			conflict_of_interest !== ''
 		);
 	}
@@ -308,20 +351,26 @@
 				id: journal ? journal.id : JournalMissingReason.NotPublished,
 				retracted,
 			},
-			citations: citations !== null ? citations : MissingReason.NotSpecified,
+			citations: citations ?? 0,
 			results: {
 				consensus: consensus.trim(),
 				conclusion: conclusion.trim(),
 				indirect: indirect,
 			},
 			quote: clean_quote(quote),
-			type: type.trim() as PaperType | ReviewedPapersType | MissingReason,
-			on: on.trim() as StudyOn | ReviewedStudiesOn | MissingReason,
-			sample_size: sample_size !== null ? sample_size : sample_size_missing_reason.trim() as MissingReason,
-			p_value: p_value !== null && p_value_prefix !== '' ? {
-				value: p_value,
-				less_than: p_value_prefix.trim() === 'less',
-			} : p_value_missing_reason.trim() as MissingReason,
+			type: type.trim() as PaperType | ReviewedPapersType | MissingReason.NoAccess,
+			blinding: (blinding_available ? blinding.trim() : Blinding.None) as Blinding | ReviewedPapersBlinding | MissingReason.NoAccess,
+			sample_size: (sample_size_available ?
+				(sample_size !== null ? sample_size : sample_size_missing_reason.trim()) :
+				MissingReason.NotApplicable
+			) as number | MissingReason,
+			p_value: (p_value_available ? (
+				p_value !== null && p_value_prefix !== '' ? {
+					value: p_value,
+					less_than: p_value_prefix.trim() === 'less',
+				} : p_value_missing_reason.trim()) :
+				MissingReason.NotApplicable
+			) as { value: number, less_than: boolean } | MissingReason,
 			conflict_of_interest: conflict_of_interest.trim() as ConflictOfInterest | MissingReason.NoAccess,
 			notes: notes.filter(
 				note => note.title.trim().length > 0 &&
@@ -706,9 +755,9 @@
 		</div>
 	{/if}
 	<div class="input">
-		<div class="label unselectable">
+		<div class="label unselectable flex-center-row">
 			<span>Citations</span>
-			<span class="optional unselectable">(optional)</span>
+			<span class="required">*</span>
 		</div>
 		<input bind:value={citations} type="number" min=0 placeholder="The number of times the paper has been cited"/>
 	</div>
@@ -729,33 +778,31 @@
 			<option value={MissingReason.NoAccess}>(No access)</option>
 		</select>
 	</div>
-	{#if consensus !== ''}
-		<div class="input">
-			<div class="label unselectable flex-center-row">
-				<span>Paper result</span>
-				<span class="required">*</span>
-			</div>
-			<div class="sublabel unselectable">
-				<span>The conclusion of the paper</span>
-			</div>
-			<select bind:value={conclusion}>
-				<option value="" disabled selected hidden></option>
-				{#each get_available_conclusions(map, consensus) as id}
-					<option value={id}>{map.conclusions[id].text}</option>
-				{/each}
-			</select>
+	<div class="input">
+		<div class="label unselectable flex-center-row">
+			<span>Paper result</span>
+			<span class="required">*</span>
 		</div>
-		<div class="input checkbox">
-			<input bind:checked={indirect} type="checkbox"/>
-			<div
-				class="label" role="button" tabindex={0} onkeydown={null}
-				onclick={() => { indirect = !indirect; }}
-			>
-				<span class="unselectable">Indirect result</span>
-				<span class="optional unselectable">(This conclusion is based on indirect evidence from the paper)</span>
-			</div>
+		<div class="sublabel unselectable">
+			<span>The conclusion of the paper</span>
 		</div>
-	{/if}
+		<select bind:value={conclusion}>
+			<option value="" disabled selected hidden></option>
+			{#each get_available_conclusions(map, consensus) as id}
+				<option value={id}>{map.conclusions[id].text}</option>
+			{/each}
+		</select>
+	</div>
+	<div class="input checkbox">
+		<input bind:checked={indirect} type="checkbox"/>
+		<div
+			class="label" role="button" tabindex={0} onkeydown={null}
+			onclick={() => { indirect = !indirect; }}
+		>
+			<span class="unselectable">Indirect result</span>
+			<span class="optional unselectable">(This conclusion is based on indirect evidence from the paper)</span>
+		</div>
+	</div>
 	<div class="input">
 		<div class="label unselectable flex-center-row">
 			<span>Quote</span>
@@ -833,73 +880,85 @@
 				<option value={id}>{text}</option>
 			{/each}
 			{#if is_review_multiple}
-				{#each Object.values(ReviewedPapersType).map(id => to_id_text(id, is_review_multiple)) as [id, text]}
+				{#each Object.values(ReviewedPapersType).map(id => to_id_text(id, true)) as [id, text]}
 					<option value={id}>({text})</option>
 				{/each}
 			{/if}
 			<option value={MissingReason.NoAccess}>(No access)</option>
-			<option value={MissingReason.NotSpecified}>(Not specified)</option>
-			<option value={MissingReason.NotApplicable}>(No specific type{#if is_review_multiple}s{/if})</option>
 		</select>
 	</div>
-	<div class="input">
-		<div class="label unselectable flex-center-row">
-			<span>Subjects {#if is_review_multiple}in most papers{/if}</span>
-			<span class="required">*</span>
+	{#if blinding_available}
+		<div class="input">
+			<div class="label unselectable flex-center-row">
+				<span>Blinding</span>
+				<span class="required">*</span>
+			</div>
+			<select bind:value={blinding}>
+				<option value="" disabled selected hidden></option>
+				{#if only_diverse_blinding}
+					<option value={Blinding.None}>None</option>
+				{:else}
+					{#each Object.values(Blinding).map(id => to_id_text(id, false)) as [id, text]}
+						<option value={id}>{text}</option>
+					{/each}
+				{/if}
+				{#if is_review_multiple}
+					{#each Object.values(ReviewedPapersBlinding).map(id => to_id_text(id, true)) as [id, text]}
+						<option value={id}>({text})</option>
+					{/each}
+				{/if}
+				<option value={MissingReason.NoAccess}>(No access)</option>
+			</select>
 		</div>
-		<select bind:value={on}>
-			<option value="" disabled selected hidden></option>
-			{#each Object.values(StudyOn).map(id => to_id_text(id, false)) as [id, text]}
-				<option value={id}>{text}</option>
-			{/each}
-			{#if is_review_multiple}
-				<option value={ReviewedStudiesOn.DiverseSubjects}>(Diverse subjects)</option>
+	{/if}
+	{#if sample_size_available}
+		<div class="input">
+			<div class="label unselectable">
+				<span>{#if is_review_multiple}Total sample{:else}Sample{/if} size</span>
+				<span class="optional unselectable">(optional)</span>
+			</div>
+			<input
+				bind:value={sample_size} type="number" min=1
+				placeholder={is_review_multiple ? 'The total number of participants in the included papers' : 'The number of participants in the study'}
+			/>
+			{#if sample_size === null}
+				<select bind:value={sample_size_missing_reason}>
+					<option value="" disabled selected hidden></option>
+					<option value={MissingReason.NotSpecified}>Not specified</option>
+					{#if type === PaperType.Other}
+						<option value={MissingReason.NotApplicable}>Not applicable</option>
+					{/if}
+					<option value={MissingReason.NoAccess}>No access</option>
+				</select>
 			{/if}
-			{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
-				<option value={id}>({text})</option>
-			{/each}
-		</select>
-	</div>
-	<div class="input">
-		<div class="label unselectable">
-			<span>{#if is_review_multiple}Total sample{:else}Sample{/if} size</span>
-			<span class="optional unselectable">(optional)</span>
 		</div>
-		<input
-			bind:value={sample_size} type="number" min=1
-			placeholder={is_review_multiple ? 'The total number of participants in the included papers' : 'The number of participants in the study'}
-		/>
-		{#if sample_size === null}
-			<select bind:value={sample_size_missing_reason}>
-				<option value="" disabled selected hidden></option>
-				{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
-					<option value={id}>{text}</option>
-				{/each}
-			</select>
-		{/if}
-	</div>
-	<div class="input">
-		<div class="label unselectable">
-			<span>P-value</span>
-			<span class="optional unselectable">(optional)</span>
+	{/if}
+	{#if p_value_available}
+		<div class="input">
+			<div class="label unselectable">
+				<span>P-value</span>
+				<span class="optional unselectable">(optional)</span>
+			</div>
+			<div class="w-full flex-center-row" style="gap: 0.5em;">
+				<select bind:value={p_value_prefix} style="width: 4em;">
+					<option value="" disabled selected hidden></option>
+					<option value="equal">=</option>
+					<option value="less">{'<'}</option>
+				</select>
+				<input bind:value={p_value} type="number" min=0 max=1 step=0.01 placeholder="The p-value of the results"/>
+			</div>
+			{#if p_value === null}
+				<select bind:value={p_value_missing_reason}>
+					<option value="" disabled selected hidden></option>
+					<option value={MissingReason.NotSpecified}>Not specified</option>
+					{#if type === PaperType.Other}
+						<option value={MissingReason.NotApplicable}>Not applicable</option>
+					{/if}
+					<option value={MissingReason.NoAccess}>No access</option>
+				</select>
+			{/if}
 		</div>
-		<div class="w-full flex-center-row" style="gap: 0.5em;">
-			<select bind:value={p_value_prefix} style="width: 4em;">
-				<option value="" disabled selected hidden></option>
-				<option value="equal">=</option>
-				<option value="less">{'<'}</option>
-			</select>
-			<input bind:value={p_value} type="number" min=0 max=1 step=0.01 placeholder="The p-value of the results"/>
-		</div>
-		{#if p_value === null}
-			<select bind:value={p_value_missing_reason}>
-				<option value="" disabled selected hidden></option>
-				{#each Object.values(MissingReason).map(id => to_id_text(id, false)) as [id, text]}
-					<option value={id}>{text}</option>
-				{/each}
-			</select>
-		{/if}
-	</div>
+	{/if}
 	<div class="input">
 		<div class="label unselectable flex-center-row">
 			<span>Conflict of interest</span>

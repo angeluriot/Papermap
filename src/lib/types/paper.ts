@@ -3,9 +3,9 @@ import type { Journal } from './journal';
 
 export enum MissingReason
 {
-	NoAccess = 'NoAccess',
 	NotSpecified = 'NotSpecified',
 	NotApplicable = 'NotApplicable',
+	NoAccess = 'NoAccess',
 }
 
 
@@ -16,11 +16,18 @@ export enum JournalMissingReason
 }
 
 
-export enum StudyOn
+export enum PaperType
 {
-	InVitro = 'InVitro',
-	Animals = 'Animals',
-	Humans = 'Humans',
+	InVitroStudy = 'InVitroStudy',
+	CaseReport = 'CaseReport',
+	AnimalStudy = 'AnimalStudy',
+	EcologicalStudy = 'EcologicalStudy',
+	CrossSectionalStudy = 'CrossSectionalStudy',
+	CaseControlStudy = 'CaseControlStudy',
+	CohortStudy = 'CohortStudy',
+	ClinicalTrial = 'ClinicalTrial',
+	RandomizedControlledTrial = 'RandomizedControlledTrial',
+	Other = 'Other',
 }
 
 
@@ -28,26 +35,22 @@ export enum ReviewedPapersType
 {
 	DiverseObservationalStudies = 'DiverseObservationalStudies',
 	DiverseClinicalTrials = 'DiverseClinicalTrials',
+	DiverseHumanStudies = 'DiverseHumanStudies',
 	DiverseTypes = 'DiverseTypes',
 }
 
 
-export enum ReviewedStudiesOn
+export enum Blinding
 {
-	DiverseSubjects = 'DiverseSubjects',
+	None = 'None',
+	Single = 'Single',
+	Double = 'Double',
 }
 
 
-export enum PaperType
+export enum ReviewedPapersBlinding
 {
-	CaseReport = 'CaseReport',
-	EcologicalStudy = 'EcologicalStudy',
-	CrossSectionalStudy = 'CrossSectionalStudy',
-	CaseControlStudy = 'CaseControlStudy',
-	CohortStudy = 'CohortStudy',
-	ClinicalTrial = 'ClinicalTrial',
-	RandomizedControlledTrial = 'RandomizedControlledTrial',
-	BlindedRandomizedControlledTrial = 'BlindedRandomizedControlledTrial',
+	DiverseBlinding = 'DiverseBlinding',
 }
 
 
@@ -103,7 +106,7 @@ export interface DataPaper
 		id: string | JournalMissingReason,
 		retracted: boolean,
 	};
-	citations: number | MissingReason.NotSpecified;
+	citations: number;
 	results: {
 		consensus: string | MissingReason.NotSpecified | MissingReason.NoAccess,
 		conclusion: string,
@@ -117,8 +120,8 @@ export interface DataPaper
 		count: number | MissingReason.NoAccess,
 		subpart: boolean,
 	};
-	type: PaperType | ReviewedPapersType | MissingReason;
-	on: StudyOn | ReviewedStudiesOn | MissingReason;
+	type: PaperType | ReviewedPapersType | MissingReason.NoAccess;
+	blinding: Blinding | ReviewedPapersBlinding | MissingReason.NoAccess;
 	sample_size: number | MissingReason;
 	p_value: {
 		value: number,
@@ -139,7 +142,7 @@ export interface PaperScores
 	citations: number;
 	review_count: number;
 	type: number;
-	on: number;
+	blinding: number;
 	sample_size: number;
 	p_value: number;
 }
@@ -181,7 +184,7 @@ export function no_access(paper: Paper | DataPaper)
 		paper.results.consensus === MissingReason.NoAccess ||
 		(paper.review && paper.review.count === MissingReason.NoAccess) ||
 		paper.type === MissingReason.NoAccess ||
-		paper.on === MissingReason.NoAccess ||
+		paper.blinding === MissingReason.NoAccess ||
 		paper.sample_size === MissingReason.NoAccess ||
 		paper.p_value === MissingReason.NoAccess ||
 		paper.conflict_of_interest === MissingReason.NoAccess

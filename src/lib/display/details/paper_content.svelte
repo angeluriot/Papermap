@@ -2,7 +2,7 @@
 	import { COLORS, Color } from '$lib/colors';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { Edit, JournalMissingReason, MissingReason, type Paper, ReviewType, ReviewedPapersType, ReviewedStudiesOn, StudyOn } from '$lib/types/paper';
+	import { Edit, JournalMissingReason, MissingReason, type Paper, ReviewType, PaperType, ReviewedPapersType, ReviewedPapersBlinding, Blinding } from '$lib/types/paper';
 	import * as cards from './cards';
 	import { float_to_text, get_standard_name, int_to_text } from '../utils';
 	import InfoBubble from './info_bubble.svelte';
@@ -206,7 +206,7 @@
 			}
 		}
 
-		if (!review_one && ((paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes && result.length > 0) || paper.review?.reviews))
+		if (!review_one && ((paper.type !== PaperType.Other && paper.type !== ReviewedPapersType.DiverseTypes && result.length > 0) || paper.review?.reviews))
 		{
 			if (!result[result.length - 1].is_card)
 				result[result.length - 1].text += ' that are mostly';
@@ -225,7 +225,7 @@
 				is_card: true,
 			});
 
-			if (paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes)
+			if (paper.type !== PaperType.Other && paper.type !== ReviewedPapersType.DiverseTypes)
 				result.push({ text: 'of', is_card: false });
 		}
 
@@ -245,84 +245,66 @@
 			});
 		}
 
-		else if (paper.type === MissingReason.NotSpecified)
+		else if (paper.type !== PaperType.Other && paper.type !== ReviewedPapersType.DiverseTypes)
 		{
-			result.push({
-				emoji: '🤷',
-				text: 'Not specified',
-				color: COLORS[Color.Gray].default,
-				shadow: color_to_shadow(COLORS[Color.Gray].default),
-				description: (
-					paper.review ?
-					`This ${cards.TO_TEXT[paper.review.type].toLowerCase()} does not specify the type of the papers it reviews` :
-					'The type of study is not explicitly specified in the paper'
-				),
-				is_card: true,
-			});
-		}
+			const show_blinding = (
+				paper.type === PaperType.RandomizedControlledTrial ||
+				paper.type === ReviewedPapersType.DiverseClinicalTrials ||
+				paper.type === ReviewedPapersType.DiverseHumanStudies
+			);
 
-		else if (paper.type !== MissingReason.NotApplicable && paper.type !== ReviewedPapersType.DiverseTypes)
-		{
+			if (show_blinding)
+			{
+				if (paper.blinding === MissingReason.NoAccess)
+				{
+					result.push({
+						emoji: '🔒',
+						text: 'No access',
+						color: COLORS[Color.Gray].default,
+						shadow: color_to_shadow(COLORS[Color.Gray].default),
+						description: (
+							paper.review ?
+							`The blinding strategies employed in the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} are not available because we couldn't access the full text of the paper` :
+							"The blinding strategies employed in this study are not available because we couldn't access the full text of the paper"
+						),
+						is_card: true,
+					});
+				}
+
+				else if (paper.blinding !== Blinding.None && paper.blinding !== ReviewedPapersBlinding.DiverseBlinding)
+				{
+					result.push({
+						emoji: cards.TO_EMOJI[paper.blinding],
+						text: cards.TO_TEXT[paper.blinding],
+						color: cards.score_to_color(paper.scores.blinding),
+						shadow: color_to_shadow(cards.score_to_color(paper.scores.blinding)),
+						description: cards.TO_DESCRIPTION[paper.blinding],
+						is_card: true,
+					});
+				}
+			}
+
 			result.push({
 				emoji: cards.TO_EMOJI[paper.type],
 				text: paper.review && (!review_one || paper.review.reviews) ? cards.TO_TEXT_PLURAL[paper.type] : cards.TO_TEXT[paper.type],
 				color: cards.score_to_color(paper.scores.type),
 				shadow: color_to_shadow(cards.score_to_color(paper.scores.type)),
-				description: cards.TO_DESCRIPTION[paper.type],
+				description: cards.TO_DESCRIPTION[paper.type] + (
+					paper.type === PaperType.RandomizedControlledTrial && paper.blinding === Blinding.None ? ' (no blinding)' : ''
+				),
 				is_card: true,
 			});
-		}
 
-		if (result.length > 0)
-		{
-			if (paper.on !== MissingReason.NotApplicable && paper.on !== ReviewedStudiesOn.DiverseSubjects && paper.on !== StudyOn.InVitro)
+			if (show_blinding && paper.blinding === ReviewedPapersBlinding.DiverseBlinding)
 			{
-				if (!result[result.length - 1].is_card)
-					result[result.length - 1].text += ' on';
-				else
-					result.push({ text: 'on', is_card: false });
-			}
+				result.push({ text: 'with', is_card: false });
 
-			if (paper.on === MissingReason.NoAccess)
-			{
 				result.push({
-					emoji: '🔒',
-					text: 'No access',
-					color: COLORS[Color.Gray].default,
-					shadow: color_to_shadow(COLORS[Color.Gray].default),
-					description: (
-						paper.review ?
-						`The subjects on which the experiments were performed in the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} are not available because we couldn't access the full text of the paper` :
-						"The subjects on which the experiments were performed are not available because we couldn't access the full text of the paper"
-					),
-					is_card: true,
-				});
-			}
-
-			else if (paper.on === MissingReason.NotSpecified)
-			{
-				result.push({
-					emoji: '🤷',
-					text: 'Not specified',
-					color: COLORS[Color.Gray].default,
-					shadow: color_to_shadow(COLORS[Color.Gray].default),
-					description: (
-						paper.review ?
-						`This ${cards.TO_TEXT[paper.review.type].toLowerCase()} does not specify the subjects on which the experiments were performed` :
-						'The paper does not specify the subjects on which the experiments were performed'
-					),
-					is_card: true,
-				});
-			}
-
-			else if (paper.on !== MissingReason.NotApplicable && paper.on !== ReviewedStudiesOn.DiverseSubjects)
-			{
-				result.push({
-					emoji: cards.TO_EMOJI[paper.on],
-					text: cards.TO_TEXT[paper.on],
-					color: cards.score_to_color(paper.scores.on),
-					shadow: color_to_shadow(cards.score_to_color(paper.scores.on)),
-					description: cards.TO_DESCRIPTION[paper.on],
+					emoji: cards.TO_EMOJI[paper.blinding],
+					text: cards.TO_TEXT[paper.blinding],
+					color: cards.score_to_color(paper.scores.blinding),
+					shadow: color_to_shadow(cards.score_to_color(paper.scores.blinding)),
+					description: cards.TO_DESCRIPTION[paper.blinding],
 					is_card: true,
 				});
 			}
@@ -443,17 +425,6 @@
 
 	const citations = $derived.by(() =>
 	{
-		if (paper.citations === MissingReason.NotSpecified)
-		{
-			return {
-				emoji: '🤷',
-				text: 'Not specified',
-				color: COLORS[Color.Gray].default,
-				shadow: color_to_shadow(COLORS[Color.Gray].default),
-				description: 'The number of times the paper has been cited in other papers is unknown',
-			}
-		}
-
 		return {
 			emoji: cards.citation_score_to_emoji(paper.scores.citations),
 			text: int_to_text(paper.citations),

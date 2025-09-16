@@ -1,4 +1,4 @@
-import { ConflictOfInterest, JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewType, StudyOn, type DataPaper } from '$lib/types/paper';
+import { Blinding, ConflictOfInterest, JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type DataPaper } from '$lib/types/paper';
 import { get_available_conclusions, type DataMap, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/server/emojis';
@@ -57,6 +57,7 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 	const conclusion = random_choice(get_available_conclusions(map, consensus));
 	const is_institution = random_choice([true, false], [1, 10]);
 	const institution_name = faker.company.name();
+	const is_review = Math.random() < 0.2;
 
 	return {
 		id: random_choice([faker.string.uuid(), undefined]),
@@ -72,31 +73,30 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 			id: journal_id,
 			retracted: journal_id === JournalMissingReason.NotPublished ? false : random_choice([false, true], [10, 1]),
 		},
-		citations: random_choice(
-			[5 + Math.round((Math.random() ** 4) * 500), MissingReason.NotSpecified] as (number | MissingReason.NotSpecified)[],
-			[10, 1],
-		),
+		citations: 5 + Math.round((Math.random() ** 4) * 500),
 		results: {
 			consensus,
 			conclusion,
 			indirect: Math.random() < 0.5,
 		},
 		quote,
-		review: Math.random() < 0.2 ? {
+		review: is_review ? {
 			type: random_choice(Object.keys(ReviewType) as ReviewType[]),
 			reviews: Math.random() < 0.2,
 			estimate: random_choice([true, false]),
 			count: random_choice([5 + Math.round((Math.random() ** 3) * 200), MissingReason.NoAccess], [10, 1]),
 			subpart: random_choice([true, false]),
 		} : undefined,
-		type: random_choice(
-			[random_choice(Object.keys(PaperType) as PaperType[]), random_choice(Object.keys(MissingReason) as MissingReason[])],
-			[10, 1],
-		),
-		on: random_choice(
-			[random_choice(Object.keys(StudyOn) as StudyOn[]), random_choice(Object.keys(MissingReason) as MissingReason[])],
-			[10, 1],
-		),
+		type: random_choice([
+			random_choice(Object.keys(PaperType) as PaperType[]),
+			random_choice(Object.keys(ReviewedPapersType) as ReviewedPapersType[]),
+			MissingReason.NoAccess,
+		], [10, is_review ? 3 : 0, 1]),
+		blinding: random_choice([
+			random_choice(Object.keys(Blinding) as Blinding[]),
+			random_choice(Object.keys(ReviewedPapersBlinding) as ReviewedPapersBlinding[]),
+			MissingReason.NoAccess,
+		], [10, is_review ? 3 : 0, 1]),
 		sample_size: 5 + Math.round((Math.random() ** 5) * 10000),
 		p_value: Math.random() < 0.9 && map.conclusions[conclusion].p_value ? {
 			value: Math.random() * 0.05,

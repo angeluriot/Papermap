@@ -39,15 +39,11 @@ interface BaseMap
 		},
 	};
 	type: {
-		no_blind: boolean,
 		no_random: boolean,
 		no_causality: boolean,
 		any: boolean,
-	}
-	on: {
-		any_animal: boolean,
-		any: boolean,
 	};
+	no_blinding: boolean;
 	no_sample_size: boolean;
 	fake?: true;
 }
@@ -102,7 +98,13 @@ export interface MapTitle
 
 export function get_available_conclusions(map: DataMap | Map, consensus: string): string[]
 {
+	const used_consensus = (
+		consensus.trim() !== '' ?
+		consensus.replace(MissingReason.NotSpecified, 'no_consensus').replace(MissingReason.NoAccess, 'no_consensus') :
+		'no_consensus'
+	);
+
 	return Object.keys(map.conclusions).filter(
-		id => !map.consensus[consensus.replace(MissingReason.NotSpecified, 'no_consensus').replace(MissingReason.NoAccess, 'no_consensus')].unavailable.includes(id)
+		id => !map.consensus[used_consensus].unavailable.includes(id)
 	);
 }

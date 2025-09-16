@@ -192,15 +192,11 @@
 		}
 	},
 	"type": {
-		"no_blind": true,
 		"no_random": false,
 		"no_causality": false,
 		"any": false
 	},
-	"on": {
-		"any_animal": false,
-		"any": false
-	},
+	"no_blinding": true,
 	"no_sample_size": false,
 	"papers": [
 		{
@@ -227,7 +223,7 @@
 			},
 			"quote": "Results of a repeated measures multivariate analysis of variance indicate that children in the prevention training group significantly increased their knowledge of prevention concept's while children in the control group did not",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 40,
 			"p_value": {
 				"value": 0.0001,
@@ -257,7 +253,7 @@
 			},
 			"quote": "Children who viewed the film demonstrated significantly greater knowledge about sexual abuse and enhanced personal safety skills when compared to controls [...] These gains were maintained at the 3-month follow-up assessment",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 67,
 			"p_value": {
 				"value": 0.02,
@@ -290,7 +286,7 @@
 			},
 			"quote": "Relative to controls, children who received the program showed an overall increase in knowledge of correct actions to take in the event of potential or actual abuse",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 290,
 			"p_value": {
 				"value": 0.001,
@@ -323,7 +319,7 @@
 			},
 			"quote": "The results demonstrate that groups of children can be taught about sexual abuse and can learn appropriate self-protective responses",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 71,
 			"p_value": {
 				"value": 0.01,
@@ -354,9 +350,9 @@
 			},
 			"quote": "Results from this study suggest sexual abuse prevention programs can be implemented in schools without harming the participants. Children showed no changes in how fearful they were of several people and certain situations as a result of participating in the Behavioral Skills Training program. In addition, parents observed no increases in their children's problematic behaviors or in their fears as a result of program participation",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 26,
-			"p_value": "NotApplicable",
+			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
 			"notes": []
 		},
@@ -382,7 +378,7 @@
 			},
 			"quote": "The program was helpful in teaching elementary school children strategies for coping with situations of potential abuse. Furthermore, the program increased parents’ confidence in their children’s knowledge and self-protection. No evidence was found of harmful emotional effects of the program",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 88,
 			"p_value": {
 				"value": 0.0001,
@@ -413,7 +409,7 @@
 			},
 			"quote": "Experimental group children reported learning more about the differences between good and bad touching, and being more likely to both report instances of sexual victimization and utilize program specific preventive skills, relative to controls",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 349,
 			"p_value": {
 				"value": 0.001,
@@ -446,7 +442,7 @@
 			},
 			"quote": "Among the findings obtained, experimental group children reported learning more about the differences between good and bad touching, and being more likely to both report instances of sexual victimization and utilize program-specific preventive skills, relative to controls",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 349,
 			"p_value": {
 				"value": 0.001,
@@ -479,7 +475,7 @@
 			},
 			"quote": "Relative to the control group, at both a three-week posttest and a seven-week follow-up, children participating in the prevention program demonstrated more knowledge about preventing abuse and performed better on simulated scenes involving sexual abuse. The results indicate that children as young as kindergartenage can be taught skills to prevent sexual abuse",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 71,
 			"p_value": {
 				"value": 0.01,
@@ -510,7 +506,7 @@
 			},
 			"quote": "Results indicated greater gains in general knowledge and prevention skills at post-training and 6-month follow-up for trained than control children",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 337,
 			"p_value": {
 				"value": 0.0001,
@@ -542,7 +538,7 @@
 			},
 			"quote": "Compared with a control presentation, both programs were effective in enhancing children's knowledge and prevention skills without making them fearful, suggesting that preschool children can benefit from such programs",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 100,
 			"p_value": {
 				"value": 0.01,
@@ -578,8 +574,8 @@
 				"count": 15,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -606,7 +602,7 @@
 			},
 			"quote": "Results indicated that children in the experimental group, when compared to the control group, were able to learn the sexual abuse prevention concepts measured by the PSQ and retain this knowledge at follow-up. [...] No significant increase in fear was noted in the children participating in the program",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 39,
 			"p_value": "NoAccess",
 			"conflict_of_interest": "NoAccess",
@@ -633,7 +629,7 @@
 			},
 			"quote": "Results showed that preschoolers who received the program scored significantly higher at posttest than did no-program preschoolers. [...] Follow-up testing demonstrated retention of learned concepts",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 46,
 			"p_value": {
 				"value": 0.001,
@@ -663,7 +659,7 @@
 			},
 			"quote": "Preschoolers who had participated in the training program demonstrated greater knowledge about sexual abuse and higher levels of personal safety skills compared to controls, and these gains were maintained at the one-month follow-up",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 24,
 			"p_value": {
 				"value": 0.01,
@@ -696,7 +692,7 @@
 			},
 			"quote": "Treatment children exhibited significantly greater knowledge and better ability to discriminate safe from unsafe situations on the video measure than control children at posttesting. These gains were maintained at 6-week follow-up testing. There were no differences in treatment and control children's self-reported anxiety or parents' reports of negative emotional/behavioral consequences, which were minimal",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 399,
 			"p_value": {
 				"value": 0.0001,
@@ -729,7 +725,7 @@
 			},
 			"quote": "The data from this study indicate that children receiving a role-play-based sexual abuse prevention program significantly improved on a touch discrimination task as compared to subjects in a control condition. [...] The present study indicates that prevention programs have the potential to make children less suspicious and more realistic about nurturing touch, rather than increasing children's fears",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 264,
 			"p_value": {
 				"value": 0.01,
@@ -761,8 +757,8 @@
 				"indirect": false
 			},
 			"quote": "Children in both of these groups demonstrated greater knowledge about sexual abuse and higher levels of personal safety skills compared with controls. Knowledge and skill gains were maintained at the two-month follow-up. No program-related increases in negative behaviors were reported by teachers",
-			"type": "BlindedRandomizedControlledTrial",
-			"on": "Humans",
+			"type": "RandomizedControlledTrial",
+			"blinding": "None",
 			"sample_size": 61,
 			"p_value": {
 				"value": 0.001,
@@ -800,7 +796,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 9847,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -829,7 +825,7 @@
 			},
 			"quote": "Preschoolers who were taught a personal safety program, whether by teachers, parents, or both, significantly improved in their ability to recognize inappropriate-touch requests and demonstrated higher levels of personal safety skills",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 172,
 			"p_value": {
 				"value": 0.001,
@@ -859,7 +855,7 @@
 			},
 			"quote": "The analyses of the C.K.A.Q. scores demonstrate that children who participated in the Hamilton/Wentworth Community Child Abuse Prevention Program learned the prevention concepts taught to a significantly greater extent than those children of similar ages who did not view the play",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 400,
 			"p_value": {
 				"value": 0.013,
@@ -892,7 +888,7 @@
 			},
 			"quote": "Results point to the ineffectiveness of brief, single presentation, prevention efforts not geared to specific developmental levels of the audience",
 			"type": "CaseReport",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 22,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -919,7 +915,7 @@
 			},
 			"quote": "There is evidence that the Keeping Ourselves Safe program increased skills and knowledge in areas associated with self protection in the short term. Assessment a further 12 months after the program suggests that children go on to make further skill and knowledge gains. Assessment following a second administration of the program suggests that the repetition leads to further gains",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 252,
 			"p_value": {
 				"value": 0.01,
@@ -955,7 +951,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -991,7 +987,7 @@
 				"subpart": false
 			},
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1019,7 +1015,7 @@
 			},
 			"quote": "The results of this study suggest that the school-based child abuse educational program [...] is an effective means of increasing awareness of child abuse. The children, both male and female and at three grade levels, showed significant increases in their mean scores on a child abuse questionnaire that measured an overall understanding of child abuse, ability to discriminate between normal discipline and physical abuse, capacity to distinguish between acceptable touches and sexual abuse, and appropriate responses to situations of abuse",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 796,
 			"p_value": {
 				"value": 0.001,
@@ -1051,7 +1047,7 @@
 			},
 			"quote": "Comprehensive parental instruction also had positive effects on knowledge, the use of preferred self-protection strategies and the likelihood of disclosure. [...] The children with more comprehensive school programs suffered more injuries during sexual victimizations than other children. This is probably related to their greater tendency to fight back during those episodes",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 2000,
 			"p_value": {
 				"value": 0.001,
@@ -1082,7 +1078,7 @@
 			},
 			"quote": "Prevention education was not associated with a reduced incidence of completed victimization or injury, two crucial and desired outcomes from prevention efforts. But it was associated with an increased likelihood that the children would disclose the victimizations, increased feelings that they had been successful in protecting themselves from more serious consequences, and decreased levels of self-blame",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 1457,
 			"p_value": {
 				"value": 0.001,
@@ -1114,7 +1110,7 @@
 			},
 			"quote": "These findings support the effectiveness of Project TRUST as a strategy to increase prevention knowledge and generate abuse disclosures wilhout creating student anxiety",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 1269,
 			"p_value": {
 				"value": 0.001,
@@ -1144,7 +1140,7 @@
 			},
 			"quote": "An analysis of covariance showed that children who received the program increased their knowledge levels of both Inappropriate Touch (p = .000) and Appropriate Touch (p = .012) to a significantly greater degree than children in the control group",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 231,
 			"p_value": {
 				"value": 0.01,
@@ -1174,7 +1170,7 @@
 			},
 			"quote": "Results indicated short term overall effects of the program for the choice of safety strategies. Immediately after participation in the program the youngest and the oldest children felt less in control of an abusive interaction, the youngest pupils thought that refusal was less feasible but they appreciated physical touch more than before. These effects, however, were only of a short duration. In the long run children thought refusing more feasible and younger children showed less social anxiousness. As an unwanted side effect of the program the oldest children developed feelings of discomfort about being touched",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 292,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1210,7 +1206,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 3980,
 			"p_value": {
 				"value": 0.05,
@@ -1241,7 +1237,7 @@
 			},
 			"quote": "Preschoolers who had participated in the BST program demonstrated greater knowledge and higher levels of personal safety skills compared with controls. Boys and girls reacted similarly to the program, as did children from younger and older age groups. These results provide support for the assertion that most preschool aged children can benefit from participating in a developmentally appropriate personal safety program",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 406,
 			"p_value": {
 				"value": 0.001,
@@ -1272,7 +1268,7 @@
 			},
 			"quote": "The findings suggest that the Stay Safe Programme was effective in training children in safety skills and so may usefully be used as a primary prevention intervention for child abuse",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 772,
 			"p_value": {
 				"value": 0.01,
@@ -1303,7 +1299,7 @@
 			},
 			"quote": "These findings show that the Stay Safe child sexual abuse prevention program was successful in achieving its secondary prevention goal of promoting children’s effective disclosures of sexual victimization",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 588,
 			"p_value": {
 				"value": 0.01,
@@ -1341,7 +1337,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 8115,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -1369,7 +1365,7 @@
 			},
 			"quote": "This is the first study to find that school-based child sexual abuse prevention programs are associated with a reduced incidence of child sexual abuse. Additionally, contrary to concerns voiced in the literature, there was no evidence that prevention programs are associated with decreased sexual satisfaction or avoidance of sex in adulthood",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 825,
 			"p_value": {
 				"value": 0.01,
@@ -1407,7 +1403,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1434,7 +1430,7 @@
 			},
 			"quote": "In comparison to children who had not yet been in the \"Who Do You Tell\" program, participants learned more concepts about secrets, permission to tell, and permission at times to say no to an adult. These are not inconsequential ideas and do reflect central themes for the majority of prevention programs",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 231,
 			"p_value": {
 				"value": 0.01,
@@ -1464,7 +1460,7 @@
 			},
 			"quote": "Students who attended prevention programs were more knowledgeable about abuse concepts and reported fewer incidents of abuse. However, the effectiveness of students’ responses to abuse, even when they were using strategies taught by the prevention programs, was variable",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 137,
 			"p_value": {
 				"value": 0.05,
@@ -1497,7 +1493,7 @@
 			},
 			"quote": "Young elementary school children involved in a relatively brief prevention program appear to gain knowledge and prevention skills as they were better able to identify appropriate behaviors when faced with situations depicted on video-vignettes compared to waiting-list control children, and this does not appear to be due to a sensitizing effect. Moreover, the knowledge acquired appears to be maintained at follow-up",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 133,
 			"p_value": {
 				"value": 0.001,
@@ -1528,7 +1524,7 @@
 			},
 			"quote": "Children who completed the program recorded a significant increase in their knowledge regarding child abuse",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 341,
 			"p_value": {
 				"value": 0.01,
@@ -1558,7 +1554,7 @@
 			},
 			"quote": "All participants showed increases in correct responding on generalization role-play probes and maintained these increases over a 3-and 6-week follow-up",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 3,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -1590,8 +1586,8 @@
 				"count": 20,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1627,7 +1623,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1655,7 +1651,7 @@
 			},
 			"quote": "The skills scores went up significantly from pre-intervention baseline after participants had seen the play, while no changes were observed in a waiting-list control group. The immediate post intervention effects were maintained at two follow-ups after 2 and 30 weeks, respectively. Furthermore, there was no indication that the intervention made children generally suspicious of friendly behaviour from adults",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 148,
 			"p_value": {
 				"value": 0.001,
@@ -1691,7 +1687,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1725,8 +1721,8 @@
 				"count": 22,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": 10480,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1758,8 +1754,8 @@
 				"count": 50,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1787,7 +1783,7 @@
 			},
 			"quote": "Pre-test results demonstrated that young children had difficulty recognizing the inappropriateness of a request when it was made by a “good” person. Post-test findings demonstrated that children as young as 3 years of age can learn the inappropriateness of such requests even when coming from “good” people",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 93,
 			"p_value": {
 				"value": 0.001,
@@ -1817,7 +1813,7 @@
 			},
 			"quote": "The program was found to be effective at increasing participant’s knowledge of sexual abuse, awareness of school and community sexual assault support resources, and identification of components of healthy and unhealthy relationships",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 202,
 			"p_value": {
 				"value": 0.001,
@@ -1849,7 +1845,7 @@
 			},
 			"quote": "A comparison of posttest responses showed substantial gains in knowledge by the experimental group students on about two-thirds of the questionnaire items that were not shared by control group students. In almost all cases, the children performed as well, and often better on the second posttest, conducted two months after the conclusion of the program",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 445,
 			"p_value": {
 				"value": 0.01,
@@ -1880,7 +1876,7 @@
 			},
 			"quote": "Compared with controls, participating children demonstrated enhanced ability to recognize inappropriate touches, learned correct genital terminology, were able to recognize the inappropriateness of touch requests made by \"good\" people, demonstrated higher levels of personal safety skills, and learned general safety rules. Gains in knowledge were maintained at three-month follow-up",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 123,
 			"p_value": {
 				"value": 0.001,
@@ -1913,7 +1909,7 @@
 			},
 			"quote": "Results revealed that participants in this sample obtained low scores on measures of sexual abuse knowledge and that short booster sessions that elicit children’s recall of the learned material might produce greater improvements [...] In addition, there was no negative impact from the workshop in terms of children’s feelings of safety",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 160,
 			"p_value": {
 				"value": 0.008,
@@ -1945,7 +1941,7 @@
 			},
 			"quote": "Findings from this study support the efficacy of the MBMB curriculum in increasing children’s knowledge of child sexual abuse prevention topics. In particular, it appears that a train-the-trainer model has utility for teaching children about inappropriate touching and what to do if it happens to them",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 80,
 			"p_value": {
 				"value": 0.01,
@@ -1977,7 +1973,7 @@
 			},
 			"quote": "Children’s self-protection skills improved regardless of age after participation in the program. The program, however, did not successfully improve children’s knowledge of sexuality and safety. Although future studies should modify the program content to better target knowledge of sexuality and safety, these results are promising for a pilot of this skills-based CSA prevention program in Taiwan",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 46,
 			"p_value": {
 				"value": 0.01,
@@ -2010,7 +2006,7 @@
 			},
 			"quote": "Following program participation, preschool children in the intervention group demonstrated greater knowledge about sexual abuse prevention and higher levels of self-protection skills compared with children in the wait-list control group",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 150,
 			"p_value": {
 				"value": 0.001,
@@ -2041,7 +2037,7 @@
 			},
 			"quote": "The prevention child sexual abuse program was effective on 4th grade students and this effect was lasting eight weeks later",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 36,
 			"p_value": {
 				"value": 0.0001,
@@ -2073,7 +2069,7 @@
 			},
 			"quote": "The evaluation of the programme shows that the pupils in the experimental group resolved the situations with increasing skill, confidence and determination; and that they could see more clearly where to look for help in terms of protection measures. The tutors evaluated the programme positively, considering the contents useful for prevention",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 317,
 			"p_value": {
 				"value": 0.001,
@@ -2111,7 +2107,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2141,7 +2137,7 @@
 			},
 			"quote": "Outcomes from this evaluation demonstrated that it improved children’s knowledge of protective behaviors, increased their intention to choose safe responses to unsafe situations, and increased their use of protective behaviors according to parent report",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 245,
 			"p_value": {
 				"value": 0.0001,
@@ -2173,7 +2169,7 @@
 			},
 			"quote": "The intervention group showed significantly greater improvement than the control group on knowledge of inappropriate touch",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 492,
 			"p_value": {
 				"value": 0.001,
@@ -2212,7 +2208,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 5802,
 			"p_value": {
 				"value": 0.0001,
@@ -2244,7 +2240,7 @@
 			},
 			"quote": "Results of this cluster RCT showed that children in Grades 2 through 6 who completed the Safe@Last program had significantly better knowledge scores at the post-intervention assessment than did those in the waitlist control condition",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 1177,
 			"p_value": {
 				"value": 0.001,
@@ -2274,7 +2270,7 @@
 			},
 			"quote": "Significant differences were found between the experimental and control groups’ mean difference (post-pre) in competence scores [...] , especially in the category of self-protective behaviors",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 89,
 			"p_value": {
 				"value": 0.001,
@@ -2303,7 +2299,7 @@
 			},
 			"quote": "The results indicated that completion of the Safer, Smarter Kids curriculum was followed by a significant increase in students’ knowledge of key prevention concepts",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 1169,
 			"p_value": {
 				"value": 0.001,
@@ -2341,8 +2337,8 @@
 				"count": 50,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2372,7 +2368,7 @@
 			},
 			"quote": "The findings reveal that children in the teacher education group demonstrated the highest level of CSA prevention knowledge and skills, followed by the parent education group, while children in the control group showed the least improvements. The knowledge and skills gains were retained at a 12-week follow-up",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 484,
 			"p_value": {
 				"value": 0.001,
@@ -2404,7 +2400,7 @@
 			},
 			"quote": "The outcome evaluation indicates that the IGEL program is an effective intervention in terms of knowledge about CSA and known courses of action, and may therefore contribute to the prevention of CSA in primary schools",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 291,
 			"p_value": {
 				"value": 0.001,
@@ -2436,7 +2432,7 @@
 			},
 			"quote": "The “Body Safety Training programme” is effective in increasing the child sexual abuse prevention and self-protection skills in Turkish young children",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 83,
 			"p_value": {
 				"value": 0.001,
@@ -2469,7 +2465,7 @@
 			},
 			"quote": "The self-protection program increased and maintained CSA knowledge six months after the intervention finished",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 4932,
 			"p_value": {
 				"value": 0.004,
@@ -2506,8 +2502,8 @@
 				"count": 20,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2536,7 +2532,7 @@
 			},
 			"quote": "Girls scored higher than boys in CSA knowledge and ability to recognize, refuse, and report unsafe touches, but both boys and girls made significant gains",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 2172,
 			"p_value": {
 				"value": 0.001,
@@ -2568,7 +2564,7 @@
 			},
 			"quote": "We found that some domains of children’s knowledge of CSA as well as their efficacy to resist an attack increased from pre- to posttest. Moreover, 83% of children reported that they liked IMpower, and 96% of children reported that IMpower helped keep them safe",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 48,
 			"p_value": {
 				"value": 0.001,
@@ -2599,7 +2595,7 @@
 			},
 			"quote": "The school-based sexual abuse prevention program was shown to be acceptable, feasible and efficacious in improving sexual abuse prevention knowledge and skills of female children",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 15,
 			"p_value": {
 				"value": 0.001,
@@ -2628,8 +2624,8 @@
 				"indirect": false
 			},
 			"quote": "Children who were exposed to the prevention book were significantly more likely to recognize a potential abuse situation and refuse an inappropriate touch request than children who were not exposed to the book",
-			"type": "BlindedRandomizedControlledTrial",
-			"on": "Humans",
+			"type": "RandomizedControlledTrial",
+			"blinding": "None",
 			"sample_size": 180,
 			"p_value": {
 				"value": 0.001,
@@ -2667,7 +2663,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "SomeLinks",
@@ -2697,7 +2693,7 @@
 			},
 			"quote": "The increase in self-protection skills was greater for participants in the intervention group than for those in the wait-list comparison group from pre-test to post-test. Two-month followup analysis showed that gain in knowledge and skills was maintained",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 290,
 			"p_value": {
 				"value": 0.01,
@@ -2737,7 +2733,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": {
 				"value": 0.001,
@@ -2770,7 +2766,7 @@
 			},
 			"quote": "This study provides evidence to support the efficacy of the Play it Safe! program for increasing children’s physical and sexual abuse prevention knowledge and skills",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 539,
 			"p_value": {
 				"value": 0.01,
@@ -2802,7 +2798,7 @@
 			},
 			"quote": "Intervention students displayed a greater increase in knowledge for the information taught in the CSM program as compared to students who did not receive the intervention",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 2414,
 			"p_value": "NoAccess",
 			"conflict_of_interest": "NoAccess",
@@ -2829,7 +2825,7 @@
 			},
 			"quote": "Accordingly, in the light of the significance of this difference between post-test scores, it can be said that the sexuality education program was effective in increasing sexuality knowledge",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 58,
 			"p_value": {
 				"value": 0.05,
@@ -2868,7 +2864,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 14817,
 			"p_value": {
 				"value": 0.0001,
@@ -2908,7 +2904,7 @@
 				"subpart": false
 			},
 			"type": "DiverseClinicalTrials",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 13669,
 			"p_value": {
 				"value": 0.001,
@@ -2940,7 +2936,7 @@
 			},
 			"quote": "This study demonstrates that a single-session, universal school based CSA prevention program can effectively increase children’s knowledge when implemented and disseminated on a wide scale and knowledge gains can be retained 12-months post intervention",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 3673,
 			"p_value": {
 				"value": 0.001,
@@ -2977,7 +2973,7 @@
 				"subpart": false
 			},
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 8970,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -3005,7 +3001,7 @@
 			},
 			"quote": "The psychological intervention program increased children's knowledge and awareness concerning the prevention of sexual abuse and associated coping skills. Furthermore, psychological intervention programs were effective in preventing child sexual abuse",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 80,
 			"p_value": {
 				"value": 0.01,
@@ -3037,7 +3033,7 @@
 			},
 			"quote": "The educational program significantly enhanced knowledge about sexual abuse prevention among child laborers, with sustained improvements observed at the three-month follow-up. This intervention provides a promising model for empowering vulnerable children with the knowledge needed to protect themselves",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 60,
 			"p_value": {
 				"value": 0.001,

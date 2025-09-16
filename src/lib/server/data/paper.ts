@@ -50,7 +50,7 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 	}
 
 	result.type = paper.type;
-	result.on = paper.on;
+	result.blinding = paper.blinding;
 	result.sample_size = paper.sample_size;
 
 	if (typeof paper.p_value === 'object')

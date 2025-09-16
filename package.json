@@ -8,9 +8,10 @@
 		"build": "node ./scripts/clean.js && svelte-kit sync && vite build",
 		"deploy": "node ./scripts/clean.js && docker compose build && docker compose up -d --force-recreate && docker system prune -af --volumes",
 		"clean": "docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker system prune -af --volumes; node ./scripts/clean.js",
+		"discord": "node ./scripts/discord.js",
 		"search": "node ./scripts/search.js",
 		"find-more": "node ./scripts/find_more.js",
-		"discord": "node ./scripts/discord.js"
+		"migration": "node ./scripts/migration.js"
 	},
 	"repository": {
 		"type": "git",

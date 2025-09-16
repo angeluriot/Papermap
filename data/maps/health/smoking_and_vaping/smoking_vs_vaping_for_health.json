@@ -195,15 +195,11 @@
 		}
 	},
 	"type": {
-		"no_blind": true,
 		"no_random": false,
 		"no_causality": false,
 		"any": false
 	},
-	"on": {
-		"any_animal": false,
-		"any": false
-	},
+	"no_blinding": true,
 	"no_sample_size": false,
 	"papers": [
 		{
@@ -229,7 +225,7 @@
 			},
 			"quote": "Own brand significantly increased plasma nicotine and CO concentration and heart rate within the first five minutes of administration whereas NPRO EC, Hydro EC, and sham smoking did not",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 32,
 			"p_value": {
 				"value": 0.001,
@@ -266,7 +262,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -295,7 +291,7 @@
 			},
 			"quote": "It is concluded that acute active and passive smoking using the e-cigarettes tested in the current study does not influence CBC indices in smokers and never smokers, respectively. In contrast, acute active and passive tobacco cigarette smoking increase the secondary proteins of acute inflammatory load for at least one hour",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 30,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -331,7 +327,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "Yes",
@@ -360,7 +356,7 @@
 			},
 			"quote": "The studied e-cigarettes generate smaller changes in lung function but similar nicotinergic impact to tobacco cigarettes",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 30,
 			"p_value": {
 				"value": 0.001,
@@ -391,8 +387,8 @@
 				"indirect": false
 			},
 			"quote": "Overall, EC vapour extracts showed significantly higher cell viability compared to CS extract, based on a realistic-use rather than a standardized comparative level of exposure. This supports the concept that ECs may be useful as tobacco harm reduction products",
-			"type": "NotApplicable",
-			"on": "InVitro",
+			"type": "InVitroStudy",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "Yes",
@@ -420,8 +416,8 @@
 				"indirect": false
 			},
 			"quote": "This study indicates that EC vapor is significantly less cytotoxic compared tobacco CS",
-			"type": "NotApplicable",
-			"on": "InVitro",
+			"type": "InVitroStudy",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": {
 				"value": 0.001,
@@ -458,8 +454,8 @@
 				"indirect": false
 			},
 			"quote": "A significant reduction in frequency of reported symptoms was observed compared to baseline (Figure 8). Of all symptoms that progressively decreased throughout the study with the use of e-cigarettes, shortness of breath was substantially reduced from 20 to 4% already by week-2",
-			"type": "BlindedRandomizedControlledTrial",
-			"on": "Humans",
+			"type": "RandomizedControlledTrial",
+			"blinding": "None",
 			"sample_size": 300,
 			"p_value": {
 				"value": 0.0001,
@@ -469,7 +465,7 @@
 			"notes": [
 				{
 					"title": "Blinding and randomization out of scope",
-					"description": "The comparison between vaping and smoking (which is a minor topic) is a simple before/after analysis and does not benefit from blinding and randomization",
+					"description": "The comparison between vaping and smoking (which is a minor topic) is a simple before/after analysis and does not benefit from blinding or randomization",
 					"impact": "VeryNegative"
 				}
 			]
@@ -496,8 +492,8 @@
 				"indirect": true
 			},
 			"quote": "The levels of the toxicants were 9–450 times lower than in cigarette smoke and were, in many cases, comparable with trace amounts found in the reference product",
-			"type": "NotApplicable",
-			"on": "NotApplicable",
+			"type": "Other",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": {
 				"value": 0.05,
@@ -528,8 +524,8 @@
 				"indirect": true
 			},
 			"quote": "While the outer fibers filtered out many of the tin particles, significant amounts of tin, other metals, and silicate beads escaped into the aerosol and would result in human exposure, in some cases probably greater than a conventional cigarette user would experience",
-			"type": "NotApplicable",
-			"on": "NotApplicable",
+			"type": "Other",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -570,7 +566,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -599,7 +595,7 @@
 			},
 			"quote": "Although acute smoking causes a delay in myocardial relaxation, electronic cigarette use has no immediate effects",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 76,
 			"p_value": {
 				"value": 0.001,
@@ -631,7 +627,7 @@
 			},
 			"quote": "Significant benefits are experienced by these people in physiologic functions and in some disease conditions, with former smokers (those who completely substituted smoking with EC use) being more likely to report such beneficial effects",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 19441,
 			"p_value": {
 				"value": 0.001,
@@ -668,8 +664,8 @@
 				"indirect": true
 			},
 			"quote": "In the emissions of these fractions, which represent up to 40 % of total vapor volume, similar levels of formaldehyde were detected when compared to conventional tobacco cigarettes. By contrast, carbonylic compounds were hardly detectable in earlier collected fractions",
-			"type": "NotApplicable",
-			"on": "NotApplicable",
+			"type": "Other",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -705,7 +701,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -734,7 +730,7 @@
 			},
 			"quote": "This small retrospective study indicates that regular use of e-cigs to substitute smoking is associated with objective and subjective improvements in asthma outcomes",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 18,
 			"p_value": {
 				"value": 0.001,
@@ -764,7 +760,7 @@
 			},
 			"quote": "The heart rate, systolic and diastolic blood pressure were significantly elevated after use of Marlboro® cigarettes, but the elevation was less after use of most of the e-cigs. Use of e-cigs had no impact on the exhaled CO levels, whereas the Marlboro® cigarette significantly increased the exhaled CO more than 8 times above the baseline. In conclusion, e-cigs could be a less harmful alternative for tobacco users",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 23,
 			"p_value": {
 				"value": 0.0001,
@@ -800,7 +796,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -828,8 +824,8 @@
 				"indirect": false
 			},
 			"quote": "The results of this study suggest that of all nicotinecontaining products, cigarettes (and small cigars in the USA) are very much the most harmful",
-			"type": "NotApplicable",
-			"on": "NotApplicable",
+			"type": "Other",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "Yes",
@@ -863,7 +859,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "Yes",
@@ -897,7 +893,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -933,7 +929,7 @@
 			},
 			"quote": "EC use in both smokers who quit smoking and in dual users was accompanied by a significant decrease in tobacco smoke toxicant exposure",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 40,
 			"p_value": {
 				"value": 0.001,
@@ -964,9 +960,9 @@
 				"indirect": false
 			},
 			"quote": "The viability of mainstream smoke cigarette exposed cells was 4.5–8 times lower and the oxidative stress levels 4.5–5 times higher than those of e-cigarette vapor exposed cells",
-			"type": "NotApplicable",
-			"on": "InVitro",
-			"sample_size": "NotSpecified",
+			"type": "InVitroStudy",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
 			"notes": []
@@ -993,9 +989,9 @@
 				"indirect": false
 			},
 			"quote": "Lung fibroblast viability following treatments with 2.5% propylene glycol, glycerin, or commercial e-liquids was not significantly different than control after 24 hrs. As expected, 2.5% CSE treatment caused significant cell death, leading to less than 20% viability after the 24 hrs",
-			"type": "ClinicalTrial",
-			"on": "InVitro",
-			"sample_size": "NotSpecified",
+			"type": "InVitroStudy",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
 			"notes": []
@@ -1023,7 +1019,7 @@
 			},
 			"quote": "Our study demonstrates that both cigarettes have unfavorable effects on markers of oxidative stress and FMD after single use, although E cigarette appeared to have a lesser impact",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 40,
 			"p_value": {
 				"value": 0.001,
@@ -1055,7 +1051,7 @@
 			},
 			"quote": "Smokers invited to switch to electronic cigarettes who completely abstained from smoking showed steady progressive improvements in their exhaled breath measurements and symptoms scores",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 300,
 			"p_value": {
 				"value": 0.0001,
@@ -1087,7 +1083,7 @@
 			},
 			"quote": "A substantial improvement, however, was observed for tobacco smokers or dual users who switched to e-cigarettes only. [...] The rate of adverse events was not lower in e-cigarette-only users than in tobacco smokers, which was expected in this phase of the study, given that the excess risk of tobacco smoking takes 1–5 years to substantially decrease",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 932,
 			"p_value": {
 				"value": 0.05,
@@ -1119,7 +1115,7 @@
 			},
 			"quote": "Vaping e-cigarettes was associated with a much greater number of gene expression changes and, in a gene-by-gene comparison, stronger levels of suppression compared with cigarette smokers",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 39,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -1147,8 +1143,8 @@
 				"indirect": false
 			},
 			"quote": "Our comparisons with cigarette smoke provide important insights; MMP-9 and CXCL8 release caused by different e-cig brands were often similar to, or in excess of, the CSE response",
-			"type": "NotApplicable",
-			"on": "InVitro",
+			"type": "InVitroStudy",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -1177,7 +1173,7 @@
 			},
 			"quote": "There was a significant reduction in annual COPD exacerbations within the COPD EC user group [...] while no significant change was observed in the control group",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 48,
 			"p_value": {
 				"value": 0.005,
@@ -1209,7 +1205,7 @@
 			},
 			"quote": "After switching from tobacco to e-cigarettes, nicotine exposure remains unchanged, while exposure to selected carcinogens and toxicants is substantially reduced",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 20,
 			"p_value": {
 				"value": 0.001,
@@ -1247,7 +1243,7 @@
 				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1276,7 +1272,7 @@
 			},
 			"quote": "This prospective study confirms that EC use [instead of CC use] ameliorates objective and subjective asthma outcomes and shows that these beneficial effects may persist in the long term",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 18,
 			"p_value": {
 				"value": 0.001,
@@ -1307,8 +1303,8 @@
 				"indirect": false
 			},
 			"quote": "Our findings suggest that e-vapor extracts pose a similar risk to as conventional tobacco products",
-			"type": "NotApplicable",
-			"on": "InVitro",
+			"type": "InVitroStudy",
+			"blinding": "None",
 			"sample_size": "NotApplicable",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1336,7 +1332,7 @@
 			},
 			"quote": "The results of this study demonstrate that smokers who completely substitute combustible cigarettes with ecigarettes over a short period of time (5-days) experience reductions in exposure to a number of known harmful tobacco-related toxicants and carcinogens similar to smokers who quit smoking over the same period of time",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 105,
 			"p_value": {
 				"value": 0.0001,
@@ -1373,7 +1369,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1402,7 +1398,7 @@
 			},
 			"quote": "Together, our results indicate that e-cigarette use alters the profile of innate defense proteins in airway secretions, inducing similar and unique changes relative to cigarette smoking. These data challenge the concept that e-cigarettes are a healthier alternative to cigarettes",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 44,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1431,7 +1427,7 @@
 			},
 			"quote": "Long-term NRT-only and e-cigarette–only use, but not dual use of NRTs or e-cigarettes with combustible cigarettes, is associated with substantially reduced levels of measured carcinogens and toxins relative to smoking only combustible cigarettes",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 181,
 			"p_value": {
 				"value": 0.001,
@@ -1464,7 +1460,7 @@
 			},
 			"quote": "The point estimate of the odds of MI associated with daily e-cigarette use is lower than current cigarette smoking in the adjusted models",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 69046,
 			"p_value": {
 				"value": 0.001,
@@ -1496,7 +1492,7 @@
 			},
 			"quote": "Having any respiratory symptom was significantly associated with dual use, smoking only, and former smoking without e-cigarette use, while former smoking with e-cigarette use and nonsmoking with e-cigarette use did not reach statistical significance",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 30272,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -1525,7 +1521,7 @@
 			},
 			"quote": "Exclusive use of e-cigarettes appears to result in measurable exposure to known tobacco-related toxicants, generally at lower levels than cigarette smoking",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 5105,
 			"p_value": {
 				"value": 0.001,
@@ -1556,8 +1552,8 @@
 				"indirect": false
 			},
 			"quote": "We conclude that both e-cig vaping and conventional cigarette smoking negatively impact lung biology",
-			"type": "ClinicalTrial",
-			"on": "Animals",
+			"type": "AnimalStudy",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "YesButOppositeResults",
@@ -1587,7 +1583,7 @@
 			},
 			"quote": "In the multivariable analysis for chronic pulmonary disorder, e-cigarette use and smoking showed significant independent associations with respiratory disorder; the effect size was larger for smoking than for e cigarettes but both were significant",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 8087,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1621,7 +1617,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1655,8 +1651,8 @@
 				"count": 100,
 				"subpart": false
 			},
-			"type": "DiverseObservationalStudies",
-			"on": "DiverseSubjects",
+			"type": "DiverseTypes",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1685,7 +1681,7 @@
 			},
 			"quote": "The present study suggests that EC use [instead of smoking] may ameliorate objective and subjective COPD outcomes and that the benefits gained may persist long-term",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 44,
 			"p_value": {
 				"value": 0.004,
@@ -1717,7 +1713,7 @@
 			},
 			"quote": "The effects of E-cigarettes were less pronounced than those of T cigarettes in nonsmokers. Conversely, the effect of E-cigarettes in smokers showed a less detrimental impact than T-cigarettes but only for platelet aggregation",
 			"type": "ClinicalTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 40,
 			"p_value": {
 				"value": 0.001,
@@ -1756,7 +1752,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -1785,7 +1781,7 @@
 			},
 			"quote": "Smokers instructed and incentivized to completely switch to e cigarettes resulted in lower smoking rates and greater reductions in exposures to harmful chemicals",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 264,
 			"p_value": {
 				"value": 0.001,
@@ -1817,9 +1813,9 @@
 			},
 			"quote": "The e-cigarette group reported greater declines in the incidence of cough and phlegm production from baseline to 52 weeks than did the nicotine-replacement group. There were no significant between group differences in the incidence of wheezing or shortness of breath",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 886,
-			"p_value": "NotApplicable",
+			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
 			"notes": []
 		},
@@ -1847,7 +1843,7 @@
 			},
 			"quote": "[Table 3 shows a much stronger COPD association for smoking, but for asthma the difference is smaller or even reversed in some cases]",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 214945,
 			"p_value": {
 				"value": 0.0001,
@@ -1879,7 +1875,7 @@
 			},
 			"quote": "We found no significant association between e-cigarette use and cardiovascular disease among never combustible-cigarette smokers [compared to an odds ratio of ≈2 for smokers according to Figure 1]. [...] [This] may be due to the younger age of this group. [...] Occasional use of e-cigarettes is the predominant pattern in never smokers, leading to low intensity of use",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 449092,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -1906,7 +1902,7 @@
 			},
 			"quote": "This result suggests that switching from combustible tobacco to e-cigarettes would lower risk of developing respiratory disease",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 32320,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -1935,7 +1931,7 @@
 			},
 			"quote": "Current vapers had lower risk in wheezing and related respiratory symptoms than current smokers or dual users but higher than non-users. Both dual use and smoking significantly increased the risk of wheezing and related respiratory symptoms",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 28171,
 			"p_value": {
 				"value": 0.05,
@@ -1967,7 +1963,7 @@
 			},
 			"quote": "TC smokers, particularly females, demonstrate significant improvement in vascular health within 1 month of switching from TC to EC. Switching from TC to EC may be considered a harms reduction measure",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 114,
 			"p_value": {
 				"value": 0.0001,
@@ -1999,7 +1995,7 @@
 			},
 			"quote": "The pooled analysis of the 2016 and 2017 NHIS showed no association between e-cigarette use and MI or CHD. The associations between established risk factors, including smoking, and both conditions were remarkably consistent",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 59770,
 			"p_value": {
 				"value": 0.001,
@@ -2031,7 +2027,7 @@
 			},
 			"quote": "Compared to current smokers, current vapers who were either ex-smokers or never smoked showed significantly lower aORs, 0.85 and 0.39 respectively, suggesting that vaping has significantly lower association with self-reported COPD diagnosis compared to smoking",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 887182,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -2067,7 +2063,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2101,7 +2097,7 @@
 				"subpart": true
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2130,7 +2126,7 @@
 			},
 			"quote": "[Figure 1 shows an odds ratio of ≈2 for exclusive e-cigarette users and ≈4 for exclusive combustible cigarette smokers]",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 705159,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -2159,7 +2155,7 @@
 			},
 			"quote": "The present study suggests that EC use may ameliorate objective and subjective COPD outcomes, and that the benefits gained appear to persist long term. EC use for abstinence and smoking reduction may ameliorate some of the harm resulting from tobacco smoking in COPD patients",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 39,
 			"p_value": {
 				"value": 0.046,
@@ -2191,7 +2187,7 @@
 			},
 			"quote": "This randomized clinical trial found that switching to NSPS e-cigarettes among adult smokers did not increase nicotine exposure and led to short-term reduction in the major pulmonary carcinogen, NNAL, compared with continued smoking",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 186,
 			"p_value": {
 				"value": 0.001,
@@ -2230,7 +2226,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2258,7 +2254,7 @@
 			},
 			"quote": "Odds of stroke were lower for sole e-cigarette users versus current sole combustible cigarette users",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 161529,
 			"p_value": {
 				"value": 0.05,
@@ -2296,7 +2292,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2326,7 +2322,7 @@
 			},
 			"quote": "Compared with exclusive smokers, exclusive e-cigarette users had significantly lower levels of almost all inflammatory and oxidative stress biomarkers other than high-sensitivity C-reactive protein",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 7130,
 			"p_value": {
 				"value": 0.05,
@@ -2363,7 +2359,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2398,7 +2394,7 @@
 				"subpart": true
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2427,7 +2423,7 @@
 			},
 			"quote": "COPD prevalence was not found to be lower in exclusive e-cigarette users compared to exclusive cigarette smokers",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 13752,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "SomeLinks",
@@ -2457,7 +2453,7 @@
 			},
 			"quote": "We did not find sufficient evidence to suggest that transitioning to exclusive use of ENDS significantly changes the odds of CVD incidence",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 7820,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "SomeLinks",
@@ -2486,7 +2482,7 @@
 			},
 			"quote": "FMD was reduced in both e-cigarette users and cigarette smokers relative to the nonusers. [...] E-cigarette user serum, but not smoker serum, increased microvascular endothelial cell permeability in a process involving RAGE and its ligands. [...] Some biomarkers that were unchanged in e-cigarette users were elevated in cigarette smokers",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 120,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2522,7 +2518,7 @@
 				"subpart": false
 			},
 			"type": "DiverseObservationalStudies",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 585306,
 			"p_value": {
 				"value": 0.02,
@@ -2559,8 +2555,8 @@
 				"count": 32,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2589,7 +2585,7 @@
 			},
 			"quote": "Though stroke was more prevalent in traditional smokers, the incidence of stroke was early-in-onset and was strongly associated with e-cigarette use compared to traditional smokers",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 79825,
 			"p_value": {
 				"value": 0.0001,
@@ -2628,7 +2624,7 @@
 			},
 			"quote": "Compared to non-use, exclusive cigarette use was associated with an increased risk of self-reported incident diagnosed cardiovascular disease over a 5-year period, while ENDS use was not associated with a statistically significant increase in the outcomes",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 22107,
 			"p_value": {
 				"value": 0.001,
@@ -2660,7 +2656,7 @@
 			},
 			"quote": "Smokers attempting to quit experienced a positive cardiovascular impact after both a 3- and 6-month period. None of the groups (i.e., nicotine-containing and nicotine-free e-cigarettes or NRT) offered superior cardiovascular benefits to the others",
 			"type": "RandomizedControlledTrial",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 248,
 			"p_value": {
 				"value": 0.0001,
@@ -2697,7 +2693,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2726,7 +2722,7 @@
 			},
 			"quote": "ENDS use did not significantly increase the risk of self-reported incident COPD over a 5-year period once current smoking status and cigarette pack years were included. Cigarette pack years, by contrast, remained associated with a net increase in COPD incidence risk",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 9861,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -2755,7 +2751,7 @@
 			},
 			"quote": "In this representative sample of US adults, exclusive use of ENDS (vs. cigarette smoking) was associated with much lower exposures to many harmful chemicals associated with smoking-related disease. BOE levels in dual users were directly related to their cigarette consumption. These BOE data provide further evidence that ENDS expose users to substantially lower levels of toxicants than combustible cigarettes, confirming their potential for harm reduction",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 3453,
 			"p_value": {
 				"value": 0.05,
@@ -2793,8 +2789,8 @@
 				"count": 400,
 				"subpart": true
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2828,7 +2824,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2864,7 +2860,7 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
-			"on": "DiverseSubjects",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2899,8 +2895,8 @@
 				"count": 20,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": "NoAccess",
 			"p_value": "NoAccess",
 			"conflict_of_interest": "None",
@@ -2927,7 +2923,7 @@
 			},
 			"quote": "Exclusive e-cigarette users were significantly more likely to report good health compared to exclusive cigarette smokers",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 1291,
 			"p_value": {
 				"value": 0.014,
@@ -2965,8 +2961,8 @@
 				"count": 33,
 				"subpart": false
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": 76004,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
@@ -2995,7 +2991,7 @@
 			},
 			"quote": "Notwithstanding the more than threefold difference in the number of DMRs between vapers and smokers (831 vs. 2,863), we observed striking similarities in the distribution and patterns of DNA methylation between the two groups in terms of DMRs’ characteristics, associated genes and TF motifs, GO terms, and affected molecular pathways",
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 30,
 			"p_value": {
 				"value": 0.05,
@@ -3027,7 +3023,7 @@
 			},
 			"quote": "Switching completely from past 30-day use of cigarettes to e cigarettes had short-term beneficial associations with functionally important respiratory symptoms similar to quitting tobacco completely",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 5653,
 			"p_value": {
 				"value": 0.009,
@@ -3065,7 +3061,7 @@
 				"subpart": false
 			},
 			"type": "CrossSectionalStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -3094,7 +3090,7 @@
 			},
 			"quote": "Switching to E-cigarettes or quitting smoking was associated with a significantly lower risk of major adverse cardiac events (MACE) than continued combustible cigarette use",
 			"type": "CohortStudy",
-			"on": "Humans",
+			"blinding": "None",
 			"sample_size": 17973,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
@@ -3129,8 +3125,8 @@
 				"count": 90,
 				"subpart": true
 			},
-			"type": "DiverseTypes",
-			"on": "Humans",
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
 			"sample_size": 29044,
 			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
