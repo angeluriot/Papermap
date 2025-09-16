@@ -2314,7 +2314,7 @@
 				"value": 0.002,
 				"less_than": false
 			},
-			"conflict_of_interest": "SomeLinks",
+			"conflict_of_interest": "None",
 			"notes": [
 				{
 					"title": "No dose-response relationship",
@@ -2482,11 +2482,11 @@
 				"conclusion": "yes_but_small_effect",
 				"indirect": false
 			},
-			"quote": "Among persons with diabetes, AS soda consumption was linked to liver cancer",
+			"quote": "Among persons without diabetes, there were no statistical evidence of associations between liver cancer and consumption of [...] artificially sweetened beverages. [...] In contrast, among persons with diabetes, there were significant associations between liver cancer and consumption of [...] artificially sweetened soda",
 			"type": "CohortStudy",
 			"blinding": "None",
 			"sample_size": 553874,
-			"p_value": "NoAccess",
+			"p_value": "NotSpecified",
 			"conflict_of_interest": "None",
 			"notes": []
 		},

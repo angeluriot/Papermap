@@ -596,7 +596,7 @@
 			},
 			"citations": 27,
 			"results": {
-				"consensus": "NoAccess",
+				"consensus": "no_consensus",
 				"conclusion": "positive",
 				"indirect": false
 			},
@@ -604,8 +604,11 @@
 			"type": "RandomizedControlledTrial",
 			"blinding": "None",
 			"sample_size": 39,
-			"p_value": "NoAccess",
-			"conflict_of_interest": "NoAccess",
+			"p_value": {
+				"value": 0.01,
+				"less_than": true
+			},
+			"conflict_of_interest": "None",
 			"notes": []
 		},
 		{
@@ -2792,7 +2795,7 @@
 			},
 			"citations": 3,
 			"results": {
-				"consensus": "NoAccess",
+				"consensus": "towards_positive",
 				"conclusion": "positive",
 				"indirect": false
 			},
@@ -2800,8 +2803,11 @@
 			"type": "RandomizedControlledTrial",
 			"blinding": "None",
 			"sample_size": 2414,
-			"p_value": "NoAccess",
-			"conflict_of_interest": "NoAccess",
+			"p_value": {
+				"value": 0.001,
+				"less_than": true
+			},
+			"conflict_of_interest": "Yes",
 			"notes": []
 		},
 		{
