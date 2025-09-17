@@ -178,6 +178,7 @@ app.use(async (req, res, next) =>
 			newrelic.addCustomAttribute('custom_map', endpoint.map);
 			newrelic.addCustomAttribute('custom_file', endpoint.file);
 			newrelic.addCustomAttribute('custom_error', null);
+			newrelic.addCustomAttribute('custom_status', null);
 		}
 
 		const limiters = [default_limiter];
