@@ -547,7 +547,7 @@
 			</div>
 		</div>
 		<div class="subtitle-cards">
-			<span class="subtitle unselectable">Result:</span>
+			<span class="subtitle unselectable">Paper result:</span>
 			<div class="cards">
 				<div class="card text-unselectable" style="background-color: {result.color}; --shadow-color: {result.shadow};" bind:clientWidth={result_width}>
 					{@render emoji(result.emoji)}
