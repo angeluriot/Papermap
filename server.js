@@ -83,6 +83,12 @@ const ROUTES = [
 	},
 	{
 		method: 'GET',
+		endpoint: '/statistics',
+		regex: /^\/statistics$/,
+		extract: () => ({}),
+	},
+	{
+		method: 'GET',
 		endpoint: '/',
 		regex: /^\/$/,
 		extract: () => ({}),

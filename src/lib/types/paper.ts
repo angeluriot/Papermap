@@ -139,12 +139,17 @@ export interface DataPaper
 
 export interface PaperScores
 {
+	year: number;
+	journal?: number;
 	citations: number;
-	review_count: number;
-	type: number;
-	blinding: number;
-	sample_size: number;
-	p_value: number;
+	direct: number;
+	review?: number;
+	review_count?: number;
+	type?: number;
+	blinding?: number;
+	sample_size?: number;
+	p_value?: number;
+	conflict_of_interest: number;
 }
 
 

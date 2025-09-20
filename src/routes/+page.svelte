@@ -123,6 +123,12 @@
 					<span>Random map</span>
 				</button>
 			</a>
+			<a href="/statistics" class="rounded-full">
+				<button class="flex-center-row rounded-full unselectable">
+					<div class="emoji">{@html emojis['📊']}</div>
+					<span>Statistics</span>
+				</button>
+			</a>
 		</div>
 	</div>
 	<div class="links absolute z-20 right-0 bottom-0 flex-center-row flex-wrap img-unselectable">

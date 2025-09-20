@@ -5,7 +5,7 @@ import { get_uuid, ratio } from '$lib/utils';
 
 
 const DIVERSE_INCREASE = 0.4;
-const MIN_YEAR = 1900;
+const MIN_YEAR = 1950;
 const CITATIONS_HALF_SCORE = 50.0;
 const REVIEW_TYPE_SCORES = {
 	[ReviewType.Review]:			0.0,
@@ -69,14 +69,14 @@ const SAMPLE_SIZE_SCORES = {
 	[MissingReason.NoAccess]:		0.25,
 	[MissingReason.NotSpecified]:	0.0,
 }
-const OBSERVATIONAL_SAMPLE_SIZE_HALF_SCORE = 300.0;
-const EXPERIMENTAL_SAMPLE_SIZE_HALF_SCORE = 50.0;
+const OBSERVATIONAL_SAMPLE_SIZE_HALF_SCORE = 600.0;
+const EXPERIMENTAL_SAMPLE_SIZE_HALF_SCORE = 60.0;
 const P_VALUE_SCORES = {
 	[MissingReason.NoAccess]:		0.25,
 	[MissingReason.NotSpecified]:	0.0,
 };
 const MAX_P_VALUE = 0.05;
-const P_VALUE_EXP = 2;
+const P_VALUE_EXP = 5;
 const CONFLICT_OF_INTEREST_SCORES = {
 	[MissingReason.NoAccess]:					0.7,
 	[ConflictOfInterest.None]:					1.0,
@@ -91,7 +91,7 @@ const NOTES_SCORES = {
 	[NoteImpact.Positive]:		0.65,
 	[NoteImpact.VeryPositive]:	1.0,
 };
-const COEFS = {
+export const COEFS = {
 	year: {
 		no_review: { min: 0.9, max: 1.0 },
 		review: { min: 0.8, max: 1.0 },
@@ -102,17 +102,17 @@ const COEFS = {
 	review: { min: 1.0, max: 2.0 },
 	type: {
 		effect: { min: 0.4, max: 1.0 },
-		no_effect: { min: 0.5, max: 1.0 },
+		no_effect: { min: 0.45, max: 1.0 },
 	},
 	blinding: {
-		effect: { min: 0.6, max: 1.0 },
-		no_effect: { min: 0.7, max: 1.0 },
+		effect: { min: 0.7, max: 1.0 },
+		no_effect: { min: 0.75, max: 1.0 },
 	},
 	sample_size: {
 		effect: { min: 0.9, max: 1.05 },
 		no_effect: { min: 0.7, max: 1.1 },
 	},
-	p_value: { min: 0.8, max: 1.05 },
+	p_value: { min: 0.8, max: 1.1 },
 	conflict_of_interest: {
 		no_narrative_review: { min: 0.5, max: 1.0 },
 		narrative_review: { min: 0.4, max: 1.0 },
@@ -140,27 +140,38 @@ function apply_coef(value: number, coef: { min: number, max: number }): number
 }
 
 
-function score_year(paper: DataPaper): number
+function score_year(paper: DataPaper): { year_score: number, initial_year_score: number }
 {
 	const score = ratio(paper.year, MIN_YEAR, new Date().getFullYear());
 
-	return apply_coef(score, paper.review ? COEFS.year.review : COEFS.year.no_review);
+	return {
+		year_score: apply_coef(score, paper.review ? COEFS.year.review : COEFS.year.no_review),
+		initial_year_score: score
+	};
 }
 
 
-export function score_journal(paper: DataPaper, journal: Journal | undefined): number
+export function score_journal(paper: DataPaper, journal: Journal | undefined): { journal_score: number, initial_journal_score: number | undefined }
 {
-	let score = journal?.score ?? 0.0;
+	let initial_score: number | undefined = journal?.score ?? 0.0;
 
 	if (paper.journal.retracted)
-		score = 0.0;
+		initial_score = 0.0;
 
-	score = apply_coef(score, COEFS.journal);
+	let score = apply_coef(initial_score, COEFS.journal);
 
 	if (paper.institution)
-		return Math.max(score, 1.0);
+	{
+		if (!journal)
+			initial_score = undefined;
 
-	return score;
+		score = Math.max(score, 1.0);
+	}
+
+	return {
+		journal_score: score,
+		initial_journal_score: initial_score
+	};
 }
 
 
@@ -178,18 +189,21 @@ export function score_citations(paper: DataPaper): { citations_score: number, in
 }
 
 
-export function score_direct(paper: DataPaper): number
+export function score_direct(paper: DataPaper): { direct_score: number, initial_direct_score: number }
 {
 	const score = paper.results.indirect ? 0.0 : 1.0;
 
-	return apply_coef(score, COEFS.direct);
+	return {
+		direct_score: apply_coef(score, COEFS.direct),
+		initial_direct_score: score
+	};
 }
 
 
-function score_review(paper: DataPaper): { review_score: number, review_count_score: number }
+function score_review(paper: DataPaper): { review_score: number, initial_review_score: number | undefined, review_count_score: number | undefined }
 {
 	if (!paper.review)
-		return { review_score: 1.0, review_count_score: 0.0 };
+		return { review_score: 1.0, initial_review_score: undefined, review_count_score: undefined };
 
 	const type_score = paper.review ? REVIEW_TYPE_SCORES[paper.review.type] : 0.0;
 	let count_score = paper.review.count !== MissingReason.NoAccess ? paper.review.count : 5;
@@ -200,17 +214,20 @@ function score_review(paper: DataPaper): { review_score: number, review_count_sc
 	count_score /= REVIEW_COUNT_HALF_SCORE;
 	count_score /= count_score + 1.0;
 
+	const score = type_score * count_score;
+
 	return {
-		review_score: apply_coef(type_score * count_score, COEFS.review),
+		review_score: apply_coef(score, COEFS.review),
+		initial_review_score: score,
 		review_count_score: count_score
 	};
 }
 
 
-function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: number): { type_score: number, initial_type_score: number }
+function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: number): { type_score: number, initial_type_score: number | undefined }
 {
 	if (map.type.any)
-		return { type_score: 1.0, initial_type_score: 1.0 };
+		return { type_score: 1.0, initial_type_score: undefined };
 
 	let type_scores = TYPE_SCORES.default;
 
@@ -259,10 +276,10 @@ function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: nu
 }
 
 
-function score_blinding(map: DataMap | Map, paper: DataPaper, review_count_score: number): { blinding_score: number, initial_blinding_score: number }
+function score_blinding(map: DataMap | Map, paper: DataPaper, review_count_score: number): { blinding_score: number, initial_blinding_score: number | undefined }
 {
 	if (map.no_blinding)
-		return { blinding_score: 1.0, initial_blinding_score: 1.0 };
+		return { blinding_score: 1.0, initial_blinding_score: undefined };
 
 	let blinding: (Blinding | MissingReason.NoAccess)[] = [];
 
@@ -284,10 +301,10 @@ function score_blinding(map: DataMap | Map, paper: DataPaper, review_count_score
 }
 
 
-function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_score: number): { sample_size_score: number, initial_sample_size_score: number }
+function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_score: number): { sample_size_score: number, initial_sample_size_score: number | undefined }
 {
 	if (map.no_sample_size || paper.sample_size === MissingReason.NotApplicable || paper.type === PaperType.InVitroStudy)
-		return { sample_size_score: 1.0, initial_sample_size_score: 1.0 };
+		return { sample_size_score: 1.0, initial_sample_size_score: undefined };
 
 	let score = 0.0;
 
@@ -317,10 +334,10 @@ function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_sc
 }
 
 
-function score_p_value(map: DataMap | Map, paper: DataPaper): { p_value_score: number, initial_p_value_score: number }
+function score_p_value(map: DataMap | Map, paper: DataPaper): { p_value_score: number, initial_p_value_score: number | undefined }
 {
 	if (!map.conclusions[paper.results.conclusion].p_value || paper.p_value === MissingReason.NotApplicable)
-		return { p_value_score: 1.0, initial_p_value_score: 1.0 };
+		return { p_value_score: 1.0, initial_p_value_score: undefined };
 
 	let score = 0.0;
 
@@ -340,12 +357,15 @@ function score_p_value(map: DataMap | Map, paper: DataPaper): { p_value_score: n
 }
 
 
-function score_conflict_of_interest(paper: DataPaper): number
+function score_conflict_of_interest(paper: DataPaper): { conflict_of_interest_score: number, initial_conflict_of_interest_score: number }
 {
 	const score = CONFLICT_OF_INTEREST_SCORES[paper.conflict_of_interest];
 	const is_narrative_review = paper.review && paper.review.type === ReviewType.NarrativeReview;
 
-	return apply_coef(score, is_narrative_review ? COEFS.conflict_of_interest.narrative_review : COEFS.conflict_of_interest.no_narrative_review);
+	return {
+		conflict_of_interest_score: apply_coef(score, is_narrative_review ? COEFS.conflict_of_interest.narrative_review : COEFS.conflict_of_interest.no_narrative_review),
+		initial_conflict_of_interest_score: score
+	};
 }
 
 
@@ -370,26 +390,31 @@ function score_publication_bias(map: DataMap | Map, paper: DataPaper): number
 
 function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal | undefined): { scores: PaperScores, score: number }
 {
-	const year_score = score_year(paper);
-	const journal_score = score_journal(paper, journal);
+	const { year_score, initial_year_score } = score_year(paper);
+	const { journal_score, initial_journal_score } = score_journal(paper, journal);
 	const { citations_score, initial_citations_score } = score_citations(paper);
-	const direct_score = score_direct(paper);
-	const { review_score, review_count_score } = score_review(paper);
-	const { type_score, initial_type_score } = score_type(map, paper, review_count_score);
-	const { blinding_score, initial_blinding_score } = score_blinding(map, paper, review_count_score);
-	const { sample_size_score, initial_sample_size_score } = score_sample_size(map, paper, review_count_score);
+	const { direct_score, initial_direct_score } = score_direct(paper);
+	const { review_score, initial_review_score, review_count_score } = score_review(paper);
+	const { type_score, initial_type_score } = score_type(map, paper, review_count_score ?? 0.0);
+	const { blinding_score, initial_blinding_score } = score_blinding(map, paper, review_count_score ?? 0.0);
+	const { sample_size_score, initial_sample_size_score } = score_sample_size(map, paper, review_count_score ?? 0.0);
 	const { p_value_score, initial_p_value_score } = score_p_value(map, paper);
-	const conflict_of_interest_score = score_conflict_of_interest(paper);
+	const { conflict_of_interest_score, initial_conflict_of_interest_score } = score_conflict_of_interest(paper);
 	const notes_score = score_notes(paper);
 	const publication_bias_score = score_publication_bias(map, paper);
 
 	const scores: PaperScores = {
+		year: initial_year_score,
+		journal: initial_journal_score,
 		citations: initial_citations_score,
+		direct: initial_direct_score,
+		review: initial_review_score,
 		review_count: review_count_score,
 		type: initial_type_score,
 		blinding: initial_blinding_score,
 		sample_size: initial_sample_size_score,
 		p_value: initial_p_value_score,
+		conflict_of_interest: initial_conflict_of_interest_score,
 	};
 
 	const score = (

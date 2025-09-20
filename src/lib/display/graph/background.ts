@@ -238,7 +238,7 @@ export function get_y_title(stats: GraphStats, y_ticks: Tick[], font_scale: numb
 	return {
 		x: distance_start + stats.sub_scales.axis * TITLE_Y_DISTANCE * font_size,
 		y: stats.height / 2,
-		text: 'Paper Strength Index',
+		text: 'Paper score',
 		font_size,
 	}
 }

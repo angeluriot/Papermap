@@ -31,6 +31,7 @@ export async function GET({ params }: { params: Params }): Promise<Response>
 			throw new NotFoundError('File not found');
 
 		const file_buffer = await fs.readFile(file_path);
+		// @ts-ignore
 		return new Response(file_buffer, { headers: { 'Content-Type': `${file_type}` } });
 	}
 

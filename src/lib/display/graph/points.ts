@@ -22,18 +22,26 @@ export function get_last_name(author: string): string
 }
 
 
-export function get_label(paper: Paper): string
+export function get_year(paper: Paper): number
 {
+	return paper.year + (paper.override_seed !== undefined ? paper.override_seed : seedrandom(paper.title).quick())
+}
+
+
+export function get_label(paper: Paper, two_lines: boolean): string
+{
+	const year = two_lines ? '\n' + paper.year : ' (' + paper.year + ')';
+
 	if (paper.institution)
-		return paper.institution.acronym + '\n' + paper.year;
+		return paper.institution.acronym + year;
 
 	if (paper.authors.length === 1)
-		return get_last_name(paper.authors[0]) + '\n' + paper.year;
+		return get_last_name(paper.authors[0]) + year;
 
 	if (paper.authors.length === 2)
-		return get_last_name(paper.authors[0]) + ' & ' + get_last_name(paper.authors[1]) + '\n' + paper.year;
+		return get_last_name(paper.authors[0]) + ' & ' + get_last_name(paper.authors[1]) + year;
 
-	return get_last_name(paper.authors[0]) + ' et al.\n' + paper.year;
+	return get_last_name(paper.authors[0]) + ' et al.' + year;
 }
 
 
@@ -129,7 +137,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			i: 0,
 			uuid: paper.uuid,
 			answer: paper.results.conclusion,
-			x: ratio(paper.year + (paper.override_seed !== undefined ? paper.override_seed : seedrandom(paper.title).quick()), stats.min_year, stats.max_year) * stats.width,
+			x: ratio(get_year(paper), stats.min_year, stats.max_year) * stats.width,
 			y: stats.height - (ratio(paper.score, stats.min_score, stats.max_score) * stats.height),
 			size,
 			focus_size,
@@ -145,7 +153,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 				y: 0,
 				width: 0,
 				height: 0,
-				text: get_label(paper),
+				text: get_label(paper, true),
 				font_size: stats.sub_scales.point_stroke * FONT_SIZE * font_scale,
 				line_height: stats.sub_scales.point_stroke * LINE_HEIGHT * font_scale,
 				shown: paper.institution !== undefined || paper.authors.length > 0,

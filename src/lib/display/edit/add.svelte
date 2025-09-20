@@ -619,7 +619,7 @@
 			{#if paper == null}
 				Add a new paper
 			{:else}
-				Edit "{get_label(paper).replaceAll('\n', ' ').trim()}"
+				Edit "{get_label(paper, false)}"
 			{/if}
 		</h1>
 		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/paper.md" target="_blank" class="help flex-center-row">
