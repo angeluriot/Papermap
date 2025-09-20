@@ -131,7 +131,7 @@
 			</a>
 		</div>
 	</div>
-	<div class="links absolute z-20 right-0 bottom-0 flex-center-row flex-wrap img-unselectable">
+	<div class="links absolute z-20 right-0 bottom-0 flex-center-row flex-wrap">
 		<span onclick={() => popup?.show()} onkeydown={null} role="button" tabindex={0}>
 			New map
 		</span>

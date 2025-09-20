@@ -110,7 +110,7 @@
 		{#each overview as data, i}
 			{#if data.label.type !== null}
 				<span
-					class="unselectable text-{data.label.type}"
+					class="text-{data.label.type}"
 					style="color: {data.color}; opacity: {nb_labels !== 1 && (group_selected === null || group_selected.i == i) ? 1 : 0};"
 				>
 					{data.label.text.join('\n')}
@@ -122,7 +122,7 @@
 		{#each overview as data, i}
 			{#if data.label.type === null || nb_labels === 1}
 				<span
-					class="absolute unselectable"
+					class="absolute"
 					style="left: {positions[i]?.position || data.x + data.width / 2}%; color: {data.color}; opacity: {(nb_labels === 1 && data.label.type !== null) || (group_selected !== null && group_selected.i == i) ? 1 : 0}; margin-top: {labels_2_lines ? '-0.6' : '0'}em; text-align: {positions[i]?.align || 'center'};"
 					bind:this={other_label_elements[i]}
 				>

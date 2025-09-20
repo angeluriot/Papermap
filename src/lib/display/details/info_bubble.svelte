@@ -72,7 +72,7 @@
 	});
 </script>
 
-<div class="info absolute {text !== undefined ? 'unselectable' : 'cursor-auto'}" bind:this={info}>
+<div class="info absolute cursor-auto" bind:this={info}>
 	<div
 		class="arrow absolute bg-white"
 		style="top: {arrow_top}; transform: rotate({arrow_rotation}deg);"

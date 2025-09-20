@@ -57,9 +57,9 @@
 	<div class="absolute z-0">
 		<Background {width} {height} {page_height}/>
 	</div>
-	<div class="main flex-center-col" bind:clientHeight={page_height}>
+	<div class="main flex-center-col z-[100]" bind:clientHeight={page_height}>
 		<div class="header w-full flex flex-row justify-between items-start">
-			<div class="title flex-center-row unselectable">
+			<div class="title flex-center-row">
 				{@render emoji('📖')}
 				<h1>All maps</h1>
 			</div>

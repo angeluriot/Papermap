@@ -487,7 +487,7 @@
 		<div class="edit w-full flex flex-row justify-end items-center">
 			{#if paper.edit === Edit.Deleted}
 				<button
-					class="recreate-button relative card text-unselectable cursor-pointer overflow-hidden"
+					class="recreate-button relative card cursor-pointer overflow-hidden"
 					style="--shadow-color: #00008050" onclick={recreate_paper}
 				>
 					{@render emoji('↩️')}
@@ -497,7 +497,7 @@
 			{:else}
 				{#if paper.edit === Edit.Edited}
 					<button
-						class="recreate-button relative card text-unselectable cursor-pointer overflow-hidden"
+						class="recreate-button relative card cursor-pointer overflow-hidden"
 						style="--shadow-color: #00008050" onclick={cancel_changes}
 					>
 						{@render emoji('↩️')}
@@ -506,7 +506,7 @@
 					</button>
 				{/if}
 				<button
-					class="edit-button relative card text-unselectable cursor-pointer overflow-hidden"
+					class="edit-button relative card cursor-pointer overflow-hidden"
 					style="--shadow-color: #80000050" onclick={edit_paper}
 				>
 					{@render emoji('✒️')}
@@ -514,7 +514,7 @@
 					<div class="absolute edit-mask bg-[#80000015]"></div>
 				</button>
 				<button
-					class="delete-button relative card text-unselectable cursor-pointer overflow-hidden"
+					class="delete-button relative card cursor-pointer overflow-hidden"
 					style="--shadow-color: #80000050" onclick={delete_paper}
 				>
 					{@render emoji('🗑️')}
@@ -535,9 +535,9 @@
 	</a>
 	<div class="part-1" style="gap: 0.75em {part_1_gap}em; flex-wrap: {part_1_flex_wrap};" bind:this={part_1}>
 		<div class="subtitle-cards" bind:clientWidth={consensus_width}>
-			<span class="subtitle unselectable">Previous consensus:</span>
+			<span class="subtitle">Previous consensus:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {consensus.color}; --shadow-color: {consensus.shadow};">
+				<div class="card" style="background-color: {consensus.color}; --shadow-color: {consensus.shadow};">
 					{@render emoji(consensus.emoji)}
 					<span>{consensus.text}</span>
 					<div class="info-ext absolute">
@@ -547,9 +547,9 @@
 			</div>
 		</div>
 		<div class="subtitle-cards">
-			<span class="subtitle unselectable">Paper result:</span>
+			<span class="subtitle">Paper result:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {result.color}; --shadow-color: {result.shadow};" bind:clientWidth={result_width}>
+				<div class="card" style="background-color: {result.color}; --shadow-color: {result.shadow};" bind:clientWidth={result_width}>
 					{@render emoji(result.emoji)}
 					<span>{result.text}</span>
 					<div class="info-ext">
@@ -558,7 +558,7 @@
 				</div>
 				{#if indirect}
 					<div
-						class="card text-unselectable" bind:clientWidth={indirect_width}
+						class="card" bind:clientWidth={indirect_width}
 						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
 					>
 						{@render emoji('🔗')}
@@ -586,13 +586,13 @@
 	<div class="part-2">
 		{#if paper_type_parts.length > 0}
 			<div class="subtitle-cards">
-				<span class="subtitle unselectable">
+				<span class="subtitle">
 					Paper type:
 				</span>
 				<div class="cards">
 					{#each paper_type_parts as part}
 						{#if part.is_card}
-							<div class="card text-unselectable" style="background-color: {part.color}; --shadow-color: {part.shadow};">
+							<div class="card" style="background-color: {part.color}; --shadow-color: {part.shadow};">
 								{#if part.emoji}
 									{@render emoji(part.emoji)}
 								{/if}
@@ -604,7 +604,7 @@
 								{/if}
 							</div>
 						{:else}
-							<div class="text unselectable">
+							<div class="text">
 								<span>{part.text}</span>
 							</div>
 						{/if}
@@ -614,10 +614,10 @@
 		{/if}
 		{#if journal !== null}
 			<div class="subtitle-cards">
-				<span class="subtitle unselectable">Journal:</span>
+				<span class="subtitle">Journal:</span>
 				<div class="cards">
 					<div
-						class="card text-unselectable"
+						class="card"
 						style="background-color: {journal.color}; --shadow-color: {journal.shadow};"
 						onclick={event => { if (journal.journal !== undefined) journal_info_open = true; event.stopPropagation(); }}
 						onkeydown={null}
@@ -639,7 +639,7 @@
 					</div>
 					{#if retracted}
 						<div
-							class="card text-unselectable"
+							class="card"
 							style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
 						>
 							{@render emoji('😵')}
@@ -654,9 +654,9 @@
 		{/if}
 		{#if sample_size !== null}
 			<div class="subtitle-cards">
-				<span class="subtitle unselectable">Sample size:</span>
+				<span class="subtitle">Sample size:</span>
 				<div class="cards">
-					<div class="card text-unselectable" style="background-color: {sample_size.color}; --shadow-color: {sample_size.shadow};">
+					<div class="card" style="background-color: {sample_size.color}; --shadow-color: {sample_size.shadow};">
 						{@render emoji(sample_size.emoji)}
 						<span>{sample_size.text}</span>
 						<div class="info-ext">
@@ -668,9 +668,9 @@
 		{/if}
 		{#if p_value !== null}
 			<div class="subtitle-cards">
-				<span class="subtitle unselectable">P-value:</span>
+				<span class="subtitle">P-value:</span>
 				<div class="cards">
-					<div class="card text-unselectable" style="background-color: {p_value.color}; --shadow-color: {p_value.shadow};">
+					<div class="card" style="background-color: {p_value.color}; --shadow-color: {p_value.shadow};">
 						{@render emoji(p_value.emoji)}
 						<span>{p_value.text}</span>
 						<div class="info-ext">
@@ -681,9 +681,9 @@
 			</div>
 		{/if}
 		<div class="subtitle-cards">
-			<span class="subtitle unselectable">Citations:</span>
+			<span class="subtitle">Citations:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {citations.color}; --shadow-color: {citations.shadow};">
+				<div class="card" style="background-color: {citations.color}; --shadow-color: {citations.shadow};">
 					{@render emoji(citations.emoji)}
 					<span>{citations.text}</span>
 					<div class="info-ext">
@@ -693,9 +693,9 @@
 			</div>
 		</div>
 		<div class="subtitle-cards">
-			<span class="subtitle unselectable">Conflict of Interest:</span>
+			<span class="subtitle">Conflict of Interest:</span>
 			<div class="cards">
-				<div class="card text-unselectable" style="background-color: {conflict_of_interest.color}; --shadow-color: {conflict_of_interest.shadow};">
+				<div class="card" style="background-color: {conflict_of_interest.color}; --shadow-color: {conflict_of_interest.shadow};">
 					{@render emoji(conflict_of_interest.emoji)}
 					<span>{conflict_of_interest.text}</span>
 					<div class="info-ext">
@@ -706,11 +706,11 @@
 		</div>
 		{#if notes.length > 0}
 			<div class="subtitle-cards">
-				<span class="subtitle unselectable">Notes:</span>
+				<span class="subtitle">Notes:</span>
 				<div class="cards">
 					{#each notes as note}
 						<a href={note.link} target={note.link ? '_blank' : undefined}>
-							<div class="card text-unselectable" style="background-color: {note.color}; --shadow-color: {note.shadow};">
+							<div class="card" style="background-color: {note.color}; --shadow-color: {note.shadow};">
 								{@render emoji(note.emoji)}
 								<span>{note.text}</span>
 								<div class="info-ext">
@@ -726,7 +726,7 @@
 	<div class="footer w-full flex flex-row justify-end items-center flex-nowrap">
 		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/scoring.md" target="_blank" class="flex-center-row flex-nowrap">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How papers are scored?</span>
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How papers are scored?</span>
 		</a>
 	</div>
 </div>

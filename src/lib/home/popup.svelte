@@ -113,37 +113,37 @@
 		<div class="cross absolute cursor-pointer right-0 top-0" onclick={hide} onkeydown={null} role="button" tabindex={0}>
 			<img src={Cross} alt="Close"/>
 		</div>
-		<h1 class="unselectable">Request a new map</h1>
+		<h1>Request a new map</h1>
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label flex-center-row">
 				<span>Title</span>
 				<span class="required">*</span>
 			</div>
 			<input bind:value={data.title} type="text" placeholder="A simple question that can be answered by science"/>
 		</div>
 		<div class="input">
-			<div class="label unselectable">
+			<div class="label">
 				<span>Description</span>
 				<span class="optional"><i>(optional)</i></span>
 			</div>
 			<input bind:value={data.description} type="text" placeholder="Provide additional details about the question"/>
 		</div>
 		<div class="input">
-			<div class="label unselectable">
+			<div class="label">
 				<span>Papers</span>
 				<span class="optional"><i>(optional)</i></span>
 			</div>
 			<textarea bind:value={data.papers} placeholder="Links to papers you have already found"></textarea>
 		</div>
 		<div class="input">
-			<div class="label unselectable">
+			<div class="label">
 				<span>Additional comment</span>
 				<span class="optional"><i>(optional)</i></span>
 			</div>
 			<input bind:value={data.comment} type="text" placeholder="Other useful information"/>
 		</div>
 		<div class="input">
-			<div class="label unselectable">
+			<div class="label">
 				<span>Discord username</span>
 				<span class="optional"><i>(optional)</i></span>
 			</div>

@@ -103,10 +103,12 @@
 			onmouseenter={() => selected_i = i} role="button" tabindex={i}
 			onclick={() => select_journal(i)} onkeydown={null}
 		>
-			<span class="title unselectable">{j.title}</span>
-			{#if j.publisher}
-				<span class="publisher unselectable">({j.publisher})</span>
-			{/if}
+			<div class="unselectable">
+				<span class="title">{j.title}</span>
+				{#if j.publisher}
+					<span class="publisher">({j.publisher})</span>
+				{/if}
+			</div>
 		</div>
 	{/each}
 </div>

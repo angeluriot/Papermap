@@ -93,21 +93,21 @@
 
 <div class="send-container flex-center-col">
 	<div class="title flex-center-col">
-		<h1 class="unselectable">Submit your changes</h1>
+		<h1>Submit your changes</h1>
 		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/README.md" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to contribute?</span>
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to contribute?</span>
 		</a>
 	</div>
 	<div class="input">
-		<div class="label unselectable">
+		<div class="label">
 			<span>Comment</span>
 			<span class="optional"><i>(optional)</i></span>
 		</div>
 		<textarea bind:value={comment} placeholder="Explain some choices or provide additional information"></textarea>
 	</div>
 	<div class="input">
-		<div class="label unselectable">
+		<div class="label">
 			<span>Discord username</span>
 			<span class="optional"><i>(optional)</i></span>
 		</div>

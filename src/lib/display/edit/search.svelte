@@ -120,14 +120,14 @@
 
 <div class="search-container flex-center-col">
 	<div class="title flex-center-col">
-		<h1 class="unselectable">Add a new paper</h1>
+		<h1>Add a new paper</h1>
 		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/paper.md" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to add a paper?</span>
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to add a paper?</span>
 		</a>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>DOI link</span>
 		</div>
 		<input bind:value={doi} type="text" placeholder="The DOI link of the paper"/>
@@ -137,13 +137,13 @@
 		<span class="absolute">OR</span>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Title</span>
 		</div>
 		<input bind:value={title} type="text" placeholder="The title of the paper"/>
 	</div>
 	<div class="input mt-[-0.5em]">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Year</span>
 		</div>
 		<input bind:value={year} type="number" min=1500 max={new Date().getFullYear()} placeholder="The year of publication"/>

@@ -100,11 +100,11 @@
 	<div class="part-1">
 		{#each metrics as metric}
 			<div class="subtitle-cards">
-				<span class="subtitle unselectable">
+				<span class="subtitle">
 					{metric.title}:
 				</span>
 				<div class="cards">
-					<div class="card text-unselectable" style="background-color: {metric.color}; --shadow-color: {metric.shadow};">
+					<div class="card" style="background-color: {metric.color}; --shadow-color: {metric.shadow};">
 						<div class="emoji">{@html emojis[metric.emoji]}</div>
 						<span>{metric.text}</span>
 						<div class="info-ext">
@@ -118,7 +118,7 @@
 	<div class="footer w-full flex flex-row justify-end items-center flex-nowrap">
 		<a href="https://github.com/angeluriot/Papermap-data/blob/main/README.md" target="_blank" class="flex-center-row flex-nowrap">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span class="unselectable">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How journals are scored?</span>
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How journals are scored?</span>
 		</a>
 	</div>
 </div>

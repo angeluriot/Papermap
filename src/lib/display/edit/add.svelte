@@ -615,7 +615,7 @@
 
 <div class="add-container flex flex-col justify-start items-center">
 	<div class="title flex-center-col">
-		<h1 class="unselectable">
+		<h1>
 			{#if paper == null}
 				Add a new paper
 			{:else}
@@ -624,22 +624,22 @@
 		</h1>
 		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/paper.md" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span class="unselectable">
+			<span>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to {#if paper == null}add{:else}edit{/if} a paper?
 			</span>
 		</a>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Title</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<input bind:value={title} type="text" placeholder="The title of the paper"/>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Is an institutional report</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<select bind:value={institution_status}>
 			<option value="" disabled selected hidden></option>
@@ -649,24 +649,24 @@
 	</div>
 	{#if institution_status == 'yes'}
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label flex-center-row">
 				<span>Institution name</span>
-				<span class="required">*</span>
+				<span class="required unselectable">*</span>
 			</div>
 			<input bind:value={institution_name} type="text" placeholder="The name of the institution"/>
 		</div>
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label flex-center-row">
 				<span>Institution acronym</span>
-				<span class="required">*</span>
+				<span class="required unselectable">*</span>
 			</div>
 			<input bind:value={institution_acronym} type="text" placeholder="The acronym of the institution (or abbreviation)"/>
 		</div>
 	{:else if institution_status == 'no'}
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label flex-center-row">
 				<span>Authors</span>
-				<span class="required">*</span>
+				<span class="required unselectable">*</span>
 			</div>
 			{#each authors as _, i}
 				<div class="input-button flex-center-row w-full">
@@ -694,23 +694,23 @@
 		</div>
 	{/if}
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Year</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<input bind:value={year} type="number" min=1500 max={new Date().getFullYear()} placeholder="The year of publication"/>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Link</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<input bind:value={link} type="text" placeholder="A link to the paper (a DOI link if possible)"/>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Has been published {institution_status === 'yes' ? 'in a journal' : ''}</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<select bind:value={journal_status}>
 			<option value="" disabled selected hidden></option>
@@ -720,14 +720,14 @@
 	</div>
 	{#if journal_status == 'yes'}
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label flex-center-row">
 				<span>Journal</span>
-				<span class="required">*</span>
+				<span class="required unselectable">*</span>
 			</div>
 			<div class="journal-container relative w-full">
 				{#if journal !== null}
 					<div class="journal flex flew-row justify-between items-center">
-						<span class="unselectable">{journal.title}</span>
+						<span>{journal.title}</span>
 						<div class="journal-remove" onclick={() => journal = null} onkeydown={null} role="button" tabindex={0}>
 							<img src={Cross} alt="remove" class="img-unselectable"/>
 						</div>
@@ -743,30 +743,30 @@
 				{/if}
 			</div>
 		</div>
-		<div class="input checkbox">
+		<div class="input checkbox cursor-pointer">
 			<input bind:checked={retracted} type="checkbox"/>
 			<div
 				class="label" role="button" tabindex={0} onkeydown={null}
 				onclick={() => { retracted = !retracted; }}
 			>
-				<span class="unselectable">Retracted</span>
-				<span class="optional unselectable">(Has the journal retracted the paper?)</span>
+				<span>Retracted</span>
+				<span class="optional">(Has the journal retracted the paper?)</span>
 			</div>
 		</div>
 	{/if}
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Citations</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<input bind:value={citations} type="number" min=0 placeholder="The number of times the paper has been cited"/>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Previous consensus</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
-		<div class="sublabel unselectable">
+		<div class="sublabel">
 			<span>The consensus in literature according to the paper (if any)</span>
 		</div>
 		<select bind:value={consensus}>
@@ -779,11 +779,11 @@
 		</select>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Paper result</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
-		<div class="sublabel unselectable">
+		<div class="sublabel">
 			<span>The conclusion of the paper</span>
 		</div>
 		<select bind:value={conclusion}>
@@ -793,27 +793,27 @@
 			{/each}
 		</select>
 	</div>
-	<div class="input checkbox">
+	<div class="input checkbox cursor-pointer">
 		<input bind:checked={indirect} type="checkbox"/>
 		<div
 			class="label" role="button" tabindex={0} onkeydown={null}
 			onclick={() => { indirect = !indirect; }}
 		>
-			<span class="unselectable">Indirect result</span>
-			<span class="optional unselectable">(This conclusion is based on indirect evidence from the paper)</span>
+			<span>Indirect result</span>
+			<span class="optional">(This conclusion is based on indirect evidence from the paper)</span>
 		</div>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Quote</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<textarea bind:value={quote} placeholder={'A short quote from the paper that supports the conclusion (use "[...]" if needed)'}></textarea>
 	</div>
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Review type</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<select bind:value={review_type}>
 			<option value="" disabled selected hidden></option>
@@ -824,20 +824,20 @@
 		</select>
 	</div>
 	{#if is_review}
-		<div class="input checkbox">
+		<div class="input checkbox cursor-pointer">
 			<input bind:checked={review_reviews} type="checkbox"/>
 			<div
 				class="label" role="button" tabindex={0} onkeydown={null}
 				onclick={() => { review_reviews = !review_reviews; }}
 			>
-				<span class="unselectable">Review of reviews</span>
-				<span class="optional unselectable">(Most of the reviewed papers are literature reviews themselves)</span>
+				<span>Review of reviews</span>
+				<span class="optional">(Most of the reviewed papers are literature reviews themselves)</span>
 			</div>
 		</div>
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label flex-center-row">
 				<span>Number of papers included</span>
-				<span class="required">*</span>
+				<span class="required unselectable">*</span>
 			</div>
 			<div class="w-full flex-center-row" style="gap: 0.5em;">
 				<select bind:value={review_estimate} style="width: 4em;">
@@ -854,25 +854,25 @@
 				</select>
 			{/if}
 		</div>
-		<div class="input checkbox">
+		<div class="input checkbox cursor-pointer">
 			<input bind:checked={review_subpart} type="checkbox"/>
 			<div
 				class="label" role="button" tabindex={0} onkeydown={null}
 				onclick={() => { review_subpart = !review_subpart; }}
 			>
-				<span class="unselectable">Minor topic</span>
-				<span class="optional unselectable">(Only a small portion of the papers are actually used to answer the question of this page)</span>
+				<span>Minor topic</span>
+				<span class="optional">(Only a small portion of the papers are actually used to answer the question of this page)</span>
 			</div>
 		</div>
 	{/if}
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			{#if is_review_multiple && review_count != 1}
 				<span>Study type of most papers</span>
 			{:else}
 				<span>Study type</span>
 			{/if}
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<select bind:value={type}>
 			<option value="" disabled selected hidden></option>
@@ -889,9 +889,9 @@
 	</div>
 	{#if blinding_available}
 		<div class="input">
-			<div class="label unselectable flex-center-row">
+			<div class="label flex-center-row">
 				<span>Blinding</span>
-				<span class="required">*</span>
+				<span class="required unselectable">*</span>
 			</div>
 			<select bind:value={blinding}>
 				<option value="" disabled selected hidden></option>
@@ -913,9 +913,9 @@
 	{/if}
 	{#if sample_size_available}
 		<div class="input">
-			<div class="label unselectable">
+			<div class="label">
 				<span>{#if is_review_multiple}Total sample{:else}Sample{/if} size</span>
-				<span class="optional unselectable">(optional)</span>
+				<span class="optional">(optional)</span>
 			</div>
 			<input
 				bind:value={sample_size} type="number" min=1
@@ -935,9 +935,9 @@
 	{/if}
 	{#if p_value_available}
 		<div class="input">
-			<div class="label unselectable">
+			<div class="label">
 				<span>P-value</span>
-				<span class="optional unselectable">(optional)</span>
+				<span class="optional">(optional)</span>
 			</div>
 			<div class="w-full flex-center-row" style="gap: 0.5em;">
 				<select bind:value={p_value_prefix} style="width: 4em;">
@@ -960,9 +960,9 @@
 		</div>
 	{/if}
 	<div class="input">
-		<div class="label unselectable flex-center-row">
+		<div class="label flex-center-row">
 			<span>Conflict of interest</span>
-			<span class="required">*</span>
+			<span class="required unselectable">*</span>
 		</div>
 		<select bind:value={conflict_of_interest}>
 			<option value="" disabled selected hidden></option>
@@ -973,26 +973,26 @@
 		</select>
 	</div>
 	<div class="input">
-		<div class="label unselectable">
+		<div class="label">
 			<span>Notes</span>
-			<span class="optional unselectable">(optional)</span>
+			<span class="optional">(optional)</span>
 		</div>
 		{#each notes as _, i}
 			<div class="input-button flex-center-row w-full">
 				<div class="flex flex-col justify-start items-start w-full" style="gap: 0.5em;">
-					<div class="sublabel unselectable">
+					<div class="sublabel">
 						<span>Title</span>
 					</div>
 					<input bind:value={notes[i].title} type="text" placeholder="The title of the note"/>
-					<div class="sublabel unselectable">
+					<div class="sublabel">
 						<span>Description</span>
 					</div>
 					<textarea class="small" bind:value={notes[i].description} placeholder="A short description of the note"></textarea>
-					<div class="sublabel unselectable">
+					<div class="sublabel">
 						<span>Link</span>
 					</div>
 					<input bind:value={notes[i].link} type="text" placeholder="A link if needed"/>
-					<div class="sublabel unselectable">
+					<div class="sublabel">
 						<span>Impact on the paper score</span>
 					</div>
 					<select bind:value={notes[i].impact}>
