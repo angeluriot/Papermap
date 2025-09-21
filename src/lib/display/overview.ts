@@ -13,7 +13,7 @@ export function get_overview(map: Map)
 		ids: string[],
 		label: {
 			text: string[],
-			type: 'left' | 'right' | null,
+			type: 'left' | 'right' | 'middle' | null,
 		},
 	}[] = [];
 
@@ -51,8 +51,14 @@ export function get_overview(map: Map)
 	while (result[last].width < 0.0001)
 		last--;
 
-	result[first].label.type = 'left';
-	result[last].label.type = 'right';
+	if (first === last)
+		result[first].label.type = 'middle';
+	else
+	{
+		result[first].label.type = 'left';
+		result[last].label.type = 'right';
+	}
+
 	result[result.length - 1].width = 100;
 
 	return result;
