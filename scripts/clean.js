@@ -3,11 +3,13 @@ import { join } from 'node:path';
 
 
 const TMP_DIR_PATH = join(process.cwd(), 'tmp');
+const ENV_PATH = join(process.cwd(), '.env');
+const ENV_TEMPLATE_PATH = join(process.cwd(), '.env.template');
 
 
-async function exist(dir_path)
+async function exist(path)
 {
-	return await fs.access(dir_path).then(() => true).catch(() => false);
+	return await fs.access(path).then(() => true).catch(() => false);
 }
 
 
@@ -33,5 +35,13 @@ async function empty_dir(dir_path)
 }
 
 
+async function create_env_if_not_exist()
+{
+	if (!await exist(ENV_PATH))
+		await fs.copyFile(ENV_TEMPLATE_PATH, ENV_PATH);
+}
+
+
 await create_dir_if_not_exist(TMP_DIR_PATH);
 await empty_dir(TMP_DIR_PATH);
+await create_env_if_not_exist();
