@@ -180,7 +180,7 @@ export function score_citations(paper: DataPaper): { citations_score: number, in
 	let score = paper.citations;
 
 	score /= CITATIONS_HALF_SCORE;
-	score /= score + 1.0;
+	score /= score + 1.0
 
 	return {
 		citations_score: apply_coef(score, COEFS.citations),
