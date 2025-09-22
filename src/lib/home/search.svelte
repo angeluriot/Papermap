@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Map, MapTitle } from '$lib/types/map';
 	import { get_random_elements, in_browser, nb_common_elements } from '$lib/utils';
-	import { Charset,Document } from 'flexsearch';
+	import { Charset, Document } from 'flexsearch';
 	import Fuse from 'fuse.js';
 	import { onMount } from 'svelte';
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
-	import * as echarts from 'echarts';
+	import { type ECharts, type EChartsOption, init as initChart } from 'echarts';
 	import { onDestroy,onMount } from 'svelte';
 
 	const { title, x_axis_label, color, data, scoring }: {
@@ -12,7 +12,7 @@
 	} = $props();
 
 	let container: HTMLDivElement | null = null;
-	let chart: echarts.ECharts | null = null;
+	let chart: ECharts | null = null;
 	let width: number | undefined = $state();
 	let height: number | undefined = $state();
 
@@ -42,7 +42,7 @@
 	});
 
 	// @ts-ignore
-	const option: echarts.EChartsOption = $derived({
+	const option: EChartsOption = $derived({
 		title: {
 			text: title,
 			textAlign: 'left',
@@ -133,7 +133,7 @@
 	{
 		if (container)
 		{
-			chart = echarts.init(container);
+			chart = initChart(container);
 			chart.setOption(option);
 		}
 	});

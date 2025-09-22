@@ -1,6 +1,6 @@
 import { Color, COLORS } from '$lib/colors';
 import { Blinding, ConflictOfInterest,MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
-import * as ColorLib from 'color';
+import ColorLib from 'color';
 
 
 export const TO_EMOJI = {
@@ -122,7 +122,7 @@ export function color_to_shadow(color?: string): string
 	if (!color)
 		return '#000000';
 
-	const hue = ColorLib.default(color).hue();
+	const hue = ColorLib(color).hue();
 
 	if (hue < 63 || hue > 335)
 		return '#800000';
