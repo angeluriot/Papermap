@@ -8,11 +8,11 @@ on:
       - main
 
 jobs:
-  deploy:
+  discord-pr:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy
+    - name: Send PR to Discord
       env:
         URL: ${{ github.event.pull_request.html_url }}
         TITLE: ${{ github.event.pull_request.title }}

@@ -6,11 +6,11 @@ on:
       - opened
 
 jobs:
-  deploy:
+  discord-issue:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy
+    - name: Send Issue to Discord
       env:
         URL: ${{ github.event.issue.html_url }}
         TITLE: ${{ github.event.issue.title }}
