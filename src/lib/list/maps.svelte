@@ -18,7 +18,7 @@
 
 		return {
 			duration: 250,
-			css: (t: number, u: number) =>
+			css: (t: number) =>
 			{
 				const width_eased = cubicInOut(Math.max(0, Math.min(1, t * 3)));
 				const height_eased = cubicInOut(Math.max(0, Math.min(1, t * 1.1 - 0.1)));

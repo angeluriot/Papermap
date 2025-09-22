@@ -246,7 +246,7 @@ export function get_y_title(stats: GraphStats, y_ticks: Tick[], font_scale: numb
 
 export function get_background_points(x_ticks: Tick[], y_ticks: Tick[], stats: GraphStats): BackgroundPoint[]
 {
-	let points: BackgroundPoint[] = [];
+	const points: BackgroundPoint[] = [];
 
 	for (let x = 0; x < x_ticks.length; x++)
 		for (let y = 0; y < y_ticks.length; y++)

@@ -30,7 +30,7 @@ export async function edit_map(map: DataMap, edits: Edits): Promise<DataMap>
 
 export function get_pr_texts(map: DataMap, map_id: string, comment: string | undefined, discord_username: string | undefined, data: Edits)
 {
-	let title = `Edit "${map.question.short}"`;
+	const title = `Edit "${map.question.short}"`;
 	const map_title = `**[${map.question.short}](https://papermap.org/maps/${map_id})**`;
 	let description = `This PR makes changes to the map ${map_title} using the web interface.`;
 

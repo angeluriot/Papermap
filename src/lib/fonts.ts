@@ -12,9 +12,9 @@ async function import_font(dir: string, name: string, weight: string, display: s
 		'woff': 'woff',
 		'woff2': 'woff2',
 	};
-	let files: { type: string, url: string, data: string }[] = [];
+	const files: { type: string, url: string, data: string }[] = [];
 
-	for (let file_type of file_types)
+	for (const file_type of file_types)
 	{
 		const path = join(C.STATIC_DIR, 'fonts', dir, `${name}.${file_type}`);
 

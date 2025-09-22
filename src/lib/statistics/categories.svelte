@@ -67,7 +67,7 @@
 			axisLabel: {
 				...font,
 				lineHeight: x_axis_multiline ? font_size * 1.25 : font_size * 1.8,
-				interval: (index: number, value: string) => true,
+				interval: () => true,
 			},
 			axisLine: {
 				lineStyle: {

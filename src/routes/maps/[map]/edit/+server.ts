@@ -20,7 +20,7 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 		validate_params(params as any);
 		const map_id = (params as any).map
 
-		let local = url.searchParams.get('local') !== null;
+		const local = url.searchParams.get('local') !== null;
 
 		if (local && !C.DEV)
 			throw new InvalidDataError('Local edits are not allowed in production');
@@ -31,6 +31,8 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 		validate_request(data, map.papers.length);
 
 		const edited_map = await edit_map(map, data.edits);
+
+		 
 		const { groups, id, ...content } = edited_map;
 
 		if (local)

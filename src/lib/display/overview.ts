@@ -6,7 +6,7 @@ import { cut_in_half } from './utils';
 
 export function get_overview(map: Map)
 {
-	let result: {
+	const result: {
 		x: number,
 		color: string,
 		width: number,
@@ -35,7 +35,7 @@ export function get_overview(map: Map)
 
 	let cursor = 0;
 
-	for (let item of result)
+	for (const item of result)
 	{
 		item.x = cursor;
 		cursor += item.width;
@@ -67,7 +67,7 @@ export function get_overview(map: Map)
 
 export function get_svg_overview(map: Map, stats: GraphStats, y: number, type: string, scale: number)
 {
-	let overview = get_overview(map);
+	const overview = get_overview(map);
 	const width = stats.scale * 150 * scale;
 	const height = stats.scale * 8 * scale;
 	const font_size = stats.scale * 11.5 * scale;
@@ -76,7 +76,7 @@ export function get_svg_overview(map: Map, stats: GraphStats, y: number, type: s
 	let two_lines = false;
 	let final_y = y;
 
-	for (let item of overview)
+	for (const item of overview)
 	{
 		item.x = cursor;
 		item.width = (item.width / 100) * width;

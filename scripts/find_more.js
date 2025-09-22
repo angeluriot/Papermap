@@ -146,7 +146,7 @@ async function import_ignore()
 		return content.split('\n').map(line => line.trim()).filter(line => line.length > 0).map(clean_id);
 	}
 
-	catch (error)
+	catch
 	{
 		return [];
 	}

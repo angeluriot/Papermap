@@ -14,10 +14,10 @@ import { join } from 'path';
 
 function add_group(group_node: GroupNode, group: Group)
 {
-	for (let map of group_node.maps)
+	for (const map of group_node.maps)
 		map.groups.unshift(group);
 
-	for (let sub_group of group_node.sub_groups)
+	for (const sub_group of group_node.sub_groups)
 		add_group(sub_group, group);
 }
 
@@ -25,8 +25,8 @@ function add_group(group_node: GroupNode, group: Group)
 async function import_group_node(path: string): Promise<GroupNode>
 {
 	let group: Group | undefined = undefined;
-	let maps: MapTitle[] = [];
-	let sub_groups: GroupNode[] = [];
+	const maps: MapTitle[] = [];
+	const sub_groups: GroupNode[] = [];
 
 	const files = await fs.readdir(path, { withFileTypes: true });
 
@@ -86,7 +86,7 @@ async function import_group_node(path: string): Promise<GroupNode>
 		while (Math.random() < 0.5)
 			sub_groups.push(generate_group_node());
 
-	let group_node: GroupNode = {
+	const group_node: GroupNode = {
 		...group,
 		maps: maps.toSorted((a, b) => a.question.short.localeCompare(b.question.short)),
 		sub_groups: sub_groups.toSorted((a, b) => a.name.localeCompare(b.name)),
@@ -100,7 +100,7 @@ async function import_group_node(path: string): Promise<GroupNode>
 
 async function import_structure(path: string): Promise<GroupNode[]>
 {
-	let group_nodes: GroupNode[] = [];
+	const group_nodes: GroupNode[] = [];
 
 	const files = await fs.readdir(path, { withFileTypes: true });
 
@@ -114,7 +114,7 @@ async function import_structure(path: string): Promise<GroupNode[]>
 
 function flatten_structure(group_nodes: GroupNode[]): { [id: string]: MapTitle }
 {
-	let maps: { [id: string]: MapTitle } = {};
+	const maps: { [id: string]: MapTitle } = {};
 
 	for (const group_node of group_nodes)
 	{
@@ -187,7 +187,7 @@ export async function import_map(id: string): Promise<{ map: Map, journals: { [i
 		.filter(id => !Object.keys(JournalMissingReason).includes(id)) as string[]
 	);
 
-	let map = score_map(data_map, journals);
+	const map = score_map(data_map, journals);
 
 	if (map.draft)
 	{

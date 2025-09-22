@@ -3,7 +3,7 @@ import type { DataPaper } from '$lib/types/paper';
 
 export function sort_paper_attributes(paper: DataPaper): DataPaper
 {
-	let result: any = {};
+	const result: any = {};
 
 	if (paper.id !== undefined)
 		result.id = paper.id;

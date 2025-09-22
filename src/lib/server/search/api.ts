@@ -222,16 +222,16 @@ export async function openalex_search(doi?: string, title?: string, year?: numbe
 
 		if (doi)
 		{
-			let id = clean_id(doi);
+			const id = clean_id(doi);
 
-			let query = new URLSearchParams({
+			const query = new URLSearchParams({
 				'filter': /^W\d+$/.test(id) ? 'openalex:' + id : 'doi:' + clean_doi(doi),
 				'mailto': C.OPENALEX_EMAIL ?? '',
 				'per-page': '2',
 				'page': '1',
 			});
 
-			let response = await fetch('https://api.openalex.org/works?' + query.toString());
+			const response = await fetch('https://api.openalex.org/works?' + query.toString());
 
 			if (response.ok)
 			{
@@ -247,14 +247,14 @@ export async function openalex_search(doi?: string, title?: string, year?: numbe
 
 		if (title && year)
 		{
-			let query = new URLSearchParams({
+			const query = new URLSearchParams({
 				'filter': `title.search:"${title.replaceAll(',', '')}",publication_year:${year.toString()}`,
 				'mailto': C.OPENALEX_EMAIL ?? '',
 				'per-page': '2',
 				'page': '1',
 			});
 
-			let response = await fetch('https://api.openalex.org/works?' + query.toString());
+			const response = await fetch('https://api.openalex.org/works?' + query.toString());
 
 			if (response.ok)
 			{

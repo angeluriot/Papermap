@@ -13,7 +13,7 @@ const MIN_GROUP_SIZE = 0.01;
 
 export function score_answer_groups(map: Map): Record<string, number>
 {
-	let answer_group_scores = Object.fromEntries(Object.entries(map.conclusion_groups).map(([id, group]) => [id, 0]));
+	const answer_group_scores = Object.fromEntries(Object.entries(map.conclusion_groups).map(([id, _]) => [id, 0]));
 
 	if (Object.keys(map.papers).length === 0)
 	{
@@ -21,7 +21,7 @@ export function score_answer_groups(map: Map): Record<string, number>
 		return answer_group_scores;
 	}
 
-	let paper_scores: Record<string, number> = {};
+	const paper_scores: Record<string, number> = {};
 
 	for (const paper of Object.values(map.papers))
 		paper_scores[paper.uuid] = paper.score;
@@ -37,7 +37,7 @@ export function score_answer_groups(map: Map): Record<string, number>
 	}
 
 	let total = Object.values(answer_group_scores).reduce((acc, score) => acc + score, 0);
-	let more_research_score = Math.min(Math.max(MORE_RESEARCH_MAX - total_scores, 0) / MORE_RESEARCH_MAX, MORE_RESEARCH_LIMIT);
+	const more_research_score = Math.min(Math.max(MORE_RESEARCH_MAX - total_scores, 0) / MORE_RESEARCH_MAX, MORE_RESEARCH_LIMIT);
 
 	answer_group_scores['more_research_needed'] = (total / (1 - more_research_score)) - total;
 	total += answer_group_scores['more_research_needed'];
@@ -60,7 +60,7 @@ export function score_answer_groups(map: Map): Record<string, number>
 
 export function score_map(data_map: DataMap, journals: { [id: string]: Journal }): Map
 {
-	let papers: { [uuid: string]: Paper } = {};
+	const papers: { [uuid: string]: Paper } = {};
 	let index = 0;
 
 	for (const data_paper of data_map.papers)
@@ -70,7 +70,7 @@ export function score_map(data_map: DataMap, journals: { [id: string]: Journal }
 		index++;
 	}
 
-	let map = {
+	const map = {
 		...data_map,
 		papers,
 		overview: {}

@@ -111,7 +111,7 @@
 			<span>Discord username</span>
 			<span class="optional"><i>(optional)</i></span>
 		</div>
-		<input bind:value={discord_username} type="text" placeholder={'For the "Contributor" role on the Papermap discord'}/>
+		<input bind:value={discord_username} type="text" placeholder="For the &quot;Contributor&quot; role on the Papermap discord"/>
 	</div>
 	<div class="buttons w-full flex-center-row text-nowrap" style="{local ? 'justify-content: space-evenly;' : ''}">
 		<button

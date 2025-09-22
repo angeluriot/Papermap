@@ -573,7 +573,7 @@
 	</div>
 	<div class="quote flex flex-row justify-start items-start flex-nowrap w-full">
 		<p>
-			{#each quote_parts as part, i}
+			{#each quote_parts as part}
 				{#if part.italic}
 					<i>{part.text}</i>
 				{:else}

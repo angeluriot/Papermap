@@ -92,7 +92,7 @@
 			delete map.papers[uuid].edit;
 		});
 
-		document.addEventListener('edit_paper', (event: Event) =>
+		document.addEventListener('edit_paper', () =>
 		{
 			point_selected = null;
 		});
@@ -176,7 +176,7 @@
 			<div class="title-component relative">
 				<Title {emojis} {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
 			</div>
-			<a href={'/'}>
+			<a href="/">
 				<img src={Home} alt="Home" title="Home" class="home relative img-unselectable">
 			</a>
 		</div>

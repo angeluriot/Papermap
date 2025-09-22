@@ -143,24 +143,6 @@ function match_endpoint(method, path)
 	};
 }
 
-
-function log_endpoint(method, path, endpoint)
-{
-	if (endpoint.route === null)
-		return;
-
-	const name = `${method} ${path}`;
-	newrelic.setTransactionName(name);
-	newrelic.addCustomAttribute('custom_name', name);
-	newrelic.addCustomAttribute('custom_method', method);
-	newrelic.addCustomAttribute('custom_path', path);
-	newrelic.addCustomAttribute('custom_endpoint', `${method} ${endpoint.route}`);
-	newrelic.addCustomAttribute('custom_map', endpoint.map);
-	newrelic.addCustomAttribute('custom_file', endpoint.file);
-	newrelic.addCustomAttribute('custom_error', null);
-}
-
-
 const app = express();
 app.set('trust proxy', true);
 
@@ -209,7 +191,7 @@ app.use(async (req, res, next) =>
 				await limiter.consume(ip);
 		}
 
-		catch (error)
+		catch
 		{
 			throw new TooManyRequestsError('Too many requests');
 		}

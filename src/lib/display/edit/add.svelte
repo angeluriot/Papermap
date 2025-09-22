@@ -808,7 +808,7 @@
 			<span>Quote</span>
 			<span class="required unselectable">*</span>
 		</div>
-		<textarea bind:value={quote} placeholder={'A short quote from the paper that supports the conclusion (use "[...]" if needed)'}></textarea>
+		<textarea bind:value={quote} placeholder="A short quote from the paper that supports the conclusion (use &quot;[...]&quot; if needed)"></textarea>
 	</div>
 	<div class="input">
 		<div class="label flex-center-row">
@@ -943,7 +943,7 @@
 				<select bind:value={p_value_prefix} style="width: 4em;">
 					<option value="" disabled selected hidden></option>
 					<option value="equal">=</option>
-					<option value="less">{'<'}</option>
+					<option value="less">&lt;</option>
 				</select>
 				<input bind:value={p_value} type="number" min=0 max=1 step=0.01 placeholder="The p-value of the results"/>
 			</div>

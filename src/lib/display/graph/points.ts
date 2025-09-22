@@ -111,7 +111,7 @@ export function get_dasharray(size: number, width: number): string
 
 export function get_graph_points(map: Map, stats: GraphStats, font_scale: number = 1): GraphPoint[]
 {
-	let points: GraphPoint[] = Object.values(map.papers).map((paper: Paper) =>
+	const points: GraphPoint[] = Object.values(map.papers).map((paper: Paper) =>
 	{
 		const missing_data = no_access(paper);
 		let size = 1;
@@ -163,14 +163,14 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 
 	points.forEach((point, i) => point.i = i);
 
-	for (let point of points)
+	for (const point of points)
 	{
 		point.label.width = get_label_sizes(point).width;
 		point.label.height = get_label_sizes(point).height;
 		point.label.x = point.x;
 		point.label.y = point.y + point.size + LABEL_PADDING * stats.sub_scales.point_stroke + point.label.height / 2;
 
-		for (let other of points)
+		for (const other of points)
 		{
 			if (other.i === point.i)
 				continue;

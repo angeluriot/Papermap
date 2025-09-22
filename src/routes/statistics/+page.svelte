@@ -27,6 +27,15 @@
 
 	const papers = maps.flatMap(m => Object.values(m.papers));
 
+	const main_stats = [
+		{ label: 'Total maps', value: int_to_text(maps.length) },
+		{ label: 'Total papers', value: int_to_text(papers.length) },
+		{ label: 'Mean papers per map', value: int_to_text(Math.round(papers.length / maps.length)) },
+		{ label: 'Mean paper score', value: float_to_text(papers.reduce((a, b) => a + b.score, 0) / papers.length) },
+		{ label: 'Lowest paper score', value: float_to_text(Math.min(...papers.map(p => p.score))) },
+		{ label: 'Highest paper score', value: float_to_text(Math.max(...papers.map(p => p.score))) },
+	];
+
 	const types_dict = {
 		[PaperType.InVitroStudy]: 'In\nVitro',
 		[PaperType.CaseReport]: 'Case\nReport',
@@ -140,14 +149,7 @@
 			</div>
 		</div>
 		<div class="main-stats flex flex-row flex-wrap justify-start items-start w-full">
-			{#each [
-				{ label: 'Total maps', value: int_to_text(maps.length) },
-				{ label: 'Total papers', value: int_to_text(papers.length) },
-				{ label: 'Mean papers per map', value: int_to_text(Math.round(papers.length / maps.length)) },
-				{ label: 'Mean paper score', value: float_to_text(papers.reduce((a, b) => a + b.score, 0) / papers.length) },
-				{ label: 'Lowest paper score', value: float_to_text(Math.min(...papers.map(p => p.score))) },
-				{ label: 'Highest paper score', value: float_to_text(Math.max(...papers.map(p => p.score))) },
-			] as stat}
+			{#each main_stats as stat}
 				<div class="main-stat flex flex-col">
 					<span class="main-stat-label">{stat.label}:</span>
 					<span class="main-stat-value">{stat.value}</span>

@@ -32,7 +32,7 @@ export const load: PageServerLoad = async ({ params }: { params: { map: string }
 
 export const entries: EntryGenerator = () =>
 {
-	let paths: { map: string }[] = [];
+	const paths: { map: string }[] = [];
 
 	for (const map of Object.keys(map_titles))
 		if (!map_titles[map].fake)

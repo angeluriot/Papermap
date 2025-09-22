@@ -13,7 +13,7 @@ export function float_to_text(number: number): string
 {
 	if (number >= 1)
 	{
-		let text = number.toFixed(1);
+		const text = number.toFixed(1);
 
 		if (text.includes('.0'))
 			return int_to_text(Math.round(number));
@@ -47,7 +47,7 @@ export function float_to_text(number: number): string
 
 export function cut_in_half(text: string): string[]
 {
-	let cuts: { result: string[], diff: number }[] = [];
+	const cuts: { result: string[], diff: number }[] = [];
 
 	for (let i = 0; i < text.length; i++)
 		if (text[i] === ' ')

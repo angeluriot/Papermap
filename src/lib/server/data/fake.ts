@@ -30,8 +30,8 @@ function random_choice<T>(elements: T[], weights?: number[]): T
 
 function random_times<T>(generator: () => T, min: number, max: number): T[]
 {
-	let count = Math.floor(Math.random() * (max - min + 1)) + min;
-	let result: T[] = [];
+	const count = Math.floor(Math.random() * (max - min + 1)) + min;
+	const result: T[] = [];
 
 	for (let i = 0; i < count; i++)
 		result.push(generator());

@@ -192,7 +192,7 @@
 <div class="flex flex-col justify-center items-start">
 	{#each results as result, i}
 		{#if result === 'all'}
-			<a href={'/maps'} class="w-full">
+			<a href="/maps" class="w-full">
 				<div
 					class="result end-result w-full flex flex-row justify-center items-center"
 					style="{i === selected_i ? 'background-color: #eeeff7;' : ''}"

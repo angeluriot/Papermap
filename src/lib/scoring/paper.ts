@@ -127,8 +127,8 @@ function custom_mean(values: number[], review_count_score: number, no_access: bo
 	if (values.length === 0)
 		return 0.0;
 
-	let mean = values.reduce((acc, val) => acc + val, 0.0) / values.length;
-	let max = no_access ? 1.0 : Math.max(...values);
+	const mean = values.reduce((acc, val) => acc + val, 0.0) / values.length;
+	const max = no_access ? 1.0 : Math.max(...values);
 
 	return mean + (max - mean) * review_count_score * DIVERSE_INCREASE;
 }
@@ -292,7 +292,7 @@ function score_blinding(map: DataMap | Map, paper: DataPaper, review_count_score
 	else
 		blinding = [paper.blinding];
 
-	let score = custom_mean(blinding.map(blind => BLINDING_SCORES[blind]), review_count_score, paper.blinding === MissingReason.NoAccess);
+	const score = custom_mean(blinding.map(blind => BLINDING_SCORES[blind]), review_count_score, paper.blinding === MissingReason.NoAccess);
 
 	return {
 		blinding_score: apply_coef(score, map.conclusions[paper.results.conclusion].p_value ? COEFS.blinding.effect : COEFS.blinding.no_effect),

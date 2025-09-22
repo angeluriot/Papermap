@@ -30,10 +30,10 @@ async function apply_migration(file_path)
 	const content = await fs.promises.readFile(file_path, 'utf-8');
 	const map = JSON.parse(content);
 
-	for (const paper of map.papers)
-	{
+	//for (const paper of map.papers)
+	//{
 		// Code
-	}
+	//}
 
 	// Edit
 	//const new_content = JSON.stringify(map, null, '\t') + '\n';

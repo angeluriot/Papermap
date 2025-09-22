@@ -215,7 +215,7 @@
 						width: 2,
 					},
 					tooltip: {
-						formatter: (params: any) =>
+						formatter: () =>
 						{
 							const max_min = (lines.initial[1].coord[1] - lines.initial[0].coord[1]) * (inverse ? -1 : 1);
 							const max_min_text = inverse ? 'max to min' : 'min to max';

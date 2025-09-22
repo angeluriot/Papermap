@@ -36,8 +36,8 @@ export function ratio(value: number, min: number, max: number, cut: boolean = tr
 
 export function get_random_elements<T>(array: T[], nb: number): T[]
 {
-	let indices = new Set<number>();
-	let result: T[] = [];
+	const indices = new Set<number>();
+	const result: T[] = [];
 
 	while (result.length < nb && result.length < array.length)
 	{
@@ -56,7 +56,7 @@ export function get_random_elements<T>(array: T[], nb: number): T[]
 
 export function in_browser(): boolean
 {
-	return typeof window !== undefined;
+	return typeof window !== 'undefined';
 }
 
 

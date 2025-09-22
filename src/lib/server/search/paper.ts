@@ -12,7 +12,7 @@ async function find_journal(result: OpenAlexPaper): Promise<Journal | null>
 	for (const location of result?.locations ?? [])
 	{
 		const journal_id = location?.source?.id;
-		let journal = journal_id ? await get_journal(clean_id(journal_id)) : null;
+		const journal = journal_id ? await get_journal(clean_id(journal_id)) : null;
 
 		if (journal !== null)
 			return journal;
@@ -25,11 +25,11 @@ async function find_journal(result: OpenAlexPaper): Promise<Journal | null>
 export async function search_paper(doi?: string, title?: string, year?: number): Promise<SearchPaperResult[]>
 {
 	const paper_results = await openalex_search(doi, title, year);
-	let results: SearchPaperResult[] = [];
+	const results: SearchPaperResult[] = [];
 
 	for (const paper of paper_results)
 	{
-		let result: SearchPaperResult = {}
+		const result: SearchPaperResult = {}
 
 		if (paper.id) result.id = clean_id(paper.id);
 		if (paper.doi) result.link = paper.doi.trim();
@@ -42,7 +42,7 @@ export async function search_paper(doi?: string, title?: string, year?: number):
 			result.journal = journal;
 
 		const raw_authors = paper?.authorships.map(author => author?.author?.display_name ?? author?.raw_author_name);
-		let authors = [];
+		const authors = [];
 
 		if (raw_authors)
 			for (const author of raw_authors)

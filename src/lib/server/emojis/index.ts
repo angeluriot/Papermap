@@ -108,7 +108,7 @@ export const EMOJI_NAMES = {
 
 export async function load_svgs()
 {
-	let svgs: Record<string, string> = {};
+	const svgs: Record<string, string> = {};
 
 	for (const [emoji, name] of Object.entries(EMOJI_NAMES))
 	{

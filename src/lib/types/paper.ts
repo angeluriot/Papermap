@@ -178,6 +178,7 @@ export interface SearchPaperResult
 
 export function paper_to_datapaper(paper: Paper): DataPaper
 {
+	 
 	const { index, uuid, scores, score, edit, ...data } = paper;
 	return data;
 }

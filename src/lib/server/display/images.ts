@@ -33,7 +33,7 @@ export async function create_images(map: Map): Promise<void>
 	const types: ('preview' | 'thumbnail' | 'image')[] = ['preview', 'thumbnail', 'image'];
 	const font_scale = 1.7;
 
-	for (let type of types)
+	for (const type of types)
 	{
 		const template = await fs.readFile(join(C.LIB_DIR, `server/templates/${type === 'thumbnail' ? 'preview' : type}.svg.ejs`), 'utf-8');
 

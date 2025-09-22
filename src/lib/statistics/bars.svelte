@@ -61,7 +61,7 @@
 			axisLabel: {
 				...font,
 				formatter: (value: number) => (value / 100).toFixed(1).replace('.0', ''),
-				interval: (index: number, value: string) => index === 99 || index % 10 === 0,
+				interval: (index: number) => index === 99 || index % 10 === 0,
 				showMinLabel: true,
 				showMaxLabel: true,
 			},

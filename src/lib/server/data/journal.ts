@@ -19,7 +19,7 @@ export async function get_journal_ids(): Promise<{ id: string, proba: number }[]
 	const file_stream = fs.createReadStream(join(C.DATA_DIR, 'journals', 'data.jsonl'), { encoding: 'utf-8' });
 	const rl = readline.createInterface({ input: file_stream, crlfDelay: Infinity });
 
-	let journals: { id: string, proba: number }[] = [];
+	const journals: { id: string, proba: number }[] = [];
 
 	for await (const line of rl)
 	{
@@ -56,8 +56,8 @@ export async function get_journals(ids: string[]): Promise<{ [id: string]: Journ
 	if (!index)
 		await init();
 
-	let id_list = [...new Set(ids)];
-	let journals: { [id: string]: Journal } = {};
+	const id_list = [...new Set(ids)];
+	const journals: { [id: string]: Journal } = {};
 
 	if (id_list.length === 0)
 		return {};

@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 import { join } from 'path';
 import * as cards from '$lib/display/details/cards';
 import { float_to_text } from '$lib/display/utils';
-import { ConflictOfInterest, JournalMissingReason, MissingReason } from '$lib/types/paper';
+import { JournalMissingReason, MissingReason } from '$lib/types/paper';
 
 
 function array_to_string(array: string[]): string

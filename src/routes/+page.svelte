@@ -47,7 +47,7 @@
 			placeholder = new_placeholder;
 		}
 
-		catch (error)
+		catch
 		{
 			clearInterval(interval);
 		}

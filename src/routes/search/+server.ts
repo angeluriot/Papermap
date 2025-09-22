@@ -11,11 +11,11 @@ export const GET: RequestHandler = async ({ url }) =>
 	{
 		let doi = url.searchParams.get('doi')?.trim();
 		let title = url.searchParams.get('title')?.trim();
-		let year_str = url.searchParams.get('year')?.trim();
+		const year_str = url.searchParams.get('year')?.trim();
 
 		doi = typeof doi === 'string' && doi.length > 0 ? doi : undefined;
 		title = typeof title === 'string' && title.length > 0 ? title : undefined;
-		let year = typeof year_str === 'string' && year_str.length == 4 && !isNaN(parseInt(year_str)) ? parseInt(year_str) : undefined;
+		const year = typeof year_str === 'string' && year_str.length == 4 && !isNaN(parseInt(year_str)) ? parseInt(year_str) : undefined;
 
 		if (!doi && (!title || !year))
 			throw new InvalidDataError('Invalid query');
