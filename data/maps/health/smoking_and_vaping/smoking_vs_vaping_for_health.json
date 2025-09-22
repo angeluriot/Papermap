@@ -3001,38 +3001,6 @@
 			"notes": []
 		},
 		{
-			"id": "W4405618660",
-			"title": "Functionally important respiratory symptoms and continued cigarette use versus e-cigarette switching: population assessment of tobacco and health study waves 2-6",
-			"authors": [
-				"James D. Sargent",
-				"Kristin Lauten",
-				"Kathryn C. Edwards",
-				"Susanne E. Tanski"
-			],
-			"year": 2024,
-			"link": "https://doi.org/10.1016/j.eclinm.2024.102951",
-			"journal": {
-				"id": "S2898347799",
-				"retracted": false
-			},
-			"citations": 2,
-			"results": {
-				"consensus": "towards_smoking",
-				"conclusion": "smoking",
-				"indirect": false
-			},
-			"quote": "Switching completely from past 30-day use of cigarettes to e cigarettes had short-term beneficial associations with functionally important respiratory symptoms similar to quitting tobacco completely",
-			"type": "CohortStudy",
-			"blinding": "None",
-			"sample_size": 5653,
-			"p_value": {
-				"value": 0.009,
-				"less_than": false
-			},
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
 			"id": "W4392185801",
 			"title": "Population-Based Disease Odds for E-Cigarettes and Dual Use versus Cigarettes",
 			"authors": [
@@ -3093,6 +3061,38 @@
 			"blinding": "None",
 			"sample_size": 17973,
 			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4405618660",
+			"title": "TEST Functionally important respiratory symptoms and continued cigarette use versus e-cigarette switching: population assessment of tobacco and health study waves 2-6",
+			"authors": [
+				"James D. Sargent",
+				"Kristin Lauten",
+				"Kathryn C. Edwards",
+				"Susanne E. Tanski"
+			],
+			"year": 2024,
+			"link": "https://doi.org/10.1016/j.eclinm.2024.102951",
+			"journal": {
+				"id": "S2898347799",
+				"retracted": false
+			},
+			"citations": 2,
+			"results": {
+				"consensus": "towards_smoking",
+				"conclusion": "smoking",
+				"indirect": false
+			},
+			"quote": "Switching completely from past 30-day use of cigarettes to e cigarettes had short-term beneficial associations with functionally important respiratory symptoms similar to quitting tobacco completely",
+			"type": "CohortStudy",
+			"blinding": "None",
+			"sample_size": 5653,
+			"p_value": {
+				"value": 0.009,
+				"less_than": false
+			},
 			"conflict_of_interest": "None",
 			"notes": []
 		},
