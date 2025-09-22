@@ -6,7 +6,7 @@ import type { Map } from '$lib/types/map';
 
 export async function get_preview_title(map: Map, stats: GraphStats, shown: boolean)
 {
-	const margin = stats.width * 0.017
+	const margin = stats.width * 0.018;
 	const padding_x = stats.width * 0.025;
 	const padding_y = stats.width * 0.015;
 	const font_size = stats.width * 0.024;
