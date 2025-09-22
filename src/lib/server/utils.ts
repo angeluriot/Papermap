@@ -1,3 +1,4 @@
+import { GITHUB_APP_ID, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, GITHUB_INSTALLATION_ID, GITHUB_PRIVATE_KEY, OPENALEX_EMAIL } from '$env/static/private';
 import crypto from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import { join } from 'node:path';
@@ -13,12 +14,12 @@ export const constants = {
 	TMP_DIR: join(process.cwd(), 'tmp'),
 	DATA_DIR: join(process.cwd(), 'data'),
 	FAKE_DATA: import.meta.env['VITE_FAKE_DATA'] === 'true',
-	GITHUB_APP_ID: import.meta.env['VITE_GITHUB_APP_ID'] ? parseInt(import.meta.env['VITE_GITHUB_APP_ID']) as number : undefined,
-	GITHUB_PRIVATE_KEY: import.meta.env['VITE_GITHUB_PRIVATE_KEY'] as string | undefined,
-	GITHUB_CLIENT_ID: import.meta.env['VITE_GITHUB_CLIENT_ID'] as string | undefined,
-	GITHUB_CLIENT_SECRET: import.meta.env['VITE_GITHUB_CLIENT_SECRET'] as string | undefined,
-	GITHUB_INSTALLATION_ID: import.meta.env['VITE_GITHUB_INSTALLATION_ID'] ? parseInt(import.meta.env['VITE_GITHUB_INSTALLATION_ID']) as number : undefined,
-	OPENALEX_EMAIL: import.meta.env['VITE_OPENALEX_EMAIL'] as string | undefined,
+	GITHUB_APP_ID: GITHUB_APP_ID ? parseInt(GITHUB_APP_ID) as number : undefined,
+	GITHUB_PRIVATE_KEY: GITHUB_PRIVATE_KEY as string | undefined,
+	GITHUB_CLIENT_ID: GITHUB_CLIENT_ID as string | undefined,
+	GITHUB_CLIENT_SECRET: GITHUB_CLIENT_SECRET as string | undefined,
+	GITHUB_INSTALLATION_ID: GITHUB_INSTALLATION_ID ? parseInt(GITHUB_INSTALLATION_ID) as number : undefined,
+	OPENALEX_EMAIL: OPENALEX_EMAIL as string | undefined,
 	GITHUB_OWNER: 'angeluriot',
 	GITHUB_REPO: 'Papermap',
 	GITHUB_DEFAULT_BRANCH: 'main',

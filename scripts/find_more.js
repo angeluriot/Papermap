@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { join } from 'node:path';
 
 
-const email = process.env.VITE_OPENALEX_EMAIL ?? '';
+const email = process.env.OPENALEX_EMAIL ?? '';
 const map_id = process.argv[2];
 const only_reviews = process.argv[3] === 'true';
 const nb_per_page = 90;

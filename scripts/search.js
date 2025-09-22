@@ -13,7 +13,7 @@ const coefs = {
 	type: 2.0,
 };
 
-const email = process.env.VITE_OPENALEX_EMAIL ?? '';
+const email = process.env.OPENALEX_EMAIL ?? '';
 const [, , title_search, abstract_search, text_search, map_id] = process.argv;
 
 

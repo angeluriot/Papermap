@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { Client, Events, GatewayIntentBits, TextChannel } from 'discord.js';
 
 
-const token = process.env.VITE_DISCORD_TOKEN ?? '';
+const token = process.env.DISCORD_TOKEN ?? '';
 const [, , type, url, title, body, author, labels_string] = process.argv;
 const label_list = labels_string ? labels_string.split(',').filter(l => l.trim().length > 0) : [];
 const server_id = '1362190024371736726';

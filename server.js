@@ -9,7 +9,7 @@ class InvalidRequestError extends Error {}
 class TooManyRequestsError extends Error {}
 
 const default_limiter = new RateLimiterMemory({
-	points: 3000,
+	points: 1000,
 	duration: 60,
 	blockDuration: 60,
 });

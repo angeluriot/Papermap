@@ -7,4 +7,5 @@ services:
     env_file:
       - .env
     environment:
+      NODE_ENV: production
       NODE_OPTIONS: "--max_old_space_size=2048 --experimental-loader=newrelic/esm-loader.mjs -r newrelic"
