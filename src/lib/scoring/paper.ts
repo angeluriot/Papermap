@@ -1,6 +1,6 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
-import { Blinding, ConflictOfInterest, type DataPaper, MissingReason, NoteImpact, type Paper, type PaperScores, PaperType, ReviewedPapersBlinding,ReviewedPapersType, ReviewType } from '$lib/types/paper';
+import { Blinding, ConflictOfInterest, type DataPaper, MissingReason, NoteImpact, type Paper, type PaperScores, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 import { get_uuid, ratio } from '$lib/utils';
 
 

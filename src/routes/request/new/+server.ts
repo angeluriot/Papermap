@@ -1,5 +1,5 @@
 import { validate_request } from './validate';
-import { error as http_error,json } from '@sveltejs/kit';
+import { error as http_error, json } from '@sveltejs/kit';
 import { GitHubAPIError, InvalidDataError } from '$lib/errors';
 import { get_new_map_issue, type NewMapRequest } from '$lib/github/issue';
 import { create_issue } from '$lib/server/github';

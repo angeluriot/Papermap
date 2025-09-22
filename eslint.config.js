@@ -87,6 +87,7 @@ export default defineConfig(
 			'@stylistic/no-whitespace-before-property': 'error',
 			'@stylistic/brace-style': ['error', 'allman', { allowSingleLine: true }],
 			'@stylistic/space-before-blocks': ['error', 'always'],
+			'@stylistic/comma-spacing': ['error', { before: false, after: true }],
 
 			// Unused imports
 			'unused-imports/no-unused-imports': 'error',

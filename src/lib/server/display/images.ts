@@ -3,7 +3,7 @@ import * as bg from '$lib/display/graph/background';
 import * as pt from '$lib/display/graph/points';
 import { get_stats } from '$lib/display/graph/utils';
 import { get_svg_overview } from '$lib/display/overview';
-import { get_image_subtitle,get_image_title, get_preview_title } from '$lib/server/display/title';
+import { get_image_subtitle, get_image_title, get_preview_title } from '$lib/server/display/title';
 import { SatoshiMedium } from '$lib/server/fonts';
 import { constants as C } from '$lib/server/utils';
 import type { Map } from '$lib/types/map';

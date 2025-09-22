@@ -2,11 +2,11 @@
 	import { float_to_text, get_standard_name, int_to_text } from '../utils';
 	import * as cards from './cards';
 	import InfoBubble from './info_bubble.svelte';
-	import { Color,COLORS } from '$lib/colors';
+	import { Color, COLORS } from '$lib/colors';
 	import Link from '$lib/svgs/link.svg';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { Blinding,Edit, JournalMissingReason, MissingReason, type Paper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
+	import { Blinding, Edit, JournalMissingReason, MissingReason, type Paper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 
 	let { emojis, map, journals, paper, width, height, journal_info_open = $bindable(), edit_mode }: {
 		emojis: Record<string, string>,

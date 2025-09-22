@@ -4,13 +4,13 @@
 	import { get_label } from '$lib/display/graph/points';
 	import { float_to_text, int_to_text } from '$lib/display/utils';
 	import Background from '$lib/list/background.svelte';
-	import { COEFS,REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
+	import { COEFS, REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
 	import Bars from '$lib/statistics/bars.svelte';
 	import Categories from '$lib/statistics/categories.svelte';
 	import Scatter from '$lib/statistics/scatter.svelte';
 	import Home from '$lib/svgs/home.svg';
 	import Random from '$lib/svgs/random.svg';
-	import { Blinding, ConflictOfInterest, MissingReason, type Paper,PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
+	import { Blinding, ConflictOfInterest, MissingReason, type Paper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 	import { constants as C } from '$lib/utils';
 
 	const { data }: PageProps = $props();
@@ -256,7 +256,7 @@
 								text: get_label(paper, false),
 								score: paper.scores.review_count ?? 0,
 								x_text: get_review_count_text(paper),
-							})) as { x: number, y: number, text: string , score: number, x_text: string }[]
+							})) as { x: number, y: number, text: string, score: number, x_text: string }[]
 					}
 				/>
 			</div>

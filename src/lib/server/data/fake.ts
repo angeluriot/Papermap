@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/server/emojis';
 import { type DataMap, get_available_conclusions, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
-import { Blinding, ConflictOfInterest, type DataPaper,JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
+import { Blinding, ConflictOfInterest, type DataPaper, JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 
 
 function random_choice<T>(elements: T[], weights?: number[]): T

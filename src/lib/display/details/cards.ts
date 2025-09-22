@@ -1,5 +1,5 @@
 import { Color, COLORS } from '$lib/colors';
-import { Blinding, ConflictOfInterest,MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
+import { Blinding, ConflictOfInterest, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 import ColorLib from 'color';
 
 

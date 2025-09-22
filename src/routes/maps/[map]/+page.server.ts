@@ -1,4 +1,4 @@
-import type { EntryGenerator,PageServerLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 import { validate_params } from './validate';
 import { create_csv } from '$lib/server/data/csv';
 import { import_map, map_titles } from '$lib/server/data/map';

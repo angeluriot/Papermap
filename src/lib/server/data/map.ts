@@ -7,7 +7,7 @@ import { score_map } from '$lib/scoring/map';
 import { constants as C } from '$lib/server/utils';
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Group, GroupNode, Map, MapTitle } from '$lib/types/map';
-import { type DataPaper,JournalMissingReason } from '$lib/types/paper';
+import { type DataPaper, JournalMissingReason } from '$lib/types/paper';
 import { promises as fs } from 'node:fs';
 import { join } from 'node:path';
 

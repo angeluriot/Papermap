@@ -2,7 +2,7 @@
 	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
 	import { float_to_text } from '$lib/display/utils';
 	import { type ECharts, type EChartsOption, init as initChart } from 'echarts';
-	import { onDestroy,onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	const { title, x_label, x_axis_values, x_axis_multiline, jitter, color, data }: {
 		title: string,

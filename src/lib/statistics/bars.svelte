@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
 	import { type ECharts, type EChartsOption, init as initChart } from 'echarts';
-	import { onDestroy,onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	const { title, x_axis_label, color, data, scoring }: {
 		title: string,

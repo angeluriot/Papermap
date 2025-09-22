@@ -2,7 +2,7 @@
 	import { float_to_text, int_to_text } from '../utils';
 	import * as cards from './cards';
 	import InfoBubble from './info_bubble.svelte';
-	import { Color,COLORS } from '$lib/colors';
+	import { Color, COLORS } from '$lib/colors';
 	import Link from '$lib/svgs/link.svg';
 	import type { Journal } from '$lib/types/journal';
 

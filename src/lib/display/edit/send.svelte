@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Loading from '../loading.svelte';
 	import Link from '$lib/svgs/link.svg';
-	import { Edit, type Paper,paper_to_datapaper } from '$lib/types/paper';
+	import { Edit, type Paper, paper_to_datapaper } from '$lib/types/paper';
 	import { constants as C } from '$lib/utils';
 
 	let { route, papers, comment = $bindable(), discord_username = $bindable(), leaving_message = $bindable() }: {

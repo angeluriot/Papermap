@@ -2,7 +2,7 @@
 	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
 	import { float_to_text, int_to_text } from '$lib/display/utils';
 	import { type ECharts, type EChartsOption, init as initChart } from 'echarts';
-	import { onDestroy,onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	const { title, x_axis_label, x_axis_max, color, log_base, years, inverse, data }: {
 		title: string,

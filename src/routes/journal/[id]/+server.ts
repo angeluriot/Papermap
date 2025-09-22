@@ -1,6 +1,6 @@
 import type { Params } from './types';
 import { validate_params } from './validate';
-import { error as http_error,json } from '@sveltejs/kit';
+import { error as http_error, json } from '@sveltejs/kit';
 import { InvalidDataError, NotFoundError } from '$lib/errors';
 import { get_journal } from '$lib/server/data/journal';
 import { constants as C } from '$lib/server/utils';

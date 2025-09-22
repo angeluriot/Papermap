@@ -2,7 +2,7 @@ import type { GraphPoint, GraphStats } from './types';
 import { COLORS } from '$lib/colors';
 import { REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
 import type { Map } from '$lib/types/map';
-import { MissingReason, no_access, type Paper,ReviewType } from '$lib/types/paper';
+import { MissingReason, no_access, type Paper, ReviewType } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
 import seedrandom from 'seedrandom';
 
