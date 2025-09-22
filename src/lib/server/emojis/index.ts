@@ -1,6 +1,6 @@
-import { join } from 'path';
-import { promises as fs } from 'fs';
 import { constants as C } from '$lib/server/utils';
+import { promises as fs } from 'node:fs';
+import { join } from 'node:path';
 
 
 export const EMOJI_NAMES = {
@@ -102,8 +102,8 @@ export const EMOJI_NAMES = {
 	'↪️': 'left-arrow-curving-right',
 	'↩️': 'right-arrow-curving-left',
 	'🔀': 'shuffle-tracks-button',
-	'🟰': 'heavy-equals-sign'
-}
+	'🟰': 'heavy-equals-sign',
+};
 
 
 export async function load_svgs()
@@ -115,7 +115,7 @@ export async function load_svgs()
 		try
 		{
 			let svg = await fs.readFile(join(C.LIB_DIR, 'server', 'emojis', 'svgs', `${name}.svg`), 'utf-8');
-			svg = svg.replaceAll(/<\?xml[\s\S]*?\?>\s*/g, '');
+			svg = svg.replaceAll(/<\?xml[\S\s]*?\?>\s*/g, '');
 			svgs[emoji] = svg.slice(0, 5) + 'width="100%" height="100%" ' + svg.slice(5);
 		}
 

@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { get_available_conclusions, type Map } from '$lib/types/map';
-	import { Blinding, ConflictOfInterest, Edit, JournalMissingReason, MissingReason, NoteImpact, paper_to_datapaper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type DataPaper, type Paper, type SearchPaperResult } from '$lib/types/paper';
-	import SmallAdd from '$lib/svgs/small-add.svg';
-	import SmallRemove from '$lib/svgs/small-remove.svg';
 	import { TO_TEXT, TO_TEXT_PLURAL } from '../details/cards';
-	import type { Journal, JournalTitle } from '$lib/types/journal';
-	import Autocomplete from './autocomplete.svelte';
-	import Cross from '$lib/svgs/cross.svg';
-	import Link from '$lib/svgs/link.svg';
-	import { score_paper } from '$lib/scoring/paper';
 	import { get_label } from '../graph/points';
-	import deepEqual from 'deep-equal';
-	import cloneDeep from 'clone-deep';
 	import Loading from '../loading.svelte';
 	import { get_standard_name } from '../utils';
+	import Autocomplete from './autocomplete.svelte';
+	import { score_paper } from '$lib/scoring/paper';
+	import Cross from '$lib/svgs/cross.svg';
+	import Link from '$lib/svgs/link.svg';
+	import SmallAdd from '$lib/svgs/small-add.svg';
+	import SmallRemove from '$lib/svgs/small-remove.svg';
+	import type { Journal, JournalTitle } from '$lib/types/journal';
+	import { get_available_conclusions, type Map } from '$lib/types/map';
+	import { Blinding, ConflictOfInterest, type DataPaper, Edit, JournalMissingReason, MissingReason, NoteImpact, type Paper, paper_to_datapaper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type SearchPaperResult } from '$lib/types/paper';
+	import cloneDeep from 'clone-deep';
+	import deepEqual from 'deep-equal';
 
 	let { map = $bindable(), journals = $bindable(), result, paper, hide }: {
 		map: Map,
@@ -25,7 +25,7 @@
 
 	let id: string | null = $state(null);
 	let title = $state('');
-	let override_seed: number | undefined = $state(undefined);
+	let override_seed: number | undefined = $state();
 	let institution_status: string = $state('');
 	let institution_name: string = $state('');
 	let institution_acronym: string = $state('');
@@ -176,15 +176,15 @@
 		type === ReviewedPapersType.DiverseTypes
 	));
 	let only_diverse_blinding = $derived(
-		blinding_available && type !== PaperType.RandomizedControlledTrial
+		blinding_available && type !== PaperType.RandomizedControlledTrial,
 	);
 	let sample_size_available = $derived(
-		!map.no_sample_size && type !== PaperType.InVitroStudy
+		!map.no_sample_size && type !== PaperType.InVitroStudy,
 	);
 	let p_value_available = $derived(
 		(conclusion === '' || map.conclusions[conclusion].p_value) &&
 		review_type !== ReviewType.NarrativeReview &&
-		review_type !== ReviewType.SystematicReview
+		review_type !== ReviewType.SystematicReview,
 	);
 
 	$effect(() =>
@@ -272,7 +272,7 @@
 		return (
 			title.trim().length > 0 &&
 			(institution_status === 'no' || (institution_name.trim().length > 0 && institution_acronym.trim().length > 0)) &&
-			(institution_status === 'yes' || authors.filter(a => a.trim().length > 0).length > 0) &&
+			(institution_status === 'yes' || authors.some(a => a.trim().length > 0)) &&
 			year !== null && year >= 1500 && year <= new Date().getFullYear() && Number.isInteger(year) &&
 			link.trim().length > 0 &&
 			journal_status !== '' &&
@@ -375,8 +375,9 @@
 			notes: notes.filter(
 				note => note.title.trim().length > 0 &&
 				note.description.trim().length > 0 &&
-				['', ...Object.values(NoteImpact)].includes(note.impact.trim() as NoteImpact | string)
-			).map(note => {
+				['', ...Object.values(NoteImpact)].includes(note.impact.trim() as NoteImpact | string),
+			).map(note =>
+			{
 				let n: any = {
 					title: note.title.trim(),
 					description: note.description.trim(),
@@ -387,7 +388,7 @@
 					n.link = note.link.trim();
 
 				return n;
-			})
+			}),
 		};
 
 		if (id !== null && id !== '')
@@ -528,11 +529,11 @@
 		{
 			if (final_paper.citations === 0)
 			{
-				alert(`Preprints need at least one citation from a published paper.`);
+				alert('Preprints need at least one citation from a published paper.');
 				return false;
 			}
 
-			return confirm(`Preprints need at least one citation from a published paper, is it the case?`);
+			return confirm('Preprints need at least one citation from a published paper, is it the case?');
 		}
 
 		return true;
@@ -1015,7 +1016,7 @@
 		{#if notes.length < 5}
 			<div
 				class="rounded-full"
-				onclick={() => notes.push({title: '', description: '', link: '', impact:''})}
+				onclick={() => notes.push({ title: '', description: '', link: '', impact:'' })}
 				onkeydown={null} role="button" tabindex={0}
 			>
 				<img class="add rounded-full img-unselectable" src={SmallAdd} alt="add"/>

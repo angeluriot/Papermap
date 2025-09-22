@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as echarts from 'echarts';
-	import { onMount, onDestroy } from 'svelte';
 	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
 	import { float_to_text } from '$lib/display/utils';
+	import * as echarts from 'echarts';
+	import { onDestroy,onMount } from 'svelte';
 
 	const { title, x_label, x_axis_values, x_axis_multiline, jitter, color, data }: {
 		title: string,
@@ -11,13 +11,13 @@
 		x_axis_multiline?: true,
 		jitter?: number,
 		color: string,
-		data: { x: string, y: number, text: string, score?: number }[]
+		data: { x: string, y: number, text: string, score?: number }[],
 	} = $props();
 
 	let container: HTMLDivElement | null = null;
 	let chart: echarts.ECharts | null = null;
-	let width: number | undefined = $state(undefined);
-	let height: number | undefined = $state(undefined);
+	let width: number | undefined = $state();
+	let height: number | undefined = $state();
 
 	const graph_color = '#6d6d77';
 	const font_size = $derived(width && height ? Math.min(4 + (width + height) / 120, 14) : 13);

@@ -1,16 +1,16 @@
-import { constants as C } from '$lib/server/utils';
-import { promises as fs } from 'fs';
-import sharp from 'sharp';
-import { join } from 'path';
-import ejs from 'ejs';
-import { get_stats } from '$lib/display/graph/utils';
+import { Resvg } from '@resvg/resvg-js';
 import * as bg from '$lib/display/graph/background';
 import * as pt from '$lib/display/graph/points';
-import { Resvg } from '@resvg/resvg-js';
-import { SatoshiMedium } from '$lib/fonts';
-import { get_preview_title, get_image_title, get_image_subtitle } from '$lib/server/display/title';
-import type { Map } from '$lib/types/map';
+import { get_stats } from '$lib/display/graph/utils';
 import { get_svg_overview } from '$lib/display/overview';
+import { get_image_subtitle,get_image_title, get_preview_title } from '$lib/server/display/title';
+import { SatoshiMedium } from '$lib/server/fonts';
+import { constants as C } from '$lib/server/utils';
+import type { Map } from '$lib/types/map';
+import ejs from 'ejs';
+import { promises as fs } from 'node:fs';
+import { join } from 'node:path';
+import sharp from 'sharp';
 
 
 export async function create_images(map: Map): Promise<void>
@@ -48,15 +48,15 @@ export async function create_images(map: Map): Promise<void>
 		const title = type === 'image' ? await get_image_title(map, stats) : await get_preview_title(map, stats, type === 'preview');
 		const subtitle = type === 'image' ? await get_image_subtitle(map, stats) : null;
 
-		const title_global_height = title.height + ((title as any)?.gap ?? 0) + (subtitle?.height ?? 0) + (subtitle?.bottom_margin ?? 0)
+		const title_global_height = title.height + ((title as any)?.gap ?? 0) + (subtitle?.height ?? 0) + (subtitle?.bottom_margin ?? 0);
 		const bottom_margin = 8;
 		const global_width = type === 'image' ? svg_scales[type].width + margin * 2 : svg_scales[type].width;
 		const global_height = type === 'image' ? svg_scales[type].height + title_global_height + margin * 2 + bottom_margin : svg_scales[type].height;
 
 		const overview_y = (
 			type === 'image' ?
-			(title_global_height - (subtitle?.bottom_margin ?? 0)) / 2 + margin - stats.scale * 14 :
-			((title as any)?.margin ?? 0) + ((title as any)?.padding_y ?? 0) + (title.height / 2) - stats.scale * 12
+				(title_global_height - (subtitle?.bottom_margin ?? 0)) / 2 + margin - stats.scale * 14 :
+				((title as any)?.margin ?? 0) + ((title as any)?.padding_y ?? 0) + (title.height / 2) - stats.scale * 12
 		);
 
 		const overview = get_svg_overview(map, stats, overview_y, type, type === 'thumbnail' ? 1.5 : 1);

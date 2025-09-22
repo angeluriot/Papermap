@@ -1,7 +1,7 @@
-import { z } from 'zod';
+import type { PostRequest } from './types';
 import { InvalidDataError } from '$lib/errors';
 import { paper_schema } from '$lib/server/data/validate';
-import type { PostRequest } from './types';
+import { z } from 'zod';
 
 
 export function validate_request(request: PostRequest, nb_papers: number): void

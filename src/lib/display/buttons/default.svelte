@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Edit from '$lib/svgs/edit.svg';
+	import Info from '$lib/display/buttons/info.svelte';
+	import Csv from '$lib/svgs/csv.svg';
 	import Download from '$lib/svgs/download.svg';
+	import Edit from '$lib/svgs/edit.svg';
 	import Png from '$lib/svgs/png.svg';
 	import Svg from '$lib/svgs/svg.svg';
-	import Csv from '$lib/svgs/csv.svg';
 	import Txt from '$lib/svgs/txt.svg';
 	import TxtCopied from '$lib/svgs/txt-copied.svg';
-	import Info from '$lib/display/buttons/info.svelte';
 	import type { Map } from '$lib/types/map';
 
 	let { map, hash, edit_mode = $bindable() }: { map: Map, hash: string, edit_mode: boolean } = $props();
@@ -26,9 +26,9 @@
 
 		const papers = (
 			Object.values(map.papers)
-			.toSorted((a, b) => b.score - a.score)
-			.map((paper) => `"${paper.quote}"\n${paper.link}`)
-			.join('\n\n')
+				.toSorted((a, b) => b.score - a.score)
+				.map((paper) => `"${paper.quote}"\n${paper.link}`)
+				.join('\n\n')
 		);
 
 		const title = (map.description.endsWith('.') ? map.description.slice(0, -1) : map.description) + ':\n\n';

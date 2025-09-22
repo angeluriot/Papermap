@@ -13,9 +13,9 @@
 	} = $props();
 
 	let search = $state('');
-	let search_element: Search | undefined = $state(undefined);
-	let input_element: HTMLInputElement | undefined = $state(undefined);
-	let canvas: HTMLCanvasElement | undefined = $state(undefined);
+	let search_element: Search | undefined = $state();
+	let input_element: HTMLInputElement | undefined = $state();
+	let canvas: HTMLCanvasElement | undefined = $state();
 	let reload = $state({});
 
 	let display_text = $derived.by(() =>

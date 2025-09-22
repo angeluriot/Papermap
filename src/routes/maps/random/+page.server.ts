@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
-import { map_titles } from '$lib/server/data/map';
 import { redirect } from '@sveltejs/kit';
+import { map_titles } from '$lib/server/data/map';
 
 
 export const prerender = false;
@@ -14,4 +14,3 @@ export const load: PageServerLoad = async () =>
 	const url = maps[Math.floor(Math.random() * maps.length)].url;
 	throw redirect(302, url);
 };
-

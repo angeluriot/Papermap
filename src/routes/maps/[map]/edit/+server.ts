@@ -1,16 +1,16 @@
-import { json, error as http_error, type RequestHandler } from '@sveltejs/kit';
-import { constants as C } from '$lib/server/utils';
-import { promises as fs } from 'fs';
-import { join } from 'path';
-import { create_pull_request } from '$lib/server/github';
-import { Label } from '$lib/types';
+import { validate_params } from '../validate';
 import { edit_map, get_pr_texts } from './edit';
 import type { PostRequest } from './types';
+import { validate_request } from './validate';
+import { error as http_error, json, type RequestHandler } from '@sveltejs/kit';
 import { GitHubAPIError, InvalidDataError, NotFoundError } from '$lib/errors';
 import { import_datamap } from '$lib/server/data/map';
-import { validate_params } from '../validate';
-import { validate_request } from './validate';
+import { create_pull_request } from '$lib/server/github';
+import { constants as C } from '$lib/server/utils';
+import { Label } from '$lib/types';
 import newrelic from 'newrelic';
+import { promises as fs } from 'node:fs';
+import { join } from 'node:path';
 
 
 export const POST: RequestHandler = async ({ url, params, request }) =>
@@ -18,7 +18,7 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 	try
 	{
 		validate_params(params as any);
-		const map_id = (params as any).map
+		const map_id = (params as any).map;
 
 		const local = url.searchParams.get('local') !== null;
 
@@ -31,17 +31,18 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 		validate_request(data, map.papers.length);
 
 		const edited_map = await edit_map(map, data.edits);
-
-		 
 		const { groups, id, ...content } = edited_map;
 
 		if (local)
 		{
-			await fs.writeFile(join(C.DATA_DIR, 'maps', ...map.groups.map(group => group.id), `${map.id}.json`), JSON.stringify(content, null, '\t') + '\n');
+			await fs.writeFile(
+				join(C.DATA_DIR, 'maps', ...map.groups.map(group => group.id), `${map.id}.json`),
+				JSON.stringify(content, null, '\t') + '\n',
+			);
 			return json({});
 		}
 
-		const { title, description } = get_pr_texts(map, map_id, data.comment, data.discord_username, data.edits)
+		const { title, description } = get_pr_texts(map, map_id, data.comment, data.discord_username, data.edits);
 
 		const pr_url = await create_pull_request({
 			branch_name: `edit/${map_id.replaceAll('_', '-')}`,
@@ -74,4 +75,4 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 
 		return http_error(500, 'Internal server error');
 	}
-}
+};

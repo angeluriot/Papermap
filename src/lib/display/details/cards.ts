@@ -1,5 +1,5 @@
 import { Color, COLORS } from '$lib/colors';
-import { PaperType, ReviewType, NoteImpact, MissingReason, ReviewedPapersType, Blinding, ReviewedPapersBlinding, ConflictOfInterest } from '$lib/types/paper';
+import { Blinding, ConflictOfInterest,MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 import * as ColorLib from 'color';
 
 
@@ -27,7 +27,7 @@ export const TO_EMOJI = {
 	[ConflictOfInterest.SomeLinks]: '🧐',
 	[ConflictOfInterest.YesButOppositeResults]: '↩️',
 	[ConflictOfInterest.Yes]: '🤑',
-}
+};
 
 
 export const TO_TEXT = {
@@ -60,7 +60,7 @@ export const TO_TEXT = {
 	[MissingReason.NoAccess]: 'No Access',
 	[MissingReason.NotSpecified]: 'Not Specified',
 	[MissingReason.NotApplicable]: 'Not Applicable',
-}
+};
 
 
 export const TO_TEXT_PLURAL = {
@@ -79,7 +79,7 @@ export const TO_TEXT_PLURAL = {
 	[ReviewedPapersType.DiverseHumanStudies]: 'Diverse Human Studies',
 	[ReviewedPapersType.DiverseTypes]: 'Diverse Types',
 	[ReviewedPapersBlinding.DiverseBlinding]: 'Diverse Blinding',
-}
+};
 
 
 export const REVIEW_COLORS = {
@@ -87,7 +87,7 @@ export const REVIEW_COLORS = {
 	[ReviewType.NarrativeReview]: '#48c7e5',
 	[ReviewType.SystematicReview]: '#5d97ed',
 	[ReviewType.MetaAnalysis]: '#5d75ed',
-}
+};
 
 
 export const TO_DESCRIPTION = {
@@ -114,10 +114,10 @@ export const TO_DESCRIPTION = {
 	[ConflictOfInterest.SomeLinks]: 'Some authors had links to biased persons or organizations in the past',
 	[ConflictOfInterest.YesButOppositeResults]: 'The authors or funders have conflicting interests but the results are the opposite of what would benefit them',
 	[ConflictOfInterest.Yes]: 'The authors or funders have conflicting interests that may have influenced the conclusion',
-}
+};
 
 
-export function color_to_shadow(color: string | undefined): string
+export function color_to_shadow(color?: string): string
 {
 	if (!color)
 		return '#000000';
@@ -131,7 +131,7 @@ export function color_to_shadow(color: string | undefined): string
 }
 
 
-export function score_to_color(score: number | undefined): string
+export function score_to_color(score?: number): string
 {
 	if (score === undefined) return	COLORS[Color.Gray].default;
 	if (score < 0.1) return			'#ea3f60';
@@ -147,7 +147,7 @@ export function score_to_color(score: number | undefined): string
 }
 
 
-export function score_to_emoji(score: number | undefined): string
+export function score_to_emoji(score?: number): string
 {
 	if (score === undefined) return	'🤷';
 	if (score < 0.1) return			'💩';
@@ -163,7 +163,7 @@ export function score_to_emoji(score: number | undefined): string
 }
 
 
-export function review_count_score_to_emoji(score: number | undefined): string
+export function review_count_score_to_emoji(score?: number): string
 {
 	if (score === undefined) return	'🤷';
 	if (score < 0.2) return			'📃';
@@ -174,7 +174,7 @@ export function review_count_score_to_emoji(score: number | undefined): string
 }
 
 
-export function citation_score_to_emoji(score: number | undefined): string
+export function citation_score_to_emoji(score?: number): string
 {
 	if (score === undefined) return	'🤷';
 	if (score < 0.2) return			'🫥';
@@ -185,7 +185,7 @@ export function citation_score_to_emoji(score: number | undefined): string
 }
 
 
-export function sample_size_score_to_emoji(score: number | undefined): string
+export function sample_size_score_to_emoji(score?: number): string
 {
 	if (score === undefined) return	'🤷';
 	if (score < 0.25) return		'🧍';
@@ -195,7 +195,7 @@ export function sample_size_score_to_emoji(score: number | undefined): string
 }
 
 
-export function p_value_score_to_emoji(score: number | undefined): string
+export function p_value_score_to_emoji(score?: number): string
 {
 	if (score === undefined) return	'🤷';
 	if (score < 0.25) return		'🎲';
@@ -205,7 +205,7 @@ export function p_value_score_to_emoji(score: number | undefined): string
 }
 
 
-export function impact_to_emoji(impact: NoteImpact | undefined): string
+export function impact_to_emoji(impact?: NoteImpact): string
 {
 	if (impact === NoteImpact.VeryNegative) return		'💩';
 	if (impact === NoteImpact.Negative) return			'👎';
@@ -216,7 +216,7 @@ export function impact_to_emoji(impact: NoteImpact | undefined): string
 }
 
 
-export function conflict_of_interest_to_color(conflict_of_interest: ConflictOfInterest | undefined): string
+export function conflict_of_interest_to_color(conflict_of_interest?: ConflictOfInterest): string
 {
 	if (conflict_of_interest === ConflictOfInterest.None) return					COLORS[Color.Green].default;
 	if (conflict_of_interest === ConflictOfInterest.SomeLinks) return				'#ef8a37';
@@ -226,7 +226,7 @@ export function conflict_of_interest_to_color(conflict_of_interest: ConflictOfIn
 }
 
 
-export function impact_to_color(impact: NoteImpact | undefined): string
+export function impact_to_color(impact?: NoteImpact): string
 {
 	if (impact === NoteImpact.VeryNegative) return		COLORS[Color.Red].default;
 	if (impact === NoteImpact.Negative) return			'#ef8a37';

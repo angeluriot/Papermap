@@ -9,7 +9,7 @@
 		description: '',
 		papers: '',
 		comment: '',
-		discord_username: ''
+		discord_username: '',
 	});
 	let loading = $state(false);
 
@@ -24,7 +24,7 @@
 				description: '',
 				papers: '',
 				comment: '',
-				discord_username: ''
+				discord_username: '',
 			};
 		}
 	}
@@ -66,7 +66,7 @@
 		if (data.discord_username.trim().length > 0)
 			body['discord_username'] = data.discord_username.trim();
 
-		const response = await fetch(`/request/new`, {
+		const response = await fetch('/request/new', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(body),

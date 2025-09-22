@@ -1,5 +1,5 @@
-import fs from 'fs';
-import { join } from 'path';
+import fs from 'node:fs';
+import { join } from 'node:path';
 
 
 const MAPS_ROOT = join(process.cwd(), 'data', 'maps');
@@ -32,7 +32,7 @@ async function apply_migration(file_path)
 
 	//for (const paper of map.papers)
 	//{
-		// Code
+	// Code
 	//}
 
 	// Edit

@@ -1,6 +1,6 @@
-import { promises as fs } from 'fs';
-import { join } from 'path';
-import crypto from 'crypto';
+import crypto from 'node:crypto';
+import { promises as fs } from 'node:fs';
+import { join } from 'node:path';
 
 
 export const constants = {
@@ -47,13 +47,13 @@ export async function exist(dir_path: string): Promise<boolean>
 
 export function get_hash(object: any): string
 {
-	return crypto.createHash('sha256').update(JSON.stringify(object) + 'v2').digest('hex').slice(0, 16)
+	return crypto.createHash('sha256').update(JSON.stringify(object) + 'v2').digest('hex').slice(0, 16);
 }
 
 
 export function clean_text(text: string): string
 {
-	return text.replaceAll(/[^a-zA-Z0-9]/g, '').toLowerCase().trim();
+	return text.replaceAll(/[^\dA-Za-z]/g, '').toLowerCase().trim();
 }
 
 
@@ -89,10 +89,10 @@ export function clean_doi(doi: string): string
 		return cleaned_doi.replaceAll('https://www.doi.org/', '').trim();
 
 	while (cleaned_doi.startsWith('/'))
-		cleaned_doi = cleaned_doi.substring(1).trim();
+		cleaned_doi = cleaned_doi.slice(1).trim();
 
 	while (cleaned_doi.endsWith('/'))
-		cleaned_doi = cleaned_doi.substring(0, cleaned_doi.length - 1).trim();
+		cleaned_doi = cleaned_doi.slice(0, Math.max(0, cleaned_doi.length - 1)).trim();
 
 	return cleaned_doi;
 }

@@ -4,7 +4,7 @@ export enum FileType
 	ThumbnailWebp = 'thumbnail.webp',
 	ImagePng = 'image.png',
 	ImageSvg = 'image.svg',
-	DataCsv = 'data.csv'
+	DataCsv = 'data.csv',
 }
 
 

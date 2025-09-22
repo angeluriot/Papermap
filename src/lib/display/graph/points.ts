@@ -1,9 +1,9 @@
+import type { GraphPoint, GraphStats } from './types';
 import { COLORS } from '$lib/colors';
 import { REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
 import type { Map } from '$lib/types/map';
-import { MissingReason, no_access, ReviewType, type Paper } from '$lib/types/paper';
+import { MissingReason, no_access, type Paper,ReviewType } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
-import type { GraphPoint, GraphStats } from './types';
 import seedrandom from 'seedrandom';
 
 
@@ -24,7 +24,7 @@ export function get_last_name(author: string): string
 
 export function get_year(paper: Paper): number
 {
-	return paper.year + (paper.override_seed !== undefined ? paper.override_seed : seedrandom(paper.title).quick())
+	return paper.year + (paper.override_seed !== undefined ? paper.override_seed : seedrandom(paper.title).quick());
 }
 
 
@@ -52,7 +52,7 @@ export function get_label_sizes(point: GraphPoint): { width: number, height: num
 	return {
 		width: 0.5 * text_max_width * point.label.font_size,
 		height: 2.5 * point.label.font_size,
-	}
+	};
 }
 
 
@@ -127,8 +127,8 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			size = 1 + Math.max(size - 1, 0) * 0.25;
 		}
 
-		size *= stats.sub_scales.point_size * POINT_SIZE
-		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE
+		size *= stats.sub_scales.point_size * POINT_SIZE;
+		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE;
 		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
 		const conclusion = map.conclusions[paper.results.conclusion];
 		const conclusion_group = map.conclusion_groups[conclusion.group];

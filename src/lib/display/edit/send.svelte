@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Edit, paper_to_datapaper, type Paper } from '$lib/types/paper';
 	import Loading from '../loading.svelte';
 	import Link from '$lib/svgs/link.svg';
+	import { Edit, type Paper,paper_to_datapaper } from '$lib/types/paper';
 	import { constants as C } from '$lib/utils';
 
 	let { route, papers, comment = $bindable(), discord_username = $bindable(), leaving_message = $bindable() }: {
@@ -40,7 +40,7 @@
 		if (discord_username.trim().length > 0)
 			body.discord_username = discord_username.trim();
 
-		const response = await fetch(`/${route}/edit${local ? "?local" : ""}`, {
+		const response = await fetch(`/${route}/edit${local ? '?local' : ''}`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(body),
@@ -76,7 +76,7 @@
 		{
 			if (result.pr_url === undefined)
 			{
-				alert('An unknown error occurred.')
+				alert('An unknown error occurred.');
 				loading = false;
 				return;
 			}

@@ -95,10 +95,10 @@ export function clean_id(id: string): string
 		return cleaned_id.replaceAll('https://www.openalex.org/', '').trim();
 
 	while (cleaned_id.startsWith('/'))
-		cleaned_id = cleaned_id.substring(1).trim();
+		cleaned_id = cleaned_id.slice(1).trim();
 
 	while (cleaned_id.endsWith('/'))
-		cleaned_id = cleaned_id.substring(0, cleaned_id.length - 1).trim();
+		cleaned_id = cleaned_id.slice(0, Math.max(0, cleaned_id.length - 1)).trim();
 
 	return cleaned_id.toUpperCase().trim();
 }

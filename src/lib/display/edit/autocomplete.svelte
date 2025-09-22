@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { sleep_until } from '$lib/utils';
 	import type { JournalTitle } from '$lib/types/journal';
+	import { sleep_until } from '$lib/utils';
 	import { clean_id } from '$lib/utils';
 
 	let { search, journal = $bindable(), focused }: {
 		search: string,
 		journal: JournalTitle | null,
-		focused: boolean
+		focused: boolean,
 	} = $props();
 
 	let freeze: Date = new Date();
@@ -29,11 +29,11 @@
 		const result = await response.json();
 
 		let res = result.results.map((source: any) =>
-		({
-			id: source?.id && source.id.trim().length > 0 ? clean_id(source.id) : undefined,
-			title: source?.display_name && source.display_name.trim().length > 0 ? source.display_name : undefined,
-			publisher: source?.hint && !['host organization unknown', ''].includes(source.hint.toLowerCase().trim()) ? source.hint : undefined,
-		})).filter((journal: any) => journal.id && journal.title);
+			({
+				id: source?.id && source.id.trim().length > 0 ? clean_id(source.id) : undefined,
+				title: source?.display_name && source.display_name.trim().length > 0 ? source.display_name : undefined,
+				publisher: source?.hint && !['host organization unknown', ''].includes(source.hint.toLowerCase().trim()) ? source.hint : undefined,
+			})).filter((journal: any) => journal.id && journal.title);
 
 		res.push({
 			id: 'not_found',

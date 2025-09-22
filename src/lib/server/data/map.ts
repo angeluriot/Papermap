@@ -1,15 +1,15 @@
-import { score_map } from '$lib/scoring/map';
-import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
-import type { Journal } from '$lib/types/journal';
-import type { DataMap, Group, GroupNode, Map, MapTitle } from '$lib/types/map';
-import { JournalMissingReason, type DataPaper } from '$lib/types/paper';
+import { get_hash } from '../utils';
+import { generate_group_node, generate_map_title, generate_paper } from './fake';
 import { get_journal_ids, get_journals } from './journal';
 import { validate_group, validate_map } from './validate';
-import { generate_group_node, generate_map_title, generate_paper } from './fake';
-import { get_hash } from '../utils';
-import { promises as fs } from 'fs';
+import { InvalidInternalDataError, NotFoundError } from '$lib/errors';
+import { score_map } from '$lib/scoring/map';
 import { constants as C } from '$lib/server/utils';
-import { join } from 'path';
+import type { Journal } from '$lib/types/journal';
+import type { DataMap, Group, GroupNode, Map, MapTitle } from '$lib/types/map';
+import { type DataPaper,JournalMissingReason } from '$lib/types/paper';
+import { promises as fs } from 'node:fs';
+import { join } from 'node:path';
 
 
 function add_group(group_node: GroupNode, group: Group)
@@ -183,8 +183,8 @@ export async function import_map(id: string): Promise<{ map: Map, journals: { [i
 
 	const journals = await get_journals(
 		data_map.papers
-		.map((paper: DataPaper) => paper.journal.id)
-		.filter(id => !Object.keys(JournalMissingReason).includes(id)) as string[]
+			.map((paper: DataPaper) => paper.journal.id)
+			.filter(id => !Object.keys(JournalMissingReason).includes(id)) as string[],
 	);
 
 	const map = score_map(data_map, journals);

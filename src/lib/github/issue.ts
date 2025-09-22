@@ -10,7 +10,7 @@ export interface NewMapRequest
 
 export function get_new_map_issue(data: NewMapRequest): { title: string, description: string }
 {
-	const title = `New map: "${data.title.trim()}"`
+	const title = `New map: "${data.title.trim()}"`;
 
 	let description = '# 🤔 ' + data.title.trim();
 

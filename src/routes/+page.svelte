@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Title from '$lib/svgs/title.svg';
-	import Background from '$lib/home/background.svelte';
 	import type { PageProps } from './$types';
-	import Logo from '$lib/svgs/logo.svg';
-	import { constants as C } from '$lib/utils';
-	import Search from '$lib/home/search.svelte';
+	import Background from '$lib/home/background.svelte';
 	import Popup from '$lib/home/popup.svelte';
+	import Search from '$lib/home/search.svelte';
+	import Logo from '$lib/svgs/logo.svg';
+	import Title from '$lib/svgs/title.svg';
+	import { constants as C } from '$lib/utils';
 	import { onMount } from 'svelte';
 
 	const { data }: PageProps = $props();
@@ -18,9 +18,9 @@
 	let height = $state(0);
 	let placeholder: string = $state('');
 	let search = $state('');
-	let search_element: Search | undefined = $state(undefined);
-	let popup: Popup | undefined = $state(undefined);
-	let interval: NodeJS.Timeout | undefined = $state(undefined);
+	let search_element: Search | undefined = $state();
+	let popup: Popup | undefined = $state();
+	let interval: NodeJS.Timeout | undefined = $state();
 
 	onMount(() =>
 	{
@@ -57,7 +57,7 @@
 	{
 		get_placeholder();
 		interval = setInterval(get_placeholder, 2000);
-	})
+	});
 </script>
 
 <svelte:window bind:innerWidth={width} bind:innerHeight={height} onclick={() => search_element?.deselect()}/>

@@ -1,7 +1,7 @@
-import type { DataPaper } from '$lib/types/paper';
 import type { Edits } from './types';
-import type { DataMap } from '$lib/types/map';
 import { sort_paper_attributes } from '$lib/server/data/paper';
+import type { DataMap } from '$lib/types/map';
+import type { DataPaper } from '$lib/types/paper';
 
 
 export async function edit_map(map: DataMap, edits: Edits): Promise<DataMap>

@@ -1,5 +1,5 @@
-import { clamp, ratio } from '$lib/utils';
 import type { BackgroundPoint, GraphStats, Tick } from './types';
+import { clamp, ratio } from '$lib/utils';
 
 
 export const BACKGROUND_COLOR = '#f3f4ff';
@@ -39,10 +39,10 @@ export const TITLE_Y_DISTANCE = 0.45;
 export const TITLE_FONT_SIZE = 8.5;
 
 export const POSSIBLE_X_SPACINGS = [
-	[1, 1/12, 1/24],
-	[1, 1/12, 1/12],
-	[1, 1/3, 1/6],
-	[1, 0.5, 1/4],
+	[1, 1 / 12, 1 / 24],
+	[1, 1 / 12, 1 / 12],
+	[1, 1 / 3, 1 / 6],
+	[1, 0.5, 1 / 4],
 	[5, 1, 0.5],
 	[10, 1, 1],
 	[10, 2, 2],
@@ -70,7 +70,7 @@ export function get_x_axis_spacing(stats: GraphStats): { spacing: number[], tick
 	const best_tick_distance = BEST_TICK_DISTANCE * stats.width ** 0.4;
 	const possible_spacings = POSSIBLE_X_SPACINGS.map(spacing => ({
 		spacing: spacing,
-		distance: ratio(stats.min_year + spacing[2], stats.min_year, stats.max_year, false) * stats.width
+		distance: ratio(stats.min_year + spacing[2], stats.min_year, stats.max_year, false) * stats.width,
 	}));
 	possible_spacings.sort((a, b) => Math.abs(a.distance - best_tick_distance) - Math.abs(b.distance - best_tick_distance));
 
@@ -96,7 +96,7 @@ export function get_x_axis(stats: GraphStats, font_scale: number = 1): Tick[]
 		if (x + (s * TICK_WIDTH) / 2 < 0 || x - (s * TICK_WIDTH) / 2 > stats.width)
 			continue;
 
-		const label_shown = x > s * LABEL_MIN_HARD_X && x < stats.width - s * LABEL_MAX_HARD_X
+		const label_shown = x > s * LABEL_MIN_HARD_X && x < stats.width - s * LABEL_MAX_HARD_X;
 
 		if (i % Math.round(spacing[0] * number_scale) === 0)
 			ticks.push({
@@ -149,7 +149,7 @@ export function get_x_title(stats: GraphStats, font_scale: number = 1): { x: num
 		y: stats.height - (distance_start + stats.sub_scales.axis * TITLE_X_DISTANCE * font_size),
 		text: 'Year',
 		font_size,
-	}
+	};
 }
 
 
@@ -158,7 +158,7 @@ export function get_y_axis_spacing(stats: GraphStats): number[]
 	const best_tick_distance = get_x_axis_spacing(stats).tick_distance;
 	const possible_spacings = POSSIBLE_Y_SPACINGS.map(spacing => ({
 		spacing: spacing,
-		score: Math.abs(ratio(stats.min_score + spacing[2], stats.min_score, stats.max_score, false) * stats.height - best_tick_distance)
+		score: Math.abs(ratio(stats.min_score + spacing[2], stats.min_score, stats.max_score, false) * stats.height - best_tick_distance),
 	}));
 
 	return possible_spacings.sort((a, b) => a.score - b.score)[0].spacing;
@@ -176,9 +176,9 @@ export function get_y_axis(stats: GraphStats, x_axis: Tick[], font_scale: number
 	{
 		const scaled_i = i / number_scale;
 		const y = (1 - ratio(scaled_i, stats.min_score, stats.max_score, false)) * stats.height;
-		const x_in_center = x_axis.find(
-			tick => tick.label !== null && tick.start.x > s * LABEL_MIN_HARD_X && tick.start.x < s * LABEL_CENTER_X
-		) !== undefined;
+		const x_in_center = x_axis.some(
+			tick => tick.label !== null && tick.start.x > s * LABEL_MIN_HARD_X && tick.start.x < s * LABEL_CENTER_X,
+		);
 		const label_shown = (
 			y > s * LABEL_MIN_HARD_Y &&
 			y < stats.height - s * LABEL_MAX_HARD_Y &&
@@ -240,7 +240,7 @@ export function get_y_title(stats: GraphStats, y_ticks: Tick[], font_scale: numb
 		y: stats.height / 2,
 		text: 'Paper score',
 		font_size,
-	}
+	};
 }
 
 

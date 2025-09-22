@@ -1,6 +1,6 @@
-import { search_paper } from '$lib/server/search/paper';
-import { json, error as http_error, type RequestHandler } from '@sveltejs/kit';
+import { error as http_error, json, type RequestHandler } from '@sveltejs/kit';
 import { InvalidDataError, OpenAlexAPIError } from '$lib/errors';
+import { search_paper } from '$lib/server/search/paper';
 import { constants as C } from '$lib/server/utils';
 import newrelic from 'newrelic';
 
@@ -40,4 +40,4 @@ export const GET: RequestHandler = async ({ url }) =>
 
 		return http_error(500, 'Internal server error');
 	}
-}
+};

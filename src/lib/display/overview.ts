@@ -1,7 +1,7 @@
-import { COLORS } from '$lib/colors';
-import type { Map } from '$lib/types/map';
 import type { GraphStats } from './graph/types';
 import { cut_in_half } from './utils';
+import { COLORS } from '$lib/colors';
+import type { Map } from '$lib/types/map';
 
 
 export function get_overview(map: Map)

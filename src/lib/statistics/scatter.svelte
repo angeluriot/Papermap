@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as echarts from 'echarts';
-	import { onMount, onDestroy } from 'svelte';
 	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
 	import { float_to_text, int_to_text } from '$lib/display/utils';
+	import * as echarts from 'echarts';
+	import { onDestroy,onMount } from 'svelte';
 
 	const { title, x_axis_label, x_axis_max, color, log_base, years, inverse, data }: {
 		title: string,
@@ -12,13 +12,13 @@
 		log_base?: number,
 		years?: true,
 		inverse?: true,
-		data: { x: number, y: number, text: string, score?: number, x_text?: string }[]
+		data: { x: number, y: number, text: string, score?: number, x_text?: string }[],
 	} = $props();
 
 	let container: HTMLDivElement | null = null;
 	let chart: echarts.ECharts | null = null;
-	let width: number | undefined = $state(undefined);
-	let height: number | undefined = $state(undefined);
+	let width: number | undefined = $state();
+	let height: number | undefined = $state();
 
 	function to_log(value: number)
 	{
@@ -89,7 +89,7 @@
 		return {
 			initial: result[0],
 			log: result[1],
-		}
+		};
 	});
 
 	const median_x = $derived.by(() =>
@@ -112,7 +112,7 @@
 
 		for (const { used_data, linear_regression } of [
 			{ used_data: data, linear_regression: linear_regressions.initial },
-			{ used_data: converted_data, linear_regression: linear_regressions.log }
+			{ used_data: converted_data, linear_regression: linear_regressions.log },
 		])
 		{
 			if (used_data.length < 2)
@@ -189,7 +189,8 @@
 		tooltip: {
 			padding: [5, 10],
 			borderWidth: 1,
-			formatter: (params: any) => {
+			formatter: (params: any) =>
+			{
 				const data_point = converted_data[params.dataIndex];
 
 				return (

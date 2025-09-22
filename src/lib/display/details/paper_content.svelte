@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { COLORS, Color } from '$lib/colors';
+	import { float_to_text, get_standard_name, int_to_text } from '../utils';
+	import * as cards from './cards';
+	import InfoBubble from './info_bubble.svelte';
+	import { Color,COLORS } from '$lib/colors';
+	import Link from '$lib/svgs/link.svg';
 	import type { Journal } from '$lib/types/journal';
 	import type { Map } from '$lib/types/map';
-	import { Edit, JournalMissingReason, MissingReason, type Paper, ReviewType, PaperType, ReviewedPapersType, ReviewedPapersBlinding, Blinding } from '$lib/types/paper';
-	import * as cards from './cards';
-	import { float_to_text, get_standard_name, int_to_text } from '../utils';
-	import InfoBubble from './info_bubble.svelte';
-	import Link from '$lib/svgs/link.svg';
+	import { Blinding,Edit, JournalMissingReason, MissingReason, type Paper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 
 	let { emojis, map, journals, paper, width, height, journal_info_open = $bindable(), edit_mode }: {
 		emojis: Record<string, string>,
 		map: Map,
-		journals: { [id: string]: Journal; },
+		journals: { [id: string]: Journal },
 		paper: Paper,
 		width: number,
 		height: number,
@@ -120,11 +120,11 @@
 	const indirect = $derived(paper.results.indirect);
 
 	const part_1_gap = 2;
-	let global_width: number | undefined = $state(undefined);
-	let consensus_width: number | undefined = $state(undefined);
-	let result_width: number | undefined = $state(undefined);
-	let indirect_width: number | undefined = $state(undefined);
-	let part_1: HTMLDivElement | undefined = $state(undefined);
+	let global_width: number | undefined = $state();
+	let consensus_width: number | undefined = $state();
+	let result_width: number | undefined = $state();
+	let indirect_width: number | undefined = $state();
+	let part_1: HTMLDivElement | undefined = $state();
 	let part_1_flex_wrap: string = $derived.by(() =>
 	{
 		if (global_width === undefined || consensus_width === undefined || result_width === undefined || part_1 === undefined)
@@ -139,11 +139,11 @@
 
 	const quote_parts = $derived.by(() =>
 	{
-		const raw_parts = paper.quote.split(/(\[.*?\])/);
+		const raw_parts = paper.quote.split(/(\[.*?])/);
 
 		let parts = raw_parts.filter(part => part.length > 0).map(part => ({
 			text: part,
-			italic: !part.startsWith('[')
+			italic: !part.startsWith('['),
 		}));
 
 		if (parts.some(p => p.italic))
@@ -184,7 +184,7 @@
 					is_card: true,
 				});
 
-				result.push({ text: 'papers', is_card: false })
+				result.push({ text: 'papers', is_card: false });
 			}
 
 			else if (!review_one)
@@ -238,8 +238,8 @@
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
 				description: (
 					paper.review ?
-					`The type of the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} is not available because we couldn't access the full text of the paper` :
-					"The type of study is not available because we couldn't access the full text of the paper"
+						`The type of the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} is not available because we couldn't access the full text of the paper` :
+						"The type of study is not available because we couldn't access the full text of the paper"
 				),
 				is_card: true,
 			});
@@ -264,8 +264,8 @@
 						shadow: color_to_shadow(COLORS[Color.Gray].default),
 						description: (
 							paper.review ?
-							`The blinding strategies employed in the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} are not available because we couldn't access the full text of the paper` :
-							"The blinding strategies employed in this study are not available because we couldn't access the full text of the paper"
+								`The blinding strategies employed in the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} are not available because we couldn't access the full text of the paper` :
+								"The blinding strategies employed in this study are not available because we couldn't access the full text of the paper"
 						),
 						is_card: true,
 					});
@@ -372,7 +372,7 @@
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
 				description: 'The paper does not specify the number of participants in the study',
-			}
+			};
 		}
 
 		if (paper.sample_size === MissingReason.NotApplicable)
@@ -408,7 +408,7 @@
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
 				description: 'The paper does not specify the p-value of their results',
-			}
+			};
 		}
 
 		if (paper.p_value === MissingReason.NotApplicable)
@@ -431,7 +431,7 @@
 			color: cards.score_to_color(paper.scores.citations),
 			shadow: color_to_shadow(cards.score_to_color(paper.scores.citations)),
 			description: 'This paper has been cited ' + int_to_text(paper.citations) + ' times in other papers',
-		}
+		};
 	});
 
 	const conflict_of_interest = $derived.by(() =>

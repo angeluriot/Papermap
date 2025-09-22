@@ -1,7 +1,7 @@
-import { Blinding, ConflictOfInterest, JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type DataPaper } from '$lib/types/paper';
-import { get_available_conclusions, type DataMap, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
 import { faker } from '@faker-js/faker';
 import { EMOJI_NAMES } from '$lib/server/emojis';
+import { type DataMap, get_available_conclusions, type Group, type GroupNode, type MapTitle } from '$lib/types/map';
+import { Blinding, ConflictOfInterest, type DataPaper,JournalMissingReason, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 
 
 function random_choice<T>(elements: T[], weights?: number[]): T
@@ -10,7 +10,7 @@ function random_choice<T>(elements: T[], weights?: number[]): T
 		weights = new Array(elements.length).fill(1);
 
 	if (elements.length !== weights.length)
-		throw new Error();
+		throw new Error('Elements and weights must have the same length');
 
 	const total_weight = weights.reduce((acc, weight) => acc + weight, 0);
 	const random = Math.random() * total_weight;
@@ -109,7 +109,7 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 			link: Math.random() < 0.5 ? faker.internet.url() : undefined,
 			impact: random_choice(Object.keys(NoteImpact) as NoteImpact[]),
 		}), 0, 3),
-	}
+	};
 }
 
 
@@ -118,18 +118,18 @@ export function generate_group(): Group
 	const group_name = faker.lorem.words({ min: 1, max: 3 });
 
 	return {
-		id: group_name.toLowerCase().replaceAll(/ /g, '_'),
+		id: group_name.toLowerCase().replaceAll(' ', '_'),
 		emoji: random_choice(Object.keys(EMOJI_NAMES)),
 		name: group_name[0].toUpperCase() + group_name.slice(1),
 		draft: false,
-	}
+	};
 }
 
 
 export function generate_map_title(): MapTitle
 {
 	const short = faker.lorem.sentence({ min: 5, max: 8 }).slice(0, -1);
-	const id = short.toLowerCase().replaceAll(/ /g, '_')
+	const id = short.toLowerCase().replaceAll(' ', '_');
 
 	return {
 		groups: [],
@@ -145,7 +145,7 @@ export function generate_map_title(): MapTitle
 		url: random_choice(['/maps/do_vaccines_cause_autism']),
 		hash: faker.string.uuid(),
 		fake: true,
-	}
+	};
 }
 
 

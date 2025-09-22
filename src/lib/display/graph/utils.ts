@@ -1,8 +1,8 @@
+import { get_graph_points } from './points';
+import type { GraphStats } from './types';
 import type { Map } from '$lib/types/map';
 import { clamp } from '$lib/utils';
 import seedrandom from 'seedrandom';
-import type { GraphStats } from './types';
-import { get_graph_points } from './points';
 
 
 const X_MIN_PADDING = 17;
@@ -55,7 +55,7 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 	const final_min_year = min_year - pad_year * X_MIN_PADDING;
 	const final_max_year = max_year + pad_year * X_MAX_PADDING;
 	const final_min_score = Math.min(min_score - pad_score * Y_MIN_PADDING * bottom_margin_scale, 0);
-	const final_max_score = Math.max(max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE) * top_margin_scale, 1)
+	const final_max_score = Math.max(max_score + pad_score * (width <= 600 ? Y_MAX_PADDING_TIGHT : Y_MAX_PADDING_LARGE) * top_margin_scale, 1);
 
 	const stats = {
 		min_year: years.length > 0 ? final_min_year : 1950,
@@ -72,17 +72,17 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 		},
 	};
 
-	const test_points = get_graph_points(map, stats)
-	let right_overflow = 0
-	let top_overflow = 0
+	const test_points = get_graph_points(map, stats);
+	let right_overflow = 0;
+	let top_overflow = 0;
 
 	for (const point of test_points)
 	{
 		if (point.x + point.size + OVERFLOW_PADDING > width)
-			right_overflow = Math.max(right_overflow, ((point.x + point.size + OVERFLOW_PADDING) - width) / width)
+			right_overflow = Math.max(right_overflow, ((point.x + point.size + OVERFLOW_PADDING) - width) / width);
 
 		if (point.y - point.size - OVERFLOW_PADDING < 0)
-			top_overflow = Math.max(top_overflow, -(point.y - point.size - OVERFLOW_PADDING) / height)
+			top_overflow = Math.max(top_overflow, -(point.y - point.size - OVERFLOW_PADDING) / height);
 	}
 
 	stats.max_year = stats.min_year + (stats.max_year - stats.min_year) * (1 + right_overflow);

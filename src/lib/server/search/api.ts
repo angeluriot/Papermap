@@ -1,5 +1,5 @@
-import { clean_doi } from '$lib/server/utils';
 import { OpenAlexAPIError } from '$lib/errors';
+import { clean_doi } from '$lib/server/utils';
 import { constants as C } from '$lib/server/utils';
 import { clean_id } from '$lib/utils';
 
@@ -44,7 +44,7 @@ export interface OpenAlexPaper
 		version: string | null,
 		is_accepted: boolean,
 		is_published: boolean,
-	},
+	};
 	type: string;
 	type_crossref: string;
 	indexed_in: string[];

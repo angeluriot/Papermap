@@ -1,8 +1,8 @@
-import newrelic from 'newrelic';
-import express from 'express';
-import requestIp from 'request-ip';
-import { RateLimiterMemory } from 'rate-limiter-flexible';
 import { handler } from './build/handler.js';
+import express from 'express';
+import newrelic from 'newrelic';
+import { RateLimiterMemory } from 'rate-limiter-flexible';
+import requestIp from 'request-ip';
 
 
 class InvalidRequestError extends Error {}
@@ -11,25 +11,25 @@ class TooManyRequestsError extends Error {}
 const default_limiter = new RateLimiterMemory({
 	points: 3000,
 	duration: 60,
-	blockDuration: 60
+	blockDuration: 60,
 });
 
 const search_limiter = new RateLimiterMemory({
 	points: 30,
 	duration: 60,
-	blockDuration: 3 * 60
+	blockDuration: 3 * 60,
 });
 
 const github_limiter = new RateLimiterMemory({
 	points: 5,
 	duration: 60,
-	blockDuration: 10 * 60
+	blockDuration: 10 * 60,
 });
 
 const github_long_limiter = new RateLimiterMemory({
 	points: 30,
 	duration: 10 * 60 * 60,
-	blockDuration: 10 * 60 * 60
+	blockDuration: 10 * 60 * 60,
 });
 
 const ROUTES = [
@@ -103,7 +103,7 @@ function normalize_path(input)
 	if (!path.startsWith('/'))
 		path = '/' + path;
 
-	path = path.replace(/\/{2,}/g, '/');
+	path = path.replaceAll(/\/{2,}/g, '/');
 
 	if (path.length > 1 && path.endsWith('/'))
 		path = path.slice(0, -1);

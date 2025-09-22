@@ -96,8 +96,8 @@ export interface DataPaper
 	title: string;
 	override_seed?: number;
 	institution?: {
-		name: string;
-		acronym: string;
+		name: string,
+		acronym: string,
 	};
 	authors: string[];
 	year: number;
@@ -178,7 +178,7 @@ export interface SearchPaperResult
 
 export function paper_to_datapaper(paper: Paper): DataPaper
 {
-	 
+
 	const { index, uuid, scores, score, edit, ...data } = paper;
 	return data;
 }

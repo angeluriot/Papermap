@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Map } from '$lib/types/map';
 	import * as bg from './background';
 	import * as pt from './points';
 	import type { GraphPoint } from './types';
 	import { get_stats } from './utils';
+	import type { Map } from '$lib/types/map';
 	import { constants as C } from '$lib/utils';
 
 	let { map, width, height, point_selected = $bindable(), group_selected = $bindable(), journal_info_open = $bindable(), input_selected = $bindable(), details_element }: {

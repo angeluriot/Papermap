@@ -39,4 +39,4 @@ export const COLORS = {
 		fill: '#db456c',
 		stroke: '#bf1f49',
 	},
-}
+};

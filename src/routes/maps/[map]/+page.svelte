@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { constants as C } from '$lib/utils';
 	import type { PageProps } from './$types';
-	import { Edit, paper_to_datapaper } from '$lib/types/paper';
-	import Graph from '$lib/display/graph/graph.svelte';
-	import type { GraphPoint } from '$lib/display/graph/types';
-	import Title from '$lib/display/title.svelte';
-	import Overview from '$lib/display/overview.svelte';
-	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
 	import DefaultButtons from '$lib/display/buttons/default.svelte';
 	import EditButtons from '$lib/display/buttons/edit.svelte';
-	import Home from '$lib/svgs/home.svg';
+	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
 	import Popup from '$lib/display/edit/popup.svelte';
-	import { onMount } from 'svelte';
+	import Graph from '$lib/display/graph/graph.svelte';
+	import type { GraphPoint } from '$lib/display/graph/types';
+	import Overview from '$lib/display/overview.svelte';
+	import Title from '$lib/display/title.svelte';
+	import Home from '$lib/svgs/home.svg';
+	import { Edit, paper_to_datapaper } from '$lib/types/paper';
+	import { constants as C } from '$lib/utils';
 	import cloneDeep from 'clone-deep';
 	import deepEqual from 'deep-equal';
+	import { onMount } from 'svelte';
 
 	const { data }: PageProps = $props();
 
@@ -34,7 +34,7 @@
 	let input_selected = $state(false);
 	let details_element: HTMLDivElement | null = $state(null);
 	let edit_mode = $state(false);
-	let popup: Popup | undefined = $state(undefined);
+	let popup: Popup | undefined = $state();
 	let leaving_message = $state(true);
 
 	function deselect_point()

@@ -1,10 +1,10 @@
+import { get_journal } from '../data/journal';
+import { clean_text } from '../utils';
+import { openalex_search, type OpenAlexPaper } from './api';
 import { clean_doi } from '$lib/server/utils';
 import type { Journal } from '$lib/types/journal';
 import type { SearchPaperResult } from '$lib/types/paper';
 import { clean_id } from '$lib/utils';
-import { get_journal } from '../data/journal';
-import { clean_text } from '../utils';
-import { openalex_search, type OpenAlexPaper } from './api';
 
 
 async function find_journal(result: OpenAlexPaper): Promise<Journal | null>
@@ -29,14 +29,14 @@ export async function search_paper(doi?: string, title?: string, year?: number):
 
 	for (const paper of paper_results)
 	{
-		const result: SearchPaperResult = {}
+		const result: SearchPaperResult = {};
 
 		if (paper.id) result.id = clean_id(paper.id);
 		if (paper.doi) result.link = paper.doi.trim();
 		if (paper.title) result.title = paper.title.trim();
 		if (paper.publication_year) result.year = paper.publication_year;
 
-		const journal = await find_journal(paper)
+		const journal = await find_journal(paper);
 
 		if (journal)
 			result.journal = journal;

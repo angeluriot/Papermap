@@ -1,4 +1,4 @@
-import { MissingReason, type DataPaper, type Paper } from './paper';
+import { type DataPaper, MissingReason, type Paper } from './paper';
 import type { Color } from '$lib/colors';
 
 
@@ -100,11 +100,11 @@ export function get_available_conclusions(map: DataMap | Map, consensus: string)
 {
 	const used_consensus = (
 		consensus.trim() !== '' ?
-		consensus.replace(MissingReason.NotSpecified, 'no_consensus').replace(MissingReason.NoAccess, 'no_consensus') :
-		'no_consensus'
+			consensus.replace(MissingReason.NotSpecified, 'no_consensus').replace(MissingReason.NoAccess, 'no_consensus') :
+			'no_consensus'
 	);
 
 	return Object.keys(map.conclusions).filter(
-		id => !map.consensus[used_consensus].unavailable.includes(id)
+		id => !map.consensus[used_consensus].unavailable.includes(id),
 	);
 }

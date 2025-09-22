@@ -1,9 +1,9 @@
+import { EMOJI_NAMES } from '../emojis';
+import { Color } from '$lib/colors';
+import { InvalidInternalDataError } from '$lib/errors';
 import type { DataMap, Group } from '$lib/types/map';
 import { Blinding, ConflictOfInterest, MissingReason, NoteImpact, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
 import { z } from 'zod';
-import { InvalidInternalDataError } from '$lib/errors';
-import { Color } from '$lib/colors';
-import { EMOJI_NAMES } from '../emojis';
 
 
 export const paper_schema = z.object({

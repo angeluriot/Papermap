@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Paper, SearchPaperResult } from '$lib/types/paper';
 	import Loading from '../loading.svelte';
 	import Link from '$lib/svgs/link.svg';
+	import type { Paper, SearchPaperResult } from '$lib/types/paper';
 
 	let { papers, result = $bindable(), page = $bindable() }: {
 		papers: { [uuid: string]: Paper },

@@ -1,6 +1,6 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
-import { type DataPaper, type PaperScores, type Paper, PaperType, NoteImpact, ReviewType, Blinding, MissingReason, ConflictOfInterest, ReviewedPapersType, ReviewedPapersBlinding } from '$lib/types/paper';
+import { Blinding, ConflictOfInterest, type DataPaper, MissingReason, NoteImpact, type Paper, type PaperScores, PaperType, ReviewedPapersBlinding,ReviewedPapersType, ReviewType } from '$lib/types/paper';
 import { get_uuid, ratio } from '$lib/utils';
 
 
@@ -68,7 +68,7 @@ const UNKNOWN_SAMPLE_SIZE_REVIEW_INCREASE = 0.3;
 const SAMPLE_SIZE_SCORES = {
 	[MissingReason.NoAccess]:		0.25,
 	[MissingReason.NotSpecified]:	0.0,
-}
+};
 const OBSERVATIONAL_SAMPLE_SIZE_HALF_SCORE = 600.0;
 const EXPERIMENTAL_SAMPLE_SIZE_HALF_SCORE = 60.0;
 const P_VALUE_SCORES = {
@@ -146,12 +146,12 @@ function score_year(paper: DataPaper): { year_score: number, initial_year_score:
 
 	return {
 		year_score: apply_coef(score, paper.review ? COEFS.year.review : COEFS.year.no_review),
-		initial_year_score: score
+		initial_year_score: score,
 	};
 }
 
 
-export function score_journal(paper: DataPaper, journal: Journal | undefined): { journal_score: number, initial_journal_score: number | undefined }
+export function score_journal(paper: DataPaper, journal?: Journal): { journal_score: number, initial_journal_score?: number }
 {
 	let initial_score: number | undefined = journal?.score ?? 0.0;
 
@@ -170,7 +170,7 @@ export function score_journal(paper: DataPaper, journal: Journal | undefined): {
 
 	return {
 		journal_score: score,
-		initial_journal_score: initial_score
+		initial_journal_score: initial_score,
 	};
 }
 
@@ -184,7 +184,7 @@ export function score_citations(paper: DataPaper): { citations_score: number, in
 
 	return {
 		citations_score: apply_coef(score, COEFS.citations),
-		initial_citations_score: score
+		initial_citations_score: score,
 	};
 }
 
@@ -195,15 +195,15 @@ export function score_direct(paper: DataPaper): { direct_score: number, initial_
 
 	return {
 		direct_score: apply_coef(score, COEFS.direct),
-		initial_direct_score: score
+		initial_direct_score: score,
 	};
 }
 
 
-function score_review(paper: DataPaper): { review_score: number, initial_review_score: number | undefined, review_count_score: number | undefined }
+function score_review(paper: DataPaper): { review_score: number, initial_review_score?: number, review_count_score?: number }
 {
 	if (!paper.review)
-		return { review_score: 1.0, initial_review_score: undefined, review_count_score: undefined };
+		return { review_score: 1.0 };
 
 	const type_score = paper.review ? REVIEW_TYPE_SCORES[paper.review.type] : 0.0;
 	let count_score = paper.review.count !== MissingReason.NoAccess ? paper.review.count : 5;
@@ -219,15 +219,15 @@ function score_review(paper: DataPaper): { review_score: number, initial_review_
 	return {
 		review_score: apply_coef(score, COEFS.review),
 		initial_review_score: score,
-		review_count_score: count_score
+		review_count_score: count_score,
 	};
 }
 
 
-function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: number): { type_score: number, initial_type_score: number | undefined }
+function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: number): { type_score: number, initial_type_score?: number }
 {
 	if (map.type.any)
-		return { type_score: 1.0, initial_type_score: undefined };
+		return { type_score: 1.0 };
 
 	let type_scores = TYPE_SCORES.default;
 
@@ -245,12 +245,12 @@ function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: nu
 			PaperType.EcologicalStudy,
 			PaperType.CrossSectionalStudy,
 			PaperType.CaseControlStudy,
-			PaperType.CohortStudy
+			PaperType.CohortStudy,
 		];
 	else if (paper.type == ReviewedPapersType.DiverseClinicalTrials)
 		types = [
 			PaperType.ClinicalTrial,
-			PaperType.RandomizedControlledTrial
+			PaperType.RandomizedControlledTrial,
 		];
 	else if (paper.type == ReviewedPapersType.DiverseHumanStudies)
 		types = [
@@ -260,7 +260,7 @@ function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: nu
 			PaperType.CaseControlStudy,
 			PaperType.CohortStudy,
 			PaperType.ClinicalTrial,
-			PaperType.RandomizedControlledTrial
+			PaperType.RandomizedControlledTrial,
 		];
 	else if (paper.type == ReviewedPapersType.DiverseTypes)
 		types = Object.keys(PaperType) as PaperType[];
@@ -271,15 +271,15 @@ function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: nu
 
 	return {
 		type_score: apply_coef(score, map.conclusions[paper.results.conclusion].p_value ? COEFS.type.effect : COEFS.type.no_effect),
-		initial_type_score: score
+		initial_type_score: score,
 	};
 }
 
 
-function score_blinding(map: DataMap | Map, paper: DataPaper, review_count_score: number): { blinding_score: number, initial_blinding_score: number | undefined }
+function score_blinding(map: DataMap | Map, paper: DataPaper, review_count_score: number): { blinding_score: number, initial_blinding_score?: number }
 {
 	if (map.no_blinding)
-		return { blinding_score: 1.0, initial_blinding_score: undefined };
+		return { blinding_score: 1.0 };
 
 	let blinding: (Blinding | MissingReason.NoAccess)[] = [];
 
@@ -296,15 +296,15 @@ function score_blinding(map: DataMap | Map, paper: DataPaper, review_count_score
 
 	return {
 		blinding_score: apply_coef(score, map.conclusions[paper.results.conclusion].p_value ? COEFS.blinding.effect : COEFS.blinding.no_effect),
-		initial_blinding_score: score
+		initial_blinding_score: score,
 	};
 }
 
 
-function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_score: number): { sample_size_score: number, initial_sample_size_score: number | undefined }
+function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_score: number): { sample_size_score: number, initial_sample_size_score?: number }
 {
 	if (map.no_sample_size || paper.sample_size === MissingReason.NotApplicable || paper.type === PaperType.InVitroStudy)
-		return { sample_size_score: 1.0, initial_sample_size_score: undefined };
+		return { sample_size_score: 1.0 };
 
 	let score = 0.0;
 
@@ -329,15 +329,15 @@ function score_sample_size(map: DataMap | Map, paper: DataPaper, review_count_sc
 
 	return {
 		sample_size_score: apply_coef(score, map.conclusions[paper.results.conclusion].p_value ? COEFS.sample_size.effect : COEFS.sample_size.no_effect),
-		initial_sample_size_score: score
+		initial_sample_size_score: score,
 	};
 }
 
 
-function score_p_value(map: DataMap | Map, paper: DataPaper): { p_value_score: number, initial_p_value_score: number | undefined }
+function score_p_value(map: DataMap | Map, paper: DataPaper): { p_value_score: number, initial_p_value_score?: number }
 {
 	if (!map.conclusions[paper.results.conclusion].p_value || paper.p_value === MissingReason.NotApplicable)
-		return { p_value_score: 1.0, initial_p_value_score: undefined };
+		return { p_value_score: 1.0 };
 
 	let score = 0.0;
 
@@ -352,7 +352,7 @@ function score_p_value(map: DataMap | Map, paper: DataPaper): { p_value_score: n
 
 	return {
 		p_value_score: apply_coef(score, COEFS.p_value),
-		initial_p_value_score: score
+		initial_p_value_score: score,
 	};
 }
 
@@ -364,7 +364,7 @@ function score_conflict_of_interest(paper: DataPaper): { conflict_of_interest_sc
 
 	return {
 		conflict_of_interest_score: apply_coef(score, is_narrative_review ? COEFS.conflict_of_interest.narrative_review : COEFS.conflict_of_interest.no_narrative_review),
-		initial_conflict_of_interest_score: score
+		initial_conflict_of_interest_score: score,
 	};
 }
 
@@ -388,7 +388,7 @@ function score_publication_bias(map: DataMap | Map, paper: DataPaper): number
 }
 
 
-function calculate_scores(map: DataMap | Map, paper: DataPaper, journal: Journal | undefined): { scores: PaperScores, score: number }
+function calculate_scores(map: DataMap | Map, paper: DataPaper, journal?: Journal): { scores: PaperScores, score: number }
 {
 	const { year_score, initial_year_score } = score_year(paper);
 	const { journal_score, initial_journal_score } = score_journal(paper, journal);

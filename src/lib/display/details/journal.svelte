@@ -1,16 +1,16 @@
 <script lang="ts">
-	import type { Journal } from '$lib/types/journal';
-	import * as cards from './cards';
 	import { float_to_text, int_to_text } from '../utils';
+	import * as cards from './cards';
 	import InfoBubble from './info_bubble.svelte';
-	import { COLORS, Color } from '$lib/colors';
+	import { Color,COLORS } from '$lib/colors';
 	import Link from '$lib/svgs/link.svg';
+	import type { Journal } from '$lib/types/journal';
 
 	const { emojis, journal, width, height }: {
 		emojis: Record<string, string>,
 		journal: Journal,
 		width: number,
-		height: number
+		height: number,
 	} = $props();
 
 	function color_to_shadow(color: string | undefined): string
@@ -27,7 +27,7 @@
 		ef: { name: 'Eigenfactor', description: 'The percentage of time spent visiting the journal when randomly following citation links from papers published in the last 5 years' },
 		ai: { name: 'Article Influence', description: 'The Eigenfactor Score divided by the number of papers published in the journal in the last 5 years' },
 		self: { name: 'Self-citation', description: 'The percentage of citations to the journal that come from the journal itself' },
-		rti: { name: 'RTI', description: `"Rigor & Transparency Index": the average SciScore for the journal's papers, reflecting how well they adhere to criteria such as randomization, blinding, power, transparency, and more` },
+		rti: { name: 'RTI', description: '"Rigor & Transparency Index": the average SciScore for the journal\'s papers, reflecting how well they adhere to criteria such as randomization, blinding, power, transparency, and more' },
 		top: { name: 'TOP Factor', description: '"Transparency and Openness Promotion Factor": a rating of journal policies assessing how strongly they promote transparency and reproducibility' },
 		alt: { name: 'News Mentions', description: "The average number of news mentions of the journal's papers" },
 	};
@@ -40,9 +40,9 @@
 
 		let query = (
 			(journal.title.trim() + ' Scientific Journal')
-			.replaceAll(/[^a-zA-Z\s]+/g, '')
-			.trim()
-			.replaceAll(/[\s]+/g, '+')
+				.replaceAll(/[^\sA-Za-z]+/g, '')
+				.trim()
+				.replaceAll(/\s+/g, '+')
 		);
 
 		return `http://www.google.com/search?q=${query}&btnI=I`;
@@ -51,7 +51,7 @@
 
 	const metrics = $derived.by(() =>
 	{
-		let results = []
+		let results = [];
 
 		for (const m of Object.keys(metrics_data) as (keyof typeof metrics_data)[])
 		{
@@ -61,7 +61,7 @@
 			{
 				results.push({
 					title: metrics_data[m].name,
-					emoji: cards.score_to_emoji(undefined),
+					emoji: cards.score_to_emoji(),
 					text: 'N/A',
 					color: COLORS[Color.Gray].default,
 					shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -76,8 +76,8 @@
 					emoji: cards.score_to_emoji(m === 'self' ? Math.min(metric.score, 0.85) : metric.score),
 					text: (
 						m === 'self' ?
-						int_to_text(Math.round(metric.value * 100)) + '%' :
-						float_to_text(metric.value)
+							int_to_text(Math.round(metric.value * 100)) + '%' :
+							float_to_text(metric.value)
 					),
 					color: cards.score_to_color(m === 'self' ? Math.min(metric.score, 0.85) : metric.score),
 					shadow: color_to_shadow(cards.score_to_color(m === 'self' ? Math.min(metric.score, 0.85) : metric.score)),

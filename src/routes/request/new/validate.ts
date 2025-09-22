@@ -1,6 +1,6 @@
-import { z } from 'zod';
 import { InvalidDataError } from '$lib/errors';
 import type { NewMapRequest } from '$lib/github/issue';
+import { z } from 'zod';
 
 
 const request_schema = z.object({

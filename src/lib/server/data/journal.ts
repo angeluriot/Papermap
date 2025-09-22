@@ -1,11 +1,11 @@
-import type { Journal } from '$lib/types/journal';
 import { constants as C } from '$lib/server/utils';
-import { join } from 'path';
-import fs from 'fs';
-import readline from 'readline';
+import type { Journal } from '$lib/types/journal';
+import fs from 'node:fs';
+import { join } from 'node:path';
+import readline from 'node:readline';
 
 
-let index: Record<string, [number, number]> | undefined = undefined;
+let index: Record<string, [number, number]> | undefined;
 
 
 async function init()

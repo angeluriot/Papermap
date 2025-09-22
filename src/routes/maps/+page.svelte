@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
-	import { constants as C } from '$lib/utils';
 	import Background from '$lib/list/background.svelte';
+	import Maps from '$lib/list/maps.svelte';
 	import Home from '$lib/svgs/home.svg';
 	import Random from '$lib/svgs/random.svg';
-	import Maps from '$lib/list/maps.svelte';
+	import { constants as C } from '$lib/utils';
 
 	const { data }: PageProps = $props();
 

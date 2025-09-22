@@ -1,7 +1,7 @@
-import type { GraphStats } from '$lib/display/graph/types';
-import { SatoshiMedium } from '$lib/fonts';
-import type { Map } from '$lib/types/map';
 import { rendered_text_size } from './utils';
+import type { GraphStats } from '$lib/display/graph/types';
+import { SatoshiMedium } from '$lib/server/fonts';
+import type { Map } from '$lib/types/map';
 
 
 export async function get_preview_title(map: Map, stats: GraphStats, shown: boolean)
@@ -22,7 +22,7 @@ export async function get_preview_title(map: Map, stats: GraphStats, shown: bool
 		font_size,
 		width: text_width,
 		height: text_height,
-	}
+	};
 }
 
 
@@ -39,7 +39,7 @@ export async function get_image_title(map: Map, stats: GraphStats)
 		font_size,
 		width: text_width,
 		height: text_height,
-	}
+	};
 }
 
 
@@ -65,5 +65,5 @@ export async function get_image_subtitle(map: Map, stats: GraphStats)
 		line_height,
 		height: lines.length * line_height,
 		bottom_margin,
-	}
+	};
 }

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Journal } from '$lib/types/journal';
 	import JournalInfo from './journal.svelte';
+	import type { Journal } from '$lib/types/journal';
 
 	let { emojis, text, link, journal, width, height }: {
 		emojis: Record<string, string>,
@@ -8,7 +8,7 @@
 		link?: boolean,
 		journal?: Journal,
 		width: number,
-		height: number
+		height: number,
 	} = $props();
 
 	const info_margin = 2.6;
@@ -18,7 +18,7 @@
 
 	let info_width = $derived(text !== undefined ? Math.round(Math.max(Math.min(5 + text.length * 0.18, 20), link ? 7 : 0)) : 22);
 	let info_height = $state(0);
-	let info: HTMLDivElement | undefined = $state(undefined);
+	let info: HTMLDivElement | undefined = $state();
 
 	let {
 		info_left,
@@ -26,7 +26,7 @@
 		arrow_top,
 		arrow_rotation,
 		hitbox_top,
-		info_final_width
+		info_final_width,
 	} = $derived.by(() =>
 	{
 		width;

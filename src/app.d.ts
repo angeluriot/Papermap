@@ -1,4 +1,5 @@
-declare global {
+declare global
+{
 	namespace App {}
 }
 

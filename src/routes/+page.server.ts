@@ -1,6 +1,6 @@
+import type { PageServerLoad } from './$types';
 import { map_titles } from '$lib/server/data/map';
 import { load_svgs } from '$lib/server/emojis';
-import type { PageServerLoad } from './$types';
 
 
 export const prerender = true;

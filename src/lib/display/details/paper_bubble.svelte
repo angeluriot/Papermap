@@ -1,15 +1,15 @@
 <script lang="ts">
 	import type { GraphPoint } from '../graph/types';
-	import type { Map } from '$lib/types/map';
-	import type { Paper } from '$lib/types/paper';
 	import Content from '$lib/display/details/paper_content.svelte';
 	import type { Journal } from '$lib/types/journal';
+	import type { Map } from '$lib/types/map';
+	import type { Paper } from '$lib/types/paper';
 
 	let { emojis, point, map, journals, paper, width, height, journal_info_open = $bindable(), edit_mode }: {
 		emojis: Record<string, string>,
 		point: GraphPoint,
 		map: Map,
-		journals: { [id: string]: Journal; },
+		journals: { [id: string]: Journal },
 		paper: Paper,
 		width: number,
 		height: number,

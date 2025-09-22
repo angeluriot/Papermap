@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import fs from 'fs';
-import { join } from 'path';
+import fs from 'node:fs';
+import { join } from 'node:path';
 
 
 const nb_per_page = 200;
@@ -57,10 +57,10 @@ function clean_id(id)
 		return cleaned_id.replaceAll('https://www.openalex.org/', '').trim();
 
 	while (cleaned_id.startsWith('/'))
-		cleaned_id = cleaned_id.substring(1).trim();
+		cleaned_id = cleaned_id.slice(1).trim();
 
 	while (cleaned_id.endsWith('/'))
-		cleaned_id = cleaned_id.substring(0, cleaned_id.length - 1).trim();
+		cleaned_id = cleaned_id.slice(0, Math.max(0, cleaned_id.length - 1)).trim();
 
 	return cleaned_id.toUpperCase().trim();
 }
@@ -236,7 +236,7 @@ async function main()
 		citations /= 50;
 		citations /= citations + 1.0;
 
-		const clean_title = (work?.title ?? '').toLowerCase().replaceAll(/[^a-z]/g, '')
+		const clean_title = (work?.title ?? '').toLowerCase().replaceAll(/[^a-z]/g, '');
 		let review_type = 0.0;
 
 		if (clean_title.includes('metaanalysis'))

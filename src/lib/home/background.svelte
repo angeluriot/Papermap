@@ -2,7 +2,7 @@
 	import { BACKGROUND_COLOR, POINTS_COLOR } from '$lib/display/graph/background';
 	import { clamp } from '$lib/utils';
 
-	const { width, height }: { width: number; height: number } = $props();
+	const { width, height }: { width: number, height: number } = $props();
 
 	const dots_style = $derived.by(() =>
 	{

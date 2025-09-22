@@ -1,7 +1,7 @@
-import { z } from 'zod';
-import { InvalidDataError } from '$lib/errors';
 import type { Params } from './types';
+import { InvalidDataError } from '$lib/errors';
 import { map_titles } from '$lib/server/data/map';
+import { z } from 'zod';
 
 
 const params_schema = z.object({

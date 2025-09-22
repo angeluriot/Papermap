@@ -1,7 +1,7 @@
-import type { Font } from './types';
 import { constants as C } from '$lib/server/utils';
-import { promises as fs } from 'fs';
-import { join } from 'path';
+import type { Font } from '$lib/types';
+import { promises as fs } from 'node:fs';
+import { join } from 'node:path';
 
 
 async function import_font(dir: string, name: string, weight: string, display: string, style: string, file_types: string[]): Promise<Font>

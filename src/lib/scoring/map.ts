@@ -1,7 +1,7 @@
-import type { DataMap, Map } from '$lib/types/map';
-import type { Paper } from '$lib/types/paper';
 import { score_paper } from './paper';
 import type { Journal } from '$lib/types/journal';
+import type { DataMap, Map } from '$lib/types/map';
+import type { Paper } from '$lib/types/paper';
 
 
 const OVERVIEW_GAP_INCREASE = 2;
@@ -73,7 +73,7 @@ export function score_map(data_map: DataMap, journals: { [id: string]: Journal }
 	const map = {
 		...data_map,
 		papers,
-		overview: {}
+		overview: {},
 	};
 
 	map.overview = score_answer_groups(map);

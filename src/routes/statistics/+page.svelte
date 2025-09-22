@@ -1,17 +1,17 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
-	import { constants as C } from '$lib/utils';
+	import { TO_TEXT } from '$lib/display/details/cards';
+	import { get_label } from '$lib/display/graph/points';
+	import { float_to_text, int_to_text } from '$lib/display/utils';
 	import Background from '$lib/list/background.svelte';
+	import { COEFS,REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
+	import Bars from '$lib/statistics/bars.svelte';
+	import Categories from '$lib/statistics/categories.svelte';
+	import Scatter from '$lib/statistics/scatter.svelte';
 	import Home from '$lib/svgs/home.svg';
 	import Random from '$lib/svgs/random.svg';
-	import Scatter from '$lib/statistics/scatter.svelte';
-	import Bars from '$lib/statistics/bars.svelte';
-	import { get_label } from '$lib/display/graph/points';
-	import Categories from '$lib/statistics/categories.svelte';
-	import { Blinding, ConflictOfInterest, MissingReason, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type Paper } from '$lib/types/paper';
-	import { TO_TEXT } from '$lib/display/details/cards';
-	import { REVIEW_COUNT_SUBPART_RATIO, REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER, COEFS } from '$lib/scoring/paper';
-	import { float_to_text, int_to_text } from '$lib/display/utils';
+	import { Blinding, ConflictOfInterest, MissingReason, type Paper,PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
+	import { constants as C } from '$lib/utils';
 
 	const { data }: PageProps = $props();
 	const { emojis, maps } = data;
@@ -51,21 +51,21 @@
 		[ReviewedPapersType.DiverseClinicalTrials]: 'Other',
 		[ReviewedPapersType.DiverseHumanStudies]: 'Other',
 		[ReviewedPapersType.DiverseTypes]: 'Other',
-	}
+	};
 
 	const blinding_dict = {
 		[Blinding.None]: 'None',
 		[Blinding.Single]: 'Single',
 		[Blinding.Double]: 'Double',
 		[ReviewedPapersBlinding.DiverseBlinding]: 'Other',
-	}
+	};
 
 	const conflict_of_interest_dict = {
 		[ConflictOfInterest.Yes]: 'Yes',
 		[ConflictOfInterest.SomeLinks]: 'Some links',
 		[ConflictOfInterest.YesButOppositeResults]: 'Yes but\nopposite results',
 		[ConflictOfInterest.None]: 'None',
-	}
+	};
 
 	function get_review_count(paper: Paper): number | undefined
 	{
@@ -174,11 +174,11 @@
 					title='Paper score by journal score' x_axis_label='Journal score' color='#91cc75'
 					data={
 						papers.filter(paper => paper.scores.journal !== undefined)
-						.map(paper => ({
-							x: paper.scores.journal,
-							y: paper.score,
-							text: get_label(paper, false),
-						})) as { x: number, y: number, text: string }[]
+							.map(paper => ({
+								x: paper.scores.journal,
+								y: paper.score,
+								text: get_label(paper, false),
+							})) as { x: number, y: number, text: string }[]
 					}
 				/>
 			</div>
@@ -228,12 +228,12 @@
 					x_axis_values={(Object.keys(ReviewType) as ReviewType[]).map(key => TO_TEXT[key].replaceAll(' ', '\n'))}
 					data={
 						papers.filter(paper => paper.review)
-						.map(paper => ({
-							x: paper.review ? TO_TEXT[paper.review.type].replaceAll(' ', '\n') : '',
-							y: paper.score,
-							text: get_label(paper, false),
-							score: paper.scores.review ?? 0,
-						}))
+							.map(paper => ({
+								x: paper.review ? TO_TEXT[paper.review.type].replaceAll(' ', '\n') : '',
+								y: paper.score,
+								text: get_label(paper, false),
+								score: paper.scores.review ?? 0,
+							}))
 					}
 				/>
 			</div>
@@ -249,14 +249,14 @@
 					title='Paper score by literature review size' x_axis_label='Reviewed papers' color='#3ba272' log_base={2} x_axis_max={1000}
 					data={
 						papers.filter(paper => get_review_count(paper) !== undefined)
-						.map(paper => ({
+							.map(paper => ({
 							// @ts-ignore
-							x: get_review_count(paper),
-							y: paper.score,
-							text: get_label(paper, false),
-							score: paper.scores.review_count ?? 0,
-							x_text: get_review_count_text(paper),
-						})) as { x: number, y: number, text: string , score: number, x_text: string }[]
+								x: get_review_count(paper),
+								y: paper.score,
+								text: get_label(paper, false),
+								score: paper.scores.review_count ?? 0,
+								x_text: get_review_count_text(paper),
+							})) as { x: number, y: number, text: string , score: number, x_text: string }[]
 					}
 				/>
 			</div>
@@ -265,7 +265,7 @@
 					title='Papers by literature review score (size only)' x_axis_label='Literature review score (size only)' color='#3ba272'
 					data={
 						papers.filter(paper => paper.review && paper.review.count !== MissingReason.NoAccess)
-						.map(paper => paper.scores.review_count) as number[]
+							.map(paper => paper.scores.review_count) as number[]
 					}
 				/>
 			</div>
@@ -275,12 +275,12 @@
 					x_axis_values={Array.from(new Set(Object.values(types_dict)))}
 					data={
 						papers.filter(paper => paper.type !== MissingReason.NoAccess)
-						.map(paper => ({
-							x: types_dict[paper.type as PaperType | ReviewedPapersType],
-							y: paper.score,
-							text: get_label(paper, false),
-							score: paper.scores.type ?? 0,
-						}))
+							.map(paper => ({
+								x: types_dict[paper.type as PaperType | ReviewedPapersType],
+								y: paper.score,
+								text: get_label(paper, false),
+								score: paper.scores.type ?? 0,
+							}))
 					}
 				/>
 			</div>
@@ -289,7 +289,7 @@
 					title='Papers by study type score' x_axis_label='Study type score' color='#fc8452'
 					data={
 						papers.filter(paper => paper.type !== MissingReason.NoAccess && paper.scores.type !== undefined)
-						.map(paper => paper.scores.type ?? 0)
+							.map(paper => paper.scores.type ?? 0)
 					}
 					scoring={COEFS.type.effect}
 				/>
@@ -300,13 +300,13 @@
 					x_axis_values={Object.values(blinding_dict)}
 					data={
 						papers.filter(paper => paper.blinding !== MissingReason.NoAccess)
-						.map(paper => ({
+							.map(paper => ({
 							// @ts-ignore
-							x: blinding_dict[paper.blinding],
-							y: paper.score,
-							text: get_label(paper, false),
-							score: paper.scores.blinding ?? 0
-						}))
+								x: blinding_dict[paper.blinding],
+								y: paper.score,
+								text: get_label(paper, false),
+								score: paper.scores.blinding ?? 0,
+							}))
 					}
 				/>
 			</div>
@@ -315,7 +315,7 @@
 					title='Papers by blinding score' x_axis_label='Blinding score' color='#9a60b4'
 					data={
 						papers.filter(paper => paper.blinding !== MissingReason.NoAccess && paper.scores.blinding !== undefined)
-						.map(paper => paper.scores.blinding ?? 0)
+							.map(paper => paper.scores.blinding ?? 0)
 					}
 					scoring={COEFS.blinding.effect}
 				/>
@@ -325,12 +325,12 @@
 					title='Paper score by sample size' x_axis_label='Sample size' color='#ea7ccc' log_base={10} x_axis_max={100000000}
 					data={
 						papers.filter(paper => typeof paper.sample_size === 'number')
-						.map(paper => ({
-							x: paper.sample_size,
-							y: paper.score,
-							text: get_label(paper, false),
-							score: paper.scores.sample_size ?? 0,
-						})) as { x: number, y: number, text: string, score: number }[]
+							.map(paper => ({
+								x: paper.sample_size,
+								y: paper.score,
+								text: get_label(paper, false),
+								score: paper.scores.sample_size ?? 0,
+							})) as { x: number, y: number, text: string, score: number }[]
 					}
 				/>
 			</div>
@@ -339,7 +339,7 @@
 					title='Papers by sample size score' x_axis_label='Sample size score' color='#ea7ccc'
 					data={
 						papers.filter(paper => paper.sample_size !== MissingReason.NoAccess && paper.sample_size !== MissingReason.NotApplicable)
-						.map(paper => paper.scores.sample_size) as number[]
+							.map(paper => paper.scores.sample_size) as number[]
 					}
 					scoring={COEFS.sample_size.effect}
 				/>
@@ -349,14 +349,14 @@
 					title='Paper score by p-value' x_axis_label='P-value' color='#5470c6' log_base={10} x_axis_max={0.1} inverse={true}
 					data={
 						papers.filter(paper => typeof paper.p_value === 'object')
-						.map(paper => ({
+							.map(paper => ({
 							// @ts-ignore
-							x: paper.p_value.value / (paper.p_value.less_than ? 2 : 1),
-							y: paper.score,
-							text: get_label(paper, false),
-							score: paper.scores.p_value ?? 0,
-							x_text: typeof paper.p_value === 'object' ? (paper.p_value.less_than ? '<' : '') + `${float_to_text(paper.p_value.value)}` : '',
-						})) as { x: number, y: number, text: string, score: number, x_text: string }[]
+								x: paper.p_value.value / (paper.p_value.less_than ? 2 : 1),
+								y: paper.score,
+								text: get_label(paper, false),
+								score: paper.scores.p_value ?? 0,
+								x_text: typeof paper.p_value === 'object' ? (paper.p_value.less_than ? '<' : '') + `${float_to_text(paper.p_value.value)}` : '',
+							})) as { x: number, y: number, text: string, score: number, x_text: string }[]
 					}
 				/>
 			</div>
@@ -365,7 +365,7 @@
 					title='Papers by p-value score' x_axis_label='P-value score' color='#5470c6'
 					data={
 						papers.filter(paper => paper.p_value !== MissingReason.NoAccess && paper.p_value !== MissingReason.NotApplicable)
-						.map(paper => paper.scores.p_value) as number[]
+							.map(paper => paper.scores.p_value) as number[]
 					}
 					scoring={COEFS.p_value}
 				/>
@@ -376,13 +376,13 @@
 					x_axis_values={Object.values(conflict_of_interest_dict)}
 					data={
 						papers.filter(paper => paper.conflict_of_interest !== MissingReason.NoAccess)
-						.map(paper => ({
+							.map(paper => ({
 							// @ts-ignore
-							x: conflict_of_interest_dict[paper.conflict_of_interest],
-							y: paper.score,
-							text: get_label(paper, false),
-							score: paper.scores.conflict_of_interest,
-						}))
+								x: conflict_of_interest_dict[paper.conflict_of_interest],
+								y: paper.score,
+								text: get_label(paper, false),
+								score: paper.scores.conflict_of_interest,
+							}))
 					}
 				/>
 			</div>
@@ -391,7 +391,7 @@
 					title='Papers by conflict of interest score' x_axis_label='Conflict of interest score' color='#91cc75'
 					data={
 						papers.filter(paper => paper.conflict_of_interest !== MissingReason.NoAccess)
-						.map(paper => paper.scores.conflict_of_interest)
+							.map(paper => paper.scores.conflict_of_interest)
 					}
 					scoring={COEFS.conflict_of_interest.no_narrative_review}
 				/>

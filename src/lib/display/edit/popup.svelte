@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Map } from '$lib/types/map';
-	import Cross from '$lib/svgs/cross.svg';
-	import Back from '$lib/svgs/back.svg';
-	import type { Paper, SearchPaperResult } from '$lib/types/paper';
-	import Search from './search.svelte';
 	import Add from './add.svelte';
+	import Search from './search.svelte';
 	import Send from './send.svelte';
+	import Back from '$lib/svgs/back.svg';
+	import Cross from '$lib/svgs/cross.svg';
 	import type { Journal } from '$lib/types/journal';
+	import type { Map } from '$lib/types/map';
+	import type { Paper, SearchPaperResult } from '$lib/types/paper';
 	import { onMount } from 'svelte';
 
 	let { route, map = $bindable(), journals = $bindable(), leaving_message = $bindable() }: {
@@ -22,7 +22,7 @@
 	let page: 'search' | 'add' | 'send' | null = $state(null);
 	let result: SearchPaperResult | null = $state(null);
 	let paper: Paper | null = $state(null);
-	let add_element: Add | undefined = $state(undefined);
+	let add_element: Add | undefined = $state();
 	let comment = $state('');
 	let discord_username = $state('');
 

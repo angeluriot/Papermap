@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Map } from '$lib/types/map';
 	import type { GraphPoint } from './graph/types';
 	import { get_overview } from './overview';
+	import type { Map } from '$lib/types/map';
 	import { constants as C } from '$lib/utils';
 
 	let { map, group_selected = $bindable(), point_selected = $bindable(), journal_info_open = $bindable(), input_selected = $bindable() }: {
@@ -16,19 +16,19 @@
 	const labels_2_lines = overview.some(data => data.label.type !== null && data.label.text.length > 1);
 	const nb_labels = overview.reduce((acc, data) => acc + (data.label.type !== null ? 1 : 0), 0);
 	let other_label_elements: HTMLSpanElement[] = $state([]);
-	let container_element: HTMLDivElement | undefined = $state(undefined);
+	let container_element: HTMLDivElement | undefined = $state();
 
 	let positions = $derived.by(() =>
 	{
 		if (!container_element || other_label_elements.length === 0)
-			return other_label_elements.map(() => undefined);
+			return other_label_elements.map(() => {});
 
 		const container_width = container_element.offsetWidth;
 
 		return overview.map((data, i) =>
 		{
 			if (data.label.type !== null)
-				return undefined;
+				return;
 
 			const element = other_label_elements[i];
 

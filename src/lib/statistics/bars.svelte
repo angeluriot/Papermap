@@ -1,20 +1,20 @@
 <script lang="ts">
-	import * as echarts from 'echarts';
-	import { onMount, onDestroy } from 'svelte';
 	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
+	import * as echarts from 'echarts';
+	import { onDestroy,onMount } from 'svelte';
 
 	const { title, x_axis_label, color, data, scoring }: {
 		title: string,
 		x_axis_label: string,
 		color: string,
 		data: number[],
-		scoring?: { min: number, max: number }
+		scoring?: { min: number, max: number },
 	} = $props();
 
 	let container: HTMLDivElement | null = null;
 	let chart: echarts.ECharts | null = null;
-	let width: number | undefined = $state(undefined);
-	let height: number | undefined = $state(undefined);
+	let width: number | undefined = $state();
+	let height: number | undefined = $state();
 
 	const { data_x, data_y } = $derived.by(() =>
 	{

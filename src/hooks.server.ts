@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { redirect } from '@sveltejs/kit';
-import newrelic from 'newrelic';
 import { constants as C } from '$lib/server/utils';
+import newrelic from 'newrelic';
 
 
 export const handle: Handle = async ({ event, resolve }) =>

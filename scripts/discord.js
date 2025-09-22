@@ -1,5 +1,5 @@
-import { Client, GatewayIntentBits, Events, TextChannel } from 'discord.js';
 import 'dotenv/config';
+import { Client, Events, GatewayIntentBits, TextChannel } from 'discord.js';
 
 
 const token = process.env.VITE_DISCORD_TOKEN ?? '';

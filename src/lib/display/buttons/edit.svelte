@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Map } from '$lib/types/map';
+	import Info from '$lib/display/buttons/info.svelte';
 	import Add from '$lib/svgs/add.svg';
 	import Submit from '$lib/svgs/submit.svg';
-	import Info from '$lib/display/buttons/info.svelte';
+	import type { Map } from '$lib/types/map';
 
 	const { map, add, submit }: { map: Map, add: () => void, submit: () => void } = $props();
 

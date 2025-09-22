@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { GroupNode } from '$lib/types/map';
 	import Self from './maps.svelte';
 	import Arrow from '$lib/svgs/arrow.svg';
+	import type { GroupNode } from '$lib/types/map';
 	import { cubicInOut } from 'svelte/easing';
 
 	const { emojis, node }: {
@@ -28,14 +28,14 @@
 					height: ${height_eased * height}px;
 					pointer-events: none;
 				`;
-			}
+			},
 		};
 	}
 </script>
 
 <div
 	class="node flex flex-col justify-start items-start relative"
-	onclick={(event: Event) => { open = !open; event.stopPropagation() }} onkeydown={null} role="button" tabindex={0}
+	onclick={(event: Event) => { open = !open; event.stopPropagation(); }} onkeydown={null} role="button" tabindex={0}
 >
 	<div class="group flex-center-row unselectable" style="padding-bottom: {open ? '0.5em' : '0em'};">
 		<img src={Arrow} alt="Toggle" class="arrow unselectable" style="transform: {open ? 'rotate(90deg)' : 'rotate(0deg)'}" />

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Map, MapTitle } from '$lib/types/map';
-	import Fuse from 'fuse.js';
-	import { Document, Charset } from 'flexsearch';
 	import { get_random_elements, in_browser, nb_common_elements } from '$lib/utils';
+	import { Charset,Document } from 'flexsearch';
+	import Fuse from 'fuse.js';
 	import { onMount } from 'svelte';
 
 	let { emojis, map, maps, search, new_map }: {
@@ -10,7 +10,7 @@
 		map: Map | null,
 		maps: MapTitle[],
 		search: string,
-		new_map: (title: string) => void
+		new_map: (title: string) => void,
 	} = $props();
 
 	let search_selected = $state(false);
@@ -111,7 +111,7 @@
 			return get_random_maps();
 
 		let temp = index.search(search, { limit: max_results * 2, resolve: true }) as any;
-		const nothing = temp === undefined || temp.length === 0 || temp[0].result === undefined
+		const nothing = temp === undefined || temp.length === 0 || temp[0].result === undefined;
 
 		let flex_res = nothing ? [] : temp[0].result.map((i: number) => maps[i]) as MapTitle[];
 		let fuse_res = fuse.search(search).map((result) => result.item).slice(0, max_results * 2);
