@@ -10,5 +10,5 @@ Feel free to join the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you
 	* [🙏 Credits](/README.md#-credits)
 * **[🏆 How papers are scored?](/doc/scoring.md)**
 * **[🤝 How to contribute?](/doc/contribute/README.md)**
-	* [🗺️ How to add/edit maps?](/doc/contribute/map.md)
-	* [📄 How to add/edit papers?](/doc/contribute/paper.md)
+	* [🗺️ How to add/edit maps?](/doc/contribute/maps.md)
+	* [📄 How to add/edit papers?](/doc/contribute/papers.md)
