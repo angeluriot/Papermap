@@ -613,6 +613,7 @@ The blinding method used in the study (if any).
 	* `Participants`: participants were unaware of their group assignment to avoid placebo effects and response bias
 	* `Participants and investigators`: both participants and investigators were unaware of group assignments to avoid placebo effects and bias in treatment administration or outcome assessment
 	* `(Diverse blinding)`: diverse blinding strategies were employed across studies (none, single-blind, or double-blind)
+* If the investigators were blinded but not the participants, select `None`
 * If the paper is a literature review, use the most common blinding method in the reviewed papers, or `(Diverse blinding)` if the paper includes studies with various blinding methods
 * If the paper is a literature review of literature reviews, use the initial non-review papers
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
