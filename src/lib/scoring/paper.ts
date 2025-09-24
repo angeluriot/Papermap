@@ -4,6 +4,7 @@ import { Blinding, ConflictOfInterest, type DataPaper, MissingReason, NoteImpact
 import { get_uuid, ratio } from '$lib/utils';
 
 
+export const BAD_PAPER_THRESHOLD = 0.25;
 const DIVERSE_INCREASE = 0.4;
 const MIN_YEAR = 1950;
 const CITATIONS_HALF_SCORE = 50.0;

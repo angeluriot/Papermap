@@ -1,6 +1,6 @@
 import type { GraphPoint, GraphStats } from './types';
 import { COLORS } from '$lib/colors';
-import { REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
+import { BAD_PAPER_THRESHOLD, REVIEW_COUNT_ESTIMATE_RATIO, REVIEW_COUNT_SUBPART_RATIO, REVIEW_OF_REVIEWS_MULTIPLIER } from '$lib/scoring/paper';
 import type { Map } from '$lib/types/map';
 import { MissingReason, no_access, type Paper, ReviewType } from '$lib/types/paper';
 import { ratio } from '$lib/utils';
@@ -9,6 +9,7 @@ import seedrandom from 'seedrandom';
 
 export const POINT_SIZE = 5;
 export const STROKE_WIDTH = 1.1;
+export const REVIEW_SIZE_RATIO = 0.35;
 
 export const LABEL_PADDING = 0.8;
 export const FONT_SIZE = 5;
@@ -114,6 +115,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 	const points: GraphPoint[] = Object.values(map.papers).map((paper: Paper) =>
 	{
 		const missing_data = no_access(paper);
+		const bad_paper_ratio = ratio(paper.score, 0, BAD_PAPER_THRESHOLD);
 		let size = 1;
 
 		if (paper.review)
@@ -123,8 +125,9 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			size *= paper.review.estimate ? REVIEW_COUNT_ESTIMATE_RATIO : 1;
 			size *= paper.review.subpart || paper.results.indirect ? REVIEW_COUNT_SUBPART_RATIO : 1;
 			size *= paper.review.type === ReviewType.NarrativeReview ? 0.75 : 1;
-			size = size ** 0.55;
-			size = 1 + Math.max(size - 1, 0) * 0.25;
+			size = size ** 0.5;
+			size *= bad_paper_ratio;
+			size = 1 + Math.max(size - 1, 0) * REVIEW_SIZE_RATIO;
 		}
 
 		size *= stats.sub_scales.point_size * POINT_SIZE;

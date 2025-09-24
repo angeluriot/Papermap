@@ -4,7 +4,7 @@
 	import Loading from '../loading.svelte';
 	import { get_standard_name } from '../utils';
 	import Autocomplete from './autocomplete.svelte';
-	import { score_paper } from '$lib/scoring/paper';
+	import { BAD_PAPER_THRESHOLD, score_paper } from '$lib/scoring/paper';
 	import Cross from '$lib/svgs/cross.svg';
 	import Link from '$lib/svgs/link.svg';
 	import SmallAdd from '$lib/svgs/small-add.svg';
@@ -69,7 +69,6 @@
 		[NoteImpact.Positive]: 'Positive',
 		[NoteImpact.VeryPositive]: 'Very positive',
 	};
-	const bad_paper_threshold = 0.2;
 	const max_author_bad_papers = 3;
 	const max_journal_bad_papers = 5;
 
@@ -461,7 +460,7 @@
 
 	function post_checks(final_paper: Paper): boolean
 	{
-		if (!paper && final_paper.score < bad_paper_threshold)
+		if (!paper && final_paper.score < BAD_PAPER_THRESHOLD)
 		{
 			if (final_paper.institution)
 			{
@@ -469,7 +468,7 @@
 
 				for (const paper of Object.values(map.papers))
 				{
-					if (paper.score >= bad_paper_threshold)
+					if (paper.score >= BAD_PAPER_THRESHOLD)
 						continue;
 
 					if (final_paper.institution.acronym === paper.institution?.acronym)
@@ -478,7 +477,7 @@
 
 				if (nb >= max_author_bad_papers)
 				{
-					alert(`There is already ${nb} papers from ${final_paper.institution.name} with a low score (<${bad_paper_threshold}).`);
+					alert(`There is already ${nb} papers from ${final_paper.institution.name} with a low score (<${BAD_PAPER_THRESHOLD}).`);
 					return false;
 				}
 			}
@@ -489,7 +488,7 @@
 
 				for (const paper of Object.values(map.papers))
 				{
-					if (paper.score >= bad_paper_threshold)
+					if (paper.score >= BAD_PAPER_THRESHOLD)
 						continue;
 
 					for (const other_author of paper.authors)
@@ -499,7 +498,7 @@
 
 				if (nb >= max_author_bad_papers)
 				{
-					alert(`There is already ${nb} papers from ${author} with a low score (<${bad_paper_threshold}).`);
+					alert(`There is already ${nb} papers from ${author} with a low score (<${BAD_PAPER_THRESHOLD}).`);
 					return false;
 				}
 			}
@@ -510,7 +509,7 @@
 
 				for (const paper of Object.values(map.papers))
 				{
-					if (paper.score >= bad_paper_threshold)
+					if (paper.score >= BAD_PAPER_THRESHOLD)
 						continue;
 
 					if (final_paper.journal.id === paper.journal.id)
@@ -519,7 +518,7 @@
 
 				if (nb >= max_journal_bad_papers)
 				{
-					alert(`There is already ${nb} papers from ${journal?.title ?? 'this journal'} with a low score (<${bad_paper_threshold}).`);
+					alert(`There is already ${nb} papers from ${journal?.title ?? 'this journal'} with a low score (<${BAD_PAPER_THRESHOLD}).`);
 					return false;
 				}
 			}
