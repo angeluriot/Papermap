@@ -18,8 +18,8 @@
 
 	const { data_x, data_y } = $derived.by(() =>
 	{
-		let x = [];
-		let y = [];
+		const x = [];
+		const y = [];
 
 		for (let i = 0; i < 100; i += 1)
 		{

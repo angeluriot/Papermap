@@ -65,7 +65,7 @@
 
 	const linear_regressions = $derived.by(() =>
 	{
-		let result: { x: number, y: number }[] = [];
+		const result: { x: number, y: number }[] = [];
 
 		for (const used_data of [data, converted_data])
 		{
@@ -108,7 +108,7 @@
 
 	const lines = $derived.by(() =>
 	{
-		let result: { coord: number[], symbol: string }[][] = [];
+		const result: { coord: number[], symbol: string }[][] = [];
 
 		for (const { used_data, linear_regression } of [
 			{ used_data: data, linear_regression: linear_regressions.initial },

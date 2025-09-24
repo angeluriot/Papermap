@@ -15,7 +15,7 @@
 	const overview = get_overview(map);
 	const labels_2_lines = overview.some(data => data.label.type !== null && data.label.text.length > 1);
 	const nb_labels = overview.reduce((acc, data) => acc + (data.label.type !== null ? 1 : 0), 0);
-	let other_label_elements: HTMLSpanElement[] = $state([]);
+	const other_label_elements: HTMLSpanElement[] = $state([]);
 	let container_element: HTMLDivElement | undefined = $state();
 
 	let positions = $derived.by(() =>

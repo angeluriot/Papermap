@@ -22,7 +22,7 @@
 			return;
 
 		loading = true;
-		let body: any = { edits: { added: [], edited: {}, deleted: [] } };
+		const body: any = { edits: { added: [], edited: {}, deleted: [] } };
 
 		for (const paper of Object.values(papers))
 		{

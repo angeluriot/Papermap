@@ -38,7 +38,7 @@
 		if (journal.link !== undefined)
 			return journal.link;
 
-		let query = (
+		const query = (
 			(journal.title.trim() + ' Scientific Journal')
 				.replaceAll(/[^\sA-Za-z]+/g, '')
 				.trim()
@@ -51,7 +51,7 @@
 
 	const metrics = $derived.by(() =>
 	{
-		let results = [];
+		const results = [];
 
 		for (const m of Object.keys(metrics_data) as (keyof typeof metrics_data)[])
 		{
@@ -77,7 +77,7 @@
 					text: (
 						m === 'self' ?
 							int_to_text(Math.round(metric.value * 100)) + '%' :
-							float_to_text(metric.value)
+								float_to_text(metric.value)
 					),
 					color: cards.score_to_color(m === 'self' ? Math.min(metric.score, 0.85) : metric.score),
 					shadow: color_to_shadow(cards.score_to_color(m === 'self' ? Math.min(metric.score, 0.85) : metric.score)),

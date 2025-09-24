@@ -32,7 +32,7 @@
 		width;
 		height;
 
-		let result = {
+		const result = {
 			info_left: `${0}em`,
 			info_top: `-${info_margin}em`,
 			arrow_top: `-${arrow_margin}em`,

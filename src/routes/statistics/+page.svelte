@@ -250,7 +250,7 @@
 					data={
 						papers.filter(paper => get_review_count(paper) !== undefined)
 							.map(paper => ({
-							// @ts-ignore
+								// @ts-ignore
 								x: get_review_count(paper),
 								y: paper.score,
 								text: get_label(paper, false),
@@ -301,7 +301,7 @@
 					data={
 						papers.filter(paper => paper.blinding !== MissingReason.NoAccess)
 							.map(paper => ({
-							// @ts-ignore
+								// @ts-ignore
 								x: blinding_dict[paper.blinding],
 								y: paper.score,
 								text: get_label(paper, false),
@@ -350,7 +350,7 @@
 					data={
 						papers.filter(paper => typeof paper.p_value === 'object')
 							.map(paper => ({
-							// @ts-ignore
+								// @ts-ignore
 								x: paper.p_value.value / (paper.p_value.less_than ? 2 : 1),
 								y: paper.score,
 								text: get_label(paper, false),
@@ -377,7 +377,7 @@
 					data={
 						papers.filter(paper => paper.conflict_of_interest !== MissingReason.NoAccess)
 							.map(paper => ({
-							// @ts-ignore
+								// @ts-ignore
 								x: conflict_of_interest_dict[paper.conflict_of_interest],
 								y: paper.score,
 								text: get_label(paper, false),

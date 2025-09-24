@@ -141,7 +141,7 @@
 	{
 		const raw_parts = paper.quote.split(/(\[.*?])/);
 
-		let parts = raw_parts.filter(part => part.length > 0).map(part => ({
+		const parts = raw_parts.filter(part => part.length > 0).map(part => ({
 			text: part,
 			italic: !part.startsWith('['),
 		}));
@@ -157,8 +157,8 @@
 
 	const paper_type_parts = $derived.by(() =>
 	{
-		let result: ({ text: string, is_card: false } | { emoji: string, text: string, color: string, shadow: string, description: string, is_card: true })[] = [];
-		let review_one = paper.review?.count === 1;
+		const result: ({ text: string, is_card: false } | { emoji: string, text: string, color: string, shadow: string, description: string, is_card: true })[] = [];
+		const review_one = paper.review?.count === 1;
 
 		if (paper.review)
 		{
@@ -239,7 +239,7 @@
 				description: (
 					paper.review ?
 						`The type of the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} is not available because we couldn't access the full text of the paper` :
-						"The type of study is not available because we couldn't access the full text of the paper"
+							"The type of study is not available because we couldn't access the full text of the paper"
 				),
 				is_card: true,
 			});
@@ -265,7 +265,7 @@
 						description: (
 							paper.review ?
 								`The blinding strategies employed in the papers reviewed by this ${cards.TO_TEXT[paper.review.type].toLowerCase()} are not available because we couldn't access the full text of the paper` :
-								"The blinding strategies employed in this study are not available because we couldn't access the full text of the paper"
+									"The blinding strategies employed in this study are not available because we couldn't access the full text of the paper"
 						),
 						is_card: true,
 					});
@@ -458,7 +458,7 @@
 
 	const notes = $derived.by(() =>
 	{
-		let results = [];
+		const results = [];
 
 		for (const note of paper.notes)
 		{

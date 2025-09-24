@@ -30,7 +30,7 @@
 		if (!can_search())
 			return;
 
-		let query_params: Record<string, string> = {};
+		const query_params: Record<string, string> = {};
 
 		if (doi.trim().length > 0)
 			query_params['doi'] = doi.trim();
@@ -41,7 +41,7 @@
 		if (year !== null && year >= 1500 && year <= new Date().getFullYear() && Number.isInteger(year))
 			query_params['year'] = year.toString();
 
-		let query = new URLSearchParams(query_params);
+		const query = new URLSearchParams(query_params);
 
 		const response = await fetch('/search?' + query.toString(), {
 			method: 'GET',
@@ -101,7 +101,7 @@
 			return;
 
 		loading = true;
-		let res: SearchPaperResult = {};
+		const res: SearchPaperResult = {};
 
 		if (doi.trim().length > 0)
 			res.link = doi.trim();

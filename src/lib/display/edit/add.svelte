@@ -101,7 +101,7 @@
 			link = cloneDeep(result.link ?? '');
 			journal_status = cloneDeep(result.journal ? 'yes' : '');
 
-			let temp: JournalTitle | null = result.journal ? { id: result.journal.id, title: result.journal.title } : null;
+			const temp: JournalTitle | null = result.journal ? { id: result.journal.id, title: result.journal.title } : null;
 
 			if (temp && result.journal?.publisher)
 				temp.publisher = result.journal.publisher;
@@ -183,8 +183,8 @@
 	);
 	let p_value_available = $derived(
 		(conclusion === '' || map.conclusions[conclusion].p_value) &&
-		review_type !== ReviewType.NarrativeReview &&
-		review_type !== ReviewType.SystematicReview,
+			review_type !== ReviewType.NarrativeReview &&
+			review_type !== ReviewType.SystematicReview,
 	);
 
 	$effect(() =>
@@ -342,7 +342,7 @@
 		if (!is_valid())
 			return null;
 
-		let data_paper: DataPaper = {
+		const data_paper: DataPaper = {
 			title: title.trim(),
 			authors: authors.filter(author => author.trim().length > 0).map(author => author.trim()),
 			year: year as number,
@@ -362,7 +362,7 @@
 			blinding: (blinding_available ? blinding.trim() : Blinding.None) as Blinding | ReviewedPapersBlinding | MissingReason.NoAccess,
 			sample_size: (sample_size_available ?
 				(sample_size !== null ? sample_size : sample_size_missing_reason.trim()) :
-				MissingReason.NotApplicable
+					MissingReason.NotApplicable
 			) as number | MissingReason,
 			p_value: (p_value_available ? (
 				p_value !== null && p_value_prefix !== '' ? {
@@ -374,11 +374,11 @@
 			conflict_of_interest: conflict_of_interest.trim() as ConflictOfInterest | MissingReason.NoAccess,
 			notes: notes.filter(
 				note => note.title.trim().length > 0 &&
-				note.description.trim().length > 0 &&
-				['', ...Object.values(NoteImpact)].includes(note.impact.trim() as NoteImpact | string),
+					note.description.trim().length > 0 &&
+					['', ...Object.values(NoteImpact)].includes(note.impact.trim() as NoteImpact | string),
 			).map(note =>
 			{
-				let n: any = {
+				const n: any = {
 					title: note.title.trim(),
 					description: note.description.trim(),
 					impact: note.impact.trim() === '' ? NoteImpact.Neutral : note.impact.trim() as NoteImpact,
@@ -433,7 +433,7 @@
 
 	async function create_paper(index: number): Promise<Paper | null>
 	{
-		let data_paper = create_data_paper();
+		const data_paper = create_data_paper();
 
 		if (data_paper === null)
 			return null;
@@ -546,7 +546,7 @@
 
 		loading = true;
 
-		let final_paper = await create_paper(-1);
+		const final_paper = await create_paper(-1);
 
 		if (final_paper === null)
 		{
@@ -579,7 +579,7 @@
 			return;
 		}
 
-		let final_paper = await create_paper(paper.index);
+		const final_paper = await create_paper(paper.index);
 
 		if (final_paper === null)
 		{

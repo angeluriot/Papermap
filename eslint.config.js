@@ -3,11 +3,13 @@ import { includeIgnoreFile } from '@eslint/compat';
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { defineConfig } from 'eslint/config';
+import jsonc from 'eslint-plugin-jsonc';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import svelte from 'eslint-plugin-svelte';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
+import jsoncParser from 'jsonc-eslint-parser';
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript-eslint';
 
@@ -17,10 +19,21 @@ const gitignore_path = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
 export default defineConfig(
 	includeIgnoreFile(gitignore_path),
+	{
+		ignores: ['data/journals/**'],
+	},
 	js.configs.recommended,
 	...ts.configs.recommended,
-	...svelte.configs.recommended,
 	{
+		files: [
+			'**/*.ts',
+			'**/*.js',
+			'**/*.cjs',
+			'**/*.mjs',
+			'**/*.svelte',
+			'**/*.svelte.ts',
+			'**/*.svelte.js',
+		],
 		languageOptions: {
 			globals: { ...globals.browser, ...globals.node },
 		},
@@ -115,6 +128,7 @@ export default defineConfig(
 			'unicorn/prefer-optional-catch-binding': 'error',
 		},
 	},
+	...svelte.configs.recommended,
 	{
 		files: [
 			'**/*.svelte',
@@ -133,10 +147,30 @@ export default defineConfig(
 			// TypeScript
 			'@typescript-eslint/no-unused-expressions': 'off',
 
+			// Stylistic
+			'@stylistic/indent': 'off',
+
 			// Svelte
 			'svelte/no-at-html-tags': 'off',
 			'svelte/require-each-key': 'off',
 			'svelte/no-navigation-without-resolve': 'off',
+			'svelte/indent': ['error', { indent: 'tab', switchCase: 1 }],
+			'svelte/prefer-const': 'error',
+		},
+	},
+	...jsonc.configs['flat/recommended-with-json'],
+	{
+		files: ['**/*.json'],
+		languageOptions: {
+			parser: jsoncParser,
+		},
+		plugins: {
+			jsonc,
+		},
+		rules: {
+			// JSONC
+			'jsonc/indent': ['error', 'tab'],
+			'jsonc/quotes': ['error', 'double'],
 		},
 	},
 );

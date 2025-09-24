@@ -38,7 +38,7 @@
 		mobile_mode,
 	} = $derived.by(() =>
 	{
-		let result = {
+		const result = {
 			details_left: `calc(${details_x}px + ${details_x_margin}em)`,
 			details_top: `calc(${point.y}px - ${details_y_margin}em)`,
 			arrow_left: `calc(${details_x}px + ${arrow_x_margin}em)`,

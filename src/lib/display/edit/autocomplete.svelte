@@ -28,7 +28,7 @@
 
 		const result = await response.json();
 
-		let res = result.results.map((source: any) =>
+		const res = result.results.map((source: any) =>
 			({
 				id: source?.id && source.id.trim().length > 0 ? clean_id(source.id) : undefined,
 				title: source?.display_name && source.display_name.trim().length > 0 ? source.display_name : undefined,

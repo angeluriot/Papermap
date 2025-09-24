@@ -113,11 +113,11 @@
 						font-family="Satoshi-Bold" font-size={point.label.font_size}
 						text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
 					>
-							{#each point.label.text.split('\n') as line, i}
-								<tspan x={point.label.x} dy={i === 0 ? -point.label.line_height * 0.5 : point.label.line_height}>
-									{line}
-								</tspan>
-							{/each}
+						{#each point.label.text.split('\n') as line, i}
+							<tspan x={point.label.x} dy={i === 0 ? -point.label.line_height * 0.5 : point.label.line_height}>
+								{line}
+							</tspan>
+						{/each}
 					</text>
 				{/if}
 			</g>

@@ -52,7 +52,7 @@
 
 		loading = true;
 
-		let body: Record<string, string> = { 'title': data.title.trim() };
+		const body: Record<string, string> = { 'title': data.title.trim() };
 
 		if (data.description.trim().length > 0)
 			body['description'] = data.description.trim();

@@ -110,12 +110,12 @@
 		if (search.trim() === '')
 			return get_random_maps();
 
-		let temp = index.search(search, { limit: max_results * 2, resolve: true }) as any;
+		const temp = index.search(search, { limit: max_results * 2, resolve: true }) as any;
 		const nothing = temp === undefined || temp.length === 0 || temp[0].result === undefined;
 
-		let flex_res = nothing ? [] : temp[0].result.map((i: number) => maps[i]) as MapTitle[];
-		let fuse_res = fuse.search(search).map((result) => result.item).slice(0, max_results * 2);
-		let res: Record<string, { map: MapTitle, score: number }> = {};
+		const flex_res = nothing ? [] : temp[0].result.map((i: number) => maps[i]) as MapTitle[];
+		const fuse_res = fuse.search(search).map((result) => result.item).slice(0, max_results * 2);
+		const res: Record<string, { map: MapTitle, score: number }> = {};
 
 		for (let i = 0; i < flex_res.length; i++)
 			res[flex_res[i].id] = { map: flex_res[i], score: flex_res.length - i };
@@ -130,8 +130,8 @@
 				res[id].score += flex_res.length - i;
 		}
 
-		let sorted = Object.values(res).sort((a, b) => b.score - a.score);
-		let final: (MapTitle | 'all' | 'new')[] = sorted.map((i) => i.map).slice(0, max_results);
+		const sorted = Object.values(res).sort((a, b) => b.score - a.score);
+		const final: (MapTitle | 'all' | 'new')[] = sorted.map((i) => i.map).slice(0, max_results);
 
 		if (final.length === 0)
 			return ['new'] as 'new'[];
