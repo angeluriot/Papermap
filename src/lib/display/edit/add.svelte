@@ -623,7 +623,7 @@
 				Edit "{get_label(paper, false)}"
 			{/if}
 		</h1>
-		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/paper.md" target="_blank" class="help flex-center-row">
+		<a href="https://github.com/angeluriot/Papermap/blob/main/doc/contribute/papers.md" target="_blank" class="help flex-center-row">
 			<img src={Link} alt="link" class="img-unselectable"/>
 			<span>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to {#if paper == null}add{:else}edit{/if} a paper?

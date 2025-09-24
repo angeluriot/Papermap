@@ -116,7 +116,7 @@
 		{/each}
 	</div>
 	<div class="footer w-full flex flex-row justify-end items-center flex-nowrap">
-		<a href="https://github.com/angeluriot/Papermap-data/blob/main/README.md" target="_blank" class="flex-center-row flex-nowrap">
+		<a href="https://github.com/angeluriot/Papermap-data#-metrics" target="_blank" class="flex-center-row flex-nowrap">
 			<img src={Link} alt="link" class="img-unselectable"/>
 			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How journals are scored?</span>
 		</a>
