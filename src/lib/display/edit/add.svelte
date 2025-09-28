@@ -168,7 +168,9 @@
 
 	let is_review = $derived(review_type !== '' && review_type !== 'null');
 	let is_review_multiple = $derived(review_type !== '' && review_type !== 'null' && review_count !== 1);
-	let blinding_available = $derived(!map.no_blinding && (
+	let type_available = $derived(!map.type.any);
+	let rct_available = $derived(type_available && !map.type.no_random);
+	let blinding_available = $derived(rct_available && !map.no_blinding && (
 		type === PaperType.RandomizedControlledTrial ||
 		type === ReviewedPapersType.DiverseClinicalTrials ||
 		type === ReviewedPapersType.DiverseHumanStudies ||
@@ -226,6 +228,17 @@
 
 		if (review_count !== null)
 			review_count_missing_reason = '';
+
+		if (!type_available)
+			type = '';
+
+		if (!rct_available)
+		{
+			if (type === PaperType.RandomizedControlledTrial)
+				type = '';
+			else if (type === ReviewedPapersType.DiverseClinicalTrials)
+				type = PaperType.ClinicalTrial;
+		}
 
 		if (!blinding_available)
 			blinding = '';
@@ -285,7 +298,8 @@
 				(review_count !== null && review_estimate !== '' && review_count > 0 && Number.isInteger(review_count)) ||
 				(review_count === null && review_count_missing_reason !== '')
 			)) &&
-			type !== '' &&
+			(!type_available || type !== '') &&
+			(rct_available || type !== PaperType.RandomizedControlledTrial) &&
 			(!blinding_available || blinding !== '') &&
 			(!only_diverse_blinding || (blinding !== Blinding.Single && blinding !== Blinding.Double)) &&
 			(!sample_size_available || (
@@ -357,7 +371,7 @@
 				indirect: indirect,
 			},
 			quote: clean_quote(quote),
-			type: type.trim() as PaperType | ReviewedPapersType | MissingReason.NoAccess,
+			type: (type_available ? type.trim() : PaperType.Other) as PaperType | ReviewedPapersType | MissingReason.NoAccess,
 			blinding: (blinding_available ? blinding.trim() : Blinding.None) as Blinding | ReviewedPapersBlinding | MissingReason.NoAccess,
 			sample_size: (sample_size_available ?
 				(sample_size !== null ? sample_size : sample_size_missing_reason.trim()) :
@@ -865,28 +879,38 @@
 			</div>
 		</div>
 	{/if}
-	<div class="input">
-		<div class="label flex-center-row">
-			{#if is_review_multiple && review_count != 1}
-				<span>Study type of most papers</span>
-			{:else}
-				<span>Study type</span>
-			{/if}
-			<span class="required unselectable">*</span>
-		</div>
-		<select bind:value={type}>
-			<option value="" disabled selected hidden></option>
-			{#each Object.values(PaperType).map(id => to_id_text(id, is_review_multiple)) as [id, text]}
-				<option value={id}>{text}</option>
-			{/each}
-			{#if is_review_multiple}
-				{#each Object.values(ReviewedPapersType).map(id => to_id_text(id, true)) as [id, text]}
-					<option value={id}>({text})</option>
+	{#if type_available}
+		<div class="input">
+			<div class="label flex-center-row">
+				{#if is_review_multiple && review_count != 1}
+					<span>Study type of most papers</span>
+				{:else}
+					<span>Study type</span>
+				{/if}
+				<span class="required unselectable">*</span>
+			</div>
+			<select bind:value={type}>
+				<option value="" disabled selected hidden></option>
+				{#each
+					Object.values(PaperType)
+						.filter(id => rct_available || id !== PaperType.RandomizedControlledTrial)
+						.map(id => to_id_text(id, is_review_multiple)) as [id, text]
+				}
+					<option value={id}>{text}</option>
 				{/each}
-			{/if}
-			<option value={MissingReason.NoAccess}>(No access)</option>
-		</select>
-	</div>
+				{#if is_review_multiple}
+					{#each
+						Object.values(ReviewedPapersType)
+							.filter(id => rct_available || id !== ReviewedPapersType.DiverseClinicalTrials)
+							.map(id => to_id_text(id, true)) as [id, text]
+					}
+						<option value={id}>({text})</option>
+					{/each}
+				{/if}
+				<option value={MissingReason.NoAccess}>(No access)</option>
+			</select>
+		</div>
+	{/if}
 	{#if blinding_available}
 		<div class="input">
 			<div class="label flex-center-row">
