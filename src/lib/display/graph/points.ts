@@ -124,7 +124,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 			size *= paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1;
 			size *= paper.review.estimate ? REVIEW_COUNT_ESTIMATE_RATIO : 1;
 			size *= paper.review.subpart || paper.results.indirect ? REVIEW_COUNT_SUBPART_RATIO : 1;
-			size *= paper.review.type === ReviewType.NarrativeReview ? 0.75 : 1;
+			size *= paper.review.type === ReviewType.NarrativeReview ? 0.5 : 1;
 			size = size ** 0.5;
 			size *= bad_paper_ratio;
 			size = 1 + Math.max(size - 1, 0) * REVIEW_SIZE_RATIO;
