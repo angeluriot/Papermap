@@ -1,4 +1,4 @@
-import { constants as C } from '../utils';
+import { constants as C, github_enabled } from '../utils';
 import { createAppAuth } from '@octokit/auth-app';
 import { Octokit } from '@octokit/rest';
 import { GitHubAPIError, MissingEnvError } from '$lib/errors';
@@ -6,7 +6,7 @@ import { GitHubAPIError, MissingEnvError } from '$lib/errors';
 
 export function init_client(): Octokit
 {
-	if (!C.GITHUB_APP_ID || !C.GITHUB_PRIVATE_KEY || !C.GITHUB_CLIENT_ID || !C.GITHUB_CLIENT_SECRET || !C.GITHUB_INSTALLATION_ID)
+	if (!github_enabled())
 		throw new MissingEnvError('Missing GitHub environment variables');
 
 	try

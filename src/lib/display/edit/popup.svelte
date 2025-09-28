@@ -9,11 +9,12 @@
 	import type { Paper, SearchPaperResult } from '$lib/types/paper';
 	import { onMount } from 'svelte';
 
-	let { route, map = $bindable(), journals = $bindable(), leaving_message = $bindable() }: {
+	let { route, map = $bindable(), journals = $bindable(), leaving_message = $bindable(), github_enabled }: {
 		route: string,
 		map: Map,
 		journals: { [id: string]: Journal },
 		leaving_message: boolean,
+		github_enabled: boolean,
 	} = $props();
 
 	const leave_message = 'Are you sure? Any unsaved changes will be lost.';
@@ -91,7 +92,7 @@
 			<Send
 				{route} papers={map.papers}
 				bind:leaving_message={leaving_message} bind:comment={comment}
-				bind:discord_username={discord_username}
+				bind:discord_username={discord_username} github_enabled={github_enabled}
 			/>
 		{/if}
 	</div>

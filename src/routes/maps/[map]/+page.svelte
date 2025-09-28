@@ -210,7 +210,7 @@
 	</div>
 	{#if edit_mode}
 		<div class="popup">
-			<Popup {route} bind:map={map} bind:journals={journals} bind:this={popup} bind:leaving_message={leaving_message}/>
+			<Popup {route} bind:map={map} bind:journals={journals} bind:this={popup} bind:leaving_message={leaving_message} github_enabled={data.github_enabled}/>
 		</div>
 	{/if}
 </div>

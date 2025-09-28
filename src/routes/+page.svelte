@@ -151,7 +151,7 @@
 	<div class="absolute left-0 top-0 w-full h-full overflow-hidden unselectable">
 		<Background {width} {height}/>
 	</div>
-	<Popup bind:this={popup}/>
+	<Popup bind:this={popup} github_enabled={data.github_enabled}/>
 </div>
 
 <style>

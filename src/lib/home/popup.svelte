@@ -3,6 +3,8 @@
 	import { get_new_map_issue_url } from '$lib/github/issue';
 	import Cross from '$lib/svgs/cross.svg';
 
+	const { github_enabled }: { github_enabled: boolean } = $props();
+
 	let shown = $state(false);
 	let data = $state({
 		title: '',
@@ -151,7 +153,7 @@
 		</div>
 		<div class="buttons flex-center-row img-unselectable">
 			<button
-				class="github-button relative flex-center-col {loading || data.title.trim().length > 0 ? '' : 'disabled'}"
+				class="github-button relative flex-center-col {data.title.trim().length === 0 ? 'disabled' : ''}"
 				style="{loading ? 'pointer-events: none;' : ''}" onclick={submit_github}
 			>
 				<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
@@ -164,13 +166,13 @@
 				{/if}
 			</button>
 			<button
-				class="default-button relative {loading || data.title.trim().length > 0 ? '' : 'disabled'}"
-				style="{loading ? 'pointer-events: none;' : ''}" onclick={submit}
+				class="default-button relative {!github_enabled || data.title.trim().length === 0 ? 'disabled' : ''}"
+				style="{!github_enabled || loading ? 'pointer-events: none;' : ''}" onclick={submit}
 			>
-				<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
+				<span class="unselectable" style="{github_enabled && loading ? 'opacity: 0;' : ''}">
 					Submit
 				</span>
-				{#if loading}
+				{#if github_enabled && loading}
 					<div class="loading">
 						<Loading color="#1b524e"/>
 					</div>

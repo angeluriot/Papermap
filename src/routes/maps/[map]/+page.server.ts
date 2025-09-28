@@ -4,7 +4,7 @@ import { create_csv } from '$lib/server/data/csv';
 import { import_map, map_titles } from '$lib/server/data/map';
 import { create_images } from '$lib/server/display/images';
 import { load_svgs } from '$lib/server/emojis';
-import { get_hash } from '$lib/server/utils';
+import { get_hash, github_enabled } from '$lib/server/utils';
 
 
 export const prerender = true;
@@ -26,6 +26,7 @@ export const load: PageServerLoad = async ({ params }: { params: { map: string }
 		journals,
 		maps: Object.values(map_titles).filter(map => !map.draft),
 		hash: get_hash(map),
+		github_enabled: github_enabled(),
 	};
 };
 

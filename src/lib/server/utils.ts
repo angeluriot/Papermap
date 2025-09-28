@@ -19,11 +19,23 @@ export const constants = {
 	GITHUB_CLIENT_ID: GITHUB_CLIENT_ID as string | undefined,
 	GITHUB_CLIENT_SECRET: GITHUB_CLIENT_SECRET as string | undefined,
 	GITHUB_INSTALLATION_ID: GITHUB_INSTALLATION_ID ? parseInt(GITHUB_INSTALLATION_ID) as number : undefined,
-	OPENALEX_EMAIL: OPENALEX_EMAIL as string | undefined,
+	OPENALEX_EMAIL: OPENALEX_EMAIL || '',
 	GITHUB_OWNER: 'angeluriot',
 	GITHUB_REPO: 'Papermap',
 	GITHUB_DEFAULT_BRANCH: 'main',
 };
+
+
+export function github_enabled()
+{
+	return Boolean(
+		constants.GITHUB_APP_ID && constants.GITHUB_APP_ID !== 1 &&
+		constants.GITHUB_PRIVATE_KEY && constants.GITHUB_PRIVATE_KEY !== 'your-private-key' &&
+		constants.GITHUB_CLIENT_ID && constants.GITHUB_CLIENT_ID !== 'your-client-id' &&
+		constants.GITHUB_CLIENT_SECRET && constants.GITHUB_CLIENT_SECRET !== 'your-client-secret' &&
+		constants.GITHUB_INSTALLATION_ID && constants.GITHUB_INSTALLATION_ID !== 1,
+	);
+}
 
 
 export function get_random_string(length: number = 16): string

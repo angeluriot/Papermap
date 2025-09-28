@@ -4,12 +4,13 @@
 	import { Edit, type Paper, paper_to_datapaper } from '$lib/types/paper';
 	import { constants as C } from '$lib/utils';
 
-	let { route, papers, comment = $bindable(), discord_username = $bindable(), leaving_message = $bindable() }: {
+	let { route, papers, comment = $bindable(), discord_username = $bindable(), leaving_message = $bindable(), github_enabled }: {
 		route: string,
 		papers: { [uuid: string]: Paper },
 		comment: string,
 		discord_username: string,
 		leaving_message: boolean,
+		github_enabled: boolean,
 	} = $props();
 
 	const local = C.DEV;
@@ -115,14 +116,14 @@
 	</div>
 	<div class="buttons w-full flex-center-row text-nowrap" style="{local ? 'justify-content: space-evenly;' : ''}">
 		<button
-			class="button submit-button relative flex-center-col"
-			style="{local ? '' : 'padding: 1em 4em;'} {loading ? 'pointer-events: none;' : ''}"
+			class="button submit-button relative flex-center-col {!github_enabled ? 'disabled' : ''}"
+			style="{local ? '' : 'padding: 1em 4em;'} {!github_enabled || loading ? 'pointer-events: none;' : ''}"
 			onclick={async () => await submit(false)}
 		>
-			<span class="unselectable" style="{loading ? 'opacity: 0;' : ''}">
+			<span class="unselectable" style="{github_enabled && loading ? 'opacity: 0;' : ''}">
 				Submit
 			</span>
-			{#if loading}
+			{#if github_enabled && loading}
 				<div class="loading">
 					<Loading color="#1b524e"/>
 				</div>
@@ -326,5 +327,14 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+
+	.disabled
+	{
+		pointer-events: none;
+		background-color: #f0f0f7;
+		border-style: dashed;
+		border-color: #d3d4e8;
+		color: #9b9bb7;
 	}
 </style>

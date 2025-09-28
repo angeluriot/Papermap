@@ -1,6 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { map_titles } from '$lib/server/data/map';
 import { load_svgs } from '$lib/server/emojis';
+import { github_enabled } from '$lib/server/utils';
 
 
 export const prerender = true;
@@ -13,5 +14,6 @@ export const load: PageServerLoad = async () =>
 	return {
 		emojis: await load_svgs(),
 		maps: Object.values(map_titles).filter(map => !map.draft),
+		github_enabled: github_enabled(),
 	};
 };
