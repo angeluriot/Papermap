@@ -21,11 +21,6 @@ export function score_answer_groups(map: Map): Record<string, number>
 		return answer_group_scores;
 	}
 
-	const paper_scores: Record<string, number> = {};
-
-	for (const paper of Object.values(map.papers))
-		paper_scores[paper.uuid] = paper.score;
-
 	let total_scores = 0;
 
 	for (const paper of Object.values(map.papers))
