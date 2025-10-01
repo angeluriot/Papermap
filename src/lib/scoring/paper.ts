@@ -206,7 +206,6 @@ function score_review(paper: DataPaper): { review_score: number, initial_review_
 	if (!paper.review)
 		return { review_score: 1.0 };
 
-	const type_score = paper.review ? REVIEW_TYPE_SCORES[paper.review.type] : 0.0;
 	let count_score = paper.review.count !== MissingReason.NoAccess ? paper.review.count : 5;
 
 	count_score *= paper.review.reviews ? REVIEW_OF_REVIEWS_MULTIPLIER : 1.0;
@@ -215,7 +214,7 @@ function score_review(paper: DataPaper): { review_score: number, initial_review_
 	count_score /= REVIEW_COUNT_HALF_SCORE;
 	count_score /= count_score + 1.0;
 
-	const score = type_score * count_score;
+	const score = REVIEW_TYPE_SCORES[paper.review.type] * count_score;
 
 	return {
 		review_score: apply_coef(score, COEFS.review),

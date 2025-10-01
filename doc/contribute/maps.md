@@ -2,7 +2,7 @@
 
 This page describes how to add or edit maps, not papers. For information on how to add or edit papers in a map, please see [this page](/doc/contribute/papers.md).
 
-## 📨 Request a map
+# 📨 Request a map
 
 On the **[main page](https://papermap.org)** of the website, there is a `New map` text at the bottom, clicking on it will open a form to request a new map with the following fields:
 
@@ -22,7 +22,7 @@ You can also click on the `Submit using your own GitHub account` to get redirect
 
 A maintainer will then review your request and may create the corresponding map.
 
-## ✏️ Add or edit a map
+# ✏️ Add or edit a map
 
 This part is for developers only since there is currently no way to create or edit maps directly on the website. Feel free to join the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you need help.
 

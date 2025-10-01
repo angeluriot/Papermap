@@ -30,7 +30,7 @@ Here is a list of the fields:
 	* [Number of papers included](#number-of-papers-included)
 	* [Minor topic](#minor-topic)
 * **[Study type](#study-type)**
-	* [Blinding](#blinding)
+	* [Blinding method](#blinding-method)
 * **[Sample size](#sample-size)**
 * **[P-value](#p-value)**
 * **[Conflict of interest](#conflict-of-interest)**
@@ -573,7 +573,7 @@ The type of study / experiment described in the paper (or the reviewed papers if
 * If the paper is a literature review of literature reviews, use the initial non-review papers
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## Blinding
+## Blinding method
 
 The blinding method used in the study (if any).
 
