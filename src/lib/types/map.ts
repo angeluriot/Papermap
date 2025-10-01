@@ -40,7 +40,7 @@ interface BaseMap
 	};
 	type: {
 		no_random: boolean,
-		no_causality: boolean,
+		no_causation: boolean,
 		any: boolean,
 	};
 	no_blinding: boolean;

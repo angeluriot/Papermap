@@ -45,7 +45,7 @@ const TYPE_SCORES = {
 		[PaperType.ClinicalTrial]:				0.8,
 		[PaperType.RandomizedControlledTrial]:	1.0,
 	},
-	no_causality: {
+	no_causation: {
 		[MissingReason.NoAccess]:				0.5,
 		[PaperType.Other]:						0.0,
 		[PaperType.InVitroStudy]:				0.2,
@@ -234,8 +234,8 @@ function score_type(map: DataMap | Map, paper: DataPaper, review_count_score: nu
 	if (map.type.no_random)
 		type_scores = TYPE_SCORES.no_random;
 
-	else if (map.type.no_causality)
-		type_scores = TYPE_SCORES.no_causality;
+	else if (map.type.no_causation)
+		type_scores = TYPE_SCORES.no_causation;
 
 	let types: (PaperType | MissingReason.NoAccess)[] = [];
 

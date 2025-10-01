@@ -114,7 +114,7 @@ const map_schema = z.object({
 	),
 	type: z.object({
 		no_random: z.boolean(),
-		no_causality: z.boolean(),
+		no_causation: z.boolean(),
 		any: z.boolean(),
 	}).strict(),
 	no_blinding: z.boolean(),

@@ -196,7 +196,7 @@
 	},
 	"type": {
 		"no_random": false,
-		"no_causality": false,
+		"no_causation": false,
 		"any": false
 	},
 	"no_blinding": true,

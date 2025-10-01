@@ -163,7 +163,7 @@ Maps files must have a unique name across the whole `/data/maps` folder and must
 		"no_random": false,
 
 		// True if the question of this map isn't about a causal relationship
-		"no_causality": false,
+		"no_causation": false,
 
 		// True if the "Study type" is irrelevant for this map (disables "Study type" field)
 		"any": false
