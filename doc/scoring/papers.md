@@ -327,9 +327,9 @@ The type of study can influence its reliability and applicability. For example, 
 
 #### How?
 
-The study type score is set based on the type of study, if the map's question is about causation or correlation, and if the map's question makes randomization possible:
+The study type score is set based on the type of study, if the map question is about causation or correlation, and if the map question makes randomization possible:
 
-* If the map's question makes the study type irrelevant, the study type score is ignored
+* If the map question makes the study type irrelevant, the study type score is ignored
 
 * If the paper is a literature review that includes multiple study types, the type scores are first averaged, then a correction is applied towards the best type score based on the number of papers included in the review:
 
@@ -426,7 +426,7 @@ Blinding helps to avoid placebo effects and reduce bias in treatment administrat
 
 The blinding score is set based on the blinding method used in the study.
 
-* If the map's question makes the blinding method irrelevant or unfeasible, the blinding score is ignored
+* If the map question makes the blinding method irrelevant or unfeasible, the blinding score is ignored
 
 * If the paper is a literature review that includes multiple blinding methods, the blinding scores are first averaged, then a correction is applied towards the best blinding score based on the number of papers included in the review:
 
@@ -471,7 +471,7 @@ The sample size score is calculated using the number of subjects in the study in
 score_{sample~size} = \dfrac{\dfrac{sample~size}{scale}}{\dfrac{sample~size}{scale} + 1}~\left(\text{with}~scale = \begin{cases} 60 & \text{if}~~RCT \\ 600 & \text{else} \end{cases}\right)
 ```
 
-* If the map's question makes the sample size irrelevant or if the paper is an in vitro study, the sample size score is ignored
+* If the map question makes the sample size irrelevant or if the paper is an in vitro study, the sample size score is ignored
 
 * If the sample size is not accessible or not specified, the score is set to `0.25` and `0` respectively, except for reviews where an estimate is calculated based on the number of papers included in the review:
 
@@ -602,7 +602,7 @@ The conflict of interest score is set based on the presence and importance of an
 
 #### Why?
 
-Some information doesn't fit into the predefined categories but can still be important for evaluating the quality or the relevance of a paper regarding the map's question.
+Some information doesn't fit into the predefined categories but can still be important for evaluating the quality or the relevance of a paper regarding the map question.
 
 #### How?
 

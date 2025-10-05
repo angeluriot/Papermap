@@ -2,11 +2,11 @@ export enum Label
 {
 	Bug = 'bug',
 	Duplicate = 'duplicate',
-	Enhancement = 'enhancement',
 	MapUpdate = 'map update',
+	NewFeature = 'new feature',
 	NewMap = 'new map',
-	PapersUpdate = 'papers update',
 	Question = 'question',
+	ScoringUpdate = 'scoring update',
 }
 
 

@@ -51,7 +51,7 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 			commit_message: title,
 			title,
 			description,
-			label: Label.PapersUpdate,
+			label: Label.MapUpdate,
 		});
 
 		return json({ pr_url });

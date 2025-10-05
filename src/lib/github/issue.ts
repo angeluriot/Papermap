@@ -10,12 +10,12 @@ export interface NewMapRequest
 
 export function get_new_map_issue(data: NewMapRequest): { title: string, description: string }
 {
-	const title = `New map: "${data.title.trim()}"`;
+	const title = `[📨 Map Request]: ${data.title.trim()}`;
 
-	let description = '# 🤔 ' + data.title.trim();
+	let description = '';
 
 	if (data.description && data.description.trim().length > 0)
-		description += '\n' + data.description.trim();
+		description += data.description.trim();
 
 	if (data.papers && data.papers.trim().length > 0)
 		description += '\n\n## 📚 Papers\n' + data.papers.trim();
@@ -31,7 +31,7 @@ export function get_new_map_issue(data: NewMapRequest): { title: string, descrip
 	if (discord_username && discord_username.length > 0)
 		description += '\n\n## 👤 Discord\n' + '`@' + discord_username + '`';
 
-	return { title, description };
+	return { title, description: description.trim() };
 }
 
 

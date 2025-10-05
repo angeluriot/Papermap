@@ -149,7 +149,7 @@
 				<span>Discord username</span>
 				<span class="optional"><i>(optional)</i></span>
 			</div>
-			<input bind:value={data.discord_username} type="text" placeholder="For the &quot;Contributor&quot; role on the Papermap discord"/>
+			<input bind:value={data.discord_username} type="text" placeholder="For the &quot;Contributor&quot; role on the Papermap Discord server"/>
 		</div>
 		<div class="buttons flex-center-row img-unselectable">
 			<button
