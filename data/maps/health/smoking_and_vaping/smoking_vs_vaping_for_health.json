@@ -2655,9 +2655,9 @@
 				"indirect": false
 			},
 			"quote": "Smokers attempting to quit experienced a positive cardiovascular impact after both a 3- and 6-month period. None of the groups (i.e., nicotine-containing and nicotine-free e-cigarettes or NRT) offered superior cardiovascular benefits to the others",
-			"type": "RandomizedControlledTrial",
+			"type": "InVitroStudy",
 			"blinding": "None",
-			"sample_size": 248,
+			"sample_size": "NotApplicable",
 			"p_value": {
 				"value": 0.0001,
 				"less_than": true
