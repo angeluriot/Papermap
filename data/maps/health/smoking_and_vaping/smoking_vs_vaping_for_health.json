@@ -28,7 +28,7 @@
 			"emoji": "🚬",
 			"text": "Smoking",
 			"description": "The literature suggests that smoking is more harmful to health than vaping",
-			"color": "Red",
+			"color": "Red3Q",
 			"unavailable": [
 				"smoking_unlike_literature",
 				"vaping"
@@ -38,7 +38,7 @@
 			"emoji": "⬅️",
 			"text": "Towards smoking",
 			"description": "The literature suggests that smoking may be more harmful to health than vaping, but more research is needed",
-			"color": "Red1H",
+			"color": "Red1Q",
 			"unavailable": [
 				"smoking_unlike_literature",
 				"vaping_unlike_literature"
@@ -58,7 +58,7 @@
 			"emoji": "➡️",
 			"text": "Towards vaping",
 			"description": "The literature suggests that vaping may be more harmful to health than smoking, but more research is needed",
-			"color": "Green1H",
+			"color": "Blue1Q",
 			"unavailable": [
 				"smoking_unlike_literature",
 				"vaping_unlike_literature"
@@ -68,7 +68,7 @@
 			"emoji": "💨",
 			"text": "Vaping",
 			"description": "The literature suggests that vaping is more harmful to health than smoking",
-			"color": "Green",
+			"color": "Blue3Q",
 			"unavailable": [
 				"smoking",
 				"vaping_unlike_literature"
@@ -78,11 +78,11 @@
 	"conclusion_groups": {
 		"smoking": {
 			"text": "Smoking",
-			"color": "Red"
+			"color": "Red3Q"
 		},
 		"smoking_but": {
 			"text": "Smoking but...",
-			"color": "Red1H"
+			"color": "Red1Q"
 		},
 		"inconclusive": {
 			"text": "Inconclusive",
@@ -94,11 +94,11 @@
 		},
 		"vaping_but": {
 			"text": "Vaping but...",
-			"color": "Green1H"
+			"color": "Blue1Q"
 		},
 		"vaping": {
 			"text": "Vaping",
-			"color": "Green"
+			"color": "Blue3Q"
 		}
 	},
 	"conclusions": {
