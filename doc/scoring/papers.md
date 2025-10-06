@@ -1,8 +1,8 @@
-# 🏅 How papers are scored?
+# 🏅 How are papers scored?
 
-This section explains how the scores for papers are calculated in **Papermap**. Feel free to ask in the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you have any questions.
+This page explains how paper scores are calculated in **Papermap**. Feel free to ask questions in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.
 
-To calculate the score of a paper, the first step is to evaluate each of the following attributes on a scale from `0` to `1`:
+To calculate a paper's score, each of the following attributes is first evaluated on a `0`–`1` scale:
 
 ## 📋 Summary
 
@@ -195,7 +195,7 @@ score_{citations} = \dfrac{\dfrac{citations}{50}}{\dfrac{citations}{50} + 1}
 
 #### Why?
 
-Papers that base their conclusions on indirect evidence (for example, finding that A cause C which is correlated with B to conclude that A cause B) are generally considered less robust than those that provide direct evidence (finding that A cause B directly).
+Papers that base their conclusions on indirect evidence (for example, finding that A causes C which is correlated with B to conclude that A causes B) are generally considered less robust than those that provide direct evidence (finding that A causes B directly).
 
 #### How?
 
@@ -337,7 +337,7 @@ The study type score is set based on the type of study, if the map question is a
 	score_{type} = \mathbf{\overline{scores_{type}}} + 0.4 \times score_{review_{count}} \times (\max(\mathbf{scores_{type}}) - \mathbf{\overline{scores_{type}}})
 	```
 
-	The goal of this correction is to avoid penalizing large diverse reviews (for example, a review of 1,000 papers that includes both RCTs and non-randomized clinical trials probably have more RCTs than a review of 10 RCTs, so the large one should not be penalized compared to the small one)
+	The goal of this correction is to avoid penalizing large diverse reviews (for example, a review of 1,000 papers that includes both RCTs and non-randomized clinical trials probably has more RCTs than a review of 10 RCTs, so the large one should not be penalized compared to the small one)
 
 * If the type of study is not accessible, the score is set to `0.3`
 
@@ -378,7 +378,7 @@ The study type score is set based on the type of study, if the map question is a
 			<td align="center">0.3</td>
 		</tr>
 		<tr>
-			<td><b>Ecological sStudy</b></td>
+			<td><b>Ecological study</b></td>
 			<td align="center">0.3</td>
 			<td align="center">0.4</td>
 			<td align="center">0.6</td>
@@ -434,7 +434,7 @@ The blinding score is set based on the blinding method used in the study.
 	score_{blinding} = \mathbf{\overline{scores_{blinding}}} + 0.4 \times score_{review_{count}} \times (\max(\mathbf{scores_{blinding}}) - \mathbf{\overline{scores_{blinding}}})
 	```
 
-	The goal of this correction is to avoid penalizing large diverse reviews (for example, a review of 1,000 papers that includes both blinded and non-blinded RCTs probably have more blinded RCTs than a review of 10 blinded RCTs, so the large one should not be penalized compared to the small one)
+	The goal of this correction is to avoid penalizing large diverse reviews (for example, a review of 1,000 papers that includes both blinded and non-blinded RCTs probably has more blinded RCTs than a review of 10 blinded RCTs, so the large one should not be penalized compared to the small one)
 
 * If the blinding method is not accessible, the score is set to `0.3`
 
@@ -945,7 +945,7 @@ A paper always starts with a base score of `1`, then each of the above attribute
 
 * The sample size part has a higher impact when the paper finds no effect because a small sample size is not really a problem when finding an effect if the p-value is significant, but a small sample size can easily miss a real effect (by failing to achieve statistical significance) and cause a false negative
 
-* The conflict of interest part has a higher impact for narrative reviews because their conclusions depends heavily on the selection and interpretation of the included studies, which is easier to bias than original experiment results, systematic reviews, or meta-analyses
+* The conflict of interest part has a higher impact for narrative reviews because their conclusions depend heavily on the selection and interpretation of the included studies, which is easier to bias than original experiment results, systematic reviews, or meta-analyses
 
 * The notes part is applied for each note individually
 

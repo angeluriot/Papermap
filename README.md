@@ -40,7 +40,7 @@ You can access the website at **[papermap.org](https://papermap.org/)**.
 
 # 🤝 Contribute
 
-Anyone can contribute to this project, even if you are not a developer! You can join the [**Discord server**](https://discord.gg/eFdjRJe7WZ) or read the [**contribution guide**](https://github.com/yourusername/yourrepository/blob/main/CONTRIBUTING.md) to learn how to contribute.
+Anyone can contribute to this project, even if you're not a developer! You can join the [**Discord server**](https://discord.gg/eFdjRJe7WZ) or read the [**contribution guide**](https://github.com/angeluriot/Papermap/blob/main/doc/contribute) to learn how to contribute.
 
 <br/>
 
@@ -120,4 +120,4 @@ This will build the project and start a production server, you can then access t
 
 # 🙏 Credits
 
-* [**Angel Uriot**](https://github.com/angeluriot) : Creator of the project.
+* [**Angel Uriot**](https://github.com/angeluriot): creator of the project.

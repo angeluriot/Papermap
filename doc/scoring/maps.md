@@ -1,18 +1,18 @@
-# 🏆 How maps are scored?
+# 🏆 How are maps scored?
 
-This section explains how the top summary bar on map pages is generated in **Papermap**. To see how individual papers are scored, please check the **[Papers scoring](/doc/scoring/papers.md)** section. Feel free to ask in the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you have any questions.
+This page explains how the top summary bar on map pages is generated in **Papermap**. For details on individual paper scoring, see **[Paper scoring](/doc/scoring/papers.md)**. Feel free to ask questions in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.
 
-Each part of the top summary bar is a group of conclusions, for example `Yes but small effect` and `Yes unlike literature` can both be in the same group: `Yes but...`. Each group has a unique color, if two papers have the same color they are part of the same group.
+Each segment of the top summary bar corresponds to a group of conclusions. For example, `Yes but small effect` and `Yes unlike literature` might both belong to a broader group like `Yes but...`. Each group has a unique color, if two papers share a color, they belong to the same group.
 
-Each group gets a score based on the score of its papers:
+Each group receives a score based on the scores of its papers:
 
 ```math
 score_{group} = \sum_{paper~\in~group} {score_{paper}}^2
 ```
 
-The group scores are then normalized so the sum represents the total length of the bar.
+Group scores are then normalized so their sum represents the bar's total length.
 
-An issue with this approach is that it can lead to situations where a map has like 3 papers with a low score but since they all have the same conclusion it is getting 100% in the summary bar, giving the impression of a very strong consensus when in reality it is considered an open question. To mitigate this, there is a special group called `More research needed` that takes a proportion of the bar based on the overall number and quality of the papers in the map, if there isn't a single paper it takes 100% of the bar, otherwise it's calculated as follows:
+One issue with this approach is that a map with just a few weak papers sharing the same conclusion could appear as a full (100%) consensus, when in reality it's still considered an open question. To mitigate this, a special group `More research needed` reserves a portion of the bar based on the overall number and quality of papers. If there are no papers, it occupies 100% of the bar, otherwise it's calculated as follows:
 
 ```math
 score_{more~research~needed} = \min \left( \frac{\max \left( 5 - \sum\limits_{paper~\in~map} \min \left( {score_{paper}}^5, score_{paper} \right), 0 \right)}{5} , 0.95 \right)

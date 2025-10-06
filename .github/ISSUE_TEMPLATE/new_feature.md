@@ -1,6 +1,6 @@
 ---
 name: Request a new feature
-about: "Request a new feature to be added to Papermap."
+about: "Request a new feature for Papermap"
 title: "[🪄 Feature Request]: <short description>"
 labels: ["new feature"]
 ---

@@ -118,7 +118,7 @@
 	<div class="footer w-full flex flex-row justify-end items-center flex-nowrap">
 		<a href="https://github.com/angeluriot/Papermap-data#-metrics" target="_blank" class="flex-center-row flex-nowrap">
 			<img src={Link} alt="link" class="img-unselectable"/>
-			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How journals are scored?</span>
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How are journals scored?</span>
 		</a>
 	</div>
 </div>

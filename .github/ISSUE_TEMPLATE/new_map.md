@@ -1,6 +1,6 @@
 ---
 name: Request a new map
-about: "Request a new map to be added to Papermap."
+about: "Request a new map for Papermap"
 title: "[📨 Map Request]: <map question>"
 labels: ["new map"]
 ---

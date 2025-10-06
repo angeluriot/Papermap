@@ -1,10 +1,10 @@
 # 📃 How to add or edit papers?
 
-Anyone can add or edit papers on the website, even if you don't have access to it! If you are a developer, you can also **[do it locally](/README.md#%EF%B8%8F-install)** and submit your changes yourself. Feel free to join the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you need help.
+Anyone can add or edit papers on the website, even if you don't have access to it! If you're a developer, you can also **[do it locally](/README.md#%EF%B8%8F-install)** and submit your changes yourself. Feel free to join the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you need help.
 
-On the page of a map, click on the `✏️` button to activate the edit mode, then an `✒️ Edit` and a `🗑️ Delete` button will appear on each paper in addition to a `➕` button at the bottom right of the page.
+On the page of a map, click on the `✏️` button to activate the edit mode. Then an `✒️ Edit` and a `🗑️ Delete` button will appear on each paper in addition to a `➕` button at the bottom right of the page.
 
-When adding a paper (by clicking on the `➕` button), you first need to enter its **DOI link** (or **title** and **year** if no DOI is available). The website will then try to automatically fill in some information (those marked with a `*` in this doc), the rest must be filled in manually.
+When adding a paper (by clicking on the `➕` button), you first need to enter its **DOI link** (or **title** and **year** if no DOI exists). The website will attempt to automatically fill in some fields (those marked with a `*` below), the remaining ones must be filled manually.
 
 Here is a list of the fields:
 
@@ -191,7 +191,7 @@ A link to the paper.
 	</tbody>
 </table>
 
-* A DOI link is preferred, use another link only if no DOI is available
+* Prefer a DOI link, use another link only if no DOI is available
 
 ## Has been published*
 
@@ -291,7 +291,7 @@ The number of times the paper has been cited by other papers.
 	</tbody>
 </table>
 
-* If it has not been automatically filled and you cannot find the value, put `0`
+* If it was not auto-filled and you cannot find the value, put `0`
 
 ## Previous consensus
 
@@ -561,7 +561,7 @@ The type of study / experiment described in the paper (or the reviewed papers if
 	* `Animal study`: an experiment conducted on non-human living organisms (often mice or rats)
 	* `Ecological study`: an analysis of data collected from populations or groups rather than individuals
 	* `Cross-sectional study`: an analysis of population data at a given point in time
-	* `Case-control study`: a observational study comparing individuals with a condition to those without it
+	* `Case-control study`: an observational study comparing individuals with a condition to those without it
 	* `Cohort study`: a study that follows a group of individuals over time to observe outcomes
 	* `Clinical trial`: an experiment assessing the effects of an intervention under controlled conditions
 	* `Randomized controlled trial`: a clinical trial where participants are randomly assigned to a control or an experimental group for a fair comparison
@@ -569,7 +569,7 @@ The type of study / experiment described in the paper (or the reviewed papers if
 	* `(Diverse clinical trials)`: the paper is a literature review that includes various clinical trials with or without randomization
 	* `(Diverse human studies)`: the paper is a literature review that includes various human studies (clinical trials and observational studies)
 	* `(Diverse types)`: the paper is a literature review that includes studies of various types
-* If the paper is a literature review, use the most common type of study in the reviewed papers
+* If the paper is a literature review, use the most common study type in the reviewed papers
 * If the paper is a literature review of literature reviews, use the initial non-review papers
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
@@ -664,7 +664,7 @@ The chance of observing the same results if there is no real effect, a low p-val
 		<tr>
 			<td><b>Condition</b></td>
 			<td colspan="2">
-				<b>Paper result</b> compatible with p-value AND <b>Review type</b> ≠ <code>Narative review</code> OR <code>Systematic review</code>
+				<b>Paper result</b> compatible with p-value AND <b>Review type</b> ≠ <code>Narrative review</code> OR <code>Systematic review</code>
 			</td>
 		</tr>
 		<tr>
@@ -688,7 +688,7 @@ The chance of observing the same results if there is no real effect, a low p-val
 </table>
 
 * This field only applies to papers that report a statistically significant effect, if the paper concludes that there is no significant effect, this field will not be available
-* If multiple p-values are reported, use the one that is the most relevant to the map question
+* If multiple p-values are reported, choose the one most relevant to the map question
 * If the p-value is not specified, select `(Not specified)`
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
@@ -779,34 +779,34 @@ Additional information about the paper.
 	</tbody>
 </table>
 
-* **Title** is a very short overview of information
+* **Title** is a very short overview of the information
 * **Description** is a short description of the information
 * **Link** is optional, it can be used if the information does not come from the paper
-* **Impact** is a subjective assessment of the information's effect on the paper's credibility or its impact on the map question:
+* **Impact** is a subjective assessment of how the information affects the paper's credibility or its relevance to the map question:
 	* `Very negative` is for information that highly reduces the credibility of the paper or its impact on the map question (for example if it has been proven that the authors falsified their results or if there's a major calculation error that completely changes the conclusion)
 	* `Negative` is for information that may reduce the credibility of the paper or its impact on the map question (for example if there are criticisms about the quality of the data used in the paper or issues with the authors' previous work)
 	* `Neutral` is for information that does not significantly affect the credibility of the paper or its impact on the map question
 	* `Positive` is for information that may increase the credibility of the paper or its impact on the map question
 	* `Very positive` is for information that highly increases the credibility of the paper or its impact on the map question (for example if an observational study is based on data from groups which were initially randomly assigned)
-* Do not add notes about things that are already covered by the other fields
+* Do not add notes about things that are already covered by other fields
 * The maximum number of notes is `5`
 
 <br/>
 
 When all fields are filled, click on the `Add the paper` button if you are adding a new paper, or on the `Edit the paper` button if you are editing an existing paper.
 
-The added / edited paper will then appear in semi-transparent and the number above the `➤` button will increase by `1`.
+The added / edited paper will then appear as semi-transparent and the number above the `➤` button will increase by `1`.
 
 To send your changes, click on the `➤` button and fill the fields in the form that appears:
 
 * `Comment`: optional information about your changes *(optional)*
 
-* `Discord username`: for the `Contributor` role on the **[Papermap discord](https://discord.gg/eFdjRJe7WZ)** *(optional)*
+* `Discord username`: for the `Contributor` role on the **[Papermap Discord server](https://discord.gg/eFdjRJe7WZ)** *(optional)*
 
-Then click on the `Submit` button, this will redirect you to GitHub Pull Request created by a bot with your changes.
+Then click on the `Submit` button, this will redirect you to a GitHub Pull Request created by a bot with your changes.
 
 If you did this locally, you will have an `Apply locally` button to apply the changes to your local copy of the repository that you can then commit and push yourself to create the Pull Request.
 
-Once the Pull Request created, it will be reviewed by a maintainer and merged if everything is correct.
+Once the Pull Request is created, it will be reviewed by a maintainer and merged if everything is correct.
 
 If you encounter any issues, feel free to ask in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.

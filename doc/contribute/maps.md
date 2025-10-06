@@ -1,10 +1,10 @@
 # 📖 How to add or edit maps?
 
-This page describes how to add or edit maps, not papers. For information on how to add or edit papers in a map, please see [this page](/doc/contribute/papers.md).
+This page explains how to add or edit maps (not individual papers). For details on adding or editing papers within a map, see **[this page](/doc/contribute/papers.md)**.
 
 # 📨 Request a map
 
-On the **[main page](https://papermap.org)** of the website, there is a `New map` text at the bottom, clicking on it will open a form to request a new map with the following fields:
+On the **[main page](https://papermap.org)** there is a `New map` link at the bottom. Clicking it opens a form to request a new map with the following fields:
 
 * `Title`: the title of the map *(required)*
 
@@ -14,21 +14,21 @@ On the **[main page](https://papermap.org)** of the website, there is a `New map
 
 * `Additional comment`: any additional comment or information *(optional)*
 
-* `Discord username`: for the `Contributor` role on the **[Papermap discord](https://discord.gg/eFdjRJe7WZ)** *(optional)*
+* `Discord username`: for the `Contributor` role on the **[Papermap Discord server](https://discord.gg/eFdjRJe7WZ)** *(optional)*
 
-When the form is filled, click on the `Submit` button to send your request, it will redirect you to a GitHub issue created by a bot with your request.
+When the form is filled out, click on the `Submit` button to send your request. You will be redirected to a GitHub issue created by a bot containing your request.
 
-You can also click on the `Submit using your own GitHub account` to get redirected to a pre-filled GitHub issue that you can submit yourself.
+You can also click on the `Submit using your own GitHub account` button to be redirected to a pre-filled GitHub issue that you can submit yourself.
 
 A maintainer will then review your request and may create the corresponding map.
 
 # ✏️ Add or edit a map
 
-This part is for developers only since there is currently no way to create or edit maps directly on the website. Feel free to join the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you need help.
+This section is for developers only since currently maps cannot be created or edited directly on the website. Feel free to ask for help in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.
 
-The map files are located in the **[/data/maps](/data/maps)** folder of the repository, the directory structure inside this folder will be reflected on the **[Papermap maps](https://papermap.org/maps)** page of the website.
+Map files are located in the **[/data/maps](/data/maps)** folder of the repository, the directory structure inside this folder will be reflected on the **[Papermap maps](https://papermap.org/maps)** page of the website.
 
-Each sub-folder must have an `_init_.json` file containing the metadata of the group:
+Each subfolder must contain an `_init_.json` file providing the group metadata:
 ```json
 {
 	"emoji": "💉", // Emoji of the group
@@ -36,10 +36,10 @@ Each sub-folder must have an `_init_.json` file containing the metadata of the g
 }
 ```
 
-Maps files must have a unique name across the whole `/data/maps` folder and must be in JSON format with the following structure:
+Map files must have a unique name across the entire `/data/maps` tree and follow this JSON structure:
 ```json
 {
-	// If true, the map will not be visible on the website and can only be accessed using a direct link
+	// If true, the map is hidden on the website and only accessible via a direct link
 	"draft": false,
 
 	// The emoji of the map
@@ -48,7 +48,7 @@ Maps files must have a unique name across the whole `/data/maps` folder and must
 	// The titles of the map
 	"question": {
 
-		// The shortest possible version of the question
+		// The shortest possible phrasing of the question
 		"short": "Do vaccines cause autism?",
 
 		// A more detailed version of the question
@@ -58,7 +58,7 @@ Maps files must have a unique name across the whole `/data/maps` folder and must
 	// A short description of the map
 	"description": "Results from studies evaluating the impact of vaccines on the development of autism or ASD (Autism Spectrum Disorder).",
 
-	// A list of tags related to the map (used for searching)
+	// Tags related to the map (used for search)
 	"tags": [
 		"vaccines",
 		"autism",
@@ -70,7 +70,7 @@ Maps files must have a unique name across the whole `/data/maps` folder and must
 	// The possible "Previous consensus" options for the map (see: /doc/contribute/papers.md#previous-consensus)
 	"consensus": {
 
-		// A "no_consensus" one has to be there with this exact key but you can customize all its fields
+		// A "no_consensus" entry must be present with this exact key (fields can be customized)
 		"no_consensus": {
 			"emoji": "🤷",
 			"text": "No consensus yet",
@@ -85,44 +85,44 @@ Maps files must have a unique name across the whole `/data/maps` folder and must
 		// This example is a Yes/No question but it can be anything else
 		"no": {
 
-			// The emoji of the previous consensus
+			// Emoji representing the previous consensus
 			"emoji": "👎",
 
-			// The text of the previous consensus
+			// Short label for the previous consensus
 			"text": "No",
 
-			// A short description of the previous consensus
+			// Short description of the previous consensus
 			"description": "The literature suggests that vaccines do not cause autism",
 
-			// The color of the previous consensus (see: /src/lib/clolors.ts for available colors)
+			// Color of the previous consensus (see: /src/lib/colors.ts for available colors)
 			"color": "Red",
 
-			// A list of unavailable "Paper result" if this previous consensus is selected (see below)
+			// List of disallowed "Paper result" values if this previous consensus is selected (see below)
 			"unavailable": [
-				"no_unlike_literature", // Here this one is unavailable because it contradicts this previous consensus
-				"yes" // Here this one is unavailable to force "yes_unlike_literature" to be selected instead
+				"no_unlike_literature", // This one is unavailable because it contradicts this previous consensus
+				"yes" // This one is unavailable to force "yes_unlike_literature" to be selected instead
 			]
 		},
 
 		// Other previous consensus options, in this example it would be "towards_no", "towards_yes" and "yes"
 	},
 
-	// The groups of "Paper result" as shown in the top summary bar on map pages, the order is important here: the first group will be the leftmost one on the bar
+	// "Paper result" groups as displayed in the top summary bar (order matters: first = leftmost)
 	"conclusion_groups": {
 
 		// This example is a Yes/No question but it can be anything else
 		"no": {
 
-			// The text of the group
+			// Label of the group
 			"text": "No",
 
-			// The color of the group (see: /src/lib/clolors.ts for available colors)
+			// Color of the group (see: /src/lib/colors.ts for available colors)
 			"color": "Red"
 		},
 
-		// Other groups, in this example it would be "no_but" and "maybe"
+		// Additional groups (e.g., "no_but", "maybe")
 
-		// A "more_research_needed" one has to be there with this exact key but you can customize its fields, place it in the middle
+		// A "more_research_needed" entry must be present with this exact key (place it roughly in the middle)
 		"more_research_needed": {
 			"text": "More research needed",
 			"color": "Gray"
@@ -137,42 +137,42 @@ Maps files must have a unique name across the whole `/data/maps` folder and must
 		// This example is a Yes/No question but it can be anything else
 		"no": {
 
-			// The conclusion group it belongs to (must be one of the keys of "conclusion_groups" above)
+			// The conclusion group key it belongs to (must match one in "conclusion_groups")
 			"group": "no",
 
-			// The emoji of the paper result
+			// Emoji of the paper result
 			"emoji": "👎",
 
-			// The text of the paper result
+			// Short label of the paper result
 			"text": "No",
 
-			// A short description of the paper result
+			// Short description of the paper result
 			"description": "The results of the paper show no significant effect of the vaccines evaluated on the risk of developing autism",
 
-			// True if the paper result implies a statistically significant effect and false otherwise (used to ask or not for a p-value when adding papers)
+			// True if the result implies a statistically significant effect (determines whether to request a p-value)
 			"p_value": false
 		},
 
 		// Other paper results, in this example it would be "no_unlike_literature", "no_but_mixed_results", "maybe", "yes_but_low_confidence", "yes_but_small_effect", "yes_unlike_literature" and "yes"
 	},
 
-	// Map options that affect the available "Study type" options and affect scoring (see: /doc/scoring/papers.md#study-type)
+	// Map options that influence available "Study type" choices and scoring (see: /doc/scoring/papers.md#study-type)
 	"type": {
 
-		// True if an experiment answering the question on this map cannot be randomized (disables "Randomized Controlled Trial" option)
+		// True if randomization is impossible for this question (disables "Randomized Controlled Trial")
 		"no_random": false,
 
-		// True if the question of this map isn't about a causal relationship
+		// True if the question is not about a causal relationship
 		"no_causation": false,
 
-		// True if the "Study type" is irrelevant for this map (disables "Study type" field)
+		// True if study type is irrelevant (disables the field)
 		"any": false
 	},
 
-	// True if an experiment answering the question on this map cannot be blinded (disables "Blinding" field)
+	// True if blinding is impossible (disables "Blinding" field)
 	"no_blinding": false,
 
-	// True if an experiment answering the question cannot involve participants (disables "Sample size" field)
+	// True if participants are not involved (disables "Sample size" field)
 	"no_sample_size": false,
 
 	// Papers (can start empty since it's much easier to add them using the website)

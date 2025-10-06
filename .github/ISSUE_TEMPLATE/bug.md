@@ -1,6 +1,6 @@
 ---
 name: Report a bug
-about: "Report a bug in Papermap."
+about: "Report a bug in Papermap"
 title: "[🐛 Bug]: <short description>"
 labels: ["bug"]
 ---

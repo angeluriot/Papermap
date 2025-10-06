@@ -491,7 +491,7 @@
 
 				if (nb >= max_author_bad_papers)
 				{
-					alert(`There is already ${nb} papers from ${final_paper.institution.name} with a low score (<${BAD_PAPER_THRESHOLD}).`);
+					alert(`There are already ${nb} papers from ${final_paper.institution.name} with a low score (<${BAD_PAPER_THRESHOLD}).`);
 					return false;
 				}
 			}
@@ -512,7 +512,7 @@
 
 				if (nb >= max_author_bad_papers)
 				{
-					alert(`There is already ${nb} papers from ${author} with a low score (<${BAD_PAPER_THRESHOLD}).`);
+					alert(`There are already ${nb} papers from ${author} with a low score (<${BAD_PAPER_THRESHOLD}).`);
 					return false;
 				}
 			}
@@ -532,7 +532,7 @@
 
 				if (nb >= max_journal_bad_papers)
 				{
-					alert(`There is already ${nb} papers from ${journal?.title ?? 'this journal'} with a low score (<${BAD_PAPER_THRESHOLD}).`);
+					alert(`There are already ${nb} papers from ${journal?.title ?? 'this journal'} with a low score (<${BAD_PAPER_THRESHOLD}).`);
 					return false;
 				}
 			}
@@ -781,7 +781,7 @@
 			<span class="required unselectable">*</span>
 		</div>
 		<div class="sublabel">
-			<span>The consensus in literature according to the paper (if any)</span>
+			<span>The consensus in the literature according to the paper (if any)</span>
 		</div>
 		<select bind:value={consensus}>
 			<option value="" disabled selected hidden></option>
