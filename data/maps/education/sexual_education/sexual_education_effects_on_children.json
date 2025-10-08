@@ -202,7 +202,6 @@
 		{
 			"id": "W2131958236",
 			"title": "An evaluation of a program to prevent the sexual victimization of young children",
-			"override_seed": 0,
 			"authors": [
 				"Jon R. Conte",
 				"Carole Rosen",
@@ -234,7 +233,8 @@
 		},
 		{
 			"id": "W2138434872",
-			"title": "Educating Children About Sexual Abuse: Implications for Pediatric Intervention and Possible Prevention1",
+			"title": "Educating Children About Sexual Abuse: Implications for Pediatric Intervention and Possible Prevention",
+			"override_seed": 0.5,
 			"authors": [
 				"Debra A. Saslawsky",
 				"Sandy K. Wurtele"
@@ -265,7 +265,7 @@
 		{
 			"id": "W2010228015",
 			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
-			"override_seed": 0,
+			"override_seed": 0.2,
 			"authors": [
 				"David A. Wolfe",
 				"Tracy Macpherson",
@@ -298,7 +298,7 @@
 		{
 			"id": "W4254660222",
 			"title": "Teaching personal safety skills for potential prevention of sexual abuse: A comparison of treatments.",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Sandy K. Wurtele",
 				"Debra A. Saslawsky",
@@ -331,7 +331,6 @@
 		{
 			"id": "W2065277804",
 			"title": "An Evaluation of Side Effects Associated with Participation in a Child Sexual Abuse Prevention Program",
-			"override_seed": 0.8,
 			"authors": [
 				"Sandy K. Wurtele",
 				"Cindy Miller‐Perrin"
@@ -421,7 +420,7 @@
 		{
 			"id": "W2060355511",
 			"title": "Promoting awareness and prevention of child sexual victimization using the Red Flag/Green Flag program: An evaluation with follow-up",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"David J. Kolko",
 				"Joanne T. Moser",
@@ -454,7 +453,6 @@
 		{
 			"id": "W2053282236",
 			"title": "The prevention of sexual abuse: Examination of the effectiveness of a program with kindergarten-age children",
-			"override_seed": 0.5,
 			"authors": [
 				"Pam Harvey",
 				"Rex Forehand",
@@ -614,7 +612,7 @@
 		{
 			"id": "W2135105463",
 			"title": "Evaluation of a Preschool Antivictimization Prevention Program",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Joseph M. Peraino"
 			],
@@ -644,7 +642,7 @@
 		{
 			"id": "W2040856674",
 			"title": "Teaching personal safety skills to four-year-old children: A behavioral approach",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Sandy K. Wurtele"
 			],
@@ -707,7 +705,7 @@
 		{
 			"id": "W2085437336",
 			"title": "The Touch Discrimination Component of Sexual Abuse Prevention Training",
-			"override_seed": 0.3,
+			"override_seed": 0.95,
 			"authors": [
 				"Elaine Blumberg",
 				"Michèle Chadwick",
@@ -740,7 +738,7 @@
 		{
 			"id": "W1995201931",
 			"title": "A comparison of teachers vs. parents as instructors of a personal safety program for preschoolers",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Sandy K. Wurtele",
 				"Elizabeth I. Gillispie",
@@ -773,7 +771,7 @@
 		{
 			"id": "W2328768845",
 			"title": "Child sexual abuse prevention: Research review and recommendations",
-			"override_seed": 0.5,
+			"override_seed": 0.95,
 			"authors": [
 				"Jill Duerr Berrick",
 				"Richard P. Barth"
@@ -808,7 +806,7 @@
 		{
 			"id": "W2049341609",
 			"title": "Sexual abuse prevention education for young children: A comparison of teachers and parents as instructors",
-			"override_seed": 0.7,
+			"override_seed": 0,
 			"authors": [
 				"Sandy K. Wurtele",
 				"Laura C. Kast",
@@ -870,7 +868,6 @@
 		{
 			"id": "W2040934912",
 			"title": "The Failure of a School-based Child Sexual Abuse Prevention Program",
-			"override_seed": 0.9,
 			"authors": [
 				"David Pelcovitz",
 				"Naomi A. Adler",
@@ -900,6 +897,7 @@
 		{
 			"id": "W2036273604",
 			"title": "Follow-up data on the effectiveness of New Zealand's national school based child protection program",
+			"override_seed": 0.5,
 			"authors": [
 				"Freda Briggs",
 				"Russell Hawkins"
@@ -1030,7 +1028,7 @@
 		{
 			"id": "W2170274357",
 			"title": "The effectiveness of victimization prevention instruction: An evaluation of children's responses to actual threats and assaults",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"David Finkelhor",
 				"Nancy L. Asdigian",
@@ -1125,7 +1123,7 @@
 		{
 			"id": "W2082139370",
 			"title": "Child sexual abuse prevention programs: Evaluating who do you tell",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Leslie M. Tutty"
 			],
@@ -1182,7 +1180,7 @@
 		{
 			"id": "W2048844696",
 			"title": "Prevention of child sexual abuse victimization: A meta-analysis of school programs",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Jan Rispens",
 				"André Alemán",
@@ -1221,7 +1219,7 @@
 		{
 			"id": "W1981335861",
 			"title": "Teaching personal safety skills to young children: An investigation of age and gender across five studies",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Sandy K. Wurtele",
 				"Julie Sarno Owens"
@@ -1252,7 +1250,6 @@
 		{
 			"id": "W1970640435",
 			"title": "Evaluation of the effectiveness of the stay safe primary prevention programme for child sexual abuse",
-			"override_seed": 0,
 			"authors": [
 				"Deirdre MacIntyre",
 				"Alan Carr"
@@ -1283,7 +1280,6 @@
 		{
 			"id": "W2036182014",
 			"title": "Helping children to the other side of silence: a study of the impact of the stay safe programme on Irish children’s disclosures of sexual victimization",
-			"override_seed": 0.9,
 			"authors": [
 				"Deirdre MacIntyre",
 				"Alan Carr"
@@ -1314,7 +1310,7 @@
 		{
 			"id": "W2014492350",
 			"title": "Child Sexual Abuse Prevention Programs: A Meta-Analysis",
-			"override_seed": 0,
+			"override_seed": 0.7,
 			"authors": [
 				"M. Katherine Davis",
 				"Christine A. Gidycz"
@@ -1349,7 +1345,6 @@
 		{
 			"id": "W2009811242",
 			"title": "Child sexual abuse prevention programs: do they decrease the occurrence of child sexual abuse?",
-			"override_seed": 0.9,
 			"authors": [
 				"Laura E. Gibson",
 				"Harold Leitenberg"
@@ -1415,7 +1410,7 @@
 		{
 			"id": "W1544650217",
 			"title": "What Children Learn from Sexual Abuse Prevention Programs: Difficult Concepts and Developmental Issues",
-			"override_seed": 0.6,
+			"override_seed": 0,
 			"authors": [
 				"Leslie M. Tutty"
 			],
@@ -1475,7 +1470,7 @@
 		{
 			"id": "W2063038733",
 			"title": "Proximate effects of a child sexual abuse prevention program in elementary school children",
-			"override_seed": 0.9,
+			"override_seed": 0.8,
 			"authors": [
 				"Martine Hébert",
 				"Francine Lavoie",
@@ -1566,6 +1561,7 @@
 		{
 			"id": "W2161145281",
 			"title": "Prevention of Sexual Abuse Through Educational Programs Directed Toward Children",
+			"override_seed": 0,
 			"authors": [
 				"David Finkelhor"
 			],
@@ -1599,6 +1595,7 @@
 		{
 			"id": "W2047558122",
 			"title": "Child sexual abuse: from prevention to self‐protection",
+			"override_seed": 0,
 			"authors": [
 				"Maureen C. Kenny",
 				"Vjolca Capri",
@@ -1635,7 +1632,6 @@
 		{
 			"id": "W2015784507",
 			"title": "A group‐randomized evaluation of a theatre‐based sexual abuse prevention programme for primary school children in Germany",
-			"override_seed": 0,
 			"authors": [
 				"Barbara Krahé",
 				"Lena Knappert"
@@ -1666,6 +1662,7 @@
 		{
 			"id": "W2062147200",
 			"title": "Preventing Sexual Abuse of Children in the Twenty-First Century: Preparing for Challenges and Opportunities",
+			"override_seed": 0,
 			"authors": [
 				"Sandy K. Wurtele"
 			],
@@ -1699,7 +1696,6 @@
 		{
 			"id": "W2129957335",
 			"title": "School-Based Child Sexual Abuse Prevention Programs: A Review of Effectiveness",
-			"override_seed": 0.9,
 			"authors": [
 				"Keith J. Topping",
 				"Ian Barron"
@@ -1734,6 +1730,7 @@
 		{
 			"id": "W2121445594",
 			"title": "The Prevention of Childhood Sexual Abuse",
+			"override_seed": 0.95,
 			"authors": [
 				"David Finkelhor"
 			],
@@ -1767,7 +1764,7 @@
 		{
 			"id": "W2098432732",
 			"title": "Children's abilities to recognize a “good” person as a potential perpetrator of childhood sexual abuse",
-			"override_seed": 0.4,
+			"override_seed": 0.1,
 			"authors": [
 				"Maureen C. Kenny",
 				"Sandy K. Wurtele"
@@ -1828,6 +1825,7 @@
 		{
 			"id": "W2004180775",
 			"title": "Evaluation of a school-based sexual abuse prevention curriculum in Malaysia",
+			"override_seed": 0,
 			"authors": [
 				"Richard A. Weatherley",
 				"Siti Hajar Abu Bakar Ah",
@@ -1860,6 +1858,7 @@
 		{
 			"id": "W2067683261",
 			"title": "Evaluation of a Personal Safety Program with Latino Preschoolers",
+			"override_seed": 0.95,
 			"authors": [
 				"Maureen C. Kenny",
 				"Sandy K. Wurtele",
@@ -1891,7 +1890,7 @@
 		{
 			"id": "W2082980122",
 			"title": "Evaluation of a Sexual Abuse Prevention Workshop in a Multicultural, Impoverished Urban Area",
-			"override_seed": 0.9,
+			"override_seed": 0.8,
 			"authors": [
 				"Isabelle Daigneault",
 				"Martine Hébert",
@@ -2021,7 +2020,6 @@
 		{
 			"id": "W169367288",
 			"title": "The Effectiveness of Psycho-Educational School-Based Child Sexual Abuse Prevention Training Program on Turkish Elementary Students.",
-			"override_seed": 0.8,
 			"authors": [
 				"A. Rezan Çeçen",
 				"Özlem Kaf Hasırcı"
@@ -2084,7 +2082,7 @@
 		{
 			"id": "W2129186134",
 			"title": "School-Based Childhood Sexual Abuse Prevention Programs",
-			"override_seed": 0.6,
+			"override_seed": 0.5,
 			"authors": [
 				"Candice M. Fryda",
 				"Polly A. Hulme"
@@ -2119,7 +2117,6 @@
 		{
 			"id": "W1430200026",
 			"title": "Empowering and protecting children by enhancing knowledge, skills and well-being: A randomized trial of Learn to BE SAFE with Emmy™",
-			"override_seed": 0.95,
 			"authors": [
 				"R. Barry Dale",
 				"Dianne C. Shanley",
@@ -2223,6 +2220,7 @@
 		{
 			"id": "W2549665311",
 			"title": "Community-level moderators of a school-based childhood sexual assault prevention program",
+			"override_seed": 0.95,
 			"authors": [
 				"Matthew C. Morris",
 				"Chrystyna D. Kouros",
@@ -2255,6 +2253,7 @@
 		{
 			"id": "W2511835825",
 			"title": "Effects of the Child Sexual Abuse Prevention Education (C-SAPE) Program on South Korean Fifth-Grade Students’ Competence in Terms of Knowledge and Self-Protective Behaviors",
+			"override_seed": 0.9,
 			"authors": [
 				"Shin‐Jeong Kim",
 				"Kyung‐Ah Kang"
@@ -2285,6 +2284,7 @@
 		{
 			"id": "W2516853114",
 			"title": "Evaluation of Safer, Smarter Kids: Child Sexual Abuse Prevention Curriculum for Kindergartners",
+			"override_seed": 0,
 			"authors": [
 				"Donna Marie Brown"
 			],
@@ -2314,6 +2314,7 @@
 		{
 			"id": "W2755158923",
 			"title": "Child Sexual Abuse Prevention Opportunities: Parenting, Programs, and the Reduction of Risk",
+			"override_seed": 0.2,
 			"authors": [
 				"Julia Rudolph",
 				"Melanie J. Zimmer‐Gembeck",
@@ -2350,7 +2351,7 @@
 		{
 			"id": "W2760848075",
 			"title": "Evaluation of a sexual abuse prevention education program for school-age children in China: a comparison of teachers and parents as instructors",
-			"override_seed": 0.9,
+			"override_seed": 0.7,
 			"authors": [
 				"Yaqiong Jin",
 				"Jing Chen",
@@ -2383,6 +2384,7 @@
 		{
 			"id": "W2894965133",
 			"title": "Effectiveness of a school-based intervention to prevent child sexual abuse—Evaluation of the German IGEL program",
+			"override_seed": 0,
 			"authors": [
 				"Fabian Czerwinski",
 				"Emily Finne",
@@ -2447,7 +2449,6 @@
 		{
 			"id": "W2916566579",
 			"title": "“I have the right to feel safe”: Evaluation of a school-based child sexual abuse prevention program in Ecuador",
-			"override_seed": 0,
 			"authors": [
 				"Gabriela Bustamante",
 				"María Soledad Andrade",
@@ -2480,6 +2481,7 @@
 		{
 			"id": "W2949142044",
 			"title": "Child Sexual Abuse Victimization Prevention Programs in Preschool and Kindergarten: Implications for Practice",
+			"override_seed": 0,
 			"authors": [
 				"Megan Manheim",
 				"Richard Felicetti",
@@ -2640,7 +2642,7 @@
 		{
 			"id": "W3092958856",
 			"title": "Three Decades of Research: The Case for Comprehensive Sex Education",
-			"override_seed": 0.45,
+			"override_seed": 0,
 			"authors": [
 				"Eva S. Goldfarb",
 				"Lisa Lieberman"
@@ -2675,7 +2677,7 @@
 		{
 			"id": "W3119361146",
 			"title": "“I am Learning to Protect Myself with Mika:” A Teacher-based Child Sexual Abuse Prevention Program in Turkey",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Rukiye Kızıltepe",
 				"Duygu Eslek",
@@ -2748,7 +2750,7 @@
 		{
 			"id": "W3133068982",
 			"title": "Evaluation of a School-Based Child Physical and Sexual Abuse Prevention Program",
-			"override_seed": 0.95,
+			"override_seed": 0,
 			"authors": [
 				"Erika L. Thompson",
 				"Zhengyang Zhou",
@@ -2781,6 +2783,7 @@
 		{
 			"id": "W3188359875",
 			"title": "Evaluation of the Child Safety Matters Curriculum for Improving Knowledge about Victimization among Elementary School Children: A Randomized Trial",
+			"override_seed": 0,
 			"authors": [
 				"Erin A. Weeks",
 				"Daniel J. Whitaker",
@@ -2813,6 +2816,7 @@
 		{
 			"id": "W3181885869",
 			"title": "The effect of sexuality education program on the sexual development of children aged 60–72 months",
+			"override_seed": 0.95,
 			"authors": [
 				"Songül Yasemin Özgün",
 				"Burhan Çapri"
@@ -2843,7 +2847,7 @@
 		{
 			"id": "W4286685274",
 			"title": "Effectiveness of school-based child sexual abuse intervention among school children in the new millennium era: Systematic review and meta-analyses",
-			"override_seed": 0.45,
+			"override_seed": 0,
 			"authors": [
 				"Ruhana Che Yusof",
 				"Mohd Noor Norhayati",
@@ -2882,7 +2886,7 @@
 		{
 			"id": "W4387388140",
 			"title": "Effectiveness of child sexual abuse prevention programs on knowledge acquisition: A meta-analytical study",
-			"override_seed": 0.8,
+			"override_seed": 0.7,
 			"authors": [
 				"Marta Ferragut",
 				"M. Victoria Cerezo",
@@ -2954,7 +2958,7 @@
 		{
 			"id": "W4393058027",
 			"title": "The effectiveness of school-based child sexual abuse prevention programmes among primary school-aged children: A systematic review",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Pinar Celik"
 			],

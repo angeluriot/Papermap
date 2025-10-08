@@ -205,6 +205,7 @@
 		{
 			"id": "W2106457238",
 			"title": "A Clinical Laboratory Model for Evaluating the Acute Effects of Electronic “Cigarettes”: Nicotine Delivery Profile and Cardiovascular and Subjective Effects",
+			"override_seed": 0.95,
 			"authors": [
 				"Andrea R. Vansickel",
 				"Caroline O. Cobb",
@@ -237,6 +238,7 @@
 		{
 			"id": "W2159546185",
 			"title": "Electronic cigarettes as a harm reduction strategy for tobacco control: A step forward or a repeat of past mistakes?",
+			"override_seed": 0.5,
 			"authors": [
 				"Zachary Cahn",
 				"Michael Siegel"
@@ -300,6 +302,7 @@
 		{
 			"id": "W2133007934",
 			"title": "A fresh look at tobacco harm reduction: the case for the electronic cigarette",
+			"override_seed": 0.6,
 			"authors": [
 				"Riccardo Polosa",
 				"Brad Rodu",
@@ -368,6 +371,7 @@
 		{
 			"id": "W2123345166",
 			"title": "Comparison of the Cytotoxic Potential of Cigarette Smoke and Electronic Cigarette Vapour Extract on Cultured Myocardial Cells",
+			"override_seed": 0,
 			"authors": [
 				"Konstantinos Farsalinos",
 				"Giorgio Romagna",
@@ -397,6 +401,7 @@
 		{
 			"id": "W1974376880",
 			"title": "Cytotoxicity evaluation of electronic cigarette vapor extract on cultured mammalian fibroblasts (ClearStream-LIFE): comparison with tobacco cigarette smoke extract",
+			"override_seed": 0.95,
 			"authors": [
 				"Giorgio Romagna",
 				"Elena Allifranchini",
@@ -435,6 +440,7 @@
 		{
 			"id": "W2128364692",
 			"title": "EffiCiency and Safety of an eLectronic cigAreTte (ECLAT) as Tobacco Cigarettes Substitute: A Prospective 12-Month Randomized Control Design Study",
+			"override_seed": 0.15,
 			"authors": [
 				"Pasquale Caponnetto",
 				"Davide Campagna",
@@ -505,6 +511,7 @@
 		{
 			"id": "W2052671875",
 			"title": "Metal and Silicate Particles Including Nanoparticles Are Present in Electronic Cigarette Cartomizer Fluid and Aerosol",
+			"override_seed": 0.3,
 			"authors": [
 				"Monique Williams",
 				"Amanda Villarreal",
@@ -540,7 +547,7 @@
 		{
 			"id": "W2046826576",
 			"title": "A systematic review of health effects of electronic cigarettes",
-			"override_seed": 0,
+			"override_seed": 0.3,
 			"authors": [
 				"Charlotta Pisinger",
 				"Martin Døssing"
@@ -575,6 +582,7 @@
 		{
 			"id": "W2129661555",
 			"title": "Acute effects of using an electronic nicotine-delivery device (electronic cigarette) on myocardial function: comparison with the effects of regular cigarettes",
+			"override_seed": 0,
 			"authors": [
 				"Konstantinos Farsalinos",
 				"Dimitris Tsiapras",
@@ -607,6 +615,7 @@
 		{
 			"id": "W2152193758",
 			"title": "Characteristics, Perceived Side Effects and Benefits of Electronic Cigarette Use: A Worldwide Survey of More than 19,000 Consumers",
+			"override_seed": 0.5,
 			"authors": [
 				"Konstantinos Farsalinos",
 				"Giorgio Romagna",
@@ -645,6 +654,7 @@
 		{
 			"id": "W2055002750",
 			"title": "Chemical hazards present in liquids and vapors of electronic cigarettes",
+			"override_seed": 0.95,
 			"authors": [
 				"Christoph Hutzler",
 				"Meike Paschke",
@@ -674,7 +684,7 @@
 		{
 			"id": "W2164470169",
 			"title": "E-Cigarettes: A Scientific Review",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Rachel Grana",
 				"Neal L. Benowitz",
@@ -742,6 +752,7 @@
 		{
 			"id": "W2013162227",
 			"title": "Effects of using electronic cigarettes on nicotine delivery and cardiovascular function in comparison with regular cigarettes",
+			"override_seed": 0.95,
 			"authors": [
 				"Xiaoli Yan",
 				"Carl D. D’Ruiz"
@@ -772,6 +783,7 @@
 		{
 			"id": "W2144345975",
 			"title": "Electronic cigarettes: human health effects",
+			"override_seed": 0,
 			"authors": [
 				"Priscilla Callahan-Lyon"
 			],
@@ -805,6 +817,7 @@
 		{
 			"id": "W2031527413",
 			"title": "Estimating the Harms of Nicotine-Containing Products Using the MCDA Approach",
+			"override_seed": 0.5,
 			"authors": [
 				"David Nutt",
 				"Lawrence D. Phillips",
@@ -834,6 +847,7 @@
 		{
 			"id": "W2124187240",
 			"title": "Safety evaluation and risk assessment of electronic cigarettes as tobacco cigarette substitutes: a systematic review",
+			"override_seed": 0.7,
 			"authors": [
 				"Konstantinos Farsalinos",
 				"Riccardo Polosa"
@@ -909,6 +923,7 @@
 		{
 			"id": "W2190146831",
 			"title": "Effects of Switching to Electronic Cigarettes with and without Concurrent Smoking on Exposure to Nicotine, Carbon Monoxide, and Acrolein",
+			"override_seed": 0.5,
 			"authors": [
 				"Hayden McRobbie",
 				"Anna C. Phillips",
@@ -941,6 +956,7 @@
 		{
 			"id": "W2002643189",
 			"title": "Evaluation of E-Cigarette Liquid Vapor and Mainstream Cigarette Smoke after Direct Exposure of Primary Human Bronchial Epithelial Cells",
+			"override_seed": 0.95,
 			"authors": [
 				"Stefanie Scheffler",
 				"Hauke Dieken",
@@ -970,6 +986,7 @@
 		{
 			"id": "W2092850402",
 			"title": "Vapors Produced by Electronic Cigarettes and E-Juices with Flavorings Induce Toxicity, Oxidative Stress, and Inflammatory Response in Lung Epithelial Cells and in Mouse Lung",
+			"override_seed": 0.5,
 			"authors": [
 				"Chad A. Lerner",
 				"Isaac K. Sundar",
@@ -999,6 +1016,7 @@
 		{
 			"id": "W2340081798",
 			"title": "Acute Impact of Tobacco vs Electronic Cigarette Smoking on Oxidative Stress and Vascular Function",
+			"override_seed": 0.8,
 			"authors": [
 				"Roberto Carnevale",
 				"Sebastiano Sciarretta",
@@ -1031,6 +1049,7 @@
 		{
 			"id": "W2466775130",
 			"title": "Changes in breathomics from a 1‐year randomized smoking cessation trial of electronic cigarettes",
+			"override_seed": 0.7,
 			"authors": [
 				"Davide Campagna",
 				"Fabio Cibella",
@@ -1063,6 +1082,7 @@
 		{
 			"id": "W2410589274",
 			"title": "Cohort study of electronic cigarette use: effectiveness and safety at 24 months",
+			"override_seed": 0.4,
 			"authors": [
 				"Lamberto Manzoli",
 				"Maria Elena Flacco",
@@ -1095,6 +1115,7 @@
 		{
 			"id": "W2413436507",
 			"title": "E-cigarette use results in suppression of immune and inflammatory-response genes in nasal epithelial cells similar to cigarette smoke",
+			"override_seed": 0.4,
 			"authors": [
 				"Elizabeth M. Martin",
 				"Phillip W. Clapp",
@@ -1124,6 +1145,7 @@
 		{
 			"id": "W2407038997",
 			"title": "Electronic cigarette exposure triggers neutrophil inflammatory responses",
+			"override_seed": 0.95,
 			"authors": [
 				"Andrew Higham",
 				"Nicholas J. W. Rattray",
@@ -1185,6 +1207,7 @@
 		{
 			"id": "W2514426073",
 			"title": "Exposure to Nicotine and Selected Toxicants in Cigarette Smokers Who Switched to Electronic Cigarettes: A Longitudinal Within-Subjects Observational Study",
+			"override_seed": 0.4,
 			"authors": [
 				"Maciej Ł. Goniewicz",
 				"Michał Gawron",
@@ -1217,6 +1240,7 @@
 		{
 			"id": "W4247507781",
 			"title": "Guidance on the benefits and risks of the electronic cigarette or e-cigarette in the general population",
+			"override_seed": 0,
 			"institution": {
 				"name": "Haut Conseil de la Santé Publique",
 				"acronym": "HCSP"
@@ -1284,6 +1308,7 @@
 		{
 			"id": "W2336834116",
 			"title": "Platelet activation, adhesion, inflammation, and aggregation potential are altered in the presence of electronic cigarette extracts of variable nicotine concentrations",
+			"override_seed": 0.95,
 			"authors": [
 				"Sarah Hom",
 				"Li Chen",
@@ -1313,6 +1338,7 @@
 		{
 			"id": "W2472936346",
 			"title": "Reductions in biomarkers of exposure, impacts on smoking urge and assessment of product use and tolerability in adult smokers following partial or complete substitution of cigarettes with electronic cigarettes",
+			"override_seed": 0.1,
 			"authors": [
 				"Carl D. D’Ruiz",
 				"Donald W. Graff",
@@ -1344,6 +1370,7 @@
 		{
 			"id": "W2597766308",
 			"title": "Cardiovascular effects of electronic cigarettes",
+			"override_seed": 0,
 			"authors": [
 				"Neal L. Benowitz",
 				"Joseph Fraiman"
@@ -1439,7 +1466,6 @@
 		{
 			"id": "W2888590649",
 			"title": "Association Between Electronic Cigarette Use and Myocardial Infarction",
-			"override_seed": 0.2,
 			"authors": [
 				"Talal Alzahrani",
 				"Ivan Peña",
@@ -1472,6 +1498,7 @@
 		{
 			"id": "W2882999281",
 			"title": "Association of Electronic Cigarette Use With Smoking Habits, Demographic Factors, and Respiratory Symptoms",
+			"override_seed": 0.2,
 			"authors": [
 				"Linnéa Hedman",
 				"Helena Bäckman",
@@ -1562,7 +1589,6 @@
 		{
 			"id": "W2899690421",
 			"title": "E-cigarette use and respiratory disorder in an adult sample",
-			"override_seed": 0,
 			"authors": [
 				"Thomas A. Wills",
 				"Ian Pagano",
@@ -1591,6 +1617,7 @@
 		},
 		{
 			"title": "E-cigarettes and heated tobacco products: evidence review",
+			"override_seed": 0,
 			"institution": {
 				"name": "Public Health England",
 				"acronym": "PHE"
@@ -1626,7 +1653,6 @@
 		{
 			"id": "W2765307661",
 			"title": "E-Cigarettes: Use, Effects on Smoking, Risks, and Policy Implications",
-			"override_seed": 0.9,
 			"authors": [
 				"Stanton A. Glantz",
 				"David Bareham"
@@ -1693,6 +1719,7 @@
 		{
 			"id": "W2887189186",
 			"title": "Impact of Tobacco Versus Electronic Cigarette Smoking on Platelet Function",
+			"override_seed": 0.5,
 			"authors": [
 				"Cristina Nocella",
 				"Giuseppe Biondi‐Zoccai",
@@ -1725,7 +1752,6 @@
 		{
 			"id": "W4244204671",
 			"title": "Public Health Consequences of E-Cigarettes",
-			"override_seed": 0.9,
 			"institution": {
 				"name": "National Academies of Sciences, Engineering, and Medicine",
 				"acronym": "NASEM"
@@ -1822,7 +1848,6 @@
 		{
 			"id": "W2980933496",
 			"title": "Adult E-Cigarettes Use Associated with a Self-Reported Diagnosis of COPD",
-			"override_seed": 0.5,
 			"authors": [
 				"Mario F. Perez",
 				"Nkiruka C. Atuegwu",
@@ -2007,6 +2032,7 @@
 		{
 			"id": "W2996490128",
 			"title": "Use of Electronic Cigarettes and Self-Reported Chronic Obstructive Pulmonary Disease Diagnosis in Adults",
+			"override_seed": 0.7,
 			"authors": [
 				"Zidian Xie",
 				"Deborah J. Ossip",
@@ -2071,6 +2097,7 @@
 		},
 		{
 			"title": "WHO study group on tobacco product regulation. Report on the scientific basis of tobacco product regulation: seventh report of a WHO study group",
+			"override_seed": 0.95,
 			"institution": {
 				"name": "World Health Organization",
 				"acronym": "WHO"
@@ -2106,6 +2133,7 @@
 		{
 			"id": "W2997885580",
 			"title": "Association Between E-Cigarette Use and Chronic Obstructive Pulmonary Disease by Smoking Status: Behavioral Risk Factor Surveillance System 2016 and 2017",
+			"override_seed": 0.95,
 			"authors": [
 				"Albert D. Osei",
 				"Mohammadhassan Mirbolouk",
@@ -2199,6 +2227,7 @@
 		{
 			"id": "W3038983180",
 			"title": "Is vaping better than smoking for cardiorespiratory and muscle function?",
+			"override_seed": 0.6,
 			"authors": [
 				"Mohammad Z. Darabseh",
 				"James Selfe",
@@ -2235,6 +2264,7 @@
 		{
 			"id": "W2999048419",
 			"title": "Risk of Stroke With E-Cigarette and Combustible Cigarette Use in Young Adults",
+			"override_seed": 0.3,
 			"authors": [
 				"Tarang Parekh",
 				"Sahithi Pemmasani",
@@ -2266,6 +2296,7 @@
 		{
 			"id": "W3161678628",
 			"title": "An updated overview of e-cigarette impact on human health",
+			"override_seed": 0.5,
 			"authors": [
 				"Patrice Marqués",
 				"Laura Piqueras",
@@ -2301,7 +2332,7 @@
 		{
 			"id": "W3119590770",
 			"title": "Association of Cigarette and Electronic Cigarette Use Patterns With Levels of Inflammatory and Oxidative Stress Biomarkers Among US Adults",
-			"override_seed": 0.6,
+			"override_seed": 0.5,
 			"authors": [
 				"Andrew Stokes",
 				"Wubin Xie",
@@ -2333,6 +2364,7 @@
 		},
 		{
 			"title": "Avis relatif aux bénéfices-risques de la cigarette électronique",
+			"override_seed": 0,
 			"institution": {
 				"name": "Haut Conseil de la Santé Publique",
 				"acronym": "HCSP"
@@ -2368,6 +2400,7 @@
 		{
 			"id": "W4287462074",
 			"title": "WHO study group on tobacco product regulation. Report on the scientific basis of tobacco product regulation: eighth report of a WHO study group",
+			"override_seed": 0.95,
 			"institution": {
 				"name": "World Health Organization",
 				"acronym": "WHO"
@@ -2403,6 +2436,7 @@
 		{
 			"id": "W4298393805",
 			"title": "Association of tobacco product use with chronic obstructive pulmonary disease (COPD) prevalence and incidence in Waves 1 through 5 (2013–2019) of the Population Assessment of Tobacco and Health (PATH) Study",
+			"override_seed": 0.75,
 			"authors": [
 				"Laura M. Paulin",
 				"Michael J. Halenar",
@@ -2432,7 +2466,7 @@
 		{
 			"id": "W4221013247",
 			"title": "Cardiovascular Outcomes among Combustible-Tobacco and Electronic Nicotine Delivery System (ENDS) Users in Waves 1 through 5 of the Population Assessment of Tobacco and Health (PATH) Study, 2013–2019",
-			"override_seed": 0,
+			"override_seed": 0.5,
 			"authors": [
 				"Martin C. Mahoney",
 				"Cheryl Rivard",
@@ -2491,6 +2525,7 @@
 		{
 			"id": "W4295011199",
 			"title": "E-cigarettes and myocardial infarction: A systematic review and meta-analysis",
+			"override_seed": 0.3,
 			"authors": [
 				"Akash Sharma",
 				"Ishita Gupta",
@@ -2530,6 +2565,7 @@
 		{
 			"id": "W4226213346",
 			"title": "E-Cigarettes—a review of the evidence—harm versus harm reduction",
+			"override_seed": 0.95,
 			"authors": [
 				"Susan Feeney",
 				"Victoria Rossetti",
@@ -2565,6 +2601,7 @@
 		{
 			"id": "W4281867326",
 			"title": "Effect Comparison of E-Cigarette and Traditional Smoking and Association with Stroke—A Cross-Sectional Study of NHANES",
+			"override_seed": 0,
 			"authors": [
 				"Urvish Patel",
 				"Neel Patel",
@@ -2667,6 +2704,7 @@
 		},
 		{
 			"title": "Nicotine vaping in England: 2022 evidence update",
+			"override_seed": 0,
 			"institution": {
 				"name": "Office for Health Improvement and Disparities",
 				"acronym": "OHID"
@@ -2702,6 +2740,7 @@
 		{
 			"id": "W4323363305",
 			"title": "Cigarettes, ENDS Use, and Chronic Obstructive Pulmonary Disease Incidence: A Prospective Longitudinal Study",
+			"override_seed": 0.5,
 			"authors": [
 				"Steven Cook",
 				"Jana L. Hirschtick",
@@ -2763,6 +2802,7 @@
 		{
 			"id": "W4327900109",
 			"title": "Electronic cigarettes and health outcomes: umbrella and systematic review of the global evidence",
+			"override_seed": 0.95,
 			"authors": [
 				"Emily Banks",
 				"Amelia Yazidjoglou",
@@ -2833,6 +2873,7 @@
 		{
 			"id": "W4391577851",
 			"title": "Comparative systematic review on the safety of e-cigarettes and conventional cigarettes",
+			"override_seed": 0,
 			"authors": [
 				"Josef Yayan",
 				"Karl-Josef Franke",
@@ -2869,6 +2910,7 @@
 		{
 			"id": "W4402757690",
 			"title": "Comparing E-Cigarettes and Traditional Cigarettes in Relation to Myocardial Infarction, Arrhythmias, and Sudden Cardiac Death: A Systematic Review and Meta-Analysis",
+			"override_seed": 0.5,
 			"authors": [
 				"Mohammed Ibrahim Yacoub",
 				"Aziz Aslanoğlu",
@@ -2935,6 +2977,7 @@
 		{
 			"id": "W4401101487",
 			"title": "Direct health implications of e-cigarette use: a systematic scoping review with evidence assessment",
+			"override_seed": 0.1,
 			"authors": [
 				"Juan S. Izquierdo‐Condoy",
 				"Patricio Naranjo-Lara",
@@ -3003,6 +3046,7 @@
 		{
 			"id": "W4405618660",
 			"title": "Functionally important respiratory symptoms and continued cigarette use versus e-cigarette switching: population assessment of tobacco and health study waves 2-6",
+			"override_seed": 0.95,
 			"authors": [
 				"James D. Sargent",
 				"Kristin Lauten",
@@ -3070,6 +3114,7 @@
 		{
 			"id": "W4403613465",
 			"title": "Prognosis after switching to electronic cigarettes following percutaneous coronary intervention: a Korean nationwide study",
+			"override_seed": 0,
 			"authors": [
 				"Danbee Kang",
 				"Ki Hong Choi",
@@ -3099,6 +3144,7 @@
 		{
 			"id": "W4406930146",
 			"title": "Electronic cigarettes for smoking cessation",
+			"override_seed": 0.95,
 			"authors": [
 				"Nicola Lindson",
 				"Ailsa R. Butler",

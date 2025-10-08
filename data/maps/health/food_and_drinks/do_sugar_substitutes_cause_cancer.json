@@ -224,6 +224,7 @@
 		{
 			"id": "W1863265091",
 			"title": "Bladder cancer: smoking, beverages and artificial sweeteners.",
+			"override_seed": 0,
 			"authors": [
 				"Robert W. Morgan",
 				"Meera Jain"
@@ -278,6 +279,7 @@
 		{
 			"id": "W1861987274",
 			"title": "Coffee Drinking and Cancer of the Lower Urinary Tract",
+			"override_seed": 0.5,
 			"authors": [
 				"Dennis Simon",
 				"S Yen",
@@ -306,6 +308,7 @@
 		{
 			"id": "W2416676486",
 			"title": "Non-nutritive Sweeteners and Human Bladder Cancer: Preliminary Findings",
+			"override_seed": 0.5,
 			"authors": [
 				"Irving I. Kessler"
 			],
@@ -332,7 +335,7 @@
 		{
 			"id": "W2029493423",
 			"title": "Artificial sweeteners and human bladder cancer",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Geoffrey R. Howe",
 				"J D Burch",
@@ -365,6 +368,7 @@
 		{
 			"id": "W2028211588",
 			"title": "The epidemiology of bladder cancer: a second look",
+			"override_seed": 0,
 			"authors": [
 				"Ernst L. Wynder",
 				"Robert Goldsmith"
@@ -392,6 +396,7 @@
 		{
 			"id": "W2084782329",
 			"title": "Saccharin, Cyclamate, and Human Bladder Cancer",
+			"override_seed": 0.5,
 			"authors": [
 				"Irving I. Kessler"
 			],
@@ -418,7 +423,7 @@
 		{
 			"id": "W1993718965",
 			"title": "Artificial Sweetener Use and Bladder Cancer: A Case-Control Study",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Ernst L. Wynder",
 				"Steven D. Stellman"
@@ -474,7 +479,6 @@
 		{
 			"id": "W1495536526",
 			"title": "Artificial sweeteners and human bladder cancer",
-			"override_seed": 0.9,
 			"authors": [
 				"R N Hoover",
 				"Patricia Hartge Strasser"
@@ -560,6 +564,7 @@
 		{
 			"id": "W2042429087",
 			"title": "Artificial sweeteners and absence of bladder cancer risk in Copenhagen",
+			"override_seed": 0.95,
 			"authors": [
 				"O. Møller‐Jensen",
 				"Jens B. Knudsen",
@@ -627,6 +632,7 @@
 		{
 			"id": "W1929612993",
 			"title": "A case-control study of factors affecting the development of renal cell cancer",
+			"override_seed": 0.95,
 			"authors": [
 				"Marc T. Goodman",
 				"Hal Morgenstern",
@@ -798,7 +804,6 @@
 		{
 			"id": "W2161960007",
 			"title": "Aspartame: Review of Safety",
-			"override_seed": 0.9,
 			"authors": [
 				"Harriett H. Butchko",
 				"W. Wayne Stargel",
@@ -835,7 +840,6 @@
 		{
 			"id": "W2032751799",
 			"title": "The comet assay with 8 mouse organs: results with 39 currently used food additives",
-			"override_seed": 0,
 			"authors": [
 				"Yū F. Sasaki",
 				"Satomi Kawaguchi",
@@ -874,6 +878,7 @@
 		{
 			"id": "W2126904148",
 			"title": "Artificial sweeteners—do they bear a carcinogenic risk?",
+			"override_seed": 0,
 			"authors": [
 				"Martin R. Weihrauch",
 				"Volker Diehl"
@@ -908,6 +913,7 @@
 		{
 			"id": "W2016092552",
 			"title": "First Experimental Demonstration of the Multipotential Carcinogenic Effects of Aspartame Administered in the Feed to Sprague-Dawley Rats",
+			"override_seed": 0,
 			"authors": [
 				"Morando Soffritti",
 				"Fiorella Belpoggi",
@@ -957,7 +963,7 @@
 		{
 			"id": "W2106811247",
 			"title": "Sugar-Sweetened Soft Drink Consumption and Risk of Pancreatic Cancer in Two Prospective Cohorts",
-			"override_seed": 0,
+			"override_seed": 0.5,
 			"authors": [
 				"Eva Schernhammer",
 				"Frank B. Hu",
@@ -987,7 +993,6 @@
 		{
 			"id": "W2104535906",
 			"title": "Artificial sweeteners and cancer risk in a network of case–control studies",
-			"override_seed": 0,
 			"authors": [
 				"Silvano Gallus",
 				"Lorenza Scotti",
@@ -1017,7 +1022,7 @@
 		{
 			"id": "W2052738915",
 			"title": "Consumption of Aspartame-Containing Beverages and Incidence of Hematopoietic and Brain Malignancies",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Unhee Lim",
 				"Amy F. Subar",
@@ -1084,7 +1089,7 @@
 		{
 			"id": "W2027808454",
 			"title": "Life-Span Exposure to Low Doses of Aspartame Beginning during Prenatal Life Increases Cancer Effects in Rats",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Morando Soffritti",
 				"Fiorella Belpoggi",
@@ -1190,7 +1195,6 @@
 		{
 			"id": "W2098207607",
 			"title": "Mycoplasma pulmonis and Lymphoma in Bioassays in Rats",
-			"override_seed": 0,
 			"authors": [
 				"Trenton R. Schoeb",
 				"Ernest E. McConnell",
@@ -1227,7 +1231,6 @@
 		{
 			"id": "W2110674814",
 			"title": "Sweets, sweetened beverages, and risk of pancreatic cancer in a large population-based case–control study",
-			"override_seed": 0.9,
 			"authors": [
 				"June M. Chan",
 				"Furong Wang",
@@ -1303,6 +1306,7 @@
 		{
 			"id": "W2148076216",
 			"title": "Consumption of artificial sweetener– and sugar-containing soda and risk of lymphoma and leukemia in men and women",
+			"override_seed": 0,
 			"authors": [
 				"Eva Schernhammer",
 				"Kimberly A. Bertrand",
@@ -1341,6 +1345,7 @@
 		{
 			"id": "W1977044984",
 			"title": "Aspartame, low-calorie sweeteners and disease: Regulatory safety and epidemiological issues",
+			"override_seed": 0,
 			"authors": [
 				"Marina Marinovich",
 				"C. Galli",
@@ -1377,6 +1382,7 @@
 		{
 			"id": "W4236665471",
 			"title": "Scientific Opinion on the re‐evaluation of aspartame (E 951) as a food additive",
+			"override_seed": 0,
 			"institution": {
 				"name": "European Food Safety Authority",
 				"acronym": "EFSA"
@@ -1538,7 +1544,6 @@
 		{
 			"id": "W32539008",
 			"title": "The Role of Dietary and Lifestyle Factors in the Development of Colorectal Cancer: Case Control Study in Minia, Egypt",
-			"override_seed": 0.95,
 			"authors": [
 				"Eman Mahfouz",
 				"Refaat Sadek",
@@ -1715,7 +1720,7 @@
 		{
 			"id": "W2752311095",
 			"title": "Health outcomes of non-nutritive sweeteners: analysis of the research landscape",
-			"override_seed": 0.95,
+			"override_seed": 0,
 			"authors": [
 				"Szimonetta Lohner",
 				"Ingrid Toews",
@@ -1751,6 +1756,7 @@
 		{
 			"id": "W2788203274",
 			"title": "Consumption of sugar-sweetened and artificially sweetened soft drinks and risk of obesity-related cancers",
+			"override_seed": 0,
 			"authors": [
 				"Allison Hodge",
 				"Julie K. Bassett",
@@ -1816,7 +1822,6 @@
 		{
 			"id": "W2907742136",
 			"title": "Association between intake of non-sugar sweeteners and health outcomes: systematic review and meta-analyses of randomised and non-randomised controlled trials and observational studies",
-			"override_seed": 0.9,
 			"authors": [
 				"Ingrid Toews",
 				"Szimonetta Lohner",
@@ -1853,6 +1858,7 @@
 		{
 			"id": "W2988248742",
 			"title": "Consumption of sugar‐sweetened and artificially sweetened soft drinks and risk of cancers not related to obesity",
+			"override_seed": 0.95,
 			"authors": [
 				"Julie K. Bassett",
 				"Roger L. Milne",
@@ -1885,6 +1891,7 @@
 		{
 			"id": "W4256564332",
 			"title": "Lack of potential carcinogenicity for aspartame – Systematic evaluation and integration of mechanistic data into the totality of the evidence",
+			"override_seed": 0,
 			"authors": [
 				"Daniele Wikoff",
 				"Grace A. Chappell",
@@ -1950,6 +1957,7 @@
 		{
 			"id": "W3106561566",
 			"title": "High Concentrations of Aspartame Induce Pro-Angiogenic Effects in Ovo and Cytotoxic Effects in HT-29 Human Colorectal Carcinoma Cells",
+			"override_seed": 0.95,
 			"authors": [
 				"Anca Laura Maghiari",
 				"Dorina Coricovac",
@@ -1979,6 +1987,7 @@
 		{
 			"id": "W3027449028",
 			"title": "Identification of aspartame-induced haematopoietic and lymphoid tumours in rats after lifetime treatment",
+			"override_seed": 0,
 			"authors": [
 				"Eva Tibaldi",
 				"Federica Gnudi",
@@ -2030,6 +2039,7 @@
 		{
 			"id": "W3153374447",
 			"title": "Aspartame and cancer – new evidence for causation",
+			"override_seed": 0.95,
 			"authors": [
 				"Philip J. Landrigan",
 				"Kurt Straíf"
@@ -2079,7 +2089,7 @@
 		{
 			"id": "W3168933003",
 			"title": "Association of soft drink and 100% fruit juice consumption with all-cause mortality, cardiovascular diseases mortality, and cancer mortality: A systematic review and dose-response meta-analysis of prospective cohort studies",
-			"override_seed": 0.7,
+			"override_seed": 0,
 			"authors": [
 				"Bei Pan",
 				"Long Ge",
@@ -2116,7 +2126,7 @@
 		{
 			"id": "W3126446391",
 			"title": "Consumption of Sweet Beverages and Cancer Risk. A Systematic Review and Meta-Analysis of Observational Studies",
-			"override_seed": 0,
+			"override_seed": 0.7,
 			"authors": [
 				"Fjorida Llaha",
 				"Mercedes Gil‐Lespinard",
@@ -2153,7 +2163,7 @@
 		{
 			"id": "W3191134431",
 			"title": "Intake of artificial sweeteners among adults is associated with reduced odds of gastrointestinal luminal cancers: a meta-analysis of cohort and case-control studies",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Adam Tepler",
 				"Gila Hoffman",
@@ -2220,7 +2230,7 @@
 		{
 			"id": "W3168881515",
 			"title": "Sugar-Sweetened Beverages, Artificially Sweetened Beverages, and Breast Cancer Risk: Results From 2 Prospective US Cohorts",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Andrea Romanos-Nanclares",
 				"Laura C. Collins",
@@ -2287,7 +2297,7 @@
 		{
 			"id": "W4220938135",
 			"title": "Artificial sweeteners and cancer risk: Results from the NutriNet-Santé population-based cohort study",
-			"override_seed": 0,
+			"override_seed": 0.8,
 			"authors": [
 				"Charlotte Debras",
 				"Eloi Chazelas",
@@ -2326,7 +2336,7 @@
 		{
 			"id": "W4311531706",
 			"title": "Association of Artificially Sweetened Beverage Consumption and Urinary Tract Cancers in the Women’s Health Initiative Observational Study",
-			"override_seed": 0,
+			"override_seed": 0.5,
 			"authors": [
 				"Nancy E. Ringel",
 				"Kathleen M. Hovey",
@@ -2359,7 +2369,7 @@
 		{
 			"id": "W4296021762",
 			"title": "Can Artificial Sweeteners Increase the Risk of Cancer Incidence and Mortality: Evidence from Prospective Studies",
-			"override_seed": 0.8,
+			"override_seed": 0.5,
 			"authors": [
 				"Shoumeng Yan",
 				"Feifei Yan",
@@ -2395,6 +2405,7 @@
 		},
 		{
 			"title": "Health effects of the use of non-sugar sweeteners: a systematic review and meta-analysis",
+			"override_seed": 0.95,
 			"institution": {
 				"name": "World Health Organization",
 				"acronym": "WHO"
@@ -2430,6 +2441,7 @@
 		{
 			"id": "W4307269043",
 			"title": "Is the Use of Artificial Sweeteners Beneficial for Patients with Diabetes Mellitus? The Advantages and Disadvantages of Artificial Sweeteners",
+			"override_seed": 0.15,
 			"authors": [
 				"Katsumi Iizuka"
 			],
@@ -2463,7 +2475,7 @@
 		{
 			"id": "W4283119820",
 			"title": "Sweetened beverage consumption and risk of liver cancer by diabetes status: A pooled analysis",
-			"override_seed": 0.4,
+			"override_seed": 0,
 			"authors": [
 				"Gieira S. Jones",
 				"Barry I. Graubard",
@@ -2493,7 +2505,7 @@
 		{
 			"id": "W4376613188",
 			"title": "Artificially Sweetened Beverages and Health Outcomes: An Umbrella Review",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"C. Díaz",
 				"Leandro F. M. Rezende",
@@ -2530,7 +2542,7 @@
 		{
 			"id": "W4388210620",
 			"title": "Association between Artificial Sweetener-Aspartame Consumption and Colorectal Cancer Risk: Evidence-Based Strategies",
-			"override_seed": 0.1,
+			"override_seed": 0,
 			"authors": [
 				"Chenglou Zhu",
 				"Dandan Ji",
@@ -2567,7 +2579,6 @@
 		{
 			"id": "W4321003399",
 			"title": "Association between Consumption of Artificial Sweeteners and Breast Cancer Risk: A Systematic Review and Meta-Analysis of Observational Studies",
-			"override_seed": 0.9,
 			"authors": [
 				"Xia Ye",
 				"Yeyuan Zhang",
@@ -2641,7 +2652,6 @@
 		{
 			"id": "W4384156863",
 			"title": "Carcinogenicity of aspartame, methyleugenol, and isoeugenol",
-			"override_seed": 0.95,
 			"authors": [
 				"Elio Ríboli",
 				"Frederick A. Beland",
@@ -2684,7 +2694,7 @@
 		{
 			"id": "W4380870578",
 			"title": "Consumption of aspartame and other artificial sweeteners and risk of cancer in the Spanish multicase‐control study (MCC‐Spain)",
-			"override_seed": 0,
+			"override_seed": 0.3,
 			"authors": [
 				"Anna Palomar‐Cros",
 				"Kurt Straíf",
@@ -2714,7 +2724,6 @@
 		{
 			"id": "W4388861152",
 			"title": "Is there a promoting role for artificial sweeteners in the evolution of bladder cancer? A meta-analysis of current literature",
-			"override_seed": 0.2,
 			"authors": [
 				"I Bálint",
 				"Bence T. ERDODI"
@@ -2749,7 +2758,7 @@
 		{
 			"id": "W4322761839",
 			"title": "Non-sugar sweeteners and cancer: Toxicological and epidemiological evidence",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Sofia Pavanello",
 				"Angelo Moretto",
@@ -2786,6 +2795,7 @@
 		{
 			"id": "W4385658221",
 			"title": "Sugar-Sweetened and Artificially Sweetened Beverages and Risk of Liver Cancer and Chronic Liver Disease Mortality",
+			"override_seed": 0.95,
 			"authors": [
 				"Longgang Zhao",
 				"Xinyuan Zhang",
@@ -2886,7 +2896,7 @@
 		{
 			"id": "W4392515887",
 			"title": "Artificially sweetened beverages consumption and risk of obesity-related cancers: a wide-angled Mendelian randomization study",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Xing Jin",
 				"Mengyue Wu",
@@ -2919,7 +2929,7 @@
 		{
 			"id": "W4402650656",
 			"title": "Chronic Use of Artificial Sweeteners: Pros and Cons",
-			"override_seed": 0.95,
+			"override_seed": 0.6,
 			"authors": [
 				"Lydia Kossiva",
 				"Konstantinos Kakleas",
@@ -2956,7 +2966,7 @@
 		{
 			"id": "W4403484968",
 			"title": "Consumption of aspartame and risk of breast cancer in the Nurses’ Health Studies",
-			"override_seed": 0.9,
+			"override_seed": 0.7,
 			"authors": [
 				"Andrea Romanos-Nanclares",
 				"Eva Schernhammer",
@@ -2986,7 +2996,7 @@
 		{
 			"id": "W4405508889",
 			"title": "Research Progress on the Relationship Between Artificial Sweeteners and Breast Cancer",
-			"override_seed": 0.5,
+			"override_seed": 0.95,
 			"authors": [
 				"Xianqiang Yu",
 				"Yu Zeng",
@@ -3023,7 +3033,7 @@
 		{
 			"id": "W4406152759",
 			"title": "An integrative analysis reveals cancer risk associated with artificial sweeteners",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Jumin Xie",
 				"Ying Zhu",
@@ -3056,6 +3066,7 @@
 		{
 			"id": "W4409712458",
 			"title": "Artificial Sweeteners: Benefits, Risks and Controversy",
+			"override_seed": 0,
 			"authors": [
 				"Sayantan Ray",
 				"Rajan Palui"
@@ -3090,6 +3101,7 @@
 		{
 			"id": "W4412093008",
 			"title": "Aspartame and Human Health: A Mini-Review of Carcinogenic and Systemic Effects",
+			"override_seed": 0.7,
 			"authors": [
 				"Nour El Doueihy",
 				"Joya Ghaleb",
@@ -3117,6 +3129,43 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"id": "W4414072819",
+			"title": "The association of artificial sweeteners intake and risk of cancer: an umbrella meta-analysis",
+			"override_seed": 0.95,
+			"authors": [
+				"Ahmed Abu‐Zaid",
+				"Emad Kutbi",
+				"Norah Alshammari",
+				"Abdullah AlJurayyan"
+			],
+			"year": 2025,
+			"link": "https://doi.org/10.3389/fmed.2025.1647178",
+			"journal": {
+				"id": "S2597052008",
+				"retracted": false
+			},
+			"citations": 0,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "In conclusion, this umbrella review did not find evidence of a significant overall link between artificial sweetener intake and cancer risk",
+			"review": {
+				"type": "MetaAnalysis",
+				"reviews": true,
+				"estimate": false,
+				"count": 10,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
 			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",

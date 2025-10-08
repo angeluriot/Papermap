@@ -164,6 +164,7 @@
 		{
 			"id": "W2013747771",
 			"title": "The effects of hydraulic resistance strength training in pre-pubertal males",
+			"override_seed": 0,
 			"authors": [
 				"Arthur Weltman",
 				"Carol A. Janney",
@@ -193,6 +194,7 @@
 		{
 			"id": "W1987279215",
 			"title": "Strength training for prepubescent males: Is it safe?",
+			"override_seed": 0.95,
 			"authors": [
 				"Clark B. Rians",
 				"Arthur Weltman",
@@ -279,6 +281,7 @@
 		{
 			"id": "W2031575283",
 			"title": "Resistance Training During Preadolescence",
+			"override_seed": 0.95,
 			"authors": [
 				"Cameron J.R. Blimkie"
 			],
@@ -312,6 +315,7 @@
 		{
 			"id": "W2116951976",
 			"title": "The Effects of a Twice-A-Week Strength Training Program on Children",
+			"override_seed": 0,
 			"authors": [
 				"Avery D. Faigenbaum",
 				"Leonard D. Zaichkowsky",
@@ -436,7 +440,7 @@
 		{
 			"id": "W1989299773",
 			"title": "Effects of resistance training on protein utilization in healthy children",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Matthew A. Pikosky",
 				"Avery D. Faigenbaum",
@@ -500,6 +504,7 @@
 		{
 			"id": "W2071549027",
 			"title": "Effects of Resistance Training on the Physical Capacities of Adolescent Soccer Players",
+			"override_seed": 0,
 			"authors": [
 				"Marios Christou",
 				"Ilias Smilios",
@@ -529,6 +534,7 @@
 		{
 			"id": "W2084971406",
 			"title": "Weight Training in Youth-Growth, Maturation, and Safety: An Evidence-Based Review",
+			"override_seed": 0.3,
 			"authors": [
 				"Robert M. Malina"
 			],
@@ -562,7 +568,7 @@
 		{
 			"id": "W1992255097",
 			"title": "Resistance Training for Children and Adolescents",
-			"override_seed": 0,
+			"override_seed": 0.5,
 			"authors": [
 				"Avery D. Faigenbaum"
 			],
@@ -596,7 +602,6 @@
 		{
 			"id": "W2154776027",
 			"title": "Canadian Society for Exercise Physiology position paper: resistance training in children and adolescents",
-			"override_seed": 0,
 			"authors": [
 				"David G. Behm",
 				"Avery D. Faigenbaum",
@@ -633,6 +638,7 @@
 		{
 			"id": "W2121629594",
 			"title": "Strength Training by Children and Adolescents",
+			"override_seed": 0.2,
 			"institution": {
 				"name": "Council on Sports Medicine and Fitness",
 				"acronym": "COSMF"
@@ -668,7 +674,7 @@
 		{
 			"id": "W2131528817",
 			"title": "Strength Training Recommendations for the Young Athlete",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Jeffrey M Vaughn",
 				"Lyle J. Micheli"
@@ -737,7 +743,7 @@
 		{
 			"id": "W2040866219",
 			"title": "Strength Training in Children and Adolescents: Raising the Bar for Young Athletes?",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Katherine S. Dahab",
 				"Teri M. McCambridge"
@@ -772,7 +778,7 @@
 		{
 			"id": "W1968867688",
 			"title": "Youth Resistance Training: Updated Position Statement Paper From the National Strength and Conditioning Association",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Avery D. Faigenbaum",
 				"William J. Kraemer",
@@ -843,7 +849,6 @@
 		{
 			"id": "W2166432718",
 			"title": "Position statement on youth resistance training: the 2014 International Consensus",
-			"override_seed": 0,
 			"authors": [
 				"Rhodri S. Lloyd",
 				"Avery D. Faigenbaum",
@@ -880,7 +885,7 @@
 		{
 			"id": "W1987654215",
 			"title": "There is No Need to Avoid Resistance Training (Weight Lifting) until Physeal Closure",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Michael C. Milone",
 				"Joseph Bernstein",
@@ -917,6 +922,7 @@
 		{
 			"id": "W2427577391",
 			"title": "Treinamento de Força para Crianças: Uma Metanálise Sobre Alterações do Crescimento Longitudinal, Força e Composição Corporal",
+			"override_seed": 0.95,
 			"authors": [
 				"R.R.S. Frois",
 				"Lílian Alves Pereira",
@@ -953,6 +959,7 @@
 		{
 			"id": "W2615799653",
 			"title": "Resistance training for children and adolescents",
+			"override_seed": 0.95,
 			"authors": [
 				"Allison M. Myers",
 				"Nicholas Beam",
@@ -1025,7 +1032,7 @@
 		{
 			"id": "W2906562090",
 			"title": "Effects of physical activity on children's growth",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"João Guilherme Bezerra Alves",
 				"Guilherme Victor Alves"
@@ -1060,6 +1067,7 @@
 		{
 			"id": "W2480350260",
 			"title": "Resistance Training for Children and Adolescents",
+			"override_seed": 0,
 			"authors": [
 				"Paul R. Stricker",
 				"Avery D. Faigenbaum",
@@ -1096,6 +1104,7 @@
 		{
 			"id": "W3214724980",
 			"title": "Weightlifting for Children and Adolescents: A Narrative Review",
+			"override_seed": 0.95,
 			"authors": [
 				"Kyle C. Pierce",
 				"W. Guy Hornsby",

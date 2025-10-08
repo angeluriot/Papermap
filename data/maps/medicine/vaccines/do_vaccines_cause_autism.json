@@ -160,7 +160,6 @@
 		{
 			"id": "W2010453107",
 			"title": "Measles Vaccines: a review of adverse events",
-			"override_seed": 0.9,
 			"authors": [
 				"Philippe Duclos",
 				"Brian J. Ward"
@@ -195,7 +194,7 @@
 		{
 			"id": "W2106409867",
 			"title": "MMR and Autism",
-			"override_seed": 0.3,
+			"override_seed": 0.2,
 			"authors": [
 				"Christopher Gillberg",
 				"Harald Heijbel"
@@ -223,6 +222,7 @@
 		{
 			"id": "W2056339438",
 			"title": "No evidence for measles, mumps, and rubella vaccine-associated inflammatory bowel disease or autism in a 14-year prospective study",
+			"override_seed": 0.95,
 			"authors": [
 				"Heikki Peltola",
 				"Annamari Patja",
@@ -360,7 +360,7 @@
 		{
 			"id": "W2114526368",
 			"title": "Autism and Measles-Mumps-Rubella Vaccination",
-			"override_seed": 0,
+			"override_seed": 0.4,
 			"authors": [
 				"Frank DeStefano",
 				"Robert T. Chen"
@@ -450,7 +450,7 @@
 		{
 			"id": "W1889456959",
 			"title": "Do children who become autistic consult more often after MMR vaccination?",
-			"override_seed": 0.3,
+			"override_seed": 0,
 			"authors": [
 				"Stephen DeWilde",
 				"Iain M. Carey",
@@ -480,6 +480,7 @@
 		{
 			"id": "W4299526172",
 			"title": "Immunization Safety Review: Measles-Mumps-Rubella Vaccine and Autism",
+			"override_seed": 0,
 			"institution": {
 				"name": "National Academies of Sciences, Engineering, and Medicine",
 				"acronym": "NASEM"
@@ -549,7 +550,7 @@
 		{
 			"id": "W2072979656",
 			"title": "MMR and autism: further evidence against a causal association",
-			"override_seed": 0.9,
+			"override_seed": 0.8,
 			"authors": [
 				"Paddy Farrington",
 				"Elizabeth Miller",
@@ -578,7 +579,6 @@
 		{
 			"id": "W2409590998",
 			"title": "MMR, autism and inflammatory bowel disease: responding to patient concerns using an evidence‐based framework",
-			"override_seed": 0.6,
 			"authors": [
 				"C Raina Maclntyre",
 				"Peter B. Mclntyre"
@@ -639,7 +639,6 @@
 		{
 			"id": "W2151324155",
 			"title": "No Evidence for A New Variant of Measles-Mumps-Rubella–Induced Autism",
-			"override_seed": 0,
 			"authors": [
 				"Éric Fombonne",
 				"Suniti Chakrabarti"
@@ -667,7 +666,7 @@
 		{
 			"id": "W2087636597",
 			"title": "Time Trends in Autism and in MMR Immunization Coverage in California",
-			"override_seed": 0.45,
+			"override_seed": 0.6,
 			"authors": [
 				"Loring G. Dales",
 				"Sandra Jo Hammer",
@@ -725,7 +724,6 @@
 		{
 			"id": "W2082489477",
 			"title": "Autism and MMR vaccination in North London; no causal relationship",
-			"override_seed": 0.1,
 			"authors": [
 				"Brent Taylor",
 				"Raghu Lingam",
@@ -789,7 +787,7 @@
 		{
 			"id": "W2165196939",
 			"title": "Measles, mumps, and rubella vaccination and bowel problems or developmental regression in children with autism: population study",
-			"override_seed": 0.5,
+			"override_seed": 0.95,
 			"authors": [
 				"Bruce Taylor"
 			],
@@ -816,7 +814,7 @@
 		{
 			"id": "W2101048460",
 			"title": "MMR and autism: an overview of the debate to date",
-			"override_seed": 0.6,
+			"override_seed": 0,
 			"authors": [
 				"Anastasia T Phelan"
 			],
@@ -850,7 +848,7 @@
 		{
 			"id": "W2110349400",
 			"title": "MMR and autism: moving from controversy toward consensus",
-			"override_seed": 0,
+			"override_seed": 0.6,
 			"authors": [
 				"Susan Coffin"
 			],
@@ -884,7 +882,6 @@
 		{
 			"id": "W2150042309",
 			"title": "MMR vaccination and autism: is there a link?",
-			"override_seed": 0.35,
 			"authors": [
 				"W. Thompson",
 				"Frank DeStefano"
@@ -919,7 +916,7 @@
 		{
 			"id": "W2312964316",
 			"title": "MMR vaccine and autism: a review of the evidence for a causal association",
-			"override_seed": 0.05,
+			"override_seed": 0.3,
 			"authors": [
 				"Frank DeStefano"
 			],
@@ -1030,7 +1027,6 @@
 		{
 			"id": "W98043794",
 			"title": "Vaccine adverse events: separating myth from reality.",
-			"override_seed": 0.7,
 			"authors": [
 				"Sanford R. Kimmel"
 			],
@@ -1094,7 +1090,7 @@
 		{
 			"id": "W2024046899",
 			"title": "Association of Autistic Spectrum Disorder and the Measles, Mumps, and Rubella Vaccine",
-			"override_seed": 0.4,
+			"override_seed": 0.3,
 			"authors": [
 				"Kumanan Wilson",
 				"Ed Mills",
@@ -1131,7 +1127,7 @@
 		{
 			"id": "W1996832957",
 			"title": "Autism and thimerosal-containing vaccines",
-			"override_seed": 0,
+			"override_seed": 0.4,
 			"authors": [
 				"Paul A. Stehr-Green",
 				"Peet Tüll",
@@ -1161,7 +1157,7 @@
 		{
 			"id": "W2101662070",
 			"title": "Epidemiology and Possible Causes of Autism",
-			"override_seed": 0.9,
+			"override_seed": 0.1,
 			"authors": [
 				"Hershel Jick",
 				"James A. Kaye"
@@ -1189,7 +1185,6 @@
 		{
 			"id": "W1985761653",
 			"title": "Measles-mumps-rubella vaccine and the development of autism",
-			"override_seed": 0.95,
 			"authors": [
 				"Elizabeth Miller"
 			],
@@ -1223,7 +1218,7 @@
 		{
 			"id": "W2164294804",
 			"title": "Measles-Mumps-Rubella Vaccine and the Development of Autism or Inflammatory Bowel Disease: The Controversy Should End",
-			"override_seed": 0.65,
+			"override_seed": 0.95,
 			"authors": [
 				"Jennifer D’Souza",
 				"Timothy J. Todd"
@@ -1258,7 +1253,6 @@
 		{
 			"id": "W2168921834",
 			"title": "Measles, mumps, rubella (MMR) vaccine",
-			"override_seed": 0.3,
 			"authors": [
 				"Anand Prakash Dubey",
 				"Sayantan Banerjee"
@@ -1293,7 +1287,7 @@
 		{
 			"id": "W2049587614",
 			"title": "MMR and autistic enterocolitis: consistent epidemiological failure to find an association",
-			"override_seed": 0,
+			"override_seed": 0.4,
 			"authors": [
 				"Éric Fombonne",
 				"Edwin H. Cook"
@@ -1328,7 +1322,6 @@
 		{
 			"id": "W2147918475",
 			"title": "Safety of Thimerosal-Containing Vaccines: A Two-Phased Study of Computerized Health Maintenance Organization Databases",
-			"override_seed": 0.4,
 			"authors": [
 				"Thomas Verstraeten",
 				"Robert L. Davis",
@@ -1358,7 +1351,7 @@
 		{
 			"id": "W2135364553",
 			"title": "There is little evidence that combined vaccination against measles, mumps, and rubella is associated with autism",
-			"override_seed": 0.85,
+			"override_seed": 0.7,
 			"authors": [
 				"Lee Tidmarsh"
 			],
@@ -1385,7 +1378,7 @@
 		{
 			"id": "W2054843027",
 			"title": "Thimerosal and Autism?",
-			"override_seed": 0.2,
+			"override_seed": 0,
 			"authors": [
 				"K. B. Nelson",
 				"Margaret L. Bauman"
@@ -1420,7 +1413,7 @@
 		{
 			"id": "W2135807836",
 			"title": "Thimerosal and the Occurrence of Autism: Negative Ecological Evidence From Danish Population-Based Data",
-			"override_seed": 0.6,
+			"override_seed": 0.3,
 			"authors": [
 				"Kreesten Meldgaard Madsen",
 				"Marlene Briciet Lauritsen",
@@ -1450,7 +1443,7 @@
 		{
 			"id": "W1992761557",
 			"title": "Unintended events following immunization with MMR: a systematic review",
-			"override_seed": 0.3,
+			"override_seed": 0.6,
 			"authors": [
 				"Tom Jefferson",
 				"Deirdre Price",
@@ -1487,7 +1480,7 @@
 		{
 			"id": "W2169567320",
 			"title": "Age at First Measles-Mumps-Rubella Vaccination in Children With Autism and School-Matched Control Subjects: A Population-Based Study in Metropolitan Atlanta",
-			"override_seed": 0.8,
+			"override_seed": 0,
 			"authors": [
 				"Frank DeStefano",
 				"Tanya Karapurkar Bhasin",
@@ -1517,7 +1510,7 @@
 		{
 			"id": "W2012804740",
 			"title": "Does the MMR triple vaccine cause autism?",
-			"override_seed": 0.35,
+			"override_seed": 0.6,
 			"authors": [
 				"Nitu Sengupta",
 				"Helen Bedford",
@@ -1554,6 +1547,7 @@
 		{
 			"id": "W2089329374",
 			"title": "Exploring the evidence surrounding the debate on MMR and autism",
+			"override_seed": 0.95,
 			"authors": [
 				"Edward Purssell"
 			],
@@ -1587,6 +1581,7 @@
 		{
 			"id": "W2516576737",
 			"title": "Immunization Safety Review: Vaccines and Autism",
+			"override_seed": 0.5,
 			"institution": {
 				"name": "National Academies of Sciences, Engineering, and Medicine",
 				"acronym": "NASEM"
@@ -1622,7 +1617,6 @@
 		{
 			"id": "W2004234014",
 			"title": "Immunizations, immunology, and autism",
-			"override_seed": 0,
 			"authors": [
 				"Michael Chez",
 				"Kathleen Chin",
@@ -1658,7 +1652,6 @@
 		{
 			"id": "W2087791351",
 			"title": "MMR Vaccination and Autism",
-			"override_seed": 0,
 			"authors": [
 				"Kreesten Meldgaard Madsen",
 				"Mogens Vestergaard"
@@ -1693,7 +1686,7 @@
 		{
 			"id": "W2107557001",
 			"title": "MMR vaccination and pervasive developmental disorders: a case-control study",
-			"override_seed": 0.7,
+			"override_seed": 0.95,
 			"authors": [
 				"Liam Smeeth",
 				"Claire Cook",
@@ -1723,7 +1716,7 @@
 		{
 			"id": "W2060711003",
 			"title": "MMR vaccine and autism: an update of the scientific evidence",
-			"override_seed": 0.6,
+			"override_seed": 0,
 			"authors": [
 				"Frank DeStefano",
 				"W. Thompson"
@@ -1758,7 +1751,6 @@
 		{
 			"id": "W2108528265",
 			"title": "Neurotoxic effects of postnatal thimerosal are mouse strain dependent",
-			"override_seed": 0.9,
 			"authors": [
 				"Mady Hornig",
 				"David Chian",
@@ -1827,7 +1819,7 @@
 		{
 			"id": "W2110166769",
 			"title": "Relationship Between MMR Vaccine and Autism",
-			"override_seed": 0.95,
+			"override_seed": 0.4,
 			"authors": [
 				"Kristin C. Klein",
 				"Emily B Diehl"
@@ -1862,7 +1854,7 @@
 		{
 			"id": "W2093914065",
 			"title": "Review: existing epidemiological evidence does not show an association between mumps, measles, and rubella vaccination and autism",
-			"override_seed": 0.45,
+			"override_seed": 0.95,
 			"authors": [
 				"Susan M. Jack"
 			],
@@ -1896,7 +1888,7 @@
 		{
 			"id": "W2100810138",
 			"title": "Thimerosal Exposure in Infants and Developmental Disorders: A Prospective Cohort Study in the United Kingdom Does Not Support a Causal Association",
-			"override_seed": 0.5,
+			"override_seed": 0.95,
 			"authors": [
 				"Jon Heron",
 				"Jean Golding"
@@ -1924,7 +1916,7 @@
 		{
 			"id": "W2149103321",
 			"title": "Thimerosal Exposure in Infants and Developmental Disorders: A Retrospective Cohort Study in the United Kingdom Does Not Support a Causal Association",
-			"override_seed": 0.95,
+			"override_seed": 0.3,
 			"authors": [
 				"Nick Andrews",
 				"Elizabeth Miller",
@@ -1954,7 +1946,7 @@
 		{
 			"id": "W2169021074",
 			"title": "Thimerosal-Containing Vaccines and Autistic Spectrum Disorder: A Critical Review of Published Original Data",
-			"override_seed": 0.1,
+			"override_seed": 0.95,
 			"authors": [
 				"Sarah K. Parker",
 				"Benjamin Schwartz",
@@ -1991,7 +1983,6 @@
 		{
 			"id": "W2109213804",
 			"title": "Aetiology of autism: findings and questions",
-			"override_seed": 0.4,
 			"authors": [
 				"Michael Rutter"
 			],
@@ -2025,7 +2016,7 @@
 		{
 			"id": "W1975331319",
 			"title": "No effect of MMR withdrawal on the incidence of autism: a total population study",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Hideo Honda",
 				"Yasuo Shimizu",
@@ -2054,7 +2045,6 @@
 		{
 			"id": "W2076695337",
 			"title": "Review: vaccines containing thimerosal are not associated with autistic spectrum disorders in children",
-			"override_seed": 0.45,
 			"authors": [
 				"William M. McMahon"
 			],
@@ -2088,7 +2078,7 @@
 		{
 			"id": "W2128594986",
 			"title": "Immunizations and Autism: A Review of the Literature",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Asif Doja",
 				"Wendy Roberts"
@@ -2123,7 +2113,7 @@
 		{
 			"id": "W2000764724",
 			"title": "Is There a ‘Regressive Phenotype’ of Autism Spectrum Disorder Associated with the Measles-Mumps-Rubella Vaccine? A CPEA Study",
-			"override_seed": 0,
+			"override_seed": 0.2,
 			"authors": [
 				"Jennifer Richler",
 				"Rhiannon Luyster",
@@ -2211,7 +2201,7 @@
 		{
 			"id": "W2123149325",
 			"title": "Postlicensure epidemiology of childhood vaccination: the Danish experience",
-			"override_seed": 0.8,
+			"override_seed": 0.6,
 			"authors": [
 				"Anders Hviid"
 			],
@@ -2245,7 +2235,7 @@
 		{
 			"id": "W1994489056",
 			"title": "Vaccines and the changing epidemiology of autism",
-			"override_seed": 0.45,
+			"override_seed": 0.95,
 			"authors": [
 				"Brent Taylor"
 			],
@@ -2351,7 +2341,6 @@
 		{
 			"id": "W1985888104",
 			"title": "Lack of association between Rh status, Rh immune globulin in pregnancy and autism",
-			"override_seed": 0.2,
 			"authors": [
 				"Judith H. Miles",
 				"Tomoo Takahashi"
@@ -2379,7 +2368,7 @@
 		{
 			"id": "W2118638832",
 			"title": "Low-Level Neonatal Thimerosal Exposure: Further Evaluation of Altered Neurotoxic Potential in SJL Mice",
-			"override_seed": 0.1,
+			"override_seed": 0.95,
 			"authors": [
 				"Robert F. Berman",
 				"Isaac N. Pessah",
@@ -2409,7 +2398,7 @@
 		{
 			"id": "W1978204736",
 			"title": "Vaccination, seizures and 'vaccine damage'",
-			"override_seed": 0.75,
+			"override_seed": 0.7,
 			"authors": [
 				"Natasha J. Brown",
 				"Samuel F. Berkovic",
@@ -2445,7 +2434,7 @@
 		{
 			"id": "W2132122848",
 			"title": "Vaccines and Autism: Evidence Does Not Support a Causal Association",
-			"override_seed": 0.45,
+			"override_seed": 0.95,
 			"authors": [
 				"Frank DeStefano"
 			],
@@ -2479,7 +2468,6 @@
 		{
 			"id": "W2005250252",
 			"title": "Continuing Increases in Autism Reported to California's Developmental Services System",
-			"override_seed": 0,
 			"authors": [
 				"R. S. Schechter",
 				"Judith K. Grether"
@@ -2507,7 +2495,6 @@
 		{
 			"id": "W2153492790",
 			"title": "Lack of Association between Measles Virus Vaccine and Autism with Enteropathy: A Case-Control Study",
-			"override_seed": 0.2,
 			"authors": [
 				"Mady Hornig",
 				"Thomas Briese",
@@ -2537,7 +2524,7 @@
 		{
 			"id": "W2149225338",
 			"title": "Measles vaccination and antibody response in autism spectrum disorders",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Gillian Baird",
 				"Andrew Pickles",
@@ -2567,7 +2554,6 @@
 		{
 			"id": "W2094580611",
 			"title": "Regression of language and non‐language skills in pervasive developmental disorders",
-			"override_seed": 0.3,
 			"authors": [
 				"Alain Meilleur",
 				"Éric Fombonne"
@@ -2595,7 +2581,7 @@
 		{
 			"id": "W1966243205",
 			"title": "Are Neuropathological Conditions Relevant to Ethylmercury Exposure?",
-			"override_seed": 0.55,
+			"override_seed": 0.2,
 			"authors": [
 				"Michael Aschner",
 				"Sandra Ceccatelli"
@@ -2630,7 +2616,7 @@
 		{
 			"id": "W2101343552",
 			"title": "Autism and Vaccination - The Current Evidence",
-			"override_seed": 0.5,
+			"override_seed": 0,
 			"authors": [
 				"Lisa Miller",
 				"Joni Reynolds"
@@ -2700,7 +2686,7 @@
 		{
 			"id": "W2116891078",
 			"title": "Vaccines and Autism: A Tale of Shifting Hypotheses",
-			"override_seed": 0,
+			"override_seed": 0.4,
 			"authors": [
 				"Jeffrey S. Gerber",
 				"Paul A. Offit"
@@ -2735,7 +2721,7 @@
 		{
 			"id": "W2101325975",
 			"title": "Closer look at autism and the measles-mumps-rubella vaccine",
-			"override_seed": 0.95,
+			"override_seed": 0.6,
 			"authors": [
 				"Emily Hensley",
 				"Leslie Briars"
@@ -2770,7 +2756,7 @@
 		{
 			"id": "W2142378755",
 			"title": "Does thimerosal or other mercury exposure increase the risk for autism? A review of current literature.",
-			"override_seed": 0.3,
+			"override_seed": 0,
 			"authors": [
 				"Stephen Schultz"
 			],
@@ -2804,7 +2790,7 @@
 		{
 			"id": "W1965589730",
 			"title": "Hepatitis B Vaccination of Male Neonates and Autism Diagnosis, NHIS 1997–2002",
-			"override_seed": 0.6,
+			"override_seed": 0,
 			"authors": [
 				"Carolyn M. Gallagher",
 				"Melody S. Goodman"
@@ -2835,7 +2821,7 @@
 		{
 			"id": "W2011584144",
 			"title": "Lack of Association Between Measles-Mumps-Rubella Vaccination and Autism in Children",
-			"override_seed": 0.1,
+			"override_seed": 0.65,
 			"authors": [
 				"Dorota Mrozek‐Budzyn",
 				"Agnieszka Kiełtyka",
@@ -2864,7 +2850,7 @@
 		{
 			"id": "W2060010041",
 			"title": "MMR vaccine and autism: Is there a link?",
-			"override_seed": 0.45,
+			"override_seed": 0.95,
 			"authors": [
 				"Melissa L. Kemp",
 				"Benjamin L. Hart"
@@ -2899,7 +2885,7 @@
 		{
 			"id": "W2162067829",
 			"title": "On-time Vaccine Receipt in the First Year Does Not Adversely Affect Neuropsychological Outcomes",
-			"override_seed": 0.8,
+			"override_seed": 0.2,
 			"authors": [
 				"Michael J. Smith",
 				"Charles R. Woods"
@@ -2927,7 +2913,7 @@
 		{
 			"id": "W2119967425",
 			"title": "Prenatal and Infant Exposure to Thimerosal From Vaccines and Immunoglobulins and Risk of Autism",
-			"override_seed": 0.9,
+			"override_seed": 0.4,
 			"authors": [
 				"Cristofer Price",
 				"W. Thompson",
@@ -2957,7 +2943,7 @@
 		{
 			"id": "W164401598",
 			"title": "Prevalence of Pervasive Developmental Disorders among Children at the English Montreal School Board",
-			"override_seed": 0,
+			"override_seed": 0.95,
 			"authors": [
 				"Tamara Lazoff",
 				"Lihong Zhong",
@@ -3058,7 +3044,6 @@
 		{
 			"id": "W2093150351",
 			"title": "What causes autism? Exploring the environmental contribution",
-			"override_seed": 0,
 			"authors": [
 				"Philip J. Landrigan"
 			],
@@ -3092,7 +3077,7 @@
 		{
 			"id": "W119668077",
 			"title": "What Every Behavior Analyst Should Know About the “MMR Causes Autism” Hypothesis",
-			"override_seed": 0.7,
+			"override_seed": 0.3,
 			"authors": [
 				"William H. Ahearn"
 			],
@@ -3158,7 +3143,7 @@
 		{
 			"id": "W2169212303",
 			"title": "Do aluminum vaccine adjuvants contribute to the rising prevalence of autism?",
-			"override_seed": 0.6,
+			"override_seed": 0,
 			"authors": [
 				"Lucija Tomljenovic",
 				"Christopher A. Shaw"
@@ -3196,7 +3181,6 @@
 		{
 			"id": "W2118808350",
 			"title": "Theoretical aspects of autism: Causes - A review",
-			"override_seed": 0,
 			"authors": [
 				"Helen V. Ratajczak"
 			],
@@ -3236,6 +3220,7 @@
 		{
 			"id": "W4253880250",
 			"title": "Adverse Effects of Vaccines: Evidence and Causality",
+			"override_seed": 0,
 			"institution": {
 				"name": "National Academies of Sciences, Engineering, and Medicine",
 				"acronym": "NASEM"
@@ -3388,7 +3373,7 @@
 		{
 			"id": "W1995205529",
 			"title": "Aluminum in the central nervous system (CNS): toxicity in humans and animals, vaccine adjuvants, and autoimmunity",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"C. Shaw",
 				"Lucija Tomljenovic"
@@ -3430,6 +3415,7 @@
 		{
 			"id": "W2120272491",
 			"title": "Increasing Exposure to Antibody-Stimulating Proteins and Polysaccharides in Vaccines Is Not Associated with Risk of Autism",
+			"override_seed": 0,
 			"authors": [
 				"Frank DeStefano",
 				"Cristofer Price",
@@ -3458,7 +3444,6 @@
 		{
 			"id": "W85874538",
 			"title": "Response to measles-mumps-rubella vaccine in children with autism spectrum disorders.",
-			"override_seed": 0.9,
 			"authors": [
 				"Ivan Gentile",
 				"Carmela Bravaccio",
@@ -3488,6 +3473,7 @@
 		{
 			"id": "W4212918779",
 			"title": "The Childhood Immunization Schedule and Safety: Stakeholder Concerns, Scientific Evidence, and Future Studies",
+			"override_seed": 0.95,
 			"institution": {
 				"name": "National Academies of Sciences, Engineering, and Medicine",
 				"acronym": "NASEM"
@@ -3559,7 +3545,6 @@
 		{
 			"id": "W2163400119",
 			"title": "Measles-mumps-rubella vaccination timing and autism among young african american boys: a reanalysis of CDC data",
-			"override_seed": 0.9,
 			"authors": [
 				"Brian S. Hooker"
 			],
@@ -3607,6 +3592,7 @@
 		{
 			"id": "W2139237735",
 			"title": "Safety of Vaccines Used for Routine Immunization of US Children: A Systematic Review",
+			"override_seed": 0.95,
 			"authors": [
 				"Margaret Maglione",
 				"Lopamudra Das",
@@ -3643,6 +3629,7 @@
 		{
 			"id": "W2025926911",
 			"title": "Vaccines are not associated with autism: An evidence-based meta-analysis of case-control and cohort studies",
+			"override_seed": 0,
 			"authors": [
 				"Luke Taylor",
 				"Amy L. Swerdfeger",
@@ -3678,6 +3665,7 @@
 		{
 			"id": "W2118818309",
 			"title": "Administration of thimerosal-containing vaccines to infant rhesus macaques does not result in autism-like behavior or neuropathology",
+			"override_seed": 0.5,
 			"authors": [
 				"Bharathi S. Gadad",
 				"Wenhao Li",
@@ -3707,7 +3695,7 @@
 		{
 			"id": "W2169082498",
 			"title": "Autism Occurrence by MMR Vaccine Status Among US Children With Older Siblings With and Without Autism",
-			"override_seed": 0.4,
+			"override_seed": 0.95,
 			"authors": [
 				"Anjali Jain",
 				"Jaclyn Marshall",
@@ -3737,6 +3725,7 @@
 		{
 			"id": "W2035969458",
 			"title": "Early exposure to the combined measles-mumps-rubella vaccine and thimerosal-containing vaccines and risk of autism spectrum disorder",
+			"override_seed": 0.95,
 			"authors": [
 				"Yota Uno",
 				"Tokio Uchiyama",
@@ -3829,6 +3818,7 @@
 		{
 			"id": "W2289472719",
 			"title": "Annual Research Review: The role of the environment in the developmental psychopathology of autism spectrum condition",
+			"override_seed": 0.3,
 			"authors": [
 				"William Mandy",
 				"Meng‐Chuan Lai"
@@ -3863,7 +3853,7 @@
 		{
 			"id": "W2557810093",
 			"title": "Association Between Influenza Infection and Vaccination During Pregnancy and Risk of Autism Spectrum Disorder",
-			"override_seed": 0.9,
+			"override_seed": 0.5,
 			"authors": [
 				"Ousseny Zerbo",
 				"Yinge Qian",
@@ -3893,7 +3883,7 @@
 		{
 			"id": "W2528957557",
 			"title": "Measles and Measles Vaccination",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Johan C. Bester"
 			],
@@ -3927,7 +3917,7 @@
 		{
 			"id": "W2270516658",
 			"title": "Parental report of vaccine receipt in children with autism spectrum disorder: Do rates differ by pattern of ASD onset?",
-			"override_seed": 0,
+			"override_seed": 0.1,
 			"authors": [
 				"Robin P. Goin‐Kochel",
 				"Sarah S. Mire",
@@ -3992,7 +3982,6 @@
 		{
 			"id": "W2594100684",
 			"title": "Increased risk for an atypical autism diagnosis following Thimerosal-containing vaccine exposure in the United States: A prospective longitudinal case-control study in the Vaccine Safety Datalink",
-			"override_seed": 0.9,
 			"authors": [
 				"David A. Geier",
 				"Janet K. Kern",
@@ -4090,7 +4079,7 @@
 		},
 		{
 			"title": "Vaccine Adverse Events: Separating Myth from Reality",
-			"override_seed": 0.45,
+			"override_seed": 0.2,
 			"authors": [
 				"Jeanne P Spencer",
 				"Ruth H Trondsen Pawlowski",
@@ -4126,7 +4115,7 @@
 		{
 			"id": "W2796325751",
 			"title": "Adverse events of vaccines and the consequences of non-vaccination: a critical review",
-			"override_seed": 0.5,
+			"override_seed": 0.2,
 			"authors": [
 				"Luana Raposo de Melo Moraes Aps",
 				"Marco Aurélio Floriano Piantola",
@@ -4163,7 +4152,6 @@
 		{
 			"id": "W2794301251",
 			"title": "Current status of vaccines in psychiatry - A narrative review",
-			"override_seed": 0.3,
 			"authors": [
 				"Pooja Patnaik Kuppili",
 				"Harshini Manohar",
@@ -4199,7 +4187,7 @@
 		{
 			"id": "W2887748904",
 			"title": "Prenatal Tetanus, Diphtheria, Acellular Pertussis Vaccination and Autism Spectrum Disorder",
-			"override_seed": 0,
+			"override_seed": 0.9,
 			"authors": [
 				"Tracy A. Becerra-Culqui",
 				"Darios Getahun",
@@ -4229,7 +4217,6 @@
 		{
 			"id": "W2906413783",
 			"title": "The contribution of environmental exposure to the etiology of autism spectrum disorder",
-			"override_seed": 0.3,
 			"authors": [
 				"Sven Bölte",
 				"Sonya Girdler",
@@ -4265,7 +4252,7 @@
 		{
 			"id": "W2971524645",
 			"title": "Measles, Mumps, Rubella Vaccination and Autism",
-			"override_seed": 0.2,
+			"override_seed": 0.7,
 			"authors": [
 				"Anders Hviid",
 				"Jørgen Vinsløv Hansen",
@@ -4295,7 +4282,7 @@
 		{
 			"id": "W4376522559",
 			"title": "Measles, Mumps, Rubella Vaccination and Autism",
-			"override_seed": 0.9,
+			"override_seed": 0.65,
 			"authors": [
 				"Anders Hviid",
 				"Jørgen Vinsløv Hansen",
@@ -4325,7 +4312,7 @@
 		{
 			"id": "W2912136724",
 			"title": "Principal Controversies in Vaccine Safety in the United States",
-			"override_seed": 0.5,
+			"override_seed": 0.1,
 			"authors": [
 				"Frank DeStefano",
 				"Heather Monk Bodenstab",
@@ -4361,7 +4348,7 @@
 		{
 			"id": "W2937418321",
 			"title": "The MMR Vaccine and Autism",
-			"override_seed": 0,
+			"override_seed": 0.5,
 			"authors": [
 				"Frank DeStefano",
 				"Tom T. Shimabukuro"
@@ -4396,7 +4383,7 @@
 		{
 			"id": "W3082342448",
 			"title": "Maternal Influenza A(H1N1) Immunization During Pregnancy and Risk for Autism Spectrum Disorder in Offspring",
-			"override_seed": 0.9,
+			"override_seed": 0,
 			"authors": [
 				"Jonas F. Ludvigsson",
 				"Henric Winell",
@@ -4426,7 +4413,6 @@
 		{
 			"id": "W3007186753",
 			"title": "Multiple Risk Factors: A Challenge in the Management of Autism",
-			"override_seed": 0.35,
 			"authors": [
 				"Muhammad Shahid Nadeem",
 				"Fahad A. Al‐Abbasi",
@@ -4463,7 +4449,7 @@
 		{
 			"id": "W3002868191",
 			"title": "The science of vaccine safety: Summary of meeting at Wellcome Trust",
-			"override_seed": 0,
+			"override_seed": 0.2,
 			"authors": [
 				"Stanley A. Plotkin",
 				"Paul A. Offit",
@@ -4500,6 +4486,7 @@
 		{
 			"id": "W3010721747",
 			"title": "Vaccine Safety: Myths and Misinformation",
+			"override_seed": 0.7,
 			"authors": [
 				"Sarah Geoghegan",
 				"Kevin O’Callaghan",
@@ -4535,7 +4522,6 @@
 		{
 			"id": "W3171061226",
 			"title": "Review: Vaccine Myth-Buster - Cleaning Up With Prejudices and Dangerous Misinformation",
-			"override_seed": 0.8,
 			"authors": [
 				"Paul Löffler"
 			],
@@ -4602,7 +4588,7 @@
 		{
 			"id": "W3164160246",
 			"title": "Safety of vaccines used for routine immunization in the United States: An updated systematic review and meta-analysis",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Courtney A. Gidengil",
 				"Matthew Bidwell Goetz",
@@ -4639,7 +4625,7 @@
 		{
 			"id": "W4200299284",
 			"title": "The myth of vaccination and autism spectrum",
-			"override_seed": 0.3,
+			"override_seed": 0.2,
 			"authors": [
 				"Lidia V. Gabis",
 				"Odelia Leon Attia",
@@ -4676,7 +4662,7 @@
 		{
 			"id": "W3163446107",
 			"title": "Vaccine safety issues at the turn of the 21st century",
-			"override_seed": 0.9,
+			"override_seed": 0.95,
 			"authors": [
 				"Laura Conklin",
 				"Anders Hviid",
@@ -4750,6 +4736,7 @@
 		{
 			"id": "W4291635189",
 			"title": "Does Vaccination Increase the Risk of Autism Spectrum Disorder?",
+			"override_seed": 0.95,
 			"authors": [
 				"Shaza A Mohammed",
 				"Shriya Rajashekar",
@@ -4786,7 +4773,6 @@
 		{
 			"id": "W4213109302",
 			"title": "Prenatal Influenza Vaccination or Influenza Infection and Autism Spectrum Disorder in Offspring",
-			"override_seed": 0.9,
 			"authors": [
 				"Tracy A. Becerra-Culqui",
 				"Darios Getahun",
