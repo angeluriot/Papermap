@@ -102,7 +102,7 @@
 			onkeydown={null} role="button" tabindex={0}
 		>
 			<input
-				type="text" placeholder="{placeholder}" bind:value={search}
+				type="text" spellcheck="false" placeholder="{placeholder}" bind:value={search}
 				class="rounded-full relative bg-white mb-[1.7em] z-20"
 				style="{search_element?.shown() ? 'border-radius: 1.6em 1.6em 0em 0em;' : 'border-radius: 1.6em;'}"
 			>
