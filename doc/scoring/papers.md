@@ -4,7 +4,7 @@ This page explains how paper scores are calculated in **Papermap**. Feel free to
 
 To calculate a paper's score, each of the following attributes is first evaluated on a `0`–`1` scale:
 
-## 📋 Summary
+### Summary
 
 * **[Year](#year)**
 * **[Journal](#journal)**
@@ -19,7 +19,7 @@ To calculate a paper's score, each of the following attributes is first evaluate
 * **[Notes](#notes)**
 * **[Publication bias](#publication-bias)**
 
-## [Year](/doc/contribute/papers.md#year)
+### [Year](/doc/contribute/papers.md#year)
 
 #### Why?
 
@@ -64,7 +64,7 @@ score_{year} = \min\!\left(\max\!\left(\dfrac{year-1950}{year_{now}-1950},\, 0\r
 	</tbody>
 </table>
 
-## [Journal](/doc/contribute/papers.md#journal)
+### [Journal](/doc/contribute/papers.md#journal)
 
 #### Why?
 
@@ -144,7 +144,7 @@ Here are the top 10 journals with the highest scores:
 	</tbody>
 </table>
 
-## [Citations](/doc/contribute/papers.md#citations)
+### [Citations](/doc/contribute/papers.md#citations)
 
 #### Why?
 
@@ -218,7 +218,7 @@ The direct / indirect score is set to `1` if the paper provides direct evidence 
 	</tbody>
 </table>
 
-## Review
+### Review
 
 #### Why?
 
@@ -319,7 +319,7 @@ Both parts are then multiplied to get the final review score.
 	</tbody>
 </table>
 
-## [Study type](/doc/contribute/papers.md#study-type)
+### [Study type](/doc/contribute/papers.md#study-type)
 
 #### Why?
 
@@ -416,7 +416,7 @@ The study type score is set based on the type of study, if the map question is a
 	</tbody>
 </table>
 
-## [Blinding method](/doc/contribute/papers.md#blinding-method)
+### [Blinding method](/doc/contribute/papers.md#blinding-method)
 
 #### Why?
 
@@ -457,7 +457,7 @@ The blinding score is set based on the blinding method used in the study.
 	</tbody>
 </table>
 
-## [Sample size](/doc/contribute/papers.md#sample-size)
+### [Sample size](/doc/contribute/papers.md#sample-size)
 
 #### Why?
 
@@ -520,7 +520,7 @@ score_{sample~size} = \dfrac{\dfrac{sample~size}{scale}}{\dfrac{sample~size}{sca
 	</tbody>
 </table>
 
-## [P-value](/doc/contribute/papers.md#p-value)
+### [P-value](/doc/contribute/papers.md#p-value)
 
 #### Why?
 
@@ -565,7 +565,7 @@ score_p = \left(1 - \min\!\left(\max\!\left(\dfrac{p \times \begin{cases} 0.5 & 
 	</tbody>
 </table>
 
-## [Conflict of interest](/doc/contribute/papers.md#conflict-of-interest)
+### [Conflict of interest](/doc/contribute/papers.md#conflict-of-interest)
 
 #### Why?
 
@@ -598,7 +598,7 @@ The conflict of interest score is set based on the presence and importance of an
 	</tbody>
 </table>
 
-## [Notes](/doc/contribute/papers.md#notes)
+### [Notes](/doc/contribute/papers.md#notes)
 
 #### Why?
 
@@ -633,7 +633,7 @@ Each note has an impact on the final score set by hand.
 
 
 
-## Publication bias
+### Publication bias
 
 #### Why?
 
@@ -662,7 +662,7 @@ The publication bias score is set to `1` if the paper has negative or non-signif
 
 <br/>
 
-# 🧮 Final score calculation
+## 🧮 Final score calculation
 
 A paper always starts with a base score of `1`, then each of the above attributes (if not ignored) will impact it positively or negatively based on their score like so:
 
@@ -957,6 +957,6 @@ If you have any feedback or suggestions about this calculation, please tell us i
 
 <br/>
 
-# 📊 Statistics
+## 📊 Statistics
 
 You can see the distribution of paper scores and individual attributes values / scores on the **[Statistics](https://papermap.org/statistics)** page of the website.

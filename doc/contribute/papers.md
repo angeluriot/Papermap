@@ -8,7 +8,7 @@ When adding a paper (by clicking on the `➕` button), you first need to enter i
 
 Here is a list of the fields:
 
-## 📋 Summary
+### Summary
 
 * **[Title*](#title)**
 * **[Is an institutional report](#is-an-institutional-report)**
@@ -36,7 +36,7 @@ Here is a list of the fields:
 * **[Conflict of interest](#conflict-of-interest)**
 * **[Notes](#notes)**
 
-## Title*
+### Title*
 
 The title of the paper.
 
@@ -55,7 +55,7 @@ The title of the paper.
 
 * If multiple versions exist, use the latest one (including changes like `RETRACTED: ...`)
 
-## Is an institutional report
+### Is an institutional report
 
 Whether the paper is a report from an institution (a health agency or a government authority for example).
 
@@ -83,7 +83,7 @@ Whether the paper is a report from an institution (a health agency or a governme
 	* `Yes`: the paper is a report from an institution (a health agency or a government authority for example)
 	* `No`: the paper is not a report from an institution
 
-## Institution name
+### Institution name
 
 The name of the institution that authored the paper.
 
@@ -106,7 +106,7 @@ The name of the institution that authored the paper.
 
 * For example: "European Food Safety Authority"
 
-## Institution acronym
+### Institution acronym
 
 The acronym (or abbreviation) of the institution that authored the paper.
 
@@ -129,7 +129,7 @@ The acronym (or abbreviation) of the institution that authored the paper.
 
 * For example: "EFSA"
 
-## Authors*
+### Authors*
 
 The authors of the paper (if not an institution).
 
@@ -152,7 +152,7 @@ The authors of the paper (if not an institution).
 
 * At least `1`, no more than `4` (keep the original order)
 
-## Year*
+### Year*
 
 The year the paper was published.
 
@@ -174,7 +174,7 @@ The year the paper was published.
 	</tbody>
 </table>
 
-## Link*
+### Link*
 
 A link to the paper.
 
@@ -193,7 +193,7 @@ A link to the paper.
 
 * Prefer a DOI link, use another link only if no DOI is available
 
-## Has been published*
+### Has been published*
 
 Whether the paper has been published in a journal or not.
 
@@ -222,7 +222,7 @@ Whether the paper has been published in a journal or not.
 	* `No`: the paper is a preprint (or an institutional report), it has not been published in a journal yet
 
 
-## Journal*
+### Journal*
 
 The journal where the paper was published.
 
@@ -246,7 +246,7 @@ The journal where the paper was published.
 
 * Search for the journal using its name, if you can't find it, select `(Not found)`
 
-## Retracted*
+### Retracted*
 
 Whether the journal retracted the paper or not.
 
@@ -269,7 +269,7 @@ Whether the journal retracted the paper or not.
 
 * If you don't know, leave it unchecked
 
-## Citations*
+### Citations*
 
 The number of times the paper has been cited by other papers.
 
@@ -293,7 +293,7 @@ The number of times the paper has been cited by other papers.
 
 * If it was not auto-filled and you cannot find the value, put `0`
 
-## Previous consensus
+### Previous consensus
 
 The consensus in the literature at the time according to the paper about the map question.
 
@@ -329,7 +329,7 @@ The consensus in the literature at the time according to the paper about the map
 * If the paper does not mention previous work, select `(Not specified)`
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## Paper result
+### Paper result
 
 The result / conclusion of the paper about the map question.
 
@@ -359,7 +359,7 @@ The result / conclusion of the paper about the map question.
 
 * The selected **previous consensus** can have an effect on the available options, for example if the **previous consensus** is  `No`, the **paper result** will not have a `Yes` option but a `Yes unlike literature` option instead
 
-## Indirect result
+### Indirect result
 
 Whether the conclusion of the paper about the map question is based on indirect evidence or not.
 
@@ -378,7 +378,7 @@ Whether the conclusion of the paper about the map question is based on indirect 
 
 * If you don't know, leave it unchecked
 
-## Quote
+### Quote
 
 A short excerpt from the paper supporting the selected **paper result**.
 
@@ -398,7 +398,7 @@ A short excerpt from the paper supporting the selected **paper result**.
 * You can use `[...]` to keep it short
 * Do not put quotes around the text, they will be added automatically
 
-## Review type
+### Review type
 
 The type of literature review, if the paper is one.
 
@@ -434,7 +434,7 @@ The type of literature review, if the paper is one.
 * If the paper is a literature review but you don't know the type, select `Narrative review`
 * If several types are mentioned, select the last one (for example, if it is a systematic review and a meta-analysis, select `Meta-analysis`)
 
-## Review of reviews
+### Review of reviews
 
 Whether most of the reviewed papers are literature reviews or not (if the paper is a literature review).
 
@@ -457,7 +457,7 @@ Whether most of the reviewed papers are literature reviews or not (if the paper 
 	</tbody>
 </table>
 
-## Number of papers included
+### Number of papers included
 
 The number of papers included in the literature review (if the paper is one).
 
@@ -491,7 +491,7 @@ The number of papers included in the literature review (if the paper is one).
 * If the number of papers included is not specified, give an approximation
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## Minor topic
+### Minor topic
 
 Whether the question of the map is the main subject of the review or only a small portion of the papers included are actually used to answer it.
 
@@ -516,7 +516,7 @@ Whether the question of the map is the main subject of the review or only a smal
 
 * If you don't know, leave it unchecked
 
-## Study type
+### Study type
 
 The type of study / experiment described in the paper (or the reviewed papers if it's a literature review).
 
@@ -573,7 +573,7 @@ The type of study / experiment described in the paper (or the reviewed papers if
 * If the paper is a literature review of literature reviews, use the initial non-review papers
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## Blinding method
+### Blinding method
 
 The blinding method used in the study (if any).
 
@@ -618,7 +618,7 @@ The blinding method used in the study (if any).
 * If the paper is a literature review of literature reviews, use the initial non-review papers
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## Sample size
+### Sample size
 
 The number of participants in the study.
 
@@ -655,7 +655,7 @@ The number of participants in the study.
 * If the sample size is not specified, select `(Not specified)`
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## P-value
+### P-value
 
 The chance of observing the same results if there is no real effect, a low p-value indicates that the results are statistically significant.
 
@@ -692,7 +692,7 @@ The chance of observing the same results if there is no real effect, a low p-val
 * If the p-value is not specified, select `(Not specified)`
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## Conflict of interest
+### Conflict of interest
 
 Whether the authors of the paper have any conflict of interest.
 
@@ -730,7 +730,7 @@ Whether the authors of the paper have any conflict of interest.
 * If the authors lied, select `Yes` and add a **[note](#notes)** with a link to a source that proves it
 * If you don't have access to the full text of the paper and the abstract does not help, select `(No access)`
 
-## Notes
+### Notes
 
 Additional information about the paper.
 
@@ -808,5 +808,29 @@ Then click on the `Submit` button, this will redirect you to a GitHub Pull Reque
 If you did this locally, you will have an `Apply locally` button to apply the changes to your local copy of the repository that you can then commit and push yourself to create the Pull Request.
 
 Once the Pull Request is created, it will be reviewed by a maintainer and merged if everything is correct.
+
+<br/>
+
+## ⛔ Limitations
+
+**Papermap** aims to be as unbiased as possible, therefore moderation is kept to a minimum and any scientific paper that answers the map question can be added, even if unpublished, retracted, or inaccessible. However, the way the website works does require a few rules to prevent certain abuses:
+
+### No duplicate papers
+
+A paper can only appear once on a map, even if it has multiple versions (preprint, published, updated, etc.), to avoid artificially increasing its weight.
+
+### No isolated preprints
+
+Preprints can be added to **Papermap**, but only if they have been cited by at least one peer-reviewed paper. This ensures that no one can create lots of fake preprints (which are technically just PDF files) to spam a map. The same rule applies to papers published in a journal not found in the **Papermap** database.
+
+### No author spam
+
+The same author (or institution) cannot have more than `3` papers with a score below `0.25` on the same map. This prevents authors (or institutions) from spamming a topic with low-quality papers to influence the consensus.
+
+### No journal spam
+
+The same journal cannot have more than `5` papers with a score below `0.25` on the same map. This prevents journals from publishing lots of low-quality papers on a topic to influence the consensus.
+
+<br/>
 
 If you encounter any issues, feel free to ask in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.

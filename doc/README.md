@@ -9,6 +9,8 @@ Feel free to join the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you
 	* [🛠️ Installation](/README.md#%EF%B8%8F-install)
 	* [🙏 Credits](/README.md#-credits)
 
+* **[🤔 Why Papermap?](/doc/why.md)**
+
 * **[🧮 How are scores calculated?](/doc/scoring/README.md)**
 	* [📊 How are journals scored?](https://github.com/angeluriot/Papermap-data#-metrics)
 	* [🏆 How are maps scored?](/doc/scoring/maps.md)
