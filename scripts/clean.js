@@ -3,6 +3,7 @@ import { join } from 'node:path';
 
 
 const TMP_DIR_PATH = join(process.cwd(), 'tmp');
+const LOG_FILE_PATH = join(process.cwd(), 'newrelic_agent.log');
 const ENV_PATH = join(process.cwd(), '.env');
 const ENV_TEMPLATE_PATH = join(process.cwd(), '.env.template');
 
@@ -35,6 +36,13 @@ async function empty_dir(dir_path)
 }
 
 
+async function delete_file_if_exist(file_path)
+{
+	if (await exist(file_path))
+		await fs.rm(file_path, { force: true });
+}
+
+
 async function create_env_if_not_exist()
 {
 	if (!await exist(ENV_PATH))
@@ -44,4 +52,5 @@ async function create_env_if_not_exist()
 
 await create_dir_if_not_exist(TMP_DIR_PATH);
 await empty_dir(TMP_DIR_PATH);
+await delete_file_if_exist(LOG_FILE_PATH);
 await create_env_if_not_exist();
