@@ -30,9 +30,9 @@
 			if (paper.edit === Edit.Added)
 				body.edits.added.push(paper_to_datapaper(paper));
 			else if (paper.edit === Edit.Edited)
-				body.edits.edited[`${paper.index}`] = paper_to_datapaper(paper);
+				body.edits.edited[paper.uuid] = paper_to_datapaper(paper);
 			else if (paper.edit === Edit.Deleted)
-				body.edits.deleted.push(paper.index);
+				body.edits.deleted.push(paper.uuid);
 		}
 
 		if (comment.trim().length > 0)

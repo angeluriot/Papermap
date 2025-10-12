@@ -2,26 +2,32 @@ import type { Edits } from './types';
 import { sort_paper_attributes } from '$lib/server/data/paper';
 import type { DataMap } from '$lib/types/map';
 import type { DataPaper } from '$lib/types/paper';
+import { get_uuid } from '$lib/utils';
 
 
 export async function edit_map(map: DataMap, edits: Edits): Promise<DataMap>
 {
 	let papers: DataPaper[] = [];
 
-	for (let i = 0; i < map.papers.length; i++)
+	for (const paper of map.papers)
 	{
-		if (edits.deleted.includes(i))
+		if (edits.deleted.includes(paper.uuid))
 			continue;
 
-		if (edits.edited[`${i}`])
-			papers.push(edits.edited[`${i}`]);
+		if (edits.edited[paper.uuid])
+			papers.push(edits.edited[paper.uuid]);
 		else
-			papers.push(map.papers[i]);
+			papers.push(paper);
 	}
 
-	papers = papers.concat(edits.added);
+	for (const paper of edits.added)
+	{
+		paper.uuid = get_uuid();
+		papers.push(paper);
+	}
+
 	papers = papers.map(sort_paper_attributes);
-	papers.sort((a, b) => a.year !== b.year ? a.year - b.year : a.title.localeCompare(b.title));
+	papers.sort((a, b) => a.year !== b.year ? a.year - b.year : (a.title + a.uuid).localeCompare(b.title + b.uuid));
 	map.papers = papers;
 
 	return map;

@@ -56,14 +56,9 @@ export function score_answer_groups(map: Map): Record<string, number>
 export function score_map(data_map: DataMap, journals: { [id: string]: Journal }): Map
 {
 	const papers: { [uuid: string]: Paper } = {};
-	let index = 0;
 
 	for (const data_paper of data_map.papers)
-	{
-		const paper = score_paper(data_map, journals[data_paper.journal.id], data_paper, index);
-		papers[paper.uuid] = paper;
-		index++;
-	}
+		papers[data_paper.uuid] = score_paper(data_map, journals[data_paper.journal.id], data_paper);
 
 	const map = {
 		...data_map,

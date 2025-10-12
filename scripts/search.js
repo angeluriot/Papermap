@@ -220,7 +220,7 @@ async function main()
 	let papers = [];
 
 	const map = map_id ? await get_map(map_id) : null;
-	const map_ids = map ? map.papers.map(paper => paper.id).filter(id => id !== undefined) : [];
+	const map_ids = map ? map.papers.map(paper => paper.openalex_id).filter(openalex_id => openalex_id !== undefined) : [];
 
 	for (const work of results)
 	{

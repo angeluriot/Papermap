@@ -90,11 +90,11 @@ async function get_map(id)
 async function api_find_paper_ids(papers)
 {
 	const ids = papers
-		.filter(paper => paper.id)
+		.filter(paper => paper.openalex_id)
 		.filter(paper => !only_reviews || paper.review)
 		.toSorted((a, b) => b.year - a.year)
 		.slice(0, nb_per_page)
-		.map(paper => paper.id);
+		.map(paper => paper.openalex_id);
 
 	let query = new URLSearchParams({
 		'filter': 'openalex:' + ids.join('|'),
@@ -157,7 +157,7 @@ async function main()
 {
 	const map = await get_map(map_id);
 	const results = await api_find_paper_ids(map.papers);
-	const ignore_ids = new Set([...map.papers.filter(paper => paper.id).map(paper => paper.id), ...(await import_ignore())]);
+	const ignore_ids = new Set([...map.papers.filter(paper => paper.openalex_id).map(paper => paper.openalex_id), ...(await import_ignore())]);
 	let papers_nb = {};
 
 	for (const result of results)

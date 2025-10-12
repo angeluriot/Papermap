@@ -85,7 +85,7 @@
 
 		result = response_json.results[0];
 
-		if (Object.values(papers).map(p => p.id).includes(result.id))
+		if (Object.values(papers).map(p => p.openalex_id).includes(result.openalex_id))
 		{
 			alert('This paper is already in the map.');
 			loading = false;

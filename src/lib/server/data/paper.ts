@@ -5,8 +5,10 @@ export function sort_paper_attributes(paper: DataPaper): DataPaper
 {
 	const result: any = {};
 
-	if (paper.id !== undefined)
-		result.id = paper.id;
+	result.uuid = paper.uuid;
+
+	if (paper.openalex_id !== undefined)
+		result.openalex_id = paper.openalex_id;
 
 	result.title = paper.title;
 

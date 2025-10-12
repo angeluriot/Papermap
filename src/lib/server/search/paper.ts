@@ -31,7 +31,7 @@ export async function search_paper(doi?: string, title?: string, year?: number):
 	{
 		const result: SearchPaperResult = {};
 
-		if (paper.id) result.id = clean_id(paper.id);
+		if (paper.id) result.openalex_id = clean_id(paper.id);
 		if (paper.doi) result.link = paper.doi.trim();
 		if (paper.title) result.title = paper.title.trim();
 		if (paper.publication_year) result.year = paper.publication_year;

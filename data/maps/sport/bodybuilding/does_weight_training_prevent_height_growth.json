@@ -162,7 +162,8 @@
 	"no_sample_size": false,
 	"papers": [
 		{
-			"id": "W2013747771",
+			"uuid": "AqLwTUp5IbL9k3We",
+			"openalex_id": "W2013747771",
 			"title": "The effects of hydraulic resistance strength training in pre-pubertal males",
 			"override_seed": 0,
 			"authors": [
@@ -192,7 +193,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1987279215",
+			"uuid": "9NRdfVoTUWUBhx9w",
+			"openalex_id": "W1987279215",
 			"title": "Strength training for prepubescent males: Is it safe?",
 			"override_seed": 0.95,
 			"authors": [
@@ -222,7 +224,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2101643994",
+			"uuid": "ZBkX07SLUY1FAXC9",
+			"openalex_id": "W2101643994",
 			"title": "The Effects of Upper Body Resistance Training on Prepubescent Children",
 			"authors": [
 				"Judith Siegel",
@@ -250,7 +253,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2060590963",
+			"uuid": "S7nq7W8dzVbQA9J3",
+			"openalex_id": "W2060590963",
 			"title": "Strength training effects in prepubescent boys",
 			"authors": [
 				"J. Ramsay",
@@ -279,7 +283,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2031575283",
+			"uuid": "QXWGYrqZV2KFaG3H",
+			"openalex_id": "W2031575283",
 			"title": "Resistance Training During Preadolescence",
 			"override_seed": 0.95,
 			"authors": [
@@ -313,7 +318,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2116951976",
+			"uuid": "59XugcXjbOTBUhDU",
+			"openalex_id": "W2116951976",
 			"title": "The Effects of a Twice-A-Week Strength Training Program on Children",
 			"override_seed": 0,
 			"authors": [
@@ -343,7 +349,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2614418993",
+			"uuid": "TXvEhpcMg2Lh8zK4",
+			"openalex_id": "W2614418993",
 			"title": "The Effects of Strength Training and Detraining on Children",
 			"authors": [
 				"Avery D. Faigenbaum",
@@ -372,7 +379,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1988416366",
+			"uuid": "HTJQIo2ShSeZ7tSh",
+			"openalex_id": "W1988416366",
 			"title": "Youth resistance training: position statement paper and literature review",
 			"authors": [
 				"Avery D. Faigenbaum",
@@ -408,7 +416,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2161976258",
+			"uuid": "XU8F3euhgy5ZR853",
+			"openalex_id": "W2161976258",
 			"title": "The Effect of Long-Term Resistance Training on Anthropometric Measures, Muscle Strength, and Self Concept in Pre-Pubertal Boys",
 			"override_seed": 0,
 			"authors": [
@@ -438,7 +447,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1989299773",
+			"uuid": "HecWcKOOwjJiiZXk",
+			"openalex_id": "W1989299773",
 			"title": "Effects of resistance training on protein utilization in healthy children",
 			"override_seed": 0.95,
 			"authors": [
@@ -468,7 +478,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2396382209",
+			"uuid": "IXYKCwTPBOexbdLL",
+			"openalex_id": "W2396382209",
 			"title": "Resistance training, skeletal muscle and growth.",
 			"authors": [
 				"Bareket Falk",
@@ -502,7 +513,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2071549027",
+			"uuid": "uZBtdqQv6YFhtW60",
+			"openalex_id": "W2071549027",
 			"title": "Effects of Resistance Training on the Physical Capacities of Adolescent Soccer Players",
 			"override_seed": 0,
 			"authors": [
@@ -532,7 +544,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2084971406",
+			"uuid": "avjZdMVRJovcOYb2",
+			"openalex_id": "W2084971406",
 			"title": "Weight Training in Youth-Growth, Maturation, and Safety: An Evidence-Based Review",
 			"override_seed": 0.3,
 			"authors": [
@@ -566,7 +579,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1992255097",
+			"uuid": "Q8icpJA5YgjskXBh",
+			"openalex_id": "W1992255097",
 			"title": "Resistance Training for Children and Adolescents",
 			"override_seed": 0.5,
 			"authors": [
@@ -600,7 +614,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2154776027",
+			"uuid": "A4KzgqDjeLZleZlX",
+			"openalex_id": "W2154776027",
 			"title": "Canadian Society for Exercise Physiology position paper: resistance training in children and adolescents",
 			"authors": [
 				"David G. Behm",
@@ -636,7 +651,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2121629594",
+			"uuid": "YGX5EpyWjOVYP25r",
+			"openalex_id": "W2121629594",
 			"title": "Strength Training by Children and Adolescents",
 			"override_seed": 0.2,
 			"institution": {
@@ -672,7 +688,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2131528817",
+			"uuid": "Of2OAReMEcLVlLfK",
+			"openalex_id": "W2131528817",
 			"title": "Strength Training Recommendations for the Young Athlete",
 			"override_seed": 0.95,
 			"authors": [
@@ -707,7 +724,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2125598153",
+			"uuid": "nynPwaY1MVn8vOVu",
+			"openalex_id": "W2125598153",
 			"title": "Resistance training among young athletes: safety, efficacy and injury prevention effects",
 			"authors": [
 				"Avery D. Faigenbaum",
@@ -741,7 +759,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2040866219",
+			"uuid": "8tBFyFqpnCuCA4Cz",
+			"openalex_id": "W2040866219",
 			"title": "Strength Training in Children and Adolescents: Raising the Bar for Young Athletes?",
 			"override_seed": 0,
 			"authors": [
@@ -776,7 +795,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1968867688",
+			"uuid": "l5VcKHPSw3TgDXsJ",
+			"openalex_id": "W1968867688",
 			"title": "Youth Resistance Training: Updated Position Statement Paper From the National Strength and Conditioning Association",
 			"override_seed": 0.95,
 			"authors": [
@@ -813,7 +833,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2086447787",
+			"uuid": "u4fCG2On7j92XWHz",
+			"openalex_id": "W2086447787",
 			"title": "Pediatric Resistance Training: Benefits, Concerns, and Program Design Considerations",
 			"authors": [
 				"Avery D. Faigenbaum",
@@ -847,7 +868,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2166432718",
+			"uuid": "7YvJMRDaf9sXXizJ",
+			"openalex_id": "W2166432718",
 			"title": "Position statement on youth resistance training: the 2014 International Consensus",
 			"authors": [
 				"Rhodri S. Lloyd",
@@ -883,7 +905,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1987654215",
+			"uuid": "BxtoSHLcMwsI7WWZ",
+			"openalex_id": "W1987654215",
 			"title": "There is No Need to Avoid Resistance Training (Weight Lifting) until Physeal Closure",
 			"override_seed": 0,
 			"authors": [
@@ -920,7 +943,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2427577391",
+			"uuid": "hm45lwRyKVODZLlr",
+			"openalex_id": "W2427577391",
 			"title": "Treinamento de Força para Crianças: Uma Metanálise Sobre Alterações do Crescimento Longitudinal, Força e Composição Corporal",
 			"override_seed": 0.95,
 			"authors": [
@@ -957,7 +981,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2615799653",
+			"uuid": "FO8dBX3jN1BKkWTQ",
+			"openalex_id": "W2615799653",
 			"title": "Resistance training for children and adolescents",
 			"override_seed": 0.95,
 			"authors": [
@@ -993,7 +1018,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2735318220",
+			"uuid": "i4CGNGoerdVJevCH",
+			"openalex_id": "W2735318220",
 			"title": "Resistance Training in Youth Improves Athletic Performance: A Systematic Review",
 			"override_seed": 0,
 			"authors": [
@@ -1030,7 +1056,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2906562090",
+			"uuid": "cdA7On89OmDmdxp0",
+			"openalex_id": "W2906562090",
 			"title": "Effects of physical activity on children's growth",
 			"override_seed": 0,
 			"authors": [
@@ -1065,7 +1092,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2480350260",
+			"uuid": "o13ZbIQEBeHJoSba",
+			"openalex_id": "W2480350260",
 			"title": "Resistance Training for Children and Adolescents",
 			"override_seed": 0,
 			"authors": [
@@ -1102,7 +1130,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3214724980",
+			"uuid": "3XMElAocMWJqwo0X",
+			"openalex_id": "W3214724980",
 			"title": "Weightlifting for Children and Adolescents: A Narrative Review",
 			"override_seed": 0.95,
 			"authors": [

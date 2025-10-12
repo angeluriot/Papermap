@@ -200,7 +200,8 @@
 	"no_sample_size": false,
 	"papers": [
 		{
-			"id": "W2131958236",
+			"uuid": "SKQEqof5iyeP2d7W",
+			"openalex_id": "W2131958236",
 			"title": "An evaluation of a program to prevent the sexual victimization of young children",
 			"authors": [
 				"Jon R. Conte",
@@ -232,7 +233,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2138434872",
+			"uuid": "MsQt7nJD52BAGBHJ",
+			"openalex_id": "W2138434872",
 			"title": "Educating Children About Sexual Abuse: Implications for Pediatric Intervention and Possible Prevention",
 			"override_seed": 0.5,
 			"authors": [
@@ -263,7 +265,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2010228015",
+			"uuid": "tPja1b7P6XMAJYk0",
+			"openalex_id": "W2010228015",
 			"title": "Evaluation of a brief intervention for educating school children in awareness of physical and sexual abuse",
 			"override_seed": 0.2,
 			"authors": [
@@ -296,7 +299,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4254660222",
+			"uuid": "UIjYI8YOjlu6dR8v",
+			"openalex_id": "W4254660222",
 			"title": "Teaching personal safety skills for potential prevention of sexual abuse: A comparison of treatments.",
 			"override_seed": 0.95,
 			"authors": [
@@ -329,7 +333,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2065277804",
+			"uuid": "hl0p4QM3j9wCI5O4",
+			"openalex_id": "W2065277804",
 			"title": "An Evaluation of Side Effects Associated with Participation in a Child Sexual Abuse Prevention Program",
 			"authors": [
 				"Sandy K. Wurtele",
@@ -356,7 +361,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2037788020",
+			"uuid": "kPBjJpDKOeNuNlgF",
+			"openalex_id": "W2037788020",
 			"title": "Evaluation of a school-based sexual abuse prevention program: Cognitive and emotional effects",
 			"override_seed": 0,
 			"authors": [
@@ -387,7 +393,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2100430454",
+			"uuid": "2oAlzPYKyxbXUr2v",
+			"openalex_id": "W2100430454",
 			"title": "Measuring actual reduction of risk to child abuse: A new approach",
 			"authors": [
 				"George E. Fryer",
@@ -418,7 +425,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2060355511",
+			"uuid": "GZES5z1JrOqERsdK",
+			"openalex_id": "W2060355511",
 			"title": "Promoting awareness and prevention of child sexual victimization using the Red Flag/Green Flag program: An evaluation with follow-up",
 			"override_seed": 0.95,
 			"authors": [
@@ -451,7 +459,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2053282236",
+			"uuid": "7iTH2jWGgnMsLHwJ",
+			"openalex_id": "W2053282236",
 			"title": "The prevention of sexual abuse: Examination of the effectiveness of a program with kindergarten-age children",
 			"authors": [
 				"Pam Harvey",
@@ -483,7 +492,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1975803663",
+			"uuid": "HZvP3I2RNwfPeen1",
+			"openalex_id": "W1975803663",
 			"title": "Classroom training in sexual victimization awareness and prevention skills: An extension of the Red Flag/Green Flag people program",
 			"authors": [
 				"David J. Kolko",
@@ -514,7 +524,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4232776206",
+			"uuid": "gvd9HgSV3I7x5ULY",
+			"openalex_id": "W4232776206",
 			"title": "Comparison of programs for teaching personal safety skills to preschoolers.",
 			"authors": [
 				"Sandy K. Wurtele",
@@ -546,7 +557,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2002922698",
+			"uuid": "eeBvaO0SwKJkSgbw",
+			"openalex_id": "W2002922698",
 			"title": "Prevention of child sexual abuse: Myth or reality.",
 			"authors": [
 				"N. Dickon Reppucci",
@@ -580,7 +592,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2085528796",
+			"uuid": "zPrp5df5jnfEwQtp",
+			"openalex_id": "W2085528796",
 			"title": "An evaluation of a preschool curriculum to educate children in the prevention of sexual abuse",
 			"authors": [
 				"Rosemarie Ratto",
@@ -610,7 +623,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2135105463",
+			"uuid": "1a70wAyOJsKJ2toR",
+			"openalex_id": "W2135105463",
 			"title": "Evaluation of a Preschool Antivictimization Prevention Program",
 			"override_seed": 0,
 			"authors": [
@@ -640,7 +654,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2040856674",
+			"uuid": "2vQZYZ21rdkiT62r",
+			"openalex_id": "W2040856674",
 			"title": "Teaching personal safety skills to four-year-old children: A behavioral approach",
 			"override_seed": 0.95,
 			"authors": [
@@ -670,7 +685,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1989460686",
+			"uuid": "OagMGvpJHwRIAJ4S",
+			"openalex_id": "W1989460686",
 			"title": "Child sexual abuse prevention: Evaluation and one-year follow-up",
 			"override_seed": 0,
 			"authors": [
@@ -703,7 +719,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2085437336",
+			"uuid": "ra6NXGzhv6RSU7uW",
+			"openalex_id": "W2085437336",
 			"title": "The Touch Discrimination Component of Sexual Abuse Prevention Training",
 			"override_seed": 0.95,
 			"authors": [
@@ -736,7 +753,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1995201931",
+			"uuid": "bWiVXkW4hqeqwoD0",
+			"openalex_id": "W1995201931",
 			"title": "A comparison of teachers vs. parents as instructors of a personal safety program for preschoolers",
 			"override_seed": 0.95,
 			"authors": [
@@ -769,7 +787,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2328768845",
+			"uuid": "Gd3c2hYhQI9tmXuZ",
+			"openalex_id": "W2328768845",
 			"title": "Child sexual abuse prevention: Research review and recommendations",
 			"override_seed": 0.95,
 			"authors": [
@@ -804,7 +823,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2049341609",
+			"uuid": "uhUTq9D8UVeKB7Pp",
+			"openalex_id": "W2049341609",
 			"title": "Sexual abuse prevention education for young children: A comparison of teachers and parents as instructors",
 			"override_seed": 0,
 			"authors": [
@@ -836,7 +856,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2005580312",
+			"uuid": "1AhY95uB4HKyHzpH",
+			"openalex_id": "W2005580312",
 			"title": "The ability of elementary school children to learn child sexual abuse prevention concepts",
 			"override_seed": 0,
 			"authors": [
@@ -866,7 +887,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2040934912",
+			"uuid": "SrQniREneYpV9pkN",
+			"openalex_id": "W2040934912",
 			"title": "The Failure of a School-based Child Sexual Abuse Prevention Program",
 			"authors": [
 				"David Pelcovitz",
@@ -895,7 +917,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2036273604",
+			"uuid": "CHPLIyVkpFNJpBsQ",
+			"openalex_id": "W2036273604",
 			"title": "Follow-up data on the effectiveness of New Zealand's national school based child protection program",
 			"override_seed": 0.5,
 			"authors": [
@@ -926,7 +949,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2037455948",
+			"uuid": "zHYW7jrmSOOR7zJX",
+			"openalex_id": "W2037455948",
 			"title": "Prevention of Child Sexual Abuse",
 			"authors": [
 				"Deborah Daro"
@@ -959,7 +983,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2013156241",
+			"uuid": "HiMlvkFC1MPfREkr",
+			"openalex_id": "W2013156241",
 			"title": "Primary Prevention of Child Sexual Abuse: A Critical Review. Part II",
 			"authors": [
 				"Harriet L. MacMillan",
@@ -995,7 +1020,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2027897758",
+			"uuid": "9G5s0PSQ5kZm49p2",
+			"openalex_id": "W2027897758",
 			"title": "Evaluation of a School-Based Child Abuse Prevention Program",
 			"override_seed": 0,
 			"authors": [
@@ -1026,7 +1052,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2170274357",
+			"uuid": "RalkuGq1u3RRPWxi",
+			"openalex_id": "W2170274357",
 			"title": "The effectiveness of victimization prevention instruction: An evaluation of children's responses to actual threats and assaults",
 			"override_seed": 0.95,
 			"authors": [
@@ -1058,7 +1085,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2001066775",
+			"uuid": "2e29Vt5O7hvhux3G",
+			"openalex_id": "W2001066775",
 			"title": "Victimization prevention programs for children: a follow-up.",
 			"authors": [
 				"David Finkelhor",
@@ -1089,7 +1117,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2092125531",
+			"uuid": "EtqcsW5z3PyqJfo9",
+			"openalex_id": "W2092125531",
 			"title": "Evaluation of the effectiveness of project TRUST: An elementary school-based victimization prevention strategy",
 			"override_seed": 0,
 			"authors": [
@@ -1121,7 +1150,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2082139370",
+			"uuid": "rP5KiUTWXPwvGfuP",
+			"openalex_id": "W2082139370",
 			"title": "Child sexual abuse prevention programs: Evaluating who do you tell",
 			"override_seed": 0.95,
 			"authors": [
@@ -1151,7 +1181,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2084304692",
+			"uuid": "AIXYuy7O4YoX5jSC",
+			"openalex_id": "W2084304692",
 			"title": "Positive and negative effects of a child sexual abuse prevention program",
 			"authors": [
 				"Margot Taal",
@@ -1178,7 +1209,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2048844696",
+			"uuid": "wERvaMlNrVdrRps3",
+			"openalex_id": "W2048844696",
 			"title": "Prevention of child sexual abuse victimization: A meta-analysis of school programs",
 			"override_seed": 0,
 			"authors": [
@@ -1217,7 +1249,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1981335861",
+			"uuid": "CdCRK3hBxyoscmmX",
+			"openalex_id": "W1981335861",
 			"title": "Teaching personal safety skills to young children: An investigation of age and gender across five studies",
 			"override_seed": 0.95,
 			"authors": [
@@ -1248,7 +1281,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1970640435",
+			"uuid": "jjJhGlpqFvxeN9YY",
+			"openalex_id": "W1970640435",
 			"title": "Evaluation of the effectiveness of the stay safe primary prevention programme for child sexual abuse",
 			"authors": [
 				"Deirdre MacIntyre",
@@ -1278,7 +1312,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2036182014",
+			"uuid": "9JRsYH8jaPaKEGfl",
+			"openalex_id": "W2036182014",
 			"title": "Helping children to the other side of silence: a study of the impact of the stay safe programme on Irish children’s disclosures of sexual victimization",
 			"authors": [
 				"Deirdre MacIntyre",
@@ -1308,7 +1343,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2014492350",
+			"uuid": "VWH8SzqcPNIkdvMe",
+			"openalex_id": "W2014492350",
 			"title": "Child Sexual Abuse Prevention Programs: A Meta-Analysis",
 			"override_seed": 0.7,
 			"authors": [
@@ -1343,7 +1379,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2009811242",
+			"uuid": "WpefhXYrOHcQUksX",
+			"openalex_id": "W2009811242",
 			"title": "Child sexual abuse prevention programs: do they decrease the occurrence of child sexual abuse?",
 			"authors": [
 				"Laura E. Gibson",
@@ -1373,7 +1410,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2113912926",
+			"uuid": "Eg7Zfchnp0wzugWs",
+			"openalex_id": "W2113912926",
 			"title": "Prevention of child sexual abuse: implications of programme evaluation research",
 			"override_seed": 0.95,
 			"authors": [
@@ -1408,7 +1446,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1544650217",
+			"uuid": "p347axkpWZJsga9H",
+			"openalex_id": "W1544650217",
 			"title": "What Children Learn from Sexual Abuse Prevention Programs: Difficult Concepts and Developmental Issues",
 			"override_seed": 0,
 			"authors": [
@@ -1438,7 +1477,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1985206893",
+			"uuid": "vj4xxQy8t1Rznxip",
+			"openalex_id": "W1985206893",
 			"title": "Do elementary school-based child abuse prevention programs work? A high school follow-up",
 			"authors": [
 				"Susan F. Ko",
@@ -1468,7 +1508,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2063038733",
+			"uuid": "OgJuzsqFhf3WMNf7",
+			"openalex_id": "W2063038733",
 			"title": "Proximate effects of a child sexual abuse prevention program in elementary school children",
 			"override_seed": 0.8,
 			"authors": [
@@ -1501,7 +1542,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2023057071",
+			"uuid": "oju1hp5Aw9b6a1GP",
+			"openalex_id": "W2023057071",
 			"title": "Evaluation of a Child Abuse Prevention Curriculum for Third‐Grade Students: Assessment of Knowledge and Efficacy Expectations",
 			"authors": [
 				"Joseph A. Dake",
@@ -1532,7 +1574,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1972508428",
+			"uuid": "xFLAUNNEvH70NJyn",
+			"openalex_id": "W1972508428",
 			"title": "Teaching Young Children to Discriminate Abusive From Nonabusive Situations Using Multiple Exemplars in a Modified Discrete Trial Teaching Format",
 			"authors": [
 				"Cynthia L. Boyle",
@@ -1559,7 +1602,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2161145281",
+			"uuid": "RruV59YgF560Uy9e",
+			"openalex_id": "W2161145281",
 			"title": "Prevention of Sexual Abuse Through Educational Programs Directed Toward Children",
 			"override_seed": 0,
 			"authors": [
@@ -1593,7 +1637,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2047558122",
+			"uuid": "1LHENm4MMsFtqTj6",
+			"openalex_id": "W2047558122",
 			"title": "Child sexual abuse: from prevention to self‐protection",
 			"override_seed": 0,
 			"authors": [
@@ -1630,7 +1675,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2015784507",
+			"uuid": "olEph45Kv2xKUeuX",
+			"openalex_id": "W2015784507",
 			"title": "A group‐randomized evaluation of a theatre‐based sexual abuse prevention programme for primary school children in Germany",
 			"authors": [
 				"Barbara Krahé",
@@ -1660,7 +1706,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2062147200",
+			"uuid": "JILIFYr2ZKL4THI6",
+			"openalex_id": "W2062147200",
 			"title": "Preventing Sexual Abuse of Children in the Twenty-First Century: Preparing for Challenges and Opportunities",
 			"override_seed": 0,
 			"authors": [
@@ -1694,7 +1741,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2129957335",
+			"uuid": "muwXqGwjpMXiTzXS",
+			"openalex_id": "W2129957335",
 			"title": "School-Based Child Sexual Abuse Prevention Programs: A Review of Effectiveness",
 			"authors": [
 				"Keith J. Topping",
@@ -1728,7 +1776,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2121445594",
+			"uuid": "3FvXPwScRyRoKwR7",
+			"openalex_id": "W2121445594",
 			"title": "The Prevention of Childhood Sexual Abuse",
 			"override_seed": 0.95,
 			"authors": [
@@ -1762,7 +1811,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2098432732",
+			"uuid": "SJbrPvlQyZ1jxP85",
+			"openalex_id": "W2098432732",
 			"title": "Children's abilities to recognize a “good” person as a potential perpetrator of childhood sexual abuse",
 			"override_seed": 0.1,
 			"authors": [
@@ -1793,7 +1843,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1988080159",
+			"uuid": "PqaPncRJPtDeT8Ad",
+			"openalex_id": "W1988080159",
 			"title": "A Sexual Assault Primary Prevention Model with Diverse Urban Youth",
 			"authors": [
 				"Melissa K. Smothers",
@@ -1823,7 +1874,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2004180775",
+			"uuid": "oCIwf8xkcZC1zLor",
+			"openalex_id": "W2004180775",
 			"title": "Evaluation of a school-based sexual abuse prevention curriculum in Malaysia",
 			"override_seed": 0,
 			"authors": [
@@ -1856,7 +1908,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2067683261",
+			"uuid": "b0bF4AqXsqAvAlZV",
+			"openalex_id": "W2067683261",
 			"title": "Evaluation of a Personal Safety Program with Latino Preschoolers",
 			"override_seed": 0.95,
 			"authors": [
@@ -1888,7 +1941,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2082980122",
+			"uuid": "a1CD3q31KJm7zzDB",
+			"openalex_id": "W2082980122",
 			"title": "Evaluation of a Sexual Abuse Prevention Workshop in a Multicultural, Impoverished Urban Area",
 			"override_seed": 0.8,
 			"authors": [
@@ -1921,7 +1975,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2100215496",
+			"uuid": "hK8QdIjUV7yPtNpF",
+			"openalex_id": "W2100215496",
 			"title": "Increasing Knowledge of Sexual Abuse",
 			"authors": [
 				"Charlene K. Baker",
@@ -1953,7 +2008,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2046223254",
+			"uuid": "ek1tJQNBJxsgEFnY",
+			"openalex_id": "W2046223254",
 			"title": "Pilot Evaluation of a Sexual Abuse Prevention Program for Taiwanese Children",
 			"override_seed": 0,
 			"authors": [
@@ -1985,7 +2041,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1974819626",
+			"uuid": "j1QGoDrUnCdNojDr",
+			"openalex_id": "W1974819626",
 			"title": "Evaluation of a Sexual Abuse Prevention Education for Chinese Preschoolers",
 			"override_seed": 0,
 			"authors": [
@@ -2018,7 +2075,8 @@
 			"notes": []
 		},
 		{
-			"id": "W169367288",
+			"uuid": "c7p2pniaVS8SkqsA",
+			"openalex_id": "W169367288",
 			"title": "The Effectiveness of Psycho-Educational School-Based Child Sexual Abuse Prevention Training Program on Turkish Elementary Students.",
 			"authors": [
 				"A. Rezan Çeçen",
@@ -2048,7 +2106,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2124658159",
+			"uuid": "PFlb4co1arqFGWUt",
+			"openalex_id": "W2124658159",
 			"title": "Application of a child abuse prevention programme in an educational context",
 			"authors": [
 				"Juan Manuel Moreno Manso",
@@ -2080,7 +2139,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2129186134",
+			"uuid": "h09VDhSS087xnPfj",
+			"openalex_id": "W2129186134",
 			"title": "School-Based Childhood Sexual Abuse Prevention Programs",
 			"override_seed": 0.5,
 			"authors": [
@@ -2115,7 +2175,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1430200026",
+			"uuid": "w0HKHU9grpjlkDdw",
+			"openalex_id": "W1430200026",
 			"title": "Empowering and protecting children by enhancing knowledge, skills and well-being: A randomized trial of Learn to BE SAFE with Emmy™",
 			"authors": [
 				"R. Barry Dale",
@@ -2147,7 +2208,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1952384271",
+			"uuid": "O8fALaL8V0d7b2E8",
+			"openalex_id": "W1952384271",
 			"title": "Knowledge Gains Following a Child Sexual Abuse Prevention Program Among Urban Students: A Cluster-Randomized Evaluation",
 			"authors": [
 				"Mary L. Pulido",
@@ -2179,7 +2241,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1717762653",
+			"uuid": "h7GZZUr4L2CIj2ug",
+			"openalex_id": "W1717762653",
 			"title": "School-based education programmes for the prevention of child sexual abuse",
 			"authors": [
 				"Kerryann Walsh",
@@ -2218,7 +2281,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2549665311",
+			"uuid": "PgAjVSkGxBy9H0Kk",
+			"openalex_id": "W2549665311",
 			"title": "Community-level moderators of a school-based childhood sexual assault prevention program",
 			"override_seed": 0.95,
 			"authors": [
@@ -2251,7 +2315,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2511835825",
+			"uuid": "pq9MGby3AzagRP72",
+			"openalex_id": "W2511835825",
 			"title": "Effects of the Child Sexual Abuse Prevention Education (C-SAPE) Program on South Korean Fifth-Grade Students’ Competence in Terms of Knowledge and Self-Protective Behaviors",
 			"override_seed": 0.9,
 			"authors": [
@@ -2282,7 +2347,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2516853114",
+			"uuid": "Sle0ksODcuKUY66E",
+			"openalex_id": "W2516853114",
 			"title": "Evaluation of Safer, Smarter Kids: Child Sexual Abuse Prevention Curriculum for Kindergartners",
 			"override_seed": 0,
 			"authors": [
@@ -2312,7 +2378,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2755158923",
+			"uuid": "ALfaOQQ9jKX8SHOf",
+			"openalex_id": "W2755158923",
 			"title": "Child Sexual Abuse Prevention Opportunities: Parenting, Programs, and the Reduction of Risk",
 			"override_seed": 0.2,
 			"authors": [
@@ -2349,7 +2416,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2760848075",
+			"uuid": "6zH9DAY7PXSNnHmO",
+			"openalex_id": "W2760848075",
 			"title": "Evaluation of a sexual abuse prevention education program for school-age children in China: a comparison of teachers and parents as instructors",
 			"override_seed": 0.7,
 			"authors": [
@@ -2382,7 +2450,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2894965133",
+			"uuid": "bNyVEMWdlwwfuJ7V",
+			"openalex_id": "W2894965133",
 			"title": "Effectiveness of a school-based intervention to prevent child sexual abuse—Evaluation of the German IGEL program",
 			"override_seed": 0,
 			"authors": [
@@ -2415,7 +2484,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2805310809",
+			"uuid": "NT0mTocQgtFBese0",
+			"openalex_id": "W2805310809",
 			"title": "Preventing Child Sexual Abuse: Body Safety Training for Young Children in Turkey",
 			"authors": [
 				"Gülseren Çıtak Tunç",
@@ -2447,7 +2517,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2916566579",
+			"uuid": "ao36S1Hv4EEI4G2E",
+			"openalex_id": "W2916566579",
 			"title": "“I have the right to feel safe”: Evaluation of a school-based child sexual abuse prevention program in Ecuador",
 			"authors": [
 				"Gabriela Bustamante",
@@ -2479,7 +2550,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2949142044",
+			"uuid": "2n2uhWMoWcELfTPk",
+			"openalex_id": "W2949142044",
 			"title": "Child Sexual Abuse Victimization Prevention Programs in Preschool and Kindergarten: Implications for Practice",
 			"override_seed": 0,
 			"authors": [
@@ -2515,7 +2587,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2966603751",
+			"uuid": "TihyUMGZcYWJiJsK",
+			"openalex_id": "W2966603751",
 			"title": "Randomized controlled trial of the Child Protection Unit: Grade and gender as moderators of CSA prevention concepts in elementary students",
 			"authors": [
 				"Amanda B. Nickerson",
@@ -2547,7 +2620,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3099480503",
+			"uuid": "cClbQCxo5E9DlXJY",
+			"openalex_id": "W3099480503",
 			"title": "Efficacy of a Sexual Abuse Prevention Program with Children on an Indian Reservation",
 			"authors": [
 				"Katie M. Edwards",
@@ -2579,7 +2653,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3108646070",
+			"uuid": "OFkUKR3Zsj7I5Gpb",
+			"openalex_id": "W3108646070",
 			"title": "Evaluation of a school-based sexual abuse prevention program for female children with intellectual disabilities in rural Pakistan- A feasibility study",
 			"authors": [
 				"Azza Warraitch",
@@ -2610,7 +2685,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3008678748",
+			"uuid": "WddaKaXljD3Jqia1",
+			"openalex_id": "W3008678748",
 			"title": "Preventing Child Sexual Abuse Using Picture Books: The Effect of Book Character and Message Framing",
 			"authors": [
 				"Sangruo Huang",
@@ -2640,7 +2716,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3092958856",
+			"uuid": "QPrmaffaoNdZjwid",
+			"openalex_id": "W3092958856",
 			"title": "Three Decades of Research: The Case for Comprehensive Sex Education",
 			"override_seed": 0,
 			"authors": [
@@ -2675,7 +2752,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3119361146",
+			"uuid": "9SODuNhjQJJFw7RY",
+			"openalex_id": "W3119361146",
 			"title": "“I am Learning to Protect Myself with Mika:” A Teacher-based Child Sexual Abuse Prevention Program in Turkey",
 			"override_seed": 0.95,
 			"authors": [
@@ -2708,7 +2786,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3164115297",
+			"uuid": "PxNViW7tu09Vfrb6",
+			"openalex_id": "W3164115297",
 			"title": "Effective Components of School-Based Prevention Programs for Child Abuse: A Meta-Analytic Review",
 			"override_seed": 0,
 			"authors": [
@@ -2748,7 +2827,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3133068982",
+			"uuid": "ChqAANExCJVIzbKS",
+			"openalex_id": "W3133068982",
 			"title": "Evaluation of a School-Based Child Physical and Sexual Abuse Prevention Program",
 			"override_seed": 0,
 			"authors": [
@@ -2781,7 +2861,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3188359875",
+			"uuid": "pVNqfk1jVVZuaISK",
+			"openalex_id": "W3188359875",
 			"title": "Evaluation of the Child Safety Matters Curriculum for Improving Knowledge about Victimization among Elementary School Children: A Randomized Trial",
 			"override_seed": 0,
 			"authors": [
@@ -2814,7 +2895,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3181885869",
+			"uuid": "ST0YoU8P1mJvxfJw",
+			"openalex_id": "W3181885869",
 			"title": "The effect of sexuality education program on the sexual development of children aged 60–72 months",
 			"override_seed": 0.95,
 			"authors": [
@@ -2845,7 +2927,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4286685274",
+			"uuid": "6M5ImoPHCFqtr0yZ",
+			"openalex_id": "W4286685274",
 			"title": "Effectiveness of school-based child sexual abuse intervention among school children in the new millennium era: Systematic review and meta-analyses",
 			"override_seed": 0,
 			"authors": [
@@ -2884,7 +2967,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4387388140",
+			"uuid": "eANRnMlZELwVGOAR",
+			"openalex_id": "W4387388140",
 			"title": "Effectiveness of child sexual abuse prevention programs on knowledge acquisition: A meta-analytical study",
 			"override_seed": 0.7,
 			"authors": [
@@ -2924,7 +3008,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4323036355",
+			"uuid": "qUSRBxY2coTYgvZ1",
+			"openalex_id": "W4323036355",
 			"title": "Implementation of a Universal School-Based Child Sexual Abuse Prevention Program: A Longitudinal Cohort Study",
 			"authors": [
 				"Kate Guastaferro",
@@ -2956,7 +3041,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4393058027",
+			"uuid": "QR1L2oH6D9tR3okc",
+			"openalex_id": "W4393058027",
 			"title": "The effectiveness of school-based child sexual abuse prevention programmes among primary school-aged children: A systematic review",
 			"override_seed": 0.95,
 			"authors": [
@@ -2990,7 +3076,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4395031067",
+			"uuid": "HGJJef4hZXWGJ41G",
+			"openalex_id": "W4395031067",
 			"title": "Training and evaluation of robot-based psychological intervention program for preventing child sexual abuse",
 			"authors": [
 				"Mohammad Tahan",
@@ -3021,7 +3108,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4411868304",
+			"uuid": "Fkmsv13PsFf2HDLt",
+			"openalex_id": "W4411868304",
 			"title": "The effect of an educational program on knowledge about sexual abuse prevention among child laborers: a quasi-experimental study",
 			"authors": [
 				"Jamalodin Begjani",

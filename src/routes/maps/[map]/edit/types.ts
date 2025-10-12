@@ -3,9 +3,9 @@ import type { DataPaper } from '$lib/types/paper';
 
 export interface Edits
 {
-	deleted: number[];
-	edited: { [i: string]: DataPaper };
 	added: DataPaper[];
+	edited: { [uuid: string]: DataPaper };
+	deleted: string[];
 }
 
 

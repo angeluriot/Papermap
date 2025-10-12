@@ -18,7 +18,6 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 	try
 	{
 		validate_params(params as any);
-		const map_id = (params as any).map;
 
 		const local = url.searchParams.get('local') !== null;
 
@@ -26,10 +25,11 @@ export const POST: RequestHandler = async ({ url, params, request }) =>
 			throw new InvalidDataError('Local edits are not allowed in production');
 
 		const data = await request.json() as PostRequest;
+
+		validate_request(data);
+
+		const map_id = (params as any).map;
 		const map = await import_datamap(map_id);
-
-		validate_request(data, map.papers.length);
-
 		const edited_map = await edit_map(map, data.edits);
 		const { groups, id, ...content } = edited_map;
 

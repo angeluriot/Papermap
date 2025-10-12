@@ -92,7 +92,8 @@ export enum Edit
 
 export interface DataPaper
 {
-	id?: string;
+	uuid: string;
+	openalex_id?: string;
 	title: string;
 	override_seed?: number;
 	institution?: {
@@ -155,8 +156,6 @@ export interface PaperScores
 
 export interface Paper extends DataPaper
 {
-	index: number;
-	uuid: string;
 	scores: PaperScores;
 	score: number;
 	edit?: Edit;
@@ -165,7 +164,7 @@ export interface Paper extends DataPaper
 
 export interface SearchPaperResult
 {
-	id?: string;
+	openalex_id?: string;
 	link?: string;
 	title?: string;
 	year?: number;
@@ -179,7 +178,7 @@ export interface SearchPaperResult
 export function paper_to_datapaper(paper: Paper): DataPaper
 {
 
-	const { index, uuid, scores, score, edit, ...data } = paper;
+	const { scores, score, edit, ...data } = paper;
 	return data;
 }
 

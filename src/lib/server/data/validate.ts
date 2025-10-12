@@ -7,7 +7,8 @@ import { z } from 'zod';
 
 
 export const paper_schema = z.object({
-	id: z.string().optional(),
+	uuid: z.string().nonempty(),
+	openalex_id: z.string().optional(),
 	title: z.string().nonempty(),
 	override_seed: z.number().min(0).max(1).optional(),
 	institution: z.object({

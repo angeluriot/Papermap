@@ -1,7 +1,7 @@
 import type { Journal } from '$lib/types/journal';
 import type { DataMap, Map } from '$lib/types/map';
 import { Blinding, ConflictOfInterest, type DataPaper, MissingReason, NoteImpact, type Paper, type PaperScores, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType } from '$lib/types/paper';
-import { get_uuid, ratio } from '$lib/utils';
+import { ratio } from '$lib/utils';
 
 
 export const BAD_PAPER_THRESHOLD = 0.25;
@@ -436,9 +436,9 @@ function calculate_scores(map: DataMap | Map, paper: DataPaper, journal?: Journa
 }
 
 
-export function score_paper(map: DataMap | Map, journal: Journal | undefined, paper: DataPaper, index: number): Paper
+export function score_paper(map: DataMap | Map, journal: Journal | undefined, paper: DataPaper): Paper
 {
 	const { scores, score } = calculate_scores(map, paper, journal);
 
-	return { index, uuid: get_uuid(), ...paper, scores, score };
+	return { ...paper, scores, score };
 }

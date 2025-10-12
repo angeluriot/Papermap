@@ -12,6 +12,7 @@
 	import type { Journal, JournalTitle } from '$lib/types/journal';
 	import { get_available_conclusions, type Map } from '$lib/types/map';
 	import { Blinding, ConflictOfInterest, type DataPaper, Edit, JournalMissingReason, MissingReason, NoteImpact, type Paper, paper_to_datapaper, PaperType, ReviewedPapersBlinding, ReviewedPapersType, ReviewType, type SearchPaperResult } from '$lib/types/paper';
+	import { get_uuid } from '$lib/utils';
 	import cloneDeep from 'clone-deep';
 	import deepEqual from 'deep-equal';
 
@@ -23,7 +24,8 @@
 		hide: () => void,
 	} = $props();
 
-	let id: string | null = $state(null);
+	let uuid: string | null = $state(null);
+	let openalex_id: string | null = $state(null);
 	let title = $state('');
 	let override_seed: number | undefined = $state();
 	let institution_status: string = $state('');
@@ -89,7 +91,7 @@
 	{
 		if (result !== null)
 		{
-			id = cloneDeep(result.id ?? null);
+			openalex_id = cloneDeep(result.openalex_id ?? null);
 			title = cloneDeep(result.title ?? '');
 			authors = cloneDeep(result.authors ?? ['']);
 
@@ -124,7 +126,8 @@
 			if (paper.journal.id === JournalMissingReason.NotFound)
 				temp = { id: JournalMissingReason.NotFound, title: '(Not found)' };
 
-			id = cloneDeep(paper.id ?? null);
+			uuid = cloneDeep(paper.uuid);
+			openalex_id = cloneDeep(paper.openalex_id ?? null);
 			title = cloneDeep(paper.title);
 			override_seed = cloneDeep(paper.override_seed);
 			institution_status = cloneDeep(paper.institution ? 'yes' : 'no');
@@ -356,6 +359,7 @@
 			return null;
 
 		const data_paper: DataPaper = {
+			uuid: uuid ?? get_uuid(),
 			title: title.trim(),
 			authors: authors.filter(author => author.trim().length > 0).map(author => author.trim()),
 			year: year as number,
@@ -404,8 +408,8 @@
 			}),
 		};
 
-		if (id !== null && id !== '')
-			data_paper.id = id;
+		if (openalex_id !== null && openalex_id !== '')
+			data_paper.openalex_id = openalex_id;
 
 		if (override_seed !== undefined)
 			data_paper.override_seed = override_seed;
@@ -444,7 +448,7 @@
 		return !equals;
 	}
 
-	async function create_paper(index: number): Promise<Paper | null>
+	async function create_paper(): Promise<Paper | null>
 	{
 		const data_paper = create_data_paper();
 
@@ -469,7 +473,7 @@
 				data_paper.journal.id = JournalMissingReason.NotFound;
 		}
 
-		return score_paper(map, journal_data, data_paper, index);
+		return score_paper(map, journal_data, data_paper);
 	}
 
 	function post_checks(final_paper: Paper): boolean
@@ -559,7 +563,7 @@
 
 		loading = true;
 
-		const final_paper = await create_paper(-1);
+		const final_paper = await create_paper();
 
 		if (final_paper === null)
 		{
@@ -592,7 +596,7 @@
 			return;
 		}
 
-		const final_paper = await create_paper(paper.index);
+		const final_paper = await create_paper();
 
 		if (final_paper === null)
 		{

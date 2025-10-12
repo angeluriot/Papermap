@@ -203,7 +203,8 @@
 	"no_sample_size": false,
 	"papers": [
 		{
-			"id": "W2106457238",
+			"uuid": "2BCMWGv9o9vlqhQA",
+			"openalex_id": "W2106457238",
 			"title": "A Clinical Laboratory Model for Evaluating the Acute Effects of Electronic “Cigarettes”: Nicotine Delivery Profile and Cardiovascular and Subjective Effects",
 			"override_seed": 0.95,
 			"authors": [
@@ -236,7 +237,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2159546185",
+			"uuid": "s5RFppkeYo5Rgt23",
+			"openalex_id": "W2159546185",
 			"title": "Electronic cigarettes as a harm reduction strategy for tobacco control: A step forward or a repeat of past mistakes?",
 			"override_seed": 0.5,
 			"authors": [
@@ -271,7 +273,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2049114027",
+			"uuid": "68ZfS4ft8RmIe3tH",
+			"openalex_id": "W2049114027",
 			"title": "Acute effects of electronic and tobacco cigarette smoking on complete blood count",
 			"authors": [
 				"Andreas D. Flouris",
@@ -300,7 +303,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2133007934",
+			"uuid": "hIXj58ZGjFwl7GZ3",
+			"openalex_id": "W2133007934",
 			"title": "A fresh look at tobacco harm reduction: the case for the electronic cigarette",
 			"override_seed": 0.6,
 			"authors": [
@@ -337,7 +341,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2032302116",
+			"uuid": "NVYeJ5VX98dsqk7U",
+			"openalex_id": "W2032302116",
 			"title": "Acute impact of active and passive electronic cigarette smoking on serum cotinine and lung function",
 			"authors": [
 				"Andreas D. Flouris",
@@ -369,7 +374,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2123345166",
+			"uuid": "OvhwEDmhgw6a70Fy",
+			"openalex_id": "W2123345166",
 			"title": "Comparison of the Cytotoxic Potential of Cigarette Smoke and Electronic Cigarette Vapour Extract on Cultured Myocardial Cells",
 			"override_seed": 0,
 			"authors": [
@@ -399,7 +405,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1974376880",
+			"uuid": "56Kj2fiy04xYcTWN",
+			"openalex_id": "W1974376880",
 			"title": "Cytotoxicity evaluation of electronic cigarette vapor extract on cultured mammalian fibroblasts (ClearStream-LIFE): comparison with tobacco cigarette smoke extract",
 			"override_seed": 0.95,
 			"authors": [
@@ -438,7 +445,8 @@
 			]
 		},
 		{
-			"id": "W2128364692",
+			"uuid": "rxjDkc4rUrGKkSNz",
+			"openalex_id": "W2128364692",
 			"title": "EffiCiency and Safety of an eLectronic cigAreTte (ECLAT) as Tobacco Cigarettes Substitute: A Prospective 12-Month Randomized Control Design Study",
 			"override_seed": 0.15,
 			"authors": [
@@ -477,7 +485,8 @@
 			]
 		},
 		{
-			"id": "W2128456085",
+			"uuid": "HdCn2SJBzGrSKYU5",
+			"openalex_id": "W2128456085",
 			"title": "Levels of selected carcinogens and toxicants in vapour from electronic cigarettes",
 			"authors": [
 				"Maciej Ł. Goniewicz",
@@ -509,7 +518,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2052671875",
+			"uuid": "DTBHvGRU1rlKJnMg",
+			"openalex_id": "W2052671875",
 			"title": "Metal and Silicate Particles Including Nanoparticles Are Present in Electronic Cigarette Cartomizer Fluid and Aerosol",
 			"override_seed": 0.3,
 			"authors": [
@@ -545,7 +555,8 @@
 			]
 		},
 		{
-			"id": "W2046826576",
+			"uuid": "QxQUHrHndk13nMru",
+			"openalex_id": "W2046826576",
 			"title": "A systematic review of health effects of electronic cigarettes",
 			"override_seed": 0.3,
 			"authors": [
@@ -580,7 +591,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2129661555",
+			"uuid": "jozDf0T6EViSu3yu",
+			"openalex_id": "W2129661555",
 			"title": "Acute effects of using an electronic nicotine-delivery device (electronic cigarette) on myocardial function: comparison with the effects of regular cigarettes",
 			"override_seed": 0,
 			"authors": [
@@ -613,7 +625,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2152193758",
+			"uuid": "IGEkYBsioIWE5inw",
+			"openalex_id": "W2152193758",
 			"title": "Characteristics, Perceived Side Effects and Benefits of Electronic Cigarette Use: A Worldwide Survey of More than 19,000 Consumers",
 			"override_seed": 0.5,
 			"authors": [
@@ -652,7 +665,8 @@
 			]
 		},
 		{
-			"id": "W2055002750",
+			"uuid": "9YJuWtKPI74w2G5r",
+			"openalex_id": "W2055002750",
 			"title": "Chemical hazards present in liquids and vapors of electronic cigarettes",
 			"override_seed": 0.95,
 			"authors": [
@@ -682,7 +696,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2164470169",
+			"uuid": "4UDOszSJYZ7MISyu",
+			"openalex_id": "W2164470169",
 			"title": "E-Cigarettes: A Scientific Review",
 			"override_seed": 0.95,
 			"authors": [
@@ -718,7 +733,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2061929461",
+			"uuid": "YQDjUOPUQ7ZIdOds",
+			"openalex_id": "W2061929461",
 			"title": "Effect of Smoking Abstinence and Reduction in Asthmatic Smokers Switching to Electronic Cigarettes: Evidence for Harm Reversal",
 			"authors": [
 				"Riccardo Polosa",
@@ -750,7 +766,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2013162227",
+			"uuid": "PnxI17xs5yzjdm5B",
+			"openalex_id": "W2013162227",
 			"title": "Effects of using electronic cigarettes on nicotine delivery and cardiovascular function in comparison with regular cigarettes",
 			"override_seed": 0.95,
 			"authors": [
@@ -781,7 +798,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2144345975",
+			"uuid": "K6fFgg875FqgQrcB",
+			"openalex_id": "W2144345975",
 			"title": "Electronic cigarettes: human health effects",
 			"override_seed": 0,
 			"authors": [
@@ -815,7 +833,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2031527413",
+			"uuid": "iPOldti0vDj1wLbw",
+			"openalex_id": "W2031527413",
 			"title": "Estimating the Harms of Nicotine-Containing Products Using the MCDA Approach",
 			"override_seed": 0.5,
 			"authors": [
@@ -845,7 +864,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2124187240",
+			"uuid": "0HRCrx8NbVg1tE0y",
+			"openalex_id": "W2124187240",
 			"title": "Safety evaluation and risk assessment of electronic cigarettes as tobacco cigarette substitutes: a systematic review",
 			"override_seed": 0.7,
 			"authors": [
@@ -880,6 +900,7 @@
 			"notes": []
 		},
 		{
+			"uuid": "4nDztAumQb6aABzD",
 			"title": "E-cigarettes: an evidence update",
 			"institution": {
 				"name": "Public Health England",
@@ -921,7 +942,8 @@
 			]
 		},
 		{
-			"id": "W2190146831",
+			"uuid": "N5aRUA0fRzM69qig",
+			"openalex_id": "W2190146831",
 			"title": "Effects of Switching to Electronic Cigarettes with and without Concurrent Smoking on Exposure to Nicotine, Carbon Monoxide, and Acrolein",
 			"override_seed": 0.5,
 			"authors": [
@@ -954,7 +976,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2002643189",
+			"uuid": "4EqD0c4hwZVBTv4E",
+			"openalex_id": "W2002643189",
 			"title": "Evaluation of E-Cigarette Liquid Vapor and Mainstream Cigarette Smoke after Direct Exposure of Primary Human Bronchial Epithelial Cells",
 			"override_seed": 0.95,
 			"authors": [
@@ -984,7 +1007,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2092850402",
+			"uuid": "Ipij6542WYD0fpAE",
+			"openalex_id": "W2092850402",
 			"title": "Vapors Produced by Electronic Cigarettes and E-Juices with Flavorings Induce Toxicity, Oxidative Stress, and Inflammatory Response in Lung Epithelial Cells and in Mouse Lung",
 			"override_seed": 0.5,
 			"authors": [
@@ -1014,7 +1038,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2340081798",
+			"uuid": "M8qU81GV5kPQVeeh",
+			"openalex_id": "W2340081798",
 			"title": "Acute Impact of Tobacco vs Electronic Cigarette Smoking on Oxidative Stress and Vascular Function",
 			"override_seed": 0.8,
 			"authors": [
@@ -1047,7 +1072,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2466775130",
+			"uuid": "Gk5j8r6YCDztZhR6",
+			"openalex_id": "W2466775130",
 			"title": "Changes in breathomics from a 1‐year randomized smoking cessation trial of electronic cigarettes",
 			"override_seed": 0.7,
 			"authors": [
@@ -1080,7 +1106,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2410589274",
+			"uuid": "D4GoPURuaUoAsdWr",
+			"openalex_id": "W2410589274",
 			"title": "Cohort study of electronic cigarette use: effectiveness and safety at 24 months",
 			"override_seed": 0.4,
 			"authors": [
@@ -1113,7 +1140,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2413436507",
+			"uuid": "G1pyahkBsylNwTQb",
+			"openalex_id": "W2413436507",
 			"title": "E-cigarette use results in suppression of immune and inflammatory-response genes in nasal epithelial cells similar to cigarette smoke",
 			"override_seed": 0.4,
 			"authors": [
@@ -1143,7 +1171,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2407038997",
+			"uuid": "bLyOvOw474l60U9q",
+			"openalex_id": "W2407038997",
 			"title": "Electronic cigarette exposure triggers neutrophil inflammatory responses",
 			"override_seed": 0.95,
 			"authors": [
@@ -1173,7 +1202,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2566095111",
+			"uuid": "cVzL79gSGsqexnOF",
+			"openalex_id": "W2566095111",
 			"title": "Evidence for harm reduction in COPD smokers who switch to electronic cigarettes",
 			"authors": [
 				"Riccardo Polosa",
@@ -1205,7 +1235,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2514426073",
+			"uuid": "NSHXsm4R1CUkS5fi",
+			"openalex_id": "W2514426073",
 			"title": "Exposure to Nicotine and Selected Toxicants in Cigarette Smokers Who Switched to Electronic Cigarettes: A Longitudinal Within-Subjects Observational Study",
 			"override_seed": 0.4,
 			"authors": [
@@ -1238,7 +1269,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4247507781",
+			"uuid": "04P1UtuaYScPz1ud",
+			"openalex_id": "W4247507781",
 			"title": "Guidance on the benefits and risks of the electronic cigarette or e-cigarette in the general population",
 			"override_seed": 0,
 			"institution": {
@@ -1274,7 +1306,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2303173857",
+			"uuid": "hY9ODKmOryBnngn4",
+			"openalex_id": "W2303173857",
 			"title": "Persisting long term benefits of smoking abstinence and reduction in asthmatic smokers who have switched to electronic cigarettes.",
 			"authors": [
 				"Riccardo Polosa",
@@ -1306,7 +1339,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2336834116",
+			"uuid": "gQJPFdDJp5ebrspH",
+			"openalex_id": "W2336834116",
 			"title": "Platelet activation, adhesion, inflammation, and aggregation potential are altered in the presence of electronic cigarette extracts of variable nicotine concentrations",
 			"override_seed": 0.95,
 			"authors": [
@@ -1336,7 +1370,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2472936346",
+			"uuid": "0rRRDRG9QYAngU2j",
+			"openalex_id": "W2472936346",
 			"title": "Reductions in biomarkers of exposure, impacts on smoking urge and assessment of product use and tolerability in adult smokers following partial or complete substitution of cigarettes with electronic cigarettes",
 			"override_seed": 0.1,
 			"authors": [
@@ -1368,7 +1403,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2597766308",
+			"uuid": "RhyLCI1qFVPrnTDB",
+			"openalex_id": "W2597766308",
 			"title": "Cardiovascular effects of electronic cigarettes",
 			"override_seed": 0,
 			"authors": [
@@ -1403,7 +1439,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2766814588",
+			"uuid": "QbDiMcTieP0uVllw",
+			"openalex_id": "W2766814588",
 			"title": "E-Cigarette Use Causes a Unique Innate Immune Response in the Lung, Involving Increased Neutrophilic Activation and Altered Mucin Secretion",
 			"authors": [
 				"Boris Reidel",
@@ -1432,7 +1469,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2586197770",
+			"uuid": "7yVZRS9PDhV1hzuz",
+			"openalex_id": "W2586197770",
 			"title": "Nicotine, Carcinogen, and Toxin Exposure in Long-Term E-Cigarette and Nicotine Replacement Therapy Users",
 			"authors": [
 				"Lion Shahab",
@@ -1464,7 +1502,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2888590649",
+			"uuid": "4S7YVaDCvN7lSVfD",
+			"openalex_id": "W2888590649",
 			"title": "Association Between Electronic Cigarette Use and Myocardial Infarction",
 			"authors": [
 				"Talal Alzahrani",
@@ -1496,7 +1535,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2882999281",
+			"uuid": "dZALLyRVcG8TQKaK",
+			"openalex_id": "W2882999281",
 			"title": "Association of Electronic Cigarette Use With Smoking Habits, Demographic Factors, and Respiratory Symptoms",
 			"override_seed": 0.2,
 			"authors": [
@@ -1526,7 +1566,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2904941043",
+			"uuid": "fBp7sVUsZWBlAj7C",
+			"openalex_id": "W2904941043",
 			"title": "Comparison of Nicotine and Toxicant Exposure in Users of Electronic Cigarettes and Combustible Cigarettes",
 			"authors": [
 				"Maciej Ł. Goniewicz",
@@ -1558,7 +1599,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2887257221",
+			"uuid": "WXCJNE5zMy1lNQwF",
+			"openalex_id": "W2887257221",
 			"title": "Comparison of the effects of e-cigarette vapor with cigarette smoke on lung function and inflammation in mice",
 			"authors": [
 				"Constantinos Glynos",
@@ -1587,7 +1629,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2899690421",
+			"uuid": "JQ21L5ywUnyL14jT",
+			"openalex_id": "W2899690421",
 			"title": "E-cigarette use and respiratory disorder in an adult sample",
 			"authors": [
 				"Thomas A. Wills",
@@ -1616,6 +1659,7 @@
 			"notes": []
 		},
 		{
+			"uuid": "0P2unstK5uexpAQ2",
 			"title": "E-cigarettes and heated tobacco products: evidence review",
 			"override_seed": 0,
 			"institution": {
@@ -1651,7 +1695,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2765307661",
+			"uuid": "DFL009cpWnQGKYZ2",
+			"openalex_id": "W2765307661",
 			"title": "E-Cigarettes: Use, Effects on Smoking, Risks, and Policy Implications",
 			"authors": [
 				"Stanton A. Glantz",
@@ -1685,7 +1730,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2888380009",
+			"uuid": "JlEH65NUe1FU3iRB",
+			"openalex_id": "W2888380009",
 			"title": "Health effects in COPD smokers who switch to electronic cigarettes: a retrospective-prospective 3-year follow-up",
 			"authors": [
 				"Riccardo Polosa",
@@ -1717,7 +1763,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2887189186",
+			"uuid": "jrHDV8LP95sjDvLW",
+			"openalex_id": "W2887189186",
 			"title": "Impact of Tobacco Versus Electronic Cigarette Smoking on Platelet Function",
 			"override_seed": 0.5,
 			"authors": [
@@ -1750,7 +1797,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4244204671",
+			"uuid": "2XePC7cuAK93fwXY",
+			"openalex_id": "W4244204671",
 			"title": "Public Health Consequences of E-Cigarettes",
 			"institution": {
 				"name": "National Academies of Sciences, Engineering, and Medicine",
@@ -1785,7 +1833,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2994948693",
+			"uuid": "s3sgfBavH0LjqbDZ",
+			"openalex_id": "W2994948693",
 			"title": "A Randomized Clinical Trial Examining the Effects of Instructions for Electronic Cigarette Use on Smoking-Related Behaviors and Biomarkers of Exposure",
 			"authors": [
 				"Dorothy K. Hatsukami",
@@ -1817,7 +1866,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2913337886",
+			"uuid": "cZFeAGoqJKlfr0Oo",
+			"openalex_id": "W2913337886",
 			"title": "A Randomized Trial of E-Cigarettes versus Nicotine-Replacement Therapy",
 			"authors": [
 				"Peter Hájek",
@@ -1846,7 +1896,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2980933496",
+			"uuid": "PityoaXG1Hw3T2vb",
+			"openalex_id": "W2980933496",
 			"title": "Adult E-Cigarettes Use Associated with a Self-Reported Diagnosis of COPD",
 			"authors": [
 				"Mario F. Perez",
@@ -1878,7 +1929,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2921911797",
+			"uuid": "EXY7E8kOQxOXElW8",
+			"openalex_id": "W2921911797",
 			"title": "Association Between E-Cigarette Use and Cardiovascular Disease Among Never and Current Combustible-Cigarette Smokers",
 			"authors": [
 				"Albert D. Osei",
@@ -1907,7 +1959,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2996546933",
+			"uuid": "aE2dB0jO1jDF8k9F",
+			"openalex_id": "W2996546933",
 			"title": "Association of E-Cigarette Use With Respiratory Disease Among Adults: A Longitudinal Analysis",
 			"authors": [
 				"Dharma Nand Bhatta",
@@ -1934,7 +1987,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2913397411",
+			"uuid": "e3KYmASzMtZt9PVf",
+			"openalex_id": "W2913397411",
 			"title": "Association of smoking and electronic cigarette use with wheezing and related respiratory symptoms in adults: cross-sectional results from the Population Assessment of Tobacco and Health (PATH) study, wave 2",
 			"authors": [
 				"Dongmei Li",
@@ -1966,7 +2020,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2988313215",
+			"uuid": "syD9DVtK8CviNasA",
+			"openalex_id": "W2988313215",
 			"title": "Cardiovascular Effects of Switching From Tobacco Cigarettes to Electronic Cigarettes",
 			"authors": [
 				"George Casella",
@@ -1998,7 +2053,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2976191070",
+			"uuid": "PutH5bxXR5bYyrqw",
+			"openalex_id": "W2976191070",
 			"title": "Is e-cigarette use associated with coronary heart disease and myocardial infarction? Insights from the 2016 and 2017 National Health Interview Surveys",
 			"authors": [
 				"Konstantinos Farsalinos",
@@ -2030,7 +2086,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2996490128",
+			"uuid": "wGXLWQoDKeN9FGyQ",
+			"openalex_id": "W2996490128",
 			"title": "Use of Electronic Cigarettes and Self-Reported Chronic Obstructive Pulmonary Disease Diagnosis in Adults",
 			"override_seed": 0.7,
 			"authors": [
@@ -2060,7 +2117,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2975098224",
+			"uuid": "oIrzA6tkMki0CC8A",
+			"openalex_id": "W2975098224",
 			"title": "What are the respiratory effects of e-cigarettes?",
 			"authors": [
 				"Jeffrey E. Gotts",
@@ -2096,6 +2154,7 @@
 			"notes": []
 		},
 		{
+			"uuid": "R26QmcY2QdVNi54M",
 			"title": "WHO study group on tobacco product regulation. Report on the scientific basis of tobacco product regulation: seventh report of a WHO study group",
 			"override_seed": 0.95,
 			"institution": {
@@ -2131,7 +2190,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2997885580",
+			"uuid": "LqP8ByHQOTogPCZb",
+			"openalex_id": "W2997885580",
 			"title": "Association Between E-Cigarette Use and Chronic Obstructive Pulmonary Disease by Smoking Status: Behavioral Risk Factor Surveillance System 2016 and 2017",
 			"override_seed": 0.95,
 			"authors": [
@@ -2161,7 +2221,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3091847179",
+			"uuid": "jgxZGonZEC4qHpyw",
+			"openalex_id": "W3091847179",
 			"title": "COPD smokers who switched to e-cigarettes: health outcomes at 5-year follow up",
 			"authors": [
 				"Riccardo Polosa",
@@ -2193,7 +2254,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3100614931",
+			"uuid": "KP8CACHw0xyPtnTm",
+			"openalex_id": "W3100614931",
 			"title": "Effect of Pod e-Cigarettes vs Cigarettes on Carcinogen Exposure Among African American and Latinx Smokers",
 			"authors": [
 				"Kim Pulvers",
@@ -2225,7 +2287,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3038983180",
+			"uuid": "yDox9abyFKo2hBiq",
+			"openalex_id": "W3038983180",
 			"title": "Is vaping better than smoking for cardiorespiratory and muscle function?",
 			"override_seed": 0.6,
 			"authors": [
@@ -2262,7 +2325,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2999048419",
+			"uuid": "rj8913PrmNyttKGl",
+			"openalex_id": "W2999048419",
 			"title": "Risk of Stroke With E-Cigarette and Combustible Cigarette Use in Young Adults",
 			"override_seed": 0.3,
 			"authors": [
@@ -2294,7 +2358,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3161678628",
+			"uuid": "dVByV98AMaczeVl9",
+			"openalex_id": "W3161678628",
 			"title": "An updated overview of e-cigarette impact on human health",
 			"override_seed": 0.5,
 			"authors": [
@@ -2330,7 +2395,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3119590770",
+			"uuid": "qgHc7OndlLNe0g1V",
+			"openalex_id": "W3119590770",
 			"title": "Association of Cigarette and Electronic Cigarette Use Patterns With Levels of Inflammatory and Oxidative Stress Biomarkers Among US Adults",
 			"override_seed": 0.5,
 			"authors": [
@@ -2363,6 +2429,7 @@
 			"notes": []
 		},
 		{
+			"uuid": "hugNp2bkPrSMdrHx",
 			"title": "Avis relatif aux bénéfices-risques de la cigarette électronique",
 			"override_seed": 0,
 			"institution": {
@@ -2398,7 +2465,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4287462074",
+			"uuid": "zYSy6WCUthJh9qr7",
+			"openalex_id": "W4287462074",
 			"title": "WHO study group on tobacco product regulation. Report on the scientific basis of tobacco product regulation: eighth report of a WHO study group",
 			"override_seed": 0.95,
 			"institution": {
@@ -2434,7 +2502,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4298393805",
+			"uuid": "GLqTr3Yb2VxZzeRT",
+			"openalex_id": "W4298393805",
 			"title": "Association of tobacco product use with chronic obstructive pulmonary disease (COPD) prevalence and incidence in Waves 1 through 5 (2013–2019) of the Population Assessment of Tobacco and Health (PATH) Study",
 			"override_seed": 0.75,
 			"authors": [
@@ -2464,7 +2533,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4221013247",
+			"uuid": "WiVo9jmPE5ntfpT1",
+			"openalex_id": "W4221013247",
 			"title": "Cardiovascular Outcomes among Combustible-Tobacco and Electronic Nicotine Delivery System (ENDS) Users in Waves 1 through 5 of the Population Assessment of Tobacco and Health (PATH) Study, 2013–2019",
 			"override_seed": 0.5,
 			"authors": [
@@ -2494,7 +2564,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4307348284",
+			"uuid": "lrO30Ew62y7ki778",
+			"openalex_id": "W4307348284",
 			"title": "Chronic E-Cigarette Use Impairs Endothelial Function on the Physiological and Cellular Levels",
 			"authors": [
 				"Leila Mohammadi",
@@ -2523,7 +2594,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4295011199",
+			"uuid": "VoaXxOxLWAEaUvl7",
+			"openalex_id": "W4295011199",
 			"title": "E-cigarettes and myocardial infarction: A systematic review and meta-analysis",
 			"override_seed": 0.3,
 			"authors": [
@@ -2563,7 +2635,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4226213346",
+			"uuid": "cGC6bXm9mJHEnoJI",
+			"openalex_id": "W4226213346",
 			"title": "E-Cigarettes—a review of the evidence—harm versus harm reduction",
 			"override_seed": 0.95,
 			"authors": [
@@ -2599,7 +2672,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4281867326",
+			"uuid": "8CnnXAPizViSQ4Ke",
+			"openalex_id": "W4281867326",
 			"title": "Effect Comparison of E-Cigarette and Traditional Smoking and Association with Stroke—A Cross-Sectional Study of NHANES",
 			"override_seed": 0,
 			"authors": [
@@ -2639,7 +2713,8 @@
 			]
 		},
 		{
-			"id": "W4288855261",
+			"uuid": "VrHMmP8PKMb5Jw1b",
+			"openalex_id": "W4288855261",
 			"title": "Longitudinal Associations Between Exclusive and Dual Use of Electronic Nicotine Delivery Systems and Cigarettes and Self-Reported Incident Diagnosed Cardiovascular Disease Among Adults",
 			"authors": [
 				"Jana L. Hirschtick",
@@ -2671,7 +2746,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4291754731",
+			"uuid": "VHOYoYbKmkORpoHk",
+			"openalex_id": "W4291754731",
 			"title": "Medium- and longer-term cardiovascular effects of e-cigarettes in adults making a stop-smoking attempt: a randomized controlled trial",
 			"authors": [
 				"Markos Klonizakis",
@@ -2703,6 +2779,7 @@
 			"notes": []
 		},
 		{
+			"uuid": "DonQFZ6PgReBgVSI",
 			"title": "Nicotine vaping in England: 2022 evidence update",
 			"override_seed": 0,
 			"institution": {
@@ -2738,7 +2815,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4323363305",
+			"uuid": "QXYIe8JWrgQ8IcjI",
+			"openalex_id": "W4323363305",
 			"title": "Cigarettes, ENDS Use, and Chronic Obstructive Pulmonary Disease Incidence: A Prospective Longitudinal Study",
 			"override_seed": 0.5,
 			"authors": [
@@ -2768,7 +2846,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4372332628",
+			"uuid": "NvXk2kH6rOBGGRDW",
+			"openalex_id": "W4372332628",
 			"title": "Comparison of biomarkers of exposure among US adult smokers, users of electronic nicotine delivery systems, dual users and nonusers, 2018–2019",
 			"authors": [
 				"Nathan M. Holt",
@@ -2800,7 +2879,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4327900109",
+			"uuid": "TfosSs5PoEkq3uyw",
+			"openalex_id": "W4327900109",
 			"title": "Electronic cigarettes and health outcomes: umbrella and systematic review of the global evidence",
 			"override_seed": 0.95,
 			"authors": [
@@ -2837,7 +2917,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4403600042",
+			"uuid": "4Ngdii12tWPfrWRf",
+			"openalex_id": "W4403600042",
 			"title": "Breaking the Myths Around e-Cigarettes: A Narrative Review Exploring the Impact of e-Cigarette on Human Health",
 			"authors": [
 				"Zareen Zohara",
@@ -2871,7 +2952,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4391577851",
+			"uuid": "BAlLhFZok1YSs3Q7",
+			"openalex_id": "W4391577851",
 			"title": "Comparative systematic review on the safety of e-cigarettes and conventional cigarettes",
 			"override_seed": 0,
 			"authors": [
@@ -2908,7 +2990,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4402757690",
+			"uuid": "HsJZXsWk5msNtBws",
+			"openalex_id": "W4402757690",
 			"title": "Comparing E-Cigarettes and Traditional Cigarettes in Relation to Myocardial Infarction, Arrhythmias, and Sudden Cardiac Death: A Systematic Review and Meta-Analysis",
 			"override_seed": 0.5,
 			"authors": [
@@ -2945,7 +3028,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4404415562",
+			"uuid": "pJF0mFY3vCfNhEMC",
+			"openalex_id": "W4404415562",
 			"title": "Comparing self-rated health among exclusive e-cigarette users and traditional cigarette smokers: an analysis of the Health Survey for England 2019",
 			"authors": [
 				"Yusuff Adebayo Adebisi",
@@ -2975,7 +3059,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4401101487",
+			"uuid": "juDZfuH1sG89rpGH",
+			"openalex_id": "W4401101487",
 			"title": "Direct health implications of e-cigarette use: a systematic scoping review with evidence assessment",
 			"override_seed": 0.1,
 			"authors": [
@@ -3012,7 +3097,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4401512551",
+			"uuid": "HLdJNyE1Xhm5ZFAR",
+			"openalex_id": "W4401512551",
 			"title": "Epigenomic Dysregulation in Youth Vapers: Implications for Disease Risk Assessment",
 			"authors": [
 				"Stella Tommasi",
@@ -3044,7 +3130,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4405618660",
+			"uuid": "eYaFS5fqdXiCO2lz",
+			"openalex_id": "W4405618660",
 			"title": "Functionally important respiratory symptoms and continued cigarette use versus e-cigarette switching: population assessment of tobacco and health study waves 2-6",
 			"override_seed": 0.95,
 			"authors": [
@@ -3077,7 +3164,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4392185801",
+			"uuid": "JUIbiIYXEfElOTTS",
+			"openalex_id": "W4392185801",
 			"title": "Population-Based Disease Odds for E-Cigarettes and Dual Use versus Cigarettes",
 			"authors": [
 				"Stanton A. Glantz",
@@ -3112,7 +3200,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4403613465",
+			"uuid": "J2YfKToaFaNMghDq",
+			"openalex_id": "W4403613465",
 			"title": "Prognosis after switching to electronic cigarettes following percutaneous coronary intervention: a Korean nationwide study",
 			"override_seed": 0,
 			"authors": [
@@ -3142,7 +3231,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4406930146",
+			"uuid": "4eeb3MzLqN0R0a9o",
+			"openalex_id": "W4406930146",
 			"title": "Electronic cigarettes for smoking cessation",
 			"override_seed": 0.95,
 			"authors": [

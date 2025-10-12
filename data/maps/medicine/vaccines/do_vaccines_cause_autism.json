@@ -158,7 +158,8 @@
 	"no_sample_size": false,
 	"papers": [
 		{
-			"id": "W2010453107",
+			"uuid": "OT8g06M1J8sGpX4o",
+			"openalex_id": "W2010453107",
 			"title": "Measles Vaccines: a review of adverse events",
 			"authors": [
 				"Philippe Duclos",
@@ -192,7 +193,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2106409867",
+			"uuid": "TAAXgw9psXFAZKXc",
+			"openalex_id": "W2106409867",
 			"title": "MMR and Autism",
 			"override_seed": 0.2,
 			"authors": [
@@ -220,7 +222,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2056339438",
+			"uuid": "N5QK86utqBmVCZcK",
+			"openalex_id": "W2056339438",
 			"title": "No evidence for measles, mumps, and rubella vaccine-associated inflammatory bowel disease or autism in a 14-year prospective study",
 			"override_seed": 0.95,
 			"authors": [
@@ -250,7 +253,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2117847125",
+			"uuid": "Sq8ZbRdCE54QKWDx",
+			"openalex_id": "W2117847125",
 			"title": "RETRACTED: Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children",
 			"override_seed": 0,
 			"authors": [
@@ -299,7 +303,8 @@
 			]
 		},
 		{
-			"id": "W2136419435",
+			"uuid": "6NY6aNlbx6lM1gp5",
+			"openalex_id": "W2136419435",
 			"title": "Autism and measles, mumps, and rubella vaccine: no epidemiological evidence for a causal association",
 			"authors": [
 				"Brent Taylor",
@@ -328,7 +333,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2090759568",
+			"uuid": "uam7j2xruFibqBSU",
+			"openalex_id": "W2090759568",
 			"title": "Autism and measles, mumps, and rubella vaccine: No epidemiological evidence for a causal association",
 			"override_seed": 0,
 			"authors": [
@@ -358,7 +364,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2114526368",
+			"uuid": "nx3YiYeyi5ZL3Ixi",
+			"openalex_id": "W2114526368",
 			"title": "Autism and Measles-Mumps-Rubella Vaccination",
 			"override_seed": 0.4,
 			"authors": [
@@ -393,7 +400,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2104912466",
+			"uuid": "ZX94lqeDpeBKe7aA",
+			"openalex_id": "W2104912466",
 			"title": "Autism: a novel form of mercury poisoning",
 			"authors": [
 				"Sallie Bernard",
@@ -448,7 +456,8 @@
 			]
 		},
 		{
-			"id": "W1889456959",
+			"uuid": "fiDAwgi479r01WWm",
+			"openalex_id": "W1889456959",
 			"title": "Do children who become autistic consult more often after MMR vaccination?",
 			"override_seed": 0,
 			"authors": [
@@ -478,7 +487,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4299526172",
+			"uuid": "OOFSVhj6IPAjxo3G",
+			"openalex_id": "W4299526172",
 			"title": "Immunization Safety Review: Measles-Mumps-Rubella Vaccine and Autism",
 			"override_seed": 0,
 			"institution": {
@@ -514,7 +524,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2108531015",
+			"uuid": "o4v6sZCe6pmL7OdE",
+			"openalex_id": "W2108531015",
 			"title": "Measles-Mumps-Rubella Vaccine and Autistic Spectrum Disorder: Report From the New Challenges in Childhood Immunizations Conference Convened in Oak Brook, Illinois, June 12–13, 2000",
 			"authors": [
 				"Neal A. Halsey",
@@ -548,7 +559,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2072979656",
+			"uuid": "GkMzGL0mYOTZDTPs",
+			"openalex_id": "W2072979656",
 			"title": "MMR and autism: further evidence against a causal association",
 			"override_seed": 0.8,
 			"authors": [
@@ -577,7 +589,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2409590998",
+			"uuid": "9fBjXH5fSTNIn4AC",
+			"openalex_id": "W2409590998",
 			"title": "MMR, autism and inflammatory bowel disease: responding to patient concerns using an evidence‐based framework",
 			"authors": [
 				"C Raina Maclntyre",
@@ -611,7 +624,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2148194409",
+			"uuid": "tdgV2UPlnYR9AASu",
+			"openalex_id": "W2148194409",
 			"title": "Mumps, measles, and rubella vaccine and the incidence of autism recorded by general practitioners: a time trend analysis",
 			"authors": [
 				"James A. Kaye"
@@ -637,7 +651,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2151324155",
+			"uuid": "QyX1VD5gOVrnVZyo",
+			"openalex_id": "W2151324155",
 			"title": "No Evidence for A New Variant of Measles-Mumps-Rubella–Induced Autism",
 			"authors": [
 				"Éric Fombonne",
@@ -664,7 +679,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2087636597",
+			"uuid": "DatgdXSM42SFcdP9",
+			"openalex_id": "W2087636597",
 			"title": "Time Trends in Autism and in MMR Immunization Coverage in California",
 			"override_seed": 0.6,
 			"authors": [
@@ -693,7 +709,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2073545687",
+			"uuid": "PIc92nFm8QCsviwL",
+			"openalex_id": "W2073545687",
 			"title": "A Population-Based Study of Measles, Mumps, and Rubella Vaccination and Autism",
 			"authors": [
 				"Kreesten Meldgaard Madsen",
@@ -722,7 +739,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2082489477",
+			"uuid": "aPux81yEqCOGEFC4",
+			"openalex_id": "W2082489477",
 			"title": "Autism and MMR vaccination in North London; no causal relationship",
 			"authors": [
 				"Brent Taylor",
@@ -751,7 +769,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2082353003",
+			"uuid": "Sx7dpIOG6MciUWVN",
+			"openalex_id": "W2082353003",
 			"title": "Measles, Mumps and Rubella Vaccine, Autism and Inflammatory Bowel Disease",
 			"authors": [
 				"David Elliman",
@@ -785,7 +804,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2165196939",
+			"uuid": "Dm42o6bEW3uR0j2y",
+			"openalex_id": "W2165196939",
 			"title": "Measles, mumps, and rubella vaccination and bowel problems or developmental regression in children with autism: population study",
 			"override_seed": 0.95,
 			"authors": [
@@ -812,7 +832,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2101048460",
+			"uuid": "bYwJ3wX1mH3nm58c",
+			"openalex_id": "W2101048460",
 			"title": "MMR and autism: an overview of the debate to date",
 			"override_seed": 0,
 			"authors": [
@@ -846,7 +867,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2110349400",
+			"uuid": "4Gm1XL8Q1AhQ2FLh",
+			"openalex_id": "W2110349400",
 			"title": "MMR and autism: moving from controversy toward consensus",
 			"override_seed": 0.6,
 			"authors": [
@@ -880,7 +902,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2150042309",
+			"uuid": "xGSBrp0h9cUHwQG2",
+			"openalex_id": "W2150042309",
 			"title": "MMR vaccination and autism: is there a link?",
 			"authors": [
 				"W. Thompson",
@@ -914,7 +937,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2312964316",
+			"uuid": "0VnSIjYuCivN1zUH",
+			"openalex_id": "W2312964316",
 			"title": "MMR vaccine and autism: a review of the evidence for a causal association",
 			"override_seed": 0.3,
 			"authors": [
@@ -948,7 +972,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2122056698",
+			"uuid": "K1Ky6VnAQbyWELB3",
+			"openalex_id": "W2122056698",
 			"title": "Neurologic Disorders After Measles-Mumps-Rubella Vaccination",
 			"authors": [
 				"Anna-Mari Mäkelä",
@@ -976,7 +1001,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2163223893",
+			"uuid": "FxFEKASWDzG2PosO",
+			"openalex_id": "W2163223893",
 			"title": "Potential viral pathogenic mechanism for new variant inflammatory bowel disease",
 			"authors": [
 				"V Uhlmann",
@@ -1025,7 +1051,8 @@
 			]
 		},
 		{
-			"id": "W98043794",
+			"uuid": "MUlusLSRyNjkatbv",
+			"openalex_id": "W98043794",
 			"title": "Vaccine adverse events: separating myth from reality.",
 			"authors": [
 				"Sanford R. Kimmel"
@@ -1058,7 +1085,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2152917714",
+			"uuid": "I55v5Td4yBs1CSpf",
+			"openalex_id": "W2152917714",
 			"title": "Association Between Thimerosal-Containing Vaccine and Autism",
 			"override_seed": 0,
 			"authors": [
@@ -1088,7 +1116,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2024046899",
+			"uuid": "dgSqAzs44kCmtzkF",
+			"openalex_id": "W2024046899",
 			"title": "Association of Autistic Spectrum Disorder and the Measles, Mumps, and Rubella Vaccine",
 			"override_seed": 0.3,
 			"authors": [
@@ -1125,7 +1154,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1996832957",
+			"uuid": "L9ObxKqieHgXDRhK",
+			"openalex_id": "W1996832957",
 			"title": "Autism and thimerosal-containing vaccines",
 			"override_seed": 0.4,
 			"authors": [
@@ -1155,7 +1185,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2101662070",
+			"uuid": "xQKzSaguyMVx95YB",
+			"openalex_id": "W2101662070",
 			"title": "Epidemiology and Possible Causes of Autism",
 			"override_seed": 0.1,
 			"authors": [
@@ -1183,40 +1214,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1985761653",
-			"title": "Measles-mumps-rubella vaccine and the development of autism",
-			"authors": [
-				"Elizabeth Miller"
-			],
-			"year": 2003,
-			"link": "https://doi.org/10.1016/s1045-1870(03)00034-7",
-			"journal": {
-				"id": "S108600424",
-				"retracted": false
-			},
-			"citations": 26,
-			"results": {
-				"consensus": "no",
-				"conclusion": "no",
-				"indirect": false
-			},
-			"quote": "No epidemiologic evidence suggests an association between MMR vaccination and autism. Moreover, epidemiologic evidence against such an association is compelling",
-			"review": {
-				"type": "NarrativeReview",
-				"reviews": false,
-				"estimate": true,
-				"count": 30,
-				"subpart": false
-			},
-			"type": "DiverseObservationalStudies",
-			"blinding": "None",
-			"sample_size": "NotSpecified",
-			"p_value": "NotApplicable",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
-			"id": "W2164294804",
+			"uuid": "2MkjOLcYuKu0XlmY",
+			"openalex_id": "W2164294804",
 			"title": "Measles-Mumps-Rubella Vaccine and the Development of Autism or Inflammatory Bowel Disease: The Controversy Should End",
 			"override_seed": 0.95,
 			"authors": [
@@ -1251,7 +1250,42 @@
 			"notes": []
 		},
 		{
-			"id": "W2168921834",
+			"uuid": "Tpnxwk4d3MdvfIJi",
+			"openalex_id": "W1985761653",
+			"title": "Measles-mumps-rubella vaccine and the development of autism",
+			"authors": [
+				"Elizabeth Miller"
+			],
+			"year": 2003,
+			"link": "https://doi.org/10.1016/s1045-1870(03)00034-7",
+			"journal": {
+				"id": "S108600424",
+				"retracted": false
+			},
+			"citations": 26,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No epidemiologic evidence suggests an association between MMR vaccination and autism. Moreover, epidemiologic evidence against such an association is compelling",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 30,
+				"subpart": false
+			},
+			"type": "DiverseObservationalStudies",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "1YXPjDVI6l8SOYaq",
+			"openalex_id": "W2168921834",
 			"title": "Measles, mumps, rubella (MMR) vaccine",
 			"authors": [
 				"Anand Prakash Dubey",
@@ -1285,7 +1319,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2049587614",
+			"uuid": "JFHMN24tUsBbkJCM",
+			"openalex_id": "W2049587614",
 			"title": "MMR and autistic enterocolitis: consistent epidemiological failure to find an association",
 			"override_seed": 0.4,
 			"authors": [
@@ -1320,7 +1355,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2147918475",
+			"uuid": "N7xfbI2cfv9dg6CC",
+			"openalex_id": "W2147918475",
 			"title": "Safety of Thimerosal-Containing Vaccines: A Two-Phased Study of Computerized Health Maintenance Organization Databases",
 			"authors": [
 				"Thomas Verstraeten",
@@ -1349,7 +1385,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2135364553",
+			"uuid": "WaBDr77FaEsbrOh2",
+			"openalex_id": "W2135364553",
 			"title": "There is little evidence that combined vaccination against measles, mumps, and rubella is associated with autism",
 			"override_seed": 0.7,
 			"authors": [
@@ -1376,7 +1413,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2054843027",
+			"uuid": "ivYG3XR2rMg7aQpQ",
+			"openalex_id": "W2054843027",
 			"title": "Thimerosal and Autism?",
 			"override_seed": 0,
 			"authors": [
@@ -1411,7 +1449,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2135807836",
+			"uuid": "KKnOTjrLhO2BvgAp",
+			"openalex_id": "W2135807836",
 			"title": "Thimerosal and the Occurrence of Autism: Negative Ecological Evidence From Danish Population-Based Data",
 			"override_seed": 0.3,
 			"authors": [
@@ -1441,7 +1480,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1992761557",
+			"uuid": "dIaJxpMIQ9ZCl65E",
+			"openalex_id": "W1992761557",
 			"title": "Unintended events following immunization with MMR: a systematic review",
 			"override_seed": 0.6,
 			"authors": [
@@ -1478,7 +1518,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2169567320",
+			"uuid": "Jbr9seGmNIu1ROm5",
+			"openalex_id": "W2169567320",
 			"title": "Age at First Measles-Mumps-Rubella Vaccination in Children With Autism and School-Matched Control Subjects: A Population-Based Study in Metropolitan Atlanta",
 			"override_seed": 0,
 			"authors": [
@@ -1508,7 +1549,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2012804740",
+			"uuid": "xslrJNg3YMF8DFTH",
+			"openalex_id": "W2012804740",
 			"title": "Does the MMR triple vaccine cause autism?",
 			"override_seed": 0.6,
 			"authors": [
@@ -1545,7 +1587,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2089329374",
+			"uuid": "9FLa9UrwvJcK0AjU",
+			"openalex_id": "W2089329374",
 			"title": "Exploring the evidence surrounding the debate on MMR and autism",
 			"override_seed": 0.95,
 			"authors": [
@@ -1579,7 +1622,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2516576737",
+			"uuid": "5G18E8uoLUTTwASz",
+			"openalex_id": "W2516576737",
 			"title": "Immunization Safety Review: Vaccines and Autism",
 			"override_seed": 0.5,
 			"institution": {
@@ -1615,7 +1659,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2004234014",
+			"uuid": "JDssKncLIlASgov2",
+			"openalex_id": "W2004234014",
 			"title": "Immunizations, immunology, and autism",
 			"authors": [
 				"Michael Chez",
@@ -1650,7 +1695,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2087791351",
+			"uuid": "SOrccl174KBuA6Nq",
+			"openalex_id": "W2087791351",
 			"title": "MMR Vaccination and Autism",
 			"authors": [
 				"Kreesten Meldgaard Madsen",
@@ -1684,7 +1730,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2107557001",
+			"uuid": "Qo3zr8qqoD2Cpcku",
+			"openalex_id": "W2107557001",
 			"title": "MMR vaccination and pervasive developmental disorders: a case-control study",
 			"override_seed": 0.95,
 			"authors": [
@@ -1714,7 +1761,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2060711003",
+			"uuid": "f7EH1gbefcb86IsL",
+			"openalex_id": "W2060711003",
 			"title": "MMR vaccine and autism: an update of the scientific evidence",
 			"override_seed": 0,
 			"authors": [
@@ -1749,7 +1797,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2108528265",
+			"uuid": "xN8z504ocIunphbM",
+			"openalex_id": "W2108528265",
 			"title": "Neurotoxic effects of postnatal thimerosal are mouse strain dependent",
 			"authors": [
 				"Mady Hornig",
@@ -1787,7 +1836,8 @@
 			]
 		},
 		{
-			"id": "W2164671692",
+			"uuid": "mknQZDM2sywBKWBM",
+			"openalex_id": "W2164671692",
 			"title": "No evidence for links between autism, MMR and measles virus",
 			"override_seed": 0.8,
 			"authors": [
@@ -1817,7 +1867,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2110166769",
+			"uuid": "6IR7T4fa0BYdUN28",
+			"openalex_id": "W2110166769",
 			"title": "Relationship Between MMR Vaccine and Autism",
 			"override_seed": 0.4,
 			"authors": [
@@ -1852,7 +1903,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2093914065",
+			"uuid": "GNKn001C02zZ4WiJ",
+			"openalex_id": "W2093914065",
 			"title": "Review: existing epidemiological evidence does not show an association between mumps, measles, and rubella vaccination and autism",
 			"override_seed": 0.95,
 			"authors": [
@@ -1886,7 +1938,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2100810138",
+			"uuid": "2U03FLSkMdel19pH",
+			"openalex_id": "W2100810138",
 			"title": "Thimerosal Exposure in Infants and Developmental Disorders: A Prospective Cohort Study in the United Kingdom Does Not Support a Causal Association",
 			"override_seed": 0.95,
 			"authors": [
@@ -1914,7 +1967,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2149103321",
+			"uuid": "H1J69gGlGUF1zl9R",
+			"openalex_id": "W2149103321",
 			"title": "Thimerosal Exposure in Infants and Developmental Disorders: A Retrospective Cohort Study in the United Kingdom Does Not Support a Causal Association",
 			"override_seed": 0.3,
 			"authors": [
@@ -1944,7 +1998,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2169021074",
+			"uuid": "j9dp6hjPMcKap9Ri",
+			"openalex_id": "W2169021074",
 			"title": "Thimerosal-Containing Vaccines and Autistic Spectrum Disorder: A Critical Review of Published Original Data",
 			"override_seed": 0.95,
 			"authors": [
@@ -1981,7 +2036,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2109213804",
+			"uuid": "KFRHBeIhQxAlGWlQ",
+			"openalex_id": "W2109213804",
 			"title": "Aetiology of autism: findings and questions",
 			"authors": [
 				"Michael Rutter"
@@ -2014,7 +2070,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1975331319",
+			"uuid": "VdXkDxng2nbpwl7r",
+			"openalex_id": "W1975331319",
 			"title": "No effect of MMR withdrawal on the incidence of autism: a total population study",
 			"override_seed": 0.95,
 			"authors": [
@@ -2043,7 +2100,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2076695337",
+			"uuid": "rKQMXn64J4gWoHjQ",
+			"openalex_id": "W2076695337",
 			"title": "Review: vaccines containing thimerosal are not associated with autistic spectrum disorders in children",
 			"authors": [
 				"William M. McMahon"
@@ -2076,7 +2134,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2128594986",
+			"uuid": "nbUvG8sqHprJv0yp",
+			"openalex_id": "W2128594986",
 			"title": "Immunizations and Autism: A Review of the Literature",
 			"override_seed": 0.95,
 			"authors": [
@@ -2111,7 +2170,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2000764724",
+			"uuid": "A6GKjFX0ZxpbMtJK",
+			"openalex_id": "W2000764724",
 			"title": "Is There a ‘Regressive Phenotype’ of Autism Spectrum Disorder Associated with the Measles-Mumps-Rubella Vaccine? A CPEA Study",
 			"override_seed": 0.2,
 			"authors": [
@@ -2141,7 +2201,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1991698391",
+			"uuid": "t7ceDw4TgTrd0o55",
+			"openalex_id": "W1991698391",
 			"title": "MMR-Vaccine and Regression in Autism Spectrum Disorders: Negative Results Presented from Japan",
 			"override_seed": 0.4,
 			"authors": [
@@ -2170,7 +2231,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2140996251",
+			"uuid": "f49BZl90N3nbtntK",
+			"openalex_id": "W2140996251",
 			"title": "Pervasive Developmental Disorders in Montreal, Quebec, Canada: Prevalence and Links With Immunizations",
 			"authors": [
 				"Éric Fombonne",
@@ -2199,7 +2261,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2123149325",
+			"uuid": "xOfsfT8zJQN53irg",
+			"openalex_id": "W2123149325",
 			"title": "Postlicensure epidemiology of childhood vaccination: the Danish experience",
 			"override_seed": 0.6,
 			"authors": [
@@ -2233,7 +2296,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1994489056",
+			"uuid": "TbBmeuPcfApBxOug",
+			"openalex_id": "W1994489056",
 			"title": "Vaccines and the changing epidemiology of autism",
 			"override_seed": 0.95,
 			"authors": [
@@ -2267,7 +2331,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2146637392",
+			"uuid": "pGzjcJvMf0r3gMkv",
+			"openalex_id": "W2146637392",
 			"title": "A Case Series of Children with Apparent Mercury Toxic Encephalopathies Manifesting with Clinical Symptoms of Regressive Autistic Disorders∗",
 			"authors": [
 				"David A. Geier",
@@ -2310,7 +2375,8 @@
 			]
 		},
 		{
-			"id": "W2117762261",
+			"uuid": "CmgnFe8aDb2AHHJS",
+			"openalex_id": "W2117762261",
 			"title": "Early Thimerosal Exposure and Neuropsychological Outcomes at 7 to 10 Years",
 			"authors": [
 				"W. Thompson",
@@ -2339,7 +2405,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1985888104",
+			"uuid": "o56uAzo0NNtUrQRS",
+			"openalex_id": "W1985888104",
 			"title": "Lack of association between Rh status, Rh immune globulin in pregnancy and autism",
 			"authors": [
 				"Judith H. Miles",
@@ -2366,7 +2433,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2118638832",
+			"uuid": "MN8vl7HmpfQkcVEL",
+			"openalex_id": "W2118638832",
 			"title": "Low-Level Neonatal Thimerosal Exposure: Further Evaluation of Altered Neurotoxic Potential in SJL Mice",
 			"override_seed": 0.95,
 			"authors": [
@@ -2396,7 +2464,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1978204736",
+			"uuid": "gueC2T3WySERANp4",
+			"openalex_id": "W1978204736",
 			"title": "Vaccination, seizures and 'vaccine damage'",
 			"override_seed": 0.7,
 			"authors": [
@@ -2432,7 +2501,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2132122848",
+			"uuid": "2Mi82ukhuBSf1lxT",
+			"openalex_id": "W2132122848",
 			"title": "Vaccines and Autism: Evidence Does Not Support a Causal Association",
 			"override_seed": 0.95,
 			"authors": [
@@ -2466,7 +2536,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2005250252",
+			"uuid": "gpfIxSeAGCWMHtzs",
+			"openalex_id": "W2005250252",
 			"title": "Continuing Increases in Autism Reported to California's Developmental Services System",
 			"authors": [
 				"R. S. Schechter",
@@ -2493,7 +2564,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2153492790",
+			"uuid": "ZquGDL45aRb16uml",
+			"openalex_id": "W2153492790",
 			"title": "Lack of Association between Measles Virus Vaccine and Autism with Enteropathy: A Case-Control Study",
 			"authors": [
 				"Mady Hornig",
@@ -2522,7 +2594,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2149225338",
+			"uuid": "xQGe9sqweVDCaDcJ",
+			"openalex_id": "W2149225338",
 			"title": "Measles vaccination and antibody response in autism spectrum disorders",
 			"override_seed": 0,
 			"authors": [
@@ -2552,7 +2625,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2094580611",
+			"uuid": "VIzeEc2bRzrflQpS",
+			"openalex_id": "W2094580611",
 			"title": "Regression of language and non‐language skills in pervasive developmental disorders",
 			"authors": [
 				"Alain Meilleur",
@@ -2579,7 +2653,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1966243205",
+			"uuid": "h4uq5ZT8VQNrBLVi",
+			"openalex_id": "W1966243205",
 			"title": "Are Neuropathological Conditions Relevant to Ethylmercury Exposure?",
 			"override_seed": 0.2,
 			"authors": [
@@ -2614,7 +2689,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2101343552",
+			"uuid": "A0agtjw2DUJKQEFq",
+			"openalex_id": "W2101343552",
 			"title": "Autism and Vaccination - The Current Evidence",
 			"override_seed": 0,
 			"authors": [
@@ -2649,7 +2725,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2145766615",
+			"uuid": "yuA2PG5PV6O6uO6G",
+			"openalex_id": "W2145766615",
 			"title": "Neuropsychological Performance 10 Years After Immunization in Infancy With Thimerosal-Containing Vaccines",
 			"authors": [
 				"Alberto Eugenio Tozzi",
@@ -2684,7 +2761,8 @@
 			]
 		},
 		{
-			"id": "W2116891078",
+			"uuid": "UdkBwO9CsoziAXAl",
+			"openalex_id": "W2116891078",
 			"title": "Vaccines and Autism: A Tale of Shifting Hypotheses",
 			"override_seed": 0.4,
 			"authors": [
@@ -2719,7 +2797,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2101325975",
+			"uuid": "2mebAhLtmJrhPLoN",
+			"openalex_id": "W2101325975",
 			"title": "Closer look at autism and the measles-mumps-rubella vaccine",
 			"override_seed": 0.6,
 			"authors": [
@@ -2754,7 +2833,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2142378755",
+			"uuid": "0r1v5PETGMUMJN3G",
+			"openalex_id": "W2142378755",
 			"title": "Does thimerosal or other mercury exposure increase the risk for autism? A review of current literature.",
 			"override_seed": 0,
 			"authors": [
@@ -2788,7 +2868,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1965589730",
+			"uuid": "vYanfWkHhFtE4Juq",
+			"openalex_id": "W1965589730",
 			"title": "Hepatitis B Vaccination of Male Neonates and Autism Diagnosis, NHIS 1997–2002",
 			"override_seed": 0,
 			"authors": [
@@ -2819,7 +2900,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2011584144",
+			"uuid": "7WAoaZfT6rx57NPa",
+			"openalex_id": "W2011584144",
 			"title": "Lack of Association Between Measles-Mumps-Rubella Vaccination and Autism in Children",
 			"override_seed": 0.65,
 			"authors": [
@@ -2848,7 +2930,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2060010041",
+			"uuid": "mF1r1DKfkuxQiW5g",
+			"openalex_id": "W2060010041",
 			"title": "MMR vaccine and autism: Is there a link?",
 			"override_seed": 0.95,
 			"authors": [
@@ -2883,7 +2966,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2162067829",
+			"uuid": "DAq3qMm76Kr3vpcW",
+			"openalex_id": "W2162067829",
 			"title": "On-time Vaccine Receipt in the First Year Does Not Adversely Affect Neuropsychological Outcomes",
 			"override_seed": 0.2,
 			"authors": [
@@ -2911,7 +2995,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2119967425",
+			"uuid": "TChtvZQ3YLybX9o3",
+			"openalex_id": "W2119967425",
 			"title": "Prenatal and Infant Exposure to Thimerosal From Vaccines and Immunoglobulins and Risk of Autism",
 			"override_seed": 0.4,
 			"authors": [
@@ -2941,7 +3026,8 @@
 			"notes": []
 		},
 		{
-			"id": "W164401598",
+			"uuid": "IgNIgp59Z2A7L0S1",
+			"openalex_id": "W164401598",
 			"title": "Prevalence of Pervasive Developmental Disorders among Children at the English Montreal School Board",
 			"override_seed": 0.95,
 			"authors": [
@@ -2971,7 +3057,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1862484496",
+			"uuid": "rjkYQWxmADlzEiOv",
+			"openalex_id": "W1862484496",
 			"title": "Thimerosal-Containing Vaccines and Autism: A Review of Recent Epidemiologic Studies",
 			"authors": [
 				"Anne M. Hurley",
@@ -3006,7 +3093,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1937278607",
+			"uuid": "3CiU7wTECW1unrj4",
+			"openalex_id": "W1937278607",
 			"title": "Vaccination of children - a systematic review",
 			"authors": [
 				"Anne K. Örtqvist",
@@ -3042,7 +3130,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2093150351",
+			"uuid": "Ithr6uXFuyZIExoL",
+			"openalex_id": "W2093150351",
 			"title": "What causes autism? Exploring the environmental contribution",
 			"authors": [
 				"Philip J. Landrigan"
@@ -3075,7 +3164,8 @@
 			"notes": []
 		},
 		{
-			"id": "W119668077",
+			"uuid": "JOHxLW3fcjfu15hv",
+			"openalex_id": "W119668077",
 			"title": "What Every Behavior Analyst Should Know About the “MMR Causes Autism” Hypothesis",
 			"override_seed": 0.3,
 			"authors": [
@@ -3109,7 +3199,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2115844381",
+			"uuid": "uyJkAPiUwYLYYKMr",
+			"openalex_id": "W2115844381",
 			"title": "A Positive Association found between Autism Prevalence and Childhood Vaccination uptake across the U.S. Population",
 			"authors": [
 				"Gayle Delong"
@@ -3141,7 +3232,8 @@
 			]
 		},
 		{
-			"id": "W2169212303",
+			"uuid": "xq2PcAimoZlGktnT",
+			"openalex_id": "W2169212303",
 			"title": "Do aluminum vaccine adjuvants contribute to the rising prevalence of autism?",
 			"override_seed": 0,
 			"authors": [
@@ -3179,7 +3271,8 @@
 			]
 		},
 		{
-			"id": "W2118808350",
+			"uuid": "qHiBFoe6N1D8HES8",
+			"openalex_id": "W2118808350",
 			"title": "Theoretical aspects of autism: Causes - A review",
 			"authors": [
 				"Helen V. Ratajczak"
@@ -3218,7 +3311,8 @@
 			]
 		},
 		{
-			"id": "W4253880250",
+			"uuid": "L25f2AkdVrKL0sJM",
+			"openalex_id": "W4253880250",
 			"title": "Adverse Effects of Vaccines: Evidence and Causality",
 			"override_seed": 0,
 			"institution": {
@@ -3254,7 +3348,8 @@
 			"notes": []
 		},
 		{
-			"id": "W1980037492",
+			"uuid": "JyXTtJllwtkWtdPE",
+			"openalex_id": "W1980037492",
 			"title": "Dispelling vaccine myths: MMR and considerations for practicing pharmacists",
 			"authors": [
 				"Megan M. Mormann",
@@ -3290,7 +3385,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2008817530",
+			"uuid": "YXYNUeSfgNtjsQTS",
+			"openalex_id": "W2008817530",
 			"title": "The combined measles, mumps, and rubella vaccines and the total number of vaccines are not associated with development of autism spectrum disorder: The first case–control study in Asia",
 			"authors": [
 				"Yota Uno",
@@ -3319,7 +3415,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2118352176",
+			"uuid": "wtrP2ZkIxfXi3h2U",
+			"openalex_id": "W2118352176",
 			"title": "A two-phase study evaluating the relationship between Thimerosal-containing vaccine administration and the risk for an autism spectrum disorder diagnosis in the United States",
 			"override_seed": 0,
 			"authors": [
@@ -3371,7 +3468,8 @@
 			]
 		},
 		{
-			"id": "W1995205529",
+			"uuid": "XiALD3G5lGyG0QXx",
+			"openalex_id": "W1995205529",
 			"title": "Aluminum in the central nervous system (CNS): toxicity in humans and animals, vaccine adjuvants, and autoimmunity",
 			"override_seed": 0.95,
 			"authors": [
@@ -3413,7 +3511,8 @@
 			]
 		},
 		{
-			"id": "W2120272491",
+			"uuid": "kRWjIy6kX6klOnhI",
+			"openalex_id": "W2120272491",
 			"title": "Increasing Exposure to Antibody-Stimulating Proteins and Polysaccharides in Vaccines Is Not Associated with Risk of Autism",
 			"override_seed": 0,
 			"authors": [
@@ -3442,7 +3541,8 @@
 			"notes": []
 		},
 		{
-			"id": "W85874538",
+			"uuid": "wo6L5NNR13zYen1A",
+			"openalex_id": "W85874538",
 			"title": "Response to measles-mumps-rubella vaccine in children with autism spectrum disorders.",
 			"authors": [
 				"Ivan Gentile",
@@ -3471,7 +3571,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4212918779",
+			"uuid": "XYE9mH7QvAPM2ZCU",
+			"openalex_id": "W4212918779",
 			"title": "The Childhood Immunization Schedule and Safety: Stakeholder Concerns, Scientific Evidence, and Future Studies",
 			"override_seed": 0.95,
 			"institution": {
@@ -3507,7 +3608,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2078323753",
+			"uuid": "jfJv0bTwHbp4HTum",
+			"openalex_id": "W2078323753",
 			"title": "A meta-analysis of the evidence on the impact of prenatal and early infancy exposures to mercury on autism and attention deficit/hyperactivity disorder in the childhood",
 			"authors": [
 				"Kouichi Yoshimasu",
@@ -3543,7 +3645,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2163400119",
+			"uuid": "lMcMxygW9gMUhPSG",
+			"openalex_id": "W2163400119",
 			"title": "Measles-mumps-rubella vaccination timing and autism among young african american boys: a reanalysis of CDC data",
 			"authors": [
 				"Brian S. Hooker"
@@ -3590,7 +3693,8 @@
 			]
 		},
 		{
-			"id": "W2139237735",
+			"uuid": "nr8xSkhGA9ARJVcn",
+			"openalex_id": "W2139237735",
 			"title": "Safety of Vaccines Used for Routine Immunization of US Children: A Systematic Review",
 			"override_seed": 0.95,
 			"authors": [
@@ -3627,7 +3731,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2025926911",
+			"uuid": "szllAzjnzNumQr6u",
+			"openalex_id": "W2025926911",
 			"title": "Vaccines are not associated with autism: An evidence-based meta-analysis of case-control and cohort studies",
 			"override_seed": 0,
 			"authors": [
@@ -3663,7 +3768,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2118818309",
+			"uuid": "BtZTSjLcrYWCxCGv",
+			"openalex_id": "W2118818309",
 			"title": "Administration of thimerosal-containing vaccines to infant rhesus macaques does not result in autism-like behavior or neuropathology",
 			"override_seed": 0.5,
 			"authors": [
@@ -3693,7 +3799,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2169082498",
+			"uuid": "seS77WJ5oEZUOImy",
+			"openalex_id": "W2169082498",
 			"title": "Autism Occurrence by MMR Vaccine Status Among US Children With Older Siblings With and Without Autism",
 			"override_seed": 0.95,
 			"authors": [
@@ -3723,7 +3830,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2035969458",
+			"uuid": "h205phxJog5fsJs3",
+			"openalex_id": "W2035969458",
 			"title": "Early exposure to the combined measles-mumps-rubella vaccine and thimerosal-containing vaccines and risk of autism spectrum disorder",
 			"override_seed": 0.95,
 			"authors": [
@@ -3753,7 +3861,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2005410910",
+			"uuid": "fiFFhvKVA46LX7xI",
+			"openalex_id": "W2005410910",
 			"title": "Examination of the Safety of Pediatric Vaccine Schedules in a Non-Human Primate Model: Assessments of Neurodevelopment, Learning, and Social Behavior",
 			"override_seed": 0,
 			"authors": [
@@ -3783,7 +3892,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2244673070",
+			"uuid": "BHpebpnG2y1w53q1",
+			"openalex_id": "W2244673070",
 			"title": "Vaccine Safety: Medical Contraindications, Myths, and Risk Communication",
 			"authors": [
 				"Michael J. Smith"
@@ -3816,7 +3926,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2289472719",
+			"uuid": "Zs9ztKIsq18vzFF8",
+			"openalex_id": "W2289472719",
 			"title": "Annual Research Review: The role of the environment in the developmental psychopathology of autism spectrum condition",
 			"override_seed": 0.3,
 			"authors": [
@@ -3851,7 +3962,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2557810093",
+			"uuid": "ecHGODWIN8mrwSzx",
+			"openalex_id": "W2557810093",
 			"title": "Association Between Influenza Infection and Vaccination During Pregnancy and Risk of Autism Spectrum Disorder",
 			"override_seed": 0.5,
 			"authors": [
@@ -3881,7 +3993,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2528957557",
+			"uuid": "phdWADXSW9zXQKEV",
+			"openalex_id": "W2528957557",
 			"title": "Measles and Measles Vaccination",
 			"override_seed": 0.95,
 			"authors": [
@@ -3915,7 +4028,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2270516658",
+			"uuid": "KbdCQ6iQLwcXf8ir",
+			"openalex_id": "W2270516658",
 			"title": "Parental report of vaccine receipt in children with autism spectrum disorder: Do rates differ by pattern of ASD onset?",
 			"override_seed": 0.1,
 			"authors": [
@@ -3945,7 +4059,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2596453284",
+			"uuid": "IDuvF7DMvZHnfI4H",
+			"openalex_id": "W2596453284",
 			"title": "Environmental risk factors for autism: an evidence-based review of systematic reviews and meta-analyses",
 			"authors": [
 				"Amirhossein Modabbernia",
@@ -3980,7 +4095,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2594100684",
+			"uuid": "lQVQlaMSz29ycZuK",
+			"openalex_id": "W2594100684",
 			"title": "Increased risk for an atypical autism diagnosis following Thimerosal-containing vaccine exposure in the United States: A prospective longitudinal case-control study in the Vaccine Safety Datalink",
 			"authors": [
 				"David A. Geier",
@@ -4029,7 +4145,8 @@
 			]
 		},
 		{
-			"id": "W2790159891",
+			"uuid": "3Q132Hjq9EwGXEiN",
+			"openalex_id": "W2790159891",
 			"title": "Pilot comparative study on the health of vaccinated and unvaccinated 6- to 12- year old U.S. children",
 			"authors": [
 				"Anthony R. Mawson",
@@ -4078,6 +4195,7 @@
 			]
 		},
 		{
+			"uuid": "K0bTHiIv9BkGii4C",
 			"title": "Vaccine Adverse Events: Separating Myth from Reality",
 			"override_seed": 0.2,
 			"authors": [
@@ -4113,7 +4231,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2796325751",
+			"uuid": "szLSWRV1XSQaobge",
+			"openalex_id": "W2796325751",
 			"title": "Adverse events of vaccines and the consequences of non-vaccination: a critical review",
 			"override_seed": 0.2,
 			"authors": [
@@ -4150,7 +4269,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2794301251",
+			"uuid": "2LfgJ9vx9ZUcKAXB",
+			"openalex_id": "W2794301251",
 			"title": "Current status of vaccines in psychiatry - A narrative review",
 			"authors": [
 				"Pooja Patnaik Kuppili",
@@ -4185,7 +4305,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2887748904",
+			"uuid": "WT1UTIXMikPNbtbM",
+			"openalex_id": "W2887748904",
 			"title": "Prenatal Tetanus, Diphtheria, Acellular Pertussis Vaccination and Autism Spectrum Disorder",
 			"override_seed": 0.9,
 			"authors": [
@@ -4215,7 +4336,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2906413783",
+			"uuid": "dtFpN0rCVl8C5AC4",
+			"openalex_id": "W2906413783",
 			"title": "The contribution of environmental exposure to the etiology of autism spectrum disorder",
 			"authors": [
 				"Sven Bölte",
@@ -4250,37 +4372,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2971524645",
-			"title": "Measles, Mumps, Rubella Vaccination and Autism",
-			"override_seed": 0.7,
-			"authors": [
-				"Anders Hviid",
-				"Jørgen Vinsløv Hansen",
-				"Morten Frisch",
-				"Mads Melbye"
-			],
-			"year": 2019,
-			"link": "https://doi.org/10.7326/m18-2101",
-			"journal": {
-				"id": "S119722071",
-				"retracted": false
-			},
-			"citations": 120,
-			"results": {
-				"consensus": "no",
-				"conclusion": "no",
-				"indirect": false
-			},
-			"quote": "The study strongly supports that MMR vaccination does not increase the risk for autism, does not trigger autism in susceptible children, and is not associated with clustering of autism cases after vaccination",
-			"type": "CohortStudy",
-			"blinding": "None",
-			"sample_size": 657461,
-			"p_value": "NotApplicable",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
-			"id": "W4376522559",
+			"uuid": "qwbCvkSlHa3igweg",
+			"openalex_id": "W4376522559",
 			"title": "Measles, Mumps, Rubella Vaccination and Autism",
 			"override_seed": 0.65,
 			"authors": [
@@ -4310,7 +4403,39 @@
 			"notes": []
 		},
 		{
-			"id": "W2912136724",
+			"uuid": "VJMSFc7lopeTzFkt",
+			"openalex_id": "W2971524645",
+			"title": "Measles, Mumps, Rubella Vaccination and Autism",
+			"override_seed": 0.7,
+			"authors": [
+				"Anders Hviid",
+				"Jørgen Vinsløv Hansen",
+				"Morten Frisch",
+				"Mads Melbye"
+			],
+			"year": 2019,
+			"link": "https://doi.org/10.7326/m18-2101",
+			"journal": {
+				"id": "S119722071",
+				"retracted": false
+			},
+			"citations": 120,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "The study strongly supports that MMR vaccination does not increase the risk for autism, does not trigger autism in susceptible children, and is not associated with clustering of autism cases after vaccination",
+			"type": "CohortStudy",
+			"blinding": "None",
+			"sample_size": 657461,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "IaG9tGnXYOWgtRKq",
+			"openalex_id": "W2912136724",
 			"title": "Principal Controversies in Vaccine Safety in the United States",
 			"override_seed": 0.1,
 			"authors": [
@@ -4346,7 +4471,8 @@
 			"notes": []
 		},
 		{
-			"id": "W2937418321",
+			"uuid": "OL8zvn6zOXydEZiv",
+			"openalex_id": "W2937418321",
 			"title": "The MMR Vaccine and Autism",
 			"override_seed": 0.5,
 			"authors": [
@@ -4381,7 +4507,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3082342448",
+			"uuid": "kkeCBK5jMmB4bc55",
+			"openalex_id": "W3082342448",
 			"title": "Maternal Influenza A(H1N1) Immunization During Pregnancy and Risk for Autism Spectrum Disorder in Offspring",
 			"override_seed": 0,
 			"authors": [
@@ -4411,7 +4538,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3007186753",
+			"uuid": "4PdwaoqJVOkZLT41",
+			"openalex_id": "W3007186753",
 			"title": "Multiple Risk Factors: A Challenge in the Management of Autism",
 			"authors": [
 				"Muhammad Shahid Nadeem",
@@ -4447,7 +4575,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3002868191",
+			"uuid": "LIem8p6WhK7nOirz",
+			"openalex_id": "W3002868191",
 			"title": "The science of vaccine safety: Summary of meeting at Wellcome Trust",
 			"override_seed": 0.2,
 			"authors": [
@@ -4484,7 +4613,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3010721747",
+			"uuid": "bkvoRopwo0YDsWb6",
+			"openalex_id": "W3010721747",
 			"title": "Vaccine Safety: Myths and Misinformation",
 			"override_seed": 0.7,
 			"authors": [
@@ -4520,7 +4650,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3171061226",
+			"uuid": "KzzKghCg961fIUqc",
+			"openalex_id": "W3171061226",
 			"title": "Review: Vaccine Myth-Buster - Cleaning Up With Prejudices and Dangerous Misinformation",
 			"authors": [
 				"Paul Löffler"
@@ -4553,7 +4684,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3158493829",
+			"uuid": "U0S4aom1KGTOkPE7",
+			"openalex_id": "W3158493829",
 			"title": "Reviewing the association between aluminum adjuvants in the vaccines and autism spectrum disorder",
 			"authors": [
 				"Alberto Boretti"
@@ -4586,7 +4718,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3164160246",
+			"uuid": "kwqnMxn5FXc1760r",
+			"openalex_id": "W3164160246",
 			"title": "Safety of vaccines used for routine immunization in the United States: An updated systematic review and meta-analysis",
 			"override_seed": 0.95,
 			"authors": [
@@ -4623,7 +4756,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4200299284",
+			"uuid": "rE1WxEUKOSxtmqAO",
+			"openalex_id": "W4200299284",
 			"title": "The myth of vaccination and autism spectrum",
 			"override_seed": 0.2,
 			"authors": [
@@ -4660,7 +4794,8 @@
 			"notes": []
 		},
 		{
-			"id": "W3163446107",
+			"uuid": "pt1ZkrpkvUX7JJvG",
+			"openalex_id": "W3163446107",
 			"title": "Vaccine safety issues at the turn of the 21st century",
 			"override_seed": 0.95,
 			"authors": [
@@ -4697,7 +4832,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4226208059",
+			"uuid": "5yQsQzag4WOh4bOz",
+			"openalex_id": "W4226208059",
 			"title": "Vaccines for measles, mumps, rubella, and varicella in children",
 			"override_seed": 0,
 			"authors": [
@@ -4734,7 +4870,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4291635189",
+			"uuid": "wHdASjqD5GGlM4LY",
+			"openalex_id": "W4291635189",
 			"title": "Does Vaccination Increase the Risk of Autism Spectrum Disorder?",
 			"override_seed": 0.95,
 			"authors": [
@@ -4771,7 +4908,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4213109302",
+			"uuid": "z1WLbl6ZQc2uPL5S",
+			"openalex_id": "W4213109302",
 			"title": "Prenatal Influenza Vaccination or Influenza Infection and Autism Spectrum Disorder in Offspring",
 			"authors": [
 				"Tracy A. Becerra-Culqui",
@@ -4800,7 +4938,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4390742471",
+			"uuid": "WAnV3bL5NW06l7WL",
+			"openalex_id": "W4390742471",
 			"title": "Environmental Risk Factors in Autism Spectrum Disorder: A Narrative Review",
 			"authors": [
 				"Konstantin Yenkoyan",
@@ -4835,7 +4974,8 @@
 			"notes": []
 		},
 		{
-			"id": "W4390699772",
+			"uuid": "ZjKkMXsVMbH3PyUu",
+			"openalex_id": "W4390699772",
 			"title": "Prenatal Exposure to COVID-19 mRNA Vaccine BNT162b2 Induces Autism-Like Behaviors in Male Neonatal Rats: Insights into WNT and BDNF Signaling Perturbations",
 			"authors": [
 				"Mümin Alper Erdoğan",
@@ -4873,7 +5013,8 @@
 			]
 		},
 		{
-			"id": "W4410909094",
+			"uuid": "dbh3UtYIYwTWAnrt",
+			"openalex_id": "W4410909094",
 			"title": "The vaccine-autism connection: No link, still debate, and we are failing to learn the lessons",
 			"authors": [
 				"Sheffali Gulati",

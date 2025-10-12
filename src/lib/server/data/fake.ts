@@ -60,7 +60,7 @@ export function generate_paper(map: DataMap, journal_ids: { id: string, proba: n
 	const is_review = Math.random() < 0.2;
 
 	return {
-		id: random_choice([faker.string.uuid(), undefined]),
+		openalex_id: random_choice([faker.string.uuid(), undefined]),
 		title: faker.lorem.sentence({ min: 8, max: 22 }),
 		institution: is_institution ? {
 			name: institution_name,
