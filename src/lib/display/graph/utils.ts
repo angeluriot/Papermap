@@ -71,7 +71,8 @@ export function get_stats(map: Map, width: number, height: number, top_margin_sc
 		sub_scales: {
 			axis: clamp(scale * 0.3 + 1.2, 1.7, 2.25),
 			point_size: clamp(scale * 0.7 + 1.0, 0, 3.5),
-			point_stroke: clamp(scale * 0.5 + 1.5, 0, 3.5),
+			point_stroke: clamp(Math.sqrt(scale) * 1.5 + 0, 0, 3.5),
+			point_text: clamp(scale * 0.5 + 1.5, 0, 3.5),
 		},
 	};
 

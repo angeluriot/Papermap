@@ -62,5 +62,6 @@ export interface GraphStats
 		axis: number,
 		point_size: number,
 		point_stroke: number,
+		point_text: number,
 	};
 }

@@ -31,6 +31,7 @@ export async function create_images(map: Map): Promise<void>
 	};
 
 	const types: ('preview' | 'thumbnail' | 'image')[] = ['preview', 'thumbnail', 'image'];
+	const stroke_scale = 1.2;
 	const font_scale = 1.7;
 
 	for (const type of types)
@@ -43,7 +44,7 @@ export async function create_images(map: Map): Promise<void>
 		const x_title = bg.get_x_title(stats, font_scale);
 		const y_title = bg.get_y_title(stats, y_axis, font_scale);
 		const background_points = bg.get_background_points(x_axis, y_axis, stats);
-		const points = pt.get_graph_points(map, stats, font_scale);
+		const points = pt.get_graph_points(map, stats, stroke_scale, font_scale);
 		const margin = stats.scale * 14;
 		const title = type === 'image' ? await get_image_title(map, stats) : await get_preview_title(map, stats, type === 'preview');
 		const subtitle = type === 'image' ? await get_image_subtitle(map, stats) : null;

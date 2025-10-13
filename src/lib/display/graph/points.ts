@@ -110,7 +110,7 @@ export function get_dasharray(size: number, width: number): string
 }
 
 
-export function get_graph_points(map: Map, stats: GraphStats, font_scale: number = 1): GraphPoint[]
+export function get_graph_points(map: Map, stats: GraphStats, stroke_scale: number = 1, font_scale: number = 1): GraphPoint[]
 {
 	const points: GraphPoint[] = Object.values(map.papers).map((paper: Paper) =>
 	{
@@ -132,7 +132,7 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 
 		size *= stats.sub_scales.point_size * POINT_SIZE;
 		const focus_size = size + 0.14 * stats.sub_scales.point_size * POINT_SIZE;
-		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH;
+		const stroke_width = stats.sub_scales.point_stroke * STROKE_WIDTH * stroke_scale;
 		const conclusion = map.conclusions[paper.results.conclusion];
 		const conclusion_group = map.conclusion_groups[conclusion.group];
 
@@ -157,8 +157,8 @@ export function get_graph_points(map: Map, stats: GraphStats, font_scale: number
 				width: 0,
 				height: 0,
 				text: get_label(paper, true),
-				font_size: stats.sub_scales.point_stroke * FONT_SIZE * font_scale,
-				line_height: stats.sub_scales.point_stroke * LINE_HEIGHT * font_scale,
+				font_size: stats.sub_scales.point_text * FONT_SIZE * font_scale,
+				line_height: stats.sub_scales.point_text * LINE_HEIGHT * font_scale,
 				shown: paper.institution !== undefined || paper.authors.length > 0,
 			},
 		};
