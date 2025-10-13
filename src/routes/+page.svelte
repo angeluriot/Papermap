@@ -218,7 +218,7 @@
 	.buttons
 	{
 		font-size: 1.02em;
-		gap: 1em 1.7em;
+		gap: 1.2em 1.7em;
 		margin-bottom: 13em;
 		margin-left: 1em;
 		margin-right: 1em;
@@ -229,6 +229,9 @@
 	@media screen and (max-height: 800px) { .buttons { margin-bottom: 7em; } }
 	@media screen and (max-height: 700px) { .buttons { margin-bottom: 5em; } }
 	@media screen and (max-height: 500px) { .buttons { margin-bottom: 3em; } }
+	@media screen and (max-width: 400px) { .buttons { gap: 1.1em 1.4em; } }
+	@media screen and (max-width: 380px) { .buttons { gap: 1em 1.2em; } }
+	@media screen and (max-width: 365px) { .buttons { gap: 0.9em 1em; } }
 	@media screen and (max-height: 300px) { .buttons { margin-bottom: 1em; } }
 
 	.buttons button
