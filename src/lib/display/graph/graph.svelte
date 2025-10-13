@@ -75,52 +75,59 @@
 		</g>
 	</g>
 	<g class="plot">
-		{#each points as point, i}
-			<g
-				class="point"
-				opacity={group_selected === null || group_selected.ids.includes(point.answer) ? point.opacity : point.opacity * 0.25}
-				style="{group_selected === null || group_selected.ids.includes(point.answer) ? '' : 'pointer-events: none;'}"
-			>
-				<g
-					onclick={(event) => select_point(event, i, true)}
-					onmouseenter={(event) => select_point(event, i, false)}
-					onmouseleave={() => deselect_point(false)}
-					onkeydown={null}
-					class="dot {i == point_selected?.get_point().i ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
-					style="--dot-zoom: {point.focus_size / point.size};"
-				>
-					<circle
-						cx={point.x}
-						cy={point.y}
-						r={point.size + POINT_HITBOX_EXTENSION * stats.sub_scales.point_stroke}
-						fill="transparent"
-					/>
-					<circle
-						cx={point.x}
-						cy={point.y}
-						r={point.size}
-						fill={point.fill}
-						stroke={point.stroke.color}
-						stroke-width={point.stroke.width}
-						stroke-dasharray={point.stroke.dasharray}
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</g>
-				{#if point.label.shown}
-					<text
-						x={point.label.x} y={point.label.y} fill={point.stroke.color} class="unselectable"
-						font-family="Satoshi-Bold" font-size={point.label.font_size}
-						text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
+		{#each [false, true] as selected_part}
+			{#each points as point, i}
+				{#if
+					(selected_part && (group_selected === null || group_selected.ids.includes(point.answer))) ||
+						(!selected_part && (group_selected !== null && !group_selected.ids.includes(point.answer)))
+				}
+					<g
+						class="point"
+						opacity={group_selected === null || group_selected.ids.includes(point.answer) ? point.opacity : point.opacity * 0.25}
+						style="{group_selected === null || group_selected.ids.includes(point.answer) ? '' : 'pointer-events: none;'}"
 					>
-						{#each point.label.text.split('\n') as line, i}
-							<tspan x={point.label.x} dy={i === 0 ? -point.label.line_height * 0.5 : point.label.line_height}>
-								{line}
-							</tspan>
-						{/each}
-					</text>
+						<g
+							onclick={(event) => select_point(event, i, true)}
+							onmouseenter={(event) => select_point(event, i, false)}
+							onmouseleave={() => deselect_point(false)}
+							onkeydown={null}
+							class="dot {i == point_selected?.get_point().i ? 'selected_dot' : ''} cursor-pointer" role="button" tabindex={i}
+							style="--dot-zoom: {point.focus_size / point.size};"
+						>
+							<circle
+								cx={point.x}
+								cy={point.y}
+								r={point.size + POINT_HITBOX_EXTENSION * stats.sub_scales.point_stroke}
+								fill="transparent"
+							/>
+							<circle
+								cx={point.x}
+								cy={point.y}
+								r={point.size}
+								fill={point.fill}
+								stroke={point.stroke.color}
+								stroke-width={point.stroke.width}
+								stroke-dasharray={point.stroke.dasharray}
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</g>
+						{#if point.label.shown}
+							<text
+								x={point.label.x} y={point.label.y} fill={point.stroke.color} class="unselectable"
+								font-family="Satoshi-Bold" font-size={point.label.font_size}
+								text-anchor="middle" alignment-baseline="central" dominant-baseline="central"
+							>
+								{#each point.label.text.split('\n') as line, i}
+									<tspan x={point.label.x} dy={i === 0 ? -point.label.line_height * 0.5 : point.label.line_height}>
+										{line}
+									</tspan>
+								{/each}
+							</text>
+						{/if}
+					</g>
 				{/if}
-			</g>
+			{/each}
 		{/each}
 	</g>
 	<g class="axis unselectable">
