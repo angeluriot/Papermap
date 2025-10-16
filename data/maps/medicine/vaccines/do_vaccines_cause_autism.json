@@ -303,36 +303,6 @@
 			]
 		},
 		{
-			"uuid": "6NY6aNlbx6lM1gp5",
-			"openalex_id": "W2136419435",
-			"title": "Autism and measles, mumps, and rubella vaccine: no epidemiological evidence for a causal association",
-			"authors": [
-				"Brent Taylor",
-				"Elizabeth Miller",
-				"Paddy Farrington",
-				"Maria-Christina Petropoulos"
-			],
-			"year": 1999,
-			"link": "https://doi.org/10.1016/s0140-6736(99)01239-8",
-			"journal": {
-				"id": "S49861241",
-				"retracted": false
-			},
-			"citations": 764,
-			"results": {
-				"consensus": "towards_no",
-				"conclusion": "no",
-				"indirect": false
-			},
-			"quote": "Our analyses do not support a causal association between MMR vaccine and autism",
-			"type": "CohortStudy",
-			"blinding": "None",
-			"sample_size": 498,
-			"p_value": "NotApplicable",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
 			"uuid": "uam7j2xruFibqBSU",
 			"openalex_id": "W2090759568",
 			"title": "Autism and measles, mumps, and rubella vaccine: No epidemiological evidence for a causal association",
@@ -524,41 +494,6 @@
 			"notes": []
 		},
 		{
-			"uuid": "o4v6sZCe6pmL7OdE",
-			"openalex_id": "W2108531015",
-			"title": "Measles-Mumps-Rubella Vaccine and Autistic Spectrum Disorder: Report From the New Challenges in Childhood Immunizations Conference Convened in Oak Brook, Illinois, June 12–13, 2000",
-			"authors": [
-				"Neal A. Halsey",
-				"Susan Hyman"
-			],
-			"year": 2001,
-			"link": "https://doi.org/10.1542/peds.107.5.e84",
-			"journal": {
-				"id": "S77494981",
-				"retracted": false
-			},
-			"citations": 154,
-			"results": {
-				"consensus": "towards_no",
-				"conclusion": "no",
-				"indirect": false
-			},
-			"quote": "The available evidence does not support the hypothesis that MMR vaccine causes autism or associated disorders",
-			"review": {
-				"type": "NarrativeReview",
-				"reviews": false,
-				"estimate": true,
-				"count": 150,
-				"subpart": true
-			},
-			"type": "DiverseTypes",
-			"blinding": "None",
-			"sample_size": "NotSpecified",
-			"p_value": "NotApplicable",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
 			"uuid": "GkMzGL0mYOTZDTPs",
 			"openalex_id": "W2072979656",
 			"title": "MMR and autism: further evidence against a causal association",
@@ -704,36 +639,6 @@
 			"type": "EcologicalStudy",
 			"blinding": "None",
 			"sample_size": 18750,
-			"p_value": "NotApplicable",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
-			"uuid": "PIc92nFm8QCsviwL",
-			"openalex_id": "W2073545687",
-			"title": "A Population-Based Study of Measles, Mumps, and Rubella Vaccination and Autism",
-			"authors": [
-				"Kreesten Meldgaard Madsen",
-				"Anders Hviid",
-				"Mogens Vestergaard",
-				"Diana Schendel"
-			],
-			"year": 2002,
-			"link": "https://doi.org/10.1056/nejmoa021134",
-			"journal": {
-				"id": "S62468778",
-				"retracted": false
-			},
-			"citations": 703,
-			"results": {
-				"consensus": "towards_no",
-				"conclusion": "no",
-				"indirect": false
-			},
-			"quote": "This study provides strong evidence against the hypothesis that MMR vaccination causes autism",
-			"type": "CohortStudy",
-			"blinding": "None",
-			"sample_size": 537303,
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
 			"notes": []
