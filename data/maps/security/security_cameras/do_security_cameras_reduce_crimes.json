@@ -1,9 +1,9 @@
 {
-	"draft": false,
+	"draft": true,
 	"emoji": "📸",
 	"question": {
-		"short": "Do security cameras reduce crimes?",
-		"long": "Do security cameras help reduce crime rates in surveilled areas?"
+		"short": "Do security cameras reduce crimes ?",
+		"long": "Do security cameras help reduce crime rates in surveilled areas ?"
 	},
 	"description": "Results from studies evaluating the effectiveness of security cameras (CCTV) in preventing and reducing criminal activities.",
 	"tags": [
@@ -44,6 +44,24 @@
 				"yes_unlike_literature",
 				"no"
 			]
+		},
+		"Towards yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature leans towards security cameras being effective in reducing crime rates, but more evidence is needed",
+			"color": "Green1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"]
+		},
+		"Towards no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature leans towards security cameras not being effective in reducing crime rates, but more evidence is needed",
+			"color": "Red1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"]
 		}
 	},
 	"conclusion_groups": {
@@ -119,7 +137,7 @@
 			"p_value": true
 		},
 		"yes": {
-			"group": "yes", 
+			"group": "yes",
 			"emoji": "👍",
 			"text": "Positive effect",
 			"description": "The results show significant reduction in crime rates with security camera implementation",
@@ -133,5 +151,69 @@
 	},
 	"no_blinding": true,
 	"no_sample_size": false,
-	"papers": []
+	"papers": [
+		{
+			"uuid": "wGqscxt3UFzbNKjQ",
+			"openalex_id": "W2766707687",
+			"title": "Surveillance cameras and crime: a review of randomized and natural experiments",
+			"authors": [
+				"Gustav Alexandrie"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1080/14043858.2017.1387410",
+			"journal": {
+				"id": "S152567464",
+				"retracted": false
+			},
+			"citations": 68,
+			"results": {
+				"consensus": "Towards yes",
+				"conclusion": "yes_but_small_effect",
+				"indirect": false
+			},
+			"quote": "Included studies that reported changes in total crime found overall crime reductions ranging from 24–28% in public street settings and urban subway stations [...] but no desirable effects in commuter parking facilities or suburban subway stations",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 7,
+				"subpart": false
+			},
+			"type": "EcologicalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"uuid": "7fySs25m6Q64Ko59",
+			"openalex_id": "W3120677778",
+			"title": "THE DETERRENT EFFECT OF SURVEILLANCE CAMERAS ON CRIME",
+			"authors": [
+				"Santiago Gómez Cardona",
+				"Daniel Mejía",
+				"Santiago Tobón"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1002/pam.22280",
+			"journal": {
+				"id": "S25370267",
+				"retracted": false
+			},
+			"citations": 24,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "The results suggest that crime drops at grids under direct surveillance by 0.011 per month, on average. Given the large number of grids exposed to direct surveillance, these effects add up to a relatively large number of deterred crimes",
+			"type": "EcologicalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
 }
