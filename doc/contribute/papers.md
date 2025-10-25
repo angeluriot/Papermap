@@ -1,10 +1,10 @@
-# 📃 How to add or edit papers?
+# ðŸ“ƒ How to add or edit papers?
 
 Anyone can add or edit papers on the website, even if you don't have access to it! If you're a developer, you can also **[do it locally](/README.md#%EF%B8%8F-install)** and submit your changes yourself. Feel free to join the **[Discord server](https://discord.gg/eFdjRJe7WZ)** if you need help.
 
-On the page of a map, click on the `✏️` button to activate the edit mode. Then an `✒️ Edit` and a `🗑️ Delete` button will appear on each paper in addition to a `➕` button at the bottom right of the page.
+On the page of a map, click on the `âœï¸` button to activate the edit mode. Then an `âœ’ï¸ Edit` and a `ðŸ—‘ï¸ Delete` button will appear on each paper in addition to a `âž•` button at the bottom right of the page.
 
-When adding a paper (by clicking on the `➕` button), you first need to enter its **DOI link** (or **title** and **year** if no DOI exists). The website will attempt to automatically fill in some fields (those marked with a `*` below), the remaining ones must be filled manually.
+When adding a paper (by clicking on the `âž•` button), you first need to enter its **DOI link** (or **title** and **year** if no DOI exists). The website will attempt to automatically fill in some fields (those marked with a `*` below), the remaining ones must be filled manually.
 
 Here is a list of the fields:
 
@@ -44,11 +44,11 @@ The title of the paper.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✍️ Text</td>
+			<td>âœï¸ Text</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -63,7 +63,7 @@ Whether the paper is a report from an institution (a health agency or a governme
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -74,7 +74,7 @@ Whether the paper is a report from an institution (a health agency or a governme
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -95,11 +95,11 @@ The name of the institution that authored the paper.
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✍️ Text</td>
+			<td>âœï¸ Text</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -118,11 +118,11 @@ The acronym (or abbreviation) of the institution that authored the paper.
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✍️ Text</td>
+			<td>âœï¸ Text</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -141,11 +141,11 @@ The authors of the paper (if not an institution).
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>📋 List of texts</td>
+			<td>ðŸ“‹ List of texts</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -160,7 +160,7 @@ The year the paper was published.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td colspan="2">🔢 Number</td>
+			<td colspan="2">ðŸ”¢ Number</td>
 		</tr>
 		<tr>
 			<td><b>Range</b></td>
@@ -169,7 +169,7 @@ The year the paper was published.
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td colspan="2">✅ Yes</td>
+			<td colspan="2">âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -182,11 +182,11 @@ A link to the paper.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✍️ Text</td>
+			<td>âœï¸ Text</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -201,7 +201,7 @@ Whether the paper has been published in a journal or not.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -212,7 +212,7 @@ Whether the paper has been published in a journal or not.
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -234,12 +234,12 @@ The journal where the paper was published.
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>📰 Journal</td>
+			<td>ðŸ“° Journal</td>
 			<td><code>(Not found)</code></td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td colspan="2">✅ Yes</td>
+			<td colspan="2">âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -258,11 +258,11 @@ Whether the journal retracted the paper or not.
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✅ Checkbox</td>
+			<td>âœ… Checkbox</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -277,16 +277,16 @@ The number of times the paper has been cited by other papers.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td colspan="2">🔢 Number</td>
+			<td colspan="2">ðŸ”¢ Number</td>
 		</tr>
 		<tr>
 			<td><b>Range</b></td>
 			<td><code>0</code></td>
-			<td><code>∞</code></td>
+			<td><code>âˆž</code></td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td colspan="2">✅ Yes</td>
+			<td colspan="2">âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -301,7 +301,7 @@ The consensus in the literature at the time according to the paper about the map
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -317,7 +317,7 @@ The consensus in the literature at the time according to the paper about the map
 		<tr>
 			<td><b>Required</b></td>
 			<td>
-				❌ No but with justification:<br/>
+				âŒ No but with justification:<br/>
 				<code>(Not specified)</code><br/>
 				<code>(No access)</code><br/>
 			</td>
@@ -337,7 +337,7 @@ The result / conclusion of the paper about the map question.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -352,7 +352,7 @@ The result / conclusion of the paper about the map question.
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -367,11 +367,11 @@ Whether the conclusion of the paper about the map question is based on indirect 
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✅ Checkbox</td>
+			<td>âœ… Checkbox</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -386,11 +386,11 @@ A short excerpt from the paper supporting the selected **paper result**.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✍️ Text</td>
+			<td>âœï¸ Text</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -406,7 +406,7 @@ The type of literature review, if the paper is one.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -420,7 +420,7 @@ The type of literature review, if the paper is one.
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -443,16 +443,16 @@ Whether most of the reviewed papers are literature reviews or not (if the paper 
 		<tr>
 			<td><b>Condition</b></td>
 			<td colspan="2">
-				<b>Review type</b> selected and ≠ <code>(Not a literature review)</code>
+				<b>Review type</b> selected and â‰  <code>(Not a literature review)</code>
 			</td>
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✅ Checkbox</td>
+			<td>âœ… Checkbox</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -466,22 +466,22 @@ The number of papers included in the literature review (if the paper is one).
 		<tr>
 			<td><b>Condition</b></td>
 			<td colspan="2">
-				<b>Review type</b> selected and ≠ <code>(Not a literature review)</code>
+				<b>Review type</b> selected and â‰  <code>(Not a literature review)</code>
 			</td>
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td colspan="2">🔢 Number</td>
+			<td colspan="2">ðŸ”¢ Number</td>
 		</tr>
 		<tr>
 			<td><b>Range</b></td>
 			<td><code>1</code></td>
-			<td><code>∞</code></td>
+			<td><code>âˆž</code></td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
 			<td colspan="2">
-				❌ No but with justification:<br/>
+				âŒ No but with justification:<br/>
 				<code>(No access)</code><br/>
 			</td>
 		</tr>
@@ -500,16 +500,16 @@ Whether the question of the map is the main subject of the review or only a smal
 		<tr>
 			<td><b>Condition</b></td>
 			<td>
-				<b>Review type</b> selected and ≠ <code>(Not a literature review)</code>
+				<b>Review type</b> selected and â‰  <code>(Not a literature review)</code>
 			</td>
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>✅ Checkbox</td>
+			<td>âœ… Checkbox</td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>✅ Yes</td>
+			<td>âœ… Yes</td>
 		</tr>
 	</tbody>
 </table>
@@ -524,7 +524,7 @@ The type of study / experiment described in the paper (or the reviewed papers if
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -548,7 +548,7 @@ The type of study / experiment described in the paper (or the reviewed papers if
 		<tr>
 			<td><b>Required</b></td>
 			<td>
-				❌ No but with justification:<br/>
+				âŒ No but with justification:<br/>
 				<code>(No access)</code><br/>
 			</td>
 		</tr>
@@ -587,7 +587,7 @@ The blinding method used in the study (if any).
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -601,7 +601,7 @@ The blinding method used in the study (if any).
 		<tr>
 			<td><b>Required</b></td>
 			<td>
-				❌ No but with justification:<br/>
+				âŒ No but with justification:<br/>
 				<code>(No access)</code><br/>
 			</td>
 		</tr>
@@ -627,22 +627,22 @@ The number of participants in the study.
 		<tr>
 			<td><b>Condition</b></td>
 			<td colspan="2">
-				<b>Study type</b> ≠ <code>In vitro study</code>
+				<b>Study type</b> â‰  <code>In vitro study</code>
 			</td>
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td colspan="2">🔢 Number</td>
+			<td colspan="2">ðŸ”¢ Number</td>
 		</tr>
 		<tr>
 			<td><b>Range</b></td>
 			<td><code>1</code></td>
-			<td><code>∞</code></td>
+			<td><code>âˆž</code></td>
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
 			<td colspan="2">
-				❌ No but with justification:<br/>
+				âŒ No but with justification:<br/>
 				<code>(Not specified)</code><br/>
 				<code>(No access)</code><br/>
 			</td>
@@ -664,12 +664,12 @@ The chance of observing the same results if there is no real effect, a low p-val
 		<tr>
 			<td><b>Condition</b></td>
 			<td colspan="2">
-				<b>Paper result</b> compatible with p-value AND <b>Review type</b> ≠ <code>Narrative review</code> OR <code>Systematic review</code>
+				<b>Paper result</b> compatible with p-value AND <b>Review type</b> â‰  <code>Narrative review</code> OR <code>Systematic review</code>
 			</td>
 		</tr>
 		<tr>
 			<td><b>Type</b></td>
-			<td colspan="2">🔢 Number</td>
+			<td colspan="2">ðŸ”¢ Number</td>
 		</tr>
 		<tr>
 			<td><b>Range</b></td>
@@ -679,7 +679,7 @@ The chance of observing the same results if there is no real effect, a low p-val
 		<tr>
 			<td><b>Required</b></td>
 			<td colspan="2">
-				❌ No but with justification:<br/>
+				âŒ No but with justification:<br/>
 				<code>(Not specified)</code><br/>
 				<code>(No access)</code><br/>
 			</td>
@@ -700,7 +700,7 @@ Whether the authors of the paper have any conflict of interest.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>👆 Choice</td>
+			<td>ðŸ‘† Choice</td>
 		</tr>
 		<tr>
 			<td><b>Options</b></td>
@@ -714,7 +714,7 @@ Whether the authors of the paper have any conflict of interest.
 		<tr>
 			<td><b>Required</b></td>
 			<td>
-				❌ No but with justification:<br/>
+				âŒ No but with justification:<br/>
 				<code>(No access)</code><br/>
 			</td>
 		</tr>
@@ -738,7 +738,7 @@ Additional information about the paper.
 	<tbody>
 		<tr>
 			<td><b>Type</b></td>
-			<td>📒 List of notes</td>
+			<td>ðŸ“’ List of notes</td>
 		</tr>
 		<tr>
 			<td><b>Note fields</b></td>
@@ -747,20 +747,20 @@ Additional information about the paper.
 					<tbody>
 						<tr>
 							<td>Title</td>
-							<td>✍️ Text</td>
+							<td>âœï¸ Text</td>
 						</tr>
 						<tr>
 							<td>Description</td>
-							<td>✍️ Text</td>
+							<td>âœï¸ Text</td>
 						</tr>
 						<tr>
 							<td>Link</td>
-							<td>✍️ Text</td>
+							<td>âœï¸ Text</td>
 						</tr>
 						<tr>
 							<td>Impact</td>
 							<td>
-								👆 Choice:<br/>
+								ðŸ‘† Choice:<br/>
 								<code>Very negative</code><br/>
 								<code>Negative</code><br/>
 								<code>Neutral</code><br/>
@@ -774,7 +774,7 @@ Additional information about the paper.
 		</tr>
 		<tr>
 			<td><b>Required</b></td>
-			<td>❌ No</td>
+			<td>âŒ No</td>
 		</tr>
 	</tbody>
 </table>
@@ -795,9 +795,9 @@ Additional information about the paper.
 
 When all fields are filled, click on the `Add the paper` button if you are adding a new paper, or on the `Edit the paper` button if you are editing an existing paper.
 
-The added / edited paper will then appear as semi-transparent and the number above the `➤` button will increase by `1`.
+The added / edited paper will then appear as semi-transparent and the number above the `âž¤` button will increase by `1`.
 
-To send your changes, click on the `➤` button and fill the fields in the form that appears:
+To send your changes, click on the `âž¤` button and fill the fields in the form that appears:
 
 * `Comment`: optional information about your changes *(optional)*
 
@@ -811,7 +811,7 @@ Once the Pull Request is created, it will be reviewed by a maintainer and merged
 
 <br/>
 
-## ⛔ Limitations
+## â›” Limitations
 
 **Papermap** aims to be as unbiased as possible, therefore moderation is kept to a minimum and any scientific paper that answers the map question can be added, even if unpublished, retracted, or inaccessible. However, the way the website works does require a few rules to prevent certain abuses:
 

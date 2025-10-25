@@ -57,7 +57,7 @@ async function send_message(client, channel_id, message)
 
 function get_discord_username(body)
 {
-	let match = body.match(/## 👤 Discord\n`([^`]+)`/);
+	let match = body.match(/## ðŸ‘¤ Discord\n`([^`]+)`/);
 	return match ? match[1].trim().slice(1).trim() : null;
 }
 
@@ -119,51 +119,51 @@ async function main()
 	if (label === labels.bug)
 	{
 		if (type === 'issue')
-			await send_message(client, code_channels.bugs, `${emoji} New **🐛 Bug**${found_by}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.bugs, `${emoji} New **ðŸ› Bug**${found_by}${final_author}!\n*${title}*\n${url}`);
 		else
-			await send_message(client, code_channels.bugs, `${emoji} New **🐛 Bug Fix**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.bugs, `${emoji} New **ðŸ› Bug Fix**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.map_update)
 	{
 		if (type === 'issue')
-			await send_message(client, content_channels.map_updates, `${emoji} New **📩 Map Update Request**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, content_channels.map_updates, `${emoji} New **ðŸ“© Map Update Request**${from}${final_author}!\n*${title}*\n${url}`);
 		else
-			await send_message(client, content_channels.map_updates, `${emoji} New **✏️ Map Update**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, content_channels.map_updates, `${emoji} New **âœï¸ Map Update**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.new_feature)
 	{
 		if (type === 'issue')
-			await send_message(client, code_channels.features, `${emoji} New **🪄 Feature Request**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.features, `${emoji} New **ðŸª„ Feature Request**${from}${final_author}!\n*${title}*\n${url}`);
 		else
-			await send_message(client, code_channels.features, `${emoji} New **✨ Feature**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.features, `${emoji} New **âœ¨ Feature**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.new_map)
 	{
 		if (type === 'issue')
-			await send_message(client, content_channels.new_maps, `${emoji} New **📨 Map Request**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, content_channels.new_maps, `${emoji} New **ðŸ“¨ Map Request**${from}${final_author}!\n*${title}*\n${url}`);
 		else
-			await send_message(client, content_channels.new_maps, `${emoji} New **🗺️ Map**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, content_channels.new_maps, `${emoji} New **ðŸ—ºï¸ Map**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.question)
 	{
-		await send_message(client, content_channels.other, `${emoji} New **❓ Question**${from}${final_author}!\n*${title}*\n${url}`);
+		await send_message(client, content_channels.other, `${emoji} New **â“ Question**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 
 	if (label === labels.scoring_update)
 	{
 		if (type === 'issue')
-			await send_message(client, code_channels.scoring, `${emoji} New **🥇 Scoring Update Request**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.scoring, `${emoji} New **ðŸ¥‡ Scoring Update Request**${from}${final_author}!\n*${title}*\n${url}`);
 		else
-			await send_message(client, code_channels.scoring, `${emoji} New **🏅 Scoring Update**${from}${final_author}!\n*${title}*\n${url}`);
+			await send_message(client, code_channels.scoring, `${emoji} New **ðŸ… Scoring Update**${from}${final_author}!\n*${title}*\n${url}`);
 		process.exit(0);
 	}
 

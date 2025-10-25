@@ -1,8 +1,8 @@
-# 🏅 How are papers scored?
+# ðŸ… How are papers scored?
 
 This page explains how paper scores are calculated in **Papermap**. Feel free to ask questions in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.
 
-To calculate a paper's score, each of the following attributes is first evaluated on a `0`–`1` scale:
+To calculate a paper's score, each of the following attributes is first evaluated on a `0`â€“`1` scale:
 
 ### Summary
 
@@ -39,7 +39,7 @@ score_{year} = \min\!\left(\max\!\left(\dfrac{year-1950}{year_{now}-1950},\, 0\r
 	<tbody>
 		<tr>
 			<td><b>Year</b></td>
-			<td align="center">≤1950</td>
+			<td align="center">â‰¤1950</td>
 			<td align="center">1960</td>
 			<td align="center">1970</td>
 			<td align="center">1980</td>
@@ -47,7 +47,7 @@ score_{year} = \min\!\left(\max\!\left(\dfrac{year-1950}{year_{now}-1950},\, 0\r
 			<td align="center">2000</td>
 			<td align="center">2010</td>
 			<td align="center">2020</td>
-			<td align="center">≥2025</td>
+			<td align="center">â‰¥2025</td>
 		</tr>
 		<tr>
 			<td><b>Year score</b></td>
@@ -531,7 +531,7 @@ P-values provide a measure of the statistical significance of the study's findin
 The p-value score is calculated using the p-value reported in the study in a nonlinear way:
 
 ```math
-score_p = \left(1 - \min\!\left(\max\!\left(\dfrac{p \times \begin{cases} 0.5 & \text{if~~“< ...”} \\ 1 & \text{else} \end{cases}}{0.05},\, 0\right),\, 1\right)\right)^5
+score_p = \left(1 - \min\!\left(\max\!\left(\dfrac{p \times \begin{cases} 0.5 & \text{if~~â€œ< ...â€} \\ 1 & \text{else} \end{cases}}{0.05},\, 0\right),\, 1\right)\right)^5
 ```
 
 * If the result of the paper is not statistically significant, the p-value score is ignored
@@ -662,7 +662,7 @@ The publication bias score is set to `1` if the paper has negative or non-signif
 
 <br/>
 
-## 🧮 Final score calculation
+## ðŸ§® Final score calculation
 
 A paper always starts with a base score of `1`, then each of the above attributes (if not ignored) will impact it positively or negatively based on their score like so:
 
@@ -957,6 +957,6 @@ If you have any feedback or suggestions about this calculation, please tell us i
 
 <br/>
 
-## 📊 Statistics
+## ðŸ“Š Statistics
 
 You can see the distribution of paper scores and individual attributes values / scores on the **[Statistics](https://papermap.org/statistics)** page of the website.

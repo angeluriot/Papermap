@@ -99,7 +99,7 @@ export async function create_csv(map: Map, journals: { [id: string]: Journal }):
 				quote: paper.quote,
 				review: paper.review ? remove_uppercase(cards.TO_TEXT[paper.review.type]) : '',
 				reviews: paper.review?.reviews ? 'Reviews' : '',
-				review_count_estimate: paper.review?.estimate ? '≈' : '',
+				review_count_estimate: paper.review?.estimate ? 'â‰ˆ' : '',
 				review_count: typeof paper.review?.count === 'number' ? paper.review.count : (paper.review?.count === MissingReason.NoAccess ? '(No access)' : ''),
 				type: paper.type === MissingReason.NoAccess ? '(No access)' : remove_uppercase(cards.TO_TEXT[paper.type]),
 				blinding: paper.blinding === MissingReason.NoAccess ? '(No access)' : remove_uppercase(cards.TO_TEXT[paper.blinding]),

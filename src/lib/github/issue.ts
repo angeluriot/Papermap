@@ -10,7 +10,7 @@ export interface NewMapRequest
 
 export function get_new_map_issue(data: NewMapRequest): { title: string, description: string }
 {
-	const title = `[📨 Map Request]: ${data.title.trim()}`;
+	const title = `[ðŸ“¨ Map Request]: ${data.title.trim()}`;
 
 	let description = '';
 
@@ -18,10 +18,10 @@ export function get_new_map_issue(data: NewMapRequest): { title: string, descrip
 		description += data.description.trim();
 
 	if (data.papers && data.papers.trim().length > 0)
-		description += '\n\n## 📚 Papers\n' + data.papers.trim();
+		description += '\n\n## ðŸ“š Papers\n' + data.papers.trim();
 
 	if (data.comment && data.comment.trim().length > 0)
-		description += '\n\n## 💬 Comment\n' + data.comment.trim();
+		description += '\n\n## ðŸ’¬ Comment\n' + data.comment.trim();
 
 	let discord_username = data.discord_username ? data.discord_username.trim() : null;
 
@@ -29,7 +29,7 @@ export function get_new_map_issue(data: NewMapRequest): { title: string, descrip
 		discord_username = discord_username.slice(1).trim();
 
 	if (discord_username && discord_username.length > 0)
-		description += '\n\n## 👤 Discord\n' + '`@' + discord_username + '`';
+		description += '\n\n## ðŸ‘¤ Discord\n' + '`@' + discord_username + '`';
 
 	return { title, description: description.trim() };
 }

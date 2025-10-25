@@ -1,4 +1,4 @@
-# 🏆 How are maps scored?
+# ðŸ† How are maps scored?
 
 This page explains how the top summary bar on map pages is generated in **Papermap**. For details on individual paper scoring, see **[Paper scoring](/doc/scoring/papers.md)**. Feel free to ask questions in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.
 

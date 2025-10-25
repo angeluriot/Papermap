@@ -76,7 +76,7 @@
 	{
 		if (paper.results.consensus === MissingReason.NotSpecified)
 			return {
-				emoji: '🤷',
+				emoji: 'ðŸ¤·',
 				text: 'Not specified',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -85,7 +85,7 @@
 
 		if (paper.results.consensus === MissingReason.NoAccess)
 			return {
-				emoji: '🔒',
+				emoji: 'ðŸ”’',
 				text: 'No access',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -148,8 +148,8 @@
 
 		if (parts.some(p => p.italic))
 		{
-			parts[0].text = '“' + parts[0].text;
-			parts[parts.length - 1].text = parts[parts.length - 1].text + '”';
+			parts[0].text = 'â€œ' + parts[0].text;
+			parts[parts.length - 1].text = parts[parts.length - 1].text + 'â€';
 		}
 
 		return parts;
@@ -176,7 +176,7 @@
 			if (paper.review.count === MissingReason.NoAccess)
 			{
 				result.push({
-					emoji: '🔒',
+					emoji: 'ðŸ”’',
 					text: 'No access',
 					color: COLORS[Color.Gray].default,
 					shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -191,7 +191,7 @@
 			{
 				result.push({
 					emoji: cards.review_count_score_to_emoji(paper.scores.review_count),
-					text: (paper.review.estimate ? '≈ ' : '') + int_to_text(paper.review.count) + ' Papers' + (paper.review.subpart ? '*' : ''),
+					text: (paper.review.estimate ? 'â‰ˆ ' : '') + int_to_text(paper.review.count) + ' Papers' + (paper.review.subpart ? '*' : ''),
 					color: cards.score_to_color(paper.scores.review_count),
 					shadow: color_to_shadow(cards.score_to_color(paper.scores.review_count)),
 					description: (
@@ -232,7 +232,7 @@
 		if (paper.type === MissingReason.NoAccess)
 		{
 			result.push({
-				emoji: '🔒',
+				emoji: 'ðŸ”’',
 				text: 'No access',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -258,7 +258,7 @@
 				if (paper.blinding === MissingReason.NoAccess)
 				{
 					result.push({
-						emoji: '🔒',
+						emoji: 'ðŸ”’',
 						text: 'No access',
 						color: COLORS[Color.Gray].default,
 						shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -317,7 +317,7 @@
 	{
 		if (paper.journal.id === JournalMissingReason.NotFound)
 			return {
-				emoji: '🤷',
+				emoji: 'ðŸ¤·',
 				text: 'Journal not found',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -330,7 +330,7 @@
 				return null;
 
 			return {
-				emoji: '📭',
+				emoji: 'ðŸ“­',
 				text: 'Not published yet',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -356,7 +356,7 @@
 		if (paper.sample_size === MissingReason.NoAccess)
 		{
 			return {
-				emoji: '🔒',
+				emoji: 'ðŸ”’',
 				text: 'No access',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -367,7 +367,7 @@
 		else if (paper.sample_size === MissingReason.NotSpecified)
 		{
 			return {
-				emoji: '🤷',
+				emoji: 'ðŸ¤·',
 				text: 'Not specified',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -392,7 +392,7 @@
 		if (paper.p_value === MissingReason.NoAccess)
 		{
 			return {
-				emoji: '🔒',
+				emoji: 'ðŸ”’',
 				text: 'No access',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -403,7 +403,7 @@
 		else if (paper.p_value === MissingReason.NotSpecified)
 		{
 			return {
-				emoji: '🤷',
+				emoji: 'ðŸ¤·',
 				text: 'Not specified',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -439,7 +439,7 @@
 		if (paper.conflict_of_interest === MissingReason.NoAccess)
 		{
 			return {
-				emoji: '🔒',
+				emoji: 'ðŸ”’',
 				text: 'No access',
 				color: COLORS[Color.Gray].default,
 				shadow: color_to_shadow(COLORS[Color.Gray].default),
@@ -490,7 +490,7 @@
 					class="recreate-button relative card cursor-pointer overflow-hidden"
 					style="--shadow-color: #00008050" onclick={recreate_paper}
 				>
-					{@render emoji('↩️')}
+					{@render emoji('â†©ï¸')}
 					<span>Cancel deletion</span>
 					<div class="absolute edit-mask bg-[#00008010]"></div>
 				</button>
@@ -500,7 +500,7 @@
 						class="recreate-button relative card cursor-pointer overflow-hidden"
 						style="--shadow-color: #00008050" onclick={cancel_changes}
 					>
-						{@render emoji('↩️')}
+						{@render emoji('â†©ï¸')}
 						<span>Cancel changes</span>
 						<div class="absolute edit-mask bg-[#00008010]"></div>
 					</button>
@@ -509,7 +509,7 @@
 					class="edit-button relative card cursor-pointer overflow-hidden"
 					style="--shadow-color: #80000050" onclick={edit_paper}
 				>
-					{@render emoji('✒️')}
+					{@render emoji('âœ’ï¸')}
 					<span>Edit</span>
 					<div class="absolute edit-mask bg-[#80000015]"></div>
 				</button>
@@ -517,7 +517,7 @@
 					class="delete-button relative card cursor-pointer overflow-hidden"
 					style="--shadow-color: #80000050" onclick={delete_paper}
 				>
-					{@render emoji('🗑️')}
+					{@render emoji('ðŸ—‘ï¸')}
 					<span>Delete</span>
 					<div class="absolute edit-mask bg-[#80000025]"></div>
 				</button>
@@ -529,7 +529,7 @@
 		<p class="title">{title}</p>
 		<div class="authors-date flex">
 			<p class="authors">{authors}</p>
-			<span class="opacity-50 unselectable">•</span>
+			<span class="opacity-50 unselectable">â€¢</span>
 			<span>{year}</span>
 		</div>
 	</a>
@@ -561,7 +561,7 @@
 						class="card" bind:clientWidth={indirect_width}
 						style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
 					>
-						{@render emoji('🔗')}
+						{@render emoji('ðŸ”—')}
 						<span>Indirect</span>
 						<div class="info-ext">
 							<InfoBubble {emojis} text="This conclusion is based on indirect evidence from the paper" {width} {height}/>
@@ -642,7 +642,7 @@
 							class="card"
 							style="background-color: {COLORS[Color.Red].default}; --shadow-color: {color_to_shadow(COLORS[Color.Red].default)};"
 						>
-							{@render emoji('😵')}
+							{@render emoji('ðŸ˜µ')}
 							<span>Retracted</span>
 							<div class="info-ext">
 								<InfoBubble {emojis} text="This paper has been retracted by the journal" {width} {height}/>

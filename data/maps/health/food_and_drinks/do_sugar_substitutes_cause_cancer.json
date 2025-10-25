@@ -1,6 +1,6 @@
 {
 	"draft": false,
-	"emoji": "🍬",
+	"emoji": "ðŸ¬",
 	"question": {
 		"short": "Do sugar substitutes cause cancer?",
 		"long": "Does sugar substitute consumption increase the risk of developing cancer?"
@@ -17,7 +17,7 @@
 	],
 	"consensus": {
 		"no_consensus": {
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of sugar substitutes on cancer",
 			"color": "Gray",
@@ -27,7 +27,7 @@
 			]
 		},
 		"no": {
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "No",
 			"description": "The literature suggests that sugar substitutes do not cause cancer",
 			"color": "Red",
@@ -37,7 +37,7 @@
 			]
 		},
 		"towards_no": {
-			"emoji": "⬅️",
+			"emoji": "â¬…ï¸",
 			"text": "Towards no",
 			"description": "The literature suggests that sugar substitutes probably don't cause cancer, but more research is needed",
 			"color": "Red1H",
@@ -47,7 +47,7 @@
 			]
 		},
 		"towards_yes": {
-			"emoji": "➡️",
+			"emoji": "âž¡ï¸",
 			"text": "Towards yes",
 			"description": "The literature suggests that sugar substitutes may cause cancer, but more research is needed",
 			"color": "Green1H",
@@ -57,7 +57,7 @@
 			]
 		},
 		"yes": {
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Yes",
 			"description": "The literature suggests that sugar substitutes cause cancer",
 			"color": "Green",
@@ -96,56 +96,56 @@
 	"conclusions": {
 		"no": {
 			"group": "no",
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "No",
 			"description": "The results of the paper show no significant effect of the sugar substitutes evaluated on the risk of developing cancer",
 			"p_value": false
 		},
 		"no_unlike_literature": {
 			"group": "no_but",
-			"emoji": "↩️",
+			"emoji": "â†©ï¸",
 			"text": "No unlike literature",
 			"description": "The results of the paper show no significant effect of the sugar substitutes evaluated on the risk of developing cancer, unlike what is reported in the literature",
 			"p_value": false
 		},
 		"no_but_mixed_results": {
 			"group": "no_but",
-			"emoji": "🔀",
+			"emoji": "ðŸ”€",
 			"text": "No but mixed results",
 			"description": "The results of the paper show no significant overall effect of the sugar substitutes evaluated on the risk of developing cancer, but there are mixed results on specific cases",
 			"p_value": false
 		},
 		"maybe": {
 			"group": "maybe",
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "Maybe",
 			"description": "The results of the paper suggest that the sugar substitutes evaluated might have an effect on the risk of developing cancer, but the evidence is not strong enough to conclude",
 			"p_value": false
 		},
 		"yes_but_low_confidence": {
 			"group": "yes_but",
-			"emoji": "🤔",
+			"emoji": "ðŸ¤”",
 			"text": "Yes but low confidence",
 			"description": "The results of the paper suggest that the sugar substitutes evaluated may increase the risk of developing cancer, but the evidence is not strong",
 			"p_value": true
 		},
 		"yes_but_small_effect": {
 			"group": "yes_but",
-			"emoji": "🤏",
+			"emoji": "ðŸ¤",
 			"text": "Yes but small effect",
 			"description": "The results of the paper suggest that the sugar substitutes evaluated may have a small effect on the risk of developing cancer",
 			"p_value": true
 		},
 		"yes_unlike_literature": {
 			"group": "yes_but",
-			"emoji": "↪️",
+			"emoji": "â†ªï¸",
 			"text": "Yes unlike literature",
 			"description": "The results of the paper suggest that the sugar substitutes evaluated may increase the risk of developing cancer, unlike what is reported in the literature",
 			"p_value": true
 		},
 		"yes": {
 			"group": "yes",
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Yes",
 			"description": "The results of the paper suggest that the sugar substitutes evaluated increase the risk of developing cancer",
 			"p_value": true
@@ -581,9 +581,9 @@
 			"title": "Artificial sweeteners and absence of bladder cancer risk in Copenhagen",
 			"override_seed": 0.95,
 			"authors": [
-				"O. Møller‐Jensen",
+				"O. MÃ¸llerâ€Jensen",
 				"Jens B. Knudsen",
-				"Bent L. Sørensen",
+				"Bent L. SÃ¸rensen",
 				"J Clemmesen"
 			],
 			"year": 1983,
@@ -678,7 +678,7 @@
 		{
 			"uuid": "Tn1wfUyAN5x6tldI",
 			"openalex_id": "W1974416404",
-			"title": "Dietary factors and breast‐cancer risk in Denmark",
+			"title": "Dietary factors and breastâ€cancer risk in Denmark",
 			"authors": [
 				"Marianne Ewertz",
 				"Caroline Gill"
@@ -865,7 +865,7 @@
 			"openalex_id": "W2032751799",
 			"title": "The comet assay with 8 mouse organs: results with 39 currently used food additives",
 			"authors": [
-				"Yū F. Sasaki",
+				"YÅ« F. Sasaki",
 				"Satomi Kawaguchi",
 				"Asako Kamaya",
 				"Miyuki Ohshita"
@@ -902,7 +902,7 @@
 		{
 			"uuid": "UDALbfdHXgej4BRy",
 			"openalex_id": "W2126904148",
-			"title": "Artificial sweeteners—do they bear a carcinogenic risk?",
+			"title": "Artificial sweetenersâ€”do they bear a carcinogenic risk?",
 			"override_seed": 0,
 			"authors": [
 				"Martin R. Weihrauch",
@@ -920,7 +920,7 @@
 				"conclusion": "no",
 				"indirect": false
 			},
-			"quote": "As many artificial sweeteners are combined in today’s products, the carcinogenic risk of a single substance is difficult to assess. However, according to the current literature, the possible risk of artificial sweeteners to induce cancer seems to be negligible",
+			"quote": "As many artificial sweeteners are combined in todayâ€™s products, the carcinogenic risk of a single substance is difficult to assess. However, according to the current literature, the possible risk of artificial sweeteners to induce cancer seems to be negligible",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
@@ -970,7 +970,7 @@
 			"notes": [
 				{
 					"title": "Controversial institute",
-					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing highâ€‘visibility press releases before peerâ€‘review and for its links with biased NGOs and political groups",
 					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
 					"impact": "Negative"
 				},
@@ -981,7 +981,7 @@
 				},
 				{
 					"title": "Non-standard design",
-					"description": "Data transparency issues, high‑density housing, use of pathogen‑carrier animals and full‑lifespan design",
+					"description": "Data transparency issues, highâ€‘density housing, use of pathogenâ€‘carrier animals and fullâ€‘lifespan design",
 					"impact": "Negative"
 				}
 			]
@@ -1020,7 +1020,7 @@
 		{
 			"uuid": "PCGS0ulZHHr4vtq6",
 			"openalex_id": "W2104535906",
-			"title": "Artificial sweeteners and cancer risk in a network of case–control studies",
+			"title": "Artificial sweeteners and cancer risk in a network of caseâ€“control studies",
 			"authors": [
 				"Silvano Gallus",
 				"Lorenza Scotti",
@@ -1139,7 +1139,7 @@
 				"conclusion": "yes_unlike_literature",
 				"indirect": false
 			},
-			"quote": "The results of this carcinogenicity bioassay confirm and reinforce the first experimental demonstration of APM’s multipotential carcinogenicity at a dose level close to the acceptable daily intake for humans",
+			"quote": "The results of this carcinogenicity bioassay confirm and reinforce the first experimental demonstration of APMâ€™s multipotential carcinogenicity at a dose level close to the acceptable daily intake for humans",
 			"type": "AnimalStudy",
 			"blinding": "None",
 			"sample_size": 470,
@@ -1151,13 +1151,13 @@
 			"notes": [
 				{
 					"title": "Controversial institute",
-					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing highâ€‘visibility press releases before peerâ€‘review and for its links with biased NGOs and political groups",
 					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
 					"impact": "Negative"
 				},
 				{
 					"title": "Non-standard design",
-					"description": "Data transparency issues, high‑density housing, use of pathogen‑carrier animals and full‑lifespan design",
+					"description": "Data transparency issues, highâ€‘density housing, use of pathogenâ€‘carrier animals and fullâ€‘lifespan design",
 					"impact": "Negative"
 				}
 			]
@@ -1167,9 +1167,9 @@
 			"openalex_id": "W2022887220",
 			"title": "Artificial sweetener consumption and urinary tract tumors in Cordoba, Argentina",
 			"authors": [
-				"María Marta Andreatta",
-				"Sonia Edith Muñoz",
-				"María Josefina Lantieri",
+				"MarÃ­a Marta Andreatta",
+				"Sonia Edith MuÃ±oz",
+				"MarÃ­a Josefina Lantieri",
 				"Aldo R. Eynard"
 			],
 			"year": 2008,
@@ -1265,7 +1265,7 @@
 		{
 			"uuid": "H84ICP1lt75XlqLL",
 			"openalex_id": "W2110674814",
-			"title": "Sweets, sweetened beverages, and risk of pancreatic cancer in a large population-based case–control study",
+			"title": "Sweets, sweetened beverages, and risk of pancreatic cancer in a large population-based caseâ€“control study",
 			"authors": [
 				"June M. Chan",
 				"Furong Wang",
@@ -1328,13 +1328,13 @@
 			"notes": [
 				{
 					"title": "Controversial institute",
-					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing highâ€‘visibility press releases before peerâ€‘review and for its links with biased NGOs and political groups",
 					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
 					"impact": "Negative"
 				},
 				{
 					"title": "Non-standard design",
-					"description": "Data transparency issues, high‑density housing, use of pathogen‑carrier animals and full‑lifespan design",
+					"description": "Data transparency issues, highâ€‘density housing, use of pathogenâ€‘carrier animals and fullâ€‘lifespan design",
 					"impact": "Negative"
 				}
 			]
@@ -1342,7 +1342,7 @@
 		{
 			"uuid": "rGqcHJIQ0TXJmBer",
 			"openalex_id": "W2148076216",
-			"title": "Consumption of artificial sweetener– and sugar-containing soda and risk of lymphoma and leukemia in men and women",
+			"title": "Consumption of artificial sweetenerâ€“ and sugar-containing soda and risk of lymphoma and leukemia in men and women",
 			"override_seed": 0,
 			"authors": [
 				"Eva Schernhammer",
@@ -1402,7 +1402,7 @@
 				"conclusion": "no",
 				"indirect": false
 			},
-			"quote": "With reference to epidemiologic data, evidence on low-calorie sweeteners – and specifically aspartame – does not support the existence of a consistent association with hematopoietic neoplasms, brain cancer, digestive sites, breast, prostate and several other neoplasms",
+			"quote": "With reference to epidemiologic data, evidence on low-calorie sweeteners â€“ and specifically aspartame â€“ does not support the existence of a consistent association with hematopoietic neoplasms, brain cancer, digestive sites, breast, prostate and several other neoplasms",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
@@ -1420,7 +1420,7 @@
 		{
 			"uuid": "QcC3qeXUfA0ByEiE",
 			"openalex_id": "W4236665471",
-			"title": "Scientific Opinion on the re‐evaluation of aspartame (E 951) as a food additive",
+			"title": "Scientific Opinion on the reâ€evaluation of aspartame (E 951) as a food additive",
 			"override_seed": 0,
 			"institution": {
 				"name": "European Food Safety Authority",
@@ -1489,8 +1489,8 @@
 			"openalex_id": "W1996445220",
 			"title": "Consumption of soft drinks and juices and risk of liver and biliary tract cancers in a European cohort",
 			"authors": [
-				"Magdalena Stępień",
-				"Talita Duarte‐Salles",
+				"Magdalena StÄ™pieÅ„",
+				"Talita Duarteâ€Salles",
 				"Veronika Fedirko",
 				"Antonia Trichopoulou"
 			],
@@ -1629,7 +1629,7 @@
 			"title": "Review of the nutritional benefits and risks related to intense sweeteners",
 			"override_seed": 0,
 			"authors": [
-				"Olivier Bruyère",
+				"Olivier BruyÃ¨re",
 				"Serge H. Ahmed",
 				"Catherine Atlan",
 				"Jacques Belegaud"
@@ -1740,10 +1740,10 @@
 			"openalex_id": "W2499651799",
 			"title": "Sweet-beverage consumption and risk of pancreatic cancer in the European Prospective Investigation into Cancer and Nutrition (EPIC)",
 			"authors": [
-				"Eva María Navarrete‐Muñoz",
+				"Eva MarÃ­a Navarreteâ€MuÃ±oz",
 				"Petra A. Wark",
 				"Dora Romaguera",
-				"Nirmala Bhoo‐Pathy"
+				"Nirmala Bhooâ€Pathy"
 			],
 			"year": 2016,
 			"link": "https://doi.org/10.3945/ajcn.116.130963",
@@ -1910,7 +1910,7 @@
 		{
 			"uuid": "OUs4k0SgyegB8liU",
 			"openalex_id": "W2988248742",
-			"title": "Consumption of sugar‐sweetened and artificially sweetened soft drinks and risk of cancers not related to obesity",
+			"title": "Consumption of sugarâ€sweetened and artificially sweetened soft drinks and risk of cancers not related to obesity",
 			"override_seed": 0.95,
 			"authors": [
 				"Julie K. Bassett",
@@ -1944,7 +1944,7 @@
 		{
 			"uuid": "wnQujTdLOieKZpL0",
 			"openalex_id": "W4256564332",
-			"title": "Lack of potential carcinogenicity for aspartame – Systematic evaluation and integration of mechanistic data into the totality of the evidence",
+			"title": "Lack of potential carcinogenicity for aspartame â€“ Systematic evaluation and integration of mechanistic data into the totality of the evidence",
 			"override_seed": 0,
 			"authors": [
 				"Daniele Wikoff",
@@ -1982,12 +1982,12 @@
 		{
 			"uuid": "7KHwBtXeMFUvT19T",
 			"openalex_id": "W2956235322",
-			"title": "Sugary drink consumption and risk of cancer: results from NutriNet-Santé prospective cohort",
+			"title": "Sugary drink consumption and risk of cancer: results from NutriNet-SantÃ© prospective cohort",
 			"authors": [
 				"Eloi Chazelas",
 				"Bernard Srour",
 				"Elisa Desmetz",
-				"Emmanuelle Kesse‐Guyot"
+				"Emmanuelle Kesseâ€Guyot"
 			],
 			"year": 2019,
 			"link": "https://doi.org/10.1136/bmj.l2408",
@@ -2017,8 +2017,8 @@
 			"authors": [
 				"Anca Laura Maghiari",
 				"Dorina Coricovac",
-				"Iulia Pînzaru",
-				"Ioana Macașoi"
+				"Iulia PÃ®nzaru",
+				"Ioana MacaÈ™oi"
 			],
 			"year": 2020,
 			"link": "https://doi.org/10.3390/nu12123600",
@@ -2032,7 +2032,7 @@
 				"conclusion": "maybe",
 				"indirect": true
 			},
-			"quote": "The concentrations that proved to be cytotoxic in vitro exerted a pro-angiogenic effect in ovo and presented a weak irritant potential at vascular level. These data might represent a background for further studies aiming to elucidate aspartame’s mechanism of action in tumor cells",
+			"quote": "The concentrations that proved to be cytotoxic in vitro exerted a pro-angiogenic effect in ovo and presented a weak irritant potential at vascular level. These data might represent a background for further studies aiming to elucidate aspartameâ€™s mechanism of action in tumor cells",
 			"type": "InVitroStudy",
 			"blinding": "None",
 			"sample_size": "NotApplicable",
@@ -2082,7 +2082,7 @@
 			"notes": [
 				{
 					"title": "Controversial institute",
-					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing highâ€‘visibility press releases before peerâ€‘review and for its links with biased NGOs and political groups",
 					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
 					"impact": "Negative"
 				},
@@ -2096,11 +2096,11 @@
 		{
 			"uuid": "ZGGdxkEBpKbOdeTY",
 			"openalex_id": "W3153374447",
-			"title": "Aspartame and cancer – new evidence for causation",
+			"title": "Aspartame and cancer â€“ new evidence for causation",
 			"override_seed": 0.95,
 			"authors": [
 				"Philip J. Landrigan",
-				"Kurt Straíf"
+				"Kurt StraÃ­f"
 			],
 			"year": 2021,
 			"link": "https://doi.org/10.1186/s12940-021-00725-y",
@@ -2133,7 +2133,7 @@
 			"notes": [
 				{
 					"title": "Controversial institute",
-					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing high‑visibility press releases before peer‑review and for its links with biased NGOs and political groups",
+					"description": "The Ramazzini Institute has a long history of controversial studies (generally claiming that things cause cancer) criticized for methodological and design flaws like data transparency issues, lack of randomization, and more. The institute has also been criticized for its practice of issuing highâ€‘visibility press releases before peerâ€‘review and for its links with biased NGOs and political groups",
 					"link": "https://geneticliteracyproject.org/2022/12/02/yet-another-study-from-the-ramazzini-institute-claims-artificial-sweeteners-may-cause-cancer-heres-why-scientists-and-regulators-ignore-it/",
 					"impact": "Negative"
 				},
@@ -2189,7 +2189,7 @@
 			"override_seed": 0.7,
 			"authors": [
 				"Fjorida Llaha",
-				"Mercedes Gil‐Lespinard",
+				"Mercedes Gilâ€Lespinard",
 				"Pelin Unal",
 				"Izar Villasante"
 			],
@@ -2323,7 +2323,7 @@
 		{
 			"uuid": "691QtyGRfrKDRrMO",
 			"openalex_id": "W3174508420",
-			"title": "The relationship between the use of artificial sweeteners and cancer: A meta‐analysis of case–control studies",
+			"title": "The relationship between the use of artificial sweeteners and cancer: A metaâ€analysis of caseâ€“control studies",
 			"override_seed": 0,
 			"authors": [
 				"Liping Liu",
@@ -2361,13 +2361,13 @@
 		{
 			"uuid": "GZrwyl0BVKtXaFyK",
 			"openalex_id": "W4220938135",
-			"title": "Artificial sweeteners and cancer risk: Results from the NutriNet-Santé population-based cohort study",
+			"title": "Artificial sweeteners and cancer risk: Results from the NutriNet-SantÃ© population-based cohort study",
 			"override_seed": 0.8,
 			"authors": [
 				"Charlotte Debras",
 				"Eloi Chazelas",
 				"Bernard Srour",
-				"Nathalie Druesne‐Pecollo"
+				"Nathalie Druesneâ€Pecollo"
 			],
 			"year": 2022,
 			"link": "https://doi.org/10.1371/journal.pmed.1003950",
@@ -2401,13 +2401,13 @@
 		{
 			"uuid": "Z5Q3mvuQkfhiCDJj",
 			"openalex_id": "W4311531706",
-			"title": "Association of Artificially Sweetened Beverage Consumption and Urinary Tract Cancers in the Women’s Health Initiative Observational Study",
+			"title": "Association of Artificially Sweetened Beverage Consumption and Urinary Tract Cancers in the Womenâ€™s Health Initiative Observational Study",
 			"override_seed": 0.5,
 			"authors": [
 				"Nancy E. Ringel",
 				"Kathleen M. Hovey",
 				"Chris Andrews",
-				"Yasmin Mossavar‐Rahmani"
+				"Yasmin Mossavarâ€Rahmani"
 			],
 			"year": 2022,
 			"link": "https://doi.org/10.1016/j.euros.2022.11.016",
@@ -2455,7 +2455,7 @@
 				"conclusion": "no_but_mixed_results",
 				"indirect": false
 			},
-			"quote": "The results of our research demonstrated that artificial sweeteners’ intake seemed not to increase the risk of overall cancer incidence and mortality. However, in Europe, the consumption of artificial sweeteners could increase cancer incidence",
+			"quote": "The results of our research demonstrated that artificial sweetenersâ€™ intake seemed not to increase the risk of overall cancer incidence and mortality. However, in Europe, the consumption of artificial sweeteners could increase cancer incidence",
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
@@ -2578,7 +2578,7 @@
 			"title": "Artificially Sweetened Beverages and Health Outcomes: An Umbrella Review",
 			"override_seed": 0.95,
 			"authors": [
-				"C. Díaz",
+				"C. DÃ­az",
 				"Leandro F. M. Rezende",
 				"Angelo Sabag",
 				"Dong Hoon Lee"
@@ -2728,7 +2728,7 @@
 			"openalex_id": "W4384156863",
 			"title": "Carcinogenicity of aspartame, methyleugenol, and isoeugenol",
 			"authors": [
-				"Elio Ríboli",
+				"Elio RÃ­boli",
 				"Frederick A. Beland",
 				"Dirk W. Lachenmeier",
 				"M. Matilde Marques"
@@ -2769,13 +2769,13 @@
 		{
 			"uuid": "4Cyr8E1QqyuELdBB",
 			"openalex_id": "W4380870578",
-			"title": "Consumption of aspartame and other artificial sweeteners and risk of cancer in the Spanish multicase‐control study (MCC‐Spain)",
+			"title": "Consumption of aspartame and other artificial sweeteners and risk of cancer in the Spanish multicaseâ€control study (MCCâ€Spain)",
 			"override_seed": 0.3,
 			"authors": [
-				"Anna Palomar‐Cros",
-				"Kurt Straíf",
+				"Anna Palomarâ€Cros",
+				"Kurt StraÃ­f",
 				"Dora Romaguera",
-				"Núria Aragonés"
+				"NÃºria AragonÃ©s"
 			],
 			"year": 2023,
 			"link": "https://doi.org/10.1002/ijc.34577",
@@ -2802,7 +2802,7 @@
 			"openalex_id": "W4388861152",
 			"title": "Is there a promoting role for artificial sweeteners in the evolution of bladder cancer? A meta-analysis of current literature",
 			"authors": [
-				"I Bálint",
+				"I BÃ¡lint",
 				"Bence T. ERDODI"
 			],
 			"year": 2023,
@@ -2909,7 +2909,7 @@
 			"authors": [
 				"Raghad Khalid AL-Ishaq",
 				"Peter Kubatka",
-				"Dietrich Büsselberg"
+				"Dietrich BÃ¼sselberg"
 			],
 			"year": 2023,
 			"link": "https://doi.org/10.3390/nu15173675",
@@ -3049,7 +3049,7 @@
 		{
 			"uuid": "td2YGuh65hohrmD4",
 			"openalex_id": "W4403484968",
-			"title": "Consumption of aspartame and risk of breast cancer in the Nurses’ Health Studies",
+			"title": "Consumption of aspartame and risk of breast cancer in the Nursesâ€™ Health Studies",
 			"override_seed": 0.7,
 			"authors": [
 				"Andrea Romanos-Nanclares",
@@ -3229,7 +3229,7 @@
 			"title": "The association of artificial sweeteners intake and risk of cancer: an umbrella meta-analysis",
 			"override_seed": 0.95,
 			"authors": [
-				"Ahmed Abu‐Zaid",
+				"Ahmed Abuâ€Zaid",
 				"Emad Kutbi",
 				"Norah Alshammari",
 				"Abdullah AlJurayyan"

@@ -1,8 +1,8 @@
-# 📖 How to add or edit maps?
+# ðŸ“– How to add or edit maps?
 
 This page explains how to add or edit maps (not individual papers). For details on adding or editing papers within a map, see **[this page](/doc/contribute/papers.md)**.
 
-## 📨 Request a map
+## ðŸ“¨ Request a map
 
 On the **[main page](https://papermap.org)** there is a `New map` link at the bottom. Clicking it opens a form to request a new map with the following fields:
 
@@ -22,7 +22,7 @@ You can also click on the `Submit using your own GitHub account` button to be re
 
 A maintainer will then review your request and may create the corresponding map.
 
-## ✏️ Add or edit a map
+## âœï¸ Add or edit a map
 
 This section is for developers only since currently maps cannot be created or edited directly on the website. Feel free to ask for help in the **[Discord server](https://discord.gg/eFdjRJe7WZ)**.
 
@@ -31,7 +31,7 @@ Map files are located in the **[/data/maps](/data/maps)** folder of the reposito
 Each subfolder must contain an `_init_.json` file providing the group metadata:
 ```json
 {
-	"emoji": "💉", // Emoji of the group
+	"emoji": "ðŸ’‰", // Emoji of the group
 	"name": "Vaccines" // Name of the group
 }
 ```
@@ -43,7 +43,7 @@ Map files must have a unique name across the entire `/data/maps` tree and follow
 	"draft": false,
 
 	// The emoji of the map
-	"emoji": "🧩",
+	"emoji": "ðŸ§©",
 
 	// The titles of the map
 	"question": {
@@ -72,7 +72,7 @@ Map files must have a unique name across the entire `/data/maps` tree and follow
 
 		// A "no_consensus" entry must be present with this exact key (fields can be customized)
 		"no_consensus": {
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of vaccines on autism",
 			"color": "Gray",
@@ -86,7 +86,7 @@ Map files must have a unique name across the entire `/data/maps` tree and follow
 		"no": {
 
 			// Emoji representing the previous consensus
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 
 			// Short label for the previous consensus
 			"text": "No",
@@ -141,7 +141,7 @@ Map files must have a unique name across the entire `/data/maps` tree and follow
 			"group": "no",
 
 			// Emoji of the paper result
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 
 			// Short label of the paper result
 			"text": "No",

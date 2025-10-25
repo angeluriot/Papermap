@@ -861,7 +861,7 @@
 				<select bind:value={review_estimate} style="width: 4em;">
 					<option value="" disabled selected hidden></option>
 					<option value="equal">=</option>
-					<option value="around">≈</option>
+					<option value="around">â‰ˆ</option>
 				</select>
 				<input bind:value={review_count} type="number" min=1 placeholder="The number of papers included in the review"/>
 			</div>
@@ -1105,7 +1105,7 @@
 
 	h1
 	{
-		color: #303037;
+		color: var(--text-primary);
 		font-size: 1.25em;
 		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
@@ -1141,7 +1141,7 @@
 		flex-direction: column;
 		justify-content: start;
 		align-items: start;
-		color: #303037;
+		color: var(--text-primary);
 		gap: 0.5em;
 	}
 

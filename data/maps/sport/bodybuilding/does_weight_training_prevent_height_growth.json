@@ -1,6 +1,6 @@
 {
 	"draft": false,
-	"emoji": "🧑‍🧒",
+	"emoji": "ðŸ§‘â€ðŸ§’",
 	"question": {
 		"short": "Does weight training prevent height growth?",
 		"long": "Does weight training prevent height growth?"
@@ -19,7 +19,7 @@
 	],
 	"consensus": {
 		"no_consensus": {
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of weight training on height growth",
 			"color": "Gray",
@@ -29,7 +29,7 @@
 			]
 		},
 		"no": {
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "No",
 			"description": "The literature suggests that weight training does not prevent height growth",
 			"color": "Red",
@@ -39,7 +39,7 @@
 			]
 		},
 		"towards_no": {
-			"emoji": "⬅️",
+			"emoji": "â¬…ï¸",
 			"text": "Towards no",
 			"description": "The literature suggests that weight training probably doesn't prevent height growth, but more research is needed",
 			"color": "Red1H",
@@ -49,7 +49,7 @@
 			]
 		},
 		"towards_yes": {
-			"emoji": "➡️",
+			"emoji": "âž¡ï¸",
 			"text": "Towards yes",
 			"description": "The literature suggests that weight training may prevent height growth, but more research is needed",
 			"color": "Green1H",
@@ -59,7 +59,7 @@
 			]
 		},
 		"yes": {
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Yes",
 			"description": "The literature suggests that weight training prevents height growth",
 			"color": "Green",
@@ -98,56 +98,56 @@
 	"conclusions": {
 		"no": {
 			"group": "no",
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "No",
 			"description": "The results of the paper show no significant effect of weight training on height growth",
 			"p_value": false
 		},
 		"no_unlike_literature": {
 			"group": "no_but",
-			"emoji": "↩️",
+			"emoji": "â†©ï¸",
 			"text": "No unlike literature",
 			"description": "The results of the paper show no significant effect of weight training on height growth, unlike what is reported in the literature",
 			"p_value": false
 		},
 		"no_but_mixed_results": {
 			"group": "no_but",
-			"emoji": "🔀",
+			"emoji": "ðŸ”€",
 			"text": "No but mixed results",
 			"description": "The results of the paper show no significant overall effect of weight training on height growth, but there are mixed results on specific cases",
 			"p_value": false
 		},
 		"maybe": {
 			"group": "maybe",
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "Maybe",
 			"description": "The results of the paper suggest that weight training might have an effect on height growth, but the evidence is not strong enough to conclude",
 			"p_value": false
 		},
 		"yes_but_low_confidence": {
 			"group": "yes_but",
-			"emoji": "🤔",
+			"emoji": "ðŸ¤”",
 			"text": "Yes but low confidence",
 			"description": "The results of the paper suggest that weight training may prevent height growth, but the evidence is not strong",
 			"p_value": true
 		},
 		"yes_but_small_effect": {
 			"group": "yes_but",
-			"emoji": "🤏",
+			"emoji": "ðŸ¤",
 			"text": "Yes but small effect",
 			"description": "The results of the paper suggest that weight training may have a small effect on height growth",
 			"p_value": true
 		},
 		"yes_unlike_literature": {
 			"group": "yes_but",
-			"emoji": "↪️",
+			"emoji": "â†ªï¸",
 			"text": "Yes unlike literature",
 			"description": "The results of the paper suggest that weight training may prevent height growth, unlike what is reported in the literature",
 			"p_value": true
 		},
 		"yes": {
 			"group": "yes",
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Yes",
 			"description": "The results of the paper suggest that weight training prevents height growth",
 			"p_value": true
@@ -779,7 +779,7 @@
 				"conclusion": "no",
 				"indirect": false
 			},
-			"quote": "A well-designed strength training program following the recommended loads, sets, and repetitions appropriate for the young athlete’s age and body habitus should not excessively stress growth plates [...] while favorably influencing bone growth and development in youth by increasing bone mineral density",
+			"quote": "A well-designed strength training program following the recommended loads, sets, and repetitions appropriate for the young athleteâ€™s age and body habitus should not excessively stress growth plates [...] while favorably influencing bone growth and development in youth by increasing bone mineral density",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
@@ -945,11 +945,11 @@
 		{
 			"uuid": "hm45lwRyKVODZLlr",
 			"openalex_id": "W2427577391",
-			"title": "Treinamento de Força para Crianças: Uma Metanálise Sobre Alterações do Crescimento Longitudinal, Força e Composição Corporal",
+			"title": "Treinamento de ForÃ§a para CrianÃ§as: Uma MetanÃ¡lise Sobre AlteraÃ§Ãµes do Crescimento Longitudinal, ForÃ§a e ComposiÃ§Ã£o Corporal",
 			"override_seed": 0.95,
 			"authors": [
 				"R.R.S. Frois",
-				"Lílian Alves Pereira",
+				"LÃ­lian Alves Pereira",
 				"Cintia Mota Cardeal",
 				"Ricardo Yukio Asano"
 			],
@@ -1061,7 +1061,7 @@
 			"title": "Effects of physical activity on children's growth",
 			"override_seed": 0,
 			"authors": [
-				"João Guilherme Bezerra Alves",
+				"JoÃ£o Guilherme Bezerra Alves",
 				"Guilherme Victor Alves"
 			],
 			"year": 2018,
@@ -1076,7 +1076,7 @@
 				"conclusion": "no",
 				"indirect": false
 			},
-			"quote": "Physical exercise does not appear to impair the child’s linear growth and contributes to the ideal shaping of bone and muscle tissues, ensuring possible beneficial effects throughout life",
+			"quote": "Physical exercise does not appear to impair the childâ€™s linear growth and contributes to the ideal shaping of bone and muscle tissues, ensuring possible beneficial effects throughout life",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,

@@ -7,6 +7,7 @@
 	import Title from '$lib/svgs/title.svg';
 	import { constants as C } from '$lib/utils';
 	import { onMount } from 'svelte';
+    import ThemeToggle from '$lib/theme-toggle.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -103,32 +104,33 @@
 		>
 			<input
 				type="text" spellcheck="false" placeholder="{placeholder}" bind:value={search}
-				class="rounded-full relative bg-white mb-[1.7em] z-20"
+				class="rounded-full relative bg-card mb-[1.7em] z-20"
 				style="{search_element?.shown() ? 'border-radius: 1.6em 1.6em 0em 0em;' : 'border-radius: 1.6em;'}"
 			>
-			<div class="search absolute w-full bg-white z-30" style="display: {search_element?.shown() ? 'block' : 'none'};">
+			<div class="search absolute w-full bg-card z-30" style="display: {search_element?.shown() ? 'block' : 'none'};">
 				<Search {emojis} map={null} maps={data.maps} {search} new_map={(title) => popup?.show(title)} bind:this={search_element}/>
 			</div>
 		</div>
 		<div class="buttons flex-center-row flex-wrap" style="{search_element?.shown() ? '' : 'position: relative; z-index: 40;'}">
 			<a href="/maps" class="rounded-full">
 				<button class="flex-center-row rounded-full unselectable">
-					<div class="emoji">{@html emojis['📖']}</div>
+					<div class="emoji">{@html emojis['ðŸ“–']}</div>
 					<span>All maps</span>
 				</button>
 			</a>
 			<a href="/maps/random" class="rounded-full">
 				<button class="flex-center-row rounded-full unselectable">
-					<div class="emoji">{@html emojis['🎲']}</div>
+					<div class="emoji">{@html emojis['ðŸŽ²']}</div>
 					<span>Random map</span>
 				</button>
 			</a>
 			<a href="/statistics" class="rounded-full">
 				<button class="flex-center-row rounded-full unselectable">
-					<div class="emoji">{@html emojis['📊']}</div>
+					<div class="emoji">{@html emojis['ðŸ“Š']}</div>
 					<span>Statistics</span>
 				</button>
 			</a>
+			<ThemeToggle class="w-fit h-full aspect-square bg-[--secondary] shadow-[0em_0.1em_2em_var(--shadow-medium)]!"/>
 		</div>
 	</div>
 	<div class="links absolute z-20 right-0 bottom-0 flex-center-row flex-wrap">
@@ -179,7 +181,7 @@
 
 	.input-container
 	{
-		filter: drop-shadow(0em 0em 3em #00008036);
+		filter: drop-shadow(0em 0em 3em var(--shadow-light));
 		transform: translateZ(0);
 	}
 
@@ -196,7 +198,7 @@
 
 	input::placeholder
 	{
-		color: #9b9aa7;
+		color: var(--text-secondary);
 		pointer-events: none;
 		user-select: none;
 		-moz-user-select: none;
@@ -238,14 +240,14 @@
 	{
 		gap: 0.5em;
 		padding: 0.7em 1.2em;
-		background-color: white;
-		box-shadow: 0em 0.1em 2em #00008040;
+		background-color: var(--secondary);
+		box-shadow: 0em 0.1em 2em var(--shadow-medium);
 		transition: background-color 0.2s ease-in-out;
 	}
 
 	.buttons a:hover button
 	{
-		background-color: #f4f5fa;
+		background-color: var(--hover);
 	}
 
 	.buttons button .emoji
@@ -260,7 +262,7 @@
 		font-weight: 550;
 		line-height: 1.25em;
 		text-wrap: nowrap;
-		color: #303037;
+		color: var(--text-primary);
 	}
 
 	.links
@@ -274,7 +276,7 @@
 	{
 		padding: 0.5em 0.5em;
 		cursor: pointer;
-		color: #303037;
+		color: var(--text-primary);
 		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 475;
 		line-height: 1.5em;

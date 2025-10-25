@@ -4,29 +4,29 @@ import ColorLib from 'color';
 
 
 export const TO_EMOJI = {
-	[ReviewType.Review]: '🔍',
-	[ReviewType.NarrativeReview]: '📖',
-	[ReviewType.SystematicReview]: '🗂️',
-	[ReviewType.MetaAnalysis]: '📊',
-	[PaperType.InVitroStudy]: '🧫',
-	[PaperType.CaseReport]: '🔍',
-	[PaperType.AnimalStudy]: '🐭',
-	[PaperType.EcologicalStudy]: '🌍',
-	[PaperType.CrossSectionalStudy]: '📸',
-	[PaperType.CaseControlStudy]: '👥',
-	[PaperType.CohortStudy]: '⏳',
-	[PaperType.ClinicalTrial]: '🧪',
-	[PaperType.RandomizedControlledTrial]: '🎲',
-	[ReviewedPapersType.DiverseObservationalStudies]: '👀',
-	[ReviewedPapersType.DiverseClinicalTrials]: '⚗️',
-	[ReviewedPapersType.DiverseHumanStudies]: '🙋',
-	[Blinding.Single]: '🤐',
-	[Blinding.Double]: '🫣',
-	[ReviewedPapersBlinding.DiverseBlinding]: '😌',
-	[ConflictOfInterest.None]: '😇',
-	[ConflictOfInterest.SomeLinks]: '🧐',
-	[ConflictOfInterest.YesButOppositeResults]: '↩️',
-	[ConflictOfInterest.Yes]: '🤑',
+	[ReviewType.Review]: 'ðŸ”',
+	[ReviewType.NarrativeReview]: 'ðŸ“–',
+	[ReviewType.SystematicReview]: 'ðŸ—‚ï¸',
+	[ReviewType.MetaAnalysis]: 'ðŸ“Š',
+	[PaperType.InVitroStudy]: 'ðŸ§«',
+	[PaperType.CaseReport]: 'ðŸ”',
+	[PaperType.AnimalStudy]: 'ðŸ­',
+	[PaperType.EcologicalStudy]: 'ðŸŒ',
+	[PaperType.CrossSectionalStudy]: 'ðŸ“¸',
+	[PaperType.CaseControlStudy]: 'ðŸ‘¥',
+	[PaperType.CohortStudy]: 'â³',
+	[PaperType.ClinicalTrial]: 'ðŸ§ª',
+	[PaperType.RandomizedControlledTrial]: 'ðŸŽ²',
+	[ReviewedPapersType.DiverseObservationalStudies]: 'ðŸ‘€',
+	[ReviewedPapersType.DiverseClinicalTrials]: 'âš—ï¸',
+	[ReviewedPapersType.DiverseHumanStudies]: 'ðŸ™‹',
+	[Blinding.Single]: 'ðŸ¤',
+	[Blinding.Double]: 'ðŸ«£',
+	[ReviewedPapersBlinding.DiverseBlinding]: 'ðŸ˜Œ',
+	[ConflictOfInterest.None]: 'ðŸ˜‡',
+	[ConflictOfInterest.SomeLinks]: 'ðŸ§',
+	[ConflictOfInterest.YesButOppositeResults]: 'â†©ï¸',
+	[ConflictOfInterest.Yes]: 'ðŸ¤‘',
 };
 
 
@@ -149,70 +149,70 @@ export function score_to_color(score?: number): string
 
 export function score_to_emoji(score?: number): string
 {
-	if (score === undefined) return	'🤷';
-	if (score < 0.1) return			'💩';
-	if (score < 0.2) return			'🤮';
-	if (score < 0.3) return			'😨';
-	if (score < 0.4) return			'☹️';
-	if (score < 0.5) return			'🫤';
-	if (score < 0.6) return			'😐';
-	if (score < 0.7) return			'🙂';
-	if (score < 0.8) return			'😊';
-	if (score < 0.9) return			'🥰';
-	return							'🤩';
+	if (score === undefined) return	'ðŸ¤·';
+	if (score < 0.1) return			'ðŸ’©';
+	if (score < 0.2) return			'ðŸ¤®';
+	if (score < 0.3) return			'ðŸ˜¨';
+	if (score < 0.4) return			'â˜¹ï¸';
+	if (score < 0.5) return			'ðŸ«¤';
+	if (score < 0.6) return			'ðŸ˜';
+	if (score < 0.7) return			'ðŸ™‚';
+	if (score < 0.8) return			'ðŸ˜Š';
+	if (score < 0.9) return			'ðŸ¥°';
+	return							'ðŸ¤©';
 }
 
 
 export function review_count_score_to_emoji(score?: number): string
 {
-	if (score === undefined) return	'🤷';
-	if (score < 0.2) return			'📃';
-	if (score < 0.4) return			'📑';
-	if (score < 0.6) return			'🗂️';
-	if (score < 0.8) return			'📖';
-	return							'📚';
+	if (score === undefined) return	'ðŸ¤·';
+	if (score < 0.2) return			'ðŸ“ƒ';
+	if (score < 0.4) return			'ðŸ“‘';
+	if (score < 0.6) return			'ðŸ—‚ï¸';
+	if (score < 0.8) return			'ðŸ“–';
+	return							'ðŸ“š';
 }
 
 
 export function citation_score_to_emoji(score?: number): string
 {
-	if (score === undefined) return	'🤷';
-	if (score < 0.2) return			'🫥';
-	if (score < 0.4) return			'🫣';
-	if (score < 0.6) return			'🤗';
-	if (score < 0.8) return			'😎';
-	return							'🤩';
+	if (score === undefined) return	'ðŸ¤·';
+	if (score < 0.2) return			'ðŸ«¥';
+	if (score < 0.4) return			'ðŸ«£';
+	if (score < 0.6) return			'ðŸ¤—';
+	if (score < 0.8) return			'ðŸ˜Ž';
+	return							'ðŸ¤©';
 }
 
 
 export function sample_size_score_to_emoji(score?: number): string
 {
-	if (score === undefined) return	'🤷';
-	if (score < 0.25) return		'🧍';
-	if (score < 0.5) return			'🧑‍🤝‍🧑';
-	if (score < 0.75) return		'👪';
-	return							'🧑‍🧑‍🧒‍🧒';
+	if (score === undefined) return	'ðŸ¤·';
+	if (score < 0.25) return		'ðŸ§';
+	if (score < 0.5) return			'ðŸ§‘â€ðŸ¤â€ðŸ§‘';
+	if (score < 0.75) return		'ðŸ‘ª';
+	return							'ðŸ§‘â€ðŸ§‘â€ðŸ§’â€ðŸ§’';
 }
 
 
 export function p_value_score_to_emoji(score?: number): string
 {
-	if (score === undefined) return	'🤷';
-	if (score < 0.25) return		'🎲';
-	if (score < 0.5) return			'👀';
-	if (score < 0.75) return		'🔍';
-	return							'🔬';
+	if (score === undefined) return	'ðŸ¤·';
+	if (score < 0.25) return		'ðŸŽ²';
+	if (score < 0.5) return			'ðŸ‘€';
+	if (score < 0.75) return		'ðŸ”';
+	return							'ðŸ”¬';
 }
 
 
 export function impact_to_emoji(impact?: NoteImpact): string
 {
-	if (impact === NoteImpact.VeryNegative) return		'💩';
-	if (impact === NoteImpact.Negative) return			'👎';
-	if (impact === NoteImpact.Neutral) return			'📝';
-	if (impact === NoteImpact.Positive) return			'👍';
-	if (impact === NoteImpact.VeryPositive) return		'🤩';
-	return												'🤷';
+	if (impact === NoteImpact.VeryNegative) return		'ðŸ’©';
+	if (impact === NoteImpact.Negative) return			'ðŸ‘Ž';
+	if (impact === NoteImpact.Neutral) return			'ðŸ“';
+	if (impact === NoteImpact.Positive) return			'ðŸ‘';
+	if (impact === NoteImpact.VeryPositive) return		'ðŸ¤©';
+	return												'ðŸ¤·';
 }
 
 

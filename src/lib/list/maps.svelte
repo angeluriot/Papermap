@@ -105,7 +105,7 @@
 		font-weight: 625;
 		line-height: 1.25em;
 		text-wrap: wrap;
-		color: #303037;
+		color: var(--text-primary);
 	}
 
 	.list
@@ -137,6 +137,6 @@
 		font-weight: 550;
 		line-height: 1.25em;
 		text-wrap: wrap;
-		color: #303037;
+		color: var(--text-primary);
 	}
 </style>

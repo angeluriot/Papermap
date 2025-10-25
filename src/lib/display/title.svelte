@@ -129,7 +129,7 @@
 		placeholder={display_text} bind:value={search} bind:this={input_element}
 		style="width: {input_width}; {search_element?.shown() ? 'border-radius: 1.575em 1.575em 0em 0em;' : 'border-radius: 1.575em;'}"
 	/>
-	<div class="search absolute w-full bg-white" style="display: {search_element?.shown() ? 'block' : 'none'};">
+	<div class="search absolute w-full bg-card" style="display: {search_element?.shown() ? 'block' : 'none'};">
 		<Search {emojis} {map} {maps} {search} new_map={to_new_map} bind:this={search_element}/>
 	</div>
 </div>
@@ -166,12 +166,11 @@
 		padding: 0.85em 1.45em 0.8em 3.05em;
 		font-weight: 575;
 		letter-spacing: 0.005em;
-		background-color: white;
 	}
 
 	input::placeholder
 	{
-		color: black;
+		/* color: black; */
 		pointer-events: none;
 		user-select: none;
 		-moz-user-select: none;

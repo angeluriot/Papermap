@@ -1,6 +1,6 @@
 {
 	"draft": false,
-	"emoji": "🧸",
+	"emoji": "ðŸ§¸",
 	"question": {
 		"short": "What are the effects of sexual education on children?",
 		"long": "What are the effects of sexual education programs on children?"
@@ -15,7 +15,7 @@
 	],
 	"consensus": {
 		"no_consensus": {
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of sexual education programs",
 			"color": "Gray",
@@ -25,7 +25,7 @@
 			]
 		},
 		"negative": {
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "Negative",
 			"description": "The literature suggests that sexual education programs mostly have negative effects on children",
 			"color": "Red",
@@ -35,7 +35,7 @@
 			]
 		},
 		"towards_negative": {
-			"emoji": "⬅️",
+			"emoji": "â¬…ï¸",
 			"text": "Towards negative",
 			"description": "The literature suggests that sexual education programs may have negative effects on children, but more research is needed",
 			"color": "Red1H",
@@ -45,7 +45,7 @@
 			]
 		},
 		"no_effect": {
-			"emoji": "🫥",
+			"emoji": "ðŸ«¥",
 			"text": "No effect",
 			"description": "The literature suggests that sexual education programs have no significant effect on children",
 			"color": "Gray",
@@ -55,7 +55,7 @@
 			]
 		},
 		"towards_positive": {
-			"emoji": "➡️",
+			"emoji": "âž¡ï¸",
 			"text": "Towards positive",
 			"description": "The literature suggests that sexual education programs may have positive effects on children, but more research is needed",
 			"color": "Green1H",
@@ -65,7 +65,7 @@
 			]
 		},
 		"positive": {
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Positive",
 			"description": "The literature suggests that sexual education programs mostly have positive effects on children",
 			"color": "Green",
@@ -108,84 +108,84 @@
 	"conclusions": {
 		"negative": {
 			"group": "negative",
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "Negative",
 			"description": "The results of the paper suggest that the sexual education programs tested mostly have negative effects on children",
 			"p_value": true
 		},
 		"negative_unlike_literature": {
 			"group": "negative_but",
-			"emoji": "↩️",
+			"emoji": "â†©ï¸",
 			"text": "Negative unlike literature",
 			"description": "The results of the paper suggest that the sexual education programs tested mostly have negative effects on children, unlike what is reported in the literature",
 			"p_value": true
 		},
 		"negative_but_small_effect": {
 			"group": "negative_but",
-			"emoji": "🤏",
+			"emoji": "ðŸ¤",
 			"text": "Negative but small effect",
 			"description": "The results of the paper suggest that the sexual education programs tested may have small negative effects on children",
 			"p_value": true
 		},
 		"negative_but_low_confidence": {
 			"group": "negative_but",
-			"emoji": "🤔",
+			"emoji": "ðŸ¤”",
 			"text": "Negative but low confidence",
 			"description": "The results of the paper suggest that the sexual education programs tested may have negative effects on children, but the evidence is not strong",
 			"p_value": true
 		},
 		"negative_but_mixed": {
 			"group": "negative_but",
-			"emoji": "🔀",
+			"emoji": "ðŸ”€",
 			"text": "Negative but mixed results",
 			"description": "The results of the paper suggest that the sexual education programs tested mostly have negative effects on children, but can also have positive effects",
 			"p_value": true
 		},
 		"mixed": {
 			"group": "mixed",
-			"emoji": "🔀",
+			"emoji": "ðŸ”€",
 			"text": "Mixed results",
 			"description": "The results of the paper suggest that the sexual education programs tested have both positive and negative effects on children",
 			"p_value": false
 		},
 		"no_effect": {
 			"group": "no_effect",
-			"emoji": "🫥",
+			"emoji": "ðŸ«¥",
 			"text": "No effect",
 			"description": "The results of the paper suggest that the sexual education programs tested have no significant effect on children",
 			"p_value": false
 		},
 		"positive_but_mixed": {
 			"group": "positive_but",
-			"emoji": "🔀",
+			"emoji": "ðŸ”€",
 			"text": "Positive but mixed results",
 			"description": "The results of the paper suggest that the sexual education programs tested mostly have positive effects on children, but can also have negative effects",
 			"p_value": true
 		},
 		"positive_but_low_confidence": {
 			"group": "positive_but",
-			"emoji": "🤔",
+			"emoji": "ðŸ¤”",
 			"text": "Positive but low confidence",
 			"description": "The results of the paper suggest that the sexual education programs tested may have positive effects on children, but the evidence is not strong",
 			"p_value": true
 		},
 		"positive_but_small_effect": {
 			"group": "positive_but",
-			"emoji": "🤏",
+			"emoji": "ðŸ¤",
 			"text": "Positive but small effect",
 			"description": "The results of the paper suggest that the sexual education programs tested may have small positive effects on children",
 			"p_value": true
 		},
 		"positive_unlike_literature": {
 			"group": "positive_but",
-			"emoji": "↪️",
+			"emoji": "â†ªï¸",
 			"text": "Positive unlike literature",
 			"description": "The results of the paper suggest that the sexual education programs tested mostly have positive effects on children, unlike what is reported in the literature",
 			"p_value": true
 		},
 		"positive": {
 			"group": "positive",
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Positive",
 			"description": "The results of the paper suggest that the sexual education programs tested mostly have positive effects on children",
 			"p_value": true
@@ -338,7 +338,7 @@
 			"title": "An Evaluation of Side Effects Associated with Participation in a Child Sexual Abuse Prevention Program",
 			"authors": [
 				"Sandy K. Wurtele",
-				"Cindy Miller‐Perrin"
+				"Cindy Millerâ€Perrin"
 			],
 			"year": 1987,
 			"link": "https://doi.org/10.1111/j.1746-1561.1987.tb07838.x",
@@ -366,7 +366,7 @@
 			"title": "Evaluation of a school-based sexual abuse prevention program: Cognitive and emotional effects",
 			"override_seed": 0,
 			"authors": [
-				"Renée L. Binder",
+				"RenÃ©e L. Binder",
 				"Dale E. McNiel"
 			],
 			"year": 1987,
@@ -381,7 +381,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "The program was helpful in teaching elementary school children strategies for coping with situations of potential abuse. Furthermore, the program increased parents’ confidence in their children’s knowledge and self-protection. No evidence was found of harmful emotional effects of the program",
+			"quote": "The program was helpful in teaching elementary school children strategies for coping with situations of potential abuse. Furthermore, the program increased parentsâ€™ confidence in their childrenâ€™s knowledge and self-protection. No evidence was found of harmful emotional effects of the program",
 			"type": "ClinicalTrial",
 			"blinding": "None",
 			"sample_size": 88,
@@ -530,7 +530,7 @@
 			"authors": [
 				"Sandy K. Wurtele",
 				"Laura C. Kast",
-				"Cindy Miller‐Perrin",
+				"Cindy Millerâ€Perrin",
 				"Patricia A. Kondrick"
 			],
 			"year": 1989,
@@ -725,7 +725,7 @@
 			"override_seed": 0.95,
 			"authors": [
 				"Elaine Blumberg",
-				"Michèle Chadwick",
+				"MichÃ¨le Chadwick",
 				"Linda Fogarty",
 				"Timothy W. Speth"
 			],
@@ -1215,7 +1215,7 @@
 			"override_seed": 0,
 			"authors": [
 				"Jan Rispens",
-				"André Alemán",
+				"AndrÃ© AlemÃ¡n",
 				"Paul P. Goudena"
 			],
 			"year": 1997,
@@ -1314,7 +1314,7 @@
 		{
 			"uuid": "9JRsYH8jaPaKEGfl",
 			"openalex_id": "W2036182014",
-			"title": "Helping children to the other side of silence: a study of the impact of the stay safe programme on Irish children’s disclosures of sexual victimization",
+			"title": "Helping children to the other side of silence: a study of the impact of the stay safe programme on Irish childrenâ€™s disclosures of sexual victimization",
 			"authors": [
 				"Deirdre MacIntyre",
 				"Alan Carr"
@@ -1331,7 +1331,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "These findings show that the Stay Safe child sexual abuse prevention program was successful in achieving its secondary prevention goal of promoting children’s effective disclosures of sexual victimization",
+			"quote": "These findings show that the Stay Safe child sexual abuse prevention program was successful in achieving its secondary prevention goal of promoting childrenâ€™s effective disclosures of sexual victimization",
 			"type": "CohortStudy",
 			"blinding": "None",
 			"sample_size": 588,
@@ -1496,7 +1496,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "Students who attended prevention programs were more knowledgeable about abuse concepts and reported fewer incidents of abuse. However, the effectiveness of students’ responses to abuse, even when they were using strategies taught by the prevention programs, was variable",
+			"quote": "Students who attended prevention programs were more knowledgeable about abuse concepts and reported fewer incidents of abuse. However, the effectiveness of studentsâ€™ responses to abuse, even when they were using strategies taught by the prevention programs, was variable",
 			"type": "CrossSectionalStudy",
 			"blinding": "None",
 			"sample_size": 137,
@@ -1513,10 +1513,10 @@
 			"title": "Proximate effects of a child sexual abuse prevention program in elementary school children",
 			"override_seed": 0.8,
 			"authors": [
-				"Martine Hébert",
+				"Martine HÃ©bert",
 				"Francine Lavoie",
-				"Christiane Piché",
-				"Michèle Poitras"
+				"Christiane PichÃ©",
+				"MichÃ¨le Poitras"
 			],
 			"year": 2001,
 			"link": "https://doi.org/10.1016/s0145-2134(01)00223-x",
@@ -1544,7 +1544,7 @@
 		{
 			"uuid": "oju1hp5Aw9b6a1GP",
 			"openalex_id": "W2023057071",
-			"title": "Evaluation of a Child Abuse Prevention Curriculum for Third‐Grade Students: Assessment of Knowledge and Efficacy Expectations",
+			"title": "Evaluation of a Child Abuse Prevention Curriculum for Thirdâ€Grade Students: Assessment of Knowledge and Efficacy Expectations",
 			"authors": [
 				"Joseph A. Dake",
 				"James H. Price",
@@ -1639,13 +1639,13 @@
 		{
 			"uuid": "1LHENm4MMsFtqTj6",
 			"openalex_id": "W2047558122",
-			"title": "Child sexual abuse: from prevention to self‐protection",
+			"title": "Child sexual abuse: from prevention to selfâ€protection",
 			"override_seed": 0,
 			"authors": [
 				"Maureen C. Kenny",
 				"Vjolca Capri",
 				"R Reena",
-				"Thakkar‐Kolar"
+				"Thakkarâ€Kolar"
 			],
 			"year": 2008,
 			"link": "https://doi.org/10.1002/car.1012",
@@ -1677,9 +1677,9 @@
 		{
 			"uuid": "olEph45Kv2xKUeuX",
 			"openalex_id": "W2015784507",
-			"title": "A group‐randomized evaluation of a theatre‐based sexual abuse prevention programme for primary school children in Germany",
+			"title": "A groupâ€randomized evaluation of a theatreâ€based sexual abuse prevention programme for primary school children in Germany",
 			"authors": [
-				"Barbara Krahé",
+				"Barbara KrahÃ©",
 				"Lena Knappert"
 			],
 			"year": 2009,
@@ -1760,7 +1760,7 @@
 				"conclusion": "positive_but_mixed",
 				"indirect": false
 			},
-			"quote": "Most investigators claimed that their results showed significant impact in primary prevention (increasing all children’s knowledge or awareness and/or abuse prevention skills) [...] Several programs reported some negative effects",
+			"quote": "Most investigators claimed that their results showed significant impact in primary prevention (increasing all childrenâ€™s knowledge or awareness and/or abuse prevention skills) [...] Several programs reported some negative effects",
 			"review": {
 				"type": "SystematicReview",
 				"reviews": false,
@@ -1813,7 +1813,7 @@
 		{
 			"uuid": "SJbrPvlQyZ1jxP85",
 			"openalex_id": "W2098432732",
-			"title": "Children's abilities to recognize a “good” person as a potential perpetrator of childhood sexual abuse",
+			"title": "Children's abilities to recognize a â€œgoodâ€ person as a potential perpetrator of childhood sexual abuse",
 			"override_seed": 0.1,
 			"authors": [
 				"Maureen C. Kenny",
@@ -1831,7 +1831,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "Pre-test results demonstrated that young children had difficulty recognizing the inappropriateness of a request when it was made by a “good” person. Post-test findings demonstrated that children as young as 3 years of age can learn the inappropriateness of such requests even when coming from “good” people",
+			"quote": "Pre-test results demonstrated that young children had difficulty recognizing the inappropriateness of a request when it was made by a â€œgoodâ€ person. Post-test findings demonstrated that children as young as 3 years of age can learn the inappropriateness of such requests even when coming from â€œgoodâ€ people",
 			"type": "ClinicalTrial",
 			"blinding": "None",
 			"sample_size": 93,
@@ -1862,7 +1862,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "The program was found to be effective at increasing participant’s knowledge of sexual abuse, awareness of school and community sexual assault support resources, and identification of components of healthy and unhealthy relationships",
+			"quote": "The program was found to be effective at increasing participantâ€™s knowledge of sexual abuse, awareness of school and community sexual assault support resources, and identification of components of healthy and unhealthy relationships",
 			"type": "ClinicalTrial",
 			"blinding": "None",
 			"sample_size": 202,
@@ -1947,9 +1947,9 @@
 			"override_seed": 0.8,
 			"authors": [
 				"Isabelle Daigneault",
-				"Martine Hébert",
+				"Martine HÃ©bert",
 				"Pierre McDuff",
-				"Jean‐Yves Frappier"
+				"Jeanâ€Yves Frappier"
 			],
 			"year": 2012,
 			"link": "https://doi.org/10.1080/10538712.2012.703291",
@@ -1963,7 +1963,7 @@
 				"conclusion": "positive_but_small_effect",
 				"indirect": false
 			},
-			"quote": "Results revealed that participants in this sample obtained low scores on measures of sexual abuse knowledge and that short booster sessions that elicit children’s recall of the learned material might produce greater improvements [...] In addition, there was no negative impact from the workshop in terms of children’s feelings of safety",
+			"quote": "Results revealed that participants in this sample obtained low scores on measures of sexual abuse knowledge and that short booster sessions that elicit childrenâ€™s recall of the learned material might produce greater improvements [...] In addition, there was no negative impact from the workshop in terms of childrenâ€™s feelings of safety",
 			"type": "RandomizedControlledTrial",
 			"blinding": "None",
 			"sample_size": 160,
@@ -1996,7 +1996,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "Findings from this study support the efficacy of the MBMB curriculum in increasing children’s knowledge of child sexual abuse prevention topics. In particular, it appears that a train-the-trainer model has utility for teaching children about inappropriate touching and what to do if it happens to them",
+			"quote": "Findings from this study support the efficacy of the MBMB curriculum in increasing childrenâ€™s knowledge of child sexual abuse prevention topics. In particular, it appears that a train-the-trainer model has utility for teaching children about inappropriate touching and what to do if it happens to them",
 			"type": "ClinicalTrial",
 			"blinding": "None",
 			"sample_size": 80,
@@ -2013,7 +2013,7 @@
 			"title": "Pilot Evaluation of a Sexual Abuse Prevention Program for Taiwanese Children",
 			"override_seed": 0,
 			"authors": [
-				"Yi‐Chuen Chen",
+				"Yiâ€Chuen Chen",
 				"Beverly L. Fortson",
 				"Kai-Wen Tseng"
 			],
@@ -2029,7 +2029,7 @@
 				"conclusion": "positive_but_small_effect",
 				"indirect": false
 			},
-			"quote": "Children’s self-protection skills improved regardless of age after participation in the program. The program, however, did not successfully improve children’s knowledge of sexuality and safety. Although future studies should modify the program content to better target knowledge of sexuality and safety, these results are promising for a pilot of this skills-based CSA prevention program in Taiwan",
+			"quote": "Childrenâ€™s self-protection skills improved regardless of age after participation in the program. The program, however, did not successfully improve childrenâ€™s knowledge of sexuality and safety. Although future studies should modify the program content to better target knowledge of sexuality and safety, these results are promising for a pilot of this skills-based CSA prevention program in Taiwan",
 			"type": "RandomizedControlledTrial",
 			"blinding": "None",
 			"sample_size": 46,
@@ -2079,8 +2079,8 @@
 			"openalex_id": "W169367288",
 			"title": "The Effectiveness of Psycho-Educational School-Based Child Sexual Abuse Prevention Training Program on Turkish Elementary Students.",
 			"authors": [
-				"A. Rezan Çeçen",
-				"Özlem Kaf Hasırcı"
+				"A. Rezan Ã‡eÃ§en",
+				"Ã–zlem Kaf HasÄ±rcÄ±"
 			],
 			"year": 2013,
 			"link": "https://files.eric.ed.gov/fulltext/EJ1017300.pdf",
@@ -2111,9 +2111,9 @@
 			"title": "Application of a child abuse prevention programme in an educational context",
 			"authors": [
 				"Juan Manuel Moreno Manso",
-				"Elena García-Baamonde",
-				"Macarena Blázquez Alonso",
-				"José Manuel Pozueco-Romero"
+				"Elena GarcÃ­a-Baamonde",
+				"Macarena BlÃ¡zquez Alonso",
+				"JosÃ© Manuel Pozueco-Romero"
 			],
 			"year": 2014,
 			"link": "https://doi.org/10.6018/analesps.30.3.154231",
@@ -2177,11 +2177,11 @@
 		{
 			"uuid": "w0HKHU9grpjlkDdw",
 			"openalex_id": "W1430200026",
-			"title": "Empowering and protecting children by enhancing knowledge, skills and well-being: A randomized trial of Learn to BE SAFE with Emmy™",
+			"title": "Empowering and protecting children by enhancing knowledge, skills and well-being: A randomized trial of Learn to BE SAFE with Emmyâ„¢",
 			"authors": [
 				"R. Barry Dale",
 				"Dianne C. Shanley",
-				"Melanie J. Zimmer‐Gembeck",
+				"Melanie J. Zimmerâ€Gembeck",
 				"Katrina Lines"
 			],
 			"year": 2015,
@@ -2196,7 +2196,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "Outcomes from this evaluation demonstrated that it improved children’s knowledge of protective behaviors, increased their intention to choose safe responses to unsafe situations, and increased their use of protective behaviors according to parent report",
+			"quote": "Outcomes from this evaluation demonstrated that it improved childrenâ€™s knowledge of protective behaviors, increased their intention to choose safe responses to unsafe situations, and increased their use of protective behaviors according to parent report",
 			"type": "RandomizedControlledTrial",
 			"blinding": "None",
 			"sample_size": 245,
@@ -2317,11 +2317,11 @@
 		{
 			"uuid": "pq9MGby3AzagRP72",
 			"openalex_id": "W2511835825",
-			"title": "Effects of the Child Sexual Abuse Prevention Education (C-SAPE) Program on South Korean Fifth-Grade Students’ Competence in Terms of Knowledge and Self-Protective Behaviors",
+			"title": "Effects of the Child Sexual Abuse Prevention Education (C-SAPE) Program on South Korean Fifth-Grade Studentsâ€™ Competence in Terms of Knowledge and Self-Protective Behaviors",
 			"override_seed": 0.9,
 			"authors": [
-				"Shin‐Jeong Kim",
-				"Kyung‐Ah Kang"
+				"Shinâ€Jeong Kim",
+				"Kyungâ€Ah Kang"
 			],
 			"year": 2016,
 			"link": "https://doi.org/10.1177/1059840516664182",
@@ -2335,7 +2335,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "Significant differences were found between the experimental and control groups’ mean difference (post-pre) in competence scores [...] , especially in the category of self-protective behaviors",
+			"quote": "Significant differences were found between the experimental and control groupsâ€™ mean difference (post-pre) in competence scores [...] , especially in the category of self-protective behaviors",
 			"type": "ClinicalTrial",
 			"blinding": "None",
 			"sample_size": 89,
@@ -2366,7 +2366,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "The results indicated that completion of the Safer, Smarter Kids curriculum was followed by a significant increase in students’ knowledge of key prevention concepts",
+			"quote": "The results indicated that completion of the Safer, Smarter Kids curriculum was followed by a significant increase in studentsâ€™ knowledge of key prevention concepts",
 			"type": "ClinicalTrial",
 			"blinding": "None",
 			"sample_size": 1169,
@@ -2384,7 +2384,7 @@
 			"override_seed": 0.2,
 			"authors": [
 				"Julia Rudolph",
-				"Melanie J. Zimmer‐Gembeck",
+				"Melanie J. Zimmerâ€Gembeck",
 				"Dianne C. Shanley",
 				"Russell Hawkins"
 			],
@@ -2400,7 +2400,7 @@
 				"conclusion": "mixed",
 				"indirect": false
 			},
-			"quote": "In this article, we first describe why teaching young children about CSA protective behaviors might not be sufficient for prevention. We then narratively review the existing research on parents and prevention and the parenting and family circumstances that may increase a child’s risk of experiencing sexual abuse",
+			"quote": "In this article, we first describe why teaching young children about CSA protective behaviors might not be sufficient for prevention. We then narratively review the existing research on parents and prevention and the parenting and family circumstances that may increase a childâ€™s risk of experiencing sexual abuse",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
@@ -2452,7 +2452,7 @@
 		{
 			"uuid": "bNyVEMWdlwwfuJ7V",
 			"openalex_id": "W2894965133",
-			"title": "Effectiveness of a school-based intervention to prevent child sexual abuse—Evaluation of the German IGEL program",
+			"title": "Effectiveness of a school-based intervention to prevent child sexual abuseâ€”Evaluation of the German IGEL program",
 			"override_seed": 0,
 			"authors": [
 				"Fabian Czerwinski",
@@ -2488,9 +2488,9 @@
 			"openalex_id": "W2805310809",
 			"title": "Preventing Child Sexual Abuse: Body Safety Training for Young Children in Turkey",
 			"authors": [
-				"Gülseren Çıtak Tunç",
-				"Gülay Görak",
-				"Nurcan Özyazıcıoğlu",
+				"GÃ¼lseren Ã‡Ä±tak TunÃ§",
+				"GÃ¼lay GÃ¶rak",
+				"Nurcan Ã–zyazÄ±cÄ±oÄŸlu",
 				"Bedriye Ak"
 			],
 			"year": 2018,
@@ -2505,7 +2505,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "The “Body Safety Training programme” is effective in increasing the child sexual abuse prevention and self-protection skills in Turkish young children",
+			"quote": "The â€œBody Safety Training programmeâ€ is effective in increasing the child sexual abuse prevention and self-protection skills in Turkish young children",
 			"type": "RandomizedControlledTrial",
 			"blinding": "None",
 			"sample_size": 83,
@@ -2519,10 +2519,10 @@
 		{
 			"uuid": "ao36S1Hv4EEI4G2E",
 			"openalex_id": "W2916566579",
-			"title": "“I have the right to feel safe”: Evaluation of a school-based child sexual abuse prevention program in Ecuador",
+			"title": "â€œI have the right to feel safeâ€: Evaluation of a school-based child sexual abuse prevention program in Ecuador",
 			"authors": [
 				"Gabriela Bustamante",
-				"María Soledad Andrade",
+				"MarÃ­a Soledad Andrade",
 				"Caley Mikesell",
 				"Clara Cullen"
 			],
@@ -2641,7 +2641,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "We found that some domains of children’s knowledge of CSA as well as their efficacy to resist an attack increased from pre- to posttest. Moreover, 83% of children reported that they liked IMpower, and 96% of children reported that IMpower helped keep them safe",
+			"quote": "We found that some domains of childrenâ€™s knowledge of CSA as well as their efficacy to resist an attack increased from pre- to posttest. Moreover, 83% of children reported that they liked IMpower, and 96% of children reported that IMpower helped keep them safe",
 			"type": "ClinicalTrial",
 			"blinding": "None",
 			"sample_size": 48,
@@ -2754,13 +2754,13 @@
 		{
 			"uuid": "9SODuNhjQJJFw7RY",
 			"openalex_id": "W3119361146",
-			"title": "“I am Learning to Protect Myself with Mika:” A Teacher-based Child Sexual Abuse Prevention Program in Turkey",
+			"title": "â€œI am Learning to Protect Myself with Mika:â€ A Teacher-based Child Sexual Abuse Prevention Program in Turkey",
 			"override_seed": 0.95,
 			"authors": [
-				"Rukiye Kızıltepe",
+				"Rukiye KÄ±zÄ±ltepe",
 				"Duygu Eslek",
-				"Türkan Yılmaz Irmak",
-				"Duygu Güngör"
+				"TÃ¼rkan YÄ±lmaz Irmak",
+				"Duygu GÃ¼ngÃ¶r"
 			],
 			"year": 2021,
 			"link": "https://doi.org/10.1177/0886260520986272",
@@ -2793,7 +2793,7 @@
 			"authors": [
 				"Jeanne Gubbels",
 				"Claudia E. van der Put",
-				"Geert‐Jan J. M. Stams",
+				"Geertâ€Jan J. M. Stams",
 				"Mark Assink"
 			],
 			"year": 2021,
@@ -2849,7 +2849,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "This study provides evidence to support the efficacy of the Play it Safe! program for increasing children’s physical and sexual abuse prevention knowledge and skills",
+			"quote": "This study provides evidence to support the efficacy of the Play it Safe! program for increasing childrenâ€™s physical and sexual abuse prevention knowledge and skills",
 			"type": "RandomizedControlledTrial",
 			"blinding": "None",
 			"sample_size": 539,
@@ -2897,11 +2897,11 @@
 		{
 			"uuid": "ST0YoU8P1mJvxfJw",
 			"openalex_id": "W3181885869",
-			"title": "The effect of sexuality education program on the sexual development of children aged 60–72 months",
+			"title": "The effect of sexuality education program on the sexual development of children aged 60â€“72 months",
 			"override_seed": 0.95,
 			"authors": [
-				"Songül Yasemin Özgün",
-				"Burhan Çapri"
+				"SongÃ¼l Yasemin Ã–zgÃ¼n",
+				"Burhan Ã‡apri"
 			],
 			"year": 2021,
 			"link": "https://doi.org/10.1007/s12144-021-02040-8",
@@ -2974,8 +2974,8 @@
 			"authors": [
 				"Marta Ferragut",
 				"M. Victoria Cerezo",
-				"Margarita Ortiz‐Tallo",
-				"Raquel Rodríguez‐Fernández"
+				"Margarita Ortizâ€Tallo",
+				"Raquel RodrÃ­guezâ€FernÃ¡ndez"
 			],
 			"year": 2023,
 			"link": "https://doi.org/10.1016/j.chiabu.2023.106489",
@@ -2989,7 +2989,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "The results of this work show that these prevention programs are helpful in improving the participants’ knowledge",
+			"quote": "The results of this work show that these prevention programs are helpful in improving the participantsâ€™ knowledge",
 			"review": {
 				"type": "MetaAnalysis",
 				"reviews": false,
@@ -3029,7 +3029,7 @@
 				"conclusion": "positive",
 				"indirect": false
 			},
-			"quote": "This study demonstrates that a single-session, universal school based CSA prevention program can effectively increase children’s knowledge when implemented and disseminated on a wide scale and knowledge gains can be retained 12-months post intervention",
+			"quote": "This study demonstrates that a single-session, universal school based CSA prevention program can effectively increase childrenâ€™s knowledge when implemented and disseminated on a wide scale and knowledge gains can be retained 12-months post intervention",
 			"type": "CohortStudy",
 			"blinding": "None",
 			"sample_size": 3673,

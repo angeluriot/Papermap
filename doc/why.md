@@ -1,4 +1,4 @@
-# 🤔 Why Papermap?
+# ðŸ¤” Why Papermap?
 
 The goal of **Papermap** is to provide a comprehensive and user-friendly platform to check the current scientific consensus on various topics, particularly those that are often debated or surrounded by misinformation in public discourse.
 
@@ -6,7 +6,7 @@ Sharing the link or image version of a **Papermap** map can also help inform dis
 
 <br/>
 
-## 📰 Papermap VS a newspaper article
+## ðŸ“° Papermap VS a newspaper article
 
 Newspapers are often politically biased, and their articles are usually based on weak evidence such as testimonials, opinions, a single study, or other newspaper articles.
 
@@ -14,7 +14,7 @@ Newspapers are often politically biased, and their articles are usually based on
 
 <br/>
 
-## 🧑‍🏫 Papermap VS an expert opinion
+## ðŸ§‘â€ðŸ« Papermap VS an expert opinion
 
 Expert opinions are not considered strong evidence compared to scientific studies. There is no clear definition of who is an "expert", and you can always find someone called an "expert" to support any opinion.
 
@@ -22,7 +22,7 @@ Expert opinions are not considered strong evidence compared to scientific studie
 
 <br/>
 
-## 📃 Papermap VS a scientific study
+## ðŸ“ƒ Papermap VS a scientific study
 
 A single scientific study is not enough to draw definitive conclusions. Almost all topics have at least one outlier study that contradicts the consensus.
 
@@ -30,7 +30,7 @@ A single scientific study is not enough to draw definitive conclusions. Almost a
 
 <br/>
 
-## 📖 Papermap VS a literature review
+## ðŸ“– Papermap VS a literature review
 
 Literature reviews also aggregate multiple scientific studies in addition to providing expert criticism and meta-analysis. But they can be outdated or based on a limited number of papers. Thus, as with original studies, most topics have at least one outlier review that contradicts the consensus.
 

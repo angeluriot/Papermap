@@ -1,289 +1,120 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
-	import DefaultButtons from '$lib/display/buttons/default.svelte';
-	import EditButtons from '$lib/display/buttons/edit.svelte';
-	import PaperDetails from '$lib/display/details/paper_bubble.svelte';
-	import Popup from '$lib/display/edit/popup.svelte';
-	import Graph from '$lib/display/graph/graph.svelte';
-	import type { GraphPoint } from '$lib/display/graph/types';
-	import Overview from '$lib/display/overview.svelte';
-	import Title from '$lib/display/title.svelte';
-	import Home from '$lib/svgs/home.svg';
-	import { Edit, paper_to_datapaper } from '$lib/types/paper';
+	import Background from '$lib/list/background.svelte';
+	import Maps from '$lib/list/maps.svelte';
+	import NavLinks from '$lib/nav-links.svelte';
 	import { constants as C } from '$lib/utils';
-	import cloneDeep from 'clone-deep';
-	import deepEqual from 'deep-equal';
-	import { onMount } from 'svelte';
 
 	const { data }: PageProps = $props();
 
 	const emojis = data.emojis;
-	const route = `maps/${data.map.id}`;
-	const page_url = `${C.BASE_URL}/${route}`;
-	const image_url = `${page_url}/preview.jpg?v=${data.hash}`;
-	const tags = C.DEFAULT_TAGS.concat(data.map.tags);
-	const initial_papers = cloneDeep(data.map.papers);
-
-	let map = $state(data.map);
-	let journals = $state(data.journals);
+	const title = 'Papermap maps';
+	const description = 'A list of all maps currently available on Papermap.';
+	const preview = `${C.BASE_URL}/images/preview.png`;
+	const tags = C.DEFAULT_TAGS.concat(['maps', 'list']);
+	const page_url = `${C.BASE_URL}/maps`;
 	let width = $state(0);
 	let height = $state(0);
-	let point_selected: { get_point: () => GraphPoint, keep: boolean } | null = $state(null);
-	let group_selected: { i: number, ids: string[], keep: boolean } | null = $state(null);
-	let journal_info_open = $state(false);
-	let input_selected = $state(false);
-	let details_element: HTMLDivElement | null = $state(null);
-	let edit_mode = $state(false);
-	let popup: Popup | undefined = $state();
-	let leaving_message = $state(true);
-
-	function deselect_point()
-	{
-		if (C.TOUCH_SCREEN)
-			return;
-
-		if (point_selected !== null && !point_selected.keep)
-		{
-			journal_info_open = false;
-			point_selected = null;
-		}
-	}
-
-	function on_leaving_edit_mode(event: Event)
-	{
-		if (!leaving_message || !edit_mode || Object.values(map.papers).every(paper => paper.edit === undefined))
-			return;
-
-		event.preventDefault();
-		return 'You have unsaved changes, are you sure you want to leave?';
-	}
-
-	onMount(() =>
-	{
-		document.addEventListener('delete_paper', (event: Event) =>
-		{
-			const uuid = (event as CustomEvent).detail as string | undefined;
-
-			if (uuid === undefined)
-				return;
-
-			if (map.papers[uuid].edit === Edit.Added)
-			{
-				point_selected = null;
-				delete map.papers[uuid];
-			}
-
-			else
-			{
-				if (map.papers[uuid].edit === Edit.Edited)
-					map.papers[uuid] = cloneDeep(initial_papers[uuid]);
-
-				map.papers[uuid].edit = Edit.Deleted;
-			}
-		});
-
-		document.addEventListener('recreate_paper', (event: Event) =>
-		{
-			const uuid = (event as CustomEvent).detail as string | undefined;
-
-			if (uuid === undefined)
-				return;
-
-			delete map.papers[uuid].edit;
-		});
-
-		document.addEventListener('edit_paper', () =>
-		{
-			point_selected = null;
-		});
-
-		document.addEventListener('cancel_changes', (event: Event) =>
-		{
-			const uuid = (event as CustomEvent).detail as string | undefined;
-
-			if (uuid === undefined)
-				return;
-
-			map.papers[uuid] = cloneDeep(initial_papers[uuid]);
-		});
-
-		document.addEventListener('paper_edited', (event: Event) =>
-		{
-			const uuid = (event as CustomEvent).detail as string | undefined;
-
-			if (uuid === undefined)
-				return;
-
-			const initial_paper = initial_papers[uuid];
-			const current_paper = map.papers[uuid];
-
-			if (initial_paper === undefined || current_paper === undefined || current_paper.edit !== Edit.Edited)
-				return;
-
-			const initial = paper_to_datapaper(JSON.parse(JSON.stringify(initial_paper)));
-			const current = paper_to_datapaper(JSON.parse(JSON.stringify(current_paper)));
-
-			if (deepEqual(initial, current))
-				delete current_paper.edit;
-		});
-	});
+	let page_height = $state(0);
 </script>
 
-<svelte:window bind:innerWidth={width} bind:innerHeight={height} onbeforeunload={on_leaving_edit_mode}/>
+<svelte:window bind:innerWidth={width} bind:innerHeight={height}/>
+
+{#snippet emoji(emoji: string)}
+	<div class="emoji">{@html emojis[emoji]}</div>
+{/snippet}
 
 <svelte:head>
-	<title>{map.question.short}</title>
-
-	<meta name="description" content={map.description}/>
+	<title>{title}</title>
+	<meta name="description" content={description}/>
 	<meta name="keywords" content={tags.join(', ')}/>
-	<meta name="subject" content={map.groups[map.groups.length - 1].name}/>
-	<meta name="topic" content={map.groups[map.groups.length - 1].name}/>
-	<meta name="summary" content={map.description}/>
+	<meta name="subject" content={title}/>
+	<meta name="topic" content={title}/>
+	<meta name="summary" content={description}/>
 	<meta name="url" content={page_url}/>
-	<meta name="pagename" content={map.question.short}/>
+	<meta name="pagename" content={title}/>
 
-	<meta property="og:title" content={map.question.short}/>
+	<meta property="og:title" content={title}/>
 	<meta property="og:url" content={page_url}/>
-	<meta property="og:image" content={image_url}/>
-	<meta property="og:image:url" content={image_url}/>
-	<meta property="og:image:secure_url" content={image_url}/>
+	<meta property="og:image" content={preview}/>
+	<meta property="og:image:url" content={preview}/>
+	<meta property="og:image:secure_url" content={preview}/>
 	<meta property="og:image:width" content=1200/>
 	<meta property="og:image:height" content=630/>
-	<meta property="og:description" content={map.description}/>
+	<meta property="og:description" content={description}/>
 	<meta property="article:tag" content={tags.join(', ')}/>
 
-	<meta name="twitter:title" content={map.question.short}/>
-	<meta name="twitter:description" content={map.description}/>
-	<meta name="twitter:image" content={image_url}/>
-	<meta name="twitter:image:src" content={image_url}/>
-	<meta name="twitter:image:alt" content={map.question.short}/>
+	<meta name="twitter:title" content={title}/>
+	<meta name="twitter:description" content={description}/>
+	<meta name="twitter:image" content={preview}/>
+	<meta name="twitter:image:src" content={preview}/>
+	<meta name="twitter:image:alt" content={title}/>
 	<meta name="twitter:url" content={page_url}/>
 </svelte:head>
 
-<div class="absolute w-full h-full overflow-hidden">
-	<div class="absolute w-full h-full overflow-hidden">
-		{#if width > 0 && height > 0}
-			<Graph
-				{map} width={width} height={height}
-				bind:point_selected={point_selected} bind:group_selected={group_selected}
-				bind:journal_info_open={journal_info_open} bind:input_selected={input_selected}
-				details_element={details_element}
-			/>
-		{/if}
+<div class="page-container absolute flex flex-col justify-start items-center w-full h-full overflow-x-hidden" style="background-color: var(--primary);">
+	<div class="absolute z-0">
+		<Background {width} {height} {page_height}/>
 	</div>
-	<div class="top flex flex-row justify-start items-start flex-nowrap relative unselectable">
-		<div class="title-container flex flex-row-reverse justify-center items-center flex-nowrap relative selectable" style="{input_selected ? 'z-index: 100000;' : ''}">
-			<div class="title-component relative">
-				<Title {emojis} {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
+	<div class="main flex-center-col z-[100]" bind:clientHeight={page_height}>
+		<div class="header w-full flex flex-row justify-between items-start">
+			<div class="title flex-center-row">
+				{@render emoji('ðŸ“–')}
+				<h1>All maps</h1>
 			</div>
-			<a href="/">
-				<img src={Home} alt="Home" title="Home" class="home relative img-unselectable">
-			</a>
+			<NavLinks />
 		</div>
-		<Overview
-			{map} bind:group_selected={group_selected}
-			bind:point_selected={point_selected}
-			bind:journal_info_open={journal_info_open}
-			bind:input_selected={input_selected}
-		/>
-	</div>
-	<div
-		class="details"
-		bind:this={details_element}
-		onmouseleave={deselect_point}
-		role="button" tabindex={0}
-	>
-		{#if point_selected !== null}
-			<PaperDetails
-				{emojis} point={point_selected.get_point()} {map} {journals}
-				paper={map.papers[point_selected.get_point().uuid]}
-				{width} {height} bind:journal_info_open={journal_info_open} {edit_mode}
-			/>
-		{/if}
-	</div>
-	<div class="buttons absolute bottom-0 right-0">
-		{#if edit_mode}
-			<EditButtons {map} add={() => { popup?.show('search'); point_selected = null; }} submit={() => popup?.show('send') }/>
-		{:else}
-			<DefaultButtons {map} hash={data.hash} bind:edit_mode={edit_mode}/>
-		{/if}
-	</div>
-	{#if edit_mode}
-		<div class="popup">
-			<Popup {route} bind:map={map} bind:journals={journals} bind:this={popup} bind:leaving_message={leaving_message} github_enabled={data.github_enabled}/>
+		<div class="list flex flex-col justify-start items-start w-full">
+			{#each data.maps_structure as node}
+				<Maps {emojis} node={node}/>
+			{/each}
 		</div>
-	{/if}
+	</div>
 </div>
 
 <style>
-	.top
-	{
-		font-size: clamp(12px, calc(calc(0.17vw + 5.5px) * 2), 18px);
-		margin: 1.5em;
-		gap: 1.5em;
-	}
-
-	.title-container
-	{
-		gap: 0.65em;
-		filter: drop-shadow(0em 0.1em 0.75em #00008036);
-		transform: translateZ(0);
-	}
-
-	.home
-	{
-		min-width: 3.15em;
-		min-height: 3.15em;
-		width: 3.15em;
-		height: 3.15em;
-		transition: transform 0.2s ease-in-out;
-	}
-
-	.home:hover
-	{
-		transform: scale(1.06);
-	}
-
-	.home:active
-	{
-		transition: none;
-		transform: scale(1);
-	}
-
-	.details
-	{
-		font-size: clamp(10px, calc(calc(calc(0.09vw + 0.09vh) + 4.5px) * 2), 15px);
-	}
-
-	.buttons
-	{
-		font-size: clamp(10px, calc(calc(calc(0.09vw + 0.09vh) + 4.5px) * 2), 15px);
-	}
-
-	.popup
+	.page-container
 	{
 		font-size: clamp(11px, calc(calc(0.15vw + 5px) * 2), 16px);
+		padding: 2em 0em;
 	}
 
-	@media screen and (max-width: 800px)
+	.main
 	{
-		.top
+		gap: 4em;
+		width: 60em;
+		max-width: calc(100vw - 6em);
+	}
+
+	.header
+	{
+		font-size: 1.85em;
+		font-family: Satoshi-Variable, sans-serif;
+		font-weight: 550;
+		line-height: 1.25em;
+		text-wrap: nowrap;
+		color: var(--text-primary);
+		gap: 0.3em;
+		margin-top: 0.5em;
+		margin-bottom: -0.2em;
+	}
+
+	.title
+	{
+		gap: 0.3em;
+	}
+
+	@media screen and (max-width: 375px)
+	{
+		.main
 		{
-			gap: 1.2em;
+			max-width: calc(100vw - 4em);
 		}
 	}
 
-	@media screen and (max-width: 600px)
+	.emoji
 	{
-		.top
-		{
-			flex-direction: column;
-			align-items: end;
-		}
-
-		.title-component:hover + a .home
-		{
-			opacity: 0;
-		}
+		width: 1.15em;
+		height: 1.15em;
 	}
 </style>

@@ -1,6 +1,6 @@
 {
 	"draft": false,
-	"emoji": "🧩",
+	"emoji": "ðŸ§©",
 	"question": {
 		"short": "Do vaccines cause autism?",
 		"long": "Do vaccines increase the risk of developing autism or ASD?"
@@ -15,7 +15,7 @@
 	],
 	"consensus": {
 		"no_consensus": {
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "No consensus yet",
 			"description": "The literature has not yet reached a consensus on the effects of vaccines on autism",
 			"color": "Gray",
@@ -25,7 +25,7 @@
 			]
 		},
 		"no": {
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "No",
 			"description": "The literature suggests that vaccines do not cause autism",
 			"color": "Red",
@@ -35,7 +35,7 @@
 			]
 		},
 		"towards_no": {
-			"emoji": "⬅️",
+			"emoji": "â¬…ï¸",
 			"text": "Towards no",
 			"description": "The literature suggests that vaccines probably don't cause autism, but more research is needed",
 			"color": "Red1H",
@@ -45,7 +45,7 @@
 			]
 		},
 		"towards_yes": {
-			"emoji": "➡️",
+			"emoji": "âž¡ï¸",
 			"text": "Towards yes",
 			"description": "The literature suggests that vaccines may cause autism, but more research is needed",
 			"color": "Green1H",
@@ -55,7 +55,7 @@
 			]
 		},
 		"yes": {
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Yes",
 			"description": "The literature suggests that vaccines cause autism",
 			"color": "Green",
@@ -94,56 +94,56 @@
 	"conclusions": {
 		"no": {
 			"group": "no",
-			"emoji": "👎",
+			"emoji": "ðŸ‘Ž",
 			"text": "No",
 			"description": "The results of the paper show no significant effect of the vaccines evaluated on the risk of developing autism",
 			"p_value": false
 		},
 		"no_unlike_literature": {
 			"group": "no_but",
-			"emoji": "↩️",
+			"emoji": "â†©ï¸",
 			"text": "No unlike literature",
 			"description": "The results of the paper show no significant effect of the vaccines evaluated on the risk of developing autism, unlike what is reported in the literature",
 			"p_value": false
 		},
 		"no_but_mixed_results": {
 			"group": "no_but",
-			"emoji": "🔀",
+			"emoji": "ðŸ”€",
 			"text": "No but mixed results",
 			"description": "The results of the paper show no significant overall effect of the vaccines evaluated on the risk of developing autism, but there are mixed results on specific cases",
 			"p_value": false
 		},
 		"maybe": {
 			"group": "maybe",
-			"emoji": "🤷",
+			"emoji": "ðŸ¤·",
 			"text": "Maybe",
 			"description": "The results of the paper suggest that the vaccines evaluated might have an effect on the risk of developing autism, but the evidence is not strong enough to conclude",
 			"p_value": false
 		},
 		"yes_but_low_confidence": {
 			"group": "yes_but",
-			"emoji": "🤔",
+			"emoji": "ðŸ¤”",
 			"text": "Yes but low confidence",
 			"description": "The results of the paper suggest that the vaccines evaluated may increase the risk of developing autism, but the evidence is not strong",
 			"p_value": true
 		},
 		"yes_but_small_effect": {
 			"group": "yes_but",
-			"emoji": "🤏",
+			"emoji": "ðŸ¤",
 			"text": "Yes but small effect",
 			"description": "The results of the paper suggest that the vaccines evaluated may have a small effect on the risk of developing autism",
 			"p_value": true
 		},
 		"yes_unlike_literature": {
 			"group": "yes_but",
-			"emoji": "↪️",
+			"emoji": "â†ªï¸",
 			"text": "Yes unlike literature",
 			"description": "The results of the paper suggest that the vaccines evaluated may increase the risk of developing autism, unlike what is reported in the literature",
 			"p_value": true
 		},
 		"yes": {
 			"group": "yes",
-			"emoji": "👍",
+			"emoji": "ðŸ‘",
 			"text": "Yes",
 			"description": "The results of the paper suggest that the vaccines evaluated increase the risk of developing autism",
 			"p_value": true
@@ -244,7 +244,7 @@
 				"conclusion": "no",
 				"indirect": false
 			},
-			"quote": "Over a decade’s effort to detect all severe adverse events associated with MMR vaccine could find no data supporting the hypothesis that it would cause pervasive developmental disorder",
+			"quote": "Over a decadeâ€™s effort to detect all severe adverse events associated with MMR vaccine could find no data supporting the hypothesis that it would cause pervasive developmental disorder",
 			"type": "CohortStudy",
 			"blinding": "None",
 			"sample_size": 31,
@@ -290,7 +290,7 @@
 				},
 				{
 					"title": "Undisclosed conflict of interest",
-					"description": "The first author was secretly funded by a lawyer pursuing vaccine‐injury litigation",
+					"description": "The first author was secretly funded by a lawyer pursuing vaccineâ€injury litigation",
 					"link": "https://doi.org/10.1136/bmj.c5347",
 					"impact": "Negative"
 				},
@@ -526,7 +526,7 @@
 		{
 			"uuid": "o4v6sZCe6pmL7OdE",
 			"openalex_id": "W2108531015",
-			"title": "Measles-Mumps-Rubella Vaccine and Autistic Spectrum Disorder: Report From the New Challenges in Childhood Immunizations Conference Convened in Oak Brook, Illinois, June 12–13, 2000",
+			"title": "Measles-Mumps-Rubella Vaccine and Autistic Spectrum Disorder: Report From the New Challenges in Childhood Immunizations Conference Convened in Oak Brook, Illinois, June 12â€“13, 2000",
 			"authors": [
 				"Neal A. Halsey",
 				"Susan Hyman"
@@ -591,7 +591,7 @@
 		{
 			"uuid": "9fBjXH5fSTNIn4AC",
 			"openalex_id": "W2409590998",
-			"title": "MMR, autism and inflammatory bowel disease: responding to patient concerns using an evidence‐based framework",
+			"title": "MMR, autism and inflammatory bowel disease: responding to patient concerns using an evidenceâ€based framework",
 			"authors": [
 				"C Raina Maclntyre",
 				"Peter B. Mclntyre"
@@ -653,9 +653,9 @@
 		{
 			"uuid": "QyX1VD5gOVrnVZyo",
 			"openalex_id": "W2151324155",
-			"title": "No Evidence for A New Variant of Measles-Mumps-Rubella–Induced Autism",
+			"title": "No Evidence for A New Variant of Measles-Mumps-Rubellaâ€“Induced Autism",
 			"authors": [
-				"Éric Fombonne",
+				"Ã‰ric Fombonne",
 				"Suniti Chakrabarti"
 			],
 			"year": 2001,
@@ -976,7 +976,7 @@
 			"openalex_id": "W2122056698",
 			"title": "Neurologic Disorders After Measles-Mumps-Rubella Vaccination",
 			"authors": [
-				"Anna-Mari Mäkelä",
+				"Anna-Mari MÃ¤kelÃ¤",
 				"J. Pekka Nuorti",
 				"Heikki Peltola"
 			],
@@ -1160,7 +1160,7 @@
 			"override_seed": 0.4,
 			"authors": [
 				"Paul A. Stehr-Green",
-				"Peet Tüll",
+				"Peet TÃ¼ll",
 				"Michael Stellfeld",
 				"Preben-Bo Mortenson"
 			],
@@ -1219,7 +1219,7 @@
 			"title": "Measles-Mumps-Rubella Vaccine and the Development of Autism or Inflammatory Bowel Disease: The Controversy Should End",
 			"override_seed": 0.95,
 			"authors": [
-				"Jennifer D’Souza",
+				"Jennifer Dâ€™Souza",
 				"Timothy J. Todd"
 			],
 			"year": 2003,
@@ -1324,7 +1324,7 @@
 			"title": "MMR and autistic enterocolitis: consistent epidemiological failure to find an association",
 			"override_seed": 0.4,
 			"authors": [
-				"Éric Fombonne",
+				"Ã‰ric Fombonne",
 				"Edwin H. Cook"
 			],
 			"year": 2003,
@@ -1456,7 +1456,7 @@
 			"authors": [
 				"Kreesten Meldgaard Madsen",
 				"Marlene Briciet Lauritsen",
-				"Carsten Bøcker Pedersen",
+				"Carsten BÃ¸cker Pedersen",
 				"Poul Thorsen"
 			],
 			"year": 2003,
@@ -1526,7 +1526,7 @@
 				"Frank DeStefano",
 				"Tanya Karapurkar Bhasin",
 				"W. Thompson",
-				"Marshalyn Yeargin‐Allsopp"
+				"Marshalyn Yearginâ€Allsopp"
 			],
 			"year": 2004,
 			"link": "https://doi.org/10.1542/peds.113.2.259",
@@ -1737,7 +1737,7 @@
 			"authors": [
 				"Liam Smeeth",
 				"Claire Cook",
-				"Éric Fombonne",
+				"Ã‰ric Fombonne",
 				"Lisa Heavey"
 			],
 			"year": 2004,
@@ -1817,7 +1817,7 @@
 				"conclusion": "yes",
 				"indirect": true
 			},
-			"quote": "Profound behavioral and neuropathologic disturbances were observed after postnatal thimerosal in SJL/J (H-2ˢ) mice",
+			"quote": "Profound behavioral and neuropathologic disturbances were observed after postnatal thimerosal in SJL/J (H-2Ë¢) mice",
 			"type": "AnimalStudy",
 			"blinding": "None",
 			"sample_size": "NotSpecified",
@@ -1844,7 +1844,7 @@
 				"W. Chen",
 				"Sabine Landau",
 				"P Sham",
-				"Éric Fombonne"
+				"Ã‰ric Fombonne"
 			],
 			"year": 2004,
 			"link": "https://doi.org/10.1017/s0033291703001259",
@@ -2172,7 +2172,7 @@
 		{
 			"uuid": "A6GKjFX0ZxpbMtJK",
 			"openalex_id": "W2000764724",
-			"title": "Is There a ‘Regressive Phenotype’ of Autism Spectrum Disorder Associated with the Measles-Mumps-Rubella Vaccine? A CPEA Study",
+			"title": "Is There a â€˜Regressive Phenotypeâ€™ of Autism Spectrum Disorder Associated with the Measles-Mumps-Rubella Vaccine? A CPEA Study",
 			"override_seed": 0.2,
 			"authors": [
 				"Jennifer Richler",
@@ -2235,7 +2235,7 @@
 			"openalex_id": "W2140996251",
 			"title": "Pervasive Developmental Disorders in Montreal, Quebec, Canada: Prevalence and Links With Immunizations",
 			"authors": [
-				"Éric Fombonne",
+				"Ã‰ric Fombonne",
 				"Rita Zakarian",
 				"Andrew J. Bennett",
 				"Linyan Meng"
@@ -2333,7 +2333,7 @@
 		{
 			"uuid": "pGzjcJvMf0r3gMkv",
 			"openalex_id": "W2146637392",
-			"title": "A Case Series of Children with Apparent Mercury Toxic Encephalopathies Manifesting with Clinical Symptoms of Regressive Autistic Disorders∗",
+			"title": "A Case Series of Children with Apparent Mercury Toxic Encephalopathies Manifesting with Clinical Symptoms of Regressive Autistic Disordersâˆ—",
 			"authors": [
 				"David A. Geier",
 				"Mark R. Geier"
@@ -2627,10 +2627,10 @@
 		{
 			"uuid": "VIzeEc2bRzrflQpS",
 			"openalex_id": "W2094580611",
-			"title": "Regression of language and non‐language skills in pervasive developmental disorders",
+			"title": "Regression of language and nonâ€language skills in pervasive developmental disorders",
 			"authors": [
 				"Alain Meilleur",
-				"Éric Fombonne"
+				"Ã‰ric Fombonne"
 			],
 			"year": 2008,
 			"link": "https://doi.org/10.1111/j.1365-2788.2008.01134.x",
@@ -2870,7 +2870,7 @@
 		{
 			"uuid": "vYanfWkHhFtE4Juq",
 			"openalex_id": "W1965589730",
-			"title": "Hepatitis B Vaccination of Male Neonates and Autism Diagnosis, NHIS 1997–2002",
+			"title": "Hepatitis B Vaccination of Male Neonates and Autism Diagnosis, NHIS 1997â€“2002",
 			"override_seed": 0,
 			"authors": [
 				"Carolyn M. Gallagher",
@@ -2905,8 +2905,8 @@
 			"title": "Lack of Association Between Measles-Mumps-Rubella Vaccination and Autism in Children",
 			"override_seed": 0.65,
 			"authors": [
-				"Dorota Mrozek‐Budzyn",
-				"Agnieszka Kiełtyka",
+				"Dorota Mrozekâ€Budzyn",
+				"Agnieszka KieÅ‚tyka",
 				"Renata Majewska"
 			],
 			"year": 2010,
@@ -3034,7 +3034,7 @@
 				"Tamara Lazoff",
 				"Lihong Zhong",
 				"Tania Piperni",
-				"Éric Fombonne"
+				"Ã‰ric Fombonne"
 			],
 			"year": 2010,
 			"link": "https://doi.org/10.1177/070674371005501105",
@@ -3097,7 +3097,7 @@
 			"openalex_id": "W1937278607",
 			"title": "Vaccination of children - a systematic review",
 			"authors": [
-				"Anne K. Örtqvist",
+				"Anne K. Ã–rtqvist",
 				"Mats Blennow",
 				"R M Carlsson",
 				"Hanson La"
@@ -3166,7 +3166,7 @@
 		{
 			"uuid": "JOHxLW3fcjfu15hv",
 			"openalex_id": "W119668077",
-			"title": "What Every Behavior Analyst Should Know About the “MMR Causes Autism” Hypothesis",
+			"title": "What Every Behavior Analyst Should Know About the â€œMMR Causes Autismâ€ Hypothesis",
 			"override_seed": 0.3,
 			"authors": [
 				"William H. Ahearn"
@@ -3387,12 +3387,12 @@
 		{
 			"uuid": "YXYNUeSfgNtjsQTS",
 			"openalex_id": "W2008817530",
-			"title": "The combined measles, mumps, and rubella vaccines and the total number of vaccines are not associated with development of autism spectrum disorder: The first case–control study in Asia",
+			"title": "The combined measles, mumps, and rubella vaccines and the total number of vaccines are not associated with development of autism spectrum disorder: The first caseâ€“control study in Asia",
 			"authors": [
 				"Yota Uno",
 				"Tokio Uchiyama",
 				"Michiko Kurosawa",
-				"Branko Aleksić"
+				"Branko AleksiÄ‡"
 			],
 			"year": 2012,
 			"link": "https://doi.org/10.1016/j.vaccine.2012.01.093",
@@ -3838,7 +3838,7 @@
 				"Yota Uno",
 				"Tokio Uchiyama",
 				"Michiko Kurosawa",
-				"Branko Aleksić"
+				"Branko AleksiÄ‡"
 			],
 			"year": 2015,
 			"link": "https://doi.org/10.1016/j.vaccine.2014.12.036",
@@ -3932,7 +3932,7 @@
 			"override_seed": 0.3,
 			"authors": [
 				"William Mandy",
-				"Meng‐Chuan Lai"
+				"Mengâ€Chuan Lai"
 			],
 			"year": 2016,
 			"link": "https://doi.org/10.1111/jcpp.12501",
@@ -4033,7 +4033,7 @@
 			"title": "Parental report of vaccine receipt in children with autism spectrum disorder: Do rates differ by pattern of ASD onset?",
 			"override_seed": 0.1,
 			"authors": [
-				"Robin P. Goin‐Kochel",
+				"Robin P. Goinâ€Kochel",
 				"Sarah S. Mire",
 				"Allison G. Dempsey",
 				"Rachel H. Fein"
@@ -4178,12 +4178,12 @@
 			"notes": [
 				{
 					"title": "Data quality",
-					"description": "All health and vaccination data were based on an anonymous online questionnaire with no clinical verification, and recruitment was conducted through homeschool networks that explicitly mentioned the study’s background",
+					"description": "All health and vaccination data were based on an anonymous online questionnaire with no clinical verification, and recruitment was conducted through homeschool networks that explicitly mentioned the studyâ€™s background",
 					"impact": "Negative"
 				},
 				{
 					"title": "Anti-vaccine funding",
-					"description": "The study was supported by grants from anti-vaccine organizations like Generation Rescue or the Children’s Medical Safety Research Institute",
+					"description": "The study was supported by grants from anti-vaccine organizations like Generation Rescue or the Childrenâ€™s Medical Safety Research Institute",
 					"impact": "Negative"
 				},
 				{
@@ -4237,8 +4237,8 @@
 			"override_seed": 0.2,
 			"authors": [
 				"Luana Raposo de Melo Moraes Aps",
-				"Marco Aurélio Floriano Piantola",
-				"Sara Araújo Pereira",
+				"Marco AurÃ©lio Floriano Piantola",
+				"Sara AraÃºjo Pereira",
 				"Julia Tavares de Castro"
 			],
 			"year": 2018,
@@ -4340,7 +4340,7 @@
 			"openalex_id": "W2906413783",
 			"title": "The contribution of environmental exposure to the etiology of autism spectrum disorder",
 			"authors": [
-				"Sven Bölte",
+				"Sven BÃ¶lte",
 				"Sonya Girdler",
 				"Peter B. Marschik"
 			],
@@ -4378,7 +4378,7 @@
 			"override_seed": 0.65,
 			"authors": [
 				"Anders Hviid",
-				"Jørgen Vinsløv Hansen",
+				"JÃ¸rgen VinslÃ¸v Hansen",
 				"Morten Frisch",
 				"Mads Melbye"
 			],
@@ -4409,7 +4409,7 @@
 			"override_seed": 0.7,
 			"authors": [
 				"Anders Hviid",
-				"Jørgen Vinsløv Hansen",
+				"JÃ¸rgen VinslÃ¸v Hansen",
 				"Morten Frisch",
 				"Mads Melbye"
 			],
@@ -4543,7 +4543,7 @@
 			"title": "Multiple Risk Factors: A Challenge in the Management of Autism",
 			"authors": [
 				"Muhammad Shahid Nadeem",
-				"Fahad A. Al‐Abbasi",
+				"Fahad A. Alâ€Abbasi",
 				"Imran Kazmi",
 				"Bibi Nazia Murtaza"
 			],
@@ -4619,7 +4619,7 @@
 			"override_seed": 0.7,
 			"authors": [
 				"Sarah Geoghegan",
-				"Kevin O’Callaghan",
+				"Kevin Oâ€™Callaghan",
 				"Paul A. Offit"
 			],
 			"year": 2020,
@@ -4654,7 +4654,7 @@
 			"openalex_id": "W3171061226",
 			"title": "Review: Vaccine Myth-Buster - Cleaning Up With Prejudices and Dangerous Misinformation",
 			"authors": [
-				"Paul Löffler"
+				"Paul LÃ¶ffler"
 			],
 			"year": 2021,
 			"link": "https://doi.org/10.3389/fimmu.2021.663280",
@@ -4944,7 +4944,7 @@
 			"authors": [
 				"Konstantin Yenkoyan",
 				"Meri Mkhitaryan",
-				"Geir Bjørklund"
+				"Geir BjÃ¸rklund"
 			],
 			"year": 2024,
 			"link": "https://doi.org/10.2174/0109298673252471231121045529",
@@ -4978,10 +4978,10 @@
 			"openalex_id": "W4390699772",
 			"title": "Prenatal Exposure to COVID-19 mRNA Vaccine BNT162b2 Induces Autism-Like Behaviors in Male Neonatal Rats: Insights into WNT and BDNF Signaling Perturbations",
 			"authors": [
-				"Mümin Alper Erdoğan",
-				"Orkun Gürbüz",
+				"MÃ¼min Alper ErdoÄŸan",
+				"Orkun GÃ¼rbÃ¼z",
 				"Mehmet Fatih Bozkurt",
-				"Oytun Erbaş"
+				"Oytun ErbaÅŸ"
 			],
 			"year": 2024,
 			"link": "https://doi.org/10.1007/s11064-023-04089-2",
