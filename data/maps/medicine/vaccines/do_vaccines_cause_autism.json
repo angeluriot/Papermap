@@ -2886,7 +2886,7 @@
 			"results": {
 				"consensus": "no_consensus",
 				"conclusion": "yes",
-				"indirect": false
+				"indirect": true
 			},
 			"quote": "The results of the study indicate that U.S. male neonates vaccinated with the hepatitis B vaccine prior to 1999 incurred a threefold greater risk for autism diagnosis",
 			"type": "CrossSectionalStudy",
