@@ -47,9 +47,9 @@
 			<div class="maps flex flex-col justify-start items-start flex-wrap">
 				{#each node.maps as map}
 					<a class="map" href={map.url} onclick={(event: Event) => event.stopPropagation()}>
-						<div class="unselectable">
+						<div class="unselectable flex">
 							<div class="unselectable emoji">{@html emojis[map.emoji]}</div>
-							<span class="unselectable">&nbsp;&nbsp;&nbsp;&thinsp;&thinsp;&thinsp;{map.question.short}</span>
+							<span class="unselectable">{map.question.short}</span>
 						</div>
 					</a>
 				{/each}
@@ -138,5 +138,10 @@
 		line-height: 1.25em;
 		text-wrap: wrap;
 		color: #303037;
+	}
+
+	.map > .unselectable
+	{
+		gap: 0.3em;
 	}
 </style>
