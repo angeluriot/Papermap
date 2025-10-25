@@ -195,7 +195,7 @@
 			<a href="/maps" class="w-full">
 				<div
 					class="result end-result w-full flex flex-row justify-center items-center"
-					style="{i === selected_i ? 'background-color: #eeeff7;' : ''}"
+					style="{i === selected_i ? 'background-color: var(--hover);' : ''}"
 					onmouseenter="{() => selected_i = i}" role="button" tabindex={i}
 				>
 					<span class="unselectable">See more</span>
@@ -204,7 +204,7 @@
 		{:else if result == 'new'}
 			<div
 				class="result end-result w-full flex flex-row justify-center items-center"
-				style="{i === selected_i ? 'background-color: #eeeff7;' : ''}"
+				style="{i === selected_i ? 'background-color: var(--hover);' : ''}"
 				onmouseenter="{() => selected_i = i}" role="button" tabindex={i}
 				onclick={() => new_map(search)} onkeydown={null}
 			>
@@ -214,7 +214,7 @@
 			<a href={result.url} class="w-full">
 				<div
 					class="result w-full flex flex-row justify-start items-center"
-					style="{i === selected_i ? 'background-color: #eeeff7;' : ''}"
+					style="{i === selected_i ? 'background-color: var(--hover);' : ''}"
 					onmouseenter="{() => selected_i = i}" role="button" tabindex={i}
 				>
 					<div class="emoji">{@html emojis[result.emoji]}</div>

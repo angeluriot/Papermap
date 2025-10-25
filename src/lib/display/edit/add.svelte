@@ -1105,7 +1105,7 @@
 
 	h1
 	{
-		color: #303037;
+		color: var(--text-primary);
 		font-size: 1.25em;
 		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
@@ -1141,7 +1141,7 @@
 		flex-direction: column;
 		justify-content: start;
 		align-items: start;
-		color: #303037;
+		color: var(--text-primary);
 		gap: 0.5em;
 	}
 

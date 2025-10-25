@@ -67,10 +67,10 @@
 
 <svg viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">
 	<g class="background unselectable">
-		<rect x=0 y=0 width={width} height={height} fill={bg.BACKGROUND_COLOR}/>
+		<rect x=0 y=0 width={width} height={height} class="bg-rect"/>
 		<g class="points">
 			{#each background_points as point}
-				<circle cx={point.x} cy={point.y} r={point.size} fill={bg.POINTS_COLOR} opacity={bg.POINTS_OPACITY}/>
+				<circle cx={point.x} cy={point.y} r={point.size} class="bg-point"/>
 			{/each}
 		</g>
 	</g>
@@ -135,14 +135,14 @@
 			{#each x_axis as tick}
 				{#if tick.type !== null}
 					<line
-						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} stroke={bg.AXIS_COLOR}
+						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} class="axis-line"
 						stroke-width={tick.width} stroke-linecap="round" stroke-linejoin="round" opacity={tick.opacity}
 					/>
 				{/if}
 				{#if tick.label !== null}
 					<text
 						x={tick.label.x} y={tick.label.y}
-						fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={tick.label.font_size}
+						class="axis-text" font-family="Satoshi-Bold" font-size={tick.label.font_size}
 						text-anchor="middle" alignment-baseline="auto" dominant-baseline="auto"
 					>
 						{tick.label.text}
@@ -151,7 +151,7 @@
 			{/each}
 			<text
 				x={x_title.x} y={x_title.y}
-				fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={x_title.font_size}
+				class="axis-text" font-family="Satoshi-Bold" font-size={x_title.font_size}
 				text-anchor="middle" alignment-baseline="auto" dominant-baseline="auto"
 			>
 				{x_title.text}
@@ -161,14 +161,14 @@
 			{#each y_axis as tick}
 				{#if tick.type !== null}
 					<line
-						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} stroke={bg.AXIS_COLOR}
+						x1={tick.start.x} y1={tick.start.y} x2={tick.end.x} y2={tick.end.y} class="axis-line"
 						stroke-width={tick.width} stroke-linecap="round" stroke-linejoin="round" opacity={tick.opacity}
 					/>
 				{/if}
 				{#if tick.label !== null}
 					<text
 						x={tick.label.x} y={tick.label.y}
-						fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={tick.label.font_size}
+						class="axis-text" font-family="Satoshi-Bold" font-size={tick.label.font_size}
 						text-anchor="start" alignment-baseline="central" dominant-baseline="central"
 					>
 						{tick.label.text}
@@ -178,7 +178,7 @@
 			<text
 				x={y_title.x} y={y_title.y}
 				transform="rotate(90, {y_title.x}, {y_title.y})"
-				fill={bg.AXIS_COLOR} font-family="Satoshi-Bold" font-size={y_title.font_size}
+				class="axis-text" font-family="Satoshi-Bold" font-size={y_title.font_size}
 				text-anchor="middle" alignment-baseline="auto" dominant-baseline="auto"
 			>
 				{y_title.text}
@@ -188,6 +188,26 @@
 </svg>
 
 <style>
+	.bg-rect
+	{
+		fill: var(--primary);
+	}
+
+	.bg-point
+	{
+		fill: var(--point-color);
+	}
+
+	.axis-line
+	{
+		stroke: var(--text-primary);
+	}
+
+	.axis-text
+	{
+		fill: var(--text-primary);
+	}
+
 	.dot
 	{
 		transition: transform 0.2s ease-in-out;

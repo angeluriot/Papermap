@@ -8,12 +8,13 @@
 	import type { GraphPoint } from '$lib/display/graph/types';
 	import Overview from '$lib/display/overview.svelte';
 	import Title from '$lib/display/title.svelte';
-	import Home from '$lib/svgs/home.svg';
+	import Home from '$lib/svgs/home.svg?raw';
 	import { Edit, paper_to_datapaper } from '$lib/types/paper';
 	import { constants as C } from '$lib/utils';
 	import cloneDeep from 'clone-deep';
 	import deepEqual from 'deep-equal';
 	import { onMount } from 'svelte';
+    import ThemeToggle from '$lib/theme-toggle.svelte';
 
 	const { data }: PageProps = $props();
 
@@ -176,8 +177,9 @@
 			<div class="title-component relative">
 				<Title {emojis} {map} maps={data.maps} {width} {height} bind:input_selected={input_selected}/>
 			</div>
-			<a href="/">
-				<img src={Home} alt="Home" title="Home" class="home relative img-unselectable">
+			<ThemeToggle class="w-[52.89px] h-[52.89px]"/>
+			<a href="/" title="Home" class="w-[52.89px] h-[52.89px]">
+				{@html Home}
 			</a>
 		</div>
 		<Overview
@@ -226,25 +228,35 @@
 	.title-container
 	{
 		gap: 0.65em;
-		filter: drop-shadow(0em 0.1em 0.75em #00008036);
+		filter: drop-shadow(0em 0.1em 0.75em var(--shadow-light));
 		transform: translateZ(0);
 	}
 
-	.home
+	.title-container a
 	{
-		min-width: 3.15em;
-		min-height: 3.15em;
-		width: 3.15em;
-		height: 3.15em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.title-container a :global(svg)
+	{
+		width: 100%;
+		height: 100%;
 		transition: transform 0.2s ease-in-out;
 	}
 
-	.home:hover
+	.title-container a :global(svg circle:first-child)
+	{
+		fill: var(--primary);
+	}
+
+	.title-container a:hover :global(svg)
 	{
 		transform: scale(1.06);
 	}
 
-	.home:active
+	.title-container a:active :global(svg)
 	{
 		transition: none;
 		transform: scale(1);
@@ -281,7 +293,7 @@
 			align-items: end;
 		}
 
-		.title-component:hover + a .home
+		.title-component:hover + .theme-toggle + a :global(svg)
 		{
 			opacity: 0;
 		}

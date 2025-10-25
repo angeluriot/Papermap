@@ -81,13 +81,13 @@
 	style="{mobile_mode ?  `bottom: ${details_height}px; width: 100%;` : 'top: 0em;'}"
 >
 	<div
-		class="arrow absolute bg-white"
+		class="arrow absolute bg-card"
 		style="{mobile_mode ? 'display: none;' : ''} left: {arrow_left}; top: {point.y}px; transform: {arrow_rotation};"
 	>
 		<div class="hitbox"></div>
 	</div>
 	<div
-		class="details-container absolute bg-white {mobile_mode ? 'mobile-radius' : ''}" bind:clientHeight={details_height} bind:this={details}
+		class="details-container absolute bg-card {mobile_mode ? 'mobile-radius' : ''}" bind:clientHeight={details_height} bind:this={details}
 		style="{mobile_mode ? `--details-width: ${width}px;` : `left: ${details_left}; top: ${details_top}; --details-width: ${details_width}em;`}"
 	>
 		<Content {emojis} {map} {journals} {paper} {width} {height} bind:journal_info_open={journal_info_open} {edit_mode}/>
@@ -97,14 +97,14 @@
 <style>
 	.details
 	{
-		filter: drop-shadow(0 0.1em 1.25em #00008036);
+		filter: drop-shadow(0 0.1em 1.25em var(--shadow-light));
 		transform: translateZ(0);
 		z-index: 1000;
 	}
 
 	.details.mobile-shadow
 	{
-		filter: drop-shadow(0 0em 15em #00022d);
+		filter: drop-shadow(0 0em 15em var(--shadow-dark));
 		transform: translateZ(0);
 	}
 
