@@ -46,6 +46,7 @@ export const EMOJI_NAMES = {
 	'👪': 'family',
 	'🧑‍🧑‍🧒‍🧒': 'family-adult-adult-child-child',
 	'🧑‍🧒': 'family-adult-child',
+	'👮': 'police-officer',
 
 	// Animals & Nature
 	'🐭': 'mouse-face',

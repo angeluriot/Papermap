@@ -1,0 +1,137 @@
+{
+	"draft": false,
+	"emoji": "📸",
+	"question": {
+		"short": "Do security cameras reduce crimes?",
+		"long": "Do security cameras help reduce crime rates in surveilled areas?"
+	},
+	"description": "Results from studies evaluating the effectiveness of security cameras (CCTV) in preventing and reducing criminal activities.",
+	"tags": [
+		"security",
+		"crime",
+		"surveillance",
+		"cctv",
+		"prevention",
+		"public safety"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effectiveness of security cameras in reducing crime",
+			"color": "Gray",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that security cameras do not significantly reduce crime rates",
+			"color": "Red",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that security cameras are effective in reducing crime rates",
+			"color": "Green",
+			"unavailable": [
+				"yes_unlike_literature",
+				"no"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No effect",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "Limited effect",
+			"color": "Red1H"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Positive with limitations",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Positive effect",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No effect",
+			"description": "The results show no significant effect of security cameras on crime rates",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no",
+			"emoji": "🤔",
+			"text": "No effect (unlike literature)",
+			"description": "The results show no effect, contradicting previous literature suggesting positive effects",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🫤",
+			"text": "Limited effect",
+			"description": "The results show limited or inconsistent effects on different types of crimes",
+			"p_value": true
+		},
+		"maybe": {
+			"group": "more_research_needed",
+			"emoji": "🤷",
+			"text": "Inconclusive",
+			"description": "The results are inconclusive or require more research",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Positive but uncertain",
+			"description": "The results suggest a positive effect but with low statistical confidence",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "📊",
+			"text": "Small positive effect",
+			"description": "The results show a statistically significant but small reduction in crime rates",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes",
+			"emoji": "🤔",
+			"text": "Positive (unlike literature)",
+			"description": "The results show positive effects, contradicting previous literature suggesting no effects",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes", 
+			"emoji": "👍",
+			"text": "Positive effect",
+			"description": "The results show significant reduction in crime rates with security camera implementation",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_random": true,
+		"no_causation": false,
+		"any": false
+	},
+	"no_blinding": true,
+	"no_sample_size": false,
+	"papers": []
+}
