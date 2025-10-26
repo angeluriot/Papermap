@@ -1,0 +1,235 @@
+{
+	"draft": false,
+	"emoji": "🌽",
+	"question": {
+		"short": "Do genetically modified foods harm human health?",
+		"long": "Have commercially consumed GMO foods caused measurable health effects at the population level ?"
+	},
+	"description": "Results from studies evaluating the health effects of consuming foods made from genetically modified organisms (approved for human consumption).",
+	"tags": [
+		"GMO",
+		"genetically modified",
+		"genetic engineering",
+		"food",
+		"nutrition",
+		"health"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the health effects of consuming approved GMO foods",
+			"color": "Gray",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that approved GMO foods do not harm human health",
+			"color": "Green",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that approved GMO foods probably do not harm human health, but more research is needed",
+			"color": "Green1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that approved GMO foods may harm human health, but more research is needed",
+			"color": "Red1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that approved GMO foods harm human health",
+			"color": "Red",
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No",
+			"color": "Green"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Green1H"
+		},
+		"maybe": {
+			"text": "Maybe",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Red1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Red"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant adverse health effects from consuming the approved GMO foods evaluated",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant adverse health effects from consuming the approved GMO foods evaluated, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🔀",
+			"text": "No but mixed results",
+			"description": "The results of the paper show no significant overall adverse health effects from consuming the approved GMO foods evaluated, but there are mixed results in specific cases",
+			"p_value": false
+		},
+		"maybe": {
+			"group": "maybe",
+			"emoji": "🤷",
+			"text": "Maybe",
+			"description": "The results of the paper suggest that approved GMO foods might have health effects, but the evidence is not strong enough to conclude",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that approved GMO foods may harm health, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that approved GMO foods may have a small adverse effect on health",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that approved GMO foods may harm health, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that consuming approved GMO foods harms human health",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_random": false,
+		"no_causation": false,
+		"any": false
+	},
+	"no_blinding": false,
+	"no_sample_size": false,
+	"papers": [
+		{
+			"uuid": "bAhPQYsFXZbNEihF",
+			"openalex_id": "W2141643126",
+			"title": "Assessment of the health impact of GM plant diets in long-term and multigenerational animal feeding trials: A literature review",
+			"authors": [
+				"Chelsea Snell",
+				"Aude Bernheim",
+				"Jean‐Baptiste Bergé",
+				"Marcel Kuntz"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.1016/j.fct.2011.11.048",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": 234,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Results from all the 24 studies do not suggest any health hazards and, in general, there were no statistically significant differences within parameters observed",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 24,
+				"subpart": false
+			},
+			"type": "AnimalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "MUlPEOCEYyjpRjZ5",
+			"openalex_id": "W2586786447",
+			"title": "Genetically Engineered Crops",
+			"institution": {
+				"name": "National Academies of Sciences, Engineering, and Medicine",
+				"acronym": "NASEM"
+			},
+			"authors": [],
+			"year": 2016,
+			"link": "https://doi.org/10.17226/23395",
+			"journal": {
+				"id": "NotFound",
+				"retracted": false
+			},
+			"citations": 741,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "GE food reveals no differences that would implicate a higher risk to human health from eating GE foods than from eating their non-GE counterparts. [...] The committee could not find persuasive evidence of adverse health effects directly attributable to consumption of GE foods",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 100,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
+}
