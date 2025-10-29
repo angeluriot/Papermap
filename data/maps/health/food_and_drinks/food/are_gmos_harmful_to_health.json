@@ -206,7 +206,7 @@
 			"year": 2016,
 			"link": "https://doi.org/10.17226/23395",
 			"journal": {
-				"id": "NotFound",
+				"id": "NotPublished",
 				"retracted": false
 			},
 			"citations": 741,
