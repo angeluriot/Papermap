@@ -72,6 +72,7 @@ export const EMOJI_NAMES = {
 	'🧸': 'teddy-bear',
 	'🎛️': 'control-knobs',
 	'📸': 'camera-with-flash',
+	'📹': 'video-camera',
 	'🔍': 'magnifying-glass-tilted-left',
 	'📖': 'open-book',
 	'📚': 'books',
