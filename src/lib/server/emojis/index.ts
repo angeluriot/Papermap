@@ -51,6 +51,8 @@ export const EMOJI_NAMES = {
 	'🐭': 'mouse-face',
 
 	// Food & Drink
+	'🌽': 'ear-of-corn',
+	'🍔': 'hamburger',
 	'🍬': 'candy',
 	'🍽️': 'fork-and-knife-with-plate',
 
