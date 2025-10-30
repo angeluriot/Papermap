@@ -156,5 +156,79 @@
 	},
 	"no_blinding": false,
 	"no_sample_size": false,
-	"papers": []
+	"papers": [
+		{
+			"uuid": "9AsmETmCuCzOvXjT",
+			"openalex_id": "W2141643126",
+			"title": "Assessment of the health impact of GM plant diets in long-term and multigenerational animal feeding trials: A literature review",
+			"authors": [
+				"Chelsea Snell",
+				"Aude Bernheim",
+				"Jean‐Baptiste Bergé",
+				"Marcel Kuntz"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.1016/j.fct.2011.11.048",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": 234,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "Results from all the 24 studies do not suggest any health hazards and, in general, there were no statistically significant differences within parameters observed",
+			"review": {
+				"type": "SystematicReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 24,
+				"subpart": false
+			},
+			"type": "AnimalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "hOVoIQKGn0R8psri",
+			"openalex_id": "W2586786447",
+			"title": "Genetically Engineered Crops",
+			"institution": {
+				"name": "National Academies of Sciences, Engineering, and Medicine",
+				"acronym": "NASEM"
+			},
+			"authors": [],
+			"year": 2016,
+			"link": "https://doi.org/10.17226/23395",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 741,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "GE food reveals no differences that would implicate a higher risk to human health from eating GE foods than from eating their non-GE counterparts. [...] The committee could not find persuasive evidence of adverse health effects directly attributable to consumption of GE foods",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 100,
+				"subpart": false
+			},
+			"type": "DiverseTypes",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
 }
