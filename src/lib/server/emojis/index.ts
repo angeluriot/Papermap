@@ -55,6 +55,7 @@ export const EMOJI_NAMES = {
 	'🍔': 'hamburger',
 	'🍬': 'candy',
 	'🍽️': 'fork-and-knife-with-plate',
+	'🍆': 'eggplant',
 
 	// Activity
 	'🏆': 'trophy',
