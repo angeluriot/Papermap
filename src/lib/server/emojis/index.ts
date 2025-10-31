@@ -34,6 +34,7 @@ export const EMOJI_NAMES = {
 	'🤏': 'pinching-hand',
 	'👍': 'thumbs-up',
 	'👎': 'thumbs-down',
+	'🧠': 'brain',
 	'👀': 'eyes',
 	'🙋': 'person-raising-hand',
 	'🤷': 'person-shrugging',
@@ -49,6 +50,7 @@ export const EMOJI_NAMES = {
 
 	// Animals & Nature
 	'🐭': 'mouse-face',
+	'🌈': 'rainbow',
 
 	// Food & Drink
 	'🌽': 'ear-of-corn',
@@ -98,6 +100,7 @@ export const EMOJI_NAMES = {
 
 	// Symbols
 	'💖': 'sparkling-heart',
+	'💞': 'revolving-hearts',
 	'💨': 'dashing-away',
 	'🚻': 'restroom',
 	'➡️': 'right-arrow',

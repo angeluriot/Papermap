@@ -1,0 +1,200 @@
+{
+	"draft": true,
+	"emoji": "🌈",
+	"question": {
+		"short": "Is sexual orientation socially influenced?",
+		"long": "Can sexual orientation be influenced by social and cultural factors?"
+	},
+	"description": "Results from studies evaluating the effect of social and cultural factors on sexual orientation.",
+	"tags": [
+		"love",
+		"sexuality",
+		"sexual orientation",
+		"heterosexuality",
+		"homosexuality",
+		"bisexuality",
+		"asexuality"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of social and cultural factors on sexual orientation",
+			"color": "Gray",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that social and cultural factors do not significantly influence sexual orientation",
+			"color": "Red",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that social and cultural factors probably don't influence sexual orientation, but more research is needed",
+			"color": "Red1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that social and cultural factors likely influence sexual orientation, but more research is needed",
+			"color": "Green1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that social and cultural factors significantly influence sexual orientation",
+			"color": "Green",
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Red1H"
+		},
+		"maybe": {
+			"text": "Maybe",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant effect of social and cultural factors on sexual orientation",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant effect of social and cultural factors on sexual orientation, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🔀",
+			"text": "No but mixed results",
+			"description": "The results of the paper show no significant overall effect of social and cultural factors on sexual orientation, but there are mixed results on specific cases",
+			"p_value": false
+		},
+		"maybe": {
+			"group": "maybe",
+			"emoji": "🤷",
+			"text": "Maybe",
+			"description": "The results of the paper suggest that social and cultural factors might have an effect on sexual orientation, but the evidence is not strong enough to conclude",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that social and cultural factors may influence sexual orientation, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that social and cultural factors may have a small effect on sexual orientation",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that social and cultural factors may influence sexual orientation, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that social and cultural factors significantly influence sexual orientation",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_random": false,
+		"no_causation": false,
+		"any": false
+	},
+	"no_blinding": true,
+	"no_sample_size": false,
+	"papers": [
+		{
+			"uuid": "7CSWhN9RTOz20yk5",
+			"openalex_id": "W2344523805",
+			"title": "Sexual Orientation, Controversy, and Science",
+			"authors": [
+				"J. Michael Bailey",
+				"Paul L. Vasey",
+				"Lisa M. Diamond",
+				"S. Marc Breedlove"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.1177/1529100616637616",
+			"journal": {
+				"id": "S1025063068",
+				"retracted": false
+			},
+			"citations": 540,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "No causal theory of sexual orientation has yet gained widespread support. The most scientifically plausible causal hypotheses are difficult to test. However, there is considerably more evidence supporting nonsocial causes of sexual orientation than social causes",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": true,
+				"estimate": true,
+				"count": 230,
+				"subpart": false
+			},
+			"type": "DiverseHumanStudies",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
+}
