@@ -158,6 +158,36 @@
 	"no_sample_size": false,
 	"papers": [
 		{
+			"uuid": "Bh2WvInwzOwCURaz",
+			"openalex_id": "W2158306630",
+			"title": "Results of a 13 week safety assurance study with rats fed grain from glyphosate tolerant corn",
+			"authors": [
+				"Bruce G. Hammond",
+				"R. Dudek",
+				"Joan K. Lemen",
+				"Margaret A. Nemeth"
+			],
+			"year": 2004,
+			"link": "https://doi.org/10.1016/j.fct.2004.02.013",
+			"journal": {
+				"id": "S84231135",
+				"retracted": false
+			},
+			"citations": 127,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "the comparable response of rats fed diets containing Roundup Ready corn grain to rats fed diets containing control or reference control corn grain provides significant evidence of the comparability of Roundup Ready corn to its traditional counterparts",
+			"type": "AnimalStudy",
+			"blinding": "None",
+			"sample_size": 400,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "Yes",
+			"notes": []
+		},
+		{
 			"uuid": "9AsmETmCuCzOvXjT",
 			"openalex_id": "W2141643126",
 			"title": "Assessment of the health impact of GM plant diets in long-term and multigenerational animal feeding trials: A literature review",
@@ -195,6 +225,59 @@
 			"notes": []
 		},
 		{
+			"uuid": "Pd3pwnY3cxarWcwp",
+			"openalex_id": "W2112857091",
+			"title": "RETRACTED: Long term toxicity of a Roundup herbicide and a Roundup-tolerant genetically modified maize",
+			"authors": [
+				"Gilles‐Éric Séralini",
+				"Émilie Clair",
+				"Robin Mesnage",
+				"Steeve Gress"
+			],
+			"year": 2012,
+			"link": "https://doi.org/10.1016/j.fct.2012.08.005",
+			"journal": {
+				"id": "S84231135",
+				"retracted": true
+			},
+			"citations": 381,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "disruption of biosynthetic pathways that may result from overexpression of the EPSPS transgene in the GM NK603 maize can give rise to [...] pathologies that may be linked to abnormal or unbalanced phenolic acids metabolites, or related compounds",
+			"type": "AnimalStudy",
+			"blinding": "None",
+			"sample_size": 80,
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Undisclosed conflicts of interest",
+					"description": "The study was funded by large retailers and politicians",
+					"link": "https://www.nouvelobs.com/sante/ogm-le-scandale/20120918.OBS2789/ogm-quand-la-grande-distribution-finance-une-etude-choc.html",
+					"impact": "VeryNegative"
+				},
+				{
+					"title": "No dose-response relationship",
+					"description": "Increasing the dose of GM maize in the rats' diet did not increase the observed effects",
+					"impact": "Negative"
+				},
+				{
+					"title": "Controversial institute",
+					"description": "CRIIGEN is known for its anti-GMO activism and previous controversial studies",
+					"impact": "Negative"
+				},
+				{
+					"title": "No statistical analysis",
+					"description": "The lack of statistical analysis, combined with the low sample size and the known high incisence of tumors in the Sprague–Dawley rat, makes these results unconclusive",
+					"link": "https://www.sciencedirect.com/science/article/pii/S0278691513008090",
+					"impact": "VeryNegative"
+				}
+			]
+		},
+		{
 			"uuid": "hOVoIQKGn0R8psri",
 			"openalex_id": "W2586786447",
 			"title": "Genetically Engineered Crops",
@@ -224,6 +307,41 @@
 				"subpart": false
 			},
 			"type": "DiverseTypes",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "NJa7qNuAM9HAHKV5",
+			"openalex_id": "W2280968652",
+			"title": "Published GMO studies find no evidence of harm when corrected for multiple comparisons",
+			"authors": [
+				"Alexander Y. Panchin",
+				"Alexander I. Tuzhikov"
+			],
+			"year": 2016,
+			"link": "https://doi.org/10.3109/07388551.2015.1130684",
+			"journal": {
+				"id": "S28635856",
+				"retracted": false
+			},
+			"citations": 24,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "We performed a statistical reanalysis and review of experimental data presented in some of these studies and found that quite often in contradiction with the authors’ conclusions the data actually provides weak evidence of harm that cannot be differentiated from chance",
+			"review": {
+				"type": "Review",
+				"reviews": false,
+				"estimate": false,
+				"count": 6,
+				"subpart": false
+			},
+			"type": "AnimalStudy",
 			"blinding": "None",
 			"sample_size": "NotSpecified",
 			"p_value": "NotApplicable",
