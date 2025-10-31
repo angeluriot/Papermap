@@ -61,7 +61,6 @@
 		"seedrandom": "^3.0.5",
 		"sharp": "^0.33.5",
 		"svelte": "^5.0.0",
-		"svelte-kit": "^1.2.0",
 		"tailwindcss": "^4.0.0",
 		"ua-parser-js": "^2.0.3",
 		"vite": "^6.0.0",
