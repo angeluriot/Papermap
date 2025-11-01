@@ -195,6 +195,40 @@
 			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
 			"notes": []
+		},
+		{
+			"uuid": "bmWXH9vvMCEOC7QO",
+			"openalex_id": "W2781278769",
+			"title": "Fraternal birth order effect on sexual orientation explained",
+			"authors": [
+				"Jacques Balthazart"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1073/pnas.1719534115",
+			"journal": {
+				"id": "S125754415",
+				"retracted": false
+			},
+			"citations": 19,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no",
+				"indirect": false
+			},
+			"quote": "This study provides the first data-based explanation for the FBO (Fraternal Birth Order) effect and adds a significant chapter to growing evidence indicating that sexual orientation is heavily influenced by prenatal biological mechanisms rather than by unidentified factors in socialization. The nature–nurture debate still rages in the minds of many scientists and scholars, despite the consensus that these are complementary rather than mutually exclusive explanations",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": true,
+				"estimate": true,
+				"count": 16,
+				"subpart": true
+			},
+			"type": "DiverseTypes",
+			"blinding": "None",
+			"sample_size": 142,
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
 		}
 	]
 }
