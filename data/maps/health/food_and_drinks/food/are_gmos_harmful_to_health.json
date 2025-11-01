@@ -188,6 +188,41 @@
 			"notes": []
 		},
 		{
+			"uuid": "DIBIW4t1BvAWpJLp",
+			"openalex_id": "W2166082387",
+			"title": "A literature review on the safety assessment of genetically modified plants",
+			"authors": [
+				"José L. Domingo",
+				"Jordi Giné Bordonaba"
+			],
+			"year": 2011,
+			"link": "https://doi.org/10.1016/j.envint.2011.01.003",
+			"journal": {
+				"id": "S143381477",
+				"retracted": false
+			},
+			"citations": 240,
+			"results": {
+				"consensus": "towards_no",
+				"conclusion": "maybe",
+				"indirect": false
+			},
+			"quote": "An equilibrium in the number research groups suggesting, on the basis of their studies, that a number of varieties of GM products (mainly maize and soybeans) are as safe and nutritious as the respective conventional non-GM plant, and those raising still serious concerns, was currently observed",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 28,
+				"subpart": false
+			},
+			"type": "AnimalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
 			"uuid": "9AsmETmCuCzOvXjT",
 			"openalex_id": "W2141643126",
 			"title": "Assessment of the health impact of GM plant diets in long-term and multigenerational animal feeding trials: A literature review",
@@ -254,7 +289,7 @@
 			"conflict_of_interest": "Yes",
 			"notes": [
 				{
-					"title": "Undisclosed conflicts of interest",
+					"title": "Undisclosed conflict of interest",
 					"description": "The study was funded by large retailers and politicians",
 					"link": "https://www.nouvelobs.com/sante/ogm-le-scandale/20120918.OBS2789/ogm-quand-la-grande-distribution-finance-une-etude-choc.html",
 					"impact": "VeryNegative"
@@ -271,7 +306,7 @@
 				},
 				{
 					"title": "No statistical analysis",
-					"description": "The lack of statistical analysis, combined with the low sample size and the known high incisence of tumors in the Sprague–Dawley rat, makes these results unconclusive",
+					"description": "The lack of statistical analysis, combined with the low sample size and the known high incidence of tumors in the Sprague–Dawley rat, makes these results unconclusive",
 					"link": "https://www.sciencedirect.com/science/article/pii/S0278691513008090",
 					"impact": "VeryNegative"
 				}
