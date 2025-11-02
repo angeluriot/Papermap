@@ -1,0 +1,179 @@
+{
+	"draft": false,
+	"emoji": "🦇",
+	"question": {
+		"short": "What is the origin of the SARS-CoV-2 virus?",
+		"long": "What is the origin of the SARS-CoV-2 virus?"
+	},
+	"description": "Results from studies trying to determine how the COVID-19 pandemic started.",
+	"tags": [
+		"COVID-19",
+		"SARS-CoV-2",
+		"pandemic",
+		"origin",
+		"animal",
+		"transmission",
+		"bat",
+		"laboratory",
+		"lab",
+		"leak"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the origin of the SARS-CoV-2 virus",
+			"color": "Gray",
+			"unavailable": [
+				"animal_transmission_unlike_literature",
+				"lab_leak_unlike_literature"
+			]
+		},
+		"animal_transmission": {
+			"emoji": "🦇",
+			"text": "Animal transmission",
+			"description": "The literature suggests that the SARS-CoV-2 virus was transmitted from animals to humans",
+			"color": "Green",
+			"unavailable": [
+				"animal_transmission_unlike_literature",
+				"lab_leak"
+			]
+		},
+		"towards_animal_transmission": {
+			"emoji": "⬅️",
+			"text": "Towards animal transmission",
+			"description": "The literature suggests that the SARS-CoV-2 virus was probably transmitted from animals to humans, but more research is needed",
+			"color": "Green1H",
+			"unavailable": [
+				"animal_transmission_unlike_literature",
+				"lab_leak_unlike_literature"
+			]
+		},
+		"towards_lab_leak": {
+			"emoji": "➡️",
+			"text": "Towards lab leak",
+			"description": "The literature suggests that the SARS-CoV-2 virus may have originated from a laboratory leak, but more research is needed",
+			"color": "Blue1H",
+			"unavailable": [
+				"animal_transmission_unlike_literature",
+				"lab_leak_unlike_literature"
+			]
+		},
+		"lab_leak": {
+			"emoji": "🧫",
+			"text": "Lab leak",
+			"description": "The literature suggests that the SARS-CoV-2 virus originated from a laboratory leak",
+			"color": "Blue",
+			"unavailable": [
+				"animal_transmission",
+				"lab_leak_unlike_literature"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"animal_transmission": {
+			"text": "Animal transmission",
+			"color": "Green"
+		},
+		"animal_transmission_but": {
+			"text": "Animal transmission but...",
+			"color": "Green1H"
+		},
+		"inconclusive": {
+			"text": "Inconclusive",
+			"color": "Gray"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"lab_leak_but": {
+			"text": "Lab leak but...",
+			"color": "Blue1H"
+		},
+		"lab_leak": {
+			"text": "Lab leak",
+			"color": "Blue"
+		}
+	},
+	"conclusions": {
+		"animal_transmission": {
+			"group": "animal_transmission",
+			"emoji": "🦇",
+			"text": "Animal transmission",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus was transmitted from animals to humans",
+			"p_value": true
+		},
+		"animal_transmission_unlike_literature": {
+			"group": "animal_transmission_but",
+			"emoji": "↩️",
+			"text": "Animal transmission unlike literature",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus was probably transmitted from animals to humans, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"animal_transmission_but_low_confidence": {
+			"group": "animal_transmission_but",
+			"emoji": "🤔",
+			"text": "Animal transmission but low confidence",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus was probably transmitted from animals to humans, but the evidence is not strong",
+			"p_value": true
+		},
+		"animal_transmission_but_mixed": {
+			"group": "animal_transmission_but",
+			"emoji": "🔀",
+			"text": "Animal transmission but mixed results",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus was probably transmitted from animals to humans, but the evidence is mixed",
+			"p_value": true
+		},
+		"mixed": {
+			"group": "inconclusive",
+			"emoji": "🔀",
+			"text": "Mixed results",
+			"description": "The results of the paper cannot determine the origin of the SARS-CoV-2 virus",
+			"p_value": false
+		},
+		"no_results": {
+			"group": "inconclusive",
+			"emoji": "🤷",
+			"text": "No results",
+			"description": "There is not enough evidence to determine the origin of the SARS-CoV-2 virus",
+			"p_value": false
+		},
+		"lab_leak_but_mixed": {
+			"group": "lab_leak_but",
+			"emoji": "🔀",
+			"text": "Lab leak but mixed results",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus may have originated from a laboratory leak, but the evidence is mixed",
+			"p_value": true
+		},
+		"lab_leak_but_low_confidence": {
+			"group": "lab_leak_but",
+			"emoji": "🤔",
+			"text": "Lab leak but low confidence",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus may have originated from a laboratory leak, but the evidence is not strong",
+			"p_value": true
+		},
+		"lab_leak_unlike_literature": {
+			"group": "lab_leak_but",
+			"emoji": "↪️",
+			"text": "Lab leak unlike literature",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus may have originated from a laboratory leak, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"lab_leak": {
+			"group": "lab_leak",
+			"emoji": "🧫",
+			"text": "Lab leak",
+			"description": "The results of the paper suggest that the SARS-CoV-2 virus may have originated from a laboratory leak",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_random": true,
+		"no_causation": true,
+		"any": true
+	},
+	"no_blinding": true,
+	"no_sample_size": true,
+	"papers": []
+}

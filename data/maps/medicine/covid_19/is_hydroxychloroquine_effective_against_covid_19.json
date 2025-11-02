@@ -1,0 +1,162 @@
+{
+	"draft": false,
+	"emoji": "🍶",
+	"question": {
+		"short": "Is hydroxychloroquine effective against COVID-19?",
+		"long": "Is hydroxychloroquine an effective treatment for COVID-19?"
+	},
+	"description": "Results from studies evaluating the impact of hydroxychloroquine on symptoms or death from COVID-19.",
+	"tags": [
+		"COVID-19",
+		"hydroxychloroquine",
+		"chloroquine",
+		"treatment",
+		"illness",
+		"hospitalization",
+		"death"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of hydroxychloroquine on COVID-19",
+			"color": "Gray",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that hydroxychloroquine does not treat COVID-19",
+			"color": "Red",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that hydroxychloroquine probably doesn't treat COVID-19, but more research is needed",
+			"color": "Red1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that hydroxychloroquine likely treats COVID-19, but more research is needed",
+			"color": "Green1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that hydroxychloroquine treats COVID-19",
+			"color": "Green",
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Red1H"
+		},
+		"maybe": {
+			"text": "Maybe",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant effect of hydroxychloroquine on COVID-19",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant effect of hydroxychloroquine on COVID-19, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🔀",
+			"text": "No but mixed results",
+			"description": "The results of the paper show no significant overall effect of hydroxychloroquine on COVID-19, but there are mixed results on specific cases",
+			"p_value": false
+		},
+		"maybe": {
+			"group": "maybe",
+			"emoji": "🤷",
+			"text": "Maybe",
+			"description": "The results of the paper suggest that hydroxychloroquine might have an effect on COVID-19, but the evidence is not strong enough to conclude",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that hydroxychloroquine may treat COVID-19, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that hydroxychloroquine may have a small effect on COVID-19",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that hydroxychloroquine may treat COVID-19, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that hydroxychloroquine treats COVID-19",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_random": false,
+		"no_causation": false,
+		"any": false
+	},
+	"no_blinding": false,
+	"no_sample_size": false,
+	"papers": []
+}

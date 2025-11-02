@@ -12,6 +12,7 @@ export const EMOJI_NAMES = {
 	'🤩': 'star-struck',
 	'🤑': 'money-mouth-face',
 	'🤗': 'hugging-face',
+	'🫢': 'face-with-open-eyes-and-hand-over-mouth',
 	'🫣': 'face-with-peeking-eye',
 	'🤔': 'thinking-face',
 	'🤐': 'zipper-mouth-face',
@@ -19,6 +20,8 @@ export const EMOJI_NAMES = {
 	'🫥': 'dotted-line-face',
 	'😮‍💨': 'face-exhaling',
 	'😌': 'relieved-face',
+	'😷': 'face-with-medical-mask',
+	'🤒': 'face-with-thermometer',
 	'🤮': 'face-vomiting',
 	'😵': 'dizzy-face',
 	'😎': 'smiling-face-with-sunglasses',
@@ -47,15 +50,19 @@ export const EMOJI_NAMES = {
 	'👪': 'family',
 	'🧑‍🧑‍🧒‍🧒': 'family-adult-adult-child-child',
 	'🧑‍🧒': 'family-adult-child',
+	'🧬': 'dna',
 
 	// Animals & Nature
 	'🐭': 'mouse-face',
+	'🦇': 'bat',
+	'🦠': 'microbe',
 	'🌈': 'rainbow',
 
 	// Food & Drink
 	'🌽': 'ear-of-corn',
 	'🍔': 'hamburger',
 	'🍬': 'candy',
+	'🍶': 'sake',
 	'🍽️': 'fork-and-knife-with-plate',
 
 	// Activity
