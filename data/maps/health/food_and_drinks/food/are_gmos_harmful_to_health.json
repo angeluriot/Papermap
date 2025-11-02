@@ -313,6 +313,78 @@
 			]
 		},
 		{
+			"uuid": "xB0mZlUsbEPOdOzm",
+			"openalex_id": "W1985424752",
+			"title": "An overview of the last 10 years of genetically engineered crop safety research",
+			"authors": [
+				"Alessandro Nicolia",
+				"Alberto Manzo",
+				"F. Veronesi",
+				"D. Rosellini"
+			],
+			"year": 2013,
+			"link": "https://doi.org/10.3109/07388551.2013.823595",
+			"journal": {
+				"id": "S28635856",
+				"retracted": false
+			},
+			"citations": 608,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": true
+			},
+			"quote": "The scientific research conducted so far has not detected any significant hazards directly connected with the use of GE crops. [...] there is no scientific evidence of toxic or allergenic effects",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 1783,
+				"subpart": true
+			},
+			"type": "EcologicalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "zJlBIwjpFacMZWMy",
+			"openalex_id": "W2087980057",
+			"title": "Prevalence and impacts of genetically engineered feedstuffs on livestock populations1",
+			"authors": [
+				"Alison L. Van Eenennaam",
+				"Amy Young"
+			],
+			"year": 2014,
+			"link": "https://doi.org/10.2527/jas.2014-8124",
+			"journal": {
+				"id": "S72684844",
+				"retracted": false
+			},
+			"citations": 212,
+			"results": {
+				"consensus": "no",
+				"conclusion": "no",
+				"indirect": true
+			},
+			"quote": "These field data sets representing billions of observations did not reveal unfavorable or unexpected trends in livestock health and productivity. [...] field observations of animals fed diets containing GE crop products have revealed no unexpected perturbations or disturbing trends in animal performance or health indicators",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 89,
+				"subpart": false
+			},
+			"type": "AnimalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
 			"uuid": "hOVoIQKGn0R8psri",
 			"openalex_id": "W2586786447",
 			"title": "Genetically Engineered Crops",
