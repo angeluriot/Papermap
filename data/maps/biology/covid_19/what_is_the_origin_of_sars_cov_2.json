@@ -175,5 +175,101 @@
 	},
 	"no_blinding": true,
 	"no_sample_size": true,
-	"papers": []
+	"papers": [
+		{
+			"uuid": "HQkxkqNj27Vtzx1F",
+			"openalex_id": "W3191809422",
+			"title": "The origins of SARS-CoV-2: A critical review",
+			"authors": [
+				"Edward C. Holmes",
+				"Stephen A. Goldstein",
+				"Angela L. Rasmussen",
+				"David L. Robertson"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1016/j.cell.2021.08.017",
+			"journal": {
+				"id": "S110447773",
+				"retracted": false
+			},
+			"citations": 474,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "animal_transmission",
+				"indirect": false
+			},
+			"quote": "As for the vast majority of human viruses, the most parsimonious explanation for the origin of SARS-CoV-2 is a zoonotic event",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 60,
+				"subpart": false
+			},
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "RP0jQO6H33z0eIVD",
+			"openalex_id": "W4283329183",
+			"title": "SARS-CoV-2 infection at the Huanan seafood market",
+			"authors": [
+				"Virginie Courtier‐Orgogozo",
+				"Francisco A. de Ribera"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1016/j.envres.2022.113702",
+			"journal": {
+				"id": "S173943867",
+				"retracted": false
+			},
+			"citations": 15,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_results",
+				"indirect": false
+			},
+			"quote": "If a cluster of patients located a few meters away from each other had been detected at the market in the early days of the pandemic, it would be natural to suggest an animal source hotspot and animal-to-human contamination at the market. However, the first detected patients are relatively far from each other",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "ueX77KS3Y7ws06Zs",
+			"openalex_id": "W4288034315",
+			"title": "The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic",
+			"authors": [
+				"Michael Worobey",
+				"Joshua I. Levy",
+				"Lorena M. Malpica Serrano",
+				"Alexander Crits‐Christoph"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1126/science.abp8715",
+			"journal": {
+				"id": "S3880285",
+				"retracted": false
+			},
+			"citations": 367,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "Although there is insufficient evidence to define upstream events, and exact circumstances remain obscure, our analyses indicate that the emergence of SARS-CoV-2 occurred through the live wildlife trade in China and show that the Huanan market was the epicenter of the COVID-19 pandemic",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
 }
