@@ -1,4 +1,4 @@
-{
+data\maps\justice\does_video_surveillance_reduce_crime.json{
 	"draft": true,
 	"emoji": "📹",
 	"question": {
@@ -159,5 +159,69 @@
 	},
 	"no_blinding": true,
 	"no_sample_size": false,
-	"papers": []
+	"papers": [
+		{
+			"uuid": "LlJTflnNc8KfupXN",
+			"openalex_id": "W2766707687",
+			"title": "Surveillance cameras and crime: a review of randomized and natural experiments",
+			"authors": [
+				"Gustav Alexandrie"
+			],
+			"year": 2017,
+			"link": "https://doi.org/10.1080/14043858.2017.1387410",
+			"journal": {
+				"id": "S152567464",
+				"retracted": false
+			},
+			"citations": 68,
+			"results": {
+				"consensus": "towards_yes",
+				"conclusion": "yes_but_small_effect",
+				"indirect": false
+			},
+			"quote": "Included studies that reported changes in total crime found overall crime reductions ranging from 24–28% in public street settings and urban subway stations [...] but no desirable effects in commuter parking facilities or suburban subway stations",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 7,
+				"subpart": false
+			},
+			"type": "EcologicalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"uuid": "YlnzqpGuMfDE7wyX",
+			"openalex_id": "W3120677778",
+			"title": "THE DETERRENT EFFECT OF SURVEILLANCE CAMERAS ON CRIME",
+			"authors": [
+				"Santiago Gómez Cardona",
+				"Daniel Mejía",
+				"Santiago Tobón"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1002/pam.22280",
+			"journal": {
+				"id": "S25370267",
+				"retracted": false
+			},
+			"citations": 24,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "yes",
+				"indirect": false
+			},
+			"quote": "The results suggest that crime drops at grids under direct surveillance by 0.011 per month, on average. Given the large number of grids exposed to direct surveillance, these effects add up to a relatively large number of deterred crimes",
+			"type": "EcologicalStudy",
+			"blinding": "None",
+			"sample_size": "NotSpecified",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		}
+	]
 }
