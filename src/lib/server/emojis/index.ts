@@ -60,6 +60,9 @@ export const EMOJI_NAMES = {
 
 	// Food & Drink
 	'🌽': 'ear-of-corn',
+	'🍖': 'meat-on-bone',
+	'🥩': 'cut-of-meat',
+	'🥓': 'bacon',
 	'🍔': 'hamburger',
 	'🍬': 'candy',
 	'🍶': 'sake',
