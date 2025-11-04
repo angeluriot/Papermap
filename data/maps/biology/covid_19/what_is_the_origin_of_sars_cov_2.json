@@ -214,6 +214,43 @@
 			"notes": []
 		},
 		{
+			"uuid": "IhqvIpRjJWmT9XZl",
+			"openalex_id": "W3128357250",
+			"title": "Tracing the origins of SARS-COV-2 in coronavirus phylogenies: a review",
+			"authors": [
+				"Erwan Sallard",
+				"José Halloy",
+				"Didier Casañe",
+				"Étienne Decroly"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1007/s10311-020-01151-1",
+			"journal": {
+				"id": "S88719806",
+				"retracted": false
+			},
+			"citations": 69,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_results",
+				"indirect": false
+			},
+			"quote": "on the basis of currently available data it is not possible to determine whether the emergence of SARS-CoV-2 is the result of a zoonosis from a wild viral strain or an accidental escape of experimental strains",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 70,
+				"subpart": false
+			},
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
 			"uuid": "RP0jQO6H33z0eIVD",
 			"openalex_id": "W4283329183",
 			"title": "SARS-CoV-2 infection at the Huanan seafood market",
