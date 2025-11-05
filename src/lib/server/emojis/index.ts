@@ -42,6 +42,7 @@ export const EMOJI_NAMES = {
 	'🙋': 'person-raising-hand',
 	'🤷': 'person-shrugging',
 	'🧑‍🏫': 'teacher',
+	'🧑‍🌾': 'farmer',
 	'🧍': 'person-standing',
 	'🏃‍➡️': 'person-running-facing-right',
 	'🏋️': 'person-lifting-weights',
@@ -56,9 +57,11 @@ export const EMOJI_NAMES = {
 	'🐭': 'mouse-face',
 	'🦇': 'bat',
 	'🦠': 'microbe',
+	'🌾': 'sheaf-of-rice',
 	'🌈': 'rainbow',
 
 	// Food & Drink
+	'🍅': 'tomato',
 	'🌽': 'ear-of-corn',
 	'🍖': 'meat-on-bone',
 	'🥩': 'cut-of-meat',
