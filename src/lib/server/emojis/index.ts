@@ -47,6 +47,7 @@ export const EMOJI_NAMES = {
 	'🤷': 'person-shrugging',
 	'🧑‍🏫': 'teacher',
 	'🧑‍🌾': 'farmer',
+	'🤰': 'pregnant-woman',
 	'🧍': 'person-standing',
 	'🏃‍➡️': 'person-running-facing-right',
 	'🏋️': 'person-lifting-weights',
@@ -63,6 +64,7 @@ export const EMOJI_NAMES = {
 	'🦠': 'microbe',
 	'🌾': 'sheaf-of-rice',
 	'🌈': 'rainbow',
+	'☔': 'umbrella-with-rain-drops',
 
 	// Food & Drink
 	'🍅': 'tomato',
@@ -128,6 +130,7 @@ export const EMOJI_NAMES = {
 	'🔀': 'shuffle-tracks-button',
 	'⚧️': 'transgender-symbol',
 	'🟰': 'heavy-equals-sign',
+	'⚕️': 'medical-symbol',
 };
 
 
