@@ -6,7 +6,9 @@ export enum Color
 	Red1Q = 'Red1Q',
 	Yellow = 'Yellow',
 	Gray = 'Gray',
+	Green1Q = 'Green1Q',
 	Green1H = 'Green1H',
+	Green3Q = 'Green3Q',
 	Green = 'Green',
 	Cyan = 'Cyan',
 	Blue1Q = 'Blue1Q',
@@ -46,10 +48,20 @@ export const COLORS = {
 		fill: '#abb4d6',
 		stroke: '#9097bf',
 	},
+	[Color.Green1Q]: {
+		default: '#c7cc25',
+		fill: '#c1cc30',
+		stroke: '#a4b029',
+	},
 	[Color.Green1H]: {
-		default: '#b4cc25',
-		fill: '#abcc33',
-		stroke: '#87b22b',
+		default: '#a7cc2e',
+		fill: '#a1cc3c',
+		stroke: '#7db033',
+	},
+	[Color.Green3Q]: {
+		default: '#6cc959',
+		fill: '#72cd68',
+		stroke: '#50ab56',
 	},
 	[Color.Green]: {
 		default: '#24c68c',

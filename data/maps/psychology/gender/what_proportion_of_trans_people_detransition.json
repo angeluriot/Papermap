@@ -1,0 +1,318 @@
+{
+	"draft": true,
+	"emoji": "↩️",
+	"question": {
+		"short": "What proportion of trans people detransition?",
+		"long": "What proportion of transgender people detransition?"
+	},
+	"description": "Results from studies evaluating the proportion of transgender people who permanently detransition or regret transitioning.",
+	"tags": [
+		"transgender",
+		"trans",
+		"transition",
+		"detransition",
+		"regret"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the proportion of transgender people who permanently detransition or regret transitioning",
+			"color": "Gray",
+			"unavailable": []
+		},
+		"less_than_1p": {
+			"emoji": "🔒",
+			"text": "Less than 1%",
+			"description": "The literature suggests that less than 1% of transgender people permanently detransition or regret transitioning",
+			"color": "Green",
+			"unavailable": []
+		},
+		"towards_less_than_1p": {
+			"emoji": "⬅️",
+			"text": "Towards <1%",
+			"description": "The literature suggests that less than 1% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Green3Q",
+			"unavailable": []
+		},
+		"less_than_2p": {
+			"emoji": "🙅",
+			"text": "Less than 2%",
+			"description": "The literature suggests that less than 2% of transgender people permanently detransition or regret transitioning",
+			"color": "Green3Q",
+			"unavailable": []
+		},
+		"towards_less_than_2p": {
+			"emoji": "⬅️",
+			"text": "Towards <2%",
+			"description": "The literature suggests that less than 2% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Green1H",
+			"unavailable": []
+		},
+		"less_than_5p": {
+			"emoji": "🤏",
+			"text": "Less than 5%",
+			"description": "The literature suggests that less than 5% of transgender people permanently detransition or regret transitioning",
+			"color": "Green1H",
+			"unavailable": []
+		},
+		"towards_less_than_5p": {
+			"emoji": "⬅️",
+			"text": "Towards <5%",
+			"description": "The literature suggests that less than 5% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Green1Q",
+			"unavailable": []
+		},
+		"less_than_10p": {
+			"emoji": "🤨",
+			"text": "Less than 10%",
+			"description": "The literature suggests that less than 10% of transgender people permanently detransition or regret transitioning",
+			"color": "Green1Q",
+			"unavailable": []
+		},
+		"towards_less_than_10p": {
+			"emoji": "⬅️",
+			"text": "Towards <10%",
+			"description": "The literature suggests that less than 10% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Yellow",
+			"unavailable": []
+		},
+		"towards_more_than_10p": {
+			"emoji": "➡️",
+			"text": "Towards >10%",
+			"description": "The literature suggests that more than 10% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Yellow",
+			"unavailable": []
+		},
+		"more_than_10p": {
+			"emoji": "🤔",
+			"text": "More than 10%",
+			"description": "The literature suggests that more than 10% of transgender people permanently detransition or regret transitioning",
+			"color": "Red1Q",
+			"unavailable": []
+		},
+		"towards_more_than_20p": {
+			"emoji": "➡️",
+			"text": "Towards >20%",
+			"description": "The literature suggests that more than 20% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Red1Q",
+			"unavailable": []
+		},
+		"more_than_20p": {
+			"emoji": "🥴",
+			"text": "More than 20%",
+			"description": "The literature suggests that more than 20% of transgender people permanently detransition or regret transitioning",
+			"color": "Red1H",
+			"unavailable": []
+		},
+		"towards_more_than_50p": {
+			"emoji": "➡️",
+			"text": "Towards >50%",
+			"description": "The literature suggests that more than 50% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Red1H",
+			"unavailable": []
+		},
+		"more_than_50p": {
+			"emoji": "😵‍💫",
+			"text": "More than 50%",
+			"description": "The literature suggests that more than 50% of transgender people permanently detransition or regret transitioning",
+			"color": "Red3Q",
+			"unavailable": []
+		},
+		"towards_more_than_80p": {
+			"emoji": "➡️",
+			"text": "Towards >80%",
+			"description": "The literature suggests that more than 80% of transgender people permanently detransition or regret transitioning, but more research is needed",
+			"color": "Red3Q",
+			"unavailable": []
+		},
+		"more_than_80p": {
+			"emoji": "🪃",
+			"text": "More than 80%",
+			"description": "The literature suggests that more than 80% of transgender people permanently detransition or regret transitioning",
+			"color": "Red",
+			"unavailable": []
+		}
+	},
+	"conclusion_groups": {
+		"less_than_1p": {
+			"text": "<1%",
+			"color": "Green"
+		},
+		"less_than_2p_but": {
+			"text": "<2% but...",
+			"color": "Green"
+		},
+		"less_than_2p": {
+			"text": "<2%",
+			"color": "Green3Q"
+		},
+		"less_than_5p_but": {
+			"text": "<5% but...",
+			"color": "Green3Q"
+		},
+		"less_than_5p": {
+			"text": "<5%",
+			"color": "Green1H"
+		},
+		"less_than_10p_but": {
+			"text": "<10% but...",
+			"color": "Green1H"
+		},
+		"less_than_10p": {
+			"text": "<10%",
+			"color": "Green1Q"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"more_than_10p_but": {
+			"text": ">10% but...",
+			"color": "Yellow"
+		},
+		"more_than_10p": {
+			"text": ">10%",
+			"color": "Red1Q"
+		},
+		"more_than_20p_but": {
+			"text": ">20% but...",
+			"color": "Red1Q"
+		},
+		"more_than_20p": {
+			"text": ">20%",
+			"color": "Red1H"
+		},
+		"more_than_50p_but": {
+			"text": ">50% but...",
+			"color": "Red1H"
+		},
+		"more_than_50p": {
+			"text": ">50%",
+			"color": "Red3Q"
+		},
+		"more_than_80p_but": {
+			"text": ">80% but...",
+			"color": "Red3Q"
+		},
+		"more_than_80p": {
+			"text": ">80%",
+			"color": "Red"
+		}
+	},
+	"conclusions": {
+		"less_than_1p": {
+			"group": "less_than_1p",
+			"emoji": "🔒",
+			"text": "Less than 1%",
+			"description": "The results of the paper suggest that less than 1% of transgender people permanently detransition or regret transitioning",
+			"p_value": false
+		},
+		"less_than_2p_social_pressures": {
+			"group": "less_than_2p_but",
+			"emoji": "🔒",
+			"text": "<2% (mostly social pressures)",
+			"description": "The results of the paper suggest that less than 2% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
+			"p_value": false
+		},
+		"less_than_2p": {
+			"group": "less_than_2p",
+			"emoji": "🙅",
+			"text": "Less than 2%",
+			"description": "The results of the paper suggest that less than 2% of transgender people permanently detransition or regret transitioning",
+			"p_value": false
+		},
+		"less_than_5p_social_pressures": {
+			"group": "less_than_5p_but",
+			"emoji": "🙅",
+			"text": "<5% (mostly social pressures)",
+			"description": "The results of the paper suggest that less than 5% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
+			"p_value": false
+		},
+		"less_than_5p": {
+			"group": "less_than_5p",
+			"emoji": "🤏",
+			"text": "Less than 5%",
+			"description": "The results of the paper suggest that less than 5% of transgender people permanently detransition or regret transitioning",
+			"p_value": false
+		},
+		"less_than_10p_social_pressures": {
+			"group": "less_than_10p_but",
+			"emoji": "🤏",
+			"text": "<10% (mostly social pressures)",
+			"description": "The results of the paper suggest that less than 10% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
+			"p_value": false
+		},
+		"less_than_10p": {
+			"group": "less_than_10p",
+			"emoji": "🤨",
+			"text": "Less than 10%",
+			"description": "The results of the paper suggest that less than 10% of transgender people permanently detransition or regret transitioning",
+			"p_value": false
+		},
+		"more_than_10p_social_pressures": {
+			"group": "more_than_10p_but",
+			"emoji": "🤨",
+			"text": ">10% (mostly social pressures)",
+			"description": "The results of the paper suggest that more than 10% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
+			"p_value": false
+		},
+		"more_than_10p": {
+			"group": "more_than_10p",
+			"emoji": "🤔",
+			"text": "More than 10%",
+			"description": "The results of the paper suggest that more than 10% of transgender people permanently detrransition or regret transitioning",
+			"p_value": false
+		},
+		"more_than_20p_social_pressures": {
+			"group": "more_than_20p_but",
+			"emoji": "🤔",
+			"text": ">20% (mostly social pressures)",
+			"description": "The results of the paper suggest that more than 20% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
+			"p_value": false
+		},
+		"more_than_20p": {
+			"group": "more_than_20p",
+			"emoji": "🥴",
+			"text": "More than 20%",
+			"description": "The results of the paper suggest that more than 20% of transgender people permanently detrransition or regret transitioning",
+			"p_value": false
+		},
+		"more_than_50p_social_pressures": {
+			"group": "more_than_50p_but",
+			"emoji": "🥴",
+			"text": ">50% (mostly social pressures)",
+			"description": "The results of the paper suggest that more than 50% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
+			"p_value": false
+		},
+		"more_than_50p": {
+			"group": "more_than_50p",
+			"emoji": "😵‍💫",
+			"text": "More than 50%",
+			"description": "The results of the paper suggest that more than 50% of transgender people permanently detransition or regret transitioning",
+			"p_value": false
+		},
+		"more_than_80p_social_pressures": {
+			"group": "more_than_80p_but",
+			"emoji": "😵‍💫",
+			"text": ">80% (mostly social pressures)",
+			"description": "The results of the paper suggest that more than 80% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
+			"p_value": false
+		},
+		"more_than_80p": {
+			"group": "more_than_80p",
+			"emoji": "🪃",
+			"text": "More than 80%",
+			"description": "The results of the paper suggest that more than 80% of transgender people permanently detransition or regret transitioning",
+			"p_value": false
+		}
+	},
+	"type": {
+		"no_random": true,
+		"no_causation": true,
+		"any": false
+	},
+	"no_blinding": true,
+	"no_sample_size": false,
+	"papers": []
+}
