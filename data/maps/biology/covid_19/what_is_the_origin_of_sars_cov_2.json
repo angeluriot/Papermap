@@ -378,6 +378,36 @@
 			"notes": []
 		},
 		{
+			"uuid": "hNchysefuSNWq7PB",
+			"openalex_id": "W4212967725",
+			"title": "Bat coronaviruses related to SARS-CoV-2 and infectious for human cells",
+			"authors": [
+				"Sarah Temmam",
+				"Khamsing Vongphayloth",
+				"Eduard Baquero",
+				"Sandie Munier"
+			],
+			"year": 2022,
+			"link": "https://doi.org/10.1038/s41586-022-04532-4",
+			"journal": {
+				"id": "S137773608",
+				"retracted": false
+			},
+			"citations": 458,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "Our results therefore support the hypothesis that SARS-CoV-2 could originally result from a recombination of sequences pre-existing in Rhinolophus bats living in the extensive limestone cave systems of Southeast Asia and South China",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
 			"uuid": "RP0jQO6H33z0eIVD",
 			"openalex_id": "W4283329183",
 			"title": "SARS-CoV-2 infection at the Huanan seafood market",
@@ -428,6 +458,36 @@
 				"indirect": true
 			},
 			"quote": "Although there is insufficient evidence to define upstream events, and exact circumstances remain obscure, our analyses indicate that the emergence of SARS-CoV-2 occurred through the live wildlife trade in China and show that the Huanan market was the epicenter of the COVID-19 pandemic",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "Q4fRfZnZKg3DB8WV",
+			"openalex_id": "W4385348066",
+			"title": "Host susceptibility and structural and immunological insight of S proteins of two SARS-CoV-2 closely related bat coronaviruses",
+			"authors": [
+				"Xiuyuan Ou",
+				"Ge Xu",
+				"Pei Li",
+				"Yan Liu"
+			],
+			"year": 2023,
+			"link": "https://doi.org/10.1038/s41421-023-00581-9",
+			"journal": {
+				"id": "S2764388416",
+				"retracted": false
+			},
+			"citations": 37,
+			"results": {
+				"consensus": "towards_animal_transmission",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "Bat CoVs BANAL-20-52 and BANAL-20-236 share over 95% sequence identity with SARS-CoV-2, and both can also use hACE2 for virus entry, indicating that they might possess the risk of zoonotic transmission from bat to human directly or through an intermediate host",
 			"type": "Other",
 			"blinding": "None",
 			"sample_size": "NotApplicable",
