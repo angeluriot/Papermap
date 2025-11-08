@@ -177,6 +177,133 @@
 	"no_sample_size": true,
 	"papers": [
 		{
+			"uuid": "KZHh61FzI9RI1znA",
+			"openalex_id": "W3004280078",
+			"title": "A pneumonia outbreak associated with a new coronavirus of probable bat origin",
+			"authors": [
+				"Peng Zhou",
+				"Xing‐Lou Yang",
+				"Xian-Guang Wang",
+				"Ben Hu"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1038/s41586-020-2012-7",
+			"journal": {
+				"id": "S137773608",
+				"retracted": false
+			},
+			"citations": 22919,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "The close phylogenetic relationship to RaTG13 provides evidence that 2019-nCoV may have originated in bats",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "Yes",
+			"notes": [
+				{
+					"title": "Note about conflict of interest",
+					"description": "Most authors work in the Wuhan Institute of Virology, which is where the virus would have originated from in the case of a lab leak",
+					"impact": "Neutral"
+				}
+			]
+		},
+		{
+			"uuid": "P3da4VpMzQIEx8u8",
+			"openalex_id": "W3048481077",
+			"title": "Might SARS‐CoV‐2 Have Arisen via Serial Passage through an Animal Host or Cell Culture?",
+			"authors": [
+				"Karl Sirotkin",
+				"Dan Sirotkin"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1002/bies.202000091",
+			"journal": {
+				"id": "S27819959",
+				"retracted": false
+			},
+			"citations": 33,
+			"results": {
+				"consensus": "animal_transmission",
+				"conclusion": "lab_leak_but_low_confidence",
+				"indirect": false
+			},
+			"quote": "Taken together, the available evidence does not point definitively toward a natural origin for SARS-CoV-2, rather, much of it is more consistent with what would be found if the novel coronavirus had arisen from serial passage of a “precursor” progenitor virus in a lab, or from bats infecting a commercial mink farm somewhere in China, which would also provide the conditions for serial passage. However, more evidence is required before a conclusive judgement can be made one way or the other",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": [
+				{
+					"title": "Independent researchers",
+					"description": "The authors are not part of any laboratory",
+					"impact": "Negative"
+				}
+			]
+		},
+		{
+			"uuid": "uIzNfloh0a2C2is4",
+			"openalex_id": "W3021839758",
+			"title": "SARS-CoV-2 is well adapted for humans. What does this mean for re-emergence?",
+			"authors": [
+				"Shing H. Zhan",
+				"Benjamin E. Deverman",
+				"Yujia A. Chan"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1101/2020.05.01.073262",
+			"journal": {
+				"id": "NotPublished",
+				"retracted": false
+			},
+			"citations": 37,
+			"results": {
+				"consensus": "NotSpecified",
+				"conclusion": "no_results",
+				"indirect": false
+			},
+			"quote": "The lack of definitive evidence to verify or rule out adaptation in an intermediate host species, humans, or a laboratory, means that we need to take precautions against each scenario to prevent re-emergence",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "pzRsWwyEpmGCgKkU",
+			"openalex_id": "W3103466171",
+			"title": "The genetic structure of SARS‐CoV‐2 does not rule out a laboratory origin",
+			"authors": [
+				"Rossana Segreto",
+				"Yuri Deigin"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1002/bies.202000240",
+			"journal": {
+				"id": "S27819959",
+				"retracted": false
+			},
+			"citations": 115,
+			"results": {
+				"consensus": "animal_transmission",
+				"conclusion": "lab_leak_unlike_literature",
+				"indirect": true
+			},
+			"quote": "the two main SARS-CoV-2 features, (1) the presence of a furin cleavage site missing in other CoVs of the same group and (2) an receptor binding domain (RBD) optimized to bind to human cells might be the result of lab manipulation techniques such as site-directed mutagenesis",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotSpecified",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
 			"uuid": "HQkxkqNj27Vtzx1F",
 			"openalex_id": "W3191809422",
 			"title": "The origins of SARS-CoV-2: A critical review",
