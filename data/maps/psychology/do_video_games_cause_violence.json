@@ -1,0 +1,166 @@
+{
+	"draft": true,
+	"emoji": "🎮",
+	"question": {
+		"short": "Do video games cause violence?",
+		"long": "Does playing video games lead to violent behavior?"
+	},
+	"description": "Results from studies evaluating the impact of video games on violent behavior.",
+	"tags": [
+		"video games",
+		"gaming",
+		"violence",
+		"behavior"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on the effects of video games on violent behavior",
+			"color": "Gray",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"no": {
+			"emoji": "👎",
+			"text": "No",
+			"description": "The literature suggests that video games do not cause violent behavior",
+			"color": "Red",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes"
+			]
+		},
+		"towards_no": {
+			"emoji": "⬅️",
+			"text": "Towards no",
+			"description": "The literature suggests that video games probably don't cause violent behavior, but more research is needed",
+			"color": "Red1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"towards_yes": {
+			"emoji": "➡️",
+			"text": "Towards yes",
+			"description": "The literature suggests that video games may cause violent behavior, but more research is needed",
+			"color": "Green1H",
+			"unavailable": [
+				"no_unlike_literature",
+				"yes_unlike_literature"
+			]
+		},
+		"yes": {
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The literature suggests that video games cause violent behavior",
+			"color": "Green",
+			"unavailable": [
+				"no",
+				"yes_unlike_literature"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"no": {
+			"text": "No",
+			"color": "Red"
+		},
+		"no_but": {
+			"text": "No but...",
+			"color": "Red1H"
+		},
+		"maybe": {
+			"text": "Maybe",
+			"color": "Yellow"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"yes_but": {
+			"text": "Yes but...",
+			"color": "Green1H"
+		},
+		"yes": {
+			"text": "Yes",
+			"color": "Green"
+		}
+	},
+	"conclusions": {
+		"no": {
+			"group": "no",
+			"emoji": "👎",
+			"text": "No",
+			"description": "The results of the paper show no significant effect of the video games evaluated on violent behavior",
+			"p_value": false
+		},
+		"no_unlike_literature": {
+			"group": "no_but",
+			"emoji": "↩️",
+			"text": "No unlike literature",
+			"description": "The results of the paper show no significant effect of the video games evaluated on violent behavior, unlike what is reported in the literature",
+			"p_value": false
+		},
+		"no_but_mixed_results": {
+			"group": "no_but",
+			"emoji": "🔀",
+			"text": "No but mixed results",
+			"description": "The results of the paper show no significant overall effect of the video games evaluated on violent behavior, but there are mixed results in specific contexts",
+			"p_value": false
+		},
+		"not_more_than_other_games": {
+			"group": "no_but",
+			"emoji": "🟰",
+			"text": "Not more than other games",
+			"description": "The results of the paper show that the video games evaluated do not cause more violent behavior than other types of games (board games, sports, ...)",
+			"p_value": false
+		},
+		"maybe": {
+			"group": "maybe",
+			"emoji": "🤷",
+			"text": "Maybe",
+			"description": "The results of the paper suggest that the video games evaluated might have an effect on violent behavior, but the evidence is not strong enough to conclude",
+			"p_value": false
+		},
+		"yes_but_low_confidence": {
+			"group": "yes_but",
+			"emoji": "🤔",
+			"text": "Yes but low confidence",
+			"description": "The results of the paper suggest that the video games evaluated may cause violent behavior, but the evidence is not strong",
+			"p_value": true
+		},
+		"yes_but_small_effect": {
+			"group": "yes_but",
+			"emoji": "🤏",
+			"text": "Yes but small effect",
+			"description": "The results of the paper suggest that the video games evaluated may have a small effect on violent behavior",
+			"p_value": true
+		},
+		"yes_unlike_literature": {
+			"group": "yes_but",
+			"emoji": "↪️",
+			"text": "Yes unlike literature",
+			"description": "The results of the paper suggest that the video games evaluated may cause violent behavior, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"yes": {
+			"group": "yes",
+			"emoji": "👍",
+			"text": "Yes",
+			"description": "The results of the paper suggest that the video games evaluated cause violent behavior",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_random": false,
+		"no_causation": false,
+		"any": false
+	},
+	"no_blinding": true,
+	"no_sample_size": false,
+	"papers": []
+}

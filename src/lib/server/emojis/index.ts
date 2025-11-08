@@ -79,6 +79,7 @@ export const EMOJI_NAMES = {
 
 	// Activity
 	'🏆': 'trophy',
+	'🎮': 'video-game',
 	'🎲': 'game-die',
 	'🧩': 'puzzle-piece',
 
