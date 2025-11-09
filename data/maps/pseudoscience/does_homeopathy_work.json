@@ -1,21 +1,24 @@
 {
 	"draft": true,
-	"emoji": "🫢",
+	"emoji": "🍶",
 	"question": {
-		"short": "Do COVID-19 vaccines reduce transmission?",
-		"long": "Do COVID-19 vaccines reduce transmission?"
+		"short": "Does homeopathy work?",
+		"long": "Is homeopathy an effective treatment beyond the placebo effect?"
 	},
-	"description": "Results from studies evaluating the impact of COVID-19 vaccines on transmission.",
+	"description": "Results from studies evaluating the efficacy of homeopathic treatments compared to placebo",
 	"tags": [
-		"COVID-19",
-		"vaccines",
-		"transmission"
+		"homeopathy",
+		"pseudoscience",
+		"alternative medicine",
+		"treatment",
+		"efficacy",
+		"placebo"
 	],
 	"consensus": {
 		"no_consensus": {
 			"emoji": "🤷",
 			"text": "No consensus yet",
-			"description": "The literature has not yet reached a consensus on the effects of COVID-19 vaccines on transmission",
+			"description": "The literature has not yet reached a consensus on the effects of homeopathy",
 			"color": "Gray",
 			"unavailable": [
 				"no_unlike_literature",
@@ -25,7 +28,7 @@
 		"no": {
 			"emoji": "👎",
 			"text": "No",
-			"description": "The literature suggests that COVID-19 vaccines do not reduce transmission",
+			"description": "The literature suggests that homeopathy does not have any effect beyond placebo",
 			"color": "Red",
 			"unavailable": [
 				"no_unlike_literature",
@@ -35,7 +38,7 @@
 		"towards_no": {
 			"emoji": "⬅️",
 			"text": "Towards no",
-			"description": "The literature suggests that COVID-19 vaccines probably don't reduce transmission, but more research is needed",
+			"description": "The literature suggests that homeopathy probably does not have an effect beyond placebo, but more research is cited",
 			"color": "Red1H",
 			"unavailable": [
 				"no_unlike_literature",
@@ -45,7 +48,7 @@
 		"towards_yes": {
 			"emoji": "➡️",
 			"text": "Towards yes",
-			"description": "The literature suggests that COVID-19 vaccines likely reduce transmission, but more research is needed",
+			"description": "The literature suggests that homeopathy might have an effect beyond placebo, but more research is needed",
 			"color": "Green1H",
 			"unavailable": [
 				"no_unlike_literature",
@@ -55,7 +58,7 @@
 		"yes": {
 			"emoji": "👍",
 			"text": "Yes",
-			"description": "The literature suggests that COVID-19 vaccines reduce transmission",
+			"description": "The literature suggests that homeopathy is an effective treatment beyond placebo",
 			"color": "Green",
 			"unavailable": [
 				"no",
@@ -94,56 +97,56 @@
 			"group": "no",
 			"emoji": "👎",
 			"text": "No",
-			"description": "The results of the paper show no significant effect of the COVID-19 vaccines evaluated on transmission",
+			"description": "The results of the paper show no significant effect of homeopathy beyond placebo",
 			"p_value": false
 		},
 		"no_unlike_literature": {
 			"group": "no_but",
 			"emoji": "↩️",
 			"text": "No unlike literature",
-			"description": "The results of the paper show no significant effect of the COVID-19 vaccines evaluated on transmission, unlike what is reported in the literature",
+			"description": "The results of the paper show no significant effect of homeopathy beyond placebo, unlike what is reported in the literature",
 			"p_value": false
 		},
 		"no_but_mixed_results": {
 			"group": "no_but",
 			"emoji": "🔀",
 			"text": "No but mixed results",
-			"description": "The results of the paper show no significant overall effect of the COVID-19 vaccines evaluated on transmission, but there are mixed results in specific cases",
+			"description": "The results of the paper show no significant overall effect of homeopathy beyond placebo, but there are mixed results in specific cases",
 			"p_value": false
 		},
 		"maybe": {
 			"group": "maybe",
 			"emoji": "🤷",
 			"text": "Maybe",
-			"description": "The results of the paper suggest that the COVID-19 vaccines evaluated might have an effect on transmission, but the evidence is not strong enough to conclude",
+			"description": "The results of the paper suggest that homeopathy might have an effect beyond placebo, but the evidence is not strong enough to conclude",
 			"p_value": false
 		},
 		"yes_but_low_confidence": {
 			"group": "yes_but",
 			"emoji": "🤔",
 			"text": "Yes but low confidence",
-			"description": "The results of the paper suggest that the COVID-19 vaccines evaluated may reduce transmission, but the evidence is not strong",
+			"description": "The results of the paper suggest that homeopathy may have an effect beyond placebo, but the evidence is not strong",
 			"p_value": true
 		},
 		"yes_but_small_effect": {
 			"group": "yes_but",
 			"emoji": "🤏",
 			"text": "Yes but small effect",
-			"description": "The results of the paper suggest that the COVID-19 vaccines evaluated may have a small effect on transmission",
+			"description": "The results of the paper suggest that homeopathy may have a small effect beyond placebo",
 			"p_value": true
 		},
 		"yes_unlike_literature": {
 			"group": "yes_but",
 			"emoji": "↪️",
 			"text": "Yes unlike literature",
-			"description": "The results of the paper suggest that the COVID-19 vaccines evaluated may reduce transmission, unlike what is reported in the literature",
+			"description": "The results of the paper suggest that homeopathy may have an effect beyond placebo, unlike what is reported in the literature",
 			"p_value": true
 		},
 		"yes": {
 			"group": "yes",
 			"emoji": "👍",
 			"text": "Yes",
-			"description": "The results of the paper suggest that the COVID-19 vaccines evaluated reduce transmission",
+			"description": "The results of the paper suggest that homeopathy is an effective treatment beyond placebo",
 			"p_value": true
 		}
 	},

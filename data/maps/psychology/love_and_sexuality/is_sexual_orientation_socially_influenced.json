@@ -112,7 +112,7 @@
 			"group": "no_but",
 			"emoji": "🔀",
 			"text": "No but mixed results",
-			"description": "The results of the paper show no significant overall effect of social and cultural factors on sexual orientation, but there are mixed results on specific cases",
+			"description": "The results of the paper show no significant overall effect of social and cultural factors on sexual orientation, but there are mixed results in specific cases",
 			"p_value": false
 		},
 		"maybe": {

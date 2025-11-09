@@ -110,7 +110,7 @@
 			"group": "no_but",
 			"emoji": "🔀",
 			"text": "No but mixed results",
-			"description": "The results of the paper show no significant overall effect of the processed meat evaluated on the risk of developing cancer, but there are mixed results on specific cases",
+			"description": "The results of the paper show no significant overall effect of the processed meat evaluated on the risk of developing cancer, but there are mixed results in specific cases",
 			"p_value": false
 		},
 		"maybe": {
