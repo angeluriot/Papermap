@@ -1,0 +1,209 @@
+{
+	"draft": true,
+	"emoji": "🚗",
+	"question": {
+		"short": "Which has lower emissions: gas cars or electric cars?",
+		"long": "Which has lower greenhouse gas emissions: gas cars or electric cars?"
+	},
+	"description": "Results from studies comparing greenhouse gas emissions of gasoline-powered cars and electric vehicles (over their full lifecycle).",
+	"tags": [
+		"environment",
+		"greenhouse gas",
+		"emissions",
+		"CO2",
+		"gas cars",
+		"gasoline-powered cars",
+		"electric cars",
+		"electric vehicles",
+		"lifecycle"
+	],
+	"consensus": {
+		"no_consensus": {
+			"emoji": "🤷",
+			"text": "No consensus yet",
+			"description": "The literature has not yet reached a consensus on whether gas cars or electric cars have lower greenhouse gas emissions",
+			"color": "Gray",
+			"unavailable": [
+				"gas_cars_unlike_literature",
+				"electric_cars_unlike_literature"
+			]
+		},
+		"gas_cars": {
+			"emoji": "⛽",
+			"text": "Gas cars",
+			"description": "The literature suggests that gas cars have lower greenhouse gas emissions than electric cars",
+			"color": "Red3Q",
+			"unavailable": [
+				"gas_cars_unlike_literature",
+				"electric_cars"
+			]
+		},
+		"towards_gas_cars": {
+			"emoji": "⬅️",
+			"text": "Towards gas cars",
+			"description": "The literature suggests that gas cars may have lower greenhouse gas emissions than electric cars, but more research is needed",
+			"color": "Red1Q",
+			"unavailable": [
+				"gas_cars_unlike_literature",
+				"electric_cars_unlike_literature"
+			]
+		},
+		"no_difference": {
+			"emoji": "🟰",
+			"text": "No difference",
+			"description": "The literature suggests that greenhouse gas emissions are similar for gas and electric cars",
+			"color": "Gray",
+			"unavailable": [
+				"gas_cars_unlike_literature",
+				"electric_cars_unlike_literature"
+			]
+		},
+		"towards_electric_cars": {
+			"emoji": "➡️",
+			"text": "Towards electric cars",
+			"description": "The literature suggests that electric cars may have lower greenhouse gas emissions than gas cars, but more research is needed",
+			"color": "Blue1Q",
+			"unavailable": [
+				"gas_cars_unlike_literature",
+				"electric_cars_unlike_literature"
+			]
+		},
+		"electric_cars": {
+			"emoji": "⚡️",
+			"text": "Electric cars",
+			"description": "The literature suggests that electric cars have lower greenhouse gas emissions than gas cars",
+			"color": "Blue3Q",
+			"unavailable": [
+				"gas_cars",
+				"electric_cars_unlike_literature"
+			]
+		}
+	},
+	"conclusion_groups": {
+		"gas_cars": {
+			"text": "Gas cars",
+			"color": "Red3Q"
+		},
+		"gas_cars_but": {
+			"text": "Gas cars but...",
+			"color": "Red1Q"
+		},
+		"inconclusive": {
+			"text": "Inconclusive",
+			"color": "Gray"
+		},
+		"more_research_needed": {
+			"text": "More research needed",
+			"color": "Gray"
+		},
+		"electric_cars_but": {
+			"text": "Electric cars but...",
+			"color": "Blue1Q"
+		},
+		"electric_cars": {
+			"text": "Electric cars",
+			"color": "Blue3Q"
+		}
+	},
+	"conclusions": {
+		"gas_cars": {
+			"group": "gas_cars",
+			"emoji": "⛽",
+			"text": "Gas cars",
+			"description": "The results of the paper suggest that gas cars have lower greenhouse gas emissions than electric cars",
+			"p_value": true
+		},
+		"gas_cars_unlike_literature": {
+			"group": "gas_cars_but",
+			"emoji": "↩️",
+			"text": "Gas cars unlike literature",
+			"description": "The results of the paper suggest that gas cars may have lower greenhouse gas emissions than electric cars, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"gas_cars_but_slight_difference": {
+			"group": "gas_cars_but",
+			"emoji": "🤏",
+			"text": "Gas cars but slight difference",
+			"description": "The results of the paper suggest that gas cars may have slightly lower greenhouse gas emissions than electric cars",
+			"p_value": true
+		},
+		"gas_cars_but_low_confidence": {
+			"group": "gas_cars_but",
+			"emoji": "🤔",
+			"text": "Gas cars but low confidence",
+			"description": "The results of the paper suggest that gas cars may have lower greenhouse gas emissions than electric cars, but the evidence is not strong",
+			"p_value": true
+		},
+		"gas_cars_but_mixed": {
+			"group": "gas_cars_but",
+			"emoji": "🔀",
+			"text": "Gas cars but mixed results",
+			"description": "The results of the paper suggest that gas cars have generally lower greenhouse gas emissions than electric cars, except in certain cases",
+			"p_value": true
+		},
+		"mixed": {
+			"group": "inconclusive",
+			"emoji": "🔀",
+			"text": "Mixed results",
+			"description": "The results of the paper cannot determine which vehicle type has lower greenhouse gas emissions",
+			"p_value": false
+		},
+		"no_difference": {
+			"group": "inconclusive",
+			"emoji": "🟰",
+			"text": "No difference",
+			"description": "The results of the paper suggest that gas and electric cars have similar greenhouse gas emissions",
+			"p_value": false
+		},
+		"no_results": {
+			"group": "inconclusive",
+			"emoji": "🤷",
+			"text": "No results",
+			"description": "There is not enough evidence to determine which vehicle type has lower greenhouse gas emissions",
+			"p_value": false
+		},
+		"electric_cars_but_mixed": {
+			"group": "electric_cars_but",
+			"emoji": "🔀",
+			"text": "Electric cars but mixed results",
+			"description": "The results of the paper suggest that electric cars have generally lower greenhouse gas emissions than gas cars, except in certain cases",
+			"p_value": true
+		},
+		"electric_cars_but_low_confidence": {
+			"group": "electric_cars_but",
+			"emoji": "🤔",
+			"text": "Electric cars but low confidence",
+			"description": "The results of the paper suggest that electric cars may have lower greenhouse gas emissions than gas cars, but the evidence is not strong",
+			"p_value": true
+		},
+		"electric_cars_but_slight_difference": {
+			"group": "electric_cars_but",
+			"emoji": "🤏",
+			"text": "Electric cars but slight difference",
+			"description": "The results of the paper suggest that electric cars have slightly lower greenhouse gas emissions than gas cars",
+			"p_value": true
+		},
+		"electric_cars_unlike_literature": {
+			"group": "electric_cars_but",
+			"emoji": "↪️",
+			"text": "Electric cars unlike literature",
+			"description": "The results of the paper suggest that electric cars may have lower greenhouse gas emissions than gas cars, unlike what is reported in the literature",
+			"p_value": true
+		},
+		"electric_cars": {
+			"group": "electric_cars",
+			"emoji": "⚡️",
+			"text": "Electric cars",
+			"description": "The results of the paper suggest that electric cars have lower greenhouse gas emissions than gas cars",
+			"p_value": true
+		}
+	},
+	"type": {
+		"no_random": true,
+		"no_causation": true,
+		"any": true
+	},
+	"no_blinding": true,
+	"no_sample_size": true,
+	"papers": []
+}

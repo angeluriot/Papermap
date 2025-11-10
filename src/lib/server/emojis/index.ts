@@ -67,6 +67,7 @@ export const EMOJI_NAMES = {
 	'🌾': 'sheaf-of-rice',
 	'🌈': 'rainbow',
 	'☔': 'umbrella-with-rain-drops',
+	'⚡️': 'high-voltage',
 
 	// Food & Drink
 	'🍅': 'tomato',
@@ -91,6 +92,8 @@ export const EMOJI_NAMES = {
 	'🌐': 'globe-with-meridians',
 	'🏠': 'house',
 	'🏫': 'school',
+	'🚗': 'automobile',
+	'⛽': 'fuel-pump',
 
 	// Objects
 	'⏳': 'hourglass-not-done',
