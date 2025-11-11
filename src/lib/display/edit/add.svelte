@@ -179,17 +179,15 @@
 		type === ReviewedPapersType.DiverseHumanStudies ||
 		type === ReviewedPapersType.DiverseTypes
 	));
-	let only_diverse_blinding = $derived(
-		blinding_available && type !== PaperType.RandomizedControlledTrial,
-	);
-	let sample_size_available = $derived(
-		!map.no_sample_size && type !== PaperType.InVitroStudy,
-	);
+	let only_diverse_blinding = $derived(blinding_available && type !== PaperType.RandomizedControlledTrial);
+	let sample_size_available = $derived(!map.no_sample_size && type !== PaperType.InVitroStudy);
+	let sample_size_optional = $derived(sample_size_available && (type === PaperType.Other || !type_available));
 	let p_value_available = $derived(
 		(conclusion === '' || map.conclusions[conclusion].p_value) &&
 			review_type !== ReviewType.NarrativeReview &&
 			review_type !== ReviewType.SystematicReview,
 	);
+	let p_value_optional = $derived(p_value_available && (type === PaperType.Other || !type_available));
 
 	$effect(() =>
 	{
@@ -258,7 +256,7 @@
 		if (sample_size !== null)
 			sample_size_missing_reason = '';
 
-		if (type !== PaperType.Other && sample_size_missing_reason === MissingReason.NotApplicable)
+		if (!sample_size_optional && sample_size_missing_reason === MissingReason.NotApplicable)
 			sample_size_missing_reason = '';
 
 		if (!p_value_available)
@@ -276,7 +274,7 @@
 				p_value_prefix = 'equal';
 		}
 
-		if (type !== PaperType.Other && p_value_missing_reason === MissingReason.NotApplicable)
+		if (!p_value_optional && p_value_missing_reason === MissingReason.NotApplicable)
 			p_value_missing_reason = '';
 	});
 
@@ -309,12 +307,12 @@
 				(sample_size !== null && sample_size > 0 && Number.isInteger(sample_size)) ||
 				(sample_size === null && sample_size_missing_reason !== '')
 			)) &&
-			(!sample_size_available || type === PaperType.Other || sample_size_missing_reason !== MissingReason.NotApplicable) &&
+			(!sample_size_available || sample_size_optional || sample_size_missing_reason !== MissingReason.NotApplicable) &&
 			(!p_value_available || (
 				(p_value !== null && p_value_prefix !== '' && p_value > 0 && p_value < 1) ||
 				(p_value === null && p_value_missing_reason !== '')
 			)) &&
-			(!p_value_available || type === PaperType.Other || p_value_missing_reason !== MissingReason.NotApplicable) &&
+			(!p_value_available || p_value_optional || p_value_missing_reason !== MissingReason.NotApplicable) &&
 			conflict_of_interest !== ''
 		);
 	}
@@ -953,7 +951,7 @@
 				<select bind:value={sample_size_missing_reason}>
 					<option value="" disabled selected hidden></option>
 					<option value={MissingReason.NotSpecified}>Not specified</option>
-					{#if type === PaperType.Other}
+					{#if sample_size_optional}
 						<option value={MissingReason.NotApplicable}>Not applicable</option>
 					{/if}
 					<option value={MissingReason.NoAccess}>No access</option>
@@ -979,7 +977,7 @@
 				<select bind:value={p_value_missing_reason}>
 					<option value="" disabled selected hidden></option>
 					<option value={MissingReason.NotSpecified}>Not specified</option>
-					{#if type === PaperType.Other}
+					{#if p_value_optional}
 						<option value={MissingReason.NotApplicable}>Not applicable</option>
 					{/if}
 					<option value={MissingReason.NoAccess}>No access</option>

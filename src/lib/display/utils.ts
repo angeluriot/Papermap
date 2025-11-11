@@ -47,15 +47,16 @@ export function float_to_text(number: number): string
 
 export function cut_in_half(text: string): string[]
 {
+	const temp_text = text.replaceAll('...', '§').trim();
 	const cuts: { result: string[], diff: number }[] = [];
 
-	for (let i = 0; i < text.length; i++)
-		if (text[i] === ' ')
-			cuts.push({ result: [text.slice(0, i), text.slice(i + 1)], diff: Math.abs(i - (text.length - i)) });
+	for (let i = 0; i < temp_text.length; i++)
+		if (temp_text[i] === ' ')
+			cuts.push({ result: [temp_text.slice(0, i), temp_text.slice(i + 1)], diff: Math.abs(i - (temp_text.length - i)) });
 
 	cuts.sort((a, b) => a.diff - b.diff);
 
-	return cuts[0].result;
+	return cuts[0].result.map(part => part.replaceAll('§', '...').trim());
 }
 
 
