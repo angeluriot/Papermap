@@ -211,7 +211,7 @@
 		"less_than_2p_social_pressures": {
 			"group": "less_than_2p_but",
 			"emoji": "🔒",
-			"text": "<2% (mostly social pressures)",
+			"text": "<2% but mostly social pressures",
 			"description": "The results of the paper suggest that less than 2% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
 			"p_value": false
 		},
@@ -225,7 +225,7 @@
 		"less_than_5p_social_pressures": {
 			"group": "less_than_5p_but",
 			"emoji": "🙅",
-			"text": "<5% (mostly social pressures)",
+			"text": "<5% but mostly social pressures",
 			"description": "The results of the paper suggest that less than 5% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
 			"p_value": false
 		},
@@ -239,7 +239,7 @@
 		"less_than_10p_social_pressures": {
 			"group": "less_than_10p_but",
 			"emoji": "🤏",
-			"text": "<10% (mostly social pressures)",
+			"text": "<10% but mostly social pressures",
 			"description": "The results of the paper suggest that less than 10% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
 			"p_value": false
 		},
@@ -253,7 +253,7 @@
 		"more_than_10p_social_pressures": {
 			"group": "more_than_10p_but",
 			"emoji": "🤨",
-			"text": ">10% (mostly social pressures)",
+			"text": ">10% but mostly social pressures",
 			"description": "The results of the paper suggest that more than 10% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
 			"p_value": false
 		},
@@ -267,7 +267,7 @@
 		"more_than_20p_social_pressures": {
 			"group": "more_than_20p_but",
 			"emoji": "🤔",
-			"text": ">20% (mostly social pressures)",
+			"text": ">20% but mostly social pressures",
 			"description": "The results of the paper suggest that more than 20% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
 			"p_value": false
 		},
@@ -281,7 +281,7 @@
 		"more_than_50p_social_pressures": {
 			"group": "more_than_50p_but",
 			"emoji": "🥴",
-			"text": ">50% (mostly social pressures)",
+			"text": ">50% but mostly social pressures",
 			"description": "The results of the paper suggest that more than 50% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
 			"p_value": false
 		},
@@ -295,7 +295,7 @@
 		"more_than_80p_social_pressures": {
 			"group": "more_than_80p_but",
 			"emoji": "😵‍💫",
-			"text": ">80% (mostly social pressures)",
+			"text": ">80% but mostly social pressures",
 			"description": "The results of the paper suggest that more than 80% of transgender people permanently detransition or regret transitioning, but most commonly due to social pressures",
 			"p_value": false
 		},
