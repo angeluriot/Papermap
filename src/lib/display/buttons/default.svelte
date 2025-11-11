@@ -96,7 +96,7 @@
 
 	.download-button, .edit-button-container
 	{
-		filter: drop-shadow(0em 0.1em 1.4em #00008041);
+		filter: drop-shadow(0em 0.1em 1.4em var(--shadow-medium));
 		transform: translateZ(0);
 	}
 
@@ -149,7 +149,7 @@
 		display: none;
 		left: 50%;
 		top: 50%;
-		filter: drop-shadow(0 0.1em 1em #00008036);
+		filter: drop-shadow(0 0.1em 1em var(--shadow-light));
 		transform: translateZ(0);
 		z-index: 100;
 	}

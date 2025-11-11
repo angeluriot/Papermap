@@ -1,8 +1,56 @@
 @import 'tailwindcss';
 
+:root
+{
+	--primary: #f3f4ff;
+	--secondary: white;
+	--hover: #f4f5fa;
+	--text-primary: #303037;
+	--text-secondary: #9b9aa7;
+	--point-color: #3131ff1e;
+	--shadow-light: #00008036;
+	--shadow-medium: #00008041;
+	--shadow-dark: #00022d;
+	--popup-shadow: #01012640;
+	--popup-bg-overlay: #01012629;
+	--input-border: #dbdbe8;
+	--input-border-focus: rgb(173, 173, 194);
+	--input-bg: #fbfbfd;
+	--input-text: rgb(77, 77, 92);
+	--input-placeholder: rgb(173, 173, 194);
+	--disabled-bg: #f0f0f7;
+	--disabled-border: #d3d4e8;
+	--disabled-text: #9b9bb7;
+}
+
+.dark
+{
+	--primary: oklch(0.141 0.005 285.823);
+	--secondary: oklch(0.141 0.005 285.823);
+	--hover: oklch(0.18 0.01 285.823);
+	--text-primary: oklch(0.985 0 0);
+	--text-secondary: oklch(0.7 0 0);
+	--point-color: oklch(0.25 0.05 285.823);
+	--shadow-light: rgba(49, 49, 255, 0.2);
+	--shadow-medium: rgba(49, 49, 255, 0.25);
+	--shadow-dark: rgba(0, 2, 45, 0.8);
+	--popup-shadow: rgba(0, 0, 0, 0.5);
+	--popup-bg-overlay: rgba(0, 0, 0, 0.4);
+	--input-border: oklch(0.3 0.01 285.823);
+	--input-border-focus: oklch(0.4 0.02 285.823);
+	--input-bg: oklch(0.16 0.005 285.823);
+	--input-text: oklch(0.85 0 0);
+	--input-placeholder: oklch(0.5 0 0);
+	--disabled-bg: oklch(0.2 0.005 285.823);
+	--disabled-border: oklch(0.25 0.01 285.823);
+	--disabled-text: oklch(0.5 0 0);
+}
+
 html, body
 {
-	background-color: #f3f4ff;
+	background-color: var(--primary);
+	color: var(--text-primary);
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 *:focus
@@ -77,4 +125,25 @@ html, body
 .flex-center-col
 {
 	@apply flex flex-col justify-center items-center;
+}
+
+.bg-card
+{
+	background-color: white;
+}
+
+.dark .bg-card
+{
+	background-color: var(--secondary);
+}
+
+input, textarea, select
+{
+	background-color: var(--secondary);
+	color: var(--text-primary);
+}
+
+input::placeholder, textarea::placeholder
+{
+	color: var(--text-secondary);
 }

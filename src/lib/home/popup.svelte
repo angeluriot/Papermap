@@ -108,7 +108,7 @@
 
 <div class="popup-container absolute left-0 top-0 w-full h-full" style="display: {shown ? 'block' : 'none'};">
 	<div
-		class="background absolute left-0 top-0 w-full h-full bg-[#01012629]"
+		class="background absolute left-0 top-0 w-full h-full"
 		onclick={hide} onkeydown={null} role="button" tabindex={0}
 	></div>
 	<div class="popup absolute flex-center-col overflow-hidden">
@@ -188,15 +188,20 @@
 		z-index: 10000;
 	}
 
+	.background
+	{
+		background-color: var(--popup-bg-overlay);
+	}
+
 	.popup
 	{
 		z-index: 10001;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		background-color: white;
+		background-color: var(--secondary);
 		border-radius: 1.8em;
-		box-shadow: 0em 0.3em 5em #01012640;
+		box-shadow: 0em 0.3em 5em var(--popup-shadow);
 		gap: 1.5em;
 		--padding-size: 3.5em;
 		padding: calc(var(--padding-size) * 0.85) var(--padding-size) var(--padding-size) var(--padding-size);
@@ -234,7 +239,7 @@
 
 	h1
 	{
-		color: #303037;
+		color: var(--text-primary);
 		font-size: 1.25em;
 		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 500;
@@ -250,7 +255,7 @@
 		flex-direction: column;
 		justify-content: start;
 		align-items: start;
-		color: #303037;
+		color: var(--text-primary);
 	}
 
 	.input .label
@@ -280,15 +285,15 @@
 	.input input, .input textarea
 	{
 		width: 100%;
-		border-color: #dbdbe8;
+		border-color: var(--input-border);
 		border-width: 0.145em;
-		background-color: #fbfbfd;
+		background-color: var(--input-bg);
 		padding: 0.4em 0.6em;
 		font-family: Satoshi-Variable, sans-serif;
 		font-weight: 465;
 		line-height: 1.5em;
 		border-radius: 0.5em;
-		color: rgb(77, 77, 92);
+		color: var(--input-text);
 	}
 
 	.input textarea
@@ -300,13 +305,13 @@
 	.input input:focus, .input textarea:focus
 	{
 		outline: none;
-		border-color: rgb(173, 173, 194);
+		border-color: var(--input-border-focus);
 		border-width: 0.145em;
 	}
 
 	.input input::placeholder, .input textarea::placeholder
 	{
-		color: rgb(173, 173, 194);
+		color: var(--input-placeholder);
 		pointer-events: none;
 		user-select: none;
 		-moz-user-select: none;
@@ -365,10 +370,10 @@
 	.disabled
 	{
 		pointer-events: none;
-		background-color: #f0f0f7;
+		background-color: var(--disabled-bg);
 		border-style: dashed;
-		border-color: #d3d4e8;
-		color: #9b9bb7;
+		border-color: var(--disabled-border);
+		color: var(--disabled-text);
 	}
 
 	.loading

@@ -2,8 +2,7 @@
 	import type { PageProps } from './$types';
 	import Background from '$lib/list/background.svelte';
 	import Maps from '$lib/list/maps.svelte';
-	import Home from '$lib/svgs/home.svg';
-	import Random from '$lib/svgs/random.svg';
+	import NavLinks from '$lib/nav-links.svelte';
 	import { constants as C } from '$lib/utils';
 
 	const { data }: PageProps = $props();
@@ -53,24 +52,17 @@
 	<meta name="twitter:url" content={page_url}/>
 </svelte:head>
 
-<div class="page-container absolute flex flex-col justify-start items-center w-full h-full overflow-x-hidden bg-[#f3f4ff]">
+<div class="page-container absolute flex flex-col justify-start items-center w-full h-full overflow-x-hidden" style="background-color: var(--primary);">
 	<div class="absolute z-0">
 		<Background {width} {height} {page_height}/>
 	</div>
 	<div class="main flex-center-col z-[100]" bind:clientHeight={page_height}>
 		<div class="header w-full flex flex-row justify-between items-start">
 			<div class="title flex-center-row">
-				{@render emoji('📖')}
+				{@render emoji('ðŸ“–')}
 				<h1>All maps</h1>
 			</div>
-			<div class="links flex-center-row">
-				<a href="/maps/random">
-					<img src={Random} alt="Random map" title="Random map" class="img-unselectable"/>
-				</a>
-				<a href="/">
-					<img src={Home} alt="Home" title="Home" class="img-unselectable"/>
-				</a>
-			</div>
+			<NavLinks />
 		</div>
 		<div class="list flex flex-col justify-start items-start w-full">
 			{#each data.maps_structure as node}
@@ -101,7 +93,7 @@
 		font-weight: 550;
 		line-height: 1.25em;
 		text-wrap: nowrap;
-		color: #303037;
+		color: var(--text-primary);
 		gap: 0.3em;
 		margin-top: 0.5em;
 		margin-bottom: -0.2em;
@@ -110,32 +102,6 @@
 	.title
 	{
 		gap: 0.3em;
-	}
-
-	.links
-	{
-		gap: 0.6em;
-		margin-top: -0.2em;
-		filter: drop-shadow(0em 0.1em 0.5em #00008036);
-		transform: translateZ(0);
-	}
-
-	.links img
-	{
-		width: 1.9em;
-		height: 1.9em;
-		transition: transform 0.2s ease-in-out;
-	}
-
-	.links img:hover
-	{
-		transform: scale(1.06);
-	}
-
-	.links img:active
-	{
-		transition: none;
-		transform: scale(1);
 	}
 
 	@media screen and (max-width: 375px)

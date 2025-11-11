@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { BACKGROUND_COLOR, POINTS_COLOR } from '$lib/display/graph/background';
 	import { clamp } from '$lib/utils';
 
 	const { width, height, page_height }: { width: number, height: number, page_height: number } = $props();
@@ -18,7 +17,7 @@
 		if (page_height + 90 <= height)
 			dots_height = `${height - 10}px`;
 
-		const background_image = `radial-gradient(circle ${dots_size}px, ${POINTS_COLOR}1e 0%, ${POINTS_COLOR}1e 80%, transparent 100%)`;
+		const background_image = `radial-gradient(circle ${dots_size}px, var(--point-color) 0%, var(--point-color) 80%, transparent 100%)`;
 
 		return `background-size: ${background_size}; width: ${dots_width}; height: ${dots_height}; background-image: ${background_image};`;
 	});
@@ -26,7 +25,7 @@
 
 <div class="main-background absolute left-0 top-0 w-full h-full">
 	<div class="dots absolute w-full h-full z-[2]" style="{dots_style}"></div>
-	<div class="back-color absolute left-0 top-0 w-full h-full z-[1]" style="background-color: {BACKGROUND_COLOR};"></div>
+	<div class="back-color absolute left-0 top-0 w-full h-full z-[1]"></div>
 </div>
 
 <style>

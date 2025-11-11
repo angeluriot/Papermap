@@ -74,12 +74,12 @@
 
 <div class="info absolute cursor-auto" bind:this={info}>
 	<div
-		class="arrow absolute bg-white"
+		class="arrow absolute bg-card"
 		style="top: {arrow_top}; transform: rotate({arrow_rotation}deg);"
 	>
 	</div>
 	<div
-		class="info-container absolute bg-white" bind:clientHeight={info_height}
+		class="info-container absolute bg-card" bind:clientHeight={info_height}
 		style="left: {info_left}; top: {info_top}; padding: {journal ? '1.3em 1.5em 1.1em 1.5em' : '1em 1.2em 1.1em 1.2em'};"
 	>
 		{#if text !== undefined}
@@ -100,7 +100,7 @@
 <style>
 	.info
 	{
-		filter: drop-shadow(0 0.1em 1em #00008036);
+		filter: drop-shadow(0 0.1em 1em var(--shadow-light));
 		transform: translateZ(0);
 		z-index: 1000;
 		left: 50%;
