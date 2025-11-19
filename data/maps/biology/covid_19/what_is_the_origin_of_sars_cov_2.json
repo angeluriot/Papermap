@@ -1,5 +1,5 @@
 {
-	"draft": true,
+	"draft": false,
 	"emoji": "🦇",
 	"question": {
 		"short": "What is the origin of the SARS-CoV-2 virus?",
@@ -177,7 +177,37 @@
 	"no_sample_size": true,
 	"papers": [
 		{
-			"uuid": "KZHh61FzI9RI1znA",
+			"uuid": "BgG0dkYouWIn1VQ4",
+			"openalex_id": "W3003217347",
+			"title": "A new coronavirus associated with human respiratory disease in China",
+			"authors": [
+				"Fan Wu",
+				"Zhao Su",
+				"Bin Yu",
+				"Yanmei Chen"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1038/s41586-020-2008-3",
+			"journal": {
+				"id": "S137773608",
+				"retracted": false
+			},
+			"citations": 12651,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "animal_transmission_but_low_confidence",
+				"indirect": true
+			},
+			"quote": "Although SARS-like viruses have been identified widely in bats in China, viruses identical to SARS-CoV have not yet been documented. Notably, WHCV is most closely related to bat coronaviruses, and shows 100% amino acid similarity to bat SL CoVZC45 in the nsp7 and E proteins. Thus, these data suggest that bats are a possible host for the viral reservoir of WHCV",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "lrQm4k88xWyoMJx1",
 			"openalex_id": "W3004280078",
 			"title": "A pneumonia outbreak associated with a new coronavirus of probable bat origin",
 			"authors": [
@@ -195,25 +225,85 @@
 			"citations": 22919,
 			"results": {
 				"consensus": "no_consensus",
-				"conclusion": "animal_transmission",
+				"conclusion": "animal_transmission_but_low_confidence",
 				"indirect": true
 			},
 			"quote": "The close phylogenetic relationship to RaTG13 provides evidence that 2019-nCoV may have originated in bats",
 			"type": "Other",
 			"blinding": "None",
 			"sample_size": "NotApplicable",
-			"p_value": "NotSpecified",
-			"conflict_of_interest": "Yes",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
 			"notes": [
 				{
-					"title": "Note about conflict of interest",
-					"description": "Most authors work in the Wuhan Institute of Virology, which is where the virus would have originated from in the case of a lab leak",
-					"impact": "Neutral"
+					"title": "Wuhan Institute of Virology",
+					"description": "This paper comes from the Wuhan Institute of Virology, which is precisely the same laboratory that will later be accused of having leaked the virus",
+					"impact": "VeryNegative"
 				}
 			]
 		},
 		{
-			"uuid": "P3da4VpMzQIEx8u8",
+			"uuid": "Dun39OdfZcwESj5N",
+			"openalex_id": "W3013152614",
+			"title": "Identifying SARS-CoV-2-related coronaviruses in Malayan pangolins",
+			"authors": [
+				"Tommy Tsan‐Yuk Lam",
+				"Na Jia",
+				"Yawei Zhang",
+				"Marcus Ho-Hin Shum"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1038/s41586-020-2169-0",
+			"journal": {
+				"id": "S137773608",
+				"retracted": false
+			},
+			"citations": 2006,
+			"results": {
+				"consensus": "towards_animal_transmission",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "Here we report the identification of SARS-CoV-2-related coronaviruses in Malayan pangolins (Manis javanica) seized in anti-smuggling operations in southern China. Metagenomic sequencing identified pangolin associated coronaviruses that belong to two sub-lineages of SARS-CoV-2-related coronaviruses, including one that exhibits strong similarity in the receptor-binding domain to SARS-CoV-2. The Discovery of multiple lineages of pangolin coronavirus and their similarity to SARS-CoV-2 suggests that pangolins should be considered as possible hosts in the emergence of new coronaviruses and should be removed from wet markets to prevent zoonotic transmission",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "5tNoHSrxZR91k37c",
+			"openalex_id": "W3021655800",
+			"title": "Isolation of SARS-CoV-2-related coronavirus from Malayan pangolins",
+			"authors": [
+				"Kangpeng Xiao",
+				"Junqiong Zhai",
+				"Yaoyu Feng",
+				"Niu Zhou"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1038/s41586-020-2313-x",
+			"journal": {
+				"id": "S137773608",
+				"retracted": false
+			},
+			"citations": 776,
+			"results": {
+				"consensus": "towards_animal_transmission",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "The isolation of a coronavirus from pangolins that is closely related to SARS-CoV-2 suggests that these animals have the potential to act as an intermediate host of SARS-CoV-2. This newly identified coronavirus from pangolins—the most-trafficked mammal in the illegal wildlife trade—could represent a future threat to public health if wildlife trade is not effectively controlled",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "Xez9vvwuGPBlSzcn",
 			"openalex_id": "W3048481077",
 			"title": "Might SARS‐CoV‐2 Have Arisen via Serial Passage through an Animal Host or Cell Culture?",
 			"authors": [
@@ -229,45 +319,59 @@
 			"citations": 33,
 			"results": {
 				"consensus": "animal_transmission",
-				"conclusion": "lab_leak_but_low_confidence",
-				"indirect": false
+				"conclusion": "lab_leak_unlike_literature",
+				"indirect": true
 			},
-			"quote": "Taken together, the available evidence does not point definitively toward a natural origin for SARS-CoV-2, rather, much of it is more consistent with what would be found if the novel coronavirus had arisen from serial passage of a “precursor” progenitor virus in a lab, or from bats infecting a commercial mink farm somewhere in China, which would also provide the conditions for serial passage. However, more evidence is required before a conclusive judgement can be made one way or the other",
+			"quote": "Taken together, the available evidence does not point definitively toward a natural origin for SARS-CoV-2, rather, much of it is more consistent with what would be found if the novel coronavirus had arisen from serial passage of a \"precursor\" progenitor virus in a lab",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 40,
+				"subpart": false
+			},
 			"type": "Other",
 			"blinding": "None",
 			"sample_size": "NotApplicable",
-			"p_value": "NotSpecified",
+			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
 			"notes": [
 				{
-					"title": "Independent researchers",
-					"description": "The authors are not part of any laboratory",
+					"title": "No direct genetic / epidemiologic evidence",
+					"description": "The paper advances a lab-related hypothesis largely by plausibility and analogy to previous incidents, without presenting direct genetic / epidemiologic evidence for SARS-CoV-2",
 					"impact": "Negative"
 				}
 			]
 		},
 		{
-			"uuid": "uIzNfloh0a2C2is4",
-			"openalex_id": "W3021839758",
-			"title": "SARS-CoV-2 is well adapted for humans. What does this mean for re-emergence?",
+			"uuid": "v52Fbxe9WMpskGCd",
+			"title": "Natural selection versus creation: a literature review on the origin of SARS-CoV-2",
 			"authors": [
-				"Shing H. Zhan",
-				"Benjamin E. Deverman",
-				"Yujia A. Chan"
+				"Debmalya Barh",
+				"Bruno Silva Andrade",
+				"Sandeep Tiwari",
+				"Marta Giovanetti"
 			],
 			"year": 2020,
-			"link": "https://doi.org/10.1101/2020.05.01.073262",
+			"link": "https://www.infezmed.it/media/journal/Vol_28_3_2020_3.pdf",
 			"journal": {
-				"id": "NotPublished",
+				"id": "S4306518389",
 				"retracted": false
 			},
-			"citations": 37,
+			"citations": 19,
 			"results": {
-				"consensus": "NotSpecified",
-				"conclusion": "no_results",
-				"indirect": false
+				"consensus": "towards_animal_transmission",
+				"conclusion": "animal_transmission",
+				"indirect": true
 			},
-			"quote": "The lack of definitive evidence to verify or rule out adaptation in an intermediate host species, humans, or a laboratory, means that we need to take precautions against each scenario to prevent re-emergence",
+			"quote": "The information and knowledge currently available in the public domain as peer-reviewed publications support a probable bat or pangolin origin of SARS-CoV-2",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": false,
+				"count": 14,
+				"subpart": false
+			},
 			"type": "Other",
 			"blinding": "None",
 			"sample_size": "NotApplicable",
@@ -276,7 +380,7 @@
 			"notes": []
 		},
 		{
-			"uuid": "pzRsWwyEpmGCgKkU",
+			"uuid": "I9WpYZvmhbmlJ8tQ",
 			"openalex_id": "W3103466171",
 			"title": "The genetic structure of SARS‐CoV‐2 does not rule out a laboratory origin",
 			"authors": [
@@ -295,16 +399,128 @@
 				"conclusion": "lab_leak_unlike_literature",
 				"indirect": true
 			},
-			"quote": "the two main SARS-CoV-2 features, (1) the presence of a furin cleavage site missing in other CoVs of the same group and (2) an receptor binding domain (RBD) optimized to bind to human cells might be the result of lab manipulation techniques such as site-directed mutagenesis",
+			"quote": "We here describe how the two main SARSCoV-2 features [...] might be the result of lab manipulation techniques such as site-directed mutagenesis. The acquisition of both unique features by SARS-CoV-2 more or less simultaneously is less likely to be natural or caused only by cell/animal serial passage",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 30,
+				"subpart": false
+			},
 			"type": "Other",
 			"blinding": "None",
 			"sample_size": "NotApplicable",
-			"p_value": "NotSpecified",
+			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
 			"notes": []
 		},
 		{
-			"uuid": "HQkxkqNj27Vtzx1F",
+			"uuid": "Y75LXQCn5CVdrgPV",
+			"openalex_id": "W3011127849",
+			"title": "The proximal origin of SARS-CoV-2",
+			"override_seed": 0.5,
+			"authors": [
+				"Kristian G. Andersen",
+				"Andrew Rambaut",
+				"W. Ian Lipkin",
+				"Edward C. Holmes"
+			],
+			"year": 2020,
+			"link": "https://doi.org/10.1038/s41591-020-0820-9",
+			"journal": {
+				"id": "S203256638",
+				"retracted": false
+			},
+			"citations": 5441,
+			"results": {
+				"consensus": "towards_animal_transmission",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "Our analyses clearly show that SARS-CoV-2 is not a laboratory construct or a purposefully manipulated virus",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 20,
+				"subpart": false
+			},
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "SomeLinks",
+			"notes": []
+		},
+		{
+			"uuid": "BVMqeHsDWKvPRMGj",
+			"openalex_id": "W3211396657",
+			"title": "A novel SARS-CoV-2 related coronavirus in bats from Cambodia",
+			"authors": [
+				"Déborah Delaune",
+				"Vibol Hul",
+				"Erik A. Karlsson",
+				"Alexandre Hassanin"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1038/s41467-021-26809-4",
+			"journal": {
+				"id": "S64187185",
+				"retracted": false
+			},
+			"citations": 197,
+			"results": {
+				"consensus": "animal_transmission",
+				"conclusion": "animal_transmission",
+				"indirect": true
+			},
+			"quote": "The data presented here further indicate that SARS-CoV-2 related viruses have a much wider geographic distribution than previously understood, and likely circulate via multiple Rhinolophus species. [...] Finally, pangolins, as well as members of order Carnivora, especially the Viverridae5, Mustelidae6, and Felidae7 families are readily susceptible to SARS-CoV-2 infection, might represent intermediary hosts for transmission to humans, and should not be ignored in future surveillance efforts in the region. Viruses of the SARS-CoV-2 sublineage, with one exhibiting strong sequence similarity to SARS-CoV-2 in the RBD, were recently detected in distinct groups of pangolins seized during anti-smuggling operations in southeast China",
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "k5OvNVPMkXNMaPJp",
+			"openalex_id": "W3162571967",
+			"title": "Investigate the origins of COVID-19",
+			"authors": [
+				"Jesse D. Bloom",
+				"Yujia A. Chan",
+				"Ralph S. Baric",
+				"Pamela J. Björkman"
+			],
+			"year": 2021,
+			"link": "https://doi.org/10.1126/science.abj0016",
+			"journal": {
+				"id": "S3880285",
+				"retracted": false
+			},
+			"citations": 160,
+			"results": {
+				"consensus": "no_consensus",
+				"conclusion": "no_results",
+				"indirect": true
+			},
+			"quote": "There were no findings in clear support of either a natural spillover or a lab accident",
+			"review": {
+				"type": "NarrativeReview",
+				"reviews": false,
+				"estimate": true,
+				"count": 5,
+				"subpart": false
+			},
+			"type": "Other",
+			"blinding": "None",
+			"sample_size": "NotApplicable",
+			"p_value": "NotApplicable",
+			"conflict_of_interest": "None",
+			"notes": []
+		},
+		{
+			"uuid": "PsqvPTza8IicdQkZ",
 			"openalex_id": "W3191809422",
 			"title": "The origins of SARS-CoV-2: A critical review",
 			"authors": [
@@ -319,13 +535,13 @@
 				"id": "S110447773",
 				"retracted": false
 			},
-			"citations": 474,
+			"citations": 482,
 			"results": {
-				"consensus": "no_consensus",
+				"consensus": "towards_animal_transmission",
 				"conclusion": "animal_transmission",
-				"indirect": false
+				"indirect": true
 			},
-			"quote": "As for the vast majority of human viruses, the most parsimonious explanation for the origin of SARS-CoV-2 is a zoonotic event",
+			"quote": "As for the vast majority of human viruses, the most parsimonious explanation for the origin of SARS-CoV-2 is a zoonotic event. The documented epidemiological history of the virus is comparable to previous animal market-associated outbreaks of coronaviruses with a simple route for human exposure",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
@@ -341,33 +557,30 @@
 			"notes": []
 		},
 		{
-			"uuid": "IhqvIpRjJWmT9XZl",
-			"openalex_id": "W3128357250",
-			"title": "Tracing the origins of SARS-COV-2 in coronavirus phylogenies: a review",
+			"uuid": "r2ksuGQjGN6koZu6",
+			"openalex_id": "W3183703259",
+			"title": "What we know and what we need to know about the origin of SARS-CoV-2",
 			"authors": [
-				"Erwan Sallard",
-				"José Halloy",
-				"Didier Casañe",
-				"Étienne Decroly"
+				"José L. Domingo"
 			],
 			"year": 2021,
-			"link": "https://doi.org/10.1007/s10311-020-01151-1",
+			"link": "https://doi.org/10.1016/j.envres.2021.111785",
 			"journal": {
-				"id": "S88719806",
+				"id": "S173943867",
 				"retracted": false
 			},
-			"citations": 69,
+			"citations": 51,
 			"results": {
-				"consensus": "no_consensus",
-				"conclusion": "no_results",
-				"indirect": false
+				"consensus": "towards_animal_transmission",
+				"conclusion": "animal_transmission_but_mixed",
+				"indirect": true
 			},
-			"quote": "on the basis of currently available data it is not possible to determine whether the emergence of SARS-CoV-2 is the result of a zoonosis from a wild viral strain or an accidental escape of experimental strains",
+			"quote": "Most papers here reviewed point in the direction of a zoonotic origin, an origin in which horseshoe bats from the species Rhinolophus affinis seemed to be a natural reservoir, while pangolins (Manis javanica) could be an intermediate host of the coronavirus. However, even considering the zoonotic hypothesis as the most likely, today, the intermediate source species of SARS-CoV-2 has not been confirmed. On the other hand, although some researchers clearly point to an unnatural origin of SARS-CoV-2, their conclusions are not strongly based on a strict scientific evidence, being largely speculative",
 			"review": {
 				"type": "NarrativeReview",
 				"reviews": false,
 				"estimate": true,
-				"count": 70,
+				"count": 40,
 				"subpart": false
 			},
 			"type": "Other",
@@ -378,122 +591,40 @@
 			"notes": []
 		},
 		{
-			"uuid": "hNchysefuSNWq7PB",
-			"openalex_id": "W4212967725",
-			"title": "Bat coronaviruses related to SARS-CoV-2 and infectious for human cells",
-			"authors": [
-				"Sarah Temmam",
-				"Khamsing Vongphayloth",
-				"Eduard Baquero",
-				"Sandie Munier"
-			],
-			"year": 2022,
-			"link": "https://doi.org/10.1038/s41586-022-04532-4",
+			"uuid": "WNwGLJMEsxj3CZnu",
+			"openalex_id": "W4205219990",
+			"title": "WHO-convened global study of origins of SARS-CoV-2: China Part",
+			"institution": {
+				"name": "World Health Organization",
+				"acronym": "WHO"
+			},
+			"authors": [],
+			"year": 2021,
+			"link": "https://www.who.int/publications/i/item/who-convened-global-study-of-origins-of-sars-cov-2-china-part",
 			"journal": {
-				"id": "S137773608",
+				"id": "S4210208016",
 				"retracted": false
 			},
-			"citations": 458,
-			"results": {
-				"consensus": "no_consensus",
-				"conclusion": "animal_transmission",
-				"indirect": true
-			},
-			"quote": "Our results therefore support the hypothesis that SARS-CoV-2 could originally result from a recombination of sequences pre-existing in Rhinolophus bats living in the extensive limestone cave systems of Southeast Asia and South China",
-			"type": "Other",
-			"blinding": "None",
-			"sample_size": "NotApplicable",
-			"p_value": "NotSpecified",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
-			"uuid": "RP0jQO6H33z0eIVD",
-			"openalex_id": "W4283329183",
-			"title": "SARS-CoV-2 infection at the Huanan seafood market",
-			"authors": [
-				"Virginie Courtier‐Orgogozo",
-				"Francisco A. de Ribera"
-			],
-			"year": 2022,
-			"link": "https://doi.org/10.1016/j.envres.2022.113702",
-			"journal": {
-				"id": "S173943867",
-				"retracted": false
-			},
-			"citations": 15,
-			"results": {
-				"consensus": "no_consensus",
-				"conclusion": "no_results",
-				"indirect": false
-			},
-			"quote": "If a cluster of patients located a few meters away from each other had been detected at the market in the early days of the pandemic, it would be natural to suggest an animal source hotspot and animal-to-human contamination at the market. However, the first detected patients are relatively far from each other",
-			"type": "Other",
-			"blinding": "None",
-			"sample_size": "NotApplicable",
-			"p_value": "NotApplicable",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
-			"uuid": "ueX77KS3Y7ws06Zs",
-			"openalex_id": "W4288034315",
-			"title": "The Huanan Seafood Wholesale Market in Wuhan was the early epicenter of the COVID-19 pandemic",
-			"authors": [
-				"Michael Worobey",
-				"Joshua I. Levy",
-				"Lorena M. Malpica Serrano",
-				"Alexander Crits‐Christoph"
-			],
-			"year": 2022,
-			"link": "https://doi.org/10.1126/science.abp8715",
-			"journal": {
-				"id": "S3880285",
-				"retracted": false
-			},
-			"citations": 367,
-			"results": {
-				"consensus": "no_consensus",
-				"conclusion": "animal_transmission",
-				"indirect": true
-			},
-			"quote": "Although there is insufficient evidence to define upstream events, and exact circumstances remain obscure, our analyses indicate that the emergence of SARS-CoV-2 occurred through the live wildlife trade in China and show that the Huanan market was the epicenter of the COVID-19 pandemic",
-			"type": "Other",
-			"blinding": "None",
-			"sample_size": "NotApplicable",
-			"p_value": "NotSpecified",
-			"conflict_of_interest": "None",
-			"notes": []
-		},
-		{
-			"uuid": "Q4fRfZnZKg3DB8WV",
-			"openalex_id": "W4385348066",
-			"title": "Host susceptibility and structural and immunological insight of S proteins of two SARS-CoV-2 closely related bat coronaviruses",
-			"authors": [
-				"Xiuyuan Ou",
-				"Ge Xu",
-				"Pei Li",
-				"Yan Liu"
-			],
-			"year": 2023,
-			"link": "https://doi.org/10.1038/s41421-023-00581-9",
-			"journal": {
-				"id": "S2764388416",
-				"retracted": false
-			},
-			"citations": 37,
+			"citations": 265,
 			"results": {
 				"consensus": "towards_animal_transmission",
 				"conclusion": "animal_transmission",
 				"indirect": true
 			},
-			"quote": "Bat CoVs BANAL-20-52 and BANAL-20-236 share over 95% sequence identity with SARS-CoV-2, and both can also use hACE2 for virus entry, indicating that they might possess the risk of zoonotic transmission from bat to human directly or through an intermediate host",
+			"quote": "The joint team’s assessment of likelihood of each possible pathway was as follows: • direct zoonotic spillover is considered to be a possible-to-likely pathway • introduction through an intermediate host is considered to be a likely to very likely pathway • introduction through cold/ food chain products is considered a possible pathway • introduction through a laboratory incident was considered to be an extremely unlikely pathway",
 			"type": "Other",
 			"blinding": "None",
 			"sample_size": "NotApplicable",
-			"p_value": "NotSpecified",
+			"p_value": "NotApplicable",
 			"conflict_of_interest": "None",
-			"notes": []
+			"notes": [
+				{
+					"title": "Transparency in Chinese cooperation",
+					"description": "Chinese data lacks transparency, limiting independent access",
+					"link": "https://en.wikipedia.org/wiki/WHO-convened_Global_Study_of_Origins_of_SARS-CoV-2#Reception",
+					"impact": "Negative"
+				}
+			]
 		}
 	]
 }

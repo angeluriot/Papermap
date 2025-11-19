@@ -191,7 +191,7 @@
 			</div>
 			<div class="graph">
 				<Scatter
-					title='Paper score by citations' x_axis_label='Citations' color='#fac858' log_base={10} x_axis_max={4000}
+					title='Paper score by citations' x_axis_label='Citations' color='#fac858' log_base={10} x_axis_max={30000}
 					data={papers.map(paper => ({ x: paper.citations, y: paper.score, text: get_label(paper, false), score: paper.scores.citations }))}
 				/>
 			</div>
