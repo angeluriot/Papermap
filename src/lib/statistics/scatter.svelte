@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { BACKGROUND_COLOR } from '$lib/display/graph/background';
 	import { float_to_text, int_to_text } from '$lib/display/utils';
 	import { type ECharts, type EChartsOption, init as initChart } from 'echarts';
 	import { onDestroy, onMount } from 'svelte';
@@ -35,11 +34,11 @@
 		if (axis)
 		{
 			for (const { exponent, symbol } of [
-				{ exponent: 5, symbol: '⁵' },
-				{ exponent: 6, symbol: '⁶' },
-				{ exponent: 7, symbol: '⁷' },
-				{ exponent: 8, symbol: '⁸' },
-				{ exponent: 9, symbol: '⁹' },
+				{ exponent: 5, symbol: 'âµ' },
+				{ exponent: 6, symbol: 'â¶' },
+				{ exponent: 7, symbol: 'â·' },
+				{ exponent: 8, symbol: 'â¸' },
+				{ exponent: 9, symbol: 'â¹' },
 			])
 			{
 				if (value === 10 ** exponent)
@@ -183,7 +182,7 @@
 			right: 0,
 			top: 28 + font_size * 1.3,
 			bottom: 0,
-			backgroundColor: BACKGROUND_COLOR,
+			backgroundColor: 'var(--primary)',
 			borderColor: 'transparent',
 		},
 		tooltip: {

@@ -162,7 +162,7 @@
 	.bar
 	{
 		height: 0.8em;
-		box-shadow: 0em 0.1em 1em #00008036;
+		box-shadow: 0em 0.1em 1em var(--shadow-light);
 	}
 
 	.bar-hitbox
